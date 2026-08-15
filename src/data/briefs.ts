@@ -83,7 +83,7 @@ export const briefs = [
       },
       {
         title:
-          "Retrospective: why tool portfolios failed to become capabilities",
+          "When tool portfolios fail to become capabilities",
         pages: { start: 7, end: 8 },
       },
       {
@@ -262,7 +262,7 @@ export const briefs = [
     chapters: [
       { title: "Cover and publication record", pages: { start: 1, end: 1 } },
       {
-        title: "A note from 2035: reading a future history responsibly",
+        title: "A note from 2035: reading future signals responsibly",
         pages: { start: 2, end: 2 },
       },
       {
@@ -276,7 +276,7 @@ export const briefs = [
       },
       {
         title:
-          "The prompt era in retrospect: a transitional interface, not an operating model",
+          "The prompt interface: a transitional layer, not an operating model",
         pages: { start: 7, end: 8 },
       },
       {
@@ -444,7 +444,7 @@ export const briefs = [
       "Platform architects",
     ],
     decision:
-      "How to preserve and communicate the origin, transformation history, approval state, and distribution context of media.",
+      "How to preserve and communicate the origin, transformation record, approval state, and distribution context of media.",
     thesis:
       "[2035 vantage — inference] By 2035, trustworthy media is not defined by whether it is synthetic; it is defined by whether people and machines can inspect a durable chain of claims about origin, ingredients, transformations, authority, and distribution. [Recommendation] Treat provenance as a supply-chain control from capture or generation through reuse, with cryptographic evidence complementing—not replacing—editorial verification. [Uncertainty] Credentials can be removed, platforms can reinterpret labels, keys can be compromised, and provenance cannot establish that a depicted event is true.",
     pageCount: 32,
@@ -465,7 +465,7 @@ export const briefs = [
       },
       {
         title:
-          "Future history of the media lifecycle: where context survived and where it vanished",
+          "The future media lifecycle: where context survives and where it vanishes",
         pages: { start: 7, end: 9 },
       },
       {
@@ -491,7 +491,7 @@ export const briefs = [
       },
       {
         title:
-          "Verification experiences for people, platforms, agents, and archives",
+          "Verification experiences for people, platforms, agents, and media libraries",
         pages: { start: 24, end: 25 },
       },
       {
@@ -533,7 +533,7 @@ export const briefs = [
     ],
     evidenceNeeds: [
       "[Evidence] Content Credentials: C2PA Technical Specification 2.1 — Coalition for Content Provenance and Authenticity, September 2024. The specification defines signed manifests, assertions, ingredients, validation states, and richer ingredient workflows. https://spec.c2pa.org/specifications/specifications/2.1/specs/C2PA_Specification.html",
-      "[Evidence] C2PA Content Credentials Explained: Addressing Common Questions and Updates — C2PA Technical Working Group, September 2025. C2PA describes a Content Credential as a cryptographically bound structure recording an asset’s provenance history and explicitly addresses security, privacy, and human-rights considerations. https://c2pa.org/wp-content/uploads/sites/33/2025/10/content_credentials_wp_0925.pdf",
+      "[Evidence] C2PA Content Credentials Explained: Addressing Common Questions and Updates — C2PA Technical Working Group, September 2025. C2PA describes a Content Credential as a cryptographically bound structure recording an asset’s provenance record and explicitly addresses security, privacy, and human-rights considerations. https://c2pa.org/wp-content/uploads/sites/33/2025/10/content_credentials_wp_0925.pdf",
       "[Evidence] Sora System Card — OpenAI, 9 December 2024. OpenAI documents a multilayer provenance approach using C2PA metadata, visible watermarks by default, and an internal reverse-video-search capability. https://openai.com/index/sora-system-card/",
       "[Evidence] Labeling AI-Generated Images on Facebook, Instagram and Threads — Meta, 6 February 2024 (updated 1 April 2025). Meta describes detecting C2PA and IPTC indicators to label content and illustrates that platform presentation is a separate layer from embedded provenance. https://about.fb.com/news/2024/02/labeling-ai-generated-images-on-facebook-instagram-and-threads/",
       "[Evidence] IPTC Photo Metadata Standard 2025.1 — International Press Telecommunications Council, 26 November 2025. IPTC added AI Prompt Information, AI Prompt Writer Name, AI System Used, and AI System Version Used. https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html",
@@ -542,7 +542,7 @@ export const briefs = [
       "[Uncertainty] Standards support and platform behavior change; re-run interoperability tests and threat models rather than relying on vendor announcements.",
     ],
     limitations: [
-      "[Boundary] Provenance can support claims about history and integrity; it does not prove that depicted events are true or that a signer is trustworthy.",
+      "[Boundary] Provenance can support claims about origin and integrity; it does not prove that depicted events are true or that a signer is trustworthy.",
       "[Uncertainty] Credentials may be stripped, become inaccessible, fail validation, or be rendered differently by distribution platforms.",
       "[Recommendation] Keep origin evidence, identity, integrity, editorial verification, and truth claims separate in both interfaces and policy.",
       "[Boundary] This report is architecture guidance, not cryptographic, legal, evidentiary, or journalistic certification.",
@@ -857,7 +857,7 @@ export const briefs = [
         pages: { start: 18, end: 19 },
       },
       {
-        title: "Collaboration and decision history",
+        title: "Collaboration and decision record",
         pages: { start: 20, end: 21 },
       },
       {
@@ -1013,7 +1013,7 @@ export const briefs = [
       },
       {
         title:
-          "The 2035 publishing surface: people, agents, search, feeds, and archives",
+          "The 2035 publishing surface: people, agents, search, feeds, and media libraries",
         pages: { start: 5, end: 7 },
       },
       {
@@ -1171,19 +1171,19 @@ export const briefs = [
       "Publishers",
       "Brand studios",
       "Digital asset management owners",
-      "Archivists",
+      "Collection stewards",
       "Creative operations teams",
     ],
     decision:
       "How to make a large media library discoverable, governed, rights-aware, portable, and reusable without discarding human curation.",
     thesis:
-      "[2035 vantage — inference] By 2035, the competitive media estate is not the largest archive but the best institutional memory: assets carry interpretable history, rights, consent, provenance, relationships, audience context, and the reasons humans selected or rejected them. [Recommendation] Preserve machine enrichment beside—not over—human judgment, and make both portable across tools. [Uncertainty] Semantic models can misdescribe people and cultures; metadata can be incomplete; similarity never establishes ownership or permission.",
+      "[2035 vantage — inference] By 2035, the competitive media estate is not the largest media library but the strongest institutional memory: assets carry interpretable lineage, rights, consent, provenance, relationships, audience context, and the reasons humans selected or rejected them. [Recommendation] Preserve machine enrichment beside—not over—human judgment, and make both portable across tools. [Uncertainty] Semantic models can misdescribe people and cultures; metadata can be incomplete; similarity never establishes ownership or permission.",
     pageCount: 28,
     chapters: [
       { title: "Cover and publication record", pages: { start: 1, end: 1 } },
       {
         title:
-          "A dispatch from 2035: the archive became an active collaborator",
+          "A dispatch from 2035: the media library became an active collaborator",
         pages: { start: 2, end: 2 },
       },
       {
@@ -1263,21 +1263,21 @@ export const briefs = [
       "[Evidence] IPTC Photo Metadata User Guide — International Press Telecommunications Council, 2025. The guide distinguishes trained algorithmic media, composite synthetic media, and other digital source types and recommends recording AI-system details without treating a prompt writer as the image creator. https://www.iptc.org/std/photometadata/documentation/userguide/",
       "[Evidence] IPTC Generative AI Opt-Out Best Practices — International Press Telecommunications Council, May 2025. IPTC documents ways content owners can express data-mining preferences in embedded metadata and related mechanisms. https://iptc.org/wp-content/uploads/2025/05/IPTC-Generative-AI-Opt-Out-Best-Practices.pdf",
       "[Evidence] Content Credentials: C2PA Technical Specification 2.1 — Coalition for Content Provenance and Authenticity, September 2024. C2PA ingredients and assertions provide a model for recording asset relationships and transformations beyond flat descriptive metadata. https://spec.c2pa.org/specifications/specifications/2.1/specs/C2PA_Specification.html",
-      "[Evidence] Copyright and Artificial Intelligence, Part 2: Copyrightability — U.S. Copyright Office, January 2025. The Office’s human-authorship analysis makes creation history and human contribution operationally relevant to asset governance. https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+      "[Evidence] Copyright and Artificial Intelligence, Part 2: Copyrightability — U.S. Copyright Office, January 2025. The Office’s human-authorship analysis makes the creation record and human contribution operationally relevant to asset governance. https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
       "[Inference] By 2035, asset value is likely to depend on portable relationships among rights, provenance, creative decisions, performance context, and machine-readable representations—not semantic search alone.",
       "[Recommendation] Evaluate retrieval and duplicate detection with authorized representative collections and human relevance judgments; separately audit rights, consent, retention, and cultural-description errors.",
-      "[Uncertainty] Metadata fields and provenance records can conflict, disappear during transformation, or encode biased description; designate stewards and preserve corrections as history.",
+      "[Uncertainty] Metadata fields and provenance records can conflict, disappear during transformation, or encode biased description; designate stewards and preserve corrections as a record.",
     ],
     limitations: [
       "[Uncertainty] Automated enrichment can be wrong, culturally biased, temporally stale, or falsely confident.",
       "[Boundary] Similarity is not legal equivalence and does not establish duplicate ownership, authorship, or permission.",
       "[Boundary] Metadata completeness and a valid credential do not by themselves prove usage rights or factual truth.",
       "[Uncertainty] Migration outcomes depend on source access, export fidelity, identifier continuity, and preservation of relationships.",
-      "[Recommendation] Retain human correction, dissent, and selection history instead of silently replacing prior descriptions.",
+      "[Recommendation] Retain human correction, dissent, and selection rationale instead of silently replacing existing descriptions.",
     ],
     squeeze: {
       headline:
-        "Your archive remembers files. Does it remember why they mattered?",
+        "Your media library remembers files. Does it remember why they mattered?",
       promise:
         "A practical model for joining curation, metadata, rights, similarity, and portable media operations.",
       preview: "The media-estate lifecycle and a short metadata diagnostic.",
@@ -1285,7 +1285,7 @@ export const briefs = [
     routing: {
       primaryDestination: "Media Management and Photo Curator",
       primarySignals: [
-        "An archive or asset-management migration is active",
+        "A media-library or asset-management migration is active",
         "Metadata quality is limiting discovery or reuse",
         "Photo selection and collection-scale review are difficult",
         "Duplicate or near-duplicate assets create operational friction",
@@ -1367,12 +1367,12 @@ export const briefs = [
     decision:
       "Whether to hire an agency, assemble specialists, embed creative leadership, or build an internal GenAI and media capability.",
     thesis:
-      "[2035 vantage — inference] The agency transformation of 2024–2035 did not end agencies; it dissolved the old boundary between client, studio, creator, platform, model, and audience. The enduring firms became capability systems that could compose executive intent, human creative authority, specialist craft, agentic production, creator communities, governed infrastructure, media memory, provenance, and market learning. [Recommendation] Own the decisions and institutional memory that differentiate the brand; procure modular execution where it creates advantage. [Uncertainty] The right ownership model remains contingent on category, geography, regulation, talent, scale, and leadership capacity.",
+      "[2035 vantage — inference] The agency transformation of 2024–2035 did not end agencies; it dissolved the inherited boundary between client, studio, creator, platform, model, and audience. The enduring firms became capability systems that could compose executive intent, human creative authority, specialist craft, agentic production, creator communities, governed infrastructure, media memory, provenance, and market learning. [Recommendation] Own the decisions and institutional memory that differentiate the brand; procure modular execution where it creates advantage. [Uncertainty] The right ownership model remains contingent on category, geography, regulation, talent, scale, and leadership capacity.",
     pageCount: 35,
     chapters: [
       { title: "Cover and publication record", pages: { start: 1, end: 1 } },
       {
-        title: "A dispatch from 2035: how to use a future history",
+        title: "A dispatch from 2035: how to use future signals",
         pages: { start: 2, end: 2 },
       },
       {

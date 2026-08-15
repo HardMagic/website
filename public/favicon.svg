@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HardMagic">
-  <rect width="64" height="64" rx="12" fill="#100b0d"/>
-  <path d="M8 32c6-12 15-12 24 0s18 12 24 0c-6-12-15-12-24 0S14 44 8 32Z" fill="none" stroke="#7c233e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M9 31c6-8 14-8 23 1s17 9 23-1" fill="none" stroke="#eadde5" stroke-opacity=".68" stroke-width="1.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HardMagic infinity">
+  <rect width="64" height="64" rx="14" fill="#08070b"/>
+  <path d="M32 32C24 18 7 18 7 32C7 46 24 46 32 32C40 18 57 18 57 32C57 46 40 46 32 32" fill="none" stroke="#ef5270" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31 30C23 21 11 22 9 29" fill="none" stroke="#ffd3dd" stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

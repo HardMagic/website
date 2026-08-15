@@ -7,6 +7,6 @@ export const navigation = [
 export const productLinks = [
   ['WireMark', 'products/wiremark/'],
   ['HardMagic Studio', 'products/studio/'],
-  ['HardMagic CLI', 'products/cli/'],
+  ['HardMagic Agent (CLI)', 'products/cli/'],
   ['Web Magic', 'products/web-magic/'],
 ] as const;

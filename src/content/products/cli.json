@@ -1,6 +1,6 @@
 {
-  "name": "HardMagic CLI",
-  "kicker": "Creative infrastructure, without leaving the terminal.",
+  "name": "HardMagic Agent (CLI)",
+  "kicker": "Creative infrastructure for people, scripts, and agents.",
   "category": "Developer tooling",
   "status": "Available",
   "summary": "The `hm` command gives people and agents a dependable interface to HardMagic generation, assets, authentication, settings, and machine-readable workflows.",

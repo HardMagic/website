@@ -18,13 +18,13 @@ const megaMenuCatalog: MegaMenu[] = [
         { label: 'Audio', href: 'products/studio/audio/' }, { label: 'Hybrid inference', href: 'products/studio/hybrid-inference/' },
       ]},
       { title: 'Developer infrastructure', links: [
-        { label: 'HardMagic CLI', href: 'products/cli/', note: 'The `hm` command' },
+        { label: 'HardMagic Agent (CLI)', href: 'products/cli/', note: 'The `hm` command' },
         { label: 'Quickstart', href: 'products/cli/quickstart/' }, { label: 'Automation', href: 'products/cli/automation/' },
         { label: 'Agent skills', href: 'products/cli/agent-skills/' }, { label: 'Security', href: 'products/cli/security/' },
       ]},
       { title: 'Media & delivery', links: [
         { label: 'Photo Curator', href: 'products/photo-curator/' }, { label: 'GPU Router', href: 'products/gpu-router/' },
-        { label: 'Web Magic', href: 'products/web-magic/' }, { label: 'Product comparison', href: 'products/#compare' },
+        { label: 'Web Magic', href: 'products/web-magic/' }, { label: 'All products', href: 'products/' },
       ]},
     ],
   },
@@ -41,7 +41,7 @@ const megaMenuCatalog: MegaMenu[] = [
       { title: 'Product proof', links: [
         { label: 'HardMagic Studio', href: 'products/studio/', note: 'Multimodal production' },
         { label: 'WireMark', href: 'products/wiremark/', note: 'Canvas to source' },
-        { label: 'HardMagic CLI', href: 'products/cli/' },
+        { label: 'HardMagic Agent (CLI)', href: 'products/cli/' },
         { label: 'Web Magic', href: 'products/web-magic/' },
       ]},
       { title: 'Creative direction', links: [
@@ -63,7 +63,7 @@ const megaMenuCatalog: MegaMenu[] = [
     feature: { eyebrow: 'Independent senior practice', title: 'Bring us the decision that crosses creative, technical, and organizational boundaries.', href: 'contact/' },
     groups: [
       { title: 'Leadership', links: [
-        { label: 'Creative direction', href: 'services/creative-direction/' }, { label: 'Executive advisory', href: 'services/executive-advisory/' },
+        { label: 'Executive advisory', href: 'services/executive-advisory/', note: 'Senior counsel for consequential decisions' }, { label: 'Creative direction', href: 'services/creative-direction/' },
         { label: 'Marketing consulting', href: 'services/marketing-consulting/' }, { label: 'Brand systems', href: 'services/brand-systems/' },
       ]},
       { title: 'Transformation', links: [
@@ -71,7 +71,8 @@ const megaMenuCatalog: MegaMenu[] = [
         { label: 'Media management', href: 'services/media-management/' }, { label: 'Content operations', href: 'services/content-operations/' },
       ]},
       { title: 'Engagements', links: [
-        { label: 'Transformation sprint', href: 'engagements/transformation-sprint/' }, { label: 'Fractional creative office', href: 'engagements/fractional-creative-office/' },
+        { label: 'Compare engagement models', href: 'engagements/', note: 'Choose the right working relationship' }, { label: 'Transformation sprint', href: 'engagements/transformation-sprint/' },
+        { label: 'Fractional creative office', href: 'engagements/fractional-creative-office/' },
         { label: 'GenAI lab', href: 'engagements/genai-lab/' }, { label: 'Managed media desk', href: 'engagements/managed-media-desk/' },
         { label: 'Product launch room', href: 'engagements/product-launch-room/' },
       ]},
@@ -84,10 +85,11 @@ const megaMenuCatalog: MegaMenu[] = [
   },
   {
     label: 'Ideas', href: 'insights/',
-    feature: { eyebrow: 'HardMagic / Horizon 2035', title: 'Twelve sourced future histories for the people deciding what media becomes.', href: 'horizon/' },
+    feature: { eyebrow: 'HardMagic / Horizon 2035', title: 'Twelve sourced future scenarios for the people deciding what media becomes.', href: 'horizon/' },
     groups: [
       { title: 'Intelligence', links: [
-        { label: 'Horizon 2035', href: 'horizon/', note: 'Twelve future histories' }, { label: 'Latest insights', href: 'insights/' }, { label: 'Technical briefs', href: 'briefs/' },
+        { label: 'Latest insights', href: 'insights/', note: 'Operational arguments for decision-makers' }, { label: 'Technical briefs', href: 'briefs/', note: 'Private, evidence-led decision guides' },
+        { label: 'Horizon 2035', href: 'horizon/', note: 'Twelve future scenarios' },
         { label: 'Methods', href: 'methods/' }, { label: 'Editorial policy', href: 'editorial-policy/' },
       ]},
       { title: 'Creative systems', links: [
@@ -99,7 +101,7 @@ const megaMenuCatalog: MegaMenu[] = [
         { label: 'Provenance', href: 'insights/provenance-without-killing-creative-flow/' }, { label: 'Static publishing', href: 'insights/static-websites-as-durable-media/' },
       ]},
       { title: 'Media systems', links: [
-        { label: 'Media control room', href: 'insights/what-a-modern-media-control-room-needs/' }, { label: 'Archive intelligence', href: 'methods/archive-to-intelligence/' },
+        { label: 'Media control room', href: 'insights/what-a-modern-media-control-room-needs/' }, { label: 'Collection intelligence', href: 'methods/collection-to-intelligence/' },
         { label: 'GenAI production', href: 'insights/from-prompting-to-production-systems/' }, { label: '90-day activation', href: 'methods/30-60-90-activation/' },
       ]},
     ],
@@ -109,7 +111,7 @@ const megaMenuCatalog: MegaMenu[] = [
     feature: { eyebrow: 'Independent agentic media company', title: 'A privately owned Delaware corporation building for the long horizon.', href: 'company/' },
     groups: [
       { title: 'HardMagic', links: [
-        { label: 'Corporation', href: 'company/' }, { label: 'History', href: 'company/history/' }, { label: 'Founder', href: 'company/founder/' },
+        { label: 'Corporation', href: 'company/' }, { label: 'Continuity', href: 'company/history/' }, { label: 'Founder', href: 'company/founder/' },
         { label: 'Selected experience', href: 'company/selected-experience/' },
       ]},
       { title: 'How we work', links: [
@@ -121,7 +123,7 @@ const megaMenuCatalog: MegaMenu[] = [
         { label: 'Accessibility', href: 'accessibility/' }, { label: 'Privacy', href: 'privacy/' },
       ]},
       { title: 'Talk to us', links: [
-        { label: 'Creative direction', href: 'contact/creative-direction/' }, { label: 'GenAI', href: 'contact/genai/' },
+        { label: 'Advisory intake', href: 'contact/', note: 'Route a consequential decision' }, { label: 'Creative direction', href: 'contact/creative-direction/' }, { label: 'GenAI', href: 'contact/genai/' },
         { label: 'Media management', href: 'contact/media-management/' }, { label: 'Start a conversation', href: 'contact/' },
       ]},
     ],
@@ -130,3 +132,53 @@ const megaMenuCatalog: MegaMenu[] = [
 
 const menuOrder = ['Work', 'Work with us', 'Ideas', 'Products', 'Company'];
 export const megaMenus = menuOrder.map((label) => megaMenuCatalog.find((menu) => menu.label === label)!) satisfies MegaMenu[];
+
+/**
+ * The footer keeps the high-intent routes visible without adding another
+ * top-level disclosure to the header. Keep these links relative: BaseLayout
+ * supplies the deployment base path for both local and project builds.
+ */
+export const footerNavGroups: NavGroup[] = [
+  {
+    title: 'Advisory',
+    links: [
+      { label: 'Executive advisory', href: 'services/executive-advisory/' },
+      { label: 'Engagement models', href: 'engagements/' },
+      { label: 'Transformation sprint', href: 'engagements/transformation-sprint/' },
+      { label: 'Start an enterprise conversation', href: 'contact/' },
+    ],
+  },
+  {
+    title: 'Briefs',
+    links: [
+      { label: 'Technical briefs', href: 'briefs/' },
+      { label: 'Generative media operating system', href: 'briefs/generative-media-operating-system/' },
+      { label: 'Intelligent media asset estate', href: 'briefs/intelligent-media-asset-estate/' },
+    ],
+  },
+  {
+    title: 'Insights',
+    links: [
+      { label: 'Latest insights', href: 'insights/' },
+      { label: 'Horizon 2035', href: 'horizon/' },
+      { label: 'Methods', href: 'methods/' },
+    ],
+  },
+  {
+    title: 'Products',
+    links: [
+      { label: 'WireMark', href: 'products/wiremark/' },
+      { label: 'HardMagic Studio', href: 'products/studio/' },
+      { label: 'HardMagic Agent (CLI)', href: 'products/cli/' },
+      { label: 'Web Magic', href: 'products/web-magic/' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About HardMagic', href: 'company/' },
+      { label: 'Operating model', href: 'company/operating-model/' },
+      { label: 'Privacy', href: 'privacy/' },
+    ],
+  },
+];

@@ -252,7 +252,7 @@ export const horizon2035Scenarios = [
       "The immediate bottleneck in ambitious teams is already shifting from first output to comparison, continuity, rights review, and the ability to explain why one treatment advances the idea while ninety-nine competent alternatives do not.",
     ],
     scenario2035: [
-      "A 2035 creative department begins with a direction model: a maintained corpus of references, exclusions, cultural context, audience promises, risk boundaries, and previous decisions. Production systems can generate complete campaign worlds against that model, but nothing graduates merely because it is technically polished.",
+      "A 2035 creative department begins with a direction model: a maintained corpus of references, exclusions, cultural context, audience promises, risk boundaries, and recorded decisions. Production systems can generate complete campaign worlds against that model, but nothing graduates merely because it is technically polished.",
       "The Creative Director conducts possibility rather than requesting deliverables. They allocate novelty, control narrative distance, stage productive disagreement among human and machine collaborators, and leave a record of consequential decisions. Artists are commissioned for point of view, embodied knowledge, and the ability to break the system intelligently—not for being faster endpoints in a content queue.",
       "The portfolio review resembles jurisprudence. Teams inspect what was proposed, what was refused, whose expression remains visible, how the work changes across contexts, and whether repetition is creating memory or merely volume. The most respected brands publish less than they could and make the restraint perceptible.",
     ],
@@ -262,7 +262,7 @@ export const horizon2035Scenarios = [
       "Career ladders will need to reward editorial judgment, cultural research, systems literacy, and the ability to articulate rejection. Junior talent still needs craft practice; delegating every formative execution step to a model would hollow out the future directing class.",
     ],
     movesToMakeNow: [
-      "Build a decision archive that records references, rejected routes, critique, approvals, rights, and what the team learned after release.",
+      "Build a decision record that records references, rejected routes, critique, approvals, rights, and what the team learned after release.",
       "Separate generative throughput metrics from creative-quality metrics. Place a human decision and named owner at every irreversible publication gate.",
       "Commission artists before a visual language is settled, and contract for authorship, exploration, and knowledge transfer rather than only finished files.",
       "Train directors to work across models without allowing model defaults to become the house style. Run critiques where outputs are shown without tool labels, then inspect whether the rationale survives attribution.",
@@ -282,14 +282,14 @@ export const horizon2035Scenarios = [
     horizon: 2035,
     confidence: "high",
     thesis:
-      "Generative systems make style reproducible while making meaning easier to lose. The durable enterprise response is brand memory: a governed, queryable history of decisions, source material, audience commitments, exclusions, rights, outcomes, and unresolved tensions that both people and machines can use without collapsing the brand into a visual average.",
+      "Generative systems make style reproducible while making meaning easier to lose. The durable enterprise response is brand memory: a governed, queryable record of decisions, source material, audience commitments, exclusions, rights, outcomes, and unresolved tensions that both people and machines can use without collapsing the brand into a visual average.",
     signals2026: [
       "Creator advertising is becoming a core media channel while buyers report continuing difficulty selecting partners and proving outcomes. The signal is not simply that creators are growing; it is that brand meaning now travels through many independent voices and operating contexts.",
       "Digital advertising continues to concentrate around measurable performance channels. Meanwhile, the FTC has documented the breadth of behavioral and inferred data available to systems that tailor commercial treatment. Optimization can therefore become extraordinarily specific while remaining strategically empty or socially corrosive.",
       "Current brand repositories usually preserve approved outputs but omit the arguments, exceptions, source rights, audience reactions, and cultural context that made those outputs appropriate. Models trained or retrieved against this residue learn surfaces without reasons.",
     ],
     scenario2035: [
-      "Every serious brand maintains a memory plane alongside its asset estate. A campaign agent can retrieve the origin of a phrase, understand where a symbol is welcome or harmful, see which promises have already been made to a community, and identify whether a proposed variation extends a living pattern or merely resembles old work.",
+      "Every serious brand maintains a memory plane alongside its asset estate. A campaign agent can retrieve the origin of a phrase, understand where a symbol is welcome or harmful, see which promises have already been made to a community, and identify whether a proposed variation extends a living pattern or merely resembles earlier work.",
       "Brand memory is federated. Creators retain attribution and negotiated permissions; regions can preserve local interpretation; product teams contribute observed customer language; legal teams attach constraints without rewriting the cultural record. The system shows disagreement rather than forcing a false single truth.",
       "The CMO reads memory health as an executive instrument. Warning signs include narrowing reference diversity, unexplained tonal drift, repeated extraction from the same communities, declining creator reciprocity, and campaigns that optimize response while weakening long-term recognition.",
     ],
@@ -314,7 +314,7 @@ export const horizon2035Scenarios = [
     slug: "provenance-is-the-new-publishing-layer",
     number: 3,
     title: "Provenance Is the New Publishing Layer",
-    dek: "By 2035, a media file without inspectable history will feel as operationally incomplete as a page without a URL.",
+    dek: "By 2035, a media file without inspectable lineage will feel as operationally incomplete as a page without a URL.",
     audiences: ["Media Operators", "Technical Leaders", "Creative Directors"],
     horizon: 2035,
     confidence: "high",
@@ -323,10 +323,10 @@ export const horizon2035Scenarios = [
     signals2026: [
       "C2PA 2.2 specifies signed manifests, content bindings, ingredients, actions, and trust mechanisms across common media formats. Its own guidance carefully limits the claim: valid provenance indicates that assertions are bound and untampered, not that the depicted event is true.",
       "The EU AI Act establishes disclosure duties for defined classes of generated or manipulated media while recognizing artistic and editorial contexts. The U.S. Copyright Office separately emphasizes identifiable human expression and warns about unauthorized digital replicas. Together these are signals that origin and responsibility are becoming part of media operations.",
-      "Many current workflows still strip metadata at export, sever derivatives from sources, and ask a final publisher to reconstruct history after dozens of transformations. That architecture cannot scale to abundant synthetic and hybrid media.",
+      "Many current workflows still strip metadata at export, sever derivatives from sources, and ask a final publisher to reconstruct lineage after dozens of transformations. That architecture cannot scale to abundant synthetic and hybrid media.",
     ],
     scenario2035: [
-      "Capture devices, creative tools, models, review systems, and distribution platforms contribute to a chain of signed assertions. A viewer can inspect a useful summary; a newsroom can validate a deeper chain; a rights holder can locate transformations; an archive can preserve the package for later interpretation.",
+      "Capture devices, creative tools, models, review systems, and distribution platforms contribute to a chain of signed assertions. A viewer can inspect a useful summary; a newsroom can validate a deeper chain; a rights holder can locate transformations; a governed collection can preserve the package for later interpretation.",
       "Provenance becomes compositional. Directors choose which process details improve the audience’s understanding, artists can disclose synthetic intervention without flattening the experience into a warning label, and documentary teams can protect sensitive sources while still establishing institutional accountability.",
       "The absence of credentials remains possible and sometimes necessary. Rather than treating unsigned work as automatically false, systems communicate what is known, unknown, redacted, broken, or unverifiable. Trust design becomes an editorial discipline of calibrated claims.",
     ],
@@ -402,7 +402,7 @@ export const horizon2035Scenarios = [
     signals2026: [
       "IAB research places U.S. creator advertising at a projected $37 billion in 2025 and reports that nearly half of surveyed buyers consider creators a must-buy channel. Yet buyers still identify partner selection, measurement, and fragmented operations as central problems.",
       "UN Trade and Development reports expanding creative-services trade and lower distribution barriers alongside uneven national participation and platform concentration. UNESCO’s AI and culture work warns that scale can marginalize independent artists and cultural diversity without transparency, accountability, access, and alternative economic models.",
-      "Generative tools can give a small group broad production reach, but distribution dependence, rights ambiguity, weak archives, and platform-mediated customer access can leave that group less sovereign despite producing more.",
+      "Generative tools can give a small group broad production reach, but distribution dependence, rights ambiguity, weak collection practices, and platform-mediated customer access can leave that group less sovereign despite producing more.",
     ],
     scenario2035: [
       "A sovereign microstudio owns a compact canon of worlds, characters, methods, performances, and audience commitments. It uses rented frontier compute when required, local models for sensitive continuity, and federated specialists for live action, craft, scholarship, and regional interpretation.",
@@ -477,7 +477,7 @@ export const horizon2035Scenarios = [
     horizon: 2035,
     confidence: "high",
     thesis:
-      "Digital replicas will force identity permissions out of contract archives and into production systems. Responsible studios will treat voice, face, movement, style claims, and biographical identity as scoped, time-bound capabilities whose use can be inspected, compensated, renewed, challenged, and revoked.",
+      "Digital replicas will force identity permissions out of contract records and into production systems. Responsible studios will treat voice, face, movement, style claims, and biographical identity as scoped, time-bound capabilities whose use can be inspected, compensated, renewed, challenged, and revoked.",
     signals2026: [
       "The U.S. Copyright Office’s digital-replica report identifies gaps in the existing patchwork of protections and recommends a federal right for all individuals against knowing distribution of unauthorized replicas. The issue extends beyond famous performers.",
       "The EU AI Act requires disclosure for defined deep-fake uses while providing context-sensitive treatment for evidently artistic, fictional, satirical, and analogous works. C2PA supplies technical building blocks for recording assertions and transformations, but it does not decide whether consent was valid or a use was fair.",
@@ -494,7 +494,7 @@ export const horizon2035Scenarios = [
       "Studios need an identity incident practice for unauthorized use, credential compromise, contested similarity, model leakage, and removal across derivative chains.",
     ],
     movesToMakeNow: [
-      "Stop using perpetual, all-media synthetic-reuse language as a default. Separate capture, training, generation, transformation, distribution, and archival permissions.",
+      "Stop using perpetual, all-media synthetic-reuse language as a default. Separate capture, training, generation, transformation, distribution, and preservation permissions.",
       "Create a rights object that production tools can query while preserving the controlling human-readable agreement and a named escalation owner.",
       "Attach identity and transformation records to test assets, then verify that restrictions survive editing, transcoding, localization, and third-party delivery.",
       "Establish compensation and review rules before capturing material capable of generating a replica, including for employees and non-celebrity participants.",
@@ -528,7 +528,7 @@ export const horizon2035Scenarios = [
     strategicImplications: [
       "Cloud-only and local-only doctrines both become liabilities. A portable workload and evaluation layer creates negotiating power and continuity.",
       "Sustainability claims must connect to measured workloads and energy sources rather than generic model labels. Efficiency per inference can coexist with rapidly increasing aggregate use.",
-      "Creative and infrastructure planning should converge early. A spatial live work, private archive model, and global localization pipeline have fundamentally different compute geometries.",
+      "Creative and infrastructure planning should converge early. A spatial live work, private source-library model, and global localization pipeline have fundamentally different compute geometries.",
     ],
     movesToMakeNow: [
       "Classify workflows by sensitivity, latency, quality threshold, availability, volume, and energy tolerance before selecting a provider or model.",
@@ -576,7 +576,7 @@ export const horizon2035Scenarios = [
       "Prototype one story as a screen, audio-only, and room-scale edition; test whether each preserves agency, comprehension, and emotional sequence.",
       "Create a spatial privacy map listing sensed data, bystanders, retention, local processing, visible indicators, and the consequence of refusing permission.",
       "Develop a comfort and accessibility review with disabled participants before choosing interaction primitives or camera movement.",
-      "Use open web formats and graceful fallbacks where possible; archive the scene, assets, behavior, and documentation separately from a headset vendor runtime.",
+      "Use open web formats and graceful fallbacks where possible; preserve the scene, assets, behavior, and documentation separately from a headset vendor runtime.",
     ],
     uncertainties: [
       "Head-worn adoption may remain episodic, platform-specific, or concentrated in work and entertainment niches. Ambient audio, projection, vehicles, and handheld devices may carry more spatial storytelling than glasses.",
@@ -627,10 +627,10 @@ export const horizon2035Scenarios = [
     citations: [disabilityInclusion, wcag22, nistGenAi, itu2025],
   },
   {
-    slug: "the-archive-starts-making-decisions",
+    slug: "the-media-library-starts-making-decisions",
     number: 11,
-    title: "The Archive Starts Making Decisions",
-    dek: "In 2035, the archive is no longer where campaigns go to sleep. It is where the institution remembers enough to act without repeating itself.",
+    title: "The Media Library Starts Making Decisions",
+    dek: "In 2035, the media library is no longer where campaigns go to sleep. It is where the institution remembers enough to act without repeating itself.",
     audiences: [
       "Media Operators",
       "Creative Directors",
@@ -640,26 +640,26 @@ export const horizon2035Scenarios = [
     horizon: 2035,
     confidence: "high",
     thesis:
-      "Media archives will evolve into governed intelligence estates that can retrieve precedent, expose rights, assemble source material, identify repetition, and support new creation. Their value will depend less on model novelty than on preservation, description, relationships, permissions, and the editorial authority to decide what should remain dormant.",
+      "Media libraries will evolve into governed intelligence estates that can retrieve precedent, expose rights, assemble source material, identify repetition, and support new creation. Their value will depend less on model novelty than on preservation, description, relationships, permissions, and the editorial authority to decide what should remain dormant.",
     signals2026: [
       "The Library of Congress frames digital stewardship across collection, preservation, access, and responsible experimentation with AI. Its preservation guidance is explicit that authentic bit-level copies are foundational but insufficient for future usability when formats, software, hardware, or rights become unavailable.",
-      "C2PA provides a structure for carrying ingredients and edit history with assets. Copyright guidance emphasizes the human expressive contribution within AI-assisted work. Together, these signals favor archives that preserve relationships and authorship rather than only final renditions.",
+      "C2PA provides a structure for carrying ingredients and edit lineage with assets. Copyright guidance emphasizes the human expressive contribution within AI-assisted work. Together, these signals favor media libraries that preserve relationships and authorship rather than only final renditions.",
       "Most commercial asset libraries still optimize filename search and campaign folders. They rarely preserve why an image was rejected, whether a performance may be synthesized, which source claim was later corrected, or what audience context made a reuse harmful.",
     ],
     scenario2035: [
-      "An archive answers institutional questions. It can surface every prior promise to a community, distinguish original capture from generated extension, show the rights remaining on a performance, and explain why a familiar visual motif was retired.",
-      "Models operate as temporary interpreters over preserved sources rather than becoming the archive itself. Curators can replace an embedding model, challenge a generated relationship, restrict sensitive collections, and reproduce the evidence behind a recommendation.",
-      "The archive participates in creation through bounded agents: locating underused work, proposing historically grounded combinations, warning about repetition, and preparing rights-ready source packets. Publication remains a new editorial act, not an automatic consequence of retrieval.",
+      "A media library answers institutional questions. It can surface every existing promise to a community, distinguish original capture from generated extension, show the rights remaining on a performance, and explain why a familiar visual motif was retired.",
+      "Models operate as temporary interpreters over preserved sources rather than becoming the media library itself. Curators can replace an embedding model, challenge a generated relationship, restrict sensitive collections, and reproduce the evidence behind a recommendation.",
+      "The media library participates in creation through bounded agents: locating underused work, proposing combinations grounded in documented context, warning about repetition, and preparing rights-ready source packets. Publication remains a new editorial act, not an automatic consequence of retrieval.",
     ],
     strategicImplications: [
-      "Preservation, rights, metadata, and creative operations become one investment case. Without source integrity and permissions, an AI-ready archive is merely a faster ambiguity engine.",
-      "Archives should retain significant refusals, corrections, and context—not every machine-generated intermediate. Selection policy is essential because infinite retention can increase risk while obscuring memory.",
-      "Long-lived brands can turn decades of work into strategic differentiation if they preserve the conditions of use and invite reinterpretation rather than mining the past for superficial resemblance.",
+      "Preservation, rights, metadata, and creative operations become one investment case. Without source integrity and permissions, an AI-ready media library is merely a faster ambiguity engine.",
+      "Media libraries should retain significant refusals, corrections, and context—not every machine-generated intermediate. Selection policy is essential because infinite retention can increase risk while obscuring memory.",
+      "Brands with deep bodies of work can build strategic differentiation when they preserve the conditions of use and invite reinterpretation rather than chasing superficial resemblance.",
     ],
     movesToMakeNow: [
       "Select one high-value collection and reconcile originals, derivatives, rights, contributors, dates, decisions, and known gaps before adding generative retrieval.",
       "Preserve fixity-checked originals, open or documented derivatives, technical metadata, and the software or instructions needed to render significant work.",
-      "Separate source evidence from generated descriptions and inferred relationships; store confidence, model, date, reviewer, and correction history for each inference.",
+      "Separate source evidence from generated descriptions and inferred relationships; store confidence, model, date, reviewer, and correction record for each inference.",
       "Define collections that must not train models, must not leave a controlled environment, require cultural authority, or expire from operational access.",
     ],
     uncertainties: [
