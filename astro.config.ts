@@ -10,5 +10,5 @@ export default defineConfig({
   image: {
     responsiveStyles: true,
   },
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !page.includes('/thanks/') })],
 });

@@ -2,19 +2,24 @@
 import { Picture } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { horizon2035Scenarios } from '../../data/horizon2035';
+import HomeMarketSignals from '../../components/home/HomeMarketSignals.astro';
+import HomeFutureMandate from '../../components/home/HomeFutureMandate.astro';
 import archiveCathedral from '../../assets/editorial/archive-cathedral-2035.avif';
 ---
 <BaseLayout title="Horizon 2035" description="Twelve evidence-led future histories for the people directing media, brands, art, infrastructure, and culture toward 2035.">
   <header class="horizon-index-hero">
-    <Picture src={archiveCathedral} alt="A vast imagined media archive, illuminated like a cathedral in 2035." formats={[]} fallbackFormat="avif" widths={[720,1200,1920]} sizes="100vw" loading="eager" fetchpriority="high" />
+    <Picture src={archiveCathedral} alt="A vast imagined media memory space, illuminated like a cathedral in 2035." formats={[]} fallbackFormat="avif" widths={[720,1200,1920]} sizes="100vw" loading="eager" fetchpriority="high" />
     <div class="horizon-veil"></div>
     <div class="shell horizon-index-copy">
       <p class="eyebrow">HardMagic future histories / Evidence cutoff 2026</p>
       <h1>Horizon<br /><em>2035.</em></h1>
       <p>We write from the future to make the present legible. These are sourced scenarios—not predictions—designed to help creative and technical leaders make durable moves while the medium is still becoming.</p>
-      <a class="button ghost" href="#dispatches">Enter the dispatches</a>
+      <a class="button ghost" href="horizon/#dispatches">Enter the dispatches</a>
     </div>
   </header>
+
+    <HomeMarketSignals />
+    <HomeFutureMandate />
 
   <section class="horizon-index shell section-pad" id="dispatches">
     <header>

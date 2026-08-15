@@ -11,13 +11,13 @@ const disciplines = [...new Set(caseStudies.flatMap((study) => study.disciplines
     <div class="portfolio-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="shell portfolio-hero-copy"><p class="eyebrow">Creative direction in practice</p><h1>Build the world,<br /><em>not the surface.</em></h1><p>Eight case studies across identity, media, software, learning, hospitality, and place—examined through the decisions, artifacts, and systems that shaped them.</p><a class="button ghost" href="products/">See how this practice operates now</a></div>
   </section>
-  <nav class="portfolio-filter shell" aria-label="Portfolio disciplines"><span>Explore:</span>{disciplines.map((item) => <a href={`#${item.toLowerCase().replaceAll(' ', '-')}`}>{item}</a>)}</nav>
+  <div class="portfolio-filter shell" role="region" aria-label="Portfolio disciplines" tabindex="0"><span>Explore:</span>{disciplines.map((item) => <span class="portfolio-discipline">{item}</span>)}</div>
   <section class="portfolio-grid" aria-label="Case studies">
     {caseStudies.map((study, index) => <CaseCard study={study} index={index} />)}
   </section>
   <section class="archive-doctrine shell">
     <p class="eyebrow dark">Evidence standard</p><h2>The work is shown.<br />The record stays clear.</h2>
-    <div><p>These studies document earlier work while drawing a direct line to the creative and systems capabilities HardMagic operates now. Dates, surviving evidence, limitations, and current relevance are identified inside each case.</p><p>Historical relationships do not imply current affiliation or endorsement. Third-party marks belong to their respective owners.</p></div>
+    <div><p>These studies show a continuous creative practice and the direct line into the systems HardMagic operates now. Available evidence, limitations, and present relevance are identified inside each case.</p><p>Documented relationships do not imply current affiliation or endorsement. Third-party marks belong to their respective owners.</p></div>
   </section>
   <SonicIdent />
   <VideoArchive />

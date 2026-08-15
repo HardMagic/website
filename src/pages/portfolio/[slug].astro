@@ -11,7 +11,7 @@ const currentConnections: Record<string, { label: string; href: string; statemen
   airikai: { label: 'HardMagic Studio', href: 'products/studio/', statement: 'Movement, identity, image, and learning become a directed multimodal production system.' },
   fashionx: { label: 'HardMagic Studio', href: 'products/studio/', statement: 'Art direction now moves through generation, capture, rights, variants, and delivery in one evidence-rich workflow.' },
   focuspass: { label: 'WireMark', href: 'products/wiremark/', statement: 'The same instinct for visible progress now connects live product experience, source, agents, and verification.' },
-  pedadida: { label: 'HardMagic CLI', href: 'products/cli/', statement: 'Platform-scale thinking now becomes bounded agent workflows, typed contracts, and repeatable operations.' },
+  pedadida: { label: 'HardMagic Agent (CLI)', href: 'products/cli/', statement: 'Platform-scale thinking now becomes bounded agent workflows, typed contracts, and repeatable operations.' },
   pranashama: { label: 'HardMagic Studio', href: 'products/studio/', statement: 'One editorial system can now direct image, motion, voice, product media, and channel variants together.' },
   'state-parks': { label: 'HardMagic Studio', href: 'products/studio/', statement: 'Documentary judgment now joins spatial sound, generation, provenance, and rights-aware post-production.' },
   'tao-cottage': { label: 'Web Magic', href: 'products/web-magic/', statement: 'Experience direction now extends through accessible, measurable, and verifiable public delivery.' },
@@ -24,7 +24,7 @@ const connection = currentConnections[study.slug]!;
     <header class="case-hero">
       <Picture src={study.media[0].src} alt={study.media[0].alt} formats={[]} fallbackFormat="avif" width={1600} widths={[720, 1200, 1600]} sizes="100vw" loading="eager" />
       <span class="case-hero-shade" aria-hidden="true"></span>
-      <div class="case-hero-copy shell"><p class="eyebrow">Case study · {study.era}</p><h1>{study.title}</h1><p>{study.subtitle}</p></div>
+      <div class="case-hero-copy shell"><div class="case-hero-label"><span>Case study</span><span>{study.era}</span></div><h1>{study.title}</h1><p>{study.subtitle}</p></div>
     </header>
     <div class="case-rail shell"><a href="portfolio/">← All work</a><span>{study.disciplines.join(' · ')}</span></div>
     <section class="case-opening shell"><p class="case-kicker">The project</p><h2>{study.opening}</h2></section>
@@ -41,7 +41,7 @@ const connection = currentConnections[study.slug]!;
       <ol>{study.survives.map((item, index) => <li><span>0{index + 1}</span>{item}</li>)}</ol>
     </section>
     <section class="case-now"><div class="shell"><p class="eyebrow">Where this capability lives now</p><h2>{study.now}</h2><p><a class="button ghost" href={connection.href}>{connection.label}</a></p><p>{connection.statement}</p></div></section>
-    <aside class="archive-caveat shell"><strong>Historical record and limitations</strong><p>{study.caveat}</p></aside>
+    <aside class="archive-caveat shell"><strong>Evidence and limitations</strong><p>{study.caveat}</p></aside>
     <a class="next-case" href={`portfolio/${next.slug}/`}><span>Next case study</span><strong>{next.title}</strong><span aria-hidden="true">↗</span></a>
   </article>
 </BaseLayout>

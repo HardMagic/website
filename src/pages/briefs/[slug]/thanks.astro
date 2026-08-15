@@ -3,15 +3,333 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { briefs, type TechnicalBrief } from '../../../data/briefs';
 export function getStaticPaths() { return briefs.map((brief) => ({ params: { slug: brief.slug }, props: { brief } })); }
 interface Props { brief: TechnicalBrief }
-const { brief } = Astro.props;
+const { brief } = Astro.props as Props;
+
+const destinationLink = (destination: string) => {
+  const normalized = destination.toLowerCase();
+  if (normalized.includes('provenance')) return { label: 'Privacy & Provenance', href: 'products/wiremark/privacy-provenance/' };
+  if (normalized.includes('gpu') || normalized.includes('infrastructure')) return { label: 'GPU Router', href: 'products/gpu-router/' };
+  if (normalized.includes('wiremark') || normalized.includes('product evaluation')) return { label: 'WireMark', href: 'products/wiremark/' };
+  if (normalized.includes('web magic') || normalized.includes('publishing')) return { label: 'Web Magic', href: 'products/web-magic/' };
+  if (normalized.includes('genai')) return { label: 'GenAI Strategy', href: 'services/genai-strategy/' };
+  if (normalized.includes('creative direction')) return { label: 'Creative Direction', href: 'services/creative-direction/' };
+  if (normalized.includes('marketing')) return { label: 'Marketing Consulting', href: 'services/marketing-consulting/' };
+  if (normalized.includes('studio') || normalized.includes('production')) return { label: 'HardMagic Studio', href: 'products/studio/' };
+  if (normalized.includes('media') || normalized.includes('photo curator') || normalized.includes('asset')) return { label: 'Media Management', href: 'services/media-management/' };
+  if (normalized.includes('executive') || normalized.includes('principal') || normalized.includes('advisory') || normalized.includes('risk') || normalized.includes('transformation')) return { label: 'Executive Advisory', href: 'services/executive-advisory/' };
+  return { label: destination, href: 'contact/' };
+};
+
+const deliveryFollowup = brief.followups.find((followup) => followup.timing === 'delivery');
+const continuationFollowup = brief.followups.find((followup) => followup.timing === 'day-21') ?? brief.followups[brief.followups.length - 1];
+const primaryDestination = destinationLink(brief.routing.primaryDestination);
+const relatedDestinations = brief.routing.secondaryRoutes
+  .map((route) => ({ ...route, link: destinationLink(route.destination) }))
+  .filter((route, index, routes) => route.link.href !== primaryDestination.href && routes.findIndex((candidate) => candidate.link.href === route.link.href) === index)
+  .slice(0, 3);
 ---
-<BaseLayout title="Request confirmed" description={`Your request for ${brief.title} has been received.`}>
-  <section class="confirmation shell">
-    <p class="eyebrow dark">Request received / private delivery</p>
-    <span class="confirmation-mark">✓</span>
-    <h1>Check your work email.</h1>
-    <p>We received your request for <b>{brief.title}</b>. If the address is deliverable, a time-limited private link will arrive after automated validation. The PDF itself is not hosted on this public website.</p>
-    <ol><li><span>01</span>Open the message from HardMagic Briefs.</li><li><span>02</span>Use the private link before it expires.</li><li><span>03</span>Reply directly if the decision deserves a working session.</li></ol>
-    <a class="button dark-button" href={`../`}>Return to the public summary</a>
+<BaseLayout title="Request follow-up" description={`What happens after a request for ${brief.title}.`} noindex>
+  <section class="confirmation brief-confirmation">
+    <div class="shell">
+      <p class="eyebrow dark">After a BriefLock request</p>
+      <span class="confirmation-mark" aria-hidden="true">↗</span>
+      <h1>Check your work email.<br /><em>Then keep the decision moving.</em></h1>
+      <p class="confirmation-lede">If you just submitted the form, BriefLock is processing your request for <b>{brief.title}</b>.</p>
+      <p class="delivery-caveat"><strong>Delivery caveat.</strong> Reaching this public page does not itself confirm receipt or delivery. If the address is deliverable and passes automated validation, BriefLock may send a time-limited private link. It does not confirm that an email was sent, accepted, delivered, or opened; the PDF itself is not hosted on this public website. The current qualification policy excludes selected public mailbox providers, including Gmail, Yahoo, Hotmail, and Outlook.com.</p>
+
+      <div class="confirmation-reading-grid">
+        <ol class="confirmation-steps" aria-label="What to do next">
+          <li><span>01</span><div><strong>Check the company inbox.</strong><p>Look for a message from HardMagic Briefs, including filtered or quarantine folders.</p></div></li>
+          <li><span>02</span><div><strong>Use the private link before it expires.</strong><p>Save the edition to your approved workspace rather than forwarding the link.</p></div></li>
+          <li><span>03</span><div><strong>Reply with the decision it surfaced.</strong><p>A direct reply is enough if the brief points toward a working session.</p></div></li>
+        </ol>
+
+        <aside class="confirmation-question" aria-labelledby="confirmation-question-title">
+          <p class="eyebrow dark">A useful first reply</p>
+          <h2 id="confirmation-question-title">{deliveryFollowup?.message ?? 'Which part of this decision is least owned today?'}</h2>
+          <p>{deliveryFollowup?.purpose ?? 'Name the immediate operating question before choosing a larger program.'}</p>
+          <p class="quiet">No additional form is required to continue the conversation.</p>
+        </aside>
+      </div>
+
+      <nav class="confirmation-next" aria-labelledby="confirmation-next-title">
+        <div>
+          <p class="eyebrow dark">Relevant next steps</p>
+          <h2 id="confirmation-next-title">One brief can open<br /><em>several useful paths.</em></h2>
+          {continuationFollowup && <p class="continuation-note">{continuationFollowup.message} <span>{continuationFollowup.action}</span></p>}
+        </div>
+        <div class="confirmation-links">
+          <a class="button" href="contact/">Bring this to a working session <b>↗</b></a>
+          <a class="confirmation-link" href={primaryDestination.href}><strong>Explore {primaryDestination.label}</strong><span>{brief.routing.primaryDestination} <b>↗</b></span></a>
+          {relatedDestinations.map((route) => <a class="confirmation-link" href={route.link.href}><strong>{route.link.label}</strong><span>{route.when[0]} <b>↗</b></span></a>)}
+          <a class="confirmation-link" href="briefs/"><strong>Compare the eight briefs</strong><span>Return to the decision library <b>↗</b></span></a>
+        </div>
+      </nav>
+
+      <a class="confirmation-summary-link" href={`briefs/${brief.slug}/`}>Return to the public summary <b>↗</b></a>
+    </div>
   </section>
 </BaseLayout>
+
+<style>
+  .brief-confirmation {
+    position: relative;
+    overflow: hidden;
+    padding-top: clamp(150px, 15vw, 220px);
+    padding-bottom: clamp(90px, 12vw, 170px);
+    background:
+      radial-gradient(circle at 88% 12%, rgba(217, 50, 94, .2), transparent 24rem),
+      linear-gradient(135deg, var(--abyss), var(--night) 62%, #260713);
+  }
+
+  .brief-confirmation .confirmation-mark {
+    margin: 0 0 36px;
+    background: var(--signal);
+    box-shadow: 0 0 0 10px rgba(217, 50, 94, .14), var(--glow);
+  }
+
+  .brief-confirmation h1 {
+    max-width: 1120px;
+    margin: 0 0 30px;
+    font-size: clamp(3.6rem, 8vw, 8.6rem);
+    line-height: .87;
+  }
+
+  .brief-confirmation h1 em,
+  .confirmation-next h2 em {
+    color: var(--signal);
+    font-style: italic;
+  }
+
+  .brief-confirmation .confirmation-lede {
+    max-width: 760px;
+    margin: 0;
+    color: var(--moon);
+    font-size: clamp(1.1rem, 1.7vw, 1.42rem);
+  }
+
+  .delivery-caveat {
+    max-width: 850px;
+    margin: 28px 0 0;
+    padding: 18px 20px;
+    border-left: 3px solid var(--signal);
+    background: rgba(22, 16, 20, .78);
+    color: var(--moon);
+    font-size: .88rem;
+    line-height: 1.55;
+  }
+
+  .delivery-caveat strong {
+    color: var(--bone);
+  }
+
+  .confirmation-reading-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+    gap: clamp(36px, 9vw, 140px);
+    margin-top: clamp(64px, 9vw, 130px);
+  }
+
+  .brief-confirmation .confirmation-steps {
+    max-width: none;
+    margin: 0;
+    border-top-color: rgba(242, 233, 223, .2);
+  }
+
+  .brief-confirmation .confirmation-steps li {
+    grid-template-columns: 52px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom-color: rgba(242, 233, 223, .2);
+  }
+
+  .brief-confirmation .confirmation-steps li > span {
+    color: var(--signal);
+    font-size: .67rem;
+    font-weight: 800;
+  }
+
+  .confirmation-steps strong {
+    color: var(--bone);
+  }
+
+  .confirmation-steps p {
+    margin: 5px 0 0;
+    color: var(--moon);
+    font-size: .9rem;
+  }
+
+  .confirmation-question {
+    align-self: start;
+    padding: clamp(24px, 4vw, 44px);
+    border: 1px solid rgba(242, 233, 223, .2);
+    background: var(--night-raised);
+  }
+
+  .confirmation-question .eyebrow {
+    margin-bottom: 28px;
+  }
+
+  .confirmation-question h2 {
+    margin: 0 0 24px;
+    color: var(--bone);
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3.6rem);
+    font-weight: 400;
+    line-height: .95;
+  }
+
+  .confirmation-question > p:not(.eyebrow):not(.quiet) {
+    color: var(--moon);
+  }
+
+  .confirmation-question .quiet {
+    margin: 26px 0 0;
+    color: var(--mist);
+    font-size: .76rem;
+  }
+
+  .confirmation-next {
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(280px, 1.15fr);
+    gap: clamp(36px, 9vw, 140px);
+    margin-top: clamp(90px, 12vw, 180px);
+    padding-top: clamp(44px, 6vw, 76px);
+    border-top: 1px solid rgba(242, 233, 223, .2);
+  }
+
+  .confirmation-next h2 {
+    margin: 0;
+    color: var(--bone);
+    font-size: clamp(2.9rem, 5vw, 5.5rem);
+    line-height: .9;
+  }
+
+  .continuation-note {
+    max-width: 40ch;
+    margin: 30px 0 0;
+    color: var(--moon);
+    font-size: .9rem;
+  }
+
+  .continuation-note span {
+    display: block;
+    margin-top: 8px;
+    color: var(--mist);
+    font-size: .75rem;
+  }
+
+  .confirmation-links {
+    display: grid;
+    gap: 1px;
+    align-content: start;
+    background: rgba(242, 233, 223, .2);
+  }
+
+  .confirmation-links .button,
+  .confirmation-link {
+    min-width: 0;
+    background: var(--night-raised);
+  }
+
+  .confirmation-links .button {
+    justify-content: space-between;
+    padding: 18px 22px;
+    text-align: left;
+  }
+
+  .confirmation-links .button b {
+    margin-left: 20px;
+    font-size: 1rem;
+  }
+
+  .confirmation-link {
+    display: grid;
+    gap: 6px;
+    padding: 20px 22px;
+    color: var(--bone);
+    text-decoration: none;
+  }
+
+  .confirmation-link:hover,
+  .confirmation-link:focus-visible {
+    background: var(--blood);
+  }
+
+  .confirmation-link strong {
+    font-size: .9rem;
+  }
+
+  .confirmation-link span {
+    color: var(--mist);
+    font-size: .72rem;
+  }
+
+  .confirmation-link span b {
+    color: var(--signal);
+    font-size: .95rem;
+  }
+
+  .confirmation-summary-link {
+    display: inline-block;
+    margin-top: 52px;
+    color: var(--moon);
+    font-size: .71rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .confirmation-summary-link b {
+    color: var(--signal);
+    font-size: 1rem;
+  }
+
+  :is(a, button, input, select, textarea, summary):focus-visible {
+    outline: 3px solid #ff7b9f;
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .confirmation-reading-grid,
+    .confirmation-next {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .brief-confirmation {
+      padding-top: 132px;
+    }
+
+    .brief-confirmation h1 {
+      font-size: clamp(3.3rem, 16vw, 5.4rem);
+    }
+
+    .brief-confirmation .confirmation-steps li {
+      grid-template-columns: 38px 1fr;
+    }
+
+    .confirmation-links .button {
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .brief-confirmation * {
+      scroll-behavior: auto;
+      transition-duration: .01ms !important;
+      animation-duration: .01ms !important;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .confirmation-question,
+    .confirmation-links,
+    .confirmation-link,
+    .delivery-caveat {
+      border: 1px solid CanvasText;
+    }
+  }
+</style>

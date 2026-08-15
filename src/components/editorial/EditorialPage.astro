@@ -3,7 +3,7 @@ import { Picture } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import EditorialVisual from './EditorialVisual.astro';
 import MysticalInterlude from '../atmosphere/MysticalInterlude.astro';
-import type { EditorialRoute } from '../../data/editorial';
+import type { EditorialFamily, EditorialRoute } from '../../data/editorial';
 import generativeOperations from '../../assets/editorial/generative-operations-4k.avif';
 import creativeDirection from '../../assets/editorial/creative-direction.png';
 import hybridInfrastructure from '../../assets/editorial/hybrid-infrastructure.png';
@@ -14,6 +14,146 @@ import audienceDreamfield from '../../assets/editorial/audience-dreamfield-2035-
 
 interface Props { page: EditorialRoute }
 const { page } = Astro.props;
+
+interface RouteCtaPaths {
+  ready: string;
+  early: string;
+}
+
+const familyCtaPaths: Record<EditorialFamily, RouteCtaPaths> = {
+  'front-door': { ready: '/contact/', early: '/portfolio/' },
+  product: { ready: '/contact/', early: '/briefs/generative-media-operating-system/' },
+  service: { ready: '/contact/', early: '/methods/' },
+  engagement: { ready: '/contact/', early: '/methods/' },
+  industry: { ready: '/contact/', early: '/briefs/generative-media-operating-system/' },
+  method: { ready: '/engagements/transformation-sprint/', early: '/insights/' },
+  insight: { ready: '/contact/', early: '/methods/' },
+  brief: { ready: '/briefs/', early: '/insights/' },
+  'brief-confirmation': { ready: '/contact/', early: '/insights/' },
+  company: { ready: '/contact/', early: '/insights/25-years-from-brand-studio-to-ai-company/' },
+  contact: { ready: '/contact/#intake', early: '/insights/' },
+  trust: { ready: '/contact/', early: '/responsible-ai/' },
+};
+
+const routeCtaOverrides: Record<string, Partial<RouteCtaPaths>> = {
+  '/insights/': { ready: '/contact/', early: '/methods/' },
+  '/services/': { ready: '/contact/', early: '/methods/' },
+  '/engagements/': { ready: '/contact/', early: '/methods/' },
+  '/industries/': { ready: '/contact/', early: '/briefs/generative-media-operating-system/' },
+  '/methods/': { ready: '/engagements/', early: '/insights/' },
+
+  '/products/wiremark/': { ready: '/contact/', early: '/briefs/visual-product-development-field-guide/' },
+  '/products/wiremark/canvas/': { ready: '/contact/', early: '/insights/the-running-product-is-the-brief/' },
+  '/products/wiremark/source-intelligence/': { ready: '/contact/', early: '/insights/the-running-product-is-the-brief/' },
+  '/products/wiremark/agent-handoff/': { ready: '/contact/genai/', early: '/methods/human-agent-creative-loop/' },
+  '/products/wiremark/privacy-provenance/': { ready: '/contact/', early: '/insights/provenance-without-killing-creative-flow/' },
+  '/products/studio/': { ready: '/contact/genai/', early: '/briefs/generative-media-operating-system/' },
+  '/products/studio/image/': { ready: '/contact/genai/', early: '/insights/creative-direction-after-model-abundance/' },
+  '/products/studio/video/': { ready: '/contact/genai/', early: '/insights/from-prompting-to-production-systems/' },
+  '/products/studio/audio/': { ready: '/contact/genai/', early: '/methods/human-agent-creative-loop/' },
+  '/products/studio/hybrid-inference/': { ready: '/contact/genai/', early: '/briefs/hybrid-ai-media-infrastructure/' },
+  '/products/cli/': { ready: '/contact/genai/', early: '/methods/human-agent-creative-loop/' },
+  '/products/cli/quickstart/': { ready: '/contact/genai/', early: '/briefs/autonomous-web-publishing-control-plane/' },
+  '/products/cli/automation/': { ready: '/contact/genai/', early: '/methods/evidence-loop/' },
+  '/products/cli/agent-skills/': { ready: '/contact/genai/', early: '/methods/human-agent-creative-loop/' },
+  '/products/cli/security/': { ready: '/contact/genai/', early: '/briefs/autonomous-web-publishing-control-plane/' },
+  '/products/web-magic/': { ready: '/contact/', early: '/insights/static-websites-as-durable-media/' },
+  '/products/web-magic/accessibility/': { ready: '/contact/', early: '/methods/accessibility-as-editorial/' },
+  '/products/web-magic/performance/': { ready: '/contact/', early: '/insights/static-websites-as-durable-media/' },
+  '/products/web-magic/seo/': { ready: '/contact/', early: '/insights/static-websites-as-durable-media/' },
+  '/products/web-magic/delivery/': { ready: '/contact/', early: '/methods/evidence-loop/' },
+  '/products/photo-curator/': { ready: '/contact/media-management/', early: '/briefs/intelligent-media-asset-estate/' },
+  '/products/photo-curator/review/': { ready: '/contact/media-management/', early: '/methods/collection-to-intelligence/' },
+  '/products/photo-curator/duplicates/': { ready: '/contact/media-management/', early: '/methods/collection-to-intelligence/' },
+  '/products/photo-curator/metadata/': { ready: '/contact/media-management/', early: '/insights/provenance-without-killing-creative-flow/' },
+  '/products/photo-curator/connectors/': { ready: '/contact/media-management/', early: '/methods/collection-to-intelligence/' },
+  '/products/gpu-router/': { ready: '/contact/genai/', early: '/briefs/hybrid-ai-media-infrastructure/' },
+  '/products/gpu-router/architecture/': { ready: '/contact/genai/', early: '/methods/hybrid-inference/' },
+  '/products/gpu-router/routing/': { ready: '/contact/genai/', early: '/methods/hybrid-inference/' },
+  '/products/gpu-router/observability/': { ready: '/contact/genai/', early: '/insights/provenance-without-killing-creative-flow/' },
+  '/products/gpu-router/benchmarks/': { ready: '/contact/genai/', early: '/briefs/hybrid-ai-media-infrastructure/' },
+
+  '/services/creative-direction/': { ready: '/contact/creative-direction/', early: '/briefs/creative-direction-after-the-prompt/' },
+  '/services/genai-strategy/': { ready: '/contact/genai/', early: '/briefs/generative-media-operating-system/' },
+  '/services/media-management/': { ready: '/contact/media-management/', early: '/briefs/intelligent-media-asset-estate/' },
+  '/services/marketing-consulting/': { ready: '/contact/marketing-consulting/', early: '/insights/marketing-operations-for-small-expert-teams/' },
+  '/services/brand-systems/': { ready: '/engagements/fractional-creative-office/', early: '/methods/brand-memory/' },
+  '/services/creative-technology/': { ready: '/engagements/transformation-sprint/', early: '/products/' },
+  '/services/content-operations/': { ready: '/engagements/managed-media-desk/', early: '/methods/evidence-loop/' },
+  '/services/campaign-production/': { ready: '/engagements/product-launch-room/', early: '/products/studio/' },
+  '/services/web-experience/': { ready: '/contact/', early: '/insights/static-websites-as-durable-media/' },
+  '/services/executive-advisory/': { ready: '/contact/', early: '/methods/intent-to-system/' },
+
+  '/engagements/transformation-sprint/': { ready: '/contact/', early: '/methods/30-60-90-activation/' },
+  '/engagements/fractional-creative-office/': { ready: '/contact/creative-direction/', early: '/insights/creative-direction-after-model-abundance/' },
+  '/engagements/genai-lab/': { ready: '/contact/genai/', early: '/briefs/generative-media-operating-system/' },
+  '/engagements/managed-media-desk/': { ready: '/contact/media-management/', early: '/briefs/intelligent-media-asset-estate/' },
+  '/engagements/product-launch-room/': { ready: '/contact/', early: '/products/studio/' },
+
+  '/industries/media-entertainment/': { ready: '/contact/media-management/', early: '/products/studio/' },
+  '/industries/consumer-brands/': { ready: '/contact/marketing-consulting/', early: '/methods/brand-memory/' },
+  '/industries/sports-wellness/': { ready: '/contact/creative-direction/', early: '/insights/creative-direction-after-model-abundance/' },
+  '/industries/agencies/': { ready: '/engagements/genai-lab/', early: '/briefs/generative-media-operating-system/' },
+  '/industries/software-platforms/': { ready: '/engagements/product-launch-room/', early: '/products/wiremark/' },
+  '/industries/retail-commerce/': { ready: '/contact/media-management/', early: '/products/photo-curator/' },
+  '/industries/education-culture/': { ready: '/contact/genai/', early: '/insights/provenance-without-killing-creative-flow/' },
+  '/industries/founder-led-companies/': { ready: '/contact/marketing-consulting/', early: '/insights/marketing-operations-for-small-expert-teams/' },
+
+  '/methods/intent-to-system/': { ready: '/engagements/transformation-sprint/', early: '/briefs/generative-media-operating-system/' },
+  '/methods/evidence-loop/': { ready: '/engagements/transformation-sprint/', early: '/products/web-magic/delivery/' },
+  '/methods/hybrid-inference/': { ready: '/contact/genai/', early: '/briefs/hybrid-ai-media-infrastructure/' },
+  '/methods/collection-to-intelligence/': { ready: '/contact/media-management/', early: '/briefs/intelligent-media-asset-estate/' },
+  '/methods/accessibility-as-editorial/': { ready: '/contact/', early: '/products/web-magic/accessibility/' },
+  '/methods/human-agent-creative-loop/': { ready: '/contact/genai/', early: '/products/cli/agent-skills/' },
+  '/methods/brand-memory/': { ready: '/services/brand-systems/', early: '/insights/brand-memory-in-generative-systems/' },
+  '/methods/30-60-90-activation/': { ready: '/engagements/genai-lab/', early: '/briefs/generative-media-operating-system/' },
+
+  '/insights/creative-direction-after-model-abundance/': { ready: '/contact/creative-direction/', early: '/briefs/creative-direction-after-the-prompt/' },
+  '/insights/the-running-product-is-the-brief/': { ready: '/contact/', early: '/products/wiremark/' },
+  '/insights/from-prompting-to-production-systems/': { ready: '/contact/genai/', early: '/briefs/provenance-ready-content-supply-chain/' },
+  '/insights/hybrid-inference-is-a-governance-decision/': { ready: '/contact/genai/', early: '/methods/hybrid-inference/' },
+  '/insights/why-media-collections-lose-their-value/': { ready: '/contact/media-management/', early: '/briefs/intelligent-media-asset-estate/' },
+  '/insights/accessibility-is-art-direction/': { ready: '/contact/', early: '/methods/accessibility-as-editorial/' },
+  '/insights/the-case-for-agent-readable-creative-operations/': { ready: '/contact/genai/', early: '/methods/human-agent-creative-loop/' },
+  '/insights/brand-memory-in-generative-systems/': { ready: '/services/brand-systems/', early: '/methods/brand-memory/' },
+  '/insights/what-a-modern-media-control-room-needs/': { ready: '/engagements/managed-media-desk/', early: '/products/photo-curator/' },
+  '/insights/how-to-evaluate-a-genai-pilot/': { ready: '/engagements/genai-lab/', early: '/briefs/generative-media-operating-system/' },
+  '/insights/the-cost-of-model-first-product-design/': { ready: '/contact/', early: '/products/wiremark/' },
+  '/insights/provenance-without-killing-creative-flow/': { ready: '/contact/', early: '/products/wiremark/privacy-provenance/' },
+  '/insights/static-websites-as-durable-media/': { ready: '/services/web-experience/', early: '/products/web-magic/' },
+  '/insights/marketing-operations-for-small-expert-teams/': { ready: '/contact/marketing-consulting/', early: '/methods/30-60-90-activation/' },
+  '/insights/25-years-from-brand-studio-to-ai-company/': { ready: '/contact/', early: '/products/' },
+
+  '/company/history/': { ready: '/contact/', early: '/company/' },
+  '/company/founder/': { ready: '/contact/', early: '/insights/25-years-from-brand-studio-to-ai-company/' },
+  '/company/principles/': { ready: '/contact/', early: '/methods/brand-memory/' },
+  '/company/selected-experience/': { ready: '/contact/', early: '/portfolio/' },
+  '/company/operating-model/': { ready: '/engagements/', early: '/methods/intent-to-system/' },
+  '/company/partners/': { ready: '/contact/partnerships/', early: '/company/operating-model/' },
+  '/company/careers/': { ready: '/contact/', early: '/company/principles/' },
+
+  '/contact/': { ready: '/contact/#intake', early: '/engagements/' },
+  '/contact/creative-direction/': { ready: '/contact/creative-direction/#intake', early: '/insights/creative-direction-after-model-abundance/' },
+  '/contact/genai/': { ready: '/contact/genai/#intake', early: '/briefs/generative-media-operating-system/' },
+  '/contact/media-management/': { ready: '/contact/media-management/#intake', early: '/methods/collection-to-intelligence/' },
+  '/contact/marketing-consulting/': { ready: '/contact/marketing-consulting/#intake', early: '/insights/marketing-operations-for-small-expert-teams/' },
+  '/contact/partnerships/': { ready: '/contact/partnerships/#intake', early: '/company/operating-model/' },
+  '/contact/thanks/': { ready: '/contact/', early: '/insights/' },
+
+  '/privacy/': { ready: '/contact/', early: '/responsible-ai/' },
+  '/accessibility/': { ready: '/contact/', early: '/methods/accessibility-as-editorial/' },
+  '/responsible-ai/': { ready: '/contact/genai/', early: '/briefs/provenance-ready-content-supply-chain/' },
+  '/security/': { ready: '/contact/', early: '/products/cli/security/' },
+  '/terms/': { ready: '/contact/', early: '/company/' },
+  '/editorial-policy/': { ready: '/contact/', early: '/insights/' },
+  '/sitemap/': { ready: '/contact/', early: '/methods/' },
+};
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const routeHref = (path: string) => path.startsWith('#') ? path : `${baseUrl}${path.replace(/^\/+/, '')}`;
+const ctaPaths = { ...familyCtaPaths[page.family], ...(routeCtaOverrides[page.path] ?? {}) };
+const primaryHref = routeHref(ctaPaths.ready);
+const earlyHref = routeHref(ctaPaths.early);
 const imageByFamily = {
   product: hybridInfrastructure,
   service: creativeDirection,
@@ -29,14 +169,33 @@ const imageByFamily = {
 const atmosphericImages = [mediaAlchemy, archiveCathedral, audienceDreamfield] as const;
 const routeSeed = [...page.path].reduce((total, character) => total + character.charCodeAt(0), 0);
 const isImmersive = ['insight', 'method', 'industry'].includes(page.family) && routeSeed % 2 === 0;
+const magicalInterludePaths = new Set([
+  '/services/creative-direction/',
+  '/services/marketing-consulting/',
+  '/services/brand-systems/',
+  '/services/campaign-production/',
+  '/company/history/',
+  '/company/principles/',
+  '/insights/25-years-from-brand-studio-to-ai-company/',
+]);
+const showMagicalInterlude = magicalInterludePaths.has(page.path);
 const leadImage = isImmersive
   ? atmosphericImages[routeSeed % atmosphericImages.length] ?? mediaAlchemy
   : imageByFamily[page.family as keyof typeof imageByFamily] ?? dreamMedia;
 const familyLabel = page.family.replaceAll('-', ' ');
 const related = page.relatedPaths.map((path) => path.replace(/^\//, ''));
 const isContact = page.family === 'contact' && !page.path.endsWith('/thanks/');
+const showEnterpriseCta = !['contact', 'trust', 'brief-confirmation'].includes(page.family);
+const transitionFamilies = new Set<EditorialFamily>(['product', 'service', 'engagement', 'industry', 'method', 'insight', 'company']);
+const transitionAction = transitionFamilies.has(page.family)
+  ? {
+      href: ['service', 'engagement', 'industry', 'company'].includes(page.family) ? primaryHref : earlyHref,
+      label: ['service', 'engagement', 'industry', 'company'].includes(page.family) ? page.primaryAction : page.earlyAction,
+      eyebrow: ['service', 'engagement', 'industry', 'company'].includes(page.family) ? 'Apply this question' : 'Keep tracing the question',
+    }
+  : null;
 ---
-<BaseLayout title={page.title} description={page.deck}>
+<BaseLayout title={page.title} description={page.deck} turnstile={isContact} noindex={page.path.endsWith('/thanks/')}>
   <article class={`editorial-page family-${page.family}`}>
     <header class:list={['editorial-hero', { shell: !isImmersive, 'editorial-hero-immersive': isImmersive }] }>
       <div class="editorial-hero-copy">
@@ -45,8 +204,8 @@ const isContact = page.family === 'contact' && !page.path.endsWith('/thanks/');
         <h1>{page.title}</h1>
         <p class="editorial-deck">{page.deck}</p>
         <div class="editorial-actions">
-          <a class:list={['button', { 'dark-button': !isImmersive, ghost: isImmersive }]} href="#decision">{page.primaryAction}</a>
-          <a class="text-link" href="#field-notes">{page.earlyAction} <b>↓</b></a>
+          <a class:list={['button', { 'dark-button': !isImmersive, ghost: isImmersive }]} href={primaryHref}>{page.primaryAction}</a>
+          <a class="text-link" href={earlyHref}>{page.earlyAction} <b>↗</b></a>
         </div>
       </div>
       <figure class="editorial-lead-art">
@@ -77,14 +236,20 @@ const isContact = page.family === 'contact' && !page.path.endsWith('/thanks/');
             <h2>{section.heading}</h2>
             {section.copy?.map((paragraph) => <p>{paragraph}</p>)}
             {section.bullets && <ul>{section.bullets.map((bullet) => <li>{bullet}</li>)}</ul>}
+            {index === 2 && transitionAction && (
+              <p class="section-transition">
+                <span>{transitionAction.eyebrow}</span>
+                <a href={transitionAction.href}>{transitionAction.label} <b aria-hidden="true">↗</b></a>
+              </p>
+            )}
           </section>
         ))}
       </div>
     </section>
 
-    {isImmersive && (
-      <MysticalInterlude id={`threshold-${routeSeed}`} title="The future is not a destination. It is an editorial decision." eyebrow="HardMagic / Threshold" tone={routeSeed % 3 === 0 ? 'spectral' : 'nocturne'} motif={routeSeed % 3 === 0 ? 'oracle' : 'threshold'}>
-        <p>{page.thesis}</p>
+    {showMagicalInterlude && (
+      <MysticalInterlude id={`threshold-${routeSeed}`} title="Speak with enough clarity, and the future has somewhere to arrive." eyebrow="HardMagic / Abracadabra" tone={routeSeed % 3 === 0 ? 'spectral' : 'nocturne'} motif={routeSeed % 3 === 0 ? 'oracle' : 'threshold'}>
+        <p>Words give imagination a form other people can enter. Our version of the spell is practical: {page.thesis}</p>
         <a slot="footer" class="button ghost" href="horizon/">Read Horizon 2035</a>
       </MysticalInterlude>
     )}
@@ -110,7 +275,7 @@ const isContact = page.family === 'contact' && !page.path.endsWith('/thanks/');
             <label>Name<input required name="name" autocomplete="name" /></label>
             <label>Work email<input required type="email" name="email" autocomplete="email" /></label>
             <label>Organization<input required name="organization" autocomplete="organization" /></label>
-            <label>Role<input name="role" autocomplete="organization-title" /></label>
+            <label>Role<input required maxlength="120" name="role" autocomplete="organization-title" /></label>
             <label class="wide">Area<select name="intake_category" required><option value="">Choose one</option><option value="creative-direction">Creative direction</option><option value="genai">GenAI strategy and production</option><option value="media-management">Media management</option><option value="marketing-consulting">Marketing consulting</option><option value="product-strategy">Product strategy</option><option value="creative-technology">Creative technology</option></select></label>
             <label class="wide">What decision are you facing?<textarea required name="mandate" rows="5"></textarea></label>
             <label>Decision horizon<select required name="decision_horizon"><option>Now–30 days</option><option>31–90 days</option><option>3–6 months</option><option>6–12 months</option></select></label>
@@ -132,5 +297,170 @@ const isContact = page.family === 'contact' && !page.path.endsWith('/thanks/');
       <h2>Follow the system.</h2>
       <div>{related.map((path, index) => <a href={path}><span>0{index + 1}</span>{path.replaceAll('-', ' ').replaceAll('/', ' / ')}</a>)}</div>
     </nav>
+
+    {showEnterpriseCta && (
+      <section class="enterprise-cta" aria-labelledby="enterprise-cta-title">
+        <div class="enterprise-cta-inner shell">
+          <div class="enterprise-cta-intro">
+            <p class="eyebrow">The next useful depth</p>
+            <h2 id="enterprise-cta-title">Choose the path that fits the decision.</h2>
+            <p>{page.readerJob} If the question has an owner and a horizon, take the working path. If it still needs language, keep building context first.</p>
+          </div>
+          <div class="enterprise-cta-options">
+            <a class="enterprise-cta-option" href={primaryHref}>
+              <span>Ready to move</span>
+              <strong>{page.primaryAction}</strong>
+              <small>Use the relevant intake or engagement route.</small>
+            </a>
+            <a class="enterprise-cta-option" href={earlyHref}>
+              <span>Still framing the question</span>
+              <strong>{page.earlyAction}</strong>
+              <small>Continue through a relevant brief, insight, method, or product.</small>
+            </a>
+          </div>
+        </div>
+      </section>
+    )}
   </article>
 </BaseLayout>
+
+<style>
+  .section-transition {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 12px 22px;
+    margin: 30px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(242, 233, 223, 0.16);
+  }
+
+  .section-transition span {
+    color: var(--mist);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .section-transition a {
+    color: var(--bone);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .section-transition a b {
+    color: var(--signal);
+    font-size: 1rem;
+  }
+
+  .section-transition a:hover,
+  .section-transition a:focus-visible {
+    color: var(--signal);
+  }
+
+  .enterprise-cta {
+    margin-top: clamp(50px, 8vw, 130px);
+    padding-block: clamp(74px, 10vw, 150px);
+    background:
+      radial-gradient(circle at 84% 18%, rgba(217, 50, 94, 0.18), transparent 24rem),
+      linear-gradient(135deg, #10080d, #070506 68%);
+    color: var(--bone);
+  }
+
+  .enterprise-cta-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+    gap: clamp(42px, 8vw, 140px);
+    align-items: end;
+  }
+
+  .enterprise-cta-intro h2 {
+    max-width: 720px;
+    margin: 0 0 24px;
+    font-size: clamp(3rem, 5.8vw, 6.6rem);
+    line-height: 0.9;
+  }
+
+  .enterprise-cta-intro > p:last-child {
+    max-width: 620px;
+    margin: 0;
+    color: var(--moon);
+    font-size: 1rem;
+  }
+
+  .enterprise-cta-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(242, 233, 223, 0.2);
+  }
+
+  .enterprise-cta-option {
+    display: flex;
+    min-height: 250px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: clamp(24px, 3vw, 42px);
+    background: rgba(7, 5, 6, 0.94);
+    color: var(--bone);
+    text-decoration: none;
+  }
+
+  .enterprise-cta-option:hover {
+    background: #260b18;
+  }
+
+  .enterprise-cta-option:focus-visible {
+    outline: 3px solid var(--signal);
+    outline-offset: -3px;
+  }
+
+  .enterprise-cta-option > span {
+    margin-bottom: auto;
+    color: var(--signal);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .enterprise-cta-option strong {
+    max-width: 18ch;
+    margin-top: 40px;
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 2.6vw, 3rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+  }
+
+  .enterprise-cta-option small {
+    max-width: 28ch;
+    margin-top: 18px;
+    color: var(--mist);
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 900px) {
+    .enterprise-cta-inner {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .enterprise-cta-options {
+      grid-template-columns: 1fr;
+    }
+
+    .enterprise-cta-option + .enterprise-cta-option {
+      border-top: 1px solid rgba(242, 233, 223, 0.2);
+    }
+  }
+</style>

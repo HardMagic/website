@@ -1,13 +1,61 @@
 ---
 import Wordmark from './Wordmark.astro';
-import { productLinks } from '../../data/site';
+import { footerNavGroups } from '../../data/navigation';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
   <div class="shell footer-grid">
-    <div><Wordmark /><p>Dream in reality.</p><p class="quiet">An independent marketing, media, and creative-technology studio.</p></div>
-    <div><h2>Products</h2>{productLinks.map(([label, href]) => <a href={href}>{label}</a>)}</div>
-    <div><h2>Company</h2><a href="company/">About HardMagic</a><a href="contact/">Start a conversation</a><a href="privacy/">Privacy</a></div>
+    <div class="footer-brand"><Wordmark /><p>Dream in reality.</p><p class="quiet">An independent media conglomerate spanning creative direction, growth, production, GenAI, products, research, and compute.</p></div>
+    {footerNavGroups.map((group) => {
+      const headingId = `footer-${group.title.toLowerCase()}`;
+      return <nav aria-labelledby={headingId}><h2 id={headingId}>{group.title}</h2>{group.links.map((link) => <a href={link.href}>{link.label}</a>)}</nav>;
+    })}
   </div>
   <div class="shell legal">© {year} HardMagic Corporation. Delaware, USA.</div>
 </footer>
+
+<style>
+  .footer-grid {
+    grid-template-columns: minmax(220px, 1.7fr) repeat(5, minmax(105px, 1fr));
+    gap: clamp(20px, 2.8vw, 42px);
+  }
+
+  .footer-grid > nav {
+    min-width: 0;
+  }
+
+  .footer-grid > nav > a {
+    display: block;
+    margin: 8px 0;
+    color: #c2b6b8;
+    text-decoration: none;
+    font-size: .78rem;
+    line-height: 1.35;
+  }
+
+  .footer-grid > nav > a:hover {
+    color: #fff;
+  }
+
+  @media (max-width: 1100px) {
+    .footer-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 36px 26px;
+    }
+
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px 18px;
+    }
+
+    .footer-grid > nav > a {
+      font-size: .74rem;
+    }
+  }
+</style>

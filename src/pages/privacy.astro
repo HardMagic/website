@@ -1,6 +1,39 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Privacy" description="Privacy information for hardmagic.com.">
-  <article class="legal-page shell"><p class="eyebrow dark">Privacy</p><h1>A quiet website<br />by design.</h1><p class="lede">This corporate site does not use analytics, advertising trackers, third-party fonts, or marketing cookies.</p><h2>What the server may record</h2><p>Like most web infrastructure, the hosting service may retain standard request logs, including IP address, user agent, requested path, and time, for security and operations.</p><h2>When you contact us</h2><p>If you email HardMagic, we receive the information you choose to send. We use it to respond and maintain the resulting business relationship.</p><h2>Questions</h2><p>Email <a href="mailto:hello@hardmagic.com">hello@hardmagic.com</a>. This notice was last updated August 12, 2026.</p></article>
+<BaseLayout title="Privacy" description="How HardMagic handles browsing, consultation requests, and private brief delivery.">
+  <article class="legal-page shell">
+    <p class="eyebrow dark">Privacy / data boundaries</p>
+    <h1>A quiet website<br />with clear boundaries.</h1>
+    <p class="lede">HardMagic keeps ordinary browsing simple and asks for only the information needed to answer a request or deliver a requested brief.</p>
+
+    <h2>Implementation status</h2>
+    <p>The consultation intake and BriefLock delivery service is deployed. The production record was last verified August 12, 2026: requests pass through the protected briefs.hardmagic.com edge, private Azure storage holds the delivery ledger and brief masters, email delivery is configured, and relationship records can be projected asynchronously into HardMagic's Dataverse environment. The direct Function origin is access-restricted. Secrets remain in a dedicated key vault and are not recorded on this site.</p>
+
+    <h2>Ordinary browsing</h2>
+    <p>The public site does not use analytics, advertising trackers, marketing cookies, or third-party fonts. Like most web infrastructure, a hosting service may retain standard request logs—such as IP address, user agent, requested path, and time—for security and operations. The form pages include Cloudflare Turnstile's anti-abuse script; it is used for challenge verification, not advertising or audience measurement.</p>
+
+    <h2>When you email us</h2>
+    <p>If you email <a href="mailto:hello@hardmagic.com">hello@hardmagic.com</a>, HardMagic receives the information you choose to send and uses it to respond. Please do not use an initial email to send credentials, secrets, customer records, unreleased financial information, regulated personal data, or confidential client material.</p>
+
+    <h2>Consultation intake</h2>
+    <p>The consultation path is a qualification request, not a secure file-transfer channel. It asks for your name, work email, organization, role, service lane, mandate or decision, decision horizon, and preferred next step. After an accepted request, the service routes consultation email and an internal intake message. A separate required checkbox records consent to respond to that request; it does not subscribe you to marketing.</p>
+
+    <h2>BriefLock requests</h2>
+    <p>The BriefLock path asks for the requested brief, name, company email, organization, role, industry, organization size, program stage, decision horizon, primary challenge, preferred next step, service lane, and optional context. The current qualification policy excludes selected public mailbox providers, including Gmail, Google Mail, Hotmail, Outlook.com, Yahoo, and supported country variants; it is not a universal blocklist of every consumer-email service. The form also has a separate optional marketing-consent choice, which defaults to no.</p>
+    <p>The endpoint writes a private delivery ledger before attempting delivery. The ledger records the request, qualification, consent choices, delivery status, and CRM-projection status; it is not a public page. An accepted brief request can receive a time-limited private link—designed for a 48-hour window—and the PDF is not published at a public site path.</p>
+
+    <h2>Consent and suppression</h2>
+    <p>Consent to receive the requested brief or a consultation response is separate from optional research and product updates. Requesting a resource does not opt you into marketing. BriefLock delivery email includes a report-specific unsubscribe link. Confirming it records suppression in the private ledger first and, if CRM projection is enabled, queues that status for the CRM; it stops follow-ups for that request. Broader marketing consent is managed separately.</p>
+
+    <h2>CRM projection</h2>
+    <p>After the email step, the service can enqueue an asynchronous Dataverse projection as a relationship record for HardMagic follow-up; the private delivery ledger remains the delivery system of record. A CRM outage does not require a visitor to resubmit or cause a duplicate brief delivery. The production Dataverse environment, table, application identity, and least-privilege runtime role were included in the August 12 verification.</p>
+
+    <h2>Retention, access, and deletion</h2>
+    <p>The default retention windows are 395 days for request-ledger records, 90 days for failed-delivery dead-letter records, and 90 days for operational logs. Brief masters are retained until superseded under the content release policy.</p>
+    <p>For an access, correction, or deletion request, email <a href="mailto:hello@hardmagic.com">hello@hardmagic.com</a> and ask for the privacy owner. We will verify the request and its scope. The deletion process removes only the exact request's ledger/dead-letter records and HardMagic engagement; a shared contact is removed only after confirming that it has no other legitimate HardMagic relationship. Do not include confidential material in a privacy request.</p>
+
+    <h2>Questions</h2>
+    <p>Questions about this notice or a request can start at <a href="mailto:hello@hardmagic.com">hello@hardmagic.com</a>. You can also review the <a href="contact/">consultation path</a> or the <a href="briefs/">public brief summaries</a>. This notice was last updated August 13, 2026.</p>
+  </article>
 </BaseLayout>

@@ -38,7 +38,7 @@ const leadImage = images[(scenario.number - 1) % images.length] ?? mediaAlchemy;
     <div class="horizon-reading shell">
       <aside>
         <p class="eyebrow dark">Reading map</p>
-        <a href="#signals">2026 signals</a><a href="#scenario">The 2035 scene</a><a href="#implications">Implications</a><a href="#moves">Moves now</a><a href="#uncertainty">Uncertainty</a><a href="#sources">Sources</a>
+        <a href={`horizon/${scenario.slug}/#signals`}>2026 signals</a><a href={`horizon/${scenario.slug}/#scenario`}>The 2035 scene</a><a href={`horizon/${scenario.slug}/#implications`}>Implications</a><a href={`horizon/${scenario.slug}/#moves`}>Moves now</a><a href={`horizon/${scenario.slug}/#uncertainty`}>Uncertainty</a><a href={`horizon/${scenario.slug}/#sources`}>Sources</a>
       </aside>
       <div class="horizon-argument">
         <section id="signals" class="horizon-module evidence-module"><p class="module-mark">Evidence / 2026</p><h2>Signals visible from here.</h2>{scenario.signals2026.map((paragraph) => <p>{paragraph}</p>)}</section>

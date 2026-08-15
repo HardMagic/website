@@ -4,8 +4,8 @@ const base = import.meta.env.BASE_URL;
 ---
 <section class="video-archive shell section-pad" aria-labelledby="video-archive-title">
   <header class="section-heading video-heading">
-    <div><p class="eyebrow dark">HardMagic on film</p><h2 id="video-archive-title">The production archive,<br />back in motion.</h2></div>
-    <p>Six surviving releases from the verified <a href="https://www.youtube.com/@hardmagicproductions" rel="external">hardmagicproductions channel</a>. Posters are hosted here; YouTube loads only after you choose to watch.</p>
+    <div><p class="eyebrow dark">HardMagic on film</p><h2 id="video-archive-title">Production stories,<br />always in motion.</h2></div>
+    <p>Six releases from the verified <a href="https://www.youtube.com/@hardmagicproductions" rel="external">hardmagicproductions channel</a>. Posters are hosted here; YouTube loads only after you choose to watch.</p>
   </header>
   <div class="video-grid">
     {youtubeArchive.map((video) => (
@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL;
           <button type="button" data-video-id={video.id} aria-label={`Load ${video.title} from YouTube`}><span aria-hidden="true">▶</span> Watch</button>
         </div>
         <p class="eyebrow dark">{video.note}</p><h3>{video.title}</h3>
-        <p class="video-note">Archival release. Spoken-word transcript review is pending; watch on YouTube for any available platform captions.</p>
+        <p class="video-note">HardMagic release. Spoken-word transcript review is pending; watch on YouTube for any available platform captions.</p>
       </article>
     ))}
   </div>

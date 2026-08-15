@@ -20,7 +20,7 @@ const briefEvidence = brief.evidenceNeeds.map((item) => {
   return { text: url ? item.slice(0, -url.length).trim() : item, url };
 });
 ---
-<BaseLayout title={brief.title} description={brief.squeeze.promise}>
+<BaseLayout title={brief.title} description={brief.squeeze.promise} turnstile corporateEmailValidation>
   <article class="brief-page">
     <header class="brief-hero shell">
       <div>
@@ -28,7 +28,7 @@ const briefEvidence = brief.evidenceNeeds.map((item) => {
         <p class="issue-line">Private edition · individually delivered · access expires</p>
         <h1>{brief.title}</h1>
         <p class="editorial-deck">{brief.squeeze.promise}</p>
-        <a class="button dark-button" href="#request">Request the brief</a>
+        <a class="button dark-button" href={`briefs/${brief.slug}/#request`}>Request the brief</a>
       </div>
       <div class="brief-cover" aria-label={`Conceptual cover for ${brief.title}`}>
         <Picture class="brief-cover-media" src={coverImage} alt="" formats={[]} fallbackFormat="avif" widths={[480,720,960]} sizes="(max-width: 900px) 90vw, 38vw" />

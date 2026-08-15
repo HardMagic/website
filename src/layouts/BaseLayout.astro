@@ -7,9 +7,12 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  turnstile?: boolean;
+  corporateEmailValidation?: boolean;
+  noindex?: boolean;
 }
 
-const { title, description, image = '/og-hardmagic.svg' } = Astro.props;
+const { title, description, image = '/og-hardmagic.svg', turnstile = false, corporateEmailValidation = false, noindex = false } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonicalPath = base !== '/' && Astro.url.pathname.startsWith(base)
   ? `/${Astro.url.pathname.slice(base.length)}`
@@ -24,6 +27,7 @@ const fullTitle = title === 'HardMagic' ? title : `${title} — HardMagic`;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="theme-color" content="#100b0d" />
     <base href={base} />
     <link rel="canonical" href={canonical} />
@@ -34,14 +38,14 @@ const fullTitle = title === 'HardMagic' ? title : `${title} — HardMagic`;
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
     <meta name="twitter:card" content="summary_large_image" />
-    <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    {turnstile && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
     <title>{fullTitle}</title>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href={`${Astro.url.pathname}#main`}>Skip to content</a>
     <Header />
-    <main id="main"><slot /></main>
+    <main id="main" tabindex="-1"><slot /></main>
     <Footer />
-    <script is:inline src="scripts/corporate-email-validation.js"></script>
+    {corporateEmailValidation && <script is:inline src="scripts/corporate-email-validation.js"></script>}
   </body>
 </html>
