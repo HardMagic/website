@@ -1,23 +1,52 @@
 ---
-import { getCollection } from 'astro:content';
 import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ProductCard from '../components/product/ProductCard.astro';
 import Marquee from '../components/sections/Marquee.astro';
 import CaseCard from '../components/portfolio/CaseCard.astro';
-import WireMarkProof from '../components/home/WireMarkProof.astro';
-import StudioSignal from '../components/home/StudioSignal.astro';
 import { caseStudies } from '../data/portfolio';
+import heroDesktop from '../assets/editorial/hardmagic-future-command-desktop.avif';
+import heroTablet from '../assets/editorial/hardmagic-future-command-tablet.avif';
+import heroMobile from '../assets/editorial/hardmagic-future-command-mobile.avif';
+import mediaAlchemy from '../assets/editorial/media-alchemy-ritual.avif';
 import generativeOperations from '../assets/editorial/generative-operations-4k.avif';
+import audienceDreamfield from '../assets/editorial/audience-dreamfield-2035.avif';
 import dreamSpecimen from '../assets/editorial/dream-media-specimen-4k.avif';
 import '../styles/home-current.css';
 
-const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
-const featured = products.filter((product) => product.data.featured);
-const base = import.meta.env.BASE_URL;
+const featuredCase = caseStudies[1] ? caseStudies[1] : caseStudies[0];
+
+const mediaReels = [
+  {
+    image: mediaAlchemy,
+    title: 'Creative ritual as production system',
+    category: 'Creative Systems',
+    description: 'A media ritual framework for category-defining launches where audience emotion and production rigor move together.',
+    href: 'services/creative-direction/',
+    cta: 'Open creative path',
+    alt: 'Abstract visual of a luminous ritual-like formation blending cinematic textures and symbolic motion graphics.',
+  },
+  {
+    image: generativeOperations,
+    title: 'Generative operations at enterprise scale',
+    category: 'GenAI Operations',
+    description: 'Design of scalable creative infrastructure for enterprise brands, media studios, and transformation teams.',
+    href: 'services/genai-strategy/',
+    cta: 'See our operating model',
+    alt: 'Futuristic media operations interface with flowing cables and luminous media nodes.',
+  },
+  {
+    image: audienceDreamfield,
+    title: 'Audience forecasting for the next decade',
+    category: 'Signal Intelligence',
+    description: 'Audience behavior mapped visually into campaign planning language that leaders can execute with speed.',
+    href: 'horizon/',
+    cta: 'Enter Horizon 2035',
+    alt: 'Dreamlike audience landscape with reflective architecture and human silhouettes.',
+  },
+];
 ---
 
-<BaseLayout title="HardMagic — Independent Marketing Studio" description="HardMagic is an award-winning independent marketing studio joining creative direction, media, GenAI, and proprietary technology to make brands impossible to ignore.">
+<BaseLayout title="Shape What the World Sees Next" description="HardMagic is an independent media conglomerate built for global brands, film studios, and category-defining companies leading advertising, media creation, and GenAI transformation.">
   <div class="narrative-field">
     <div class="cosmic-atmosphere" aria-hidden="true">
       <i class="cosmic-dust dust-near"></i><i class="cosmic-dust dust-far"></i>
@@ -32,98 +61,148 @@ const base = import.meta.env.BASE_URL;
       <path class="thread-a" d="M790 0 C940 70 910 126 710 171 S160 257 278 342 S925 418 719 508 S122 598 319 684 S912 778 654 856 S246 930 161 1000" />
       <path class="thread-b" d="M812 0 C960 74 930 133 731 178 S184 264 299 349 S948 425 739 515 S144 605 341 691 S934 785 676 863 S267 937 183 1000" />
     </svg>
-  <section class="current-hero">
-    <Picture src={generativeOperations} alt="A creative operator directs photographic material across an illuminated working table in a dark studio." formats={[]} fallbackFormat="avif" width={1920} widths={[720, 1200, 1920]} sizes="100vw" loading="eager" fetchpriority="high" />
-    <div class="current-hero-shade"></div>
-    <div class="shell current-hero-copy">
-      <p class="eyebrow">Independent marketing studio · GenAI native · since 1999</p>
-      <h1>Make the future<br /><em>want you.</em></h1>
-      <p>HardMagic creates brand worlds, campaigns, media, and digital experiences with human taste and machine-scale imagination.</p>
-      <div class="hero-actions"><a class="button" href="contact/">Bring us the impossible brief</a><a class="button ghost" href="#work">See the work</a></div>
-    </div>
-    <div class="current-proof-rail" aria-label="Current HardMagic system" tabindex="0">
-      <span><b>01</b> Brand worlds</span><span><b>02</b> Campaigns</span><span><b>03</b> Intelligent media</span><span><b>04</b> Experiences</span>
-    </div>
-    <p class="hero-disclosure">HardMagic-directed generative concept image · not client or product evidence</p>
-  </section>
 
-  <Marquee />
-
-  <section class="current-thesis shell section-pad">
-    <div><p class="eyebrow dark">A marketing studio with its own machines</p><h2>Ideas first.<br />Everything else <em>obeys.</em></h2></div>
-    <div><p>We direct brands, launches, campaigns, films, interfaces, editorial systems, and the intelligent media around them. Strategy and creative direction stay human. Generative production gives the idea more range.</p><p>Our proprietary products are not the headline. They are the unfair advantage behind the work.</p></div>
-  </section>
-
-  <StudioSignal base={base} />
-
-  <aside class="narrative-bridge bridge-possibility" aria-label="From possibility to practice">
-    <span>Possibility is only useful when it can move.</span><b>So we direct the whole system.</b>
-  </aside>
-
-  <section class="capability-stage" aria-labelledby="capability-title">
-    <header class="capability-intro"><p class="eyebrow">What HardMagic does</p><h2 id="capability-title">Strategy to spectacle.<br /><em>One studio.</em></h2><p>We move from the boardroom question to the public experience without dropping the idea between departments.</p></header>
-    <div class="capability-index">
-      <a href="services/creative-direction/"><span>01</span><strong>Creative direction</strong><i>Meaning · taste · coherence</i></a>
-      <a href="services/brand-systems/"><span>02</span><strong>Brand worlds</strong><i>Identity · voice · memory</i></a>
-      <a href="services/campaign-production/"><span>03</span><strong>Campaigns</strong><i>Concept · production · launch</i></a>
-      <a href="services/genai-strategy/"><span>04</span><strong>GenAI transformation</strong><i>Models · workflows · governance</i></a>
-      <a href="services/media-management/"><span>05</span><strong>Media systems</strong><i>Archive · rights · distribution</i></a>
-      <a href="services/web-experience/"><span>06</span><strong>Digital experiences</strong><i>Editorial · product · performance</i></a>
-    </div>
-  </section>
-
-  <section id="work" class="creative-continuity section-pad">
-    <header class="proof-heading dark-heading"><div><p class="eyebrow dark">Creative direction in practice</p><h2>Work that leaves<br /><em>a mark.</em></h2></div><p>Selected creative practice across image, identity, software, learning, hospitality, and place. The archive is context; the studio is moving forward.</p></header>
-    <div class="portfolio-grid">{[caseStudies[1]!, caseStudies[5]!, caseStudies[6]!, caseStudies[7]!].map((study, index) => <CaseCard study={study} index={index} />)}</div>
-    <div class="section-end"><a class="button dark-button" href="portfolio/">Explore the full portfolio</a></div>
-  </section>
-
-  <aside class="narrative-bridge bridge-memory" aria-label="From archive to operating method">
-    <span>Twenty-five years of image-making became operating memory.</span><b>Now the memory can act.</b>
-  </aside>
-
-  <section class="agent-loop section-pad">
-    <div class="agent-loop-grid">
-      <div class="agent-loop-copy"><p class="eyebrow">Our production advantage</p><h2>Intent becomes<br /><em>an executable contract.</em></h2><p>Agents can move fast because the studio defines what they may touch, what evidence matters, and what still requires human judgment. The result is more creative range without creative drift.</p><a class="button ghost" href="methods/human-agent-creative-loop/">Open the method</a></div>
-      <div class="agent-loop-diagram" aria-label="Directed agent workflow">
-        <span class="loop-center">H</span>
-        <ol><li><b>Idea</b><small>the human direction</small></li><li><b>World</b><small>context + constraints</small></li><li><b>Make</b><small>machine-scale production</small></li><li><b>Proof</b><small>what actually changed</small></li><li><b>Release</b><small>approve · revise · amplify</small></li></ol>
+    <section class="current-hero">
+      <picture class="current-hero-art">
+        <source media="(max-width: 620px)" srcset={heroMobile.src} width="1200" height="1498" />
+        <source media="(max-width: 1100px)" srcset={heroTablet.src} width="1920" height="1080" />
+        <img src={heroDesktop.src} width="3840" height="1920" alt="AI-generated campaign scene of creative directors orchestrating a monumental film set of sculptural fabric, cameras, and practical light." loading="eager" fetchpriority="high" decoding="async" />
+      </picture>
+      <div class="current-hero-shade"></div>
+      <div class="shell current-hero-copy">
+        <p class="eyebrow">HardMagic / global media, campaign systems, and GenAI at enterprise scale</p>
+        <h1>Shape what the world<br /><em>sees next.</em></h1>
+        <p>HardMagic is built to give global brands, film studios, and category-defining companies one senior direction room for media, strategy, and generative execution.</p>
+        <div class="hero-actions">
+          <a class="button" href="contact/">Commission the next move</a>
+          <a class="text-link hero-work-link" href="#route-entries">Choose a decision path <b>↗</b></a>
+          <a class="text-link hero-signal-link" href="#close">Go deeper now <b>↘</b></a>
+        </div>
       </div>
-    </div>
-  </section>
+      <div class="current-proof-rail" aria-label="Who HardMagic moves" tabindex="0">
+        <span><b>01</b> Global brands</span><span><b>02</b> Film + entertainment</span><span><b>03</b> Venture-backed leaders</span><span><b>04</b> Industry transformation</span>
+      </div>
+      <p class="hero-disclosure">HardMagic-directed generative campaign image · not a facility, client, or product record</p>
+    </section>
 
-  <section id="system" class="current-products section-pad">
-    <header class="proof-heading">
-      <div><p class="eyebrow">Proprietary studio instruments</p><h2>We built what<br /><em>the work demanded.</em></h2></div>
-      <p>Studio, WireMark, CLI, and Web Magic extend our creative practice from first intention to inspectable delivery. Clients can engage the studio, the products, or both.</p>
-    </header>
-    <div class="current-system-map" aria-label="HardMagic product workflow">
-      <a href="products/studio/"><span>01 / GENERATE</span><b>HardMagic Studio</b><p>Direct image, motion, voice, music, and form across owned and cloud inference.</p><i>IMAGE · VIDEO · AUDIO · 3D</i></a>
-      <a href="products/wiremark/"><span>02 / OBSERVE</span><b>WireMark</b><p>Join the running product to source, visual intent, agent work, and verification evidence.</p><i>CANVAS · SOURCE · EVIDENCE</i></a>
-      <a href="products/cli/"><span>03 / DELEGATE</span><b>HardMagic CLI</b><p>Give agents bounded context, permissions, repeatable commands, and acceptance gates.</p><i>AGENTS · AUTOMATION · CONTROL</i></a>
-      <a href="products/web-magic/"><span>04 / VERIFY</span><b>Web Magic</b><p>Inspect accessibility, performance, search, security, and public delivery before release.</p><i>QUALITY · TRUST · DELIVERY</i></a>
-    </div>
-    <div class="product-grid current-product-grid">{featured.map((product, index) => <ProductCard id={product.id} data={product.data} index={index} />)}</div>
-    <div class="section-end"><a class="button light" href="products/">Explore the studio instruments</a></div>
-  </section>
+    <Marquee />
 
-  <div id="proof" class="proof-zone section-pad">
-    <WireMarkProof base={base} />
-  </div>
+    <section class="home-identity shell section-pad">
+      <div>
+        <p class="eyebrow dark">Who we are / how we work</p>
+        <h2>Independent media conglomerate.<br /><em>One room. One outcome.</em></h2>
+      </div>
+      <div class="home-identity-grid">
+        <div class="home-identity-copy">
+          <p>HardMagic brings creative direction, growth leadership, and media systems together in one room. We serve board-level business needs and production decisions that must be coherent across audience, platform, and brand memory.</p>
+          <p>Start with the decision. Bring your market, category, and capability gap first. We help define the path from thesis to execution.</p>
+          <div class="home-identity-actions">
+            <a class="button dark-button" href="company/">Explore the company</a>
+            <a class="text-link" href="company/operating-model/">How we engage <b>↗</b></a>
+            <a class="text-link" href="services/">See all service lines <b>↗</b></a>
+          </div>
+        </div>
+        <ol class="home-identity-notes">
+          <li><span>01 · Where we lead</span><p>Creative and growth leadership for enterprise media-defining decisions.</p></li>
+          <li><span>02 · Why now</span><p>Markets move faster than coherence when systems lag creative decisions.</p></li>
+          <li><span>03 · What we deliver</span><p>Campaign systems, GenAI studios, and production structures designed for trust and speed.</p></li>
+        </ol>
+      </div>
+    </section>
 
-  <aside class="narrative-bridge bridge-evidence" aria-label="From evidence to the next medium">
-    <span>Every decision leaves a trace.</span><b>Every trace can become a new medium.</b>
-  </aside>
+    <section id="route-entries" class="home-route shell section-pad">
+      <div>
+        <p class="eyebrow dark">Start where the need is real</p>
+        <h2>Decision-led pathways.<br /><em>Choose one lane.</em></h2>
+      </div>
+      <div class="home-route-grid">
+        <a class="home-route-card" href="services/campaign-production/">
+          <span>01 / Advertising & campaigns</span>
+          <strong>Live markets, growth pressure, global attention</strong>
+          <p>Campaign systems, launch playbooks, and channel-agnostic expression designed for category visibility.</p>
+          <b>Open campaign lane <span aria-hidden="true">↗</span></b>
+        </a>
+        <a class="home-route-card" href="services/creative-direction/">
+          <span>02 / Creative authority</span>
+          <strong>Position, narrative, brand logic</strong>
+          <p>Direction that links your category story, visual system, and audience trust under one brief.</p>
+          <b>Open creative lane <span aria-hidden="true">↗</span></b>
+        </a>
+        <a class="home-route-card" href="services/genai-strategy/">
+          <span>03 / Enterprise AI</span>
+          <strong>Scale where it is still controllable</strong>
+          <p>Governance-first adoption for production, teams, and long-lived media assets.</p>
+          <b>Open growth lane <span aria-hidden="true">↗</span></b>
+        </a>
+      </div>
+    </section>
 
-  <figure class="future-field">
-    <Picture src={dreamSpecimen} alt="A luminous waveform passes through film, paper, and a small projection apparatus on a black field." formats={[]} fallbackFormat="avif" width={1920} widths={[720, 1200, 1920]} sizes="100vw" />
-    <span class="future-field-shade" aria-hidden="true"></span>
-    <div class="future-field-copy shell"><p class="eyebrow">Dispatch from 2035</p><h2>The next medium<br /><em>will remember why.</em></h2><p>Media becomes adaptive, spatial, conversational, and persistent. The winning systems will carry authorship, consent, rights, decisions, and memory alongside every output.</p><a class="text-link" href="horizon/">Enter Horizon 2035 <b>↗</b></a></div>
-    <figcaption>HardMagic-directed conceptual media specimen · scenario artwork, not a forecast</figcaption>
-  </figure>
+    <section class="home-media-enrichment shell section-pad">
+      <div class="home-media-enrichment-head">
+        <p class="eyebrow dark">Media-rich evidence</p>
+        <h2>Selected visual worlds in motion.</h2>
+        <p class="home-media-enrichment-intro">HardMagic builds for brands and studios where direction, distribution, and proof are inseparable. Browse how we shape campaigns that move culture and conversion together.</p>
+      </div>
+      <div class="home-media-grid">
+        {
+          mediaReels.map((item) => (
+            <a class="home-media-card" href={item.href}>
+              <Picture
+                src={item.image}
+                alt={item.alt}
+                widths={[640, 960, 1400]}
+                sizes="(min-width: 1200px) 33.333vw, (min-width: 720px) 50vw, 100vw"
+                formats={['avif']}
+                loading="lazy"
+              />
+              <div class="home-media-copy">
+                <span>{item.category}</span>
+                <strong>{item.title}</strong>
+                <p>{item.description}</p>
+                <b>{item.cta} <span aria-hidden="true">↗</span></b>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+      <div class="home-media-enrichment-actions">
+        <a class="button dark-button" href="portfolio/">Explore the full studio portfolio</a>
+        <a class="text-link" href="insights/">Read latest media signal notes <b>↗</b></a>
+      </div>
+    </section>
 
-  <section class="current-close">
-    <div><p class="eyebrow">Privately owned · award-winning creative practice · established 1999</p><h2>Make something<br />the world cannot<br /><em>look away from.</em></h2><p>Strategy, creative direction, production, GenAI, media, and proprietary technology—inside one bold independent studio.</p><div><a class="button" href="contact/">Start a project</a><a class="text-link" href="company/">Meet HardMagic <b>↗</b></a></div></div>
-  </section>
+    <section class="home-compact-work section-pad">
+      <div class="shell home-compact-work-head">
+        <p class="eyebrow dark">Proof point</p>
+        <h2>Selected work we can discuss right away.</h2>
+      </div>
+      <div class="shell home-mini-grid">{featuredCase ? <CaseCard study={featuredCase} index={0} /> : null}</div>
+      <div class="section-end shell"><a class="button dark-button" href="portfolio/">See full portfolio and case approach</a></div>
+    </section>
+
+    <figure class="future-field">
+      <Picture src={dreamSpecimen} alt="A luminous waveform passes through film, paper, and a small projection apparatus on a black field." formats={[]} fallbackFormat="avif" width={1920} widths={[720, 1200, 1920]} sizes="100vw" />
+      <span class="future-field-shade" aria-hidden="true"></span>
+      <div class="future-field-copy shell">
+        <p class="eyebrow">Dispatch from 2035</p>
+        <h2>See the signal.<br /><em>Choose the route.</em></h2>
+        <p>HardMagic translates global media shifts into decision-ready direction and execution architecture.</p>
+        <a class="text-link" href="horizon/">Enter Horizon 2035 <b>↗</b></a>
+      </div>
+      <figcaption>HardMagic-directed conceptual media specimen · scenario artwork, not a forecast</figcaption>
+    </figure>
+
+    <section id="close" class="current-close">
+      <div>
+        <p class="eyebrow">Independent media conglomerate · global experience · 25+ years of practice</p>
+        <h2>Move your company.<br />before the signal fades.</h2>
+        <p>Bring a decision, not a wishlist. We will help you define the position, the system, and execution sequence that turns strategy into visible media advantage.</p>
+        <div>
+          <a class="button" href="contact/">Start a consulting intake</a>
+          <a class="text-link" href="briefs/">Read the private brief library <b>↗</b></a>
+          <a class="text-link" href="insights/">Read recent insights <b>↗</b></a>
+        </div>
+      </div>
+    </section>
   </div>
 </BaseLayout>

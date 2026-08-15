@@ -1,0 +1,363 @@
+---
+import { homeMarketSignals } from "../../data/home-market-signals";
+---
+
+<section class="home-market-signals" id="market-signal" aria-labelledby="home-market-signals-title">
+  <div class="home-market-signals__intro shell">
+    <div>
+      <p class="home-market-signals__eyebrow">Market signals / source ledger</p>
+      <h2 id="home-market-signals-title">The market is scaling.<br /><em>Trust is not automatic.</em></h2>
+    </div>
+    <div class="home-market-signals__lede">
+      <p>
+        Public evidence points to more media, more GenAI adoption, and more supply. The useful question is what deserves to scale with it.
+      </p>
+      <p class="home-market-signals__folio">05 signals / 2026 reading</p>
+    </div>
+  </div>
+
+  <div class="home-market-signals__ledger shell">
+    <div class="home-market-signals__ledger-head" aria-hidden="true">
+      <span>Signal</span>
+      <span>Reading</span>
+      <span>Boundary</span>
+    </div>
+
+    <ol class="home-market-signals__list">
+      {
+        homeMarketSignals.evidence.map((item, index) => (
+          <li class="home-market-signals__row">
+            <span class="home-market-signals__index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <div class="home-market-signals__identity">
+              <p class="home-market-signals__label">{item.label}</p>
+              <h3>{item.metric}</h3>
+            </div>
+            <div class="home-market-signals__reading">
+              <p>{item.context}</p>
+              <p class="home-market-signals__source">
+                <span>{item.publisher} · <time datetime={item.date}>{item.date}</time></span>
+                <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`Read the official ${item.publisher} source for ${item.label}`}>
+                  Official source <span aria-hidden="true">↗</span>
+                </a>
+              </p>
+            </div>
+            <div class="home-market-signals__boundary">
+              <p class="home-market-signals__boundary-label">Read with boundary</p>
+              <ul>
+                {item.boundaries.map((boundary) => <li>{boundary}</li>)}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+
+  <div class="home-market-signals__closing shell">
+    <p class="home-market-signals__eyebrow">The read-through</p>
+    <p>
+      Scale is not permission. Faster production is not direction. The advantage belongs to teams that can move with the signal while making authority, provenance, and audience trust legible.
+    </p>
+  </div>
+</section>
+
+<style>
+  .home-market-signals {
+    --market-paper: var(--bone, #f2e9df);
+    --market-ink: var(--abyss, #170f13);
+    --market-muted: color-mix(in srgb, var(--market-ink) 68%, transparent);
+    --market-line: color-mix(in srgb, var(--market-ink) 18%, transparent);
+    --market-accent: var(--blood, #8f1f33);
+    background: var(--market-paper);
+    color: var(--market-ink);
+    padding: clamp(6.5rem, 12vw, 12rem) 0 clamp(5.5rem, 10vw, 9rem);
+  }
+
+  .home-market-signals__intro {
+    align-items: end;
+    display: grid;
+    gap: clamp(2rem, 8vw, 9rem);
+    grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr);
+    margin-bottom: clamp(4rem, 8vw, 8rem);
+  }
+
+  .home-market-signals__eyebrow,
+  .home-market-signals__folio,
+  .home-market-signals__label,
+  .home-market-signals__boundary-label,
+  .home-market-signals__ledger-head {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .home-market-signals__eyebrow {
+    color: var(--market-accent);
+    margin: 0 0 1.25rem;
+  }
+
+  .home-market-signals h2 {
+    font-family: var(--serif, Georgia, serif);
+    font-size: clamp(3rem, 7vw, 7.5rem);
+    font-weight: 400;
+    letter-spacing: -0.065em;
+    line-height: 0.88;
+    margin: 0;
+    max-width: 10ch;
+  }
+
+  .home-market-signals h2 em {
+    color: var(--market-accent);
+    font-style: italic;
+  }
+
+  .home-market-signals__lede {
+    border-left: 1px solid var(--market-line);
+    color: var(--market-muted);
+    display: grid;
+    gap: 2.5rem;
+    padding: 0 0 0 1.5rem;
+  }
+
+  .home-market-signals__lede p {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    line-height: 1.45;
+    margin: 0;
+    max-width: 31rem;
+  }
+
+  .home-market-signals__lede .home-market-signals__folio {
+    color: var(--market-ink);
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+  }
+
+  .home-market-signals__ledger-head {
+    border-bottom: 1px solid var(--market-ink);
+    color: var(--market-muted);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 3.5rem minmax(11rem, 0.8fr) minmax(18rem, 1.2fr) minmax(15rem, 0.95fr);
+    padding: 0 0 1rem;
+  }
+
+  .home-market-signals__ledger-head span:first-child {
+    grid-column: 2;
+  }
+
+  .home-market-signals__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home-market-signals__row {
+    border-bottom: 1px solid var(--market-line);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 3.5rem minmax(11rem, 0.8fr) minmax(18rem, 1.2fr) minmax(15rem, 0.95fr);
+    padding: clamp(1.5rem, 3vw, 2.6rem) 0;
+  }
+
+  .home-market-signals__index {
+    color: var(--market-accent);
+    font-family: var(--serif, Georgia, serif);
+    font-size: clamp(1.5rem, 2.5vw, 2.4rem);
+    line-height: 1;
+  }
+
+  .home-market-signals__label {
+    color: var(--market-muted);
+    margin: 0 0 0.75rem;
+  }
+
+  .home-market-signals h3 {
+    font-family: var(--serif, Georgia, serif);
+    font-size: clamp(1.55rem, 2.8vw, 2.75rem);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+    margin: 0;
+    max-width: 10ch;
+  }
+
+  .home-market-signals__reading,
+  .home-market-signals__boundary {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .home-market-signals__reading > p:first-child {
+    margin: 0;
+    max-width: 35rem;
+  }
+
+  .home-market-signals__source {
+    align-items: baseline;
+    color: var(--market-muted);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.72rem;
+    gap: 0.45rem 1rem;
+    justify-content: space-between;
+    letter-spacing: 0.03em;
+    margin: 1.35rem 0 0;
+  }
+
+  .home-market-signals__source a {
+    color: var(--market-accent);
+    font-weight: 700;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+  }
+
+  .home-market-signals__source a:hover {
+    color: var(--market-ink);
+  }
+
+  .home-market-signals__boundary {
+    border-left: 1px solid var(--market-line);
+    color: var(--market-muted);
+    padding-left: 1.25rem;
+  }
+
+  .home-market-signals__boundary-label {
+    color: var(--market-ink);
+    margin: 0 0 0.75rem;
+  }
+
+  .home-market-signals__boundary ul {
+    margin: 0;
+    padding-left: 1rem;
+  }
+
+  .home-market-signals__boundary li + li {
+    margin-top: 0.55rem;
+  }
+
+  .home-market-signals__closing {
+    align-items: start;
+    border-top: 1px solid var(--market-ink);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    margin-top: clamp(4rem, 8vw, 8rem);
+    padding-top: 1.5rem;
+  }
+
+  .home-market-signals__closing .home-market-signals__eyebrow {
+    margin: 0;
+  }
+
+  .home-market-signals__closing > p:last-child {
+    font-family: var(--serif, Georgia, serif);
+    font-size: clamp(1.7rem, 3.6vw, 3.8rem);
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+    margin: 0;
+    max-width: 21ch;
+  }
+
+  .home-market-signals a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 0.28rem;
+  }
+
+  @media (max-width: 950px) {
+    .home-market-signals__ledger-head,
+    .home-market-signals__row {
+      grid-template-columns: 2.8rem minmax(10rem, 0.8fr) minmax(16rem, 1.2fr);
+    }
+
+    .home-market-signals__ledger-head span:last-child {
+      display: none;
+    }
+
+    .home-market-signals__boundary {
+      border-left: 0;
+      grid-column: 2 / -1;
+      margin-top: 0.5rem;
+      padding-left: 0;
+    }
+
+    .home-market-signals__boundary ul {
+      display: grid;
+      gap: 0.4rem 1.5rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-market-signals__boundary li + li {
+      margin-top: 0;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .home-market-signals__intro {
+      display: block;
+    }
+
+    .home-market-signals__lede {
+      margin-top: 2.5rem;
+    }
+
+    .home-market-signals__ledger-head {
+      display: none;
+    }
+
+    .home-market-signals__row {
+      display: block;
+      padding-block: 2rem;
+    }
+
+    .home-market-signals__index {
+      display: block;
+      margin-bottom: 1.4rem;
+    }
+
+    .home-market-signals h3 {
+      max-width: 15ch;
+    }
+
+    .home-market-signals__reading {
+      margin-top: 1.5rem;
+    }
+
+    .home-market-signals__boundary {
+      margin-top: 1.6rem;
+    }
+
+    .home-market-signals__boundary ul {
+      display: block;
+    }
+
+    .home-market-signals__boundary li + li {
+      margin-top: 0.55rem;
+    }
+
+    .home-market-signals__closing {
+      display: block;
+    }
+
+    .home-market-signals__closing > p:last-child {
+      margin-top: 1.5rem;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .home-market-signals__source a,
+    .home-market-signals h2 em,
+    .home-market-signals__index {
+      color: LinkText;
+    }
+
+    .home-market-signals__lede,
+    .home-market-signals__boundary {
+      border-color: CanvasText;
+    }
+  }
+</style>

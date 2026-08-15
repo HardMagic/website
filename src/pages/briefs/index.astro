@@ -1,0 +1,712 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { briefs, type BriefSlug, type TechnicalBrief } from '../../data/briefs';
+
+const decisionLanes: readonly {
+  readonly label: string;
+  readonly description: string;
+  readonly slugs: readonly BriefSlug[];
+}[] = [
+  {
+    label: 'Make the capability real',
+    description: 'Clarify who owns the system, the work, and the next investment.',
+    slugs: ['generative-media-operating-system', 'modern-media-agency-transformation-playbook'],
+  },
+  {
+    label: 'Lead creative and publishing',
+    description: 'Protect authorship, coherence, and the quality of what reaches an audience.',
+    slugs: ['creative-direction-after-the-prompt', 'autonomous-web-publishing-control-plane'],
+  },
+  {
+    label: 'Make media trustworthy and usable',
+    description: 'Give every asset a traceable life, from creation and rights through reuse.',
+    slugs: ['provenance-ready-content-supply-chain', 'intelligent-media-asset-estate'],
+  },
+  {
+    label: 'Build the production substrate',
+    description: 'Choose the infrastructure and product context that lets teams move with control.',
+    slugs: ['hybrid-ai-media-infrastructure', 'visual-product-development-field-guide'],
+  },
+];
+
+const briefCatalog: readonly TechnicalBrief[] = briefs;
+const briefBySlug = new Map(briefCatalog.map((brief) => [brief.slug, brief] as const));
+const getBrief = (slug: BriefSlug): TechnicalBrief => {
+  const brief = briefBySlug.get(slug);
+  if (!brief) throw new Error(`Missing technical brief: ${slug}`);
+  return brief;
+};
+const lanes = decisionLanes.map((lane) => ({
+  ...lane,
+  briefs: lane.slugs.map(getBrief),
+}));
+const primaryBrief = briefs[0];
+const minPages = Math.min(...briefs.map((brief) => brief.pageCount));
+const maxPages = Math.max(...briefs.map((brief) => brief.pageCount));
+const totalWorksheets = briefs.reduce((count, brief) => count + brief.worksheets.length, 0);
+
+const briefNumber = (brief: TechnicalBrief) =>
+  String(briefs.findIndex((candidate) => candidate.slug === brief.slug) + 1).padStart(2, '0');
+const briefPath = (brief: TechnicalBrief) => `briefs/${brief.slug}/`;
+const audienceLabel = (brief: TechnicalBrief) => brief.audience.join(' · ');
+---
+
+<BaseLayout
+  title="Technical brief library"
+  description="Choose among eight HardMagic technical briefs by the enterprise decision you need to make, then request a private BriefLock edition."
+>
+  <div class="brief-library">
+    <section class="brief-library-hero" aria-labelledby="brief-library-title">
+      <div class="shell brief-library-hero-grid">
+        <div class="brief-library-hero-copy">
+          <p class="eyebrow dark">HardMagic / BriefLock library</p>
+          <h1 id="brief-library-title">Choose the<br /><em>decision.</em></h1>
+          <p class="brief-library-deck">
+            Eight technical briefs for leaders deciding what to build, govern, protect, or change across
+            creative, media, technology, and operations.
+          </p>
+          <div class="brief-library-actions">
+            <a class="button" href="briefs/#choose">Choose by decision</a>
+            <a class="text-link" href="briefs/#brief-lock">How private delivery works <b>↘</b></a>
+          </div>
+        </div>
+
+        <aside class="brief-library-signal" aria-label="Brief library overview">
+          <div class="signal-count">08</div>
+          <p class="signal-label">Decision-led editions</p>
+          <p class="signal-feature">Start with <strong>{primaryBrief.title}</strong>.</p>
+          <dl>
+            <div><dt>Depth</dt><dd>{minPages}–{maxPages} pages</dd></div>
+            <div><dt>Working tools</dt><dd>{totalWorksheets} worksheets</dd></div>
+            <div><dt>Audience</dt><dd>Executive to studio</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="brief-lock" id="brief-lock" aria-labelledby="brief-lock-title">
+      <div class="shell brief-lock-grid">
+        <div>
+          <p class="eyebrow">BriefLock / private delivery contract</p>
+          <h2 id="brief-lock-title">Public argument first.<br /><em>Working edition next.</em></h2>
+          <p class="brief-lock-intro">
+            Every title below has a public summary page. That page carries the thesis and the request form;
+            the complete PDF, diagrams, and worksheets are delivered privately when the request qualifies.
+          </p>
+        </div>
+
+        <div class="brief-lock-details">
+          <div class="brief-lock-rule">
+            <span>01</span>
+            <p><strong>Choose a decision.</strong> Open the public summary to inspect its premise, evidence standard, and chapter map.</p>
+          </div>
+          <div class="brief-lock-rule">
+            <span>02</span>
+            <p><strong>Request the edition.</strong> BriefLock asks for a company identity and context so the private material has a responsible destination.</p>
+          </div>
+          <div class="brief-lock-rule">
+            <span>03</span>
+            <p><strong>Wait for validation.</strong> If the address is deliverable and passes automated checks, a time-limited private link may be sent. The PDF is never hosted at a public site path.</p>
+          </div>
+          <aside class="brief-lock-qualification">
+            <p class="qualification-label">Company-email qualification</p>
+            <p>Use a deliverable company email. Gmail, Yahoo, Hotmail, and Outlook.com accounts are not eligible for these private editions.</p>
+            <p class="quiet">Do not submit secrets, regulated personal information, or confidential client material.</p>
+          </aside>
+        </div>
+      </div>
+      <div class="shell brief-lock-footer">
+        <span>Need help choosing?</span>
+        <a class="button light" href="contact/">Bring the decision to a working session</a>
+        <a class="text-link" href="briefs/#choose">Browse all eight <b>↓</b></a>
+      </div>
+    </section>
+
+    <section class="brief-index" id="choose" aria-labelledby="brief-index-title">
+      <div class="shell brief-index-intro">
+        <div>
+          <p class="eyebrow dark">The decision index</p>
+          <h2 id="brief-index-title">Find the question<br /><em>behind the request.</em></h2>
+        </div>
+        <p>
+          Start with the decision you need to make, not the technology you were handed. Each public page
+          shows the intended reader, the depth of the edition, and the work it is designed to unlock.
+        </p>
+      </div>
+
+      <div class="shell brief-lanes">
+        {lanes.map((lane, laneIndex) => (
+          <section class="brief-lane" aria-labelledby={`brief-lane-${laneIndex}`}>
+            <div class="brief-lane-heading">
+              <span class="lane-number">0{laneIndex + 1}</span>
+              <h3 id={`brief-lane-${laneIndex}`}>{lane.label}</h3>
+              <p>{lane.description}</p>
+            </div>
+            <div class="brief-card-grid">
+              {lane.briefs.map((brief, briefIndex) => (
+                <article class:list={['brief-card', { 'brief-card--lead': laneIndex === 0 && briefIndex === 0 }]}>
+                  <div class="brief-card-top">
+                    <span>Brief {briefNumber(brief)}</span>
+                    <span>{brief.pageCount} pages</span>
+                  </div>
+                  <h4>{brief.title}</h4>
+                  <p class="brief-card-decision">{brief.decision}</p>
+                  <p class="brief-card-audience"><span>Written for</span>{audienceLabel(brief)}</p>
+                  <dl class="brief-card-stats">
+                    <div><dt>Chapters</dt><dd>{brief.chapters.length}</dd></div>
+                    <div><dt>Diagrams</dt><dd>{brief.diagrams.length}</dd></div>
+                    <div><dt>Worksheets</dt><dd>{brief.worksheets.length}</dd></div>
+                  </dl>
+                  <div class="brief-card-actions">
+                    <a class="button dark-button" href={`${briefPath(brief)}#request`}>Read summary &amp; request</a>
+                    <a class="text-link" href={briefPath(brief)}>Explore the public page <b>↗</b></a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </section>
+
+    <section class="brief-library-close" aria-labelledby="brief-library-close-title">
+      <div class="shell">
+        <p class="eyebrow">Keep the question moving</p>
+        <h2 id="brief-library-close-title">Have the question,<br /><em>not the title?</em></h2>
+        <p>Describe the decision, the constraint, and the time horizon. HardMagic can point you to the brief or the next conversation.</p>
+        <a class="button" href="contact/">Describe the decision</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .brief-library {
+    overflow: hidden;
+    color: var(--bone);
+  }
+
+  .brief-library-hero {
+    padding-block: clamp(150px, 16vw, 240px) clamp(90px, 10vw, 150px);
+    background:
+      radial-gradient(circle at 83% 20%, rgba(217, 50, 94, .2), transparent 23rem),
+      linear-gradient(120deg, var(--abyss), var(--night) 68%, #210713);
+  }
+
+  .brief-library-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+    gap: clamp(48px, 10vw, 160px);
+    align-items: end;
+  }
+
+  .brief-library-hero-copy h1 {
+    max-width: 820px;
+    margin: 0 0 28px;
+    font-size: clamp(4rem, 10vw, 10rem);
+    line-height: .85;
+  }
+
+  .brief-library-hero-copy h1 em,
+  .brief-library-close h2 em,
+  .brief-lock h2 em {
+    color: var(--signal);
+    font-style: italic;
+  }
+
+  .brief-library-deck {
+    max-width: 680px;
+    margin: 0;
+    color: var(--moon);
+    font-size: clamp(1.08rem, 1.6vw, 1.42rem);
+    line-height: 1.55;
+  }
+
+  .brief-library-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-top: 42px;
+  }
+
+  .brief-library-signal {
+    padding: clamp(26px, 4vw, 54px);
+    border: 1px solid rgba(242, 233, 223, .2);
+    background: rgba(22, 16, 20, .78);
+    box-shadow: var(--glow);
+  }
+
+  .signal-count {
+    color: var(--signal);
+    font-size: clamp(5rem, 11vw, 10rem);
+    font-weight: 600;
+    letter-spacing: -.1em;
+    line-height: .75;
+  }
+
+  .signal-label,
+  .qualification-label {
+    margin: 22px 0 38px;
+    color: var(--mist);
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  .signal-feature {
+    max-width: 26ch;
+    margin: 0 0 34px;
+    color: var(--moon);
+  }
+
+  .signal-feature strong {
+    color: var(--bone);
+  }
+
+  .brief-library-signal dl {
+    margin: 0;
+    border-top: 1px solid rgba(242, 233, 223, .16);
+  }
+
+  .brief-library-signal dl div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(242, 233, 223, .16);
+  }
+
+  .brief-library-signal dt,
+  .brief-library-signal dd {
+    margin: 0;
+    font-size: .7rem;
+  }
+
+  .brief-library-signal dt {
+    color: var(--mist);
+    text-transform: uppercase;
+    letter-spacing: .12em;
+  }
+
+  .brief-library-signal dd {
+    color: var(--bone);
+    text-align: right;
+  }
+
+  .brief-lock {
+    padding-block: clamp(86px, 10vw, 150px) 0;
+    background: linear-gradient(120deg, #4b071c, var(--blood) 56%, #230611);
+  }
+
+  .brief-lock-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+    gap: clamp(42px, 9vw, 140px);
+  }
+
+  .brief-lock h2,
+  .brief-index-intro h2,
+  .brief-library-close h2 {
+    margin: 0;
+    font-size: clamp(3.1rem, 6vw, 6.7rem);
+    line-height: .9;
+  }
+
+  .brief-lock-intro {
+    max-width: 560px;
+    margin: 38px 0 0;
+    color: #eadde2;
+    font-size: 1.08rem;
+  }
+
+  .brief-lock-details {
+    border-top: 1px solid rgba(242, 233, 223, .24);
+  }
+
+  .brief-lock-rule {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(242, 233, 223, .24);
+  }
+
+  .brief-lock-rule > span {
+    color: var(--signal);
+    font-size: .67rem;
+    font-weight: 800;
+  }
+
+  .brief-lock-rule p {
+    max-width: 58ch;
+    margin: 0;
+    color: #eadde2;
+  }
+
+  .brief-lock-rule strong {
+    color: var(--bone);
+  }
+
+  .brief-lock-qualification {
+    margin-top: 34px;
+    padding: 24px 26px;
+    border-left: 3px solid var(--signal);
+    background: rgba(7, 5, 6, .28);
+  }
+
+  .brief-lock-qualification .qualification-label {
+    margin: 0 0 10px;
+    color: var(--bone);
+  }
+
+  .brief-lock-qualification p:not(.qualification-label):not(.quiet) {
+    max-width: 64ch;
+    margin: 0;
+    color: var(--bone);
+  }
+
+  .brief-lock-qualification .quiet {
+    margin: 14px 0 0;
+    color: #c7b8c0;
+  }
+
+  .brief-lock-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin-top: clamp(62px, 8vw, 110px);
+    padding-block: 24px;
+    border-top: 1px solid rgba(242, 233, 223, .24);
+  }
+
+  .brief-lock-footer > span {
+    margin-right: auto;
+    color: #eadde2;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .brief-index {
+    padding-block: clamp(90px, 11vw, 170px);
+    background: var(--abyss);
+  }
+
+  .brief-index-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(240px, .95fr);
+    gap: clamp(40px, 10vw, 150px);
+    align-items: end;
+    padding-bottom: clamp(60px, 8vw, 110px);
+  }
+
+  .brief-index-intro > p {
+    max-width: 52ch;
+    margin: 0 0 8px;
+    color: var(--moon);
+    font-size: 1.05rem;
+  }
+
+  .brief-lanes {
+    border-top: 1px solid rgba(242, 233, 223, .2);
+  }
+
+  .brief-lane {
+    display: grid;
+    grid-template-columns: minmax(190px, .45fr) minmax(0, 1.55fr);
+    gap: clamp(28px, 6vw, 100px);
+    padding-block: clamp(50px, 7vw, 100px);
+    border-bottom: 1px solid rgba(242, 233, 223, .2);
+  }
+
+  .brief-lane-heading {
+    align-self: start;
+    position: sticky;
+    top: 32px;
+  }
+
+  .lane-number {
+    display: block;
+    margin-bottom: 26px;
+    color: #ed6a8c;
+    font-size: .67rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+  }
+
+  .brief-lane-heading h3 {
+    margin: 0 0 16px;
+    color: var(--bone);
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    font-weight: 400;
+    line-height: .98;
+  }
+
+  .brief-lane-heading p {
+    max-width: 26ch;
+    margin: 0;
+    color: var(--mist);
+    font-size: .86rem;
+  }
+
+  .brief-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(242, 233, 223, .2);
+  }
+
+  .brief-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    min-height: 510px;
+    padding: clamp(22px, 3vw, 38px);
+    background: var(--night);
+  }
+
+  .brief-card--lead {
+    grid-column: 1 / -1;
+    min-height: 430px;
+    background:
+      radial-gradient(circle at 85% 14%, rgba(217, 50, 94, .24), transparent 20rem),
+      var(--night-raised);
+  }
+
+  .brief-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    color: var(--mist);
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  .brief-card-top span:last-child {
+    color: #ed6a8c;
+    text-align: right;
+  }
+
+  .brief-card h4 {
+    max-width: 18ch;
+    margin: 48px 0 18px;
+    color: var(--bone);
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3.2vw, 3.65rem);
+    font-weight: 400;
+    letter-spacing: -.045em;
+    line-height: .95;
+  }
+
+  .brief-card-decision {
+    max-width: 60ch;
+    margin: 0;
+    color: var(--moon);
+    font-size: .96rem;
+  }
+
+  .brief-card-audience {
+    margin: 28px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(242, 233, 223, .16);
+    color: var(--mist);
+    font-size: .77rem;
+    line-height: 1.5;
+  }
+
+  .brief-card-audience span {
+    display: block;
+    margin-bottom: 6px;
+    color: #ed6a8c;
+    font-size: .59rem;
+    font-weight: 800;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+  }
+
+  .brief-card-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+    margin: auto 0 30px;
+    padding-top: 28px;
+  }
+
+  .brief-card-stats div {
+    display: grid;
+    gap: 3px;
+  }
+
+  .brief-card-stats dt {
+    color: var(--mist);
+    font-size: .57rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .brief-card-stats dd {
+    margin: 0;
+    color: var(--bone);
+    font-size: .9rem;
+  }
+
+  .brief-card-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(242, 233, 223, .16);
+  }
+
+  .brief-card-actions .button {
+    min-height: 46px;
+    padding-inline: 18px;
+    font-size: .61rem;
+  }
+
+  .brief-card-actions .text-link {
+    color: var(--moon);
+    font-size: .61rem;
+  }
+
+  .brief-card--lead .brief-card-actions .button {
+    border-color: var(--signal);
+    background: var(--signal);
+    color: #fff;
+  }
+
+  .brief-library-close {
+    padding-block: clamp(100px, 14vw, 220px);
+    background:
+      radial-gradient(circle at 70% 25%, rgba(217, 50, 94, .2), transparent 24rem),
+      linear-gradient(135deg, var(--night-raised), var(--abyss));
+  }
+
+  .brief-library-close .shell {
+    max-width: 1000px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .brief-library-close h2 {
+    margin-bottom: 30px;
+  }
+
+  .brief-library-close p:not(.eyebrow) {
+    max-width: 620px;
+    margin: 0 auto 36px;
+    color: var(--moon);
+    font-size: 1.08rem;
+  }
+
+  :is(a, button, input, select, textarea, summary):focus-visible {
+    outline: 3px solid #ff7b9f;
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .brief-library-hero-grid,
+    .brief-lock-grid,
+    .brief-index-intro {
+      grid-template-columns: 1fr;
+    }
+
+    .brief-library-signal {
+      max-width: 620px;
+    }
+
+    .brief-lane {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .brief-lane-heading {
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .brief-library-hero {
+      padding-top: 132px;
+    }
+
+    .brief-library-hero-copy h1 {
+      font-size: clamp(3.65rem, 17vw, 5.8rem);
+    }
+
+    .brief-library-actions,
+    .brief-lock-footer {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .brief-library-actions .button,
+    .brief-lock-footer .button,
+    .brief-library-close .button {
+      width: 100%;
+    }
+
+    .brief-library-actions .text-link,
+    .brief-lock-footer .text-link {
+      align-self: flex-start;
+    }
+
+    .brief-lock-footer > span {
+      margin-right: 0;
+    }
+
+    .brief-card-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .brief-card--lead {
+      grid-column: auto;
+    }
+
+    .brief-card {
+      min-height: 0;
+    }
+
+    .brief-card h4 {
+      margin-top: 36px;
+    }
+
+    .brief-card-actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .brief-card-actions .button {
+      width: 100%;
+    }
+
+    .brief-card-actions .text-link {
+      align-self: flex-start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .brief-library * {
+      scroll-behavior: auto;
+      transition-duration: .01ms !important;
+      animation-duration: .01ms !important;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .brief-library-signal,
+    .brief-lock-qualification,
+    .brief-card-grid,
+    .brief-card {
+      border: 1px solid CanvasText;
+    }
+  }
+</style>

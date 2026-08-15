@@ -1,7 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
 import mediaAlchemy from '../../assets/editorial/media-alchemy-ritual-4k.avif';
-import audienceDreamfield from '../../assets/editorial/audience-dreamfield-2035-4k.avif';
 const { base = '/' } = Astro.props;
 ---
 
@@ -13,14 +12,9 @@ const { base = '/' } = Astro.props;
   </div>
   <div class="studio-reel shell">
     <figure class="studio-frame studio-frame-wide">
-      <Picture src={mediaAlchemy} alt="A creative director shapes a suspended field of crimson light inside a dark soundstage." formats={[]} fallbackFormat="avif" width={1920} widths={[720, 1200, 1920]} sizes="(min-width: 900px) 64vw, 100vw" />
+      <Picture src={mediaAlchemy} alt="A creative director shapes a suspended field of crimson light inside a dark soundstage." formats={[]} fallbackFormat="avif" width={1920} widths={[720, 1200, 1920, 2560]} sizes="100vw" loading="lazy" />
       <span class="studio-frame-shade" aria-hidden="true"></span>
       <figcaption class="studio-frame-copy"><span>IMAGE / ART DIRECTION</span><b>Human authority inside machine-scale production.</b><small>OpenAI ImageGen · HardMagic-directed editorial concept · August 12, 2026</small></figcaption>
-    </figure>
-    <figure class="studio-frame studio-frame-tall">
-      <Picture src={audienceDreamfield} alt="An audience gathers at night as moving imagery passes through mist and suspended fabric." formats={[]} fallbackFormat="avif" width={1000} widths={[480, 720, 1000]} sizes="(min-width: 900px) 32vw, 100vw" />
-      <span class="studio-frame-shade" aria-hidden="true"></span>
-      <figcaption class="studio-frame-copy"><span>SCENARIO / SPATIAL MEDIA</span><b>An audience inside the image.</b><small>OpenAI ImageGen · 2035 scenario artwork · not documentary evidence</small></figcaption>
     </figure>
     <article class="studio-audio">
       <div class="audio-wave" aria-hidden="true">{Array.from({ length: 52 }, (_, index) => <i style={`--h:${18 + ((index * 37) % 74)}%`}></i>)}</div>

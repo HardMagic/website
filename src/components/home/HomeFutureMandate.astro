@@ -1,0 +1,347 @@
+---
+import {
+  homeInferenceDisclosure,
+  homeMarketSignals,
+} from "../../data/home-market-signals";
+
+const contactPath = "/contact/";
+const horizonPath = "/horizon/";
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const contactHref = `${basePath}${contactPath}`;
+const horizonHref = `${basePath}${horizonPath}`;
+---
+
+<section class="home-future-mandate" id="future-mandate" aria-labelledby="home-future-mandate-title">
+  <div class="home-future-mandate__intro shell">
+    <div>
+      <p class="home-future-mandate__eyebrow">{homeInferenceDisclosure}</p>
+      <h2 id="home-future-mandate-title">Build for the<br /><em>condition after scale.</em></h2>
+    </div>
+    <div class="home-future-mandate__lede">
+      <p>
+        If media becomes adaptive, abundant, and cheap to produce, the scarce work moves upstream: deciding what should exist, who can approve it, and what an audience can trust.
+      </p>
+      <p class="home-future-mandate__note">A working direction, not a promise about the future.</p>
+    </div>
+  </div>
+
+  <div class="home-future-mandate__sequence shell">
+    <ol>
+      {
+        homeMarketSignals.inference.map((item, index) => (
+          <li class="home-future-mandate__row">
+            <div class="home-future-mandate__folio" aria-hidden="true">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <small>inference</small>
+            </div>
+            <div class="home-future-mandate__claim">
+              <p class="home-future-mandate__label">{item.label}</p>
+              <h3>{item.claim}</h3>
+            </div>
+            <div class="home-future-mandate__response">
+              <p class="home-future-mandate__response-label">Design response</p>
+              <p>{item.implication}</p>
+              <p class="home-future-mandate__boundary">{item.boundary}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+
+  <div class="home-future-mandate__actions shell">
+    <div>
+      <p class="home-future-mandate__eyebrow">Make the next move legible</p>
+      <p class="home-future-mandate__action-copy">Bring the signal, the constraint, or the unanswered question to the studio.</p>
+    </div>
+    <div class="home-future-mandate__action-links">
+      <a class="home-future-mandate__button" href={contactHref}>Position the next move <span aria-hidden="true">↗</span></a>
+      <a class="home-future-mandate__text-link" href={horizonHref}>Enter Horizon 2035 <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-future-mandate {
+    --mandate-ink: var(--bone, #f2e9df);
+    --mandate-muted: color-mix(in srgb, var(--mandate-ink) 68%, transparent);
+    --mandate-line: color-mix(in srgb, var(--mandate-ink) 22%, transparent);
+    --mandate-accent: var(--ember, #e45d3d);
+    background: var(--abyss, #170f13);
+    color: var(--mandate-ink);
+    padding: clamp(7rem, 13vw, 13rem) 0 clamp(6rem, 11vw, 11rem);
+  }
+
+  .home-future-mandate__intro {
+    align-items: end;
+    display: grid;
+    gap: clamp(2rem, 8vw, 9rem);
+    grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr);
+    margin-bottom: clamp(4.5rem, 9vw, 9rem);
+  }
+
+  .home-future-mandate__eyebrow,
+  .home-future-mandate__label,
+  .home-future-mandate__response-label,
+  .home-future-mandate__folio,
+  .home-future-mandate__note {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .home-future-mandate__eyebrow {
+    color: var(--mandate-accent);
+    margin: 0 0 1.25rem;
+  }
+
+  .home-future-mandate h2 {
+    font-family: var(--serif, Georgia, serif);
+    font-size: clamp(3rem, 7vw, 7.5rem);
+    font-weight: 400;
+    letter-spacing: -0.065em;
+    line-height: 0.88;
+    margin: 0;
+    max-width: 10ch;
+  }
+
+  .home-future-mandate h2 em {
+    color: var(--mandate-accent);
+    font-style: italic;
+  }
+
+  .home-future-mandate__lede {
+    border-left: 1px solid var(--mandate-line);
+    color: var(--mandate-muted);
+    display: grid;
+    gap: 2.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .home-future-mandate__lede p {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    line-height: 1.45;
+    margin: 0;
+    max-width: 31rem;
+  }
+
+  .home-future-mandate__lede .home-future-mandate__note {
+    color: var(--mandate-ink);
+    font-size: 0.68rem;
+  }
+
+  .home-future-mandate__sequence ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home-future-mandate__row {
+    border-top: 1px solid var(--mandate-line);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 4.5rem minmax(15rem, 1.1fr) minmax(18rem, 0.9fr);
+    padding: clamp(1.8rem, 3.5vw, 3.25rem) 0;
+  }
+
+  .home-future-mandate__row:last-child {
+    border-bottom: 1px solid var(--mandate-line);
+  }
+
+  .home-future-mandate__folio {
+    color: var(--mandate-accent);
+    display: grid;
+    gap: 0.5rem;
+    align-content: start;
+  }
+
+  .home-future-mandate__folio span {
+    font-family: var(--serif, Georgia, serif);
+    font-size: clamp(1.7rem, 3vw, 2.8rem);
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+  }
+
+  .home-future-mandate__folio small {
+    color: var(--mandate-muted);
+    font-size: 0.58rem;
+  }
+
+  .home-future-mandate__label,
+  .home-future-mandate__response-label {
+    color: var(--mandate-muted);
+    margin: 0 0 0.85rem;
+  }
+
+  .home-future-mandate h3 {
+    font-family: var(--serif, Georgia, serif);
+    font-size: clamp(1.7rem, 3.4vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+    margin: 0;
+    max-width: 18ch;
+  }
+
+  .home-future-mandate__response {
+    color: var(--mandate-muted);
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .home-future-mandate__response > p:nth-child(2) {
+    color: var(--mandate-ink);
+    margin: 0;
+    max-width: 34rem;
+  }
+
+  .home-future-mandate__boundary {
+    border-left: 1px solid var(--mandate-line);
+    font-size: 0.76rem;
+    margin: 1.4rem 0 0;
+    padding-left: 1rem;
+  }
+
+  .home-future-mandate__actions {
+    align-items: end;
+    border-top: 1px solid var(--mandate-line);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    margin-top: clamp(4rem, 8vw, 8rem);
+    padding-top: 1.5rem;
+  }
+
+  .home-future-mandate__actions .home-future-mandate__eyebrow {
+    margin-bottom: 1rem;
+  }
+
+  .home-future-mandate__action-copy {
+    font-family: var(--serif, Georgia, serif);
+    font-size: clamp(1.7rem, 3.5vw, 3.6rem);
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+    margin: 0;
+    max-width: 18ch;
+  }
+
+  .home-future-mandate__action-links {
+    align-items: start;
+    display: grid;
+    gap: 1.25rem;
+    justify-items: start;
+  }
+
+  .home-future-mandate__button,
+  .home-future-mandate__text-link {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+
+  .home-future-mandate__button {
+    background: var(--mandate-accent);
+    color: var(--abyss, #170f13);
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+  }
+
+  .home-future-mandate__button:hover {
+    background: var(--mandate-ink);
+  }
+
+  .home-future-mandate__text-link {
+    color: var(--mandate-ink);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3em;
+  }
+
+  .home-future-mandate__text-link:hover {
+    color: var(--mandate-accent);
+  }
+
+  .home-future-mandate a:focus-visible {
+    outline: 2px solid var(--mandate-ink);
+    outline-offset: 0.3rem;
+  }
+
+  @media (max-width: 820px) {
+    .home-future-mandate__intro {
+      display: block;
+    }
+
+    .home-future-mandate__lede {
+      margin-top: 2.5rem;
+    }
+
+    .home-future-mandate__row {
+      grid-template-columns: 3.5rem minmax(0, 1fr);
+    }
+
+    .home-future-mandate__response {
+      grid-column: 2;
+      margin-top: 0.5rem;
+      max-width: 42rem;
+    }
+
+    .home-future-mandate__actions {
+      display: block;
+    }
+
+    .home-future-mandate__action-links {
+      margin-top: 2rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .home-future-mandate__row {
+      display: block;
+    }
+
+    .home-future-mandate__folio {
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .home-future-mandate__response {
+      margin-top: 1.8rem;
+    }
+
+    .home-future-mandate__action-links {
+      justify-items: stretch;
+    }
+
+    .home-future-mandate__button,
+    .home-future-mandate__text-link {
+      text-align: center;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .home-future-mandate__lede,
+    .home-future-mandate__boundary {
+      border-color: CanvasText;
+    }
+
+    .home-future-mandate__button,
+    .home-future-mandate h2 em,
+    .home-future-mandate__eyebrow {
+      color: LinkText;
+    }
+
+    .home-future-mandate__button {
+      border: 1px solid LinkText;
+    }
+  }
+</style>
