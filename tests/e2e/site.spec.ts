@@ -68,6 +68,22 @@ test('home art direction and image priority are explicit', async ({ page }) => {
   expect(wordmarkSvg).not.toContain('<text');
 });
 
+test('header keeps the logo and navigation visible while scrolling', async ({ page }) => {
+  await page.goto('/');
+  const header = page.locator('.site-header');
+  await expect(header).toBeVisible();
+  await expect(header).toHaveCSS('position', 'fixed');
+  await expect(header.locator('.wordmark')).toBeVisible();
+  await expect(header.locator('nav')).toBeVisible();
+
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await expect(header).toBeVisible();
+  const box = await header.boundingBox();
+  expect(box).not.toBeNull();
+  expect(Math.abs(box!.y)).toBeLessThan(1);
+  expect(box!.height).toBeGreaterThan(0);
+});
+
 test('nested fragment links stay on their route and reach their targets', async ({ page }) => {
   await page.goto('/briefs/');
   await page.getByRole('link', { name: 'Choose by decision' }).click();
