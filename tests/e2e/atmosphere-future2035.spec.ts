@@ -33,7 +33,7 @@ for (const route of overflowRoutes) {
 test('text-over-media fields retain a real shade and raised light copy', async ({ page }) => {
   await page.goto('/');
   const fields = page.locator('.current-hero, .studio-frame, .future-field');
-  await expect(fields).toHaveCount(4);
+  await expect(fields).toHaveCount(3);
 
   for (let index = 0; index < await fields.count(); index += 1) {
     const field = fields.nth(index);

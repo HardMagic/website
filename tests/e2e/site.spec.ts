@@ -13,11 +13,13 @@ for (const route of routes) {
     expect(response?.ok()).toBeTruthy();
     await expect(page.locator('h1')).toBeVisible();
     await expect(page).toHaveTitle(/HardMagic/);
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    expect(overflow).toBeLessThanOrEqual(1);
     const results = await new AxeBuilder({ page }).analyze();
     expect(results.violations).toEqual([]);
-    if (['/', '/portfolio/', '/portfolio/state-parks/', '/services/creative-direction/', '/briefs/generative-media-operating-system/'].includes(route)) {
+    if (['/', '/company/', '/contact/', '/briefs/', '/portfolio/', '/portfolio/state-parks/', '/services/creative-direction/', '/briefs/generative-media-operating-system/'].includes(route)) {
       const name = route === '/' ? 'home' : route.split('/').filter(Boolean).at(-1);
-      await page.screenshot({ path: `screenshots/${testInfo.project.name}/${name}.png`, fullPage: true });
+      await page.screenshot({ path: `screenshots/${testInfo.project.name}/${name}.png`, fullPage: testInfo.project.name !== 'wide-firefox' });
     }
   });
 }
@@ -30,7 +32,7 @@ test('mega menu exposes deep navigation and behaves as one disclosure at a time'
   await productsMenu.locator('summary').click();
   await expect(productsMenu).toHaveAttribute('open', '');
   await expect(page.getByRole('link', { name: 'Source intelligence' })).toBeVisible();
-  if (testInfo.project.name === 'desktop') {
+  if (testInfo.project.name === 'desktop' || testInfo.project.name === 'wide-firefox') {
     await workMenu.locator('summary').click();
     await expect(productsMenu).not.toHaveAttribute('open', '');
     await expect(workMenu).toHaveAttribute('open', '');
@@ -40,7 +42,7 @@ test('mega menu exposes deep navigation and behaves as one disclosure at a time'
   }
 });
 
-test('portfolio preserves old routes and defers YouTube until consent', async ({ page }) => {
+test('portfolio preserves legacy routes and defers YouTube until consent', async ({ page }) => {
   const oldRoute = await page.goto('/portfolio-item/airikai/');
   expect(oldRoute?.status()).toBe(200);
   await expect(page).toHaveURL(/\/portfolio\/airikai\/$/);
@@ -49,4 +51,61 @@ test('portfolio preserves old routes and defers YouTube until consent', async ({
   await page.getByRole('button', { name: /Load OpenBuk/ }).click();
   await expect(page.locator('.video-frame iframe')).toHaveCount(1);
   await expect(page.locator('.video-frame iframe')).toHaveAttribute('src', /youtube-nocookie\.com/);
+});
+
+test('home art direction and image priority are explicit', async ({ page }) => {
+  await page.goto('/');
+  const hero = page.locator('.current-hero-art img');
+  await expect(hero).toHaveAttribute('fetchpriority', 'high');
+  await expect(hero).toHaveAttribute('loading', 'eager');
+  await expect(hero).toHaveAttribute('alt', /AI-generated campaign scene/i);
+  await expect(page.locator('.hero-disclosure')).toBeVisible();
+  await expect(page.locator('.studio-frame-wide img')).toHaveAttribute('loading', 'lazy');
+
+  const wordmarkSource = await page.locator('.wordmark img').first().getAttribute('src');
+  expect(wordmarkSource).toBeTruthy();
+  const wordmarkSvg = await page.evaluate(async (src) => (await fetch(src!)).text(), wordmarkSource);
+  expect(wordmarkSvg).not.toContain('<text');
+});
+
+test('nested fragment links stay on their route and reach their targets', async ({ page }) => {
+  await page.goto('/briefs/');
+  await page.getByRole('link', { name: 'Choose by decision' }).click();
+  await expect(page).toHaveURL(/\/briefs\/#choose$/);
+  await expect(page.locator('#choose')).toBeVisible();
+
+  await page.goto('/briefs/generative-media-operating-system/');
+  await page.getByRole('link', { name: 'Request the brief' }).click();
+  await expect(page).toHaveURL(/\/briefs\/generative-media-operating-system\/#request$/);
+  await expect(page.locator('#request')).toBeVisible();
+
+  await page.goto('/company/');
+  await page.getByRole('link', { name: 'Skip to content' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/\/company\/#main$/);
+  await expect(page.locator('#main')).toBeFocused();
+});
+
+test('public follow-up routes do not claim direct visits prove receipt', async ({ page }) => {
+  await page.goto('/briefs/generative-media-operating-system/thanks/');
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
+  await expect(page.getByText(/reaching this public page does not itself confirm receipt/i)).toBeVisible();
+  await expect(page.getByText(/we received your request/i)).toHaveCount(0);
+
+  await page.goto('/contact/thanks/');
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
+  await expect(page.getByRole('heading', { level: 1 })).not.toContainText('Inquiry Received');
+});
+
+test('magic display copy reflows at 320 CSS pixels', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 800 });
+  for (const [route, selector] of [['/', '#abracadabra-title'], ['/company/', '#hollywood-title'], ['/contact/', 'h1']] as const) {
+    await page.goto(route);
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    expect(overflow).toBeLessThanOrEqual(1);
+    const box = await page.locator(selector).boundingBox();
+    expect(box).not.toBeNull();
+    expect(box!.x).toBeGreaterThanOrEqual(0);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(320);
+  }
 });

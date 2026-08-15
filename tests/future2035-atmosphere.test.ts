@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { briefs } from '../src/data/briefs';
 import { editorialRoutes } from '../src/data/editorial';
 import { horizon2035Scenarios } from '../src/data/horizon2035';
+import { homeInferenceDisclosure, homeMarketSignals } from '../src/data/home-market-signals';
 
 const sourceUrlPattern = /https:\/\/[^\s)\]}>"']+/g;
 const trackingParameters = /^(?:utm_.+|fbclid|gclid|dclid|mc_[ce]id|igshid|ref|referrer)$/i;
@@ -53,6 +54,23 @@ function cssRule(css: string, className: string): string | null {
 }
 
 describe('future-facing editorial evidence', () => {
+  it('separates homepage market evidence from HardMagic 2035 inference', () => {
+    expect(homeMarketSignals.evidence).toHaveLength(5);
+    expect(homeMarketSignals.inference).toHaveLength(4);
+    expect(homeInferenceDisclosure).toMatch(/inference.+not a guarantee/i);
+
+    for (const signal of homeMarketSignals.evidence) {
+      expect(sourceProblem(signal.url)).toBeNull();
+      expect(signal.publisher.trim()).not.toBe('');
+      expect(signal.date.trim()).not.toBe('');
+      expect(signal.boundaries.length).toBeGreaterThanOrEqual(2);
+    }
+
+    for (const forecast of homeMarketSignals.inference) {
+      expect(forecast.boundary).toMatch(/inference.+not a forecast or guarantee/i);
+    }
+  });
+
   it('keeps more than 100 unique publishable editorial routes', () => {
     const paths = editorialRoutes.map(({ path }) => path);
     expect(paths.length).toBeGreaterThanOrEqual(100);
