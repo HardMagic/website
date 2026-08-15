@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { navigation, productLinks } from '../src/data/site';
 import { briefs } from '../src/data/briefs';
 import { caseStudies, youtubeArchive } from '../src/data/portfolio';
@@ -10,6 +10,10 @@ const consultationRouteSource = readFileSync(new URL('../src/components/editoria
 const briefRouteSource = readFileSync(new URL('../src/pages/briefs/[slug].astro', import.meta.url), 'utf8');
 
 describe('site information architecture', () => {
+  it('ships the GitHub Pages asset passthrough marker', () => {
+    expect(existsSync(new URL('../public/.nojekyll', import.meta.url))).toBe(true);
+  });
+
   it('keeps primary navigation concise and internal', () => {
     expect(navigation).toHaveLength(3);
     expect(navigation.every(({ href }) => !href.includes('://') && !href.startsWith('//'))).toBe(true);
