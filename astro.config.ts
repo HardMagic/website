@@ -7,6 +7,11 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   compressHTML: 'jsx',
+  build: {
+    // GitHub Pages/Jekyll treats underscore-prefixed directories as private.
+    // Keep the generated static assets directly servable on the gh-pages branch.
+    assets: 'assets',
+  },
   image: {
     responsiveStyles: true,
   },
