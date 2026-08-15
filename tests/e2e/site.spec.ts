@@ -60,7 +60,7 @@ test('home art direction and image priority are explicit', async ({ page }) => {
   await expect(hero).toHaveAttribute('loading', 'eager');
   await expect(hero).toHaveAttribute('alt', /AI-generated campaign scene/i);
   await expect(page.locator('.hero-disclosure')).toBeVisible();
-  await expect(page.locator('.studio-frame-wide img')).toHaveAttribute('loading', 'lazy');
+  await expect(page.locator('.home-media-card img').first()).toHaveAttribute('loading', 'lazy');
 
   const wordmarkSource = await page.locator('.wordmark img').first().getAttribute('src');
   expect(wordmarkSource).toBeTruthy();
@@ -99,7 +99,7 @@ test('public follow-up routes do not claim direct visits prove receipt', async (
 
 test('magic display copy reflows at 320 CSS pixels', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 800 });
-  for (const [route, selector] of [['/', '#abracadabra-title'], ['/company/', '#hollywood-title'], ['/contact/', 'h1']] as const) {
+  for (const [route, selector] of [['/', 'h1'], ['/company/', '#hollywood-title'], ['/contact/', 'h1']] as const) {
     await page.goto(route);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     expect(overflow).toBeLessThanOrEqual(1);
