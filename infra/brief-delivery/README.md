@@ -19,7 +19,7 @@ The target boundary is:
 - Dream Dataverse projection into `hm_briefengagement`, keyed by `hm_requestid`;
 - Application Insights, Log Analytics, retention policies, and a production failure alert.
 
-The web page never serves a PDF. It posts qualification data to the edge host; the Function writes the durable delivery ledger, creates a 48-hour read-only user-delegation SAS for one exact PDF, emails it, and queues CRM projection. A Dynamics outage cannot force a visitor to resubmit or receive a duplicate delivery.
+The web page never serves a PDF. It posts qualification data to the edge host; the Function writes the durable delivery ledger, creates a 48-hour read-only user-delegation SAS for one exact PDF, emails it, and queues CRM projection. A Dynamics outage cannot force a visitor to resubmit or receive a duplicate delivery. Brief requests require a company email address; public mailbox domains including Gmail, Google Mail, Hotmail, Outlook.com, Yahoo, and their supported country variants are rejected before the ledger, email, or CRM queue is touched. Custom company domains hosted by Google or Microsoft remain eligible.
 
 ## HardMagic intake taxonomy
 

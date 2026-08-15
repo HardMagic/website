@@ -31,7 +31,10 @@ export async function briefRequest(request: HttpRequest, context: InvocationCont
   const body = await parseRequest(request);
   if (!body) return response(400, "Please submit a valid request.", corsHeaders(request));
   const parsed = briefRequestSchema.safeParse(body);
-  if (!parsed.success) return response(400, "Please complete every required qualification field.", corsHeaders(request));
+  if (!parsed.success) {
+    const corporateEmailRejected = parsed.error.issues.some((issue) => issue.path[0] === "email" && issue.message === "corporate_email_required");
+    return response(400, corporateEmailRejected ? "Please use your company email address. Gmail, Yahoo, Hotmail, and Outlook.com accounts are not eligible for this brief." : "Please complete every required qualification field.", corsHeaders(request));
+  }
   const input = parsed.data;
   const remoteIp = request.headers.get("x-azure-clientip") ?? "unknown";
   if (!(await antiAbuse(input["cf-turnstile-response"], remoteIp, input.email, context))) return response(429, "Please try again later.", corsHeaders(request));
