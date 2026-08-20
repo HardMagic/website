@@ -5,6 +5,7 @@ import { loadConfig } from "./config.js";
 import { briefRequestSchema, contactRequestSchema } from "./schema.js";
 import {
   archiveDeadLetter,
+  createLedger,
   enforceRateLimit,
   enqueueCrm,
   getSecret,
@@ -22,6 +23,79 @@ import {
 } from "./platform.js";
 
 const MAX_BODY_BYTES = 24_000;
+const CONTACT_THANK_YOU_PATH = "/contact/thanks/";
+
+type FunnelInput = Record<string, string | undefined>;
+
+export type ExistingRequestDecision = "conflict" | "complete" | "in-flight" | "failed";
+
+export function ledgerPathForRequest(requestId: string): string {
+  return `requests/${requestId}.json`;
+}
+
+export function isSafeLedgerPath(path: string): boolean {
+  return /^requests\/(?:[0-9a-f-]{36}|[0-9]{4}-[0-9]{2}\/[0-9a-f-]{36})\.json$/i.test(path);
+}
+
+export function requestFingerprint(kind: LedgerRecord["kind"], input: FunnelInput): string {
+  const fields = Object.entries(input)
+    .filter(([key]) => key !== "request_id" && key !== "cf-turnstile-response")
+    .sort(([left], [right]) => left.localeCompare(right));
+  return crypto.createHash("sha256").update(JSON.stringify([kind, fields])).digest("hex");
+}
+
+export function classifyExistingRequest(record: Pick<LedgerRecord, "requestFingerprint" | "delivery">, fingerprint: string): ExistingRequestDecision {
+  if (record.requestFingerprint !== fingerprint) return "conflict";
+  if (record.delivery.status === "sent") return "complete";
+  if (record.delivery.status === "failed") return "failed";
+  return "in-flight";
+}
+
+export function isAllowedThankYouPath(path: string): boolean {
+  return path === CONTACT_THANK_YOU_PATH || Object.values(briefs).some((brief) => brief.thankYouPath === path);
+}
+
+function thankYouLocation(path: string): string | null {
+  if (!isAllowedThankYouPath(path)) return null;
+  return `${loadConfig().PUBLIC_SITE_URL}${path}`;
+}
+
+export function replayResponse(
+  request: Pick<HttpRequest, "headers">,
+  record: Pick<LedgerRecord, "id" | "requestFingerprint" | "delivery">,
+  fingerprint: string,
+  thankYouPath: string,
+): HttpResponseInit {
+  const headers = { ...corsHeaders(request), "x-correlation-id": record.id };
+  switch (classifyExistingRequest(record, fingerprint)) {
+    case "conflict":
+      return response(409, "This request ID is already associated with another submission.", headers);
+    case "complete": {
+      const location = thankYouLocation(thankYouPath);
+      return location
+        ? response(303, "", { ...headers, Location: location })
+        : response(500, "The request completed, but its confirmation route is not configured.", headers);
+    }
+    case "failed":
+      return response(503, "We saved this request but could not complete delivery yet.", headers);
+    case "in-flight":
+      return response(202, "Your request is already being processed. Please wait before trying again.", headers);
+  }
+}
+
+async function claimLedger(
+  request: Pick<HttpRequest, "headers">,
+  record: LedgerRecord,
+  fingerprint: string,
+  thankYouPath: string,
+  ledgerPath: string,
+): Promise<{ etag: string } | HttpResponseInit> {
+  const etag = await createLedger(ledgerPath, record);
+  if (etag !== null) return { etag };
+  const existing = await readLedger(ledgerPath);
+  if (existing) return replayResponse(request, existing.record, fingerprint, thankYouPath);
+  return response(503, "We could not reserve this request safely. Please try again.", { ...corsHeaders(request), "x-correlation-id": record.id });
+}
 
 export async function briefRequest(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
   const edge = validateEdgeRequest(request);
@@ -36,15 +110,23 @@ export async function briefRequest(request: HttpRequest, context: InvocationCont
     return response(400, corporateEmailRejected ? "Please use your company email address. Gmail, Yahoo, Hotmail, and Outlook.com accounts are not eligible for this brief." : "Please complete every required qualification field.", corsHeaders(request));
   }
   const input = parsed.data;
-  const remoteIp = request.headers.get("x-azure-clientip") ?? "unknown";
-  if (!(await antiAbuse(input["cf-turnstile-response"], remoteIp, input.email, context))) return response(429, "Please try again later.", corsHeaders(request));
-
+  const id = input.request_id ?? crypto.randomUUID();
+  const fingerprint = requestFingerprint("brief-request", input);
+  const ledgerPath = ledgerPathForRequest(id);
   const brief = briefs[input.report];
-  const id = crypto.randomUUID();
+  const location = thankYouLocation(brief.thankYouPath);
+  if (!location) return response(500, "The request confirmation route is not configured.", { ...corsHeaders(request), "x-correlation-id": id });
+  if (input.request_id) {
+    const existing = await readLedger(ledgerPath);
+    if (existing) return replayResponse(request, existing.record, fingerprint, brief.thankYouPath);
+  }
+  const remoteIp = request.headers.get("x-azure-clientip") ?? "unknown";
+  if (!(await antiAbuse(input["cf-turnstile-response"], remoteIp, input.email, context))) return response(429, "Please try again later.", { ...corsHeaders(request), "x-correlation-id": id, "retry-after": "60" });
+
   const createdAt = new Date().toISOString();
-  const ledgerPath = `requests/${createdAt.slice(0, 7)}/${id}.json`;
   const record: LedgerRecord = {
     id,
+    requestFingerprint: fingerprint,
     kind: "brief-request",
     createdAt,
     email: input.email,
@@ -55,6 +137,7 @@ export async function briefRequest(request: HttpRequest, context: InvocationCont
     sourceUrl: sanitizeSourceUrl(input.source_url),
     sourceCampaign: input.source_campaign,
     consent: { requestedResource: true, broaderMarketing: input.marketing_consent === "yes", capturedAt: createdAt },
+    suppressionStatus: "active",
     qualification: {
       industry: input.industry,
       organizationSize: input.organization_size,
@@ -68,19 +151,25 @@ export async function briefRequest(request: HttpRequest, context: InvocationCont
     delivery: { status: "pending" },
     crm: { status: "queued", attempts: 0 },
   };
-  await writeLedger(ledgerPath, record);
+  const claimed = await claimLedger(request, record, fingerprint, brief.thankYouPath, ledgerPath);
+  if (!("etag" in claimed)) return claimed;
+  let ledgerEtag = claimed.etag;
   try {
     const [link, unsubscribeToken] = await Promise.all([signedBriefUrl(brief), createUnsubscribeToken(id, ledgerPath)]);
     const config = loadConfig();
     const messageId = await sendBriefEmail(input.email, input.name, brief, link, `https://${config.BRIEF_HOST}/api/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}`);
     record.delivery = { status: "sent", sentAt: new Date().toISOString(), providerMessageId: messageId };
-    await writeLedger(ledgerPath, record);
+    ledgerEtag = await writeLedger(ledgerPath, record, ledgerEtag);
   } catch (error) {
     const failureCode = safeFailureCode(error);
     record.delivery = { status: "failed", failureCode };
-    await writeLedger(ledgerPath, record);
+    try {
+      await writeLedger(ledgerPath, record, ledgerEtag);
+    } catch (writeError) {
+      context.error("Brief failure state could not be persisted", { requestId: id, failureCode: safeFailureCode(writeError) });
+    }
     context.error("Brief delivery failed", { requestId: id, failureCode });
-    return response(503, "We saved the request but could not send the field guide yet.", corsHeaders(request));
+    return response(503, "We saved the request but could not send the field guide yet.", { ...corsHeaders(request), "x-correlation-id": id, "retry-after": "300" });
   }
   const crmEvent: CrmEvent = { schemaVersion: "1.0", eventType: "hardmagic.brief.requested", requestId: id, ledgerPath, occurredAt: createdAt };
   try {
@@ -88,7 +177,7 @@ export async function briefRequest(request: HttpRequest, context: InvocationCont
   } catch (error) {
     context.error("CRM enqueue failed", { requestId: id, failureCode: safeFailureCode(error) });
   }
-  return response(303, "", { ...corsHeaders(request), Location: `${loadConfig().PUBLIC_SITE_URL}${brief.thankYouPath}` });
+  return response(303, "", { ...corsHeaders(request), "x-correlation-id": id, Location: location });
 }
 
 export async function contactRequest(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
@@ -101,13 +190,21 @@ export async function contactRequest(request: HttpRequest, context: InvocationCo
   const parsed = contactRequestSchema.safeParse(body);
   if (!parsed.success) return response(400, "Please complete every required intake field.", corsHeaders(request));
   const input = parsed.data;
+  const id = input.request_id ?? crypto.randomUUID();
+  const fingerprint = requestFingerprint("consultation-request", input);
+  const ledgerPath = ledgerPathForRequest(id);
+  const location = thankYouLocation(CONTACT_THANK_YOU_PATH);
+  if (!location) return response(500, "The request confirmation route is not configured.", { ...corsHeaders(request), "x-correlation-id": id });
+  if (input.request_id) {
+    const existing = await readLedger(ledgerPath);
+    if (existing) return replayResponse(request, existing.record, fingerprint, CONTACT_THANK_YOU_PATH);
+  }
   const remoteIp = request.headers.get("x-azure-clientip") ?? "unknown";
-  if (!(await antiAbuse(input["cf-turnstile-response"], remoteIp, input.email, context))) return response(429, "Please try again later.", corsHeaders(request));
-  const id = crypto.randomUUID();
+  if (!(await antiAbuse(input["cf-turnstile-response"], remoteIp, input.email, context))) return response(429, "Please try again later.", { ...corsHeaders(request), "x-correlation-id": id, "retry-after": "60" });
   const createdAt = new Date().toISOString();
-  const ledgerPath = `requests/${createdAt.slice(0, 7)}/${id}.json`;
   const record: LedgerRecord = {
     id,
+    requestFingerprint: fingerprint,
     kind: "consultation-request",
     createdAt,
     email: input.email,
@@ -118,6 +215,7 @@ export async function contactRequest(request: HttpRequest, context: InvocationCo
     sourceUrl: sanitizeSourceUrl(input.source_url),
     sourceCampaign: input.source_campaign,
     consent: { requestedResource: true, broaderMarketing: input.marketing_consent === "yes", capturedAt: createdAt },
+    suppressionStatus: "active",
     qualification: {
       mandate: input.mandate,
       decisionHorizon: input.decision_horizon,
@@ -126,17 +224,23 @@ export async function contactRequest(request: HttpRequest, context: InvocationCo
     delivery: { status: "pending" },
     crm: { status: "queued", attempts: 0 },
   };
-  await writeLedger(ledgerPath, record);
+  const claimed = await claimLedger(request, record, fingerprint, CONTACT_THANK_YOU_PATH, ledgerPath);
+  if (!("etag" in claimed)) return claimed;
+  let ledgerEtag = claimed.etag;
   try {
     const messageId = await sendConsultationEmails(record);
     record.delivery = { status: "sent", sentAt: new Date().toISOString(), providerMessageId: messageId };
-    await writeLedger(ledgerPath, record);
+    ledgerEtag = await writeLedger(ledgerPath, record, ledgerEtag);
   } catch (error) {
     const failureCode = safeFailureCode(error);
     record.delivery = { status: "failed", failureCode };
-    await writeLedger(ledgerPath, record);
+    try {
+      await writeLedger(ledgerPath, record, ledgerEtag);
+    } catch (writeError) {
+      context.error("Consultation failure state could not be persisted", { requestId: id, failureCode: safeFailureCode(writeError) });
+    }
     context.error("Consultation delivery failed", { requestId: id, failureCode });
-    return response(503, "We saved the request but could not route it yet.", corsHeaders(request));
+    return response(503, "We saved the request but could not route it yet.", { ...corsHeaders(request), "x-correlation-id": id, "retry-after": "300" });
   }
   const crmEvent: CrmEvent = { schemaVersion: "1.0", eventType: "hardmagic.consultation.requested", requestId: id, ledgerPath, occurredAt: createdAt };
   try {
@@ -144,12 +248,13 @@ export async function contactRequest(request: HttpRequest, context: InvocationCo
   } catch (error) {
     context.error("CRM enqueue failed", { requestId: id, failureCode: safeFailureCode(error) });
   }
-  return response(303, "", { ...corsHeaders(request), Location: `${loadConfig().PUBLIC_SITE_URL}/contact/thanks/` });
+  return response(303, "", { ...corsHeaders(request), "x-correlation-id": id, Location: location });
 }
 
 export async function unsubscribe(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
   const edge = validateEdgeRequest(request);
   if (edge) return edge;
+  if (request.method === "OPTIONS") return response(204, "", corsHeaders(request));
   let token = new URL(request.url).searchParams.get("token") ?? "";
   if (request.method === "POST" && !token) {
     const body = await parseRequest(request);
@@ -164,8 +269,10 @@ export async function unsubscribe(request: HttpRequest, context: InvocationConte
   if (request.method !== "POST") return response(405, "Method not allowed", corsHeaders(request));
   const current = await readLedger(tokenData.ledgerPath);
   if (!current || current.record.id !== tokenData.id) return response(404, "This link is invalid or expired.", corsHeaders(request));
-  current.record.consent.requestedResource = true;
-  current.record.qualification.suppressionStatus = "opted-out";
+  // Suppression revokes broader follow-up consent without rewriting the
+  // original, purpose-limited resource-consent record.
+  current.record.consent.broaderMarketing = false;
+  current.record.suppressionStatus = "opted-out";
   await writeLedger(tokenData.ledgerPath, current.record, current.etag);
   try {
     await enqueueCrm({ schemaVersion: "1.0", eventType: "hardmagic.engagement.suppressed", requestId: current.record.id, ledgerPath: tokenData.ledgerPath, occurredAt: new Date().toISOString() });
@@ -210,15 +317,15 @@ export async function crmDeadLetter(message: unknown, context: InvocationContext
 export function validateEdgeRequest(request: Pick<HttpRequest, "headers" | "url">): HttpResponseInit | null {
   let config;
   try { config = loadConfig(); } catch { return response(503, "Service is not configured"); }
-  const frontDoorId = request.headers.get("x-azure-fdid")?.toLowerCase();
-  const forwardedHost = (request.headers.get("x-forwarded-host") ?? new URL(request.url).host).split(",")[0]?.trim().toLowerCase();
+  const frontDoorId = request.headers.get("x-azure-fdid")?.trim().toLowerCase();
+  const forwardedHost = request.headers.get("x-forwarded-host")?.split(",")[0]?.trim().toLowerCase();
   if (frontDoorId !== config.EXPECTED_FRONT_DOOR_ID.toLowerCase() || forwardedHost !== config.BRIEF_HOST) return response(404, "Not found", { "cache-control": "no-store" });
   const origin = request.headers.get("origin");
   if (origin && !config.ALLOWED_ORIGINS.includes(origin)) return response(403, "Origin not allowed", { "cache-control": "no-store" });
   return null;
 }
 
-function parseCrmEvent(message: unknown): CrmEvent | null {
+export function parseCrmEvent(message: unknown): CrmEvent | null {
   try {
     let value = message;
     if (typeof message === "string") {
@@ -227,7 +334,17 @@ function parseCrmEvent(message: unknown): CrmEvent | null {
     }
     if (!value || typeof value !== "object") return null;
     const candidate = value as Partial<CrmEvent>;
-    if (candidate.schemaVersion !== "1.0" || !candidate.requestId || !candidate.ledgerPath || !candidate.eventType) return null;
+    if (
+      candidate.schemaVersion !== "1.0" ||
+      !candidate.requestId ||
+      !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(candidate.requestId) ||
+      !candidate.ledgerPath ||
+      !isSafeLedgerPath(candidate.ledgerPath) ||
+      !candidate.eventType ||
+      !["hardmagic.brief.requested", "hardmagic.consultation.requested", "hardmagic.engagement.suppressed"].includes(candidate.eventType) ||
+      !candidate.occurredAt ||
+      Number.isNaN(Date.parse(candidate.occurredAt))
+    ) return null;
     return candidate as CrmEvent;
   } catch { return null; }
 }
@@ -244,21 +361,26 @@ async function antiAbuse(turnstileToken: string, remoteIp: string, email: string
   }
 }
 
-async function parseRequest(request: HttpRequest): Promise<Record<string, unknown> | null> {
-  const contentLength = Number(request.headers.get("content-length") ?? "0");
-  if (contentLength > MAX_BODY_BYTES) return null;
+export async function parseRequest(request: Pick<HttpRequest, "headers" | "text">): Promise<Record<string, unknown> | null> {
+  const contentLengthHeader = request.headers.get("content-length");
+  const contentLength = contentLengthHeader === null ? 0 : Number(contentLengthHeader);
+  if (!Number.isFinite(contentLength) || contentLength < 0 || contentLength > MAX_BODY_BYTES) return null;
   try {
     const contentType = request.headers.get("content-type") ?? "";
-    if (contentType.includes("application/json")) return await request.json() as Record<string, unknown>;
     const text = await request.text();
     if (Buffer.byteLength(text) > MAX_BODY_BYTES) return null;
+    if (contentType.includes("application/json")) {
+      const parsed: unknown = JSON.parse(text);
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
+      return parsed as Record<string, unknown>;
+    }
     return Object.fromEntries(new URLSearchParams(text));
   } catch { return null; }
 }
 
 async function createUnsubscribeToken(id: string, ledgerPath: string): Promise<string> {
   const config = loadConfig();
-  const payload = Buffer.from(JSON.stringify({ id, ledgerPath, exp: Date.now() + 400 * 86_400_000 }), "utf8").toString("base64url");
+  const payload = Buffer.from(JSON.stringify({ id, ledgerPath, exp: Date.now() + 395 * 86_400_000 }), "utf8").toString("base64url");
   const key = await getSecret(config.UNSUBSCRIBE_TOKEN_SECRET_NAME);
   return `${payload}.${crypto.createHmac("sha256", key).update(payload).digest("base64url")}`;
 }
@@ -272,15 +394,17 @@ async function verifyUnsubscribeToken(token: string): Promise<{ id: string; ledg
     const actual = Buffer.from(signature, "base64url");
     if (actual.length !== expected.length || !crypto.timingSafeEqual(actual, expected)) return null;
     const value = JSON.parse(Buffer.from(payload, "base64url").toString("utf8")) as { id?: string; ledgerPath?: string; exp?: number };
-    if (!value.id || !value.ledgerPath || !value.exp || value.exp < Date.now() || !/^requests\/\d{4}-\d{2}\/[0-9a-f-]+\.json$/.test(value.ledgerPath)) return null;
+    if (!value.id || !value.ledgerPath || !value.exp || value.exp < Date.now() || !isSafeLedgerPath(value.ledgerPath)) return null;
     return { id: value.id, ledgerPath: value.ledgerPath };
   } catch { return null; }
 }
 
-function sanitizeSourceUrl(value: string): string {
+export function sanitizeSourceUrl(value: string): string {
   try {
+    const config = loadConfig();
     const url = new URL(value);
-    if (!["https:", "http:"].includes(url.protocol)) return "";
+    const allowedOrigins = config.ALLOWED_ORIGINS.map((origin) => new URL(origin).origin);
+    if (url.protocol !== "https:" || !allowedOrigins.includes(url.origin)) return "";
     url.username = "";
     url.password = "";
     url.search = "";
@@ -303,7 +427,15 @@ function corsHeaders(request: Pick<HttpRequest, "headers">): Record<string, stri
 }
 
 function response(status: number, body: string, headers: Record<string, string> = {}): HttpResponseInit {
-  return { status, body, headers };
+  return {
+    status,
+    body,
+    headers: {
+      "cache-control": "no-store",
+      "content-type": "text/plain; charset=utf-8",
+      ...headers,
+    },
+  };
 }
 
 function escapeHtml(value: string): string {

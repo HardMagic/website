@@ -4,6 +4,7 @@ export interface BriefChapter {
     readonly start: number;
     readonly end: number;
   };
+  readonly focus?: string;
 }
 
 export interface BriefSqueeze {
@@ -15,6 +16,53 @@ export interface BriefSqueeze {
 export interface BriefRoute {
   readonly destination: string;
   readonly when: readonly string[];
+}
+
+export type BriefClaimClass = "evidence" | "inference" | "recommendation" | "uncertainty" | "boundary";
+
+export interface BriefSource {
+  readonly id: string;
+  readonly claimClass: "evidence";
+  readonly sourceType: "primary";
+  readonly title: string;
+  readonly publisher: string;
+  readonly published: string;
+  readonly citation: string;
+  readonly url: string;
+  readonly supports: string;
+  readonly provenance: string;
+}
+
+export interface BriefEditorial {
+  readonly coreArgument: string;
+  readonly operatingTest: string;
+  readonly firstMove: string;
+  readonly stopSignal: string;
+}
+
+export interface BriefPublication {
+  readonly briefId: string;
+  readonly version: string;
+  readonly editionDate: string;
+  readonly sourceCutoff: string;
+  readonly author: string;
+  readonly reviewer: string;
+  readonly confidentiality: string;
+  readonly distribution: string;
+  readonly language: "en-US";
+  readonly contact: string;
+  readonly fileName: string;
+  readonly storageObject: string;
+  readonly supersedes: string | null;
+  readonly releaseStatus: "draft" | "approved" | "superseded";
+  readonly accessibility: {
+    readonly semanticHtmlAlternative: true;
+    readonly taggedPdfRequested: true;
+    readonly outlineRequested: true;
+    readonly textSelectable: true;
+    readonly readingOrder: "linear";
+    readonly pdfUa: "not-certified";
+  };
 }
 
 export interface BriefRouting {
@@ -44,12 +92,18 @@ export interface TechnicalBrief {
   readonly worksheets: readonly string[];
   readonly evidenceNeeds: readonly string[];
   readonly limitations: readonly string[];
+  readonly topics: readonly string[];
+  readonly sources: readonly BriefSource[];
+  readonly editorial: BriefEditorial;
+  readonly publication: BriefPublication;
   readonly squeeze: BriefSqueeze;
   readonly routing: BriefRouting;
   readonly followups: readonly BriefFollowup[];
 }
 
-export const briefs = [
+type BriefSeed = Omit<TechnicalBrief, "topics" | "sources" | "editorial" | "publication">;
+
+const briefSeeds = [
   {
     slug: "generative-media-operating-system",
     title: "The Generative Media Operating System",
@@ -1565,6 +1619,372 @@ export const briefs = [
       },
     ],
   },
-] as const satisfies readonly TechnicalBrief[];
+] as const satisfies readonly BriefSeed[];
 
-export type BriefSlug = (typeof briefs)[number]["slug"];
+export type BriefSlug = (typeof briefSeeds)[number]["slug"];
+
+const briefTopics: Record<BriefSlug, readonly string[]> = {
+  "generative-media-operating-system": [
+    "GenAI operating model",
+    "governed media production",
+    "creative and technical decision rights",
+    "rights and provenance",
+    "90-day capability building",
+  ],
+  "creative-direction-after-the-prompt": [
+    "creative authority",
+    "brand-world continuity",
+    "human authorship",
+    "critique systems",
+    "generative production leadership",
+  ],
+  "provenance-ready-content-supply-chain": [
+    "content provenance",
+    "C2PA and credentials",
+    "media supply chains",
+    "verification and disputed media",
+    "trust boundaries",
+  ],
+  "hybrid-ai-media-infrastructure": [
+    "hybrid inference",
+    "workload placement",
+    "GPU capacity and routing",
+    "security and data residency",
+    "benchmarking and graceful degradation",
+  ],
+  "visual-product-development-field-guide": [
+    "visual product review",
+    "source-linked intent",
+    "agent authorization",
+    "proof-carrying changes",
+    "reversible product delivery",
+  ],
+  "autonomous-web-publishing-control-plane": [
+    "agent-assisted publishing",
+    "accessibility and quality audits",
+    "finding-to-source traceability",
+    "risk-tiered remediation",
+    "release and rollback governance",
+  ],
+  "intelligent-media-asset-estate": [
+    "media asset governance",
+    "metadata and taxonomy",
+    "human curation",
+    "rights-aware reuse",
+    "portable media operations",
+  ],
+  "modern-media-agency-transformation-playbook": [
+    "media capability systems",
+    "agency and ownership models",
+    "executive intent",
+    "creative and technical operations",
+    "procurement and transformation",
+  ],
+};
+
+const briefEditorial: Record<BriefSlug, BriefEditorial> = {
+  "generative-media-operating-system": {
+    coreArgument:
+      "Generation becomes a durable capability only when intent, authority, rights, provenance, infrastructure, distribution, and learning are designed as one operating system.",
+    operatingTest:
+      "Trace one real media workflow from request to approved reuse, naming the decision owner, evidence threshold, rights exception, and reversible fallback at each handoff.",
+    firstMove:
+      "Select one active workflow and record its current volume, approval time, rework, rights exceptions, vendor dependencies, and audience-response baseline before buying another tool.",
+    stopSignal:
+      "Pause the program when no accountable person can approve the output, explain its provenance, or reverse the dependency that created it.",
+  },
+  "creative-direction-after-the-prompt": {
+    coreArgument:
+      "When execution is abundant, creative direction is the accountable work of defining the premise, canon, audience contract, ethical boundary, and stopping rule.",
+    operatingTest:
+      "Take one live campaign and separate premise, world, constraints, critique language, approval authority, and execution so the team can see which decisions remain human.",
+    firstMove:
+      "Name the creative decision that currently has no owner, then run a small critique loop where divergent proposals and the final human choice are preserved together.",
+    stopSignal:
+      "Stop scaling generated output when the team can produce variants faster than it can explain why one is faithful, original, consented, and fit for the audience.",
+  },
+  "provenance-ready-content-supply-chain": {
+    coreArgument:
+      "Provenance earns trust only when the record of origin, transformation, authority, and distribution survives the actual media path and remains distinct from a claim that the depiction is true.",
+    operatingTest:
+      "Follow one asset through capture or generation, editing, signing, DAM storage, CDN delivery, platform transformation, download, and reuse; record where context is lost.",
+    firstMove:
+      "Choose a representative asset class and write the minimum event, identity, rights, and verification record that every system in its lifecycle must preserve.",
+    stopSignal:
+      "Do not call a badge a trust solution when credentials can be stripped, a signer is unaccountable, or editorial verification is absent from the user experience.",
+  },
+  "hybrid-ai-media-infrastructure": {
+    coreArgument:
+      "The durable infrastructure choice is policy-directed workload placement across local, private, sovereign, and managed environments—not a permanent preference for cloud or on-premises.",
+    operatingTest:
+      "Classify one workload by sensitivity, model fitness, latency, energy and capacity envelope, provenance obligation, portability, and owner before comparing providers.",
+    firstMove:
+      "Benchmark a representative approved workload with hardware, model, precision, settings, queue policy, energy boundary, failure behavior, and acceptance criteria recorded.",
+    stopSignal:
+      "Reject an architecture that cannot degrade safely, disclose data movement, reproduce its benchmark, or exit a provider without losing the governed workflow.",
+  },
+  "visual-product-development-field-guide": {
+    coreArgument:
+      "A screenshot or ticket becomes useful product evidence only when it remains connected to the rendered region, source context, authorized action, evaluation, approval, and rollback record.",
+    operatingTest:
+      "Select one recent visual finding and trace it from observation through source location, least-authority implementation, rendered verification, accessibility check, and reviewer decision.",
+    firstMove:
+      "Define a small annotation vocabulary and pilot it on one route so product, design, engineering, and an agent share the same evidence object.",
+    stopSignal:
+      "Keep an agent in proposal mode when context is incomplete, the requested change crosses a security or accessibility boundary, or rollback evidence is missing.",
+  },
+  "autonomous-web-publishing-control-plane": {
+    coreArgument:
+      "Safe publishing autonomy is a control plane that joins standards, source locations, bounded changes, preview, human authority, release evidence, and rollback—not a larger queue of automated fixes.",
+    operatingTest:
+      "Take one recurring audit finding and require the complete chain: standard, route, source diff, preview, regression evidence, approval, release identity, and recovery step.",
+    firstMove:
+      "Set risk tiers for audit findings and allow automation to execute only the lowest-risk class until the review and rollback loop has earned broader authority.",
+    stopSignal:
+      "Do not publish automatically when the finding cannot be mapped to source, the page is consequential, or the proposed remediation would hide a content or governance decision.",
+  },
+  "intelligent-media-asset-estate": {
+    coreArgument:
+      "An intelligent media estate is institutional memory: machine enrichment sits beside human selection, rights, provenance, relationships, and the reasons an asset was trusted or rejected.",
+    operatingTest:
+      "Evaluate findability and duplicate detection on an authorized representative collection while separately reviewing rights, consent, retention, and cultural-description errors.",
+    firstMove:
+      "Inventory one collection’s identifiers, descriptive fields, rights state, provenance, curation signals, and export fidelity before designing a new semantic layer.",
+    stopSignal:
+      "Do not promote similarity or automated enrichment to permission, authorship, cultural truth, or editorial judgment without a named steward and correction record.",
+  },
+  "modern-media-agency-transformation-playbook": {
+    coreArgument:
+      "The modern media organization is a capability system that composes executive intent, human creative authority, specialist craft, governed production, media memory, provenance, and learning around each decision.",
+    operatingTest:
+      "Compare ownership models using the same definitions for spend, cycle time, quality, reuse, rights, workforce, channel, and outcome while disclosing attribution limits.",
+    firstMove:
+      "Map one active capability from executive intent to market learning and identify which decisions must remain owned internally versus which execution can be composed externally.",
+    stopSignal:
+      "Do not change the roster or internalize work when the proposed model has no accountable creative authority, operating baseline, procurement logic, or transition path.",
+  },
+};
+
+const briefChapterFocus: Record<BriefSlug, readonly string[]> = {
+  "generative-media-operating-system": [
+    "Treat the cover as a decision record: identify the edition, its evidence boundary, and the reader who must act.",
+    "Separate a 2035 vantage from present evidence so the scenario creates a test rather than a false forecast.",
+    "Define the operating system as linked authority, media, rights, infrastructure, distribution, and learning decisions.",
+    "Use current adoption signals to ask what production control is needed; adoption alone cannot establish effectiveness.",
+    "Diagnose why a portfolio of tools remains a portfolio instead of becoming an owned, measured capability.",
+    "Make the seven capabilities visible as a chain with failure at the handoff, not as an inventory of features.",
+    "Assign approval, exception, and stop rights across brand, creative, legal, technology, and operations.",
+    "Keep policy and media planes distinct enough to change a model or vendor without losing accountability.",
+    "Preserve human creative authority where agents can execute, revise, and multiply outputs faster than critique.",
+    "Use scenarios to compare option value and reversibility, never to smuggle an unsupported return-on-investment claim.",
+    "Turn maturity into observable behavior: ownership, evidence, rights, recovery, and learning rather than a score alone.",
+    "Sequence the first 90 days around one live workflow so a ten-year ambition returns evidence quickly.",
+    "Name the failure signal that would stop investment before sunk cost turns a weak pilot into policy.",
+    "Treat privacy, rights, security, labor, and energy as operating constraints that shape the design from the start.",
+    "Record source methods, assumptions, limitations, and open questions so another reviewer can reproduce the argument.",
+    "End with a bounded path from the brief to a real workflow, not a generic invitation to buy more tools.",
+  ],
+  "creative-direction-after-the-prompt": [
+    "Use the publication record to name who owns the creative question and which claims still require review.",
+    "Read future signals as prompts for creative governance, not as permission to predict a single aesthetic outcome.",
+    "Make abundance the reason to clarify direction: premise, canon, consequence, and the value of saying no.",
+    "Move the creative director upstream to define authorship, consent, audience contract, and stopping rules.",
+    "Treat the prompt as a transitional interface; the operating model must preserve intent beyond one interaction.",
+    "Translate brand strategy into constraints that enable divergence without losing recognition or responsibility.",
+    "Use the intent stack to distinguish premise, audience, world, system, and execution before judging the output.",
+    "Design critique loops where agents can revise but a named human explains the final convergence.",
+    "Protect persistent worlds across campaigns and formats by recording canon, exceptions, and community participation.",
+    "Judge quality, originality, and fitness with situated criteria rather than an attractive but false universal score.",
+    "Choose an engagement model by the authority and continuity it supplies, not by the label on the contract.",
+    "Run a 30-day pilot against a real creative decision and preserve both divergence and the human choice.",
+    "Use failure modes to expose when throughput, imitation, or approval speed is replacing creative judgment.",
+    "State the evidence policy clearly: reported findings, interpretation, commissioned work, and synthetic demonstration are different.",
+    "Make the closing path a specific creative-leadership conversation tied to the authority gap identified in the brief.",
+  ],
+  "provenance-ready-content-supply-chain": [
+    "Use the record page to distinguish a provenance claim from a claim that the depicted event is true.",
+    "Keep authenticity, identity, integrity, origin, and truth separate when reading the 2035 dispatch.",
+    "Frame trust as inspectable infrastructure: people need context, and systems need durable event relationships.",
+    "Read standards signals as implementation constraints while leaving room for adoption, preservation, and key-governance uncertainty.",
+    "Map where context survives or disappears from capture through generation, editing, storage, distribution, and reuse.",
+    "Distinguish credentials, descriptive metadata, manifests, and editorial evidence so one record does not overclaim.",
+    "Design the provenance architecture around trust boundaries, signing authority, correction, and verification experience.",
+    "Make ingestion the first control point: identify the asset, source, consent, rights, and initial context.",
+    "Record generative and editing events without confusing a transformation record with authorship or factual accuracy.",
+    "Treat approval and signing as accountable acts with a release decision, not just a cryptographic operation.",
+    "Test what platforms and transformations preserve, rewrite, hide, or strip before promising continuity to readers.",
+    "Give people, platforms, agents, and libraries different verification views over the same bounded evidence.",
+    "Prepare for disputed media with an incident path that preserves the record while investigating the claim.",
+    "Sequence implementation by control risk and testable interoperability, not by the number of badges a system can display.",
+    "Use counterarguments to show why provenance cannot substitute for editorial verification or a trustworthy signer.",
+    "Document standards, methods, version boundaries, and unresolved interoperability questions for the next reviewer.",
+    "Close with a workshop that tests one real media path and its exception handling rather than selling a badge.",
+  ],
+  "hybrid-ai-media-infrastructure": [
+    "Use the publication record to anchor a volatile infrastructure argument to a version, cutoff, and accountable review.",
+    "Treat the 2035 dispatch as a reminder that compute remains physical even when interfaces become abstract.",
+    "Make placement policy outlive a provider preference by defining the constraints that actually govern each workload.",
+    "Classify image, video, audio, spatial, simulation, and agent workloads by behavior before selecting an environment.",
+    "Make sensitivity, latency, energy, capacity, provenance, portability, and ownership explicit policy boundaries.",
+    "Separate hybrid control-plane decisions from media-plane execution so a placement can change without losing context.",
+    "Route GPU demand with priority, capacity, fallback, and quality evidence instead of a single queue metric.",
+    "Keep model and workflow lifecycle records connected to approved versions, evaluations, and release authority.",
+    "Draw security, isolation, data movement, and logging boundaries before comparing throughput or cost.",
+    "Design graceful degradation as a product requirement for critical media workflows, not as an outage afterthought.",
+    "Use energy, carbon, capacity, and cost scenarios to expose assumptions rather than to promise a forecast.",
+    "Benchmark with disclosed settings and comparable acceptance criteria so numbers can be reproduced and challenged.",
+    "Compare build, buy, and blend choices by exit path, control, evidence, and operating ownership.",
+    "Assign operational owners to failure modes before a platform becomes a production dependency.",
+    "Keep methods, source boundaries, and benchmark limitations visible so vendor claims do not become architecture facts.",
+    "End with a workload-specific assessment path that can produce a measured architecture decision.",
+  ],
+  "visual-product-development-field-guide": [
+    "Use the cover as a compact evidence contract linking a visual observation to a source and an accountable review.",
+    "Treat software as negotiated context: the future signal matters only when perception can become proof.",
+    "Protect the chain from observation to source, authorized change, rendered evidence, approval, and rollback.",
+    "Read acceleration evidence with its review and stability limits instead of treating faster execution as quality.",
+    "Connect repository, canvas, and agent around one evidence object rather than three disconnected handoffs.",
+    "Make annotations structured enough to carry intent, scope, risk, and the question a reviewer must answer.",
+    "Link a visual region to the source and runtime context that produced it before authorizing a fix.",
+    "Give agents the least authority needed and preserve reversible execution when the context is incomplete.",
+    "Make changes proof-carrying: implementation, accessibility, regression, approval, and rollback should travel together.",
+    "Preserve collaboration and dissent as a decision record, not as ephemeral comments around a screenshot.",
+    "Keep private repository and user context within explicit boundaries when visual evidence is shared.",
+    "Pilot the loop on a real workflow with an acceptance bar that includes product, engineering, and accessibility outcomes.",
+    "Use failure modes to identify where visual direction is insufficient for architecture, security, or responsible automation.",
+    "State what the sources establish and what a product team must baseline before making an efficiency claim.",
+    "Make the WireMark path a bounded evaluation with evidence return, not unrestricted repository authority.",
+  ],
+  "autonomous-web-publishing-control-plane": [
+    "Use the record page to mark the difference between a generated guide and a certified production release.",
+    "Treat machine audiences as a reason to improve structure and evidence, not a reason to publish more pages.",
+    "Make autonomous publishing a control plane that joins finding, source, preview, approval, release, and rollback.",
+    "Inventory the web surface across people, agents, search, feeds, and media libraries before automating it.",
+    "Keep accessibility, performance, SEO, security, and delivery as separate audit domains with shared evidence.",
+    "Require every finding to point to a standard, exact source location, bounded change, and testable outcome.",
+    "Tier agent remediation by risk and keep consequential changes behind human authority.",
+    "Make regression evidence a release input, not a report appended after an automated fix.",
+    "Preserve branch, preview, release, and rollback identity so publishing remains recoverable.",
+    "Govern a portfolio by ownership, exception policy, and evidence freshness rather than a single automation score.",
+    "Baseline measures with definitions and limitations before connecting them to a future publishing scenario.",
+    "Sequence adoption from low-risk execution to broader authority only after the control loop works in practice.",
+    "Use unsafe-automation cases to show where a tool cannot decide content, legal, accessibility, or governance questions.",
+    "Document source policy and field boundaries so audit output is not mistaken for certification.",
+    "Close with a Web Magic assessment that keeps the approved site and the publishing authority bounded.",
+  ],
+  "intelligent-media-asset-estate": [
+    "Use the publication record to identify the collection, rights boundary, source cutoff, and review status of the guide.",
+    "Treat the media library as an active collaborator only when its memory remains interpretable and correctable.",
+    "Make storage distinct from memory by joining files to rights, provenance, relationships, context, and selection rationale.",
+    "Map capture, generation, meaning, use, and remembrance before designing the next metadata layer.",
+    "Use taxonomy and semantic enrichment to improve retrieval while keeping uncertainty and cultural-description error visible.",
+    "Record human curation and review signals instead of silently replacing judgment with an automated score.",
+    "Use duplicate and near-duplicate relationships to support decisions, never to infer ownership or permission.",
+    "Keep rights, restrictions, consent, and provenance as separate fields with named stewards and correction history.",
+    "Design connectors for identifier continuity and portable relationships, not just file export.",
+    "Make retrieval and responsible reuse answer both what an asset is and whether it may be used here.",
+    "Assign stewardship for metadata, rights, cultural context, correction, and retirement before scaling enrichment.",
+    "Remediate an estate from an authorized representative collection with a measurable sequence and human review.",
+    "Use migration failures to expose lost relationships, stale identifiers, and unsupported assumptions about export fidelity.",
+    "Document evidence and limits so a complete metadata record is not mistaken for factual truth or permission.",
+    "End with a Photo Curator path tied to one approved collection, its risks, and its curation objective.",
+  ],
+  "modern-media-agency-transformation-playbook": [
+    "Use the publication record to state whose transformation decision is being supported and which market claims remain bounded.",
+    "Read future signals as inputs to ownership design, not as a verdict that agencies or internal teams are obsolete.",
+    "Define the adaptive capability system before comparing rosters, vendors, studios, or internalization.",
+    "Read creator, video, AI, and consumption evidence with its population, geography, and projection limits.",
+    "Join executive intent, creative authority, specialist craft, production, memory, provenance, and learning in one model.",
+    "Keep brand strategy connected to the decisions and institutional memory that should not be casually outsourced.",
+    "Treat campaign systems as a shared creative and operating problem, not a handoff between strategy and production.",
+    "Make GenAI production accountable to workflow, rights, review, infrastructure, and the people who operate it.",
+    "Preserve media management, provenance, and reuse as capability infrastructure rather than post-production administration.",
+    "Include web, product, and distribution operations when evaluating the modern media estate.",
+    "Compare owned, embedded, networked, creator-led, and managed models by continuity, authority, and transition cost.",
+    "Align governance and procurement with the decisions, evidence, workforce, and commercial terms the model must sustain.",
+    "Turn the transformation diagnostic into a 90-day sequence with a baseline, owner, and reversible learning loop.",
+    "Use counterarguments to preserve conditions where traditional models remain the right fit.",
+    "Document evidence policy, attribution limits, and source dates before turning market metrics into strategy.",
+    "Close with a principal dialogue that begins from the capability ownership gap, not from a generic agency pitch.",
+  ],
+};
+
+function parseEvidenceSource(slug: BriefSlug, citation: string, index: number): BriefSource | null {
+  const url = citation.match(/https:\/\/\S+$/)?.[0];
+  if (!url) return null;
+
+  const withoutLabel = citation.replace(/^\[Evidence\]\s*/, "").slice(0, -url.length).trim().replace(/[.]$/, "");
+  const dash = withoutLabel.lastIndexOf(" — ");
+  const title = dash > 0 ? withoutLabel.slice(0, dash).trim() : withoutLabel;
+  const publisherAndDate = dash > 0 ? withoutLabel.slice(dash + 3).trim() : "Editorial source note";
+  const comma = publisherAndDate.lastIndexOf(", ");
+  const publisher = comma > 0 ? publisherAndDate.slice(0, comma).trim() : publisherAndDate;
+  const published = comma > 0 ? publisherAndDate.slice(comma + 2).trim() : "Publication date in citation note";
+  const firstSentence = withoutLabel.indexOf(". ");
+  const supports = firstSentence > 0 ? withoutLabel.slice(firstSentence + 2).trim() : withoutLabel;
+
+  return {
+    id: `${slug}-source-${String(index + 1).padStart(2, "0")}`,
+    claimClass: "evidence",
+    sourceType: "primary",
+    title,
+    publisher,
+    published,
+    citation,
+    url,
+    supports,
+    provenance:
+      "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario.",
+  };
+}
+
+function publicationFor(brief: BriefSeed): BriefPublication {
+  return {
+    briefId: brief.slug,
+    version: "2026.08-draft",
+    editionDate: "2026-08-20",
+    sourceCutoff: "2026-08-12",
+    author: "HardMagic editorial desk",
+    reviewer: "Editorial review pending",
+    confidentiality: "Private technical brief",
+    distribution: "Individual recipient; time-limited delivery; no public file path",
+    language: "en-US",
+    contact: "hello@hardmagic.com",
+    fileName: `${brief.slug}.pdf`,
+    storageObject: `${brief.slug}.pdf`,
+    supersedes: null,
+    releaseStatus: "draft",
+    accessibility: {
+      semanticHtmlAlternative: true,
+      taggedPdfRequested: true,
+      outlineRequested: true,
+      textSelectable: true,
+      readingOrder: "linear",
+      pdfUa: "not-certified",
+    },
+  };
+}
+
+function chaptersFor(brief: BriefSeed & { readonly slug: BriefSlug }): readonly BriefChapter[] {
+  const focuses = briefChapterFocus[brief.slug];
+  if (focuses.length !== brief.chapters.length) {
+    throw new Error(`${brief.slug}: chapter focus count does not match chapter count`);
+  }
+
+  return brief.chapters.map((chapter, index) => {
+    const focus = focuses[index];
+    if (!focus) throw new Error(`${brief.slug}: missing chapter focus ${index + 1}`);
+    return { ...chapter, focus };
+  });
+}
+
+export const briefs = briefSeeds.map((brief) => ({
+  ...brief,
+  chapters: chaptersFor(brief),
+  topics: briefTopics[brief.slug],
+  sources: brief.evidenceNeeds
+    .map((citation, index) => parseEvidenceSource(brief.slug, citation, index))
+    .filter((source): source is BriefSource => source !== null),
+  editorial: briefEditorial[brief.slug],
+  publication: publicationFor(brief),
+})) as unknown as readonly [TechnicalBrief, ...TechnicalBrief[]];

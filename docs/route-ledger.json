@@ -1,0 +1,4163 @@
+{
+  "schemaVersion": 2,
+  "build": {
+    "root": "dist",
+    "origin": "https://hardmagic.com",
+    "basePath": "/",
+    "sha256": "d149f38ce2e29cd608b8c37c7a532194935e06b0596b3eeaabbf32a71a304977"
+  },
+  "policy": {
+    "indexableKind": "canonical",
+    "sitemap": "canonical routes only",
+    "redirects": "static meta-refresh needs edge status verification",
+    "externalChecks": "bounded HEAD/GET with review statuses for anti-bot responses"
+  },
+  "counts": {
+    "html": 153,
+    "canonical": 135,
+    "noindex": 18,
+    "success": 9,
+    "redirects": 8,
+    "errors": 1,
+    "links": 20107,
+    "internal": 18189,
+    "fragments": 244,
+    "assets": 1334,
+    "forms": 14,
+    "external": 127,
+    "externalUnique": 54,
+    "sitemap": 135
+  },
+  "routes": [
+    {
+      "route": "/",
+      "file": "index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Shape What the World Sees Next — HardMagic",
+      "h1": [
+        "Shape what the world sees next."
+      ],
+      "description": "HardMagic is an independent media conglomerate built for global brands, film studios, and category-defining companies leading advertising, media creation, and GenAI transformation.",
+      "canonical": "https://hardmagic.com/",
+      "canonicalRoute": "/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 179,
+      "forms": 0
+    },
+    {
+      "route": "/404/",
+      "file": "404.html",
+      "kind": "error",
+      "indexability": "noindex",
+      "title": "Not found — HardMagic",
+      "h1": [
+        "This page never made it through."
+      ],
+      "description": "The requested page could not be found.",
+      "canonical": "https://hardmagic.com/404/",
+      "canonicalRoute": "/404/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": false,
+      "links": 127,
+      "forms": 0
+    },
+    {
+      "route": "/accessibility/",
+      "file": "accessibility/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Accessibility — HardMagic",
+      "h1": [
+        "Accessibility"
+      ],
+      "description": "Accessibility connects accessibility, support, and continuous improvement as one consequential decision.",
+      "canonical": "https://hardmagic.com/accessibility/",
+      "canonicalRoute": "/accessibility/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 135,
+      "forms": 0
+    },
+    {
+      "route": "/briefs/",
+      "file": "briefs/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Technical brief library — HardMagic",
+      "h1": [
+        "Choose the decision."
+      ],
+      "description": "Choose among eight HardMagic technical briefs by the enterprise decision you need to make, then request a private BriefLock edition.",
+      "canonical": "https://hardmagic.com/briefs/",
+      "canonicalRoute": "/briefs/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 148,
+      "forms": 0
+    },
+    {
+      "route": "/briefs/autonomous-web-publishing-control-plane/",
+      "file": "briefs/autonomous-web-publishing-control-plane/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Autonomous Web Publishing Control Plane — HardMagic",
+      "h1": [
+        "The Autonomous Web Publishing Control Plane"
+      ],
+      "description": "A control architecture for turning audits into governed, evidence-backed remediation across a web portfolio.",
+      "canonical": "https://hardmagic.com/briefs/autonomous-web-publishing-control-plane/",
+      "canonicalRoute": "/briefs/autonomous-web-publishing-control-plane/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 140,
+      "forms": 1
+    },
+    {
+      "route": "/briefs/autonomous-web-publishing-control-plane/thanks/",
+      "file": "briefs/autonomous-web-publishing-control-plane/thanks/index.html",
+      "kind": "success",
+      "indexability": "noindex",
+      "title": "Request follow-up — HardMagic",
+      "h1": [
+        "Check your work email. Then keep the decision moving."
+      ],
+      "description": "What happens after a request for The Autonomous Web Publishing Control Plane.",
+      "canonical": "https://hardmagic.com/briefs/autonomous-web-publishing-control-plane/thanks/",
+      "canonicalRoute": "/briefs/autonomous-web-publishing-control-plane/thanks/",
+      "robots": "noindex, nofollow",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": false,
+      "links": 134,
+      "forms": 0
+    },
+    {
+      "route": "/briefs/creative-direction-after-the-prompt/",
+      "file": "briefs/creative-direction-after-the-prompt/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Creative Direction After the Prompt — HardMagic",
+      "h1": [
+        "Creative Direction After the Prompt"
+      ],
+      "description": "A field guide for establishing creative authority, useful critique, and brand continuity across human and generative production.",
+      "canonical": "https://hardmagic.com/briefs/creative-direction-after-the-prompt/",
+      "canonicalRoute": "/briefs/creative-direction-after-the-prompt/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 140,
+      "forms": 1
+    },
+    {
+      "route": "/briefs/creative-direction-after-the-prompt/thanks/",
+      "file": "briefs/creative-direction-after-the-prompt/thanks/index.html",
+      "kind": "success",
+      "indexability": "noindex",
+      "title": "Request follow-up — HardMagic",
+      "h1": [
+        "Check your work email. Then keep the decision moving."
+      ],
+      "description": "What happens after a request for Creative Direction After the Prompt.",
+      "canonical": "https://hardmagic.com/briefs/creative-direction-after-the-prompt/thanks/",
+      "canonicalRoute": "/briefs/creative-direction-after-the-prompt/thanks/",
+      "robots": "noindex, nofollow",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": false,
+      "links": 134,
+      "forms": 0
+    },
+    {
+      "route": "/briefs/generative-media-operating-system/",
+      "file": "briefs/generative-media-operating-system/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Generative Media Operating System — HardMagic",
+      "h1": [
+        "The Generative Media Operating System"
+      ],
+      "description": "A practical architecture, governance model, diagnostic, and 90-day sequence for turning fragmented media experiments into a coherent production capability.",
+      "canonical": "https://hardmagic.com/briefs/generative-media-operating-system/",
+      "canonicalRoute": "/briefs/generative-media-operating-system/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 140,
+      "forms": 1
+    },
+    {
+      "route": "/briefs/generative-media-operating-system/thanks/",
+      "file": "briefs/generative-media-operating-system/thanks/index.html",
+      "kind": "success",
+      "indexability": "noindex",
+      "title": "Request follow-up — HardMagic",
+      "h1": [
+        "Check your work email. Then keep the decision moving."
+      ],
+      "description": "What happens after a request for The Generative Media Operating System.",
+      "canonical": "https://hardmagic.com/briefs/generative-media-operating-system/thanks/",
+      "canonicalRoute": "/briefs/generative-media-operating-system/thanks/",
+      "robots": "noindex, nofollow",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": false,
+      "links": 134,
+      "forms": 0
+    },
+    {
+      "route": "/briefs/hybrid-ai-media-infrastructure/",
+      "file": "briefs/hybrid-ai-media-infrastructure/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Private, Hybrid, and Governed AI Media Infrastructure — HardMagic",
+      "h1": [
+        "Private, Hybrid, and Governed AI Media Infrastructure"
+      ],
+      "description": "A workload-placement method, hybrid reference architecture, and benchmark plan for governed media inference.",
+      "canonical": "https://hardmagic.com/briefs/hybrid-ai-media-infrastructure/",
+      "canonicalRoute": "/briefs/hybrid-ai-media-infrastructure/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 140,
+      "forms": 1
+    },
+    {
+      "route": "/briefs/hybrid-ai-media-infrastructure/thanks/",
+      "file": "briefs/hybrid-ai-media-infrastructure/thanks/index.html",
+      "kind": "success",
+      "indexability": "noindex",
+      "title": "Request follow-up — HardMagic",
+      "h1": [
+        "Check your work email. Then keep the decision moving."
+      ],
+      "description": "What happens after a request for Private, Hybrid, and Governed AI Media Infrastructure.",
+      "canonical": "https://hardmagic.com/briefs/hybrid-ai-media-infrastructure/thanks/",
+      "canonicalRoute": "/briefs/hybrid-ai-media-infrastructure/thanks/",
+      "robots": "noindex, nofollow",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": false,
+      "links": 134,
+      "forms": 0
+    },
+    {
+      "route": "/briefs/intelligent-media-asset-estate/",
+      "file": "briefs/intelligent-media-asset-estate/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Media Memory: Building an Intelligent Asset Estate — HardMagic",
+      "h1": [
+        "Media Memory: Building an Intelligent Asset Estate"
+      ],
+      "description": "A practical model for joining curation, metadata, rights, similarity, and portable media operations.",
+      "canonical": "https://hardmagic.com/briefs/intelligent-media-asset-estate/",
+      "canonicalRoute": "/briefs/intelligent-media-asset-estate/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 140,
+      "forms": 1
+    },
+    {
+      "route": "/briefs/intelligent-media-asset-estate/thanks/",
+      "file": "briefs/intelligent-media-asset-estate/thanks/index.html",
+      "kind": "success",
+      "indexability": "noindex",
+      "title": "Request follow-up — HardMagic",
+      "h1": [
+        "Check your work email. Then keep the decision moving."
+      ],
+      "description": "What happens after a request for Media Memory: Building an Intelligent Asset Estate.",
+      "canonical": "https://hardmagic.com/briefs/intelligent-media-asset-estate/thanks/",
+      "canonicalRoute": "/briefs/intelligent-media-asset-estate/thanks/",
+      "robots": "noindex, nofollow",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": false,
+      "links": 134,
+      "forms": 0
+    },
+    {
+      "route": "/briefs/modern-media-agency-transformation-playbook/",
+      "file": "briefs/modern-media-agency-transformation-playbook/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Modern Media Agency Transformation Playbook — HardMagic",
+      "h1": [
+        "The Modern Media Agency Transformation Playbook"
+      ],
+      "description": "A decision guide for choosing among embedded creative leadership, managed media operations, GenAI production, consulting, and internal capability building.",
+      "canonical": "https://hardmagic.com/briefs/modern-media-agency-transformation-playbook/",
+      "canonicalRoute": "/briefs/modern-media-agency-transformation-playbook/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 141,
+      "forms": 1
+    },
+    {
+      "route": "/briefs/modern-media-agency-transformation-playbook/thanks/",
+      "file": "briefs/modern-media-agency-transformation-playbook/thanks/index.html",
+      "kind": "success",
+      "indexability": "noindex",
+      "title": "Request follow-up — HardMagic",
+      "h1": [
+        "Check your work email. Then keep the decision moving."
+      ],
+      "description": "What happens after a request for The Modern Media Agency Transformation Playbook.",
+      "canonical": "https://hardmagic.com/briefs/modern-media-agency-transformation-playbook/thanks/",
+      "canonicalRoute": "/briefs/modern-media-agency-transformation-playbook/thanks/",
+      "robots": "noindex, nofollow",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": false,
+      "links": 134,
+      "forms": 0
+    },
+    {
+      "route": "/briefs/provenance-ready-content-supply-chain/",
+      "file": "briefs/provenance-ready-content-supply-chain/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Provenance-Ready Content Supply Chain — HardMagic",
+      "h1": [
+        "The Provenance-Ready Content Supply Chain"
+      ],
+      "description": "An implementation-oriented architecture and assessment for preserving trustworthy context from creation through distribution.",
+      "canonical": "https://hardmagic.com/briefs/provenance-ready-content-supply-chain/",
+      "canonicalRoute": "/briefs/provenance-ready-content-supply-chain/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 140,
+      "forms": 1
+    },
+    {
+      "route": "/briefs/provenance-ready-content-supply-chain/thanks/",
+      "file": "briefs/provenance-ready-content-supply-chain/thanks/index.html",
+      "kind": "success",
+      "indexability": "noindex",
+      "title": "Request follow-up — HardMagic",
+      "h1": [
+        "Check your work email. Then keep the decision moving."
+      ],
+      "description": "What happens after a request for The Provenance-Ready Content Supply Chain.",
+      "canonical": "https://hardmagic.com/briefs/provenance-ready-content-supply-chain/thanks/",
+      "canonicalRoute": "/briefs/provenance-ready-content-supply-chain/thanks/",
+      "robots": "noindex, nofollow",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": false,
+      "links": 134,
+      "forms": 0
+    },
+    {
+      "route": "/briefs/visual-product-development-field-guide/",
+      "file": "briefs/visual-product-development-field-guide/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Visual Product Development Field Guide — HardMagic",
+      "h1": [
+        "The Visual Product Development Field Guide"
+      ],
+      "description": "A field guide for connecting visual intent, source intelligence, agents, and verification in one review loop.",
+      "canonical": "https://hardmagic.com/briefs/visual-product-development-field-guide/",
+      "canonicalRoute": "/briefs/visual-product-development-field-guide/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 140,
+      "forms": 1
+    },
+    {
+      "route": "/briefs/visual-product-development-field-guide/thanks/",
+      "file": "briefs/visual-product-development-field-guide/thanks/index.html",
+      "kind": "success",
+      "indexability": "noindex",
+      "title": "Request follow-up — HardMagic",
+      "h1": [
+        "Check your work email. Then keep the decision moving."
+      ],
+      "description": "What happens after a request for The Visual Product Development Field Guide.",
+      "canonical": "https://hardmagic.com/briefs/visual-product-development-field-guide/thanks/",
+      "canonicalRoute": "/briefs/visual-product-development-field-guide/thanks/",
+      "robots": "noindex, nofollow",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": false,
+      "links": 134,
+      "forms": 0
+    },
+    {
+      "route": "/company/",
+      "file": "company/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Company — HardMagic",
+      "h1": [
+        "One company. An entire media world."
+      ],
+      "description": "HardMagic is a privately owned media conglomerate combining creative direction, growth, production, GenAI, software, research, and compute to shape what industries become next.",
+      "canonical": "https://hardmagic.com/company/",
+      "canonicalRoute": "/company/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 151,
+      "forms": 0
+    },
+    {
+      "route": "/company/careers/",
+      "file": "company/careers/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Careers — HardMagic",
+      "h1": [
+        "Careers"
+      ],
+      "description": "Careers connects careers, multidisciplinary practice, and accountability as one consequential decision.",
+      "canonical": "https://hardmagic.com/company/careers/",
+      "canonicalRoute": "/company/careers/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/company/founder/",
+      "file": "company/founder/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Founder — HardMagic",
+      "h1": [
+        "Founder"
+      ],
+      "description": "Founder connects founder, creative leadership, and multidisciplinary practice as one consequential decision.",
+      "canonical": "https://hardmagic.com/company/founder/",
+      "canonicalRoute": "/company/founder/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/company/history/",
+      "file": "company/history/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Continuity — HardMagic",
+      "h1": [
+        "Continuity"
+      ],
+      "description": "Continuity connects company continuity, abracadabra, and future sensing as one consequential decision.",
+      "canonical": "https://hardmagic.com/company/history/",
+      "canonicalRoute": "/company/history/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 0
+    },
+    {
+      "route": "/company/operating-model/",
+      "file": "company/operating-model/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Operating Model — HardMagic",
+      "h1": [
+        "Operating Model"
+      ],
+      "description": "Operating Model connects operating model, decision rights, and specialist network as one consequential decision.",
+      "canonical": "https://hardmagic.com/company/operating-model/",
+      "canonicalRoute": "/company/operating-model/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/company/partners/",
+      "file": "company/partners/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Partners — HardMagic",
+      "h1": [
+        "Partners"
+      ],
+      "description": "Partners connects partnerships, complementary capability, and ownership as one consequential decision.",
+      "canonical": "https://hardmagic.com/company/partners/",
+      "canonicalRoute": "/company/partners/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/company/principles/",
+      "file": "company/principles/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Principles — HardMagic",
+      "h1": [
+        "Principles"
+      ],
+      "description": "Principles connects imagination, respectful magic, and responsibility as one consequential decision.",
+      "canonical": "https://hardmagic.com/company/principles/",
+      "canonicalRoute": "/company/principles/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 0
+    },
+    {
+      "route": "/company/selected-experience/",
+      "file": "company/selected-experience/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Selected Experience — HardMagic",
+      "h1": [
+        "Selected Experience"
+      ],
+      "description": "Selected Experience connects selected experience, brand practice, and media work as one consequential decision.",
+      "canonical": "https://hardmagic.com/company/selected-experience/",
+      "canonicalRoute": "/company/selected-experience/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/contact/",
+      "file": "contact/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Start a consultation — HardMagic",
+      "h1": [
+        "Name the decision. We’ll shape what happens next."
+      ],
+      "description": "Tell HardMagic what decision is waiting on the other side of your brief. We will route the right creative, marketing, GenAI, media, or product conversation.",
+      "canonical": "https://hardmagic.com/contact/",
+      "canonicalRoute": "/contact/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 134,
+      "forms": 1
+    },
+    {
+      "route": "/contact/creative-direction/",
+      "file": "contact/creative-direction/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Creative Direction Inquiry — HardMagic",
+      "h1": [
+        "Creative Direction Inquiry"
+      ],
+      "description": "Creative Direction Inquiry connects creative direction, future vision, and audience imagination as one consequential decision.",
+      "canonical": "https://hardmagic.com/contact/creative-direction/",
+      "canonicalRoute": "/contact/creative-direction/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 1
+    },
+    {
+      "route": "/contact/genai/",
+      "file": "contact/genai/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "GenAI Inquiry — HardMagic",
+      "h1": [
+        "GenAI Inquiry"
+      ],
+      "description": "GenAI Inquiry connects GenAI intake, workflow constraints, and decision horizon as one consequential decision.",
+      "canonical": "https://hardmagic.com/contact/genai/",
+      "canonicalRoute": "/contact/genai/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 1
+    },
+    {
+      "route": "/contact/marketing-consulting/",
+      "file": "contact/marketing-consulting/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Marketing Consulting Inquiry — HardMagic",
+      "h1": [
+        "Marketing Consulting Inquiry"
+      ],
+      "description": "Marketing Consulting Inquiry connects market intuition, audience movement, and manifestation barriers as one consequential decision.",
+      "canonical": "https://hardmagic.com/contact/marketing-consulting/",
+      "canonicalRoute": "/contact/marketing-consulting/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 1
+    },
+    {
+      "route": "/contact/media-management/",
+      "file": "contact/media-management/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Media Management Inquiry — HardMagic",
+      "h1": [
+        "Media Management Inquiry"
+      ],
+      "description": "Media Management Inquiry connects media intake, library scope, and rights as one consequential decision.",
+      "canonical": "https://hardmagic.com/contact/media-management/",
+      "canonicalRoute": "/contact/media-management/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 1
+    },
+    {
+      "route": "/contact/partnerships/",
+      "file": "contact/partnerships/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Partnership Inquiry — HardMagic",
+      "h1": [
+        "Partnership Inquiry"
+      ],
+      "description": "Partnership Inquiry connects partnership intake, strategic fit, and mutual contribution as one consequential decision.",
+      "canonical": "https://hardmagic.com/contact/partnerships/",
+      "canonicalRoute": "/contact/partnerships/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 1
+    },
+    {
+      "route": "/contact/thanks/",
+      "file": "contact/thanks/index.html",
+      "kind": "success",
+      "indexability": "noindex",
+      "title": "After an Inquiry — HardMagic",
+      "h1": [
+        "After an Inquiry"
+      ],
+      "description": "After an Inquiry connects follow-up, response expectations, and consent as one consequential decision.",
+      "canonical": "https://hardmagic.com/contact/thanks/",
+      "canonicalRoute": "/contact/thanks/",
+      "robots": "noindex, nofollow",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": false,
+      "links": 135,
+      "forms": 0
+    },
+    {
+      "route": "/editorial-policy/",
+      "file": "editorial-policy/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Editorial Policy — HardMagic",
+      "h1": [
+        "Editorial Policy"
+      ],
+      "description": "Editorial Policy connects editorial standards, sourcing, and corrections as one consequential decision.",
+      "canonical": "https://hardmagic.com/editorial-policy/",
+      "canonicalRoute": "/editorial-policy/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 135,
+      "forms": 0
+    },
+    {
+      "route": "/engagements/",
+      "file": "engagements/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Engagements — HardMagic",
+      "h1": [
+        "Engagements"
+      ],
+      "description": "Engagements connects engagement design, decision horizon, and ownership transfer as one consequential decision.",
+      "canonical": "https://hardmagic.com/engagements/",
+      "canonicalRoute": "/engagements/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/engagements/fractional-creative-office/",
+      "file": "engagements/fractional-creative-office/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Fractional Creative Office — HardMagic",
+      "h1": [
+        "Fractional Creative Office"
+      ],
+      "description": "Fractional Creative Office connects fractional leadership, decision rights, and capability transfer as one consequential decision.",
+      "canonical": "https://hardmagic.com/engagements/fractional-creative-office/",
+      "canonicalRoute": "/engagements/fractional-creative-office/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/engagements/genai-lab/",
+      "file": "engagements/genai-lab/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "GenAI Lab — HardMagic",
+      "h1": [
+        "GenAI Lab"
+      ],
+      "description": "GenAI Lab connects GenAI experiments, evaluation, and governance as one consequential decision.",
+      "canonical": "https://hardmagic.com/engagements/genai-lab/",
+      "canonicalRoute": "/engagements/genai-lab/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/engagements/managed-media-desk/",
+      "file": "engagements/managed-media-desk/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Managed Media Desk — HardMagic",
+      "h1": [
+        "Managed Media Desk"
+      ],
+      "description": "Managed Media Desk connects managed media, service levels, and library operations as one consequential decision.",
+      "canonical": "https://hardmagic.com/engagements/managed-media-desk/",
+      "canonicalRoute": "/engagements/managed-media-desk/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/engagements/product-launch-room/",
+      "file": "engagements/product-launch-room/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Product Launch Room — HardMagic",
+      "h1": [
+        "Product Launch Room"
+      ],
+      "description": "Product Launch Room connects product launch, narrative, and operational readiness as one consequential decision.",
+      "canonical": "https://hardmagic.com/engagements/product-launch-room/",
+      "canonicalRoute": "/engagements/product-launch-room/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/engagements/transformation-sprint/",
+      "file": "engagements/transformation-sprint/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Transformation Sprint — HardMagic",
+      "h1": [
+        "Transformation Sprint"
+      ],
+      "description": "Transformation Sprint connects decision sprint, fieldwork, and executable recommendations as one consequential decision.",
+      "canonical": "https://hardmagic.com/engagements/transformation-sprint/",
+      "canonicalRoute": "/engagements/transformation-sprint/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/",
+      "file": "horizon/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Horizon 2035 — HardMagic",
+      "h1": [
+        "Horizon 2035."
+      ],
+      "description": "Twelve evidence-led future histories for the people directing media, brands, art, infrastructure, and culture toward 2035.",
+      "canonical": "https://hardmagic.com/horizon/",
+      "canonicalRoute": "/horizon/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 151,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/accessibility-becomes-generative-art-direction/",
+      "file": "horizon/accessibility-becomes-generative-art-direction/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Accessibility Becomes Generative Art Direction — Horizon 2035 — HardMagic",
+      "h1": [
+        "Accessibility Becomes Generative Art Direction"
+      ],
+      "description": "By 2035, accessibility is not a compliant copy of the work. It is the discipline that lets the work transform without losing itself.",
+      "canonical": "https://hardmagic.com/horizon/accessibility-becomes-generative-art-direction/",
+      "canonicalRoute": "/horizon/accessibility-becomes-generative-art-direction/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 142,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/agentic-media-needs-a-control-room/",
+      "file": "horizon/agentic-media-needs-a-control-room/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Agentic Media Needs a Control Room — Horizon 2035 — HardMagic",
+      "h1": [
+        "Agentic Media Needs a Control Room"
+      ],
+      "description": "In 2035, autonomous production will be ordinary. Recoverable, inspectable autonomous production will remain exceptional.",
+      "canonical": "https://hardmagic.com/horizon/agentic-media-needs-a-control-room/",
+      "canonicalRoute": "/horizon/agentic-media-needs-a-control-room/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 142,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/brand-memory-becomes-an-operating-system/",
+      "file": "horizon/brand-memory-becomes-an-operating-system/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Brand Memory Becomes an Operating System — Horizon 2035 — HardMagic",
+      "h1": [
+        "Brand Memory Becomes an Operating System"
+      ],
+      "description": "The 2035 brand is not a book of rules. It is a living memory that can explain, retrieve, refuse, and evolve.",
+      "canonical": "https://hardmagic.com/horizon/brand-memory-becomes-an-operating-system/",
+      "canonicalRoute": "/horizon/brand-memory-becomes-an-operating-system/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 142,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/compute-becomes-a-creative-material/",
+      "file": "horizon/compute-becomes-a-creative-material/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Compute Becomes a Creative Material — Horizon 2035 — HardMagic",
+      "h1": [
+        "Compute Becomes a Creative Material"
+      ],
+      "description": "By 2035, energy, latency, locality, and model scale will shape the aesthetic—not merely the cloud bill.",
+      "canonical": "https://hardmagic.com/horizon/compute-becomes-a-creative-material/",
+      "canonicalRoute": "/horizon/compute-becomes-a-creative-material/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 141,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/direction-after-infinite-production/",
+      "file": "horizon/direction-after-infinite-production/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Direction After Infinite Production — Horizon 2035 — HardMagic",
+      "h1": [
+        "Direction After Infinite Production"
+      ],
+      "description": "By 2035, making another image will be trivial. Deciding what deserves to exist will be the scarce act.",
+      "canonical": "https://hardmagic.com/horizon/direction-after-infinite-production/",
+      "canonicalRoute": "/horizon/direction-after-infinite-production/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 141,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/identity-rights-become-production-infrastructure/",
+      "file": "horizon/identity-rights-become-production-infrastructure/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Identity Rights Become Production Infrastructure — Horizon 2035 — HardMagic",
+      "h1": [
+        "Identity Rights Become Production Infrastructure"
+      ],
+      "description": "The synthetic performer of 2035 is not a file. It is a revocable relationship among a person, a role, a model, a territory, and a moment.",
+      "canonical": "https://hardmagic.com/horizon/identity-rights-become-production-infrastructure/",
+      "canonicalRoute": "/horizon/identity-rights-become-production-infrastructure/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 142,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/marketing-after-surveillance/",
+      "file": "horizon/marketing-after-surveillance/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Marketing After Surveillance — Horizon 2035 — HardMagic",
+      "h1": [
+        "Marketing After Surveillance"
+      ],
+      "description": "The highest-performing brand of 2035 may know less about each person—and keep more of its promises to them.",
+      "canonical": "https://hardmagic.com/horizon/marketing-after-surveillance/",
+      "canonicalRoute": "/horizon/marketing-after-surveillance/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 142,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/media-escapes-the-frame/",
+      "file": "horizon/media-escapes-the-frame/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Media Escapes the Frame — Horizon 2035 — HardMagic",
+      "h1": [
+        "Media Escapes the Frame"
+      ],
+      "description": "The 2035 canvas is a room, a street, a body, a vehicle, a shared table—and still, when needed, a simple page.",
+      "canonical": "https://hardmagic.com/horizon/media-escapes-the-frame/",
+      "canonicalRoute": "/horizon/media-escapes-the-frame/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 141,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/provenance-is-the-new-publishing-layer/",
+      "file": "horizon/provenance-is-the-new-publishing-layer/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Provenance Is the New Publishing Layer — Horizon 2035 — HardMagic",
+      "h1": [
+        "Provenance Is the New Publishing Layer"
+      ],
+      "description": "By 2035, a media file without inspectable lineage will feel as operationally incomplete as a page without a URL.",
+      "canonical": "https://hardmagic.com/horizon/provenance-is-the-new-publishing-layer/",
+      "canonicalRoute": "/horizon/provenance-is-the-new-publishing-layer/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 142,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/the-media-library-starts-making-decisions/",
+      "file": "horizon/the-media-library-starts-making-decisions/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Media Library Starts Making Decisions — Horizon 2035 — HardMagic",
+      "h1": [
+        "The Media Library Starts Making Decisions"
+      ],
+      "description": "In 2035, the media library is no longer where campaigns go to sleep. It is where the institution remembers enough to act without repeating itself.",
+      "canonical": "https://hardmagic.com/horizon/the-media-library-starts-making-decisions/",
+      "canonicalRoute": "/horizon/the-media-library-starts-making-decisions/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 142,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/the-sovereign-microstudio/",
+      "file": "horizon/the-sovereign-microstudio/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Sovereign Microstudio — Horizon 2035 — HardMagic",
+      "h1": [
+        "The Sovereign Microstudio"
+      ],
+      "description": "The defining media company of 2035 may be six people, a rights library, an audience covenant, and a network of temporary machines.",
+      "canonical": "https://hardmagic.com/horizon/the-sovereign-microstudio/",
+      "canonicalRoute": "/horizon/the-sovereign-microstudio/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 142,
+      "forms": 0
+    },
+    {
+      "route": "/horizon/the-story-is-assembled-at-the-edge/",
+      "file": "horizon/the-story-is-assembled-at-the-edge/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Story Is Assembled at the Edge — Horizon 2035 — HardMagic",
+      "h1": [
+        "The Story Is Assembled at the Edge"
+      ],
+      "description": "A 2035 release is not one master delivered everywhere. It is a governed story system rendered for a moment, device, place, and audience.",
+      "canonical": "https://hardmagic.com/horizon/the-story-is-assembled-at-the-edge/",
+      "canonicalRoute": "/horizon/the-story-is-assembled-at-the-edge/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 142,
+      "forms": 0
+    },
+    {
+      "route": "/industries/",
+      "file": "industries/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Industries — HardMagic",
+      "h1": [
+        "Industries"
+      ],
+      "description": "Industries connects sector context, operating tensions, and relevant capabilities as one consequential decision.",
+      "canonical": "https://hardmagic.com/industries/",
+      "canonicalRoute": "/industries/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/industries/agencies/",
+      "file": "industries/agencies/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Agencies — HardMagic",
+      "h1": [
+        "Agencies"
+      ],
+      "description": "Agencies connects agency operations, AI augmentation, and craft as one consequential decision.",
+      "canonical": "https://hardmagic.com/industries/agencies/",
+      "canonicalRoute": "/industries/agencies/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/industries/consumer-brands/",
+      "file": "industries/consumer-brands/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Consumer Brands — HardMagic",
+      "h1": [
+        "Consumer Brands"
+      ],
+      "description": "Consumer Brands connects consumer branding, content abundance, and brand memory as one consequential decision.",
+      "canonical": "https://hardmagic.com/industries/consumer-brands/",
+      "canonicalRoute": "/industries/consumer-brands/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/industries/education-culture/",
+      "file": "industries/education-culture/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Education & Culture — HardMagic",
+      "h1": [
+        "Education & Culture"
+      ],
+      "description": "Education & Culture connects cultural collections, education, and provenance as one consequential decision.",
+      "canonical": "https://hardmagic.com/industries/education-culture/",
+      "canonicalRoute": "/industries/education-culture/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/industries/founder-led-companies/",
+      "file": "industries/founder-led-companies/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Founder-Led Companies — HardMagic",
+      "h1": [
+        "Founder-Led Companies"
+      ],
+      "description": "Founder-Led Companies connects founder knowledge, brand maturity, and organizational memory as one consequential decision.",
+      "canonical": "https://hardmagic.com/industries/founder-led-companies/",
+      "canonicalRoute": "/industries/founder-led-companies/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/industries/media-entertainment/",
+      "file": "industries/media-entertainment/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Media & Entertainment — HardMagic",
+      "h1": [
+        "Media & Entertainment"
+      ],
+      "description": "Media & Entertainment connects media production, rights, and audience experience as one consequential decision.",
+      "canonical": "https://hardmagic.com/industries/media-entertainment/",
+      "canonicalRoute": "/industries/media-entertainment/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/industries/retail-commerce/",
+      "file": "industries/retail-commerce/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Retail & Commerce — HardMagic",
+      "h1": [
+        "Retail & Commerce"
+      ],
+      "description": "Retail & Commerce connects commerce media, catalog operations, and brand coherence as one consequential decision.",
+      "canonical": "https://hardmagic.com/industries/retail-commerce/",
+      "canonicalRoute": "/industries/retail-commerce/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/industries/software-platforms/",
+      "file": "industries/software-platforms/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Software Platforms — HardMagic",
+      "h1": [
+        "Software Platforms"
+      ],
+      "description": "Software Platforms connects software products, technical narrative, and product evidence as one consequential decision.",
+      "canonical": "https://hardmagic.com/industries/software-platforms/",
+      "canonicalRoute": "/industries/software-platforms/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/industries/sports-wellness/",
+      "file": "industries/sports-wellness/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Sports & Wellness — HardMagic",
+      "h1": [
+        "Sports & Wellness"
+      ],
+      "description": "Sports & Wellness connects community trust, sports media, and wellness claims as one consequential decision.",
+      "canonical": "https://hardmagic.com/industries/sports-wellness/",
+      "canonicalRoute": "/industries/sports-wellness/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/",
+      "file": "insights/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Insights — HardMagic",
+      "h1": [
+        "Insights"
+      ],
+      "description": "Insights connects editorial arguments, creative technology, and operating decisions as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/",
+      "canonicalRoute": "/insights/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 137,
+      "forms": 0
+    },
+    {
+      "route": "/insights/25-years-from-brand-studio-to-ai-company/",
+      "file": "insights/25-years-from-brand-studio-to-ai-company/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "From Brand Studio to AI Company — HardMagic",
+      "h1": [
+        "From Brand Studio to AI Company"
+      ],
+      "description": "From Brand Studio to AI Company connects company continuity, creative practice, and GenAI products as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/25-years-from-brand-studio-to-ai-company/",
+      "canonicalRoute": "/insights/25-years-from-brand-studio-to-ai-company/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 0
+    },
+    {
+      "route": "/insights/accessibility-is-art-direction/",
+      "file": "insights/accessibility-is-art-direction/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Accessibility Is Art Direction — HardMagic",
+      "h1": [
+        "Accessibility Is Art Direction"
+      ],
+      "description": "Accessibility Is Art Direction connects accessibility, aesthetics, and hierarchy as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/accessibility-is-art-direction/",
+      "canonicalRoute": "/insights/accessibility-is-art-direction/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/brand-memory-in-generative-systems/",
+      "file": "insights/brand-memory-in-generative-systems/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Brand Memory in Generative Systems — HardMagic",
+      "h1": [
+        "Brand Memory in Generative Systems"
+      ],
+      "description": "Brand Memory in Generative Systems connects brand memory, generative systems, and drift as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/brand-memory-in-generative-systems/",
+      "canonicalRoute": "/insights/brand-memory-in-generative-systems/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/creative-direction-after-model-abundance/",
+      "file": "insights/creative-direction-after-model-abundance/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Creative Direction After Model Abundance — HardMagic",
+      "h1": [
+        "Creative Direction After Model Abundance"
+      ],
+      "description": "Creative Direction After Model Abundance connects creative direction, generation abundance, and responsibility as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/creative-direction-after-model-abundance/",
+      "canonicalRoute": "/insights/creative-direction-after-model-abundance/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/from-prompting-to-production-systems/",
+      "file": "insights/from-prompting-to-production-systems/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "From Prompting to Production Systems — HardMagic",
+      "h1": [
+        "From Prompting to Production Systems"
+      ],
+      "description": "From Prompting to Production Systems connects GenAI production, evaluation, and system controls as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/from-prompting-to-production-systems/",
+      "canonicalRoute": "/insights/from-prompting-to-production-systems/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/how-to-evaluate-a-genai-pilot/",
+      "file": "insights/how-to-evaluate-a-genai-pilot/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "How to Evaluate a GenAI Pilot — HardMagic",
+      "h1": [
+        "How to Evaluate a GenAI Pilot"
+      ],
+      "description": "How to Evaluate a GenAI Pilot connects GenAI pilots, evaluation, and ownership as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/how-to-evaluate-a-genai-pilot/",
+      "canonicalRoute": "/insights/how-to-evaluate-a-genai-pilot/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/hybrid-inference-is-a-governance-decision/",
+      "file": "insights/hybrid-inference-is-a-governance-decision/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Hybrid Inference Is a Governance Decision — HardMagic",
+      "h1": [
+        "Hybrid Inference Is a Governance Decision"
+      ],
+      "description": "Hybrid Inference Is a Governance Decision connects hybrid inference, governance, and workload policy as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/hybrid-inference-is-a-governance-decision/",
+      "canonicalRoute": "/insights/hybrid-inference-is-a-governance-decision/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/marketing-operations-for-small-expert-teams/",
+      "file": "insights/marketing-operations-for-small-expert-teams/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Marketing Operations for Small Expert Teams — HardMagic",
+      "h1": [
+        "Marketing Operations for Small Expert Teams"
+      ],
+      "description": "Marketing Operations for Small Expert Teams connects marketing operations, small teams, and evidence reuse as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/marketing-operations-for-small-expert-teams/",
+      "canonicalRoute": "/insights/marketing-operations-for-small-expert-teams/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/provenance-without-killing-creative-flow/",
+      "file": "insights/provenance-without-killing-creative-flow/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Provenance Without Killing Creative Flow — HardMagic",
+      "h1": [
+        "Provenance Without Killing Creative Flow"
+      ],
+      "description": "Provenance Without Killing Creative Flow connects provenance, creative flow, and traceability as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/provenance-without-killing-creative-flow/",
+      "canonicalRoute": "/insights/provenance-without-killing-creative-flow/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/static-websites-as-durable-media/",
+      "file": "insights/static-websites-as-durable-media/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Static Websites as Durable Media — HardMagic",
+      "h1": [
+        "Static Websites as Durable Media"
+      ],
+      "description": "Static Websites as Durable Media connects static publishing, durability, and editorial control as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/static-websites-as-durable-media/",
+      "canonicalRoute": "/insights/static-websites-as-durable-media/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/the-case-for-agent-readable-creative-operations/",
+      "file": "insights/the-case-for-agent-readable-creative-operations/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Case for Agent-Readable Creative Operations — HardMagic",
+      "h1": [
+        "The Case for Agent-Readable Creative Operations"
+      ],
+      "description": "The Case for Agent-Readable Creative Operations connects agent readiness, work contracts, and permissions as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/the-case-for-agent-readable-creative-operations/",
+      "canonicalRoute": "/insights/the-case-for-agent-readable-creative-operations/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/the-cost-of-model-first-product-design/",
+      "file": "insights/the-cost-of-model-first-product-design/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Cost of Model-First Product Design — HardMagic",
+      "h1": [
+        "The Cost of Model-First Product Design"
+      ],
+      "description": "The Cost of Model-First Product Design connects product design, model selection, and failure states as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/the-cost-of-model-first-product-design/",
+      "canonicalRoute": "/insights/the-cost-of-model-first-product-design/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/the-running-product-is-the-brief/",
+      "file": "insights/the-running-product-is-the-brief/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Running Product Is the Brief — HardMagic",
+      "h1": [
+        "The Running Product Is the Brief"
+      ],
+      "description": "The Running Product Is the Brief connects product observation, shared evidence, and implementation intent as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/the-running-product-is-the-brief/",
+      "canonicalRoute": "/insights/the-running-product-is-the-brief/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/what-a-modern-media-control-room-needs/",
+      "file": "insights/what-a-modern-media-control-room-needs/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "What a Modern Media Control Room Needs — HardMagic",
+      "h1": [
+        "What a Modern Media Control Room Needs"
+      ],
+      "description": "What a Modern Media Control Room Needs connects media operations, control rooms, and decision rights as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/what-a-modern-media-control-room-needs/",
+      "canonicalRoute": "/insights/what-a-modern-media-control-room-needs/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/insights/why-media-collections-lose-their-value/",
+      "file": "insights/why-media-collections-lose-their-value/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Why Media Collections Lose Their Value — HardMagic",
+      "h1": [
+        "Why Media Collections Lose Their Value"
+      ],
+      "description": "Why Media Collections Lose Their Value connects collection decay, metadata, and rights as one consequential decision.",
+      "canonical": "https://hardmagic.com/insights/why-media-collections-lose-their-value/",
+      "canonicalRoute": "/insights/why-media-collections-lose-their-value/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/methods/",
+      "file": "methods/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Methods — HardMagic",
+      "h1": [
+        "Methods"
+      ],
+      "description": "Methods connects operating methods, creative judgment, and practical exercises as one consequential decision.",
+      "canonical": "https://hardmagic.com/methods/",
+      "canonicalRoute": "/methods/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/methods/30-60-90-activation/",
+      "file": "methods/30-60-90-activation/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "30/60/90 Activation — HardMagic",
+      "h1": [
+        "30/60/90 Activation"
+      ],
+      "description": "30/60/90 Activation connects activation roadmap, governance, and ownership transfer as one consequential decision.",
+      "canonical": "https://hardmagic.com/methods/30-60-90-activation/",
+      "canonicalRoute": "/methods/30-60-90-activation/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/methods/accessibility-as-editorial/",
+      "file": "methods/accessibility-as-editorial/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Accessibility as Editorial Practice — HardMagic",
+      "h1": [
+        "Accessibility as Editorial Practice"
+      ],
+      "description": "Accessibility as Editorial Practice connects accessibility, art direction, and interaction as one consequential decision.",
+      "canonical": "https://hardmagic.com/methods/accessibility-as-editorial/",
+      "canonicalRoute": "/methods/accessibility-as-editorial/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/methods/brand-memory/",
+      "file": "methods/brand-memory/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Brand Memory — HardMagic",
+      "h1": [
+        "Brand Memory"
+      ],
+      "description": "Brand Memory connects brand knowledge, generation boundaries, and stewardship as one consequential decision.",
+      "canonical": "https://hardmagic.com/methods/brand-memory/",
+      "canonicalRoute": "/methods/brand-memory/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/methods/collection-to-intelligence/",
+      "file": "methods/collection-to-intelligence/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Source Collection to Intelligence — HardMagic",
+      "h1": [
+        "Source Collection to Intelligence"
+      ],
+      "description": "Source Collection to Intelligence connects source collections, curation, and retrieval context as one consequential decision.",
+      "canonical": "https://hardmagic.com/methods/collection-to-intelligence/",
+      "canonicalRoute": "/methods/collection-to-intelligence/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/methods/evidence-loop/",
+      "file": "methods/evidence-loop/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "The Evidence Loop — HardMagic",
+      "h1": [
+        "The Evidence Loop"
+      ],
+      "description": "The Evidence Loop connects evidence, iteration, and review as one consequential decision.",
+      "canonical": "https://hardmagic.com/methods/evidence-loop/",
+      "canonicalRoute": "/methods/evidence-loop/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/methods/human-agent-creative-loop/",
+      "file": "methods/human-agent-creative-loop/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Human-Agent Creative Loop — HardMagic",
+      "h1": [
+        "Human-Agent Creative Loop"
+      ],
+      "description": "Human-Agent Creative Loop connects human-agent work, accountability, and review gates as one consequential decision.",
+      "canonical": "https://hardmagic.com/methods/human-agent-creative-loop/",
+      "canonicalRoute": "/methods/human-agent-creative-loop/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/methods/hybrid-inference/",
+      "file": "methods/hybrid-inference/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Hybrid Inference Method — HardMagic",
+      "h1": [
+        "Hybrid Inference Method"
+      ],
+      "description": "Hybrid Inference Method connects inference policy, workload placement, and continuity as one consequential decision.",
+      "canonical": "https://hardmagic.com/methods/hybrid-inference/",
+      "canonicalRoute": "/methods/hybrid-inference/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/methods/intent-to-system/",
+      "file": "methods/intent-to-system/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Intent to System — HardMagic",
+      "h1": [
+        "Intent to System"
+      ],
+      "description": "Intent to System connects intent, constraints, and system design as one consequential decision.",
+      "canonical": "https://hardmagic.com/methods/intent-to-system/",
+      "canonicalRoute": "/methods/intent-to-system/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio-item/airikai/",
+      "file": "portfolio-item/airikai/index.html",
+      "kind": "redirect",
+      "indexability": "noindex",
+      "title": "Redirecting to: /portfolio/airikai/",
+      "h1": [],
+      "description": "",
+      "canonical": "https://hardmagic.com/portfolio/airikai/",
+      "canonicalRoute": "/portfolio/airikai/",
+      "robots": "noindex",
+      "base": "/",
+      "redirect": "meta-refresh",
+      "redirectTarget": "/portfolio/airikai/",
+      "sitemap": false,
+      "links": 2,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio-item/fashionx/",
+      "file": "portfolio-item/fashionx/index.html",
+      "kind": "redirect",
+      "indexability": "noindex",
+      "title": "Redirecting to: /portfolio/fashionx/",
+      "h1": [],
+      "description": "",
+      "canonical": "https://hardmagic.com/portfolio/fashionx/",
+      "canonicalRoute": "/portfolio/fashionx/",
+      "robots": "noindex",
+      "base": "/",
+      "redirect": "meta-refresh",
+      "redirectTarget": "/portfolio/fashionx/",
+      "sitemap": false,
+      "links": 2,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio-item/focuspass/",
+      "file": "portfolio-item/focuspass/index.html",
+      "kind": "redirect",
+      "indexability": "noindex",
+      "title": "Redirecting to: /portfolio/focuspass/",
+      "h1": [],
+      "description": "",
+      "canonical": "https://hardmagic.com/portfolio/focuspass/",
+      "canonicalRoute": "/portfolio/focuspass/",
+      "robots": "noindex",
+      "base": "/",
+      "redirect": "meta-refresh",
+      "redirectTarget": "/portfolio/focuspass/",
+      "sitemap": false,
+      "links": 2,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio-item/pedadida/",
+      "file": "portfolio-item/pedadida/index.html",
+      "kind": "redirect",
+      "indexability": "noindex",
+      "title": "Redirecting to: /portfolio/pedadida/",
+      "h1": [],
+      "description": "",
+      "canonical": "https://hardmagic.com/portfolio/pedadida/",
+      "canonicalRoute": "/portfolio/pedadida/",
+      "robots": "noindex",
+      "base": "/",
+      "redirect": "meta-refresh",
+      "redirectTarget": "/portfolio/pedadida/",
+      "sitemap": false,
+      "links": 2,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio-item/pranashama/",
+      "file": "portfolio-item/pranashama/index.html",
+      "kind": "redirect",
+      "indexability": "noindex",
+      "title": "Redirecting to: /portfolio/pranashama/",
+      "h1": [],
+      "description": "",
+      "canonical": "https://hardmagic.com/portfolio/pranashama/",
+      "canonicalRoute": "/portfolio/pranashama/",
+      "robots": "noindex",
+      "base": "/",
+      "redirect": "meta-refresh",
+      "redirectTarget": "/portfolio/pranashama/",
+      "sitemap": false,
+      "links": 2,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio-item/state-parks/",
+      "file": "portfolio-item/state-parks/index.html",
+      "kind": "redirect",
+      "indexability": "noindex",
+      "title": "Redirecting to: /portfolio/state-parks/",
+      "h1": [],
+      "description": "",
+      "canonical": "https://hardmagic.com/portfolio/state-parks/",
+      "canonicalRoute": "/portfolio/state-parks/",
+      "robots": "noindex",
+      "base": "/",
+      "redirect": "meta-refresh",
+      "redirectTarget": "/portfolio/state-parks/",
+      "sitemap": false,
+      "links": 2,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio-item/tao-cottage/",
+      "file": "portfolio-item/tao-cottage/index.html",
+      "kind": "redirect",
+      "indexability": "noindex",
+      "title": "Redirecting to: /portfolio/tao-cottage/",
+      "h1": [],
+      "description": "",
+      "canonical": "https://hardmagic.com/portfolio/tao-cottage/",
+      "canonicalRoute": "/portfolio/tao-cottage/",
+      "robots": "noindex",
+      "base": "/",
+      "redirect": "meta-refresh",
+      "redirectTarget": "/portfolio/tao-cottage/",
+      "sitemap": false,
+      "links": 2,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio-item/taolo/",
+      "file": "portfolio-item/taolo/index.html",
+      "kind": "redirect",
+      "indexability": "noindex",
+      "title": "Redirecting to: /portfolio/taolo/",
+      "h1": [],
+      "description": "",
+      "canonical": "https://hardmagic.com/portfolio/taolo/",
+      "canonicalRoute": "/portfolio/taolo/",
+      "robots": "noindex",
+      "base": "/",
+      "redirect": "meta-refresh",
+      "redirectTarget": "/portfolio/taolo/",
+      "sitemap": false,
+      "links": 2,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio/",
+      "file": "portfolio/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Creative Direction Portfolio — HardMagic",
+      "h1": [
+        "Build the world, not the surface."
+      ],
+      "description": "HardMagic case studies in building coherent worlds across identity, media, software, learning, hospitality, and place.",
+      "canonical": "https://hardmagic.com/portfolio/",
+      "canonicalRoute": "/portfolio/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 174,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio/airikai/",
+      "file": "portfolio/airikai/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Airikai case study — HardMagic",
+      "h1": [
+        "Airikai"
+      ],
+      "description": "A long-running exploration of wellness education, sacred geometry, movement photography, and curriculum as one coherent world.",
+      "canonical": "https://hardmagic.com/portfolio/airikai/",
+      "canonicalRoute": "/portfolio/airikai/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 141,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio/fashionx/",
+      "file": "portfolio/fashionx/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "FashionX case study — HardMagic",
+      "h1": [
+        "FashionX"
+      ],
+      "description": "Fashion is transformation made visible: landscape, styling, movement, talent, and the invisible mechanics behind the frame becoming one charged reality.",
+      "canonical": "https://hardmagic.com/portfolio/fashionx/",
+      "canonicalRoute": "/portfolio/fashionx/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 141,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio/focuspass/",
+      "file": "portfolio/focuspass/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "FocusPass case study — HardMagic",
+      "h1": [
+        "FocusPass"
+      ],
+      "description": "Before agentic workspaces became ordinary, FocusPass explored how goals, learning, finance, and coaching might inhabit one legible product system.",
+      "canonical": "https://hardmagic.com/portfolio/focuspass/",
+      "canonicalRoute": "/portfolio/focuspass/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio/pedadida/",
+      "file": "portfolio/pedadida/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Pedadida case study — HardMagic",
+      "h1": [
+        "Pedadida"
+      ],
+      "description": "An account of the difficult, durable work of making an education platform coherent across identity, experience, APIs, security, and distributed development.",
+      "canonical": "https://hardmagic.com/portfolio/pedadida/",
+      "canonicalRoute": "/portfolio/pedadida/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 135,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio/pranashama/",
+      "file": "portfolio/pranashama/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Pranashama case study — HardMagic",
+      "h1": [
+        "Pranashama"
+      ],
+      "description": "An organization-wide brand transformation spanning identity, responsive web direction, educational products, events, retreats, and community touchpoints.",
+      "canonical": "https://hardmagic.com/portfolio/pranashama/",
+      "canonicalRoute": "/portfolio/pranashama/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio/state-parks/",
+      "file": "portfolio/state-parks/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "State Parks case study — HardMagic",
+      "h1": [
+        "State Parks"
+      ],
+      "description": "Landscape and wildlife work made through seasonal observation, difficult terrain, patient framing, and the refusal to treat place as generic scenery.",
+      "canonical": "https://hardmagic.com/portfolio/state-parks/",
+      "canonicalRoute": "/portfolio/state-parks/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 141,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio/tao-cottage/",
+      "file": "portfolio/tao-cottage/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Tao Cottage case study — HardMagic",
+      "h1": [
+        "Tao Cottage"
+      ],
+      "description": "An experiential place-branding study where architecture, interiors, seasonal atmosphere, hospitality detail, and learning spaces become one remembered world.",
+      "canonical": "https://hardmagic.com/portfolio/tao-cottage/",
+      "canonicalRoute": "/portfolio/tao-cottage/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 141,
+      "forms": 0
+    },
+    {
+      "route": "/portfolio/taolo/",
+      "file": "portfolio/taolo/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Taolo case study — HardMagic",
+      "h1": [
+        "Taolo"
+      ],
+      "description": "A sensory identity study carried by signage, ingredients, glass, color, product styling, environmental detail, and a deliberately intimate idea of luxury.",
+      "canonical": "https://hardmagic.com/portfolio/taolo/",
+      "canonicalRoute": "/portfolio/taolo/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 141,
+      "forms": 0
+    },
+    {
+      "route": "/privacy/",
+      "file": "privacy/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Privacy — HardMagic",
+      "h1": [
+        "A quiet website with clear boundaries."
+      ],
+      "description": "How HardMagic handles browsing, consultation requests, and private brief delivery.",
+      "canonical": "https://hardmagic.com/privacy/",
+      "canonicalRoute": "/privacy/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 131,
+      "forms": 0
+    },
+    {
+      "route": "/products/",
+      "file": "products/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Products — HardMagic",
+      "h1": [
+        "Tools for making what comes next."
+      ],
+      "description": "Explore HardMagic products for generative media, visual product intelligence, developer workflows, and AI infrastructure.",
+      "canonical": "https://hardmagic.com/products/",
+      "canonicalRoute": "/products/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 133,
+      "forms": 0
+    },
+    {
+      "route": "/products/cli/",
+      "file": "products/cli/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "HardMagic Agent (CLI) — HardMagic",
+      "h1": [
+        "HardMagic Agent (CLI)"
+      ],
+      "description": "The `hm` command gives people and agents a dependable interface to HardMagic generation, assets, authentication, settings, and machine-readable workflows.",
+      "canonical": "https://hardmagic.com/products/cli/",
+      "canonicalRoute": "/products/cli/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 130,
+      "forms": 0
+    },
+    {
+      "route": "/products/cli/agent-skills/",
+      "file": "products/cli/agent-skills/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "CLI Agent Skills — HardMagic",
+      "h1": [
+        "CLI Agent Skills"
+      ],
+      "description": "CLI Agent Skills connects agent skills, permissions, and evaluation as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/cli/agent-skills/",
+      "canonicalRoute": "/products/cli/agent-skills/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/cli/automation/",
+      "file": "products/cli/automation/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "CLI Automation — HardMagic",
+      "h1": [
+        "CLI Automation"
+      ],
+      "description": "CLI Automation connects pipelines, structured output, and result lineage as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/cli/automation/",
+      "canonicalRoute": "/products/cli/automation/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/cli/quickstart/",
+      "file": "products/cli/quickstart/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "CLI Quickstart — HardMagic",
+      "h1": [
+        "CLI Quickstart"
+      ],
+      "description": "CLI Quickstart connects authentication, first generation, and error recovery as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/cli/quickstart/",
+      "canonicalRoute": "/products/cli/quickstart/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/cli/security/",
+      "file": "products/cli/security/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "CLI Security — HardMagic",
+      "h1": [
+        "CLI Security"
+      ],
+      "description": "CLI Security connects machine identity, credential scope, and audit logs as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/cli/security/",
+      "canonicalRoute": "/products/cli/security/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/gpu-router/",
+      "file": "products/gpu-router/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "GPU Router — HardMagic",
+      "h1": [
+        "GPU Router"
+      ],
+      "description": "A hybrid inference fabric that routes generation work across local and cloud GPU capacity according to capability, policy, availability, and cost.",
+      "canonical": "https://hardmagic.com/products/gpu-router/",
+      "canonicalRoute": "/products/gpu-router/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 130,
+      "forms": 0
+    },
+    {
+      "route": "/products/gpu-router/architecture/",
+      "file": "products/gpu-router/architecture/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "GPU Router Architecture — HardMagic",
+      "h1": [
+        "GPU Router Architecture"
+      ],
+      "description": "GPU Router Architecture connects system architecture, trust boundaries, and data flow as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/gpu-router/architecture/",
+      "canonicalRoute": "/products/gpu-router/architecture/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/gpu-router/benchmarks/",
+      "file": "products/gpu-router/benchmarks/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Inference Benchmarks — HardMagic",
+      "h1": [
+        "Inference Benchmarks"
+      ],
+      "description": "Inference Benchmarks connects benchmarking, workload design, and uncertainty as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/gpu-router/benchmarks/",
+      "canonicalRoute": "/products/gpu-router/benchmarks/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/gpu-router/observability/",
+      "file": "products/gpu-router/observability/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Inference Observability — HardMagic",
+      "h1": [
+        "Inference Observability"
+      ],
+      "description": "Inference Observability connects job telemetry, state transitions, and privacy as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/gpu-router/observability/",
+      "canonicalRoute": "/products/gpu-router/observability/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/gpu-router/routing/",
+      "file": "products/gpu-router/routing/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Capability-Aware Routing — HardMagic",
+      "h1": [
+        "Capability-Aware Routing"
+      ],
+      "description": "Capability-Aware Routing connects routing policy, model capability, and fallbacks as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/gpu-router/routing/",
+      "canonicalRoute": "/products/gpu-router/routing/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/photo-curator/",
+      "file": "products/photo-curator/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Photo Curator — HardMagic",
+      "h1": [
+        "Photo Curator"
+      ],
+      "description": "A focused review environment for rating, grouping, and understanding large photo libraries without surrendering ownership of the source collection.",
+      "canonical": "https://hardmagic.com/products/photo-curator/",
+      "canonicalRoute": "/products/photo-curator/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 130,
+      "forms": 0
+    },
+    {
+      "route": "/products/photo-curator/connectors/",
+      "file": "products/photo-curator/connectors/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Media Connectors — HardMagic",
+      "h1": [
+        "Media Connectors"
+      ],
+      "description": "Media Connectors connects connectors, source ownership, and synchronization as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/photo-curator/connectors/",
+      "canonicalRoute": "/products/photo-curator/connectors/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/photo-curator/duplicates/",
+      "file": "products/photo-curator/duplicates/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Duplicate Discovery — HardMagic",
+      "h1": [
+        "Duplicate Discovery"
+      ],
+      "description": "Duplicate Discovery connects visual similarity, human judgment, and reversible action as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/photo-curator/duplicates/",
+      "canonicalRoute": "/products/photo-curator/duplicates/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/photo-curator/metadata/",
+      "file": "products/photo-curator/metadata/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Portable Metadata — HardMagic",
+      "h1": [
+        "Portable Metadata"
+      ],
+      "description": "Portable Metadata connects metadata, portability, and library stewardship as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/photo-curator/metadata/",
+      "canonicalRoute": "/products/photo-curator/metadata/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/photo-curator/review/",
+      "file": "products/photo-curator/review/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Photo Review — HardMagic",
+      "h1": [
+        "Photo Review"
+      ],
+      "description": "Photo Review connects visual review, comparison, and selection rationale as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/photo-curator/review/",
+      "canonicalRoute": "/products/photo-curator/review/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/studio/",
+      "file": "products/studio/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "HardMagic Studio — HardMagic",
+      "h1": [
+        "HardMagic Studio"
+      ],
+      "description": "A creative studio for directing image, video, audio, and 3D generation through natural-language intent and a hybrid local-and-cloud compute fabric.",
+      "canonical": "https://hardmagic.com/products/studio/",
+      "canonicalRoute": "/products/studio/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/studio/audio/",
+      "file": "products/studio/audio/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Studio for Audio — HardMagic",
+      "h1": [
+        "Studio for Audio"
+      ],
+      "description": "Studio for Audio connects audio generation, rights, and editorial listening as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/studio/audio/",
+      "canonicalRoute": "/products/studio/audio/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/studio/hybrid-inference/",
+      "file": "products/studio/hybrid-inference/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Studio Hybrid Inference — HardMagic",
+      "h1": [
+        "Studio Hybrid Inference"
+      ],
+      "description": "Studio Hybrid Inference connects compute placement, model routing, and governance as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/studio/hybrid-inference/",
+      "canonicalRoute": "/products/studio/hybrid-inference/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/studio/image/",
+      "file": "products/studio/image/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Studio for Image — HardMagic",
+      "h1": [
+        "Studio for Image"
+      ],
+      "description": "Studio for Image connects image direction, variation, and asset delivery as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/studio/image/",
+      "canonicalRoute": "/products/studio/image/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/studio/video/",
+      "file": "products/studio/video/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Studio for Video — HardMagic",
+      "h1": [
+        "Studio for Video"
+      ],
+      "description": "Studio for Video connects video generation, continuity, and post-production as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/studio/video/",
+      "canonicalRoute": "/products/studio/video/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/web-magic/",
+      "file": "products/web-magic/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Web Magic — HardMagic",
+      "h1": [
+        "Web Magic"
+      ],
+      "description": "An AI-powered auditor and remediation system for static sites and GitHub Pages, spanning accessibility, performance, search, and delivery quality.",
+      "canonical": "https://hardmagic.com/products/web-magic/",
+      "canonicalRoute": "/products/web-magic/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 130,
+      "forms": 0
+    },
+    {
+      "route": "/products/web-magic/accessibility/",
+      "file": "products/web-magic/accessibility/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Web Accessibility — HardMagic",
+      "h1": [
+        "Web Accessibility"
+      ],
+      "description": "Web Accessibility connects accessibility, semantic structure, and inclusive interaction as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/web-magic/accessibility/",
+      "canonicalRoute": "/products/web-magic/accessibility/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/web-magic/delivery/",
+      "file": "products/web-magic/delivery/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Web Delivery Quality — HardMagic",
+      "h1": [
+        "Web Delivery Quality"
+      ],
+      "description": "Web Delivery Quality connects continuous delivery, quality gates, and regression evidence as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/web-magic/delivery/",
+      "canonicalRoute": "/products/web-magic/delivery/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/web-magic/performance/",
+      "file": "products/web-magic/performance/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Web Performance — HardMagic",
+      "h1": [
+        "Web Performance"
+      ],
+      "description": "Web Performance connects rendering, network delivery, and reader experience as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/web-magic/performance/",
+      "canonicalRoute": "/products/web-magic/performance/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/web-magic/seo/",
+      "file": "products/web-magic/seo/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Web Search Quality — HardMagic",
+      "h1": [
+        "Web Search Quality"
+      ],
+      "description": "Web Search Quality connects search visibility, information architecture, and editorial evidence as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/web-magic/seo/",
+      "canonicalRoute": "/products/web-magic/seo/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/wiremark/",
+      "file": "products/wiremark/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "WireMark — HardMagic",
+      "h1": [
+        "WireMark"
+      ],
+      "description": "A visual-first environment for understanding a running product, connecting what you see to the source that made it, and directing agents with precise evidence.",
+      "canonical": "https://hardmagic.com/products/wiremark/",
+      "canonicalRoute": "/products/wiremark/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 132,
+      "forms": 0
+    },
+    {
+      "route": "/products/wiremark/agent-handoff/",
+      "file": "products/wiremark/agent-handoff/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Agent Handoff — HardMagic",
+      "h1": [
+        "Agent Handoff"
+      ],
+      "description": "Agent Handoff connects agent context, acceptance evidence, and human review as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/wiremark/agent-handoff/",
+      "canonicalRoute": "/products/wiremark/agent-handoff/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/wiremark/canvas/",
+      "file": "products/wiremark/canvas/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "WireMark Canvas — HardMagic",
+      "h1": [
+        "WireMark Canvas"
+      ],
+      "description": "WireMark Canvas connects spatial context, interface annotation, and shared intent as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/wiremark/canvas/",
+      "canonicalRoute": "/products/wiremark/canvas/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/wiremark/privacy-provenance/",
+      "file": "products/wiremark/privacy-provenance/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Privacy & Provenance — HardMagic",
+      "h1": [
+        "Privacy & Provenance"
+      ],
+      "description": "Privacy & Provenance connects privacy, provenance, and access boundaries as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/wiremark/privacy-provenance/",
+      "canonicalRoute": "/products/wiremark/privacy-provenance/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/products/wiremark/source-intelligence/",
+      "file": "products/wiremark/source-intelligence/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Source Intelligence — HardMagic",
+      "h1": [
+        "Source Intelligence"
+      ],
+      "description": "Source Intelligence connects source mapping, observed behavior, and confidence as one consequential decision.",
+      "canonical": "https://hardmagic.com/products/wiremark/source-intelligence/",
+      "canonicalRoute": "/products/wiremark/source-intelligence/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/responsible-ai/",
+      "file": "responsible-ai/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Responsible AI — HardMagic",
+      "h1": [
+        "Responsible AI"
+      ],
+      "description": "Responsible AI connects responsible AI, human accountability, and provenance as one consequential decision.",
+      "canonical": "https://hardmagic.com/responsible-ai/",
+      "canonicalRoute": "/responsible-ai/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 135,
+      "forms": 0
+    },
+    {
+      "route": "/security/",
+      "file": "security/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Security — HardMagic",
+      "h1": [
+        "Security"
+      ],
+      "description": "Security connects security, disclosure, and deployment boundaries as one consequential decision.",
+      "canonical": "https://hardmagic.com/security/",
+      "canonicalRoute": "/security/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 135,
+      "forms": 0
+    },
+    {
+      "route": "/services/",
+      "file": "services/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Services — HardMagic",
+      "h1": [
+        "Services"
+      ],
+      "description": "Services connects advisory work, creative operations, and organizational change as one consequential decision.",
+      "canonical": "https://hardmagic.com/services/",
+      "canonicalRoute": "/services/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 137,
+      "forms": 0
+    },
+    {
+      "route": "/services/brand-systems/",
+      "file": "services/brand-systems/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Brand Systems — HardMagic",
+      "h1": [
+        "Brand Systems"
+      ],
+      "description": "Brand Systems connects brand transformation, symbolic systems, and organizational memory as one consequential decision.",
+      "canonical": "https://hardmagic.com/services/brand-systems/",
+      "canonicalRoute": "/services/brand-systems/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 0
+    },
+    {
+      "route": "/services/campaign-production/",
+      "file": "services/campaign-production/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Campaign Production — HardMagic",
+      "h1": [
+        "Campaign Production"
+      ],
+      "description": "Campaign Production connects campaign spell, multimedia production, and audience transformation as one consequential decision.",
+      "canonical": "https://hardmagic.com/services/campaign-production/",
+      "canonicalRoute": "/services/campaign-production/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 0
+    },
+    {
+      "route": "/services/content-operations/",
+      "file": "services/content-operations/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Content Operations — HardMagic",
+      "h1": [
+        "Content Operations"
+      ],
+      "description": "Content Operations connects editorial workflow, content models, and quality gates as one consequential decision.",
+      "canonical": "https://hardmagic.com/services/content-operations/",
+      "canonicalRoute": "/services/content-operations/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/services/creative-direction/",
+      "file": "services/creative-direction/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Creative Direction — HardMagic",
+      "h1": [
+        "Creative Direction"
+      ],
+      "description": "Creative Direction connects future sensing, creative authority, and world building as one consequential decision.",
+      "canonical": "https://hardmagic.com/services/creative-direction/",
+      "canonicalRoute": "/services/creative-direction/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 0
+    },
+    {
+      "route": "/services/creative-technology/",
+      "file": "services/creative-technology/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Creative Technology — HardMagic",
+      "h1": [
+        "Creative Technology"
+      ],
+      "description": "Creative Technology connects prototyping, systems design, and production feasibility as one consequential decision.",
+      "canonical": "https://hardmagic.com/services/creative-technology/",
+      "canonicalRoute": "/services/creative-technology/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/services/executive-advisory/",
+      "file": "services/executive-advisory/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Executive Advisory — HardMagic",
+      "h1": [
+        "Executive Advisory"
+      ],
+      "description": "Executive Advisory connects executive decisions, scenario analysis, and independent counsel as one consequential decision.",
+      "canonical": "https://hardmagic.com/services/executive-advisory/",
+      "canonicalRoute": "/services/executive-advisory/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/services/genai-strategy/",
+      "file": "services/genai-strategy/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "GenAI Strategy — HardMagic",
+      "h1": [
+        "GenAI Strategy"
+      ],
+      "description": "GenAI Strategy connects GenAI strategy, governance, and workflow selection as one consequential decision.",
+      "canonical": "https://hardmagic.com/services/genai-strategy/",
+      "canonicalRoute": "/services/genai-strategy/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/services/marketing-consulting/",
+      "file": "services/marketing-consulting/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Marketing Consulting — HardMagic",
+      "h1": [
+        "Marketing Consulting"
+      ],
+      "description": "Marketing Consulting connects market intuition, audience imagination, and operating cadence as one consequential decision.",
+      "canonical": "https://hardmagic.com/services/marketing-consulting/",
+      "canonicalRoute": "/services/marketing-consulting/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 139,
+      "forms": 0
+    },
+    {
+      "route": "/services/media-management/",
+      "file": "services/media-management/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Media Management — HardMagic",
+      "h1": [
+        "Media Management"
+      ],
+      "description": "Media Management connects media operations, rights, and library lifecycle as one consequential decision.",
+      "canonical": "https://hardmagic.com/services/media-management/",
+      "canonicalRoute": "/services/media-management/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/services/web-experience/",
+      "file": "services/web-experience/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Web Experience — HardMagic",
+      "h1": [
+        "Web Experience"
+      ],
+      "description": "Web Experience connects web publishing, editorial architecture, and experience quality as one consequential decision.",
+      "canonical": "https://hardmagic.com/services/web-experience/",
+      "canonicalRoute": "/services/web-experience/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 138,
+      "forms": 0
+    },
+    {
+      "route": "/sitemap/",
+      "file": "sitemap/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Sitemap — HardMagic",
+      "h1": [
+        "Sitemap"
+      ],
+      "description": "Sitemap connects wayfinding, information architecture, and route families as one consequential decision.",
+      "canonical": "https://hardmagic.com/sitemap/",
+      "canonicalRoute": "/sitemap/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 135,
+      "forms": 0
+    },
+    {
+      "route": "/terms/",
+      "file": "terms/index.html",
+      "kind": "canonical",
+      "indexability": "indexable",
+      "title": "Terms — HardMagic",
+      "h1": [
+        "Terms"
+      ],
+      "description": "Terms connects terms, site use, and responsibilities as one consequential decision.",
+      "canonical": "https://hardmagic.com/terms/",
+      "canonicalRoute": "/terms/",
+      "robots": "",
+      "base": "/",
+      "redirect": "",
+      "redirectTarget": "",
+      "sitemap": true,
+      "links": 135,
+      "forms": 0
+    }
+  ],
+  "sitemap": {
+    "index": "sitemap-index.xml",
+    "files": [
+      "sitemap-0.xml",
+      "sitemap-index.xml"
+    ],
+    "urls": [
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/accessibility/",
+        "route": "/accessibility/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/briefs/autonomous-web-publishing-control-plane/",
+        "route": "/briefs/autonomous-web-publishing-control-plane/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/briefs/creative-direction-after-the-prompt/",
+        "route": "/briefs/creative-direction-after-the-prompt/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/briefs/generative-media-operating-system/",
+        "route": "/briefs/generative-media-operating-system/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/briefs/",
+        "route": "/briefs/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/briefs/hybrid-ai-media-infrastructure/",
+        "route": "/briefs/hybrid-ai-media-infrastructure/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/briefs/intelligent-media-asset-estate/",
+        "route": "/briefs/intelligent-media-asset-estate/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/briefs/modern-media-agency-transformation-playbook/",
+        "route": "/briefs/modern-media-agency-transformation-playbook/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/briefs/provenance-ready-content-supply-chain/",
+        "route": "/briefs/provenance-ready-content-supply-chain/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/briefs/visual-product-development-field-guide/",
+        "route": "/briefs/visual-product-development-field-guide/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/company/careers/",
+        "route": "/company/careers/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/company/founder/",
+        "route": "/company/founder/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/company/history/",
+        "route": "/company/history/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/company/",
+        "route": "/company/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/company/operating-model/",
+        "route": "/company/operating-model/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/company/partners/",
+        "route": "/company/partners/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/company/principles/",
+        "route": "/company/principles/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/company/selected-experience/",
+        "route": "/company/selected-experience/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/contact/creative-direction/",
+        "route": "/contact/creative-direction/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/contact/genai/",
+        "route": "/contact/genai/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/contact/",
+        "route": "/contact/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/contact/marketing-consulting/",
+        "route": "/contact/marketing-consulting/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/contact/media-management/",
+        "route": "/contact/media-management/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/contact/partnerships/",
+        "route": "/contact/partnerships/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/editorial-policy/",
+        "route": "/editorial-policy/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/engagements/fractional-creative-office/",
+        "route": "/engagements/fractional-creative-office/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/engagements/genai-lab/",
+        "route": "/engagements/genai-lab/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/engagements/",
+        "route": "/engagements/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/engagements/managed-media-desk/",
+        "route": "/engagements/managed-media-desk/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/engagements/product-launch-room/",
+        "route": "/engagements/product-launch-room/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/engagements/transformation-sprint/",
+        "route": "/engagements/transformation-sprint/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/accessibility-becomes-generative-art-direction/",
+        "route": "/horizon/accessibility-becomes-generative-art-direction/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/agentic-media-needs-a-control-room/",
+        "route": "/horizon/agentic-media-needs-a-control-room/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/brand-memory-becomes-an-operating-system/",
+        "route": "/horizon/brand-memory-becomes-an-operating-system/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/compute-becomes-a-creative-material/",
+        "route": "/horizon/compute-becomes-a-creative-material/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/direction-after-infinite-production/",
+        "route": "/horizon/direction-after-infinite-production/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/",
+        "route": "/horizon/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/identity-rights-become-production-infrastructure/",
+        "route": "/horizon/identity-rights-become-production-infrastructure/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/marketing-after-surveillance/",
+        "route": "/horizon/marketing-after-surveillance/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/media-escapes-the-frame/",
+        "route": "/horizon/media-escapes-the-frame/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/provenance-is-the-new-publishing-layer/",
+        "route": "/horizon/provenance-is-the-new-publishing-layer/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/the-media-library-starts-making-decisions/",
+        "route": "/horizon/the-media-library-starts-making-decisions/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/the-sovereign-microstudio/",
+        "route": "/horizon/the-sovereign-microstudio/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/horizon/the-story-is-assembled-at-the-edge/",
+        "route": "/horizon/the-story-is-assembled-at-the-edge/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/",
+        "route": "/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/industries/agencies/",
+        "route": "/industries/agencies/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/industries/consumer-brands/",
+        "route": "/industries/consumer-brands/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/industries/education-culture/",
+        "route": "/industries/education-culture/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/industries/founder-led-companies/",
+        "route": "/industries/founder-led-companies/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/industries/",
+        "route": "/industries/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/industries/media-entertainment/",
+        "route": "/industries/media-entertainment/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/industries/retail-commerce/",
+        "route": "/industries/retail-commerce/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/industries/software-platforms/",
+        "route": "/industries/software-platforms/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/industries/sports-wellness/",
+        "route": "/industries/sports-wellness/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/25-years-from-brand-studio-to-ai-company/",
+        "route": "/insights/25-years-from-brand-studio-to-ai-company/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/accessibility-is-art-direction/",
+        "route": "/insights/accessibility-is-art-direction/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/brand-memory-in-generative-systems/",
+        "route": "/insights/brand-memory-in-generative-systems/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/creative-direction-after-model-abundance/",
+        "route": "/insights/creative-direction-after-model-abundance/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/from-prompting-to-production-systems/",
+        "route": "/insights/from-prompting-to-production-systems/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/how-to-evaluate-a-genai-pilot/",
+        "route": "/insights/how-to-evaluate-a-genai-pilot/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/",
+        "route": "/insights/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/hybrid-inference-is-a-governance-decision/",
+        "route": "/insights/hybrid-inference-is-a-governance-decision/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/marketing-operations-for-small-expert-teams/",
+        "route": "/insights/marketing-operations-for-small-expert-teams/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/provenance-without-killing-creative-flow/",
+        "route": "/insights/provenance-without-killing-creative-flow/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/static-websites-as-durable-media/",
+        "route": "/insights/static-websites-as-durable-media/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/the-case-for-agent-readable-creative-operations/",
+        "route": "/insights/the-case-for-agent-readable-creative-operations/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/the-cost-of-model-first-product-design/",
+        "route": "/insights/the-cost-of-model-first-product-design/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/the-running-product-is-the-brief/",
+        "route": "/insights/the-running-product-is-the-brief/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/what-a-modern-media-control-room-needs/",
+        "route": "/insights/what-a-modern-media-control-room-needs/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/insights/why-media-collections-lose-their-value/",
+        "route": "/insights/why-media-collections-lose-their-value/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/methods/30-60-90-activation/",
+        "route": "/methods/30-60-90-activation/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/methods/accessibility-as-editorial/",
+        "route": "/methods/accessibility-as-editorial/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/methods/brand-memory/",
+        "route": "/methods/brand-memory/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/methods/collection-to-intelligence/",
+        "route": "/methods/collection-to-intelligence/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/methods/evidence-loop/",
+        "route": "/methods/evidence-loop/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/methods/",
+        "route": "/methods/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/methods/human-agent-creative-loop/",
+        "route": "/methods/human-agent-creative-loop/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/methods/hybrid-inference/",
+        "route": "/methods/hybrid-inference/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/methods/intent-to-system/",
+        "route": "/methods/intent-to-system/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/portfolio/airikai/",
+        "route": "/portfolio/airikai/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/portfolio/fashionx/",
+        "route": "/portfolio/fashionx/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/portfolio/focuspass/",
+        "route": "/portfolio/focuspass/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/portfolio/",
+        "route": "/portfolio/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/portfolio/pedadida/",
+        "route": "/portfolio/pedadida/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/portfolio/pranashama/",
+        "route": "/portfolio/pranashama/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/portfolio/state-parks/",
+        "route": "/portfolio/state-parks/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/portfolio/tao-cottage/",
+        "route": "/portfolio/tao-cottage/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/portfolio/taolo/",
+        "route": "/portfolio/taolo/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/privacy/",
+        "route": "/privacy/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/cli/agent-skills/",
+        "route": "/products/cli/agent-skills/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/cli/automation/",
+        "route": "/products/cli/automation/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/cli/",
+        "route": "/products/cli/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/cli/quickstart/",
+        "route": "/products/cli/quickstart/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/cli/security/",
+        "route": "/products/cli/security/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/gpu-router/architecture/",
+        "route": "/products/gpu-router/architecture/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/gpu-router/benchmarks/",
+        "route": "/products/gpu-router/benchmarks/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/gpu-router/",
+        "route": "/products/gpu-router/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/gpu-router/observability/",
+        "route": "/products/gpu-router/observability/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/gpu-router/routing/",
+        "route": "/products/gpu-router/routing/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/",
+        "route": "/products/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/photo-curator/connectors/",
+        "route": "/products/photo-curator/connectors/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/photo-curator/duplicates/",
+        "route": "/products/photo-curator/duplicates/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/photo-curator/",
+        "route": "/products/photo-curator/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/photo-curator/metadata/",
+        "route": "/products/photo-curator/metadata/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/photo-curator/review/",
+        "route": "/products/photo-curator/review/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/studio/audio/",
+        "route": "/products/studio/audio/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/studio/",
+        "route": "/products/studio/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/studio/hybrid-inference/",
+        "route": "/products/studio/hybrid-inference/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/studio/image/",
+        "route": "/products/studio/image/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/studio/video/",
+        "route": "/products/studio/video/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/web-magic/accessibility/",
+        "route": "/products/web-magic/accessibility/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/web-magic/delivery/",
+        "route": "/products/web-magic/delivery/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/web-magic/",
+        "route": "/products/web-magic/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/web-magic/performance/",
+        "route": "/products/web-magic/performance/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/web-magic/seo/",
+        "route": "/products/web-magic/seo/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/wiremark/agent-handoff/",
+        "route": "/products/wiremark/agent-handoff/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/wiremark/canvas/",
+        "route": "/products/wiremark/canvas/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/wiremark/",
+        "route": "/products/wiremark/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/wiremark/privacy-provenance/",
+        "route": "/products/wiremark/privacy-provenance/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/products/wiremark/source-intelligence/",
+        "route": "/products/wiremark/source-intelligence/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/responsible-ai/",
+        "route": "/responsible-ai/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/security/",
+        "route": "/security/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/services/brand-systems/",
+        "route": "/services/brand-systems/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/services/campaign-production/",
+        "route": "/services/campaign-production/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/services/content-operations/",
+        "route": "/services/content-operations/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/services/creative-direction/",
+        "route": "/services/creative-direction/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/services/creative-technology/",
+        "route": "/services/creative-technology/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/services/executive-advisory/",
+        "route": "/services/executive-advisory/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/services/genai-strategy/",
+        "route": "/services/genai-strategy/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/services/",
+        "route": "/services/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/services/marketing-consulting/",
+        "route": "/services/marketing-consulting/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/services/media-management/",
+        "route": "/services/media-management/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/services/web-experience/",
+        "route": "/services/web-experience/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/sitemap/",
+        "route": "/sitemap/"
+      },
+      {
+        "file": "sitemap-0.xml",
+        "url": "https://hardmagic.com/terms/",
+        "route": "/terms/"
+      }
+    ]
+  },
+  "external": [
+    {
+      "url": "https://about.fb.com/news/2024/02/labeling-ai-generated-images-on-facebook-instagram-and-threads/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://about.fb.com/news/2024/02/labeling-ai-generated-images-on-facebook-instagram-and-threads/",
+      "attempts": 1
+    },
+    {
+      "url": "https://blog.youtube/culture-and-trends/next-gen-creativity/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://blog.youtube/culture-and-trends/next-gen-creativity/",
+      "attempts": 1
+    },
+    {
+      "url": "https://blog.youtube/culture-and-trends/trends-report-20th/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://blog.youtube/culture-and-trends/trends-report-20th/",
+      "attempts": 1
+    },
+    {
+      "url": "https://blog.youtube/culture-and-trends/youtube-culture-trends-report-virtual-creators/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://blog.youtube/culture-and-trends/youtube-culture-trends-report-virtual-creators/",
+      "attempts": 1
+    },
+    {
+      "url": "https://briefs.hardmagic.com/api/brief-request",
+      "status": "form-unchecked",
+      "httpStatus": null,
+      "finalUrl": "https://briefs.hardmagic.com/api/brief-request",
+      "attempts": 0
+    },
+    {
+      "url": "https://briefs.hardmagic.com/api/contact-request",
+      "status": "form-unchecked",
+      "httpStatus": null,
+      "finalUrl": "https://briefs.hardmagic.com/api/contact-request",
+      "attempts": 0
+    },
+    {
+      "url": "https://business.adobe.com/resources/reports/content-management-digital-trends.html",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://business.adobe.com/resources/reports/content-management-digital-trends.html",
+      "attempts": 1
+    },
+    {
+      "url": "https://c2pa.org/wp-content/uploads/sites/33/2025/10/content_credentials_wp_0925.pdf",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://c2pa.org/wp-content/uploads/sites/33/2025/10/content_credentials_wp_0925.pdf",
+      "attempts": 1
+    },
+    {
+      "url": "https://challenges.cloudflare.com/turnstile/v0/api.js",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://challenges.cloudflare.com/turnstile/v0/g/aae2b9a1c261/api.js",
+      "attempts": 1
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2024/03/core-update-spam-policies",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://developers.google.com/search/blog/2024/03/core-update-spam-policies",
+      "attempts": 1
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing",
+      "attempts": 1
+    },
+    {
+      "url": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content",
+      "attempts": 1
+    },
+    {
+      "url": "https://doi.org/10.6028/NIST.AI.600-1",
+      "status": "external-ok",
+      "httpStatus": 206,
+      "finalUrl": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+      "attempts": 1
+    },
+    {
+      "url": "https://dora.dev/research/2024/dora-report/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://dora.dev/research/2024/dora-report/",
+      "attempts": 1
+    },
+    {
+      "url": "https://dora.dev/research/2025/dora-report/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://dora.dev/research/2025/dora-report/",
+      "attempts": 1
+    },
+    {
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=en",
+      "status": "external-ok",
+      "httpStatus": 202,
+      "finalUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=en",
+      "attempts": 1
+    },
+    {
+      "url": "https://hai.stanford.edu/assets/files/hai_ai_index_report_2025.pdf",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://hai.stanford.edu/assets/files/hai_ai_index_report_2025.pdf",
+      "attempts": 1
+    },
+    {
+      "url": "https://iptc.org/wp-content/uploads/2025/05/IPTC-Generative-AI-Opt-Out-Best-Practices.pdf",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://iptc.org/wp-content/uploads/2025/05/IPTC-Generative-AI-Opt-Out-Best-Practices.pdf",
+      "attempts": 1
+    },
+    {
+      "url": "https://mlcommons.org/2025/04/mlperf-inference-v5-0-results/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://mlcommons.org/2025/04/mlperf-inference-v5-0-results/",
+      "attempts": 1
+    },
+    {
+      "url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-ultra-ai-factory-platform-paves-way-for-age-of-ai-reasoning",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://nvidianews.nvidia.com/news/nvidia-blackwell-ultra-ai-factory-platform-paves-way-for-age-of-ai-reasoning",
+      "attempts": 1
+    },
+    {
+      "url": "https://openai.com/index/sora-system-card/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://openai.com/index/sora-system-card/",
+      "attempts": 1
+    },
+    {
+      "url": "https://planning.lacity.gov/StaffRpt/InitialRpts/DIR-2017-1073.pdf",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://planning.lacity.gov/StaffRpt/InitialRpts/DIR-2017-1073.pdf",
+      "attempts": 1
+    },
+    {
+      "url": "https://spec.c2pa.org/specifications/specifications/2.1/specs/C2PA_Specification.html",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://spec.c2pa.org/specifications/specifications/2.1/specs/C2PA_Specification.html",
+      "attempts": 1
+    },
+    {
+      "url": "https://spec.c2pa.org/specifications/specifications/2.2/specs/C2PA_Specification.html",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://spec.c2pa.org/specifications/specifications/2.2/specs/C2PA_Specification.html",
+      "attempts": 1
+    },
+    {
+      "url": "https://unctad.org/publication/creative-economy-outlook-2024",
+      "status": "external-unreachable",
+      "httpStatus": null,
+      "finalUrl": "https://unctad.org/publication/creative-economy-outlook-2024",
+      "attempts": 3,
+      "error": "timeout"
+    },
+    {
+      "url": "https://www.anthropic.com/research/claude-code-expertise",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.anthropic.com/research/claude-code-expertise",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.anthropic.com/research/impact-software-development",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.anthropic.com/research/impact-software-development",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-1-Digital-Replicas-Report.pdf",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-1-Digital-Replicas-Report.pdf",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ftc.gov/system/files/ftc_gov/pdf/p246202_surveillancepricing6bstudy_researchsummaries_redacted.pdf",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.iab.com/insights/internet-advertising-revenue-report-full-year-2025/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.iab.com/insights/internet-advertising-revenue-report-full-year-2025/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.iab.com/insights/the-ai-gap-widens/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.iab.com/insights/the-ai-gap-widens/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.iab.com/insights/video-ad-spend-report-2025/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.iab.com/insights/video-ad-spend-report-2025/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.iab.com/wp-content/uploads/2025/11/IAB_Creator_Ad_Spend_and_Strategy_Report_2025.pdf",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.iab.com/wp-content/uploads/2025/11/IAB_Creator_Ad_Spend_and_Strategy_Report_2025.pdf",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions",
+      "status": "external-review",
+      "httpStatus": 403,
+      "finalUrl": "https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.iea.org/reports/energy-and-ai/",
+      "status": "external-review",
+      "httpStatus": 403,
+      "finalUrl": "https://www.iea.org/reports/energy-and-ai/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.iptc.org/std/photometadata/documentation/userguide/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.iptc.org/std/photometadata/documentation/userguide/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.loc.gov/digital-strategy/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.loc.gov/digital-strategy/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.loc.gov/programs/digital-collections-management/digital-formats/bit-level-preservation-and-long-term-usability/",
+      "status": "external-review",
+      "httpStatus": 403,
+      "finalUrl": "https://www.loc.gov/programs/digital-collections-management/digital-formats/bit-level-preservation-and-long-term-usability/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.nationaltrust.org.uk/discover/nature/trees-plants/five-things-you-never-knew-about-holly",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nationaltrust.org.uk/discover/nature/trees-plants/five-things-you-never-knew-about-holly",
+      "attempts": 2
+    },
+    {
+      "url": "https://www.nielsen.com/news-center/2025/streaming-cranks-up-the-heat-in-july-accounts-for-nearly-half-of-all-tv-viewing-in-nielsens-the-gauge/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nielsen.com/news-center/2025/streaming-cranks-up-the-heat-in-july-accounts-for-nearly-half-of-all-tv-viewing-in-nielsens-the-gauge/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.nielsen.com/news-center/2025/streaming-reaches-historic-tv-milestone-eclipses-combined-broadcast-and-cable-viewing-for-first-time/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nielsen.com/news-center/2025/streaming-reaches-historic-tv-milestone-eclipses-combined-broadcast-and-cable-viewing-for-first-time/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.ofcom.org.uk/siteassets/resources/documents/research-and-data/multi-sector/media-nations/2025/media-nations-2025-uk-report.pdf",
+      "status": "external-review",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ofcom.org.uk/siteassets/resources/documents/research-and-data/multi-sector/media-nations/2025/media-nations-2025-uk-report.pdf",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-global-entertainment-media-outlook.html",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-global-entertainment-media-outlook.html",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.unesco.org/sites/default/files/medias/fichiers/2025/09/CULTAI_Report%20of%20the%20Independent%20Expert%20Group%20on%20Artificial%20Intelligence%20and%20Culture%20%28final%20online%20version%29%201.pdf",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.unesco.org/sites/default/files/medias/fichiers/2025/09/CULTAI_Report%20of%20the%20Independent%20Expert%20Group%20on%20Artificial%20Intelligence%20and%20Culture%20%28final%20online%20version%29%201.pdf",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.w3.org/TR/WCAG22/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.w3.org/TR/webxr/",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.w3.org/TR/webxr/",
+      "attempts": 1
+    },
+    {
+      "url": "https://www.who.int/health-topics/disability/implementing-the-un-disability-inclusion-strategy",
+      "status": "external-unreachable",
+      "httpStatus": null,
+      "finalUrl": "https://www.who.int/health-topics/disability/implementing-the-un-disability-inclusion-strategy",
+      "attempts": 3,
+      "error": "timeout"
+    },
+    {
+      "url": "https://www.youtube.com/@hardmagicproductions",
+      "status": "external-ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.youtube.com/@hardmagicproductions",
+      "attempts": 1
+    }
+  ],
+  "failures": [],
+  "warnings": [
+    "/horizon/accessibility-becomes-generative-art-direction/: https://www.who.int/health-topics/disability/implementing-the-un-disability-inclusion-strategy external-unreachable; source owner must recheck",
+    "/horizon/marketing-after-surveillance/: https://unctad.org/publication/creative-economy-outlook-2024 external-unreachable; source owner must recheck",
+    "/horizon/the-sovereign-microstudio/: https://unctad.org/publication/creative-economy-outlook-2024 external-unreachable; source owner must recheck",
+    "/portfolio-item/airikai/: static meta-refresh needs deployed HTTP 301/308 edge verification",
+    "/portfolio-item/fashionx/: static meta-refresh needs deployed HTTP 301/308 edge verification",
+    "/portfolio-item/focuspass/: static meta-refresh needs deployed HTTP 301/308 edge verification",
+    "/portfolio-item/pedadida/: static meta-refresh needs deployed HTTP 301/308 edge verification",
+    "/portfolio-item/pranashama/: static meta-refresh needs deployed HTTP 301/308 edge verification",
+    "/portfolio-item/state-parks/: static meta-refresh needs deployed HTTP 301/308 edge verification",
+    "/portfolio-item/tao-cottage/: static meta-refresh needs deployed HTTP 301/308 edge verification",
+    "/portfolio-item/taolo/: static meta-refresh needs deployed HTTP 301/308 edge verification",
+    "https://briefs.hardmagic.com/api/brief-request: form POST requires a controlled canary; read-only link audit skipped it",
+    "https://briefs.hardmagic.com/api/contact-request: form POST requires a controlled canary; read-only link audit skipped it",
+    "https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions: HTTP 403 needs source review",
+    "https://www.iea.org/reports/energy-and-ai/: HTTP 403 needs source review",
+    "https://www.loc.gov/programs/digital-collections-management/digital-formats/bit-level-preservation-and-long-term-usability/: HTTP 403 needs source review",
+    "https://www.ofcom.org.uk/siteassets/resources/documents/research-and-data/multi-sector/media-nations/2025/media-nations-2025-uk-report.pdf: HTTP 403 needs source review"
+  ]
+}

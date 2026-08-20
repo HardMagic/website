@@ -1,5 +1,10 @@
 # HardMagic BriefLock DNS contract
 
+This file records the desired DNS contract, not a live DNS/TLS observation. No Cloudflare
+query, certificate check, or external deployment was performed by the P0-05 website
+workstream. Capture the current record values, certificate state, and verification time
+in release evidence before relying on this contract.
+
 `hardmagic.com` is authoritative in Cloudflare account `TaoMgt` (account ID `2d0c1675bb88a5f6c7c9bcea5b8e2aad`, zone ID `73af42b5130d61b887c3c18e6d0d9633`).
 
 The edge requires these DNS records:

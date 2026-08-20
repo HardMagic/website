@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /thanks/
+Disallow: /contact/thanks/
+Disallow: /briefs/*/thanks/
+Disallow: /portfolio-item/
+
+Sitemap: https://hardmagic.com/sitemap-index.xml

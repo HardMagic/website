@@ -1,6 +1,13 @@
 # HardMagic BriefLock deployment record
 
-Last verified: 2026-08-12, FocusHive tenant.
+Historical verification noted: 2026-08-12, FocusHive tenant.
+
+Verification status: **historical inventory, not current release evidence**. This record
+does not include a current immutable deployment ID, Function package hash, Blob object
+version, PDF upload timestamp, DNS/TLS observation, or end-to-end delivery canary. No
+P0-05 work in the website repository performed an Azure upload or changed the deployed
+state. Re-verify every item against the named tenant and attach redacted evidence before
+calling BriefLock production-ready.
 
 ## Azure
 
@@ -11,7 +18,7 @@ Last verified: 2026-08-12, FocusHive tenant.
 - Runtime identity object ID: `f7877793-4844-4876-95a4-7e8efe8b2ba3`
 - Storage: `sthmbriefucrhklk2glcq6`
 - Dedicated Key Vault: `kvhmucrhklk2glcq6`
-- Private brief container: `briefs`; eight generated technical-brief PDFs uploaded
+- Private brief container: `briefs`; the historical record says eight generated technical-brief PDFs were uploaded. The current upload state and each stored checksum are unverified here.
 - Direct Function origin: access-restricted and verified to return HTTP 403
 - Shared Front Door profile ID: `9640fdb7-bfd5-4890-a984-5a5a7217ad3d`
 - HardMagic origin group: `hardmagic-briefs-origins`

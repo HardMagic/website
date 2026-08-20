@@ -3,6 +3,14 @@ import { briefs, intakeCategories } from "./catalog.js";
 
 const cleanText = (max: number) => z.string().trim().min(1).max(max);
 const optionalText = (max: number) => z.string().trim().max(max).optional().default("");
+const optionalUuid = z.preprocess(
+  (value) => typeof value === "string" && value.trim() === "" ? undefined : value,
+  z.string().uuid().optional(),
+);
+const campaign = z.preprocess(
+  (value) => typeof value === "string" && value.trim() === "" ? undefined : value,
+  z.string().trim().max(160).regex(/^[a-z0-9][a-z0-9._-]*$/i).optional(),
+).default("");
 const consent = z.literal("yes");
 const consumerEmailRoots = new Set(["gmail.com", "googlemail.com", "hotmail.com", "outlook.com", "yahoo.com"]);
 const consumerEmailVariants = new Set([
@@ -26,21 +34,28 @@ export function isCorporateEmail(value: string): boolean {
 const corporateEmail = z.string().trim().toLowerCase().email().max(320).refine(isCorporateEmail, { message: "corporate_email_required" });
 
 export const briefRequestSchema = z.object({
+  request_id: optionalUuid,
   report: z.enum(Object.keys(briefs) as [keyof typeof briefs, ...(keyof typeof briefs)[]]),
   name: cleanText(160),
   email: corporateEmail,
   organization: cleanText(200),
   role: cleanText(120),
   industry: cleanText(120),
-  organization_size: cleanText(80),
-  decision_stage: cleanText(120),
-  decision_horizon: cleanText(120),
+  organization_size: z.enum([
+    "1–49", "1-49",
+    "50–249", "50-249",
+    "250–999", "250-999",
+    "1,000–9,999", "1,000-9,999",
+    "10,000+",
+  ]),
+  decision_stage: z.enum(["Exploring", "Evaluating", "Piloting", "In production", "Scaling", "Transforming"]),
+  decision_horizon: z.enum(["Now–30 days", "31–90 days", "3–6 months", "6–12 months", "Learning only", "This quarter"]),
   primary_challenge: cleanText(500),
-  preferred_next_step: cleanText(160),
+  preferred_next_step: z.enum(["Send the brief only", "Brief plus a working session", "Discuss an advisory engagement", "Discuss a product", "Working session"]),
   intake_category: z.enum(intakeCategories),
   context: optionalText(2000),
   source_url: optionalText(500),
-  source_campaign: optionalText(160),
+  source_campaign: campaign,
   consent,
   marketing_consent: z.enum(["yes", "no"]).default("no"),
   _honey: z.string().max(0).optional().default(""),
@@ -48,16 +63,35 @@ export const briefRequestSchema = z.object({
 }).strict();
 
 export const contactRequestSchema = z.object({
+  request_id: optionalUuid,
   name: cleanText(160),
   email: z.string().trim().toLowerCase().email().max(320),
   organization: cleanText(200),
   role: cleanText(120),
   intake_category: z.enum(intakeCategories),
   mandate: cleanText(4000),
-  decision_horizon: cleanText(120),
-  preferred_next_step: cleanText(160),
+  decision_horizon: z.enum([
+    "Now — next 30 days",
+    "Now–30 days",
+    "31–90 days",
+    "3–6 months",
+    "6–12 months",
+    "Exploring — no date yet",
+    "90 days",
+  ]),
+  preferred_next_step: z.enum([
+    "A 30-minute exploratory conversation",
+    "A working session with the right leads",
+    "An engagement recommendation",
+    "A product or systems discussion",
+    "Written response",
+    "Working session",
+    "Advisory engagement",
+    "Product discussion",
+    "Architecture review",
+  ]),
   source_url: optionalText(500),
-  source_campaign: optionalText(160),
+  source_campaign: campaign,
   consent,
   marketing_consent: z.enum(["yes", "no"]).default("no"),
   _honey: z.string().max(0).optional().default(""),

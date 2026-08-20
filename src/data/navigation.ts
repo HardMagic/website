@@ -60,7 +60,7 @@ const megaMenuCatalog: MegaMenu[] = [
   },
   {
     label: 'Work with us', href: 'services/',
-    feature: { eyebrow: 'Independent senior practice', title: 'Bring us the decision that crosses creative, technical, and organizational boundaries.', href: 'contact/' },
+    feature: { eyebrow: 'Independent senior practice', title: 'Bring us the decision that crosses creative, technical, and organizational boundaries.', href: 'services/executive-advisory/' },
     groups: [
       { title: 'Leadership', links: [
         { label: 'Executive advisory', href: 'services/executive-advisory/', note: 'Senior counsel for consequential decisions' }, { label: 'Creative direction', href: 'services/creative-direction/' },
@@ -123,7 +123,7 @@ const megaMenuCatalog: MegaMenu[] = [
         { label: 'Accessibility', href: 'accessibility/' }, { label: 'Privacy', href: 'privacy/' },
       ]},
       { title: 'Talk to us', links: [
-        { label: 'Advisory intake', href: 'contact/', note: 'Route a consequential decision' }, { label: 'Creative direction', href: 'contact/creative-direction/' }, { label: 'GenAI', href: 'contact/genai/' },
+        { label: 'Advisory intake', href: 'services/executive-advisory/', note: 'Route a consequential decision' }, { label: 'Creative direction', href: 'contact/creative-direction/' }, { label: 'GenAI', href: 'contact/genai/' },
         { label: 'Media management', href: 'contact/media-management/' }, { label: 'Start a conversation', href: 'contact/' },
       ]},
     ],
@@ -145,7 +145,7 @@ export const footerNavGroups: NavGroup[] = [
       { label: 'Executive advisory', href: 'services/executive-advisory/' },
       { label: 'Engagement models', href: 'engagements/' },
       { label: 'Transformation sprint', href: 'engagements/transformation-sprint/' },
-      { label: 'Start an enterprise conversation', href: 'contact/' },
+      { label: 'Explore executive advisory', href: 'services/executive-advisory/' },
     ],
   },
   {

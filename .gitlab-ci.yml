@@ -1,10 +1,17 @@
 include:
   - local: .gitlab/ci/brief-delivery.yml
+  - local: .gitlab/ci/site-release.yml
 
 pages:
   stage: deploy
   needs: []
-  image: harbor.focuscell.org/dockerhub-proxy/library/node:25-alpine
+  variables:
+    HARDMAGIC_DEPLOY_TARGET: demo
+    HARDMAGIC_DEPLOYMENT_TEST_TARGET: demo
+    HARDMAGIC_IMAGE_BUILD_CONCURRENCY: '1'
+    SHARP_CONCURRENCY: '1'
+    UV_THREADPOOL_SIZE: '1'
+  image: harbor.focuscell.org/dockerhub-proxy/library/node:22.12.0-bookworm-slim
   cache:
     key:
       files:
@@ -12,19 +19,33 @@ pages:
     paths:
       - .npm/
   script:
-    - npm ci --cache .npm --prefer-offline
+    - npm ci --cache .npm --prefer-offline --no-audit --fund=false
     - npm run check
     - npm run typecheck:ts7
     - npm run test
-    - npm run build
+    - NODE_OPTIONS="--require=$CI_PROJECT_DIR/.gitlab/ci/limit-image-build-concurrency.cjs" npm run build
+    - npm exec -- vitest run tests/deployment/deployment-config.test.ts
     - npm run audit:routes
+    - npm run audit:sitemap
     - npm run audit:media
+    - npm run audit:links
+    - npm run audit:ctas
+    - npm run audit:rendered
+    - node .gitlab/ci/generate-release-manifest.mjs --target demo --artifact-root dist --output docs/release-evidence/release-manifest.json
     - mv dist .pages
     - rm -rf public
     - mv .pages public
   artifacts:
     paths:
       - public
+      - docs/release-evidence/
+      - docs/route-ledger.json
+      - docs/route-ledger.md
+      - docs/link-ledger.csv
+      - docs/cta-ledger.csv
+      - docs/media-ledger.json
+      - docs/media-ledger.md
+      - docs/visual-sitemap.md
   allow_failure: false
   rules:
     - if: '$CI_COMMIT_BRANCH == "demo"'

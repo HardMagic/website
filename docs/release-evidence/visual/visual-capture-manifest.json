@@ -1,0 +1,3389 @@
+{
+  "schemaVersion": 1,
+  "buildFingerprint": "0a18540f92e55cad26ecc98e256d7ec4e64345f925f0a515fe50ab2464334ff4",
+  "routeCount": 153,
+  "projects": [
+    {
+      "name": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    }
+  ],
+  "captures": [
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/",
+      "state": "canonical",
+      "routeId": "home--canonical",
+      "path": "captures/chromium-390/home--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/",
+      "state": "canonical",
+      "routeId": "home--canonical",
+      "path": "captures/chromium-1440/home--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/404/",
+      "state": "not-found",
+      "routeId": "404--not-found",
+      "path": "captures/chromium-390/404--not-found.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/404/",
+      "state": "not-found",
+      "routeId": "404--not-found",
+      "path": "captures/chromium-1440/404--not-found.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/accessibility/",
+      "state": "canonical",
+      "routeId": "accessibility--canonical",
+      "path": "captures/chromium-390/accessibility--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/accessibility/",
+      "state": "canonical",
+      "routeId": "accessibility--canonical",
+      "path": "captures/chromium-1440/accessibility--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/",
+      "state": "canonical",
+      "routeId": "briefs--canonical",
+      "path": "captures/chromium-390/briefs--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/",
+      "state": "canonical",
+      "routeId": "briefs--canonical",
+      "path": "captures/chromium-1440/briefs--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/autonomous-web-publishing-control-plane/",
+      "state": "canonical",
+      "routeId": "briefs-autonomous-web-publishing-control-plane--canonical",
+      "path": "captures/chromium-390/briefs-autonomous-web-publishing-control-plane--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/autonomous-web-publishing-control-plane/",
+      "state": "canonical",
+      "routeId": "briefs-autonomous-web-publishing-control-plane--canonical",
+      "path": "captures/chromium-1440/briefs-autonomous-web-publishing-control-plane--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/autonomous-web-publishing-control-plane/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-autonomous-web-publishing-control-plane-thanks--thanks",
+      "path": "captures/chromium-390/briefs-autonomous-web-publishing-control-plane-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/autonomous-web-publishing-control-plane/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-autonomous-web-publishing-control-plane-thanks--thanks",
+      "path": "captures/chromium-1440/briefs-autonomous-web-publishing-control-plane-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/creative-direction-after-the-prompt/",
+      "state": "canonical",
+      "routeId": "briefs-creative-direction-after-the-prompt--canonical",
+      "path": "captures/chromium-390/briefs-creative-direction-after-the-prompt--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/creative-direction-after-the-prompt/",
+      "state": "canonical",
+      "routeId": "briefs-creative-direction-after-the-prompt--canonical",
+      "path": "captures/chromium-1440/briefs-creative-direction-after-the-prompt--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/creative-direction-after-the-prompt/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-creative-direction-after-the-prompt-thanks--thanks",
+      "path": "captures/chromium-390/briefs-creative-direction-after-the-prompt-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/creative-direction-after-the-prompt/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-creative-direction-after-the-prompt-thanks--thanks",
+      "path": "captures/chromium-1440/briefs-creative-direction-after-the-prompt-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/generative-media-operating-system/",
+      "state": "canonical",
+      "routeId": "briefs-generative-media-operating-system--canonical",
+      "path": "captures/chromium-390/briefs-generative-media-operating-system--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/generative-media-operating-system/",
+      "state": "canonical",
+      "routeId": "briefs-generative-media-operating-system--canonical",
+      "path": "captures/chromium-1440/briefs-generative-media-operating-system--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/generative-media-operating-system/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-generative-media-operating-system-thanks--thanks",
+      "path": "captures/chromium-390/briefs-generative-media-operating-system-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/generative-media-operating-system/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-generative-media-operating-system-thanks--thanks",
+      "path": "captures/chromium-1440/briefs-generative-media-operating-system-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/hybrid-ai-media-infrastructure/",
+      "state": "canonical",
+      "routeId": "briefs-hybrid-ai-media-infrastructure--canonical",
+      "path": "captures/chromium-390/briefs-hybrid-ai-media-infrastructure--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/hybrid-ai-media-infrastructure/",
+      "state": "canonical",
+      "routeId": "briefs-hybrid-ai-media-infrastructure--canonical",
+      "path": "captures/chromium-1440/briefs-hybrid-ai-media-infrastructure--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/hybrid-ai-media-infrastructure/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-hybrid-ai-media-infrastructure-thanks--thanks",
+      "path": "captures/chromium-390/briefs-hybrid-ai-media-infrastructure-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/hybrid-ai-media-infrastructure/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-hybrid-ai-media-infrastructure-thanks--thanks",
+      "path": "captures/chromium-1440/briefs-hybrid-ai-media-infrastructure-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/intelligent-media-asset-estate/",
+      "state": "canonical",
+      "routeId": "briefs-intelligent-media-asset-estate--canonical",
+      "path": "captures/chromium-390/briefs-intelligent-media-asset-estate--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/intelligent-media-asset-estate/",
+      "state": "canonical",
+      "routeId": "briefs-intelligent-media-asset-estate--canonical",
+      "path": "captures/chromium-1440/briefs-intelligent-media-asset-estate--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/intelligent-media-asset-estate/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-intelligent-media-asset-estate-thanks--thanks",
+      "path": "captures/chromium-390/briefs-intelligent-media-asset-estate-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/intelligent-media-asset-estate/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-intelligent-media-asset-estate-thanks--thanks",
+      "path": "captures/chromium-1440/briefs-intelligent-media-asset-estate-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/modern-media-agency-transformation-playbook/",
+      "state": "canonical",
+      "routeId": "briefs-modern-media-agency-transformation-playbook--canonical",
+      "path": "captures/chromium-390/briefs-modern-media-agency-transformation-playbook--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/modern-media-agency-transformation-playbook/",
+      "state": "canonical",
+      "routeId": "briefs-modern-media-agency-transformation-playbook--canonical",
+      "path": "captures/chromium-1440/briefs-modern-media-agency-transformation-playbook--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/modern-media-agency-transformation-playbook/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-modern-media-agency-transformation-playbook-thanks--thanks",
+      "path": "captures/chromium-390/briefs-modern-media-agency-transformation-playbook-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/modern-media-agency-transformation-playbook/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-modern-media-agency-transformation-playbook-thanks--thanks",
+      "path": "captures/chromium-1440/briefs-modern-media-agency-transformation-playbook-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/provenance-ready-content-supply-chain/",
+      "state": "canonical",
+      "routeId": "briefs-provenance-ready-content-supply-chain--canonical",
+      "path": "captures/chromium-390/briefs-provenance-ready-content-supply-chain--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/provenance-ready-content-supply-chain/",
+      "state": "canonical",
+      "routeId": "briefs-provenance-ready-content-supply-chain--canonical",
+      "path": "captures/chromium-1440/briefs-provenance-ready-content-supply-chain--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/provenance-ready-content-supply-chain/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-provenance-ready-content-supply-chain-thanks--thanks",
+      "path": "captures/chromium-390/briefs-provenance-ready-content-supply-chain-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/provenance-ready-content-supply-chain/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-provenance-ready-content-supply-chain-thanks--thanks",
+      "path": "captures/chromium-1440/briefs-provenance-ready-content-supply-chain-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/visual-product-development-field-guide/",
+      "state": "canonical",
+      "routeId": "briefs-visual-product-development-field-guide--canonical",
+      "path": "captures/chromium-390/briefs-visual-product-development-field-guide--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/visual-product-development-field-guide/",
+      "state": "canonical",
+      "routeId": "briefs-visual-product-development-field-guide--canonical",
+      "path": "captures/chromium-1440/briefs-visual-product-development-field-guide--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/briefs/visual-product-development-field-guide/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-visual-product-development-field-guide-thanks--thanks",
+      "path": "captures/chromium-390/briefs-visual-product-development-field-guide-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/briefs/visual-product-development-field-guide/thanks/",
+      "state": "thanks",
+      "routeId": "briefs-visual-product-development-field-guide-thanks--thanks",
+      "path": "captures/chromium-1440/briefs-visual-product-development-field-guide-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/company/",
+      "state": "canonical",
+      "routeId": "company--canonical",
+      "path": "captures/chromium-390/company--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/company/",
+      "state": "canonical",
+      "routeId": "company--canonical",
+      "path": "captures/chromium-1440/company--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/company/careers/",
+      "state": "canonical",
+      "routeId": "company-careers--canonical",
+      "path": "captures/chromium-390/company-careers--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/company/careers/",
+      "state": "canonical",
+      "routeId": "company-careers--canonical",
+      "path": "captures/chromium-1440/company-careers--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/company/founder/",
+      "state": "canonical",
+      "routeId": "company-founder--canonical",
+      "path": "captures/chromium-390/company-founder--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/company/founder/",
+      "state": "canonical",
+      "routeId": "company-founder--canonical",
+      "path": "captures/chromium-1440/company-founder--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/company/history/",
+      "state": "canonical",
+      "routeId": "company-history--canonical",
+      "path": "captures/chromium-390/company-history--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/company/history/",
+      "state": "canonical",
+      "routeId": "company-history--canonical",
+      "path": "captures/chromium-1440/company-history--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/company/operating-model/",
+      "state": "canonical",
+      "routeId": "company-operating-model--canonical",
+      "path": "captures/chromium-390/company-operating-model--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/company/operating-model/",
+      "state": "canonical",
+      "routeId": "company-operating-model--canonical",
+      "path": "captures/chromium-1440/company-operating-model--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/company/partners/",
+      "state": "canonical",
+      "routeId": "company-partners--canonical",
+      "path": "captures/chromium-390/company-partners--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/company/partners/",
+      "state": "canonical",
+      "routeId": "company-partners--canonical",
+      "path": "captures/chromium-1440/company-partners--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/company/principles/",
+      "state": "canonical",
+      "routeId": "company-principles--canonical",
+      "path": "captures/chromium-390/company-principles--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/company/principles/",
+      "state": "canonical",
+      "routeId": "company-principles--canonical",
+      "path": "captures/chromium-1440/company-principles--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/company/selected-experience/",
+      "state": "canonical",
+      "routeId": "company-selected-experience--canonical",
+      "path": "captures/chromium-390/company-selected-experience--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/company/selected-experience/",
+      "state": "canonical",
+      "routeId": "company-selected-experience--canonical",
+      "path": "captures/chromium-1440/company-selected-experience--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/contact/",
+      "state": "canonical",
+      "routeId": "contact--canonical",
+      "path": "captures/chromium-390/contact--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/contact/",
+      "state": "canonical",
+      "routeId": "contact--canonical",
+      "path": "captures/chromium-1440/contact--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/contact/creative-direction/",
+      "state": "canonical",
+      "routeId": "contact-creative-direction--canonical",
+      "path": "captures/chromium-390/contact-creative-direction--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/contact/creative-direction/",
+      "state": "canonical",
+      "routeId": "contact-creative-direction--canonical",
+      "path": "captures/chromium-1440/contact-creative-direction--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/contact/genai/",
+      "state": "canonical",
+      "routeId": "contact-genai--canonical",
+      "path": "captures/chromium-390/contact-genai--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/contact/genai/",
+      "state": "canonical",
+      "routeId": "contact-genai--canonical",
+      "path": "captures/chromium-1440/contact-genai--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/contact/marketing-consulting/",
+      "state": "canonical",
+      "routeId": "contact-marketing-consulting--canonical",
+      "path": "captures/chromium-390/contact-marketing-consulting--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/contact/marketing-consulting/",
+      "state": "canonical",
+      "routeId": "contact-marketing-consulting--canonical",
+      "path": "captures/chromium-1440/contact-marketing-consulting--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/contact/media-management/",
+      "state": "canonical",
+      "routeId": "contact-media-management--canonical",
+      "path": "captures/chromium-390/contact-media-management--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/contact/media-management/",
+      "state": "canonical",
+      "routeId": "contact-media-management--canonical",
+      "path": "captures/chromium-1440/contact-media-management--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/contact/partnerships/",
+      "state": "canonical",
+      "routeId": "contact-partnerships--canonical",
+      "path": "captures/chromium-390/contact-partnerships--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/contact/partnerships/",
+      "state": "canonical",
+      "routeId": "contact-partnerships--canonical",
+      "path": "captures/chromium-1440/contact-partnerships--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/contact/thanks/",
+      "state": "thanks",
+      "routeId": "contact-thanks--thanks",
+      "path": "captures/chromium-390/contact-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/contact/thanks/",
+      "state": "thanks",
+      "routeId": "contact-thanks--thanks",
+      "path": "captures/chromium-1440/contact-thanks--thanks.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/editorial-policy/",
+      "state": "canonical",
+      "routeId": "editorial-policy--canonical",
+      "path": "captures/chromium-390/editorial-policy--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/editorial-policy/",
+      "state": "canonical",
+      "routeId": "editorial-policy--canonical",
+      "path": "captures/chromium-1440/editorial-policy--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/engagements/",
+      "state": "canonical",
+      "routeId": "engagements--canonical",
+      "path": "captures/chromium-390/engagements--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/engagements/",
+      "state": "canonical",
+      "routeId": "engagements--canonical",
+      "path": "captures/chromium-1440/engagements--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/engagements/fractional-creative-office/",
+      "state": "canonical",
+      "routeId": "engagements-fractional-creative-office--canonical",
+      "path": "captures/chromium-390/engagements-fractional-creative-office--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/engagements/fractional-creative-office/",
+      "state": "canonical",
+      "routeId": "engagements-fractional-creative-office--canonical",
+      "path": "captures/chromium-1440/engagements-fractional-creative-office--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/engagements/genai-lab/",
+      "state": "canonical",
+      "routeId": "engagements-genai-lab--canonical",
+      "path": "captures/chromium-390/engagements-genai-lab--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/engagements/genai-lab/",
+      "state": "canonical",
+      "routeId": "engagements-genai-lab--canonical",
+      "path": "captures/chromium-1440/engagements-genai-lab--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/engagements/managed-media-desk/",
+      "state": "canonical",
+      "routeId": "engagements-managed-media-desk--canonical",
+      "path": "captures/chromium-390/engagements-managed-media-desk--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/engagements/managed-media-desk/",
+      "state": "canonical",
+      "routeId": "engagements-managed-media-desk--canonical",
+      "path": "captures/chromium-1440/engagements-managed-media-desk--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/engagements/product-launch-room/",
+      "state": "canonical",
+      "routeId": "engagements-product-launch-room--canonical",
+      "path": "captures/chromium-390/engagements-product-launch-room--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/engagements/product-launch-room/",
+      "state": "canonical",
+      "routeId": "engagements-product-launch-room--canonical",
+      "path": "captures/chromium-1440/engagements-product-launch-room--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/engagements/transformation-sprint/",
+      "state": "canonical",
+      "routeId": "engagements-transformation-sprint--canonical",
+      "path": "captures/chromium-390/engagements-transformation-sprint--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/engagements/transformation-sprint/",
+      "state": "canonical",
+      "routeId": "engagements-transformation-sprint--canonical",
+      "path": "captures/chromium-1440/engagements-transformation-sprint--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/",
+      "state": "canonical",
+      "routeId": "horizon--canonical",
+      "path": "captures/chromium-390/horizon--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/",
+      "state": "canonical",
+      "routeId": "horizon--canonical",
+      "path": "captures/chromium-1440/horizon--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/accessibility-becomes-generative-art-direction/",
+      "state": "canonical",
+      "routeId": "horizon-accessibility-becomes-generative-art-direction--canonical",
+      "path": "captures/chromium-390/horizon-accessibility-becomes-generative-art-direction--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/accessibility-becomes-generative-art-direction/",
+      "state": "canonical",
+      "routeId": "horizon-accessibility-becomes-generative-art-direction--canonical",
+      "path": "captures/chromium-1440/horizon-accessibility-becomes-generative-art-direction--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/agentic-media-needs-a-control-room/",
+      "state": "canonical",
+      "routeId": "horizon-agentic-media-needs-a-control-room--canonical",
+      "path": "captures/chromium-390/horizon-agentic-media-needs-a-control-room--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/agentic-media-needs-a-control-room/",
+      "state": "canonical",
+      "routeId": "horizon-agentic-media-needs-a-control-room--canonical",
+      "path": "captures/chromium-1440/horizon-agentic-media-needs-a-control-room--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/brand-memory-becomes-an-operating-system/",
+      "state": "canonical",
+      "routeId": "horizon-brand-memory-becomes-an-operating-system--canonical",
+      "path": "captures/chromium-390/horizon-brand-memory-becomes-an-operating-system--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/brand-memory-becomes-an-operating-system/",
+      "state": "canonical",
+      "routeId": "horizon-brand-memory-becomes-an-operating-system--canonical",
+      "path": "captures/chromium-1440/horizon-brand-memory-becomes-an-operating-system--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/compute-becomes-a-creative-material/",
+      "state": "canonical",
+      "routeId": "horizon-compute-becomes-a-creative-material--canonical",
+      "path": "captures/chromium-390/horizon-compute-becomes-a-creative-material--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/compute-becomes-a-creative-material/",
+      "state": "canonical",
+      "routeId": "horizon-compute-becomes-a-creative-material--canonical",
+      "path": "captures/chromium-1440/horizon-compute-becomes-a-creative-material--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/direction-after-infinite-production/",
+      "state": "canonical",
+      "routeId": "horizon-direction-after-infinite-production--canonical",
+      "path": "captures/chromium-390/horizon-direction-after-infinite-production--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/direction-after-infinite-production/",
+      "state": "canonical",
+      "routeId": "horizon-direction-after-infinite-production--canonical",
+      "path": "captures/chromium-1440/horizon-direction-after-infinite-production--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/identity-rights-become-production-infrastructure/",
+      "state": "canonical",
+      "routeId": "horizon-identity-rights-become-production-infrastructure--canonical",
+      "path": "captures/chromium-390/horizon-identity-rights-become-production-infrastructure--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/identity-rights-become-production-infrastructure/",
+      "state": "canonical",
+      "routeId": "horizon-identity-rights-become-production-infrastructure--canonical",
+      "path": "captures/chromium-1440/horizon-identity-rights-become-production-infrastructure--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/marketing-after-surveillance/",
+      "state": "canonical",
+      "routeId": "horizon-marketing-after-surveillance--canonical",
+      "path": "captures/chromium-390/horizon-marketing-after-surveillance--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/marketing-after-surveillance/",
+      "state": "canonical",
+      "routeId": "horizon-marketing-after-surveillance--canonical",
+      "path": "captures/chromium-1440/horizon-marketing-after-surveillance--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/media-escapes-the-frame/",
+      "state": "canonical",
+      "routeId": "horizon-media-escapes-the-frame--canonical",
+      "path": "captures/chromium-390/horizon-media-escapes-the-frame--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/media-escapes-the-frame/",
+      "state": "canonical",
+      "routeId": "horizon-media-escapes-the-frame--canonical",
+      "path": "captures/chromium-1440/horizon-media-escapes-the-frame--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/provenance-is-the-new-publishing-layer/",
+      "state": "canonical",
+      "routeId": "horizon-provenance-is-the-new-publishing-layer--canonical",
+      "path": "captures/chromium-390/horizon-provenance-is-the-new-publishing-layer--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/provenance-is-the-new-publishing-layer/",
+      "state": "canonical",
+      "routeId": "horizon-provenance-is-the-new-publishing-layer--canonical",
+      "path": "captures/chromium-1440/horizon-provenance-is-the-new-publishing-layer--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/the-media-library-starts-making-decisions/",
+      "state": "canonical",
+      "routeId": "horizon-the-media-library-starts-making-decisions--canonical",
+      "path": "captures/chromium-390/horizon-the-media-library-starts-making-decisions--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/the-media-library-starts-making-decisions/",
+      "state": "canonical",
+      "routeId": "horizon-the-media-library-starts-making-decisions--canonical",
+      "path": "captures/chromium-1440/horizon-the-media-library-starts-making-decisions--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/the-sovereign-microstudio/",
+      "state": "canonical",
+      "routeId": "horizon-the-sovereign-microstudio--canonical",
+      "path": "captures/chromium-390/horizon-the-sovereign-microstudio--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/the-sovereign-microstudio/",
+      "state": "canonical",
+      "routeId": "horizon-the-sovereign-microstudio--canonical",
+      "path": "captures/chromium-1440/horizon-the-sovereign-microstudio--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/horizon/the-story-is-assembled-at-the-edge/",
+      "state": "canonical",
+      "routeId": "horizon-the-story-is-assembled-at-the-edge--canonical",
+      "path": "captures/chromium-390/horizon-the-story-is-assembled-at-the-edge--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/horizon/the-story-is-assembled-at-the-edge/",
+      "state": "canonical",
+      "routeId": "horizon-the-story-is-assembled-at-the-edge--canonical",
+      "path": "captures/chromium-1440/horizon-the-story-is-assembled-at-the-edge--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/industries/",
+      "state": "canonical",
+      "routeId": "industries--canonical",
+      "path": "captures/chromium-390/industries--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/industries/",
+      "state": "canonical",
+      "routeId": "industries--canonical",
+      "path": "captures/chromium-1440/industries--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/industries/agencies/",
+      "state": "canonical",
+      "routeId": "industries-agencies--canonical",
+      "path": "captures/chromium-390/industries-agencies--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/industries/agencies/",
+      "state": "canonical",
+      "routeId": "industries-agencies--canonical",
+      "path": "captures/chromium-1440/industries-agencies--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/industries/consumer-brands/",
+      "state": "canonical",
+      "routeId": "industries-consumer-brands--canonical",
+      "path": "captures/chromium-390/industries-consumer-brands--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/industries/consumer-brands/",
+      "state": "canonical",
+      "routeId": "industries-consumer-brands--canonical",
+      "path": "captures/chromium-1440/industries-consumer-brands--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/industries/education-culture/",
+      "state": "canonical",
+      "routeId": "industries-education-culture--canonical",
+      "path": "captures/chromium-390/industries-education-culture--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/industries/education-culture/",
+      "state": "canonical",
+      "routeId": "industries-education-culture--canonical",
+      "path": "captures/chromium-1440/industries-education-culture--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/industries/founder-led-companies/",
+      "state": "canonical",
+      "routeId": "industries-founder-led-companies--canonical",
+      "path": "captures/chromium-390/industries-founder-led-companies--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/industries/founder-led-companies/",
+      "state": "canonical",
+      "routeId": "industries-founder-led-companies--canonical",
+      "path": "captures/chromium-1440/industries-founder-led-companies--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/industries/media-entertainment/",
+      "state": "canonical",
+      "routeId": "industries-media-entertainment--canonical",
+      "path": "captures/chromium-390/industries-media-entertainment--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/industries/media-entertainment/",
+      "state": "canonical",
+      "routeId": "industries-media-entertainment--canonical",
+      "path": "captures/chromium-1440/industries-media-entertainment--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/industries/retail-commerce/",
+      "state": "canonical",
+      "routeId": "industries-retail-commerce--canonical",
+      "path": "captures/chromium-390/industries-retail-commerce--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/industries/retail-commerce/",
+      "state": "canonical",
+      "routeId": "industries-retail-commerce--canonical",
+      "path": "captures/chromium-1440/industries-retail-commerce--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/industries/software-platforms/",
+      "state": "canonical",
+      "routeId": "industries-software-platforms--canonical",
+      "path": "captures/chromium-390/industries-software-platforms--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/industries/software-platforms/",
+      "state": "canonical",
+      "routeId": "industries-software-platforms--canonical",
+      "path": "captures/chromium-1440/industries-software-platforms--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/industries/sports-wellness/",
+      "state": "canonical",
+      "routeId": "industries-sports-wellness--canonical",
+      "path": "captures/chromium-390/industries-sports-wellness--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/industries/sports-wellness/",
+      "state": "canonical",
+      "routeId": "industries-sports-wellness--canonical",
+      "path": "captures/chromium-1440/industries-sports-wellness--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/",
+      "state": "canonical",
+      "routeId": "insights--canonical",
+      "path": "captures/chromium-390/insights--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/",
+      "state": "canonical",
+      "routeId": "insights--canonical",
+      "path": "captures/chromium-1440/insights--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/25-years-from-brand-studio-to-ai-company/",
+      "state": "canonical",
+      "routeId": "insights-25-years-from-brand-studio-to-ai-company--canonical",
+      "path": "captures/chromium-390/insights-25-years-from-brand-studio-to-ai-company--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/25-years-from-brand-studio-to-ai-company/",
+      "state": "canonical",
+      "routeId": "insights-25-years-from-brand-studio-to-ai-company--canonical",
+      "path": "captures/chromium-1440/insights-25-years-from-brand-studio-to-ai-company--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/accessibility-is-art-direction/",
+      "state": "canonical",
+      "routeId": "insights-accessibility-is-art-direction--canonical",
+      "path": "captures/chromium-390/insights-accessibility-is-art-direction--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/accessibility-is-art-direction/",
+      "state": "canonical",
+      "routeId": "insights-accessibility-is-art-direction--canonical",
+      "path": "captures/chromium-1440/insights-accessibility-is-art-direction--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/brand-memory-in-generative-systems/",
+      "state": "canonical",
+      "routeId": "insights-brand-memory-in-generative-systems--canonical",
+      "path": "captures/chromium-390/insights-brand-memory-in-generative-systems--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/brand-memory-in-generative-systems/",
+      "state": "canonical",
+      "routeId": "insights-brand-memory-in-generative-systems--canonical",
+      "path": "captures/chromium-1440/insights-brand-memory-in-generative-systems--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/creative-direction-after-model-abundance/",
+      "state": "canonical",
+      "routeId": "insights-creative-direction-after-model-abundance--canonical",
+      "path": "captures/chromium-390/insights-creative-direction-after-model-abundance--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/creative-direction-after-model-abundance/",
+      "state": "canonical",
+      "routeId": "insights-creative-direction-after-model-abundance--canonical",
+      "path": "captures/chromium-1440/insights-creative-direction-after-model-abundance--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/from-prompting-to-production-systems/",
+      "state": "canonical",
+      "routeId": "insights-from-prompting-to-production-systems--canonical",
+      "path": "captures/chromium-390/insights-from-prompting-to-production-systems--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/from-prompting-to-production-systems/",
+      "state": "canonical",
+      "routeId": "insights-from-prompting-to-production-systems--canonical",
+      "path": "captures/chromium-1440/insights-from-prompting-to-production-systems--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/how-to-evaluate-a-genai-pilot/",
+      "state": "canonical",
+      "routeId": "insights-how-to-evaluate-a-genai-pilot--canonical",
+      "path": "captures/chromium-390/insights-how-to-evaluate-a-genai-pilot--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/how-to-evaluate-a-genai-pilot/",
+      "state": "canonical",
+      "routeId": "insights-how-to-evaluate-a-genai-pilot--canonical",
+      "path": "captures/chromium-1440/insights-how-to-evaluate-a-genai-pilot--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/hybrid-inference-is-a-governance-decision/",
+      "state": "canonical",
+      "routeId": "insights-hybrid-inference-is-a-governance-decision--canonical",
+      "path": "captures/chromium-390/insights-hybrid-inference-is-a-governance-decision--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/hybrid-inference-is-a-governance-decision/",
+      "state": "canonical",
+      "routeId": "insights-hybrid-inference-is-a-governance-decision--canonical",
+      "path": "captures/chromium-1440/insights-hybrid-inference-is-a-governance-decision--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/marketing-operations-for-small-expert-teams/",
+      "state": "canonical",
+      "routeId": "insights-marketing-operations-for-small-expert-teams--canonical",
+      "path": "captures/chromium-390/insights-marketing-operations-for-small-expert-teams--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/marketing-operations-for-small-expert-teams/",
+      "state": "canonical",
+      "routeId": "insights-marketing-operations-for-small-expert-teams--canonical",
+      "path": "captures/chromium-1440/insights-marketing-operations-for-small-expert-teams--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/provenance-without-killing-creative-flow/",
+      "state": "canonical",
+      "routeId": "insights-provenance-without-killing-creative-flow--canonical",
+      "path": "captures/chromium-390/insights-provenance-without-killing-creative-flow--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/provenance-without-killing-creative-flow/",
+      "state": "canonical",
+      "routeId": "insights-provenance-without-killing-creative-flow--canonical",
+      "path": "captures/chromium-1440/insights-provenance-without-killing-creative-flow--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/static-websites-as-durable-media/",
+      "state": "canonical",
+      "routeId": "insights-static-websites-as-durable-media--canonical",
+      "path": "captures/chromium-390/insights-static-websites-as-durable-media--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/static-websites-as-durable-media/",
+      "state": "canonical",
+      "routeId": "insights-static-websites-as-durable-media--canonical",
+      "path": "captures/chromium-1440/insights-static-websites-as-durable-media--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/the-case-for-agent-readable-creative-operations/",
+      "state": "canonical",
+      "routeId": "insights-the-case-for-agent-readable-creative-operations--canonical",
+      "path": "captures/chromium-390/insights-the-case-for-agent-readable-creative-operations--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/the-case-for-agent-readable-creative-operations/",
+      "state": "canonical",
+      "routeId": "insights-the-case-for-agent-readable-creative-operations--canonical",
+      "path": "captures/chromium-1440/insights-the-case-for-agent-readable-creative-operations--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/the-cost-of-model-first-product-design/",
+      "state": "canonical",
+      "routeId": "insights-the-cost-of-model-first-product-design--canonical",
+      "path": "captures/chromium-390/insights-the-cost-of-model-first-product-design--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/the-cost-of-model-first-product-design/",
+      "state": "canonical",
+      "routeId": "insights-the-cost-of-model-first-product-design--canonical",
+      "path": "captures/chromium-1440/insights-the-cost-of-model-first-product-design--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/the-running-product-is-the-brief/",
+      "state": "canonical",
+      "routeId": "insights-the-running-product-is-the-brief--canonical",
+      "path": "captures/chromium-390/insights-the-running-product-is-the-brief--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/the-running-product-is-the-brief/",
+      "state": "canonical",
+      "routeId": "insights-the-running-product-is-the-brief--canonical",
+      "path": "captures/chromium-1440/insights-the-running-product-is-the-brief--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/what-a-modern-media-control-room-needs/",
+      "state": "canonical",
+      "routeId": "insights-what-a-modern-media-control-room-needs--canonical",
+      "path": "captures/chromium-390/insights-what-a-modern-media-control-room-needs--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/what-a-modern-media-control-room-needs/",
+      "state": "canonical",
+      "routeId": "insights-what-a-modern-media-control-room-needs--canonical",
+      "path": "captures/chromium-1440/insights-what-a-modern-media-control-room-needs--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/insights/why-media-collections-lose-their-value/",
+      "state": "canonical",
+      "routeId": "insights-why-media-collections-lose-their-value--canonical",
+      "path": "captures/chromium-390/insights-why-media-collections-lose-their-value--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/insights/why-media-collections-lose-their-value/",
+      "state": "canonical",
+      "routeId": "insights-why-media-collections-lose-their-value--canonical",
+      "path": "captures/chromium-1440/insights-why-media-collections-lose-their-value--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/methods/",
+      "state": "canonical",
+      "routeId": "methods--canonical",
+      "path": "captures/chromium-390/methods--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/methods/",
+      "state": "canonical",
+      "routeId": "methods--canonical",
+      "path": "captures/chromium-1440/methods--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/methods/30-60-90-activation/",
+      "state": "canonical",
+      "routeId": "methods-30-60-90-activation--canonical",
+      "path": "captures/chromium-390/methods-30-60-90-activation--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/methods/30-60-90-activation/",
+      "state": "canonical",
+      "routeId": "methods-30-60-90-activation--canonical",
+      "path": "captures/chromium-1440/methods-30-60-90-activation--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/methods/accessibility-as-editorial/",
+      "state": "canonical",
+      "routeId": "methods-accessibility-as-editorial--canonical",
+      "path": "captures/chromium-390/methods-accessibility-as-editorial--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/methods/accessibility-as-editorial/",
+      "state": "canonical",
+      "routeId": "methods-accessibility-as-editorial--canonical",
+      "path": "captures/chromium-1440/methods-accessibility-as-editorial--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/methods/brand-memory/",
+      "state": "canonical",
+      "routeId": "methods-brand-memory--canonical",
+      "path": "captures/chromium-390/methods-brand-memory--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/methods/brand-memory/",
+      "state": "canonical",
+      "routeId": "methods-brand-memory--canonical",
+      "path": "captures/chromium-1440/methods-brand-memory--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/methods/collection-to-intelligence/",
+      "state": "canonical",
+      "routeId": "methods-collection-to-intelligence--canonical",
+      "path": "captures/chromium-390/methods-collection-to-intelligence--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/methods/collection-to-intelligence/",
+      "state": "canonical",
+      "routeId": "methods-collection-to-intelligence--canonical",
+      "path": "captures/chromium-1440/methods-collection-to-intelligence--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/methods/evidence-loop/",
+      "state": "canonical",
+      "routeId": "methods-evidence-loop--canonical",
+      "path": "captures/chromium-390/methods-evidence-loop--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/methods/evidence-loop/",
+      "state": "canonical",
+      "routeId": "methods-evidence-loop--canonical",
+      "path": "captures/chromium-1440/methods-evidence-loop--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/methods/human-agent-creative-loop/",
+      "state": "canonical",
+      "routeId": "methods-human-agent-creative-loop--canonical",
+      "path": "captures/chromium-390/methods-human-agent-creative-loop--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/methods/human-agent-creative-loop/",
+      "state": "canonical",
+      "routeId": "methods-human-agent-creative-loop--canonical",
+      "path": "captures/chromium-1440/methods-human-agent-creative-loop--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/methods/hybrid-inference/",
+      "state": "canonical",
+      "routeId": "methods-hybrid-inference--canonical",
+      "path": "captures/chromium-390/methods-hybrid-inference--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/methods/hybrid-inference/",
+      "state": "canonical",
+      "routeId": "methods-hybrid-inference--canonical",
+      "path": "captures/chromium-1440/methods-hybrid-inference--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/methods/intent-to-system/",
+      "state": "canonical",
+      "routeId": "methods-intent-to-system--canonical",
+      "path": "captures/chromium-390/methods-intent-to-system--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/methods/intent-to-system/",
+      "state": "canonical",
+      "routeId": "methods-intent-to-system--canonical",
+      "path": "captures/chromium-1440/methods-intent-to-system--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio-item/airikai/",
+      "state": "redirect",
+      "routeId": "portfolio-item-airikai--redirect",
+      "path": "captures/chromium-390/portfolio-item-airikai--redirect.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio-item/airikai/",
+      "state": "redirect",
+      "routeId": "portfolio-item-airikai--redirect",
+      "path": "captures/chromium-1440/portfolio-item-airikai--redirect.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio-item/fashionx/",
+      "state": "redirect",
+      "routeId": "portfolio-item-fashionx--redirect",
+      "path": "captures/chromium-390/portfolio-item-fashionx--redirect.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio-item/fashionx/",
+      "state": "redirect",
+      "routeId": "portfolio-item-fashionx--redirect",
+      "path": "captures/chromium-1440/portfolio-item-fashionx--redirect.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio-item/focuspass/",
+      "state": "redirect",
+      "routeId": "portfolio-item-focuspass--redirect",
+      "path": "captures/chromium-390/portfolio-item-focuspass--redirect.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio-item/focuspass/",
+      "state": "redirect",
+      "routeId": "portfolio-item-focuspass--redirect",
+      "path": "captures/chromium-1440/portfolio-item-focuspass--redirect.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio-item/pedadida/",
+      "state": "redirect",
+      "routeId": "portfolio-item-pedadida--redirect",
+      "path": "captures/chromium-390/portfolio-item-pedadida--redirect.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio-item/pedadida/",
+      "state": "redirect",
+      "routeId": "portfolio-item-pedadida--redirect",
+      "path": "captures/chromium-1440/portfolio-item-pedadida--redirect.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio-item/pranashama/",
+      "state": "redirect",
+      "routeId": "portfolio-item-pranashama--redirect",
+      "path": "captures/chromium-390/portfolio-item-pranashama--redirect.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio-item/pranashama/",
+      "state": "redirect",
+      "routeId": "portfolio-item-pranashama--redirect",
+      "path": "captures/chromium-1440/portfolio-item-pranashama--redirect.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio-item/state-parks/",
+      "state": "redirect",
+      "routeId": "portfolio-item-state-parks--redirect",
+      "path": "captures/chromium-390/portfolio-item-state-parks--redirect.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio-item/state-parks/",
+      "state": "redirect",
+      "routeId": "portfolio-item-state-parks--redirect",
+      "path": "captures/chromium-1440/portfolio-item-state-parks--redirect.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio-item/tao-cottage/",
+      "state": "redirect",
+      "routeId": "portfolio-item-tao-cottage--redirect",
+      "path": "captures/chromium-390/portfolio-item-tao-cottage--redirect.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio-item/tao-cottage/",
+      "state": "redirect",
+      "routeId": "portfolio-item-tao-cottage--redirect",
+      "path": "captures/chromium-1440/portfolio-item-tao-cottage--redirect.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio-item/taolo/",
+      "state": "redirect",
+      "routeId": "portfolio-item-taolo--redirect",
+      "path": "captures/chromium-390/portfolio-item-taolo--redirect.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio-item/taolo/",
+      "state": "redirect",
+      "routeId": "portfolio-item-taolo--redirect",
+      "path": "captures/chromium-1440/portfolio-item-taolo--redirect.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio/",
+      "state": "canonical",
+      "routeId": "portfolio--canonical",
+      "path": "captures/chromium-390/portfolio--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio/",
+      "state": "canonical",
+      "routeId": "portfolio--canonical",
+      "path": "captures/chromium-1440/portfolio--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio/airikai/",
+      "state": "canonical",
+      "routeId": "portfolio-airikai--canonical",
+      "path": "captures/chromium-390/portfolio-airikai--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio/airikai/",
+      "state": "canonical",
+      "routeId": "portfolio-airikai--canonical",
+      "path": "captures/chromium-1440/portfolio-airikai--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio/fashionx/",
+      "state": "canonical",
+      "routeId": "portfolio-fashionx--canonical",
+      "path": "captures/chromium-390/portfolio-fashionx--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio/fashionx/",
+      "state": "canonical",
+      "routeId": "portfolio-fashionx--canonical",
+      "path": "captures/chromium-1440/portfolio-fashionx--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio/focuspass/",
+      "state": "canonical",
+      "routeId": "portfolio-focuspass--canonical",
+      "path": "captures/chromium-390/portfolio-focuspass--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio/focuspass/",
+      "state": "canonical",
+      "routeId": "portfolio-focuspass--canonical",
+      "path": "captures/chromium-1440/portfolio-focuspass--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio/pedadida/",
+      "state": "canonical",
+      "routeId": "portfolio-pedadida--canonical",
+      "path": "captures/chromium-390/portfolio-pedadida--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio/pedadida/",
+      "state": "canonical",
+      "routeId": "portfolio-pedadida--canonical",
+      "path": "captures/chromium-1440/portfolio-pedadida--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio/pranashama/",
+      "state": "canonical",
+      "routeId": "portfolio-pranashama--canonical",
+      "path": "captures/chromium-390/portfolio-pranashama--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio/pranashama/",
+      "state": "canonical",
+      "routeId": "portfolio-pranashama--canonical",
+      "path": "captures/chromium-1440/portfolio-pranashama--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio/state-parks/",
+      "state": "canonical",
+      "routeId": "portfolio-state-parks--canonical",
+      "path": "captures/chromium-390/portfolio-state-parks--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio/state-parks/",
+      "state": "canonical",
+      "routeId": "portfolio-state-parks--canonical",
+      "path": "captures/chromium-1440/portfolio-state-parks--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio/tao-cottage/",
+      "state": "canonical",
+      "routeId": "portfolio-tao-cottage--canonical",
+      "path": "captures/chromium-390/portfolio-tao-cottage--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio/tao-cottage/",
+      "state": "canonical",
+      "routeId": "portfolio-tao-cottage--canonical",
+      "path": "captures/chromium-1440/portfolio-tao-cottage--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/portfolio/taolo/",
+      "state": "canonical",
+      "routeId": "portfolio-taolo--canonical",
+      "path": "captures/chromium-390/portfolio-taolo--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/portfolio/taolo/",
+      "state": "canonical",
+      "routeId": "portfolio-taolo--canonical",
+      "path": "captures/chromium-1440/portfolio-taolo--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/privacy/",
+      "state": "canonical",
+      "routeId": "privacy--canonical",
+      "path": "captures/chromium-390/privacy--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/privacy/",
+      "state": "canonical",
+      "routeId": "privacy--canonical",
+      "path": "captures/chromium-1440/privacy--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/",
+      "state": "canonical",
+      "routeId": "products--canonical",
+      "path": "captures/chromium-390/products--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/",
+      "state": "canonical",
+      "routeId": "products--canonical",
+      "path": "captures/chromium-1440/products--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/cli/",
+      "state": "canonical",
+      "routeId": "products-cli--canonical",
+      "path": "captures/chromium-390/products-cli--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/cli/",
+      "state": "canonical",
+      "routeId": "products-cli--canonical",
+      "path": "captures/chromium-1440/products-cli--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/cli/agent-skills/",
+      "state": "canonical",
+      "routeId": "products-cli-agent-skills--canonical",
+      "path": "captures/chromium-390/products-cli-agent-skills--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/cli/agent-skills/",
+      "state": "canonical",
+      "routeId": "products-cli-agent-skills--canonical",
+      "path": "captures/chromium-1440/products-cli-agent-skills--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/cli/automation/",
+      "state": "canonical",
+      "routeId": "products-cli-automation--canonical",
+      "path": "captures/chromium-390/products-cli-automation--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/cli/automation/",
+      "state": "canonical",
+      "routeId": "products-cli-automation--canonical",
+      "path": "captures/chromium-1440/products-cli-automation--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/cli/quickstart/",
+      "state": "canonical",
+      "routeId": "products-cli-quickstart--canonical",
+      "path": "captures/chromium-390/products-cli-quickstart--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/cli/quickstart/",
+      "state": "canonical",
+      "routeId": "products-cli-quickstart--canonical",
+      "path": "captures/chromium-1440/products-cli-quickstart--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/cli/security/",
+      "state": "canonical",
+      "routeId": "products-cli-security--canonical",
+      "path": "captures/chromium-390/products-cli-security--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/cli/security/",
+      "state": "canonical",
+      "routeId": "products-cli-security--canonical",
+      "path": "captures/chromium-1440/products-cli-security--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/gpu-router/",
+      "state": "canonical",
+      "routeId": "products-gpu-router--canonical",
+      "path": "captures/chromium-390/products-gpu-router--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/gpu-router/",
+      "state": "canonical",
+      "routeId": "products-gpu-router--canonical",
+      "path": "captures/chromium-1440/products-gpu-router--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/gpu-router/architecture/",
+      "state": "canonical",
+      "routeId": "products-gpu-router-architecture--canonical",
+      "path": "captures/chromium-390/products-gpu-router-architecture--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/gpu-router/architecture/",
+      "state": "canonical",
+      "routeId": "products-gpu-router-architecture--canonical",
+      "path": "captures/chromium-1440/products-gpu-router-architecture--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/gpu-router/benchmarks/",
+      "state": "canonical",
+      "routeId": "products-gpu-router-benchmarks--canonical",
+      "path": "captures/chromium-390/products-gpu-router-benchmarks--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/gpu-router/benchmarks/",
+      "state": "canonical",
+      "routeId": "products-gpu-router-benchmarks--canonical",
+      "path": "captures/chromium-1440/products-gpu-router-benchmarks--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/gpu-router/observability/",
+      "state": "canonical",
+      "routeId": "products-gpu-router-observability--canonical",
+      "path": "captures/chromium-390/products-gpu-router-observability--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/gpu-router/observability/",
+      "state": "canonical",
+      "routeId": "products-gpu-router-observability--canonical",
+      "path": "captures/chromium-1440/products-gpu-router-observability--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/gpu-router/routing/",
+      "state": "canonical",
+      "routeId": "products-gpu-router-routing--canonical",
+      "path": "captures/chromium-390/products-gpu-router-routing--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/gpu-router/routing/",
+      "state": "canonical",
+      "routeId": "products-gpu-router-routing--canonical",
+      "path": "captures/chromium-1440/products-gpu-router-routing--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/photo-curator/",
+      "state": "canonical",
+      "routeId": "products-photo-curator--canonical",
+      "path": "captures/chromium-390/products-photo-curator--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/photo-curator/",
+      "state": "canonical",
+      "routeId": "products-photo-curator--canonical",
+      "path": "captures/chromium-1440/products-photo-curator--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/photo-curator/connectors/",
+      "state": "canonical",
+      "routeId": "products-photo-curator-connectors--canonical",
+      "path": "captures/chromium-390/products-photo-curator-connectors--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/photo-curator/connectors/",
+      "state": "canonical",
+      "routeId": "products-photo-curator-connectors--canonical",
+      "path": "captures/chromium-1440/products-photo-curator-connectors--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/photo-curator/duplicates/",
+      "state": "canonical",
+      "routeId": "products-photo-curator-duplicates--canonical",
+      "path": "captures/chromium-390/products-photo-curator-duplicates--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/photo-curator/duplicates/",
+      "state": "canonical",
+      "routeId": "products-photo-curator-duplicates--canonical",
+      "path": "captures/chromium-1440/products-photo-curator-duplicates--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/photo-curator/metadata/",
+      "state": "canonical",
+      "routeId": "products-photo-curator-metadata--canonical",
+      "path": "captures/chromium-390/products-photo-curator-metadata--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/photo-curator/metadata/",
+      "state": "canonical",
+      "routeId": "products-photo-curator-metadata--canonical",
+      "path": "captures/chromium-1440/products-photo-curator-metadata--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/photo-curator/review/",
+      "state": "canonical",
+      "routeId": "products-photo-curator-review--canonical",
+      "path": "captures/chromium-390/products-photo-curator-review--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/photo-curator/review/",
+      "state": "canonical",
+      "routeId": "products-photo-curator-review--canonical",
+      "path": "captures/chromium-1440/products-photo-curator-review--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/studio/",
+      "state": "canonical",
+      "routeId": "products-studio--canonical",
+      "path": "captures/chromium-390/products-studio--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/studio/",
+      "state": "canonical",
+      "routeId": "products-studio--canonical",
+      "path": "captures/chromium-1440/products-studio--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/studio/audio/",
+      "state": "canonical",
+      "routeId": "products-studio-audio--canonical",
+      "path": "captures/chromium-390/products-studio-audio--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/studio/audio/",
+      "state": "canonical",
+      "routeId": "products-studio-audio--canonical",
+      "path": "captures/chromium-1440/products-studio-audio--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/studio/hybrid-inference/",
+      "state": "canonical",
+      "routeId": "products-studio-hybrid-inference--canonical",
+      "path": "captures/chromium-390/products-studio-hybrid-inference--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/studio/hybrid-inference/",
+      "state": "canonical",
+      "routeId": "products-studio-hybrid-inference--canonical",
+      "path": "captures/chromium-1440/products-studio-hybrid-inference--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/studio/image/",
+      "state": "canonical",
+      "routeId": "products-studio-image--canonical",
+      "path": "captures/chromium-390/products-studio-image--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/studio/image/",
+      "state": "canonical",
+      "routeId": "products-studio-image--canonical",
+      "path": "captures/chromium-1440/products-studio-image--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/studio/video/",
+      "state": "canonical",
+      "routeId": "products-studio-video--canonical",
+      "path": "captures/chromium-390/products-studio-video--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/studio/video/",
+      "state": "canonical",
+      "routeId": "products-studio-video--canonical",
+      "path": "captures/chromium-1440/products-studio-video--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/web-magic/",
+      "state": "canonical",
+      "routeId": "products-web-magic--canonical",
+      "path": "captures/chromium-390/products-web-magic--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/web-magic/",
+      "state": "canonical",
+      "routeId": "products-web-magic--canonical",
+      "path": "captures/chromium-1440/products-web-magic--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/web-magic/accessibility/",
+      "state": "canonical",
+      "routeId": "products-web-magic-accessibility--canonical",
+      "path": "captures/chromium-390/products-web-magic-accessibility--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/web-magic/accessibility/",
+      "state": "canonical",
+      "routeId": "products-web-magic-accessibility--canonical",
+      "path": "captures/chromium-1440/products-web-magic-accessibility--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/web-magic/delivery/",
+      "state": "canonical",
+      "routeId": "products-web-magic-delivery--canonical",
+      "path": "captures/chromium-390/products-web-magic-delivery--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/web-magic/delivery/",
+      "state": "canonical",
+      "routeId": "products-web-magic-delivery--canonical",
+      "path": "captures/chromium-1440/products-web-magic-delivery--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/web-magic/performance/",
+      "state": "canonical",
+      "routeId": "products-web-magic-performance--canonical",
+      "path": "captures/chromium-390/products-web-magic-performance--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/web-magic/performance/",
+      "state": "canonical",
+      "routeId": "products-web-magic-performance--canonical",
+      "path": "captures/chromium-1440/products-web-magic-performance--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/web-magic/seo/",
+      "state": "canonical",
+      "routeId": "products-web-magic-seo--canonical",
+      "path": "captures/chromium-390/products-web-magic-seo--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/web-magic/seo/",
+      "state": "canonical",
+      "routeId": "products-web-magic-seo--canonical",
+      "path": "captures/chromium-1440/products-web-magic-seo--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/wiremark/",
+      "state": "canonical",
+      "routeId": "products-wiremark--canonical",
+      "path": "captures/chromium-390/products-wiremark--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/wiremark/",
+      "state": "canonical",
+      "routeId": "products-wiremark--canonical",
+      "path": "captures/chromium-1440/products-wiremark--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/wiremark/agent-handoff/",
+      "state": "canonical",
+      "routeId": "products-wiremark-agent-handoff--canonical",
+      "path": "captures/chromium-390/products-wiremark-agent-handoff--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/wiremark/agent-handoff/",
+      "state": "canonical",
+      "routeId": "products-wiremark-agent-handoff--canonical",
+      "path": "captures/chromium-1440/products-wiremark-agent-handoff--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/wiremark/canvas/",
+      "state": "canonical",
+      "routeId": "products-wiremark-canvas--canonical",
+      "path": "captures/chromium-390/products-wiremark-canvas--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/wiremark/canvas/",
+      "state": "canonical",
+      "routeId": "products-wiremark-canvas--canonical",
+      "path": "captures/chromium-1440/products-wiremark-canvas--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/wiremark/privacy-provenance/",
+      "state": "canonical",
+      "routeId": "products-wiremark-privacy-provenance--canonical",
+      "path": "captures/chromium-390/products-wiremark-privacy-provenance--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/wiremark/privacy-provenance/",
+      "state": "canonical",
+      "routeId": "products-wiremark-privacy-provenance--canonical",
+      "path": "captures/chromium-1440/products-wiremark-privacy-provenance--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/products/wiremark/source-intelligence/",
+      "state": "canonical",
+      "routeId": "products-wiremark-source-intelligence--canonical",
+      "path": "captures/chromium-390/products-wiremark-source-intelligence--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/products/wiremark/source-intelligence/",
+      "state": "canonical",
+      "routeId": "products-wiremark-source-intelligence--canonical",
+      "path": "captures/chromium-1440/products-wiremark-source-intelligence--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/responsible-ai/",
+      "state": "canonical",
+      "routeId": "responsible-ai--canonical",
+      "path": "captures/chromium-390/responsible-ai--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/responsible-ai/",
+      "state": "canonical",
+      "routeId": "responsible-ai--canonical",
+      "path": "captures/chromium-1440/responsible-ai--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/security/",
+      "state": "canonical",
+      "routeId": "security--canonical",
+      "path": "captures/chromium-390/security--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/security/",
+      "state": "canonical",
+      "routeId": "security--canonical",
+      "path": "captures/chromium-1440/security--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/",
+      "state": "canonical",
+      "routeId": "services--canonical",
+      "path": "captures/chromium-390/services--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/",
+      "state": "canonical",
+      "routeId": "services--canonical",
+      "path": "captures/chromium-1440/services--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/brand-systems/",
+      "state": "canonical",
+      "routeId": "services-brand-systems--canonical",
+      "path": "captures/chromium-390/services-brand-systems--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/brand-systems/",
+      "state": "canonical",
+      "routeId": "services-brand-systems--canonical",
+      "path": "captures/chromium-1440/services-brand-systems--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/campaign-production/",
+      "state": "canonical",
+      "routeId": "services-campaign-production--canonical",
+      "path": "captures/chromium-390/services-campaign-production--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/campaign-production/",
+      "state": "canonical",
+      "routeId": "services-campaign-production--canonical",
+      "path": "captures/chromium-1440/services-campaign-production--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/content-operations/",
+      "state": "canonical",
+      "routeId": "services-content-operations--canonical",
+      "path": "captures/chromium-390/services-content-operations--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/content-operations/",
+      "state": "canonical",
+      "routeId": "services-content-operations--canonical",
+      "path": "captures/chromium-1440/services-content-operations--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/creative-direction/",
+      "state": "canonical",
+      "routeId": "services-creative-direction--canonical",
+      "path": "captures/chromium-390/services-creative-direction--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/creative-direction/",
+      "state": "canonical",
+      "routeId": "services-creative-direction--canonical",
+      "path": "captures/chromium-1440/services-creative-direction--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/creative-technology/",
+      "state": "canonical",
+      "routeId": "services-creative-technology--canonical",
+      "path": "captures/chromium-390/services-creative-technology--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/creative-technology/",
+      "state": "canonical",
+      "routeId": "services-creative-technology--canonical",
+      "path": "captures/chromium-1440/services-creative-technology--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/executive-advisory/",
+      "state": "canonical",
+      "routeId": "services-executive-advisory--canonical",
+      "path": "captures/chromium-390/services-executive-advisory--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/executive-advisory/",
+      "state": "canonical",
+      "routeId": "services-executive-advisory--canonical",
+      "path": "captures/chromium-1440/services-executive-advisory--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/genai-strategy/",
+      "state": "canonical",
+      "routeId": "services-genai-strategy--canonical",
+      "path": "captures/chromium-390/services-genai-strategy--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/genai-strategy/",
+      "state": "canonical",
+      "routeId": "services-genai-strategy--canonical",
+      "path": "captures/chromium-1440/services-genai-strategy--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/marketing-consulting/",
+      "state": "canonical",
+      "routeId": "services-marketing-consulting--canonical",
+      "path": "captures/chromium-390/services-marketing-consulting--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/marketing-consulting/",
+      "state": "canonical",
+      "routeId": "services-marketing-consulting--canonical",
+      "path": "captures/chromium-1440/services-marketing-consulting--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/media-management/",
+      "state": "canonical",
+      "routeId": "services-media-management--canonical",
+      "path": "captures/chromium-390/services-media-management--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/media-management/",
+      "state": "canonical",
+      "routeId": "services-media-management--canonical",
+      "path": "captures/chromium-1440/services-media-management--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/web-experience/",
+      "state": "canonical",
+      "routeId": "services-web-experience--canonical",
+      "path": "captures/chromium-390/services-web-experience--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/web-experience/",
+      "state": "canonical",
+      "routeId": "services-web-experience--canonical",
+      "path": "captures/chromium-1440/services-web-experience--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/sitemap/",
+      "state": "canonical",
+      "routeId": "sitemap--canonical",
+      "path": "captures/chromium-390/sitemap--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/sitemap/",
+      "state": "canonical",
+      "routeId": "sitemap--canonical",
+      "path": "captures/chromium-1440/sitemap--canonical.png"
+    },
+    {
+      "project": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/terms/",
+      "state": "canonical",
+      "routeId": "terms--canonical",
+      "path": "captures/chromium-390/terms--canonical.png"
+    },
+    {
+      "project": "chromium-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/terms/",
+      "state": "canonical",
+      "routeId": "terms--canonical",
+      "path": "captures/chromium-1440/terms--canonical.png"
+    }
+  ]
+}

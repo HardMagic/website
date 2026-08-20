@@ -2,7 +2,10 @@
 
 This directory is the source-controlled infrastructure and runtime for HardMagic Corporation's gated technical briefs and qualified consulting intake. It is a HardMagic-specific port of the BriefLock pattern—not a copy of another company's live IDs, secrets, PDFs, or deployment workflow.
 
-No resource in this package has been deployed by adding these files.
+This package is source configuration. Adding these files does not prove that any Azure,
+Front Door, Cloudflare, email, storage, or Dataverse resource is deployed or healthy.
+`DEPLOYMENT-RECORD.md` is a historical inventory that requires current owner verification
+before it can be used as release evidence.
 
 ## Boundary
 
@@ -76,6 +79,21 @@ az bicep build --file infra/brief-delivery/main.bicep --stdout > /dev/null
 
 Use the GitLab manual `what-if` job before the protected apply. `parameters.example.json` contains names and placeholders only. Sender address, challenge secret, unsubscribe HMAC key, and Dataverse IDs must be written to the dedicated Key Vault by an authorized secret-management process; they never cross the deployment command line.
 
+## Brief artifact evidence
+
+Generate the eight source editions and the checksum/parity manifest with:
+
+```bash
+npm run briefs:pdf
+```
+
+The output is ignored under `source-pdfs/`. The reviewed evidence is recorded in
+[`docs/release-evidence/briefs/manifest.json`](../../docs/release-evidence/briefs/manifest.json)
+and its companion [README](../../docs/release-evidence/briefs/README.md). The manifest
+must retain `storageVersion: null`, `uploadTime: null`, and `deliveryState: not-uploaded`
+until an authorized Azure upload records those values. Do not copy the generated PDFs into
+this infrastructure source directory or a public site directory.
+
 ## Required external work
 
 This package intentionally does not pretend to own the shared edge or Dataverse control planes. Before deployment is usable:
@@ -85,5 +103,9 @@ This package intentionally does not pretend to own the shared edge or Dataverse 
 3. A custom ACS sender domain must be verified and its sender address added to Key Vault.
 4. Turnstile must be configured on both forms before production; the production default fails closed when it is absent.
 5. Reviewed PDFs must be uploaded to `briefs` using Entra ID and the exact catalog filenames. Do not add PDFs to this infrastructure directory or a public site directory.
+
+The separately owned Function catalog currently uses shorter titles for three source-data
+entries. Reconcile those titles against the landing data before upload; P0-05 evidence does
+not silently treat a catalog mismatch as deployment-ready.
 
 See [OPERATIONS.md](OPERATIONS.md) for acceptance, recovery, deletion, and privacy controls.

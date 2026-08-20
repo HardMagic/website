@@ -1,0 +1,1296 @@
+{
+  "generatedAt": "2026-08-20T15:12:49.813Z",
+  "assetCount": 66,
+  "assets": [
+    {
+      "asset": "/assets/abc.BlMuCxh7.svg",
+      "source": "src/assets/brand/abc.svg",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/company/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "ABC"
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/airikai-editorial-8k-restored.BGkjvsKR_107BhM.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/airikai/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "An editorial portrait from the Airikai visual system: a shadowed figure in black with a vivid red tie."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/airikai-motion.CdW_YEoq_Z2gnHER.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/airikai/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A dancer extends through a high kick in a movement photograph."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/airikai-portrait.nm8hnnmr_2syksG.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Airikai portrait photography against a dark field."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/airikai-portrait.nm8hnnmr_Z1jn4IV.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/airikai/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Airikai portrait photography against a dark field."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/archive-cathedral-2035.BRkQhIaX_1C0t2I.avif",
+      "source": "src/assets/editorial/archive-cathedral-2035.avif",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/horizon/",
+        "/horizon/brand-memory-becomes-an-operating-system/",
+        "/horizon/compute-becomes-a-creative-material/",
+        "/horizon/the-media-library-starts-making-decisions/",
+        "/horizon/the-sovereign-microstudio/",
+        "/industries/",
+        "/industries/consumer-brands/",
+        "/industries/founder-led-companies/",
+        "/industries/media-entertainment/",
+        "/insights/how-to-evaluate-a-genai-pilot/",
+        "/insights/provenance-without-killing-creative-flow/",
+        "/methods/"
+      ],
+      "routeCount": 12,
+      "altText": [
+        "A conceptual HardMagic editorial composition illustrating creative and technical systems.",
+        "A vast imagined media memory space, illuminated like a cathedral in 2035."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/audience-dreamfield-2035-4k.rfZ_dBob_1w3DSy.avif",
+      "source": "src/assets/editorial/audience-dreamfield-2035-4k.avif",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/briefs/autonomous-web-publishing-control-plane/",
+        "/briefs/generative-media-operating-system/",
+        "/briefs/intelligent-media-asset-estate/",
+        "/briefs/provenance-ready-content-supply-chain/",
+        "/horizon/agentic-media-needs-a-control-room/",
+        "/horizon/marketing-after-surveillance/",
+        "/horizon/media-escapes-the-frame/",
+        "/horizon/provenance-is-the-new-publishing-layer/",
+        "/industries/retail-commerce/",
+        "/insights/creative-direction-after-model-abundance/",
+        "/insights/from-prompting-to-production-systems/",
+        "/insights/the-case-for-agent-readable-creative-operations/",
+        "/methods/brand-memory/"
+      ],
+      "routeCount": 13,
+      "altText": [
+        "A conceptual HardMagic editorial composition illustrating creative and technical systems."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/audience-dreamfield-2035.wOYI494B_1kN2Gp.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/audience-dreamfield-2035.wOYI494B_1QgSh6.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Dreamlike audience landscape with reflective architecture and human silhouettes."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/audience-dreamfield-2035.wOYI494B_Z1JuCEn.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/audience-dreamfield-2035.wOYI494B_Ztcz9p.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/creative-direction.BfW3Fp5r_Z1aGjP5.avif",
+      "source": "src/assets/editorial/creative-direction.png",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/contact/creative-direction/",
+        "/contact/genai/",
+        "/contact/marketing-consulting/",
+        "/contact/media-management/",
+        "/contact/partnerships/",
+        "/contact/thanks/",
+        "/engagements/",
+        "/engagements/fractional-creative-office/",
+        "/engagements/genai-lab/",
+        "/engagements/managed-media-desk/",
+        "/engagements/product-launch-room/",
+        "/engagements/transformation-sprint/",
+        "/services/brand-systems/",
+        "/services/campaign-production/",
+        "/services/content-operations/",
+        "/services/creative-direction/",
+        "/services/creative-technology/",
+        "/services/executive-advisory/",
+        "/services/genai-strategy/",
+        "/services/marketing-consulting/",
+        "/services/media-management/",
+        "/services/web-experience/"
+      ],
+      "routeCount": 22,
+      "altText": [
+        "A conceptual HardMagic editorial composition illustrating creative and technical systems."
+      ],
+      "disclosure": [
+        "generated/conceptual disclosure present"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/disney.BB4slB3A.svg",
+      "source": "src/assets/brand/disney.svg",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/company/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "The Walt Disney Company"
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/dream-media-specimen-4k.CYxIdgXe_21qeze.avif",
+      "source": "src/assets/editorial/dream-media-specimen-4k.avif",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/insights/25-years-from-brand-studio-to-ai-company/",
+        "/insights/accessibility-is-art-direction/",
+        "/insights/brand-memory-in-generative-systems/",
+        "/insights/hybrid-inference-is-a-governance-decision/",
+        "/insights/marketing-operations-for-small-expert-teams/",
+        "/insights/static-websites-as-durable-media/",
+        "/insights/the-cost-of-model-first-product-design/",
+        "/insights/the-running-product-is-the-brief/",
+        "/insights/what-a-modern-media-control-room-needs/",
+        "/methods/collection-to-intelligence/",
+        "/methods/evidence-loop/",
+        "/methods/human-agent-creative-loop/",
+        "/methods/hybrid-inference/",
+        "/methods/intent-to-system/"
+      ],
+      "routeCount": 14,
+      "altText": [
+        "A conceptual HardMagic editorial composition illustrating creative and technical systems."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/dream-media-specimen-4k.CYxIdgXe_Rm1Ft.avif",
+      "source": "src/assets/editorial/dream-media-specimen-4k.avif",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A luminous waveform passes through film, paper, and a small projection apparatus on a black field."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/fashionx-editorial.B5jcIZYK_2fk9tX.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A fashion portrait staged in dramatic natural light."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/fashionx-editorial.B5jcIZYK_Z25Ymhx.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/fashionx/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A fashion portrait staged in dramatic natural light."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/fashionx-process._nKWETep_2j25hK.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/fashionx/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Behind-the-scenes view of a location fashion production."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/fashionx-swim.wPZY93zs_Z2boqMT.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/fashionx/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Swim editorial photography composed against water and landscape."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/focuspass-product.CixpEccR_25u1RV.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/focuspass/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "FocusPass product overview showing linked interface panels."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/focuspass-product.CixpEccR_Z1vpDUi.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "FocusPass product overview showing linked interface panels."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/focuspass-screen.D8mKNS7j_18E35o.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/focuspass/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A FocusPass application interface from the project record."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/focuspass-workflow.CUIRDKbp_mcujY.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/focuspass/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A wide FocusPass workflow screen."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/generative-operations-4k.BQPAlFC0_Z1626u5.avif",
+      "source": "src/assets/editorial/generative-operations-4k.avif",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/",
+        "/company/careers/",
+        "/company/founder/",
+        "/company/history/",
+        "/company/operating-model/",
+        "/company/partners/",
+        "/company/principles/",
+        "/company/selected-experience/",
+        "/industries/software-platforms/",
+        "/insights/",
+        "/services/"
+      ],
+      "routeCount": 11,
+      "altText": [
+        "A conceptual HardMagic editorial composition illustrating creative and technical systems.",
+        "Futuristic media operations interface with flowing cables and luminous media nodes."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/generative-operations-4k.BQPAlFC0_Z1FLeBk.avif",
+      "source": "src/assets/editorial/generative-operations-4k.avif",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/generative-operations-4k.BQPAlFC0_Z1YIzHx.avif",
+      "source": "src/assets/editorial/generative-operations-4k.avif",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/generative-operations-4k.BQPAlFC0_Z24MYKq.avif",
+      "source": "src/assets/editorial/generative-operations-4k.avif",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/hardmagic-future-command-desktop.CW_NZS6l.avif",
+      "source": "src/assets/editorial/hardmagic-future-command-desktop.avif",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "AI-generated campaign scene of creative directors orchestrating a monumental film set of sculptural fabric, cameras, and practical light."
+      ],
+      "disclosure": [
+        "generated/conceptual disclosure present"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/hardmagic-future-command-mobile.BFJJCWOH.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [],
+      "disclosure": [
+        "generated/conceptual disclosure present"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/hardmagic-future-command-tablet.ifl1ls2d.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [],
+      "disclosure": [
+        "generated/conceptual disclosure present"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/hardmagic-wordmark.3FJu5chC.svg",
+      "source": "src/assets/brand/hardmagic-wordmark.svg",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/",
+        "/404/",
+        "/accessibility/",
+        "/briefs/",
+        "/briefs/autonomous-web-publishing-control-plane/",
+        "/briefs/autonomous-web-publishing-control-plane/thanks/",
+        "/briefs/creative-direction-after-the-prompt/",
+        "/briefs/creative-direction-after-the-prompt/thanks/",
+        "/briefs/generative-media-operating-system/",
+        "/briefs/generative-media-operating-system/thanks/",
+        "/briefs/hybrid-ai-media-infrastructure/",
+        "/briefs/hybrid-ai-media-infrastructure/thanks/",
+        "/briefs/intelligent-media-asset-estate/",
+        "/briefs/intelligent-media-asset-estate/thanks/",
+        "/briefs/modern-media-agency-transformation-playbook/",
+        "/briefs/modern-media-agency-transformation-playbook/thanks/",
+        "/briefs/provenance-ready-content-supply-chain/",
+        "/briefs/provenance-ready-content-supply-chain/thanks/",
+        "/briefs/visual-product-development-field-guide/",
+        "/briefs/visual-product-development-field-guide/thanks/",
+        "/company/",
+        "/company/careers/",
+        "/company/founder/",
+        "/company/history/",
+        "/company/operating-model/",
+        "/company/partners/",
+        "/company/principles/",
+        "/company/selected-experience/",
+        "/contact/",
+        "/contact/creative-direction/",
+        "/contact/genai/",
+        "/contact/marketing-consulting/",
+        "/contact/media-management/",
+        "/contact/partnerships/",
+        "/contact/thanks/",
+        "/editorial-policy/",
+        "/engagements/",
+        "/engagements/fractional-creative-office/",
+        "/engagements/genai-lab/",
+        "/engagements/managed-media-desk/",
+        "/engagements/product-launch-room/",
+        "/engagements/transformation-sprint/",
+        "/horizon/",
+        "/horizon/accessibility-becomes-generative-art-direction/",
+        "/horizon/agentic-media-needs-a-control-room/",
+        "/horizon/brand-memory-becomes-an-operating-system/",
+        "/horizon/compute-becomes-a-creative-material/",
+        "/horizon/direction-after-infinite-production/",
+        "/horizon/identity-rights-become-production-infrastructure/",
+        "/horizon/marketing-after-surveillance/",
+        "/horizon/media-escapes-the-frame/",
+        "/horizon/provenance-is-the-new-publishing-layer/",
+        "/horizon/the-media-library-starts-making-decisions/",
+        "/horizon/the-sovereign-microstudio/",
+        "/horizon/the-story-is-assembled-at-the-edge/",
+        "/industries/",
+        "/industries/agencies/",
+        "/industries/consumer-brands/",
+        "/industries/education-culture/",
+        "/industries/founder-led-companies/",
+        "/industries/media-entertainment/",
+        "/industries/retail-commerce/",
+        "/industries/software-platforms/",
+        "/industries/sports-wellness/",
+        "/insights/",
+        "/insights/25-years-from-brand-studio-to-ai-company/",
+        "/insights/accessibility-is-art-direction/",
+        "/insights/brand-memory-in-generative-systems/",
+        "/insights/creative-direction-after-model-abundance/",
+        "/insights/from-prompting-to-production-systems/",
+        "/insights/how-to-evaluate-a-genai-pilot/",
+        "/insights/hybrid-inference-is-a-governance-decision/",
+        "/insights/marketing-operations-for-small-expert-teams/",
+        "/insights/provenance-without-killing-creative-flow/",
+        "/insights/static-websites-as-durable-media/",
+        "/insights/the-case-for-agent-readable-creative-operations/",
+        "/insights/the-cost-of-model-first-product-design/",
+        "/insights/the-running-product-is-the-brief/",
+        "/insights/what-a-modern-media-control-room-needs/",
+        "/insights/why-media-collections-lose-their-value/",
+        "/methods/",
+        "/methods/30-60-90-activation/",
+        "/methods/accessibility-as-editorial/",
+        "/methods/brand-memory/",
+        "/methods/collection-to-intelligence/",
+        "/methods/evidence-loop/",
+        "/methods/human-agent-creative-loop/",
+        "/methods/hybrid-inference/",
+        "/methods/intent-to-system/",
+        "/portfolio/",
+        "/portfolio/airikai/",
+        "/portfolio/fashionx/",
+        "/portfolio/focuspass/",
+        "/portfolio/pedadida/",
+        "/portfolio/pranashama/",
+        "/portfolio/state-parks/",
+        "/portfolio/tao-cottage/",
+        "/portfolio/taolo/",
+        "/privacy/",
+        "/products/",
+        "/products/cli/",
+        "/products/cli/agent-skills/",
+        "/products/cli/automation/",
+        "/products/cli/quickstart/",
+        "/products/cli/security/",
+        "/products/gpu-router/",
+        "/products/gpu-router/architecture/",
+        "/products/gpu-router/benchmarks/",
+        "/products/gpu-router/observability/",
+        "/products/gpu-router/routing/",
+        "/products/photo-curator/",
+        "/products/photo-curator/connectors/",
+        "/products/photo-curator/duplicates/",
+        "/products/photo-curator/metadata/",
+        "/products/photo-curator/review/",
+        "/products/studio/",
+        "/products/studio/audio/",
+        "/products/studio/hybrid-inference/",
+        "/products/studio/image/",
+        "/products/studio/video/",
+        "/products/web-magic/",
+        "/products/web-magic/accessibility/",
+        "/products/web-magic/delivery/",
+        "/products/web-magic/performance/",
+        "/products/web-magic/seo/",
+        "/products/wiremark/",
+        "/products/wiremark/agent-handoff/",
+        "/products/wiremark/canvas/",
+        "/products/wiremark/privacy-provenance/",
+        "/products/wiremark/source-intelligence/",
+        "/responsible-ai/",
+        "/security/",
+        "/services/",
+        "/services/brand-systems/",
+        "/services/campaign-production/",
+        "/services/content-operations/",
+        "/services/creative-direction/",
+        "/services/creative-technology/",
+        "/services/executive-advisory/",
+        "/services/genai-strategy/",
+        "/services/marketing-consulting/",
+        "/services/media-management/",
+        "/services/web-experience/",
+        "/sitemap/",
+        "/terms/"
+      ],
+      "routeCount": 145,
+      "altText": [
+        "HardMagic"
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/hybrid-infrastructure.UB-NQ2nC_Z5LU9l.avif",
+      "source": "src/assets/editorial/hybrid-infrastructure.png",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/accessibility/",
+        "/editorial-policy/",
+        "/products/cli/agent-skills/",
+        "/products/cli/automation/",
+        "/products/cli/quickstart/",
+        "/products/cli/security/",
+        "/products/gpu-router/architecture/",
+        "/products/gpu-router/benchmarks/",
+        "/products/gpu-router/observability/",
+        "/products/gpu-router/routing/",
+        "/products/photo-curator/connectors/",
+        "/products/photo-curator/duplicates/",
+        "/products/photo-curator/metadata/",
+        "/products/photo-curator/review/",
+        "/products/studio/audio/",
+        "/products/studio/hybrid-inference/",
+        "/products/studio/image/",
+        "/products/studio/video/",
+        "/products/web-magic/accessibility/",
+        "/products/web-magic/delivery/",
+        "/products/web-magic/performance/",
+        "/products/web-magic/seo/",
+        "/products/wiremark/agent-handoff/",
+        "/products/wiremark/canvas/",
+        "/products/wiremark/privacy-provenance/",
+        "/products/wiremark/source-intelligence/",
+        "/responsible-ai/",
+        "/security/",
+        "/sitemap/",
+        "/terms/"
+      ],
+      "routeCount": 30,
+      "altText": [
+        "A conceptual HardMagic editorial composition illustrating creative and technical systems."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/jamba.BVDVeOmZ.svg",
+      "source": "src/assets/brand/jamba.svg",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/company/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Jamba"
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/media-alchemy-ritual-4k.DMghyUMX_rx0Sv.avif",
+      "source": "src/assets/editorial/media-alchemy-ritual-4k.avif",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/briefs/creative-direction-after-the-prompt/",
+        "/briefs/hybrid-ai-media-infrastructure/",
+        "/briefs/modern-media-agency-transformation-playbook/",
+        "/briefs/visual-product-development-field-guide/",
+        "/horizon/accessibility-becomes-generative-art-direction/",
+        "/horizon/direction-after-infinite-production/",
+        "/horizon/identity-rights-become-production-infrastructure/",
+        "/horizon/the-story-is-assembled-at-the-edge/",
+        "/industries/agencies/",
+        "/industries/education-culture/",
+        "/industries/sports-wellness/",
+        "/insights/why-media-collections-lose-their-value/",
+        "/methods/30-60-90-activation/",
+        "/methods/accessibility-as-editorial/"
+      ],
+      "routeCount": 14,
+      "altText": [
+        "A conceptual HardMagic editorial composition illustrating creative and technical systems."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/media-alchemy-ritual-4k.DMghyUMX_Z2sF0t4.avif",
+      "source": "src/assets/editorial/media-alchemy-ritual-4k.avif",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/products/studio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A creative director shapes a suspended field of crimson light inside a dark soundstage."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/assets/media-alchemy-ritual.CxzrrLkX_13DIsW.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/media-alchemy-ritual.CxzrrLkX_1piNYX.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/media-alchemy-ritual.CxzrrLkX_qVbn.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/media-alchemy-ritual.CxzrrLkX_Z1iuYVy.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Abstract visual of a luminous ritual-like formation blending cinematic textures and symbolic motion graphics."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/pedadida-platform.39YRKAhv_Z1hkV0D.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/pedadida/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A Pedadida learning-platform presentation from the project record."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/pedadida-platform.39YRKAhv_Z2u3rUp.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A Pedadida learning-platform presentation from the project record."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/pedadida-system.pNahARK-_ZdRIDD.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/pedadida/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A layered education product package from the HardMagic source collection."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/pranashama-brand.DaTfgvNl_Z212ImX.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/pranashama/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A blue-toned Pranashama brand presentation with multiple media surfaces."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/pranashama-brand.DaTfgvNl_Z2uikf0.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/",
+        "/portfolio/"
+      ],
+      "routeCount": 2,
+      "altText": [
+        "A blue-toned Pranashama brand presentation with multiple media surfaces."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/pranashama-events.D5knbU5z_gzwjB.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/pranashama/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A Pranashama events interface composition."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/pranashama-system.D4beO2IA_g2OlT.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/pranashama/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A visual style system from the Pranashama project record."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/state-parks-landscape.BZ09-lbb_2245Ge.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/state-parks/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A broad mountain landscape under changing weather."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/state-parks-sunset.DrINOJjW_268q9R.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A wide sunset landscape from HardMagic documentary work."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/state-parks-sunset.DrINOJjW_Z23hqKp.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/state-parks/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A wide sunset landscape from HardMagic documentary work."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/state-parks-wildlife.NEMXtOjV_Ad7AY.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/state-parks/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Autumn woodland reflected in still water."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/tao-cottage-autumn.B9Gq3_r9_2070vn.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Tao Cottage surrounded by autumn foliage."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/tao-cottage-autumn.B9Gq3_r9_2uLgXS.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/tao-cottage/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Tao Cottage surrounded by autumn foliage."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/tao-cottage-night.DaONWpHo_Z2yrBf.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/tao-cottage/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Tao Cottage at night beneath snow."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/tao-cottage-room.Dm_XvQ0Z_ZD0rpO.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/tao-cottage/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A warmly detailed interior room at Tao Cottage."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/taolo-building.AVq-aiPQ_1m9i03.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "The exterior of the Taolo bistro and day spa."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/taolo-building.AVq-aiPQ_Z1tecSF.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/taolo/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "The exterior of the Taolo bistro and day spa."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/taolo-kombucha.Vk8tqUVT_2h76DM.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/taolo/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Cherry kombucha styled as a Taolo product detail."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/taolo-object.D6gw_vxd_ZMOkua.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/taolo/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "A botanical preparation in a glass beaker."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/assets/zico.CaY5zYkm.svg",
+      "source": "src/assets/brand/zico.svg",
+      "provenanceStatus": "catalog-match",
+      "routes": [
+        "/company/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "ZICO"
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "Source catalog entry requires owner/license confirmation."
+    },
+    {
+      "asset": "/media/wiremark/wiremark-studio-current.png",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/products/wiremark/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "The current WireMark desktop workspace showing repository connections, visual canvas, agent controls, files, terminal, changes, and goals."
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/media/youtube/bF9iUzzoBEU.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Video poster for Intermediate KettleBells"
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/media/youtube/eTvOF9BH0qA.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Video poster for OpenBuk"
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/media/youtube/J2Tr3fXQChY.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Video poster for Beginner Kettlebells"
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/media/youtube/n6oohS3MoQY.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Video poster for Fit in 15 — Abs, Glutes &amp; Arms"
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/media/youtube/n9cxDp-bnr4.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Video poster for KettleBells Safety"
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    },
+    {
+      "asset": "/media/youtube/SP98IC6vHWM.avif",
+      "source": "Rendered asset; source catalog match not found",
+      "provenanceStatus": "review-required",
+      "routes": [
+        "/portfolio/"
+      ],
+      "routeCount": 1,
+      "altText": [
+        "Video poster for Advanced KettleBells"
+      ],
+      "disclosure": [
+        "no generated disclosure detected"
+      ],
+      "rightsReview": "No source catalog match; owner/license/disclosure review required."
+    }
+  ]
+}

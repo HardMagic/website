@@ -183,7 +183,7 @@ const leadImage = isImmersive
   ? atmosphericImages[routeSeed % atmosphericImages.length] ?? mediaAlchemy
   : imageByFamily[page.family as keyof typeof imageByFamily] ?? dreamMedia;
 const familyLabel = page.family.replaceAll('-', ' ');
-const related = page.relatedPaths.map((path) => path.replace(/^\//, ''));
+const related = page.relatedPaths.map((path) => path.replace(/^\//, '') || './');
 const isContact = page.family === 'contact' && !page.path.endsWith('/thanks/');
 const showEnterpriseCta = !['contact', 'trust', 'brief-confirmation'].includes(page.family);
 const transitionFamilies = new Set<EditorialFamily>(['product', 'service', 'engagement', 'industry', 'method', 'insight', 'company']);
@@ -265,24 +265,27 @@ const transitionAction = transitionFamilies.has(page.family)
 
     {isContact && (
       <section class="intake-band" id="intake">
-        <form class="intake-form shell" method="post" action="https://briefs.hardmagic.com/api/contact-request">
+        <form class="intake-form shell" method="post" action="https://briefs.hardmagic.com/api/contact-request" data-funnel-form="contact" aria-describedby="editorial-contact-privacy">
           <div>
             <p class="eyebrow">A focused first conversation</p>
             <h2>Tell us where the decision is stuck.</h2>
-            <p>Do not include credentials, customer records, unreleased financial information, or regulated personal data.</p>
+            <p id="editorial-contact-privacy">Do not include credentials, customer records, unreleased financial information, or regulated personal data.</p>
           </div>
           <div class="form-grid">
-            <label>Name<input required name="name" autocomplete="name" /></label>
-            <label>Work email<input required type="email" name="email" autocomplete="email" /></label>
-            <label>Organization<input required name="organization" autocomplete="organization" /></label>
+            <label>Name<input required name="name" autocomplete="name" maxlength="160" /></label>
+            <label>Work email<input required type="email" name="email" autocomplete="email" maxlength="320" /></label>
+            <label>Organization<input required name="organization" autocomplete="organization" maxlength="200" /></label>
             <label>Role<input required maxlength="120" name="role" autocomplete="organization-title" /></label>
             <label class="wide">Area<select name="intake_category" required><option value="">Choose one</option><option value="creative-direction">Creative direction</option><option value="genai">GenAI strategy and production</option><option value="media-management">Media management</option><option value="marketing-consulting">Marketing consulting</option><option value="product-strategy">Product strategy</option><option value="creative-technology">Creative technology</option></select></label>
-            <label class="wide">What decision are you facing?<textarea required name="mandate" rows="5"></textarea></label>
-            <label>Decision horizon<select required name="decision_horizon"><option>Now–30 days</option><option>31–90 days</option><option>3–6 months</option><option>6–12 months</option></select></label>
-            <label>Preferred next step<select required name="preferred_next_step"><option>Written response</option><option>Working session</option><option>Advisory engagement</option><option>Product discussion</option></select></label>
+            <label class="wide">What decision are you facing?<textarea required name="mandate" rows="5" maxlength="4000"></textarea></label>
+            <label>Decision horizon<select required name="decision_horizon"><option value="">Choose a horizon</option><option>Now–30 days</option><option>31–90 days</option><option>3–6 months</option><option>6–12 months</option></select></label>
+            <label>Preferred next step<select required name="preferred_next_step"><option value="">Choose a next step</option><option>Written response</option><option>Working session</option><option>Advisory engagement</option><option>Product discussion</option></select></label>
             <label class="consent wide"><input type="checkbox" name="consent" value="yes" required /> I agree that HardMagic may use this information to respond to this request. This does not subscribe me to marketing.</label>
+            <input type="hidden" name="marketing_consent" value="no" />
             <label class="consent wide optional"><input type="checkbox" name="marketing_consent" value="yes" /> Separately, I would like occasional HardMagic research and product updates.</label>
-            <div class="cf-turnstile wide" data-sitekey="0x4AAAAAAEOV4a4wcfxluMkv" data-theme="dark" data-action="contact-request"></div>
+            <div class="cf-turnstile wide" data-sitekey="0x4AAAAAAEOV4a4wcfxluMkv" data-theme="dark" data-action="contact-request" data-response-field-name="cf-turnstile-response"></div>
+            <noscript><p class="wide">JavaScript is required for the protected form check. Send a high-level note directly to <a href="mailto:hello@hardmagic.com">hello@hardmagic.com</a> instead; please do not include confidential or regulated information.</p></noscript>
+            <input type="hidden" name="request_id" value="" autocomplete="off" />
             <input type="hidden" name="source_url" value={`https://hardmagic.com${page.path}`} />
             <input type="hidden" name="source_campaign" value="corporate-intake" />
             <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="honeypot" aria-hidden="true" />
@@ -291,6 +294,8 @@ const transitionAction = transitionFamilies.has(page.family)
         </form>
       </section>
     )}
+
+    {isContact && <script is:inline src="scripts/corporate-email-validation.js"></script>}
 
     <nav class="related-reading shell section-pad" aria-label="Related reading">
       <p class="eyebrow dark">Continue the issue</p>

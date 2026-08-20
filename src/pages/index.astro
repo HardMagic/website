@@ -13,7 +13,7 @@ import audienceDreamfield from '../assets/editorial/audience-dreamfield-2035.avi
 import dreamSpecimen from '../assets/editorial/dream-media-specimen-4k.avif';
 import '../styles/home-current.css';
 
-const featuredCase = caseStudies[1] ? caseStudies[1] : caseStudies[0];
+const featuredCase = caseStudies.find((study) => study.slug === 'pranashama') ?? caseStudies[0];
 
 const mediaReels = [
   {

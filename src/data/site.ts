@@ -1,7 +1,7 @@
 export const navigation = [
   { href: 'products/', label: 'Products' },
   { href: 'company/', label: 'Company' },
-  { href: 'contact/', label: 'Contact' },
+  { href: 'services/executive-advisory/', label: 'Advisory' },
 ];
 
 export const productLinks = [

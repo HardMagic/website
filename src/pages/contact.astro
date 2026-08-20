@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   turnstile
 >
   <article class="contact-intake">
-    <section class="contact-intake__opening" aria-labelledby="contact-title">
+    <section class="contact-intake__opening" id="intake" aria-labelledby="contact-title">
       <div class="contact-intake__intro">
         <p class="eyebrow dark">Consultation intake · 01 / 03</p>
         <h1 id="contact-title">Name the decision.<br /><em>We’ll shape what happens next.</em></h1>
@@ -39,6 +39,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           method="post"
           action="https://briefs.hardmagic.com/api/contact-request"
           class="contact-intake__form"
+          data-funnel-form="contact"
           aria-describedby="contact-privacy"
         >
           <fieldset class="contact-intake__fieldset contact-intake__fieldset--routes">
@@ -132,13 +133,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <input required type="checkbox" name="consent" value="yes" />
             <span>I agree that HardMagic may use this information to respond to my request and administer this conversation.</span>
           </label>
+          <input type="hidden" name="marketing_consent" value="no" />
           <label class="contact-intake__consent contact-intake__consent--optional">
             <input type="checkbox" name="marketing_consent" value="yes" />
             <span>Separately, I would like occasional HardMagic research and product updates.</span>
           </label>
 
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAAEOV4a4wcfxluMkv" data-theme="dark" data-size="flexible" data-action="contact-request"></div>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAEOV4a4wcfxluMkv" data-theme="dark" data-size="flexible" data-action="contact-request" data-response-field-name="cf-turnstile-response"></div>
 
+          <noscript>
+            <p class="contact-intake__no-js">JavaScript is required for the protected form check. Send a high-level note directly to <a href="mailto:hello@hardmagic.com">hello@hardmagic.com</a> instead; please do not include confidential or regulated information.</p>
+          </noscript>
+          <input type="hidden" name="request_id" value="" autocomplete="off" />
           <input type="hidden" name="source_url" value="https://hardmagic.com/contact/" />
           <input type="hidden" name="source_campaign" value="contact-intake" />
           <div class="contact-intake__trap" aria-hidden="true">
@@ -173,6 +179,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p>Send a high-level note to <a href="mailto:hello@hardmagic.com">hello@hardmagic.com</a>. The same human route applies.</p>
     </footer>
   </article>
+  <script is:inline src="scripts/corporate-email-validation.js"></script>
 </BaseLayout>
 
 <style>
@@ -461,6 +468,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--contact-soft);
     font-size: 0.78rem;
     line-height: 1.55;
+  }
+
+  .contact-intake__no-js {
+    margin: 0;
+    padding: 15px 17px;
+    border-left: 3px solid var(--signal, #d9325e);
+    background: rgba(217, 50, 94, 0.08);
+    color: var(--contact-soft);
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  .contact-intake__no-js a {
+    color: var(--bone, #f2e9df);
+    text-underline-offset: 0.2em;
   }
 
   .contact-intake__consent {

@@ -1,0 +1,1519 @@
+{
+  "schemaVersion": "brief-release-manifest.v1",
+  "generatedAt": "2026-08-20T14:13:49.096Z",
+  "generatedBy": "scripts/generate-brief-pdfs.mjs",
+  "sourceOfTruth": "src/data/briefs.ts",
+  "artifactDirectory": "infra/brief-delivery/source-pdfs",
+  "releaseStatus": "source-generated; not uploaded or deployed",
+  "briefCount": 8,
+  "editions": [
+    {
+      "briefId": "generative-media-operating-system",
+      "title": "The Generative Media Operating System",
+      "version": "2026.08-draft",
+      "editionDate": "2026-08-20",
+      "sourceCutoff": "2026-08-12",
+      "author": "HardMagic editorial desk",
+      "reviewer": "Editorial review pending",
+      "confidentiality": "Private technical brief",
+      "distribution": "Individual recipient; time-limited delivery; no public file path",
+      "language": "en-US",
+      "contact": "hello@hardmagic.com",
+      "fileName": "generative-media-operating-system.pdf",
+      "bytes": 524967,
+      "pages": 30,
+      "sha256": "159b3ab2402709f56938490997e3f84b227313530972971bdd290d33f614afc5",
+      "checksumAlgorithm": "SHA-256",
+      "landing": {
+        "publicPath": "/briefs/generative-media-operating-system/",
+        "title": "The Generative Media Operating System",
+        "thesis": "[2035 vantage — inference] The decisive shift of 2024–2026 was not that machines learned to make media; it was that media became a continuously generated, evaluated, rights-bearing system. By 2035, the organizations that retained creative distinction treated intent, human authority, models, assets, provenance, infrastructure, distribution, and learning as one operating system. [Recommendation] Build that system now around accountable decisions and portable evidence—not around whichever model is temporarily strongest. [Uncertainty] Model capability, law, energy availability, and audience tolerance remain moving constraints.",
+        "promise": "A practical architecture, governance model, diagnostic, and 90-day sequence for turning fragmented media experiments into a coherent production capability.",
+        "headline": "Your GenAI experiments are not yet an operating system.",
+        "audience": [
+          "Chief executive officers",
+          "Chief marketing officers",
+          "Chief digital officers",
+          "Studio leaders",
+          "Transformation sponsors"
+        ],
+        "decision": "Whether generative AI should remain a collection of experiments or become a governed production capability spanning creative, media, technology, and operations.",
+        "pageCount": 30,
+        "topics": [
+          "GenAI operating model",
+          "governed media production",
+          "creative and technical decision rights",
+          "rights and provenance",
+          "90-day capability building"
+        ]
+      },
+      "provenance": {
+        "sourceCount": 5,
+        "sources": [
+          {
+            "id": "generative-media-operating-system-source-01",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+            "publisher": "National Institute of Standards and Technology, 26 July 2024 (updated 8 April 2026). NIST frames GenAI risk work across govern, map, measure",
+            "published": "and manage over the lifecycle",
+            "citation": "[Evidence] Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile — National Institute of Standards and Technology, 26 July 2024 (updated 8 April 2026). NIST frames GenAI risk work across govern, map, measure, and manage over the lifecycle. https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+            "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+            "supports": "NIST frames GenAI risk work across govern, map, measure, and manage over the lifecycle",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "generative-media-operating-system-source-02",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Sora System Card",
+            "publisher": "OpenAI, 9 December 2024. The disclosed production stack combines model controls, product policy, human review, red teaming",
+            "published": "and provenance; this supports a systems—not tool-only—view of generative media",
+            "citation": "[Evidence] Sora System Card — OpenAI, 9 December 2024. The disclosed production stack combines model controls, product policy, human review, red teaming, and provenance; this supports a systems—not tool-only—view of generative media. https://openai.com/index/sora-system-card/",
+            "url": "https://openai.com/index/sora-system-card/",
+            "supports": "The disclosed production stack combines model controls, product policy, human review, red teaming, and provenance; this supports a systems—not tool-only—view of generative media",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "generative-media-operating-system-source-03",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "2025 Digital Video Ad Spend & Strategy Full Report",
+            "publisher": "Interactive Advertising Bureau, 15 July 2025. IAB reported that 86% of surveyed buyers were using or planning to use GenAI for video-ad creative; this is adoption evidence",
+            "published": "not proof of effectiveness",
+            "citation": "[Evidence] 2025 Digital Video Ad Spend & Strategy Full Report — Interactive Advertising Bureau, 15 July 2025. IAB reported that 86% of surveyed buyers were using or planning to use GenAI for video-ad creative; this is adoption evidence, not proof of effectiveness. https://www.iab.com/insights/video-ad-spend-report-2025/",
+            "url": "https://www.iab.com/insights/video-ad-spend-report-2025/",
+            "supports": "IAB reported that 86% of surveyed buyers were using or planning to use GenAI for video-ad creative; this is adoption evidence, not proof of effectiveness",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "generative-media-operating-system-source-04",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Copyright and Artificial Intelligence, Part 2: Copyrightability",
+            "publisher": "U.S. Copyright Office, January 2025. The Office concluded that copyright protection depends on sufficient human-authored expressive elements",
+            "published": "while mere prompting is insufficient",
+            "citation": "[Evidence] Copyright and Artificial Intelligence, Part 2: Copyrightability — U.S. Copyright Office, January 2025. The Office concluded that copyright protection depends on sufficient human-authored expressive elements, while mere prompting is insufficient. https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+            "url": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+            "supports": "Copyright Office, January 2025. The Office concluded that copyright protection depends on sufficient human-authored expressive elements, while mere prompting is insufficient",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "generative-media-operating-system-source-05",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "State of AI-assisted Software Development 2025",
+            "publisher": "DORA / Google Cloud, 2025. DORA characterizes AI as an amplifier of an organization’s existing strengths and weaknesses",
+            "published": "supporting investment in the operating system around tools",
+            "citation": "[Evidence] State of AI-assisted Software Development 2025 — DORA / Google Cloud, 2025. DORA characterizes AI as an amplifier of an organization’s existing strengths and weaknesses, supporting investment in the operating system around tools. https://dora.dev/research/2025/dora-report/",
+            "url": "https://dora.dev/research/2025/dora-report/",
+            "supports": "DORA characterizes AI as an amplifier of an organization’s existing strengths and weaknesses, supporting investment in the operating system around tools",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          }
+        ],
+        "sourceClaims": [
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile — National Institute of Standards and Technology, 26 July 2024 (updated 8 April 2026). NIST frames GenAI risk work across govern, map, measure, and manage over the lifecycle. https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Sora System Card — OpenAI, 9 December 2024. The disclosed production stack combines model controls, product policy, human review, red teaming, and provenance; this supports a systems—not tool-only—view of generative media. https://openai.com/index/sora-system-card/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] 2025 Digital Video Ad Spend & Strategy Full Report — Interactive Advertising Bureau, 15 July 2025. IAB reported that 86% of surveyed buyers were using or planning to use GenAI for video-ad creative; this is adoption evidence, not proof of effectiveness. https://www.iab.com/insights/video-ad-spend-report-2025/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Copyright and Artificial Intelligence, Part 2: Copyrightability — U.S. Copyright Office, January 2025. The Office concluded that copyright protection depends on sufficient human-authored expressive elements, while mere prompting is insufficient. https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] State of AI-assisted Software Development 2025 — DORA / Google Cloud, 2025. DORA characterizes AI as an amplifier of an organization’s existing strengths and weaknesses, supporting investment in the operating system around tools. https://dora.dev/research/2025/dora-report/"
+          },
+          {
+            "claimClass": "inference",
+            "text": "[Inference] Taken together, the sources indicate that generation will become ordinary while accountable orchestration becomes differentiating; they do not establish a universal productivity or revenue gain."
+          },
+          {
+            "claimClass": "recommendation",
+            "text": "[Recommendation] Before approving investment, collect organization-specific media volume, approval time, rework, rights exceptions, energy use, vendor cost, and audience-response baselines with definitions and audit trails."
+          },
+          {
+            "claimClass": "uncertainty",
+            "text": "[Uncertainty] Revalidate model documentation, law, labor agreements, platform policies, energy constraints, and provenance interoperability at each major decision gate."
+          }
+        ],
+        "policy": "Evidence notes link directly to named primary sources; inference, recommendation, uncertainty, and boundary claims remain explicitly labeled."
+      },
+      "contentAudit": {
+        "pages": 30,
+        "uniquePageCount": 30,
+        "minimumPageWordCount": 92,
+        "overflowPages": [],
+        "links": 35,
+        "figures": 28,
+        "tables": 4,
+        "headings": 137
+      },
+      "accessibility": {
+        "semanticHtmlAlternative": true,
+        "taggedPdfRequested": true,
+        "outlineRequested": true,
+        "textSelectable": true,
+        "readingOrder": "linear",
+        "pdfUa": "not-certified",
+        "htmlAlternative": {
+          "fileName": "generative-media-operating-system.html",
+          "sourcePath": "infra/brief-delivery/source-pdfs/generative-media-operating-system.html",
+          "protection": "Source-only artifact; deliver behind the same private access control if used as an alternative."
+        },
+        "automated": {
+          "htmlLanguage": "en-US",
+          "semanticHeadings": true,
+          "figureCaptions": true,
+          "taggedPdf": true,
+          "documentOutline": true,
+          "selectableText": true
+        },
+        "manualReview": {
+          "status": "pending",
+          "required": [
+            "PDF/UA screen-reader traversal",
+            "keyboard and zoom review of the HTML alternative",
+            "contrast and figure-description review"
+          ]
+        }
+      },
+      "storageObject": "generative-media-operating-system.pdf",
+      "storageVersion": null,
+      "uploadTime": null,
+      "deliveryState": "not-uploaded",
+      "replacementProcedure": "Approve a new version, regenerate the manifest, upload the exact filename with Entra ID, record the immutable storage version and checksum, then run a delivery canary.",
+      "rollbackProcedure": "Stop delivery of the candidate object, restore the last approved object/version, verify its SHA-256 against the signed evidence, and rerun the exact-brief selection and expiry checks."
+    },
+    {
+      "briefId": "creative-direction-after-the-prompt",
+      "title": "Creative Direction After the Prompt",
+      "version": "2026.08-draft",
+      "editionDate": "2026-08-20",
+      "sourceCutoff": "2026-08-12",
+      "author": "HardMagic editorial desk",
+      "reviewer": "Editorial review pending",
+      "confidentiality": "Private technical brief",
+      "distribution": "Individual recipient; time-limited delivery; no public file path",
+      "language": "en-US",
+      "contact": "hello@hardmagic.com",
+      "fileName": "creative-direction-after-the-prompt.pdf",
+      "bytes": 497581,
+      "pages": 28,
+      "sha256": "2dc4c9222773322d0e4336228f66fee88318303f5da790e3eb960b590976b9a6",
+      "checksumAlgorithm": "SHA-256",
+      "landing": {
+        "publicPath": "/briefs/creative-direction-after-the-prompt/",
+        "title": "Creative Direction After the Prompt",
+        "thesis": "[2035 vantage — inference] By 2035, synthetic execution is abundant but attention, trust, and coherent worlds are not. The creative director’s work has moved upstream—from selecting executions to defining the premise, canon, ethical boundary, audience contract, and stopping rule that fleets of human and machine makers can honor. [Recommendation] Preserve named human authorship and accountable approval while giving artists wider spaces for divergence. [Uncertainty] No evidence establishes that audiences will accept synthetic expression uniformly across genres, cultures, or contexts.",
+        "promise": "A field guide for establishing creative authority, useful critique, and brand continuity across human and generative production.",
+        "headline": "When anyone can generate, who decides what deserves to exist?",
+        "audience": [
+          "Chief marketing officers",
+          "Brand leaders",
+          "Executive creative directors",
+          "Agency principals",
+          "Content leaders"
+        ],
+        "decision": "How creative leadership, approval authority, and brand continuity should change when generative execution becomes abundant.",
+        "pageCount": 28,
+        "topics": [
+          "creative authority",
+          "brand-world continuity",
+          "human authorship",
+          "critique systems",
+          "generative production leadership"
+        ]
+      },
+      "provenance": {
+        "sourceCount": 5,
+        "sources": [
+          {
+            "id": "creative-direction-after-the-prompt-source-01",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Copyright and Artificial Intelligence, Part 2: Copyrightability",
+            "publisher": "U.S. Copyright Office",
+            "published": "January 2025. The Office centers human-determined expressive elements and says prompts alone do not provide sufficient control for copyrightability",
+            "citation": "[Evidence] Copyright and Artificial Intelligence, Part 2: Copyrightability — U.S. Copyright Office, January 2025. The Office centers human-determined expressive elements and says prompts alone do not provide sufficient control for copyrightability. https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+            "url": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+            "supports": "Copyright Office, January 2025. The Office centers human-determined expressive elements and says prompts alone do not provide sufficient control for copyrightability",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "creative-direction-after-the-prompt-source-02",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Sora System Card",
+            "publisher": "OpenAI",
+            "published": "9 December 2024. OpenAI reports feedback across more than 500,000 model requests from more than 300 early users in over 60 countries and describes layered safety and provenance controls; the sample is provider-selected and not an industry census",
+            "citation": "[Evidence] Sora System Card — OpenAI, 9 December 2024. OpenAI reports feedback across more than 500,000 model requests from more than 300 early users in over 60 countries and describes layered safety and provenance controls; the sample is provider-selected and not an industry census. https://openai.com/index/sora-system-card/",
+            "url": "https://openai.com/index/sora-system-card/",
+            "supports": "OpenAI reports feedback across more than 500,000 model requests from more than 300 early users in over 60 countries and describes layered safety and provenance controls; the sample is provider-selected and not an industry census",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "creative-direction-after-the-prompt-source-03",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "2025 Creator Economy Ad Spend & Strategy Report",
+            "publisher": "Interactive Advertising Bureau, 20 November 2025. IAB reports 95% of surveyed creator-ad buyers had concerns about AI",
+            "published": "led by authenticity or loss of human connection",
+            "citation": "[Evidence] 2025 Creator Economy Ad Spend & Strategy Report — Interactive Advertising Bureau, 20 November 2025. IAB reports 95% of surveyed creator-ad buyers had concerns about AI, led by authenticity or loss of human connection. https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/",
+            "url": "https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/",
+            "supports": "IAB reports 95% of surveyed creator-ad buyers had concerns about AI, led by authenticity or loss of human connection",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "creative-direction-after-the-prompt-source-04",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "The rise of virtual creators: a new frontier on YouTube",
+            "publisher": "YouTube Culture & Trends, 17 April 2025. YouTube reports that a sample of 300 virtual creators received more than 15 billion views in 2024",
+            "published": "while emphasizing the human connection behind their personas",
+            "citation": "[Evidence] The rise of virtual creators: a new frontier on YouTube — YouTube Culture & Trends, 17 April 2025. YouTube reports that a sample of 300 virtual creators received more than 15 billion views in 2024, while emphasizing the human connection behind their personas. https://blog.youtube/culture-and-trends/youtube-culture-trends-report-virtual-creators/",
+            "url": "https://blog.youtube/culture-and-trends/youtube-culture-trends-report-virtual-creators/",
+            "supports": "YouTube reports that a sample of 300 virtual creators received more than 15 billion views in 2024, while emphasizing the human connection behind their personas",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "creative-direction-after-the-prompt-source-05",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "YouTube study reveals the rise of ‘creative maximalism’ in content",
+            "publisher": "YouTube Culture & Trends, 4 September 2025. YouTube describes surveyed teen media expectations as participatory, customizable, and borderless; this is platform research",
+            "published": "not a universal youth profile",
+            "citation": "[Evidence] YouTube study reveals the rise of ‘creative maximalism’ in content — YouTube Culture & Trends, 4 September 2025. YouTube describes surveyed teen media expectations as participatory, customizable, and borderless; this is platform research, not a universal youth profile. https://blog.youtube/culture-and-trends/next-gen-creativity/",
+            "url": "https://blog.youtube/culture-and-trends/next-gen-creativity/",
+            "supports": "YouTube describes surveyed teen media expectations as participatory, customizable, and borderless; this is platform research, not a universal youth profile",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          }
+        ],
+        "sourceClaims": [
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Copyright and Artificial Intelligence, Part 2: Copyrightability — U.S. Copyright Office, January 2025. The Office centers human-determined expressive elements and says prompts alone do not provide sufficient control for copyrightability. https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Sora System Card — OpenAI, 9 December 2024. OpenAI reports feedback across more than 500,000 model requests from more than 300 early users in over 60 countries and describes layered safety and provenance controls; the sample is provider-selected and not an industry census. https://openai.com/index/sora-system-card/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] 2025 Creator Economy Ad Spend & Strategy Report — Interactive Advertising Bureau, 20 November 2025. IAB reports 95% of surveyed creator-ad buyers had concerns about AI, led by authenticity or loss of human connection. https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] The rise of virtual creators: a new frontier on YouTube — YouTube Culture & Trends, 17 April 2025. YouTube reports that a sample of 300 virtual creators received more than 15 billion views in 2024, while emphasizing the human connection behind their personas. https://blog.youtube/culture-and-trends/youtube-culture-trends-report-virtual-creators/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] YouTube study reveals the rise of ‘creative maximalism’ in content — YouTube Culture & Trends, 4 September 2025. YouTube describes surveyed teen media expectations as participatory, customizable, and borderless; this is platform research, not a universal youth profile. https://blog.youtube/culture-and-trends/next-gen-creativity/"
+          },
+          {
+            "claimClass": "inference",
+            "text": "[Inference] Human authorship, recognizable world-building, and community participation are likely to become stronger differentiators as executable media becomes inexpensive; the evidence does not prove one winning aesthetic."
+          },
+          {
+            "claimClass": "recommendation",
+            "text": "[Recommendation] Require approved brand systems, real briefs, consented artist research, decision logs, and paired intent-to-output review before claiming continuity or quality."
+          },
+          {
+            "claimClass": "uncertainty",
+            "text": "[Uncertainty] Reassess audience disclosure preferences, copyright doctrine, likeness rights, labor terms, and platform norms by market and medium."
+          }
+        ],
+        "policy": "Evidence notes link directly to named primary sources; inference, recommendation, uncertainty, and boundary claims remain explicitly labeled."
+      },
+      "contentAudit": {
+        "pages": 28,
+        "uniquePageCount": 28,
+        "minimumPageWordCount": 89,
+        "overflowPages": [],
+        "links": 33,
+        "figures": 26,
+        "tables": 4,
+        "headings": 128
+      },
+      "accessibility": {
+        "semanticHtmlAlternative": true,
+        "taggedPdfRequested": true,
+        "outlineRequested": true,
+        "textSelectable": true,
+        "readingOrder": "linear",
+        "pdfUa": "not-certified",
+        "htmlAlternative": {
+          "fileName": "creative-direction-after-the-prompt.html",
+          "sourcePath": "infra/brief-delivery/source-pdfs/creative-direction-after-the-prompt.html",
+          "protection": "Source-only artifact; deliver behind the same private access control if used as an alternative."
+        },
+        "automated": {
+          "htmlLanguage": "en-US",
+          "semanticHeadings": true,
+          "figureCaptions": true,
+          "taggedPdf": true,
+          "documentOutline": true,
+          "selectableText": true
+        },
+        "manualReview": {
+          "status": "pending",
+          "required": [
+            "PDF/UA screen-reader traversal",
+            "keyboard and zoom review of the HTML alternative",
+            "contrast and figure-description review"
+          ]
+        }
+      },
+      "storageObject": "creative-direction-after-the-prompt.pdf",
+      "storageVersion": null,
+      "uploadTime": null,
+      "deliveryState": "not-uploaded",
+      "replacementProcedure": "Approve a new version, regenerate the manifest, upload the exact filename with Entra ID, record the immutable storage version and checksum, then run a delivery canary.",
+      "rollbackProcedure": "Stop delivery of the candidate object, restore the last approved object/version, verify its SHA-256 against the signed evidence, and rerun the exact-brief selection and expiry checks."
+    },
+    {
+      "briefId": "provenance-ready-content-supply-chain",
+      "title": "The Provenance-Ready Content Supply Chain",
+      "version": "2026.08-draft",
+      "editionDate": "2026-08-20",
+      "sourceCutoff": "2026-08-12",
+      "author": "HardMagic editorial desk",
+      "reviewer": "Editorial review pending",
+      "confidentiality": "Private technical brief",
+      "distribution": "Individual recipient; time-limited delivery; no public file path",
+      "language": "en-US",
+      "contact": "hello@hardmagic.com",
+      "fileName": "provenance-ready-content-supply-chain.pdf",
+      "bytes": 547000,
+      "pages": 32,
+      "sha256": "071209af1da8dc9d689ce04535632ea06a2023f6265209a7df4f1a285a968ef1",
+      "checksumAlgorithm": "SHA-256",
+      "landing": {
+        "publicPath": "/briefs/provenance-ready-content-supply-chain/",
+        "title": "The Provenance-Ready Content Supply Chain",
+        "thesis": "[2035 vantage — inference] By 2035, trustworthy media is not defined by whether it is synthetic; it is defined by whether people and machines can inspect a durable chain of claims about origin, ingredients, transformations, authority, and distribution. [Recommendation] Treat provenance as a supply-chain control from capture or generation through reuse, with cryptographic evidence complementing—not replacing—editorial verification. [Uncertainty] Credentials can be removed, platforms can reinterpret labels, keys can be compromised, and provenance cannot establish that a depicted event is true.",
+        "promise": "An implementation-oriented architecture and assessment for preserving trustworthy context from creation through distribution.",
+        "headline": "A provenance badge cannot repair a broken media supply chain.",
+        "audience": [
+          "Media executives",
+          "Publishers",
+          "Brand governance leaders",
+          "Legal and trust teams",
+          "Newsroom and studio operators",
+          "Platform architects"
+        ],
+        "decision": "How to preserve and communicate the origin, transformation record, approval state, and distribution context of media.",
+        "pageCount": 32,
+        "topics": [
+          "content provenance",
+          "C2PA and credentials",
+          "media supply chains",
+          "verification and disputed media",
+          "trust boundaries"
+        ]
+      },
+      "provenance": {
+        "sourceCount": 5,
+        "sources": [
+          {
+            "id": "provenance-ready-content-supply-chain-source-01",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Content Credentials: C2PA Technical Specification 2.1",
+            "publisher": "Coalition for Content Provenance and Authenticity, September 2024. The specification defines signed manifests, assertions, ingredients, validation states",
+            "published": "and richer ingredient workflows",
+            "citation": "[Evidence] Content Credentials: C2PA Technical Specification 2.1 — Coalition for Content Provenance and Authenticity, September 2024. The specification defines signed manifests, assertions, ingredients, validation states, and richer ingredient workflows. https://spec.c2pa.org/specifications/specifications/2.1/specs/C2PA_Specification.html",
+            "url": "https://spec.c2pa.org/specifications/specifications/2.1/specs/C2PA_Specification.html",
+            "supports": "The specification defines signed manifests, assertions, ingredients, validation states, and richer ingredient workflows",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "provenance-ready-content-supply-chain-source-02",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "C2PA Content Credentials Explained: Addressing Common Questions and Updates",
+            "publisher": "C2PA Technical Working Group, September 2025. C2PA describes a Content Credential as a cryptographically bound structure recording an asset’s provenance record and explicitly addresses security, privacy",
+            "published": "and human-rights considerations",
+            "citation": "[Evidence] C2PA Content Credentials Explained: Addressing Common Questions and Updates — C2PA Technical Working Group, September 2025. C2PA describes a Content Credential as a cryptographically bound structure recording an asset’s provenance record and explicitly addresses security, privacy, and human-rights considerations. https://c2pa.org/wp-content/uploads/sites/33/2025/10/content_credentials_wp_0925.pdf",
+            "url": "https://c2pa.org/wp-content/uploads/sites/33/2025/10/content_credentials_wp_0925.pdf",
+            "supports": "C2PA describes a Content Credential as a cryptographically bound structure recording an asset’s provenance record and explicitly addresses security, privacy, and human-rights considerations",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "provenance-ready-content-supply-chain-source-03",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Sora System Card",
+            "publisher": "OpenAI, 9 December 2024. OpenAI documents a multilayer provenance approach using C2PA metadata, visible watermarks by default",
+            "published": "and an internal reverse-video-search capability",
+            "citation": "[Evidence] Sora System Card — OpenAI, 9 December 2024. OpenAI documents a multilayer provenance approach using C2PA metadata, visible watermarks by default, and an internal reverse-video-search capability. https://openai.com/index/sora-system-card/",
+            "url": "https://openai.com/index/sora-system-card/",
+            "supports": "OpenAI documents a multilayer provenance approach using C2PA metadata, visible watermarks by default, and an internal reverse-video-search capability",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "provenance-ready-content-supply-chain-source-04",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Labeling AI-Generated Images on Facebook, Instagram and Threads",
+            "publisher": "Meta",
+            "published": "6 February 2024 (updated 1 April 2025). Meta describes detecting C2PA and IPTC indicators to label content and illustrates that platform presentation is a separate layer from embedded provenance",
+            "citation": "[Evidence] Labeling AI-Generated Images on Facebook, Instagram and Threads — Meta, 6 February 2024 (updated 1 April 2025). Meta describes detecting C2PA and IPTC indicators to label content and illustrates that platform presentation is a separate layer from embedded provenance. https://about.fb.com/news/2024/02/labeling-ai-generated-images-on-facebook-instagram-and-threads/",
+            "url": "https://about.fb.com/news/2024/02/labeling-ai-generated-images-on-facebook-instagram-and-threads/",
+            "supports": "Meta describes detecting C2PA and IPTC indicators to label content and illustrates that platform presentation is a separate layer from embedded provenance",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "provenance-ready-content-supply-chain-source-05",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "IPTC Photo Metadata Standard 2025.1",
+            "publisher": "International Press Telecommunications Council, 26 November 2025. IPTC added AI Prompt Information, AI Prompt Writer Name, AI System Used",
+            "published": "and AI System Version Used",
+            "citation": "[Evidence] IPTC Photo Metadata Standard 2025.1 — International Press Telecommunications Council, 26 November 2025. IPTC added AI Prompt Information, AI Prompt Writer Name, AI System Used, and AI System Version Used. https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html",
+            "url": "https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html",
+            "supports": "IPTC added AI Prompt Information, AI Prompt Writer Name, AI System Used, and AI System Version Used",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          }
+        ],
+        "sourceClaims": [
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Content Credentials: C2PA Technical Specification 2.1 — Coalition for Content Provenance and Authenticity, September 2024. The specification defines signed manifests, assertions, ingredients, validation states, and richer ingredient workflows. https://spec.c2pa.org/specifications/specifications/2.1/specs/C2PA_Specification.html"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] C2PA Content Credentials Explained: Addressing Common Questions and Updates — C2PA Technical Working Group, September 2025. C2PA describes a Content Credential as a cryptographically bound structure recording an asset’s provenance record and explicitly addresses security, privacy, and human-rights considerations. https://c2pa.org/wp-content/uploads/sites/33/2025/10/content_credentials_wp_0925.pdf"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Sora System Card — OpenAI, 9 December 2024. OpenAI documents a multilayer provenance approach using C2PA metadata, visible watermarks by default, and an internal reverse-video-search capability. https://openai.com/index/sora-system-card/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Labeling AI-Generated Images on Facebook, Instagram and Threads — Meta, 6 February 2024 (updated 1 April 2025). Meta describes detecting C2PA and IPTC indicators to label content and illustrates that platform presentation is a separate layer from embedded provenance. https://about.fb.com/news/2024/02/labeling-ai-generated-images-on-facebook-instagram-and-threads/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] IPTC Photo Metadata Standard 2025.1 — International Press Telecommunications Council, 26 November 2025. IPTC added AI Prompt Information, AI Prompt Writer Name, AI System Used, and AI System Version Used. https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html"
+          },
+          {
+            "claimClass": "inference",
+            "text": "[Inference] By 2035, provenance is likely to function as machine-readable chain-of-custody infrastructure, but its value will depend on adoption, preservation, key governance, and understandable interfaces."
+          },
+          {
+            "claimClass": "recommendation",
+            "text": "[Recommendation] Test credential survival across every actual editor, transcode, DAM, CDN, social platform, download, screenshot, and re-upload path; record failures by version and date."
+          },
+          {
+            "claimClass": "uncertainty",
+            "text": "[Uncertainty] Standards support and platform behavior change; re-run interoperability tests and threat models rather than relying on vendor announcements."
+          }
+        ],
+        "policy": "Evidence notes link directly to named primary sources; inference, recommendation, uncertainty, and boundary claims remain explicitly labeled."
+      },
+      "contentAudit": {
+        "pages": 32,
+        "uniquePageCount": 32,
+        "minimumPageWordCount": 87,
+        "overflowPages": [],
+        "links": 37,
+        "figures": 30,
+        "tables": 5,
+        "headings": 147
+      },
+      "accessibility": {
+        "semanticHtmlAlternative": true,
+        "taggedPdfRequested": true,
+        "outlineRequested": true,
+        "textSelectable": true,
+        "readingOrder": "linear",
+        "pdfUa": "not-certified",
+        "htmlAlternative": {
+          "fileName": "provenance-ready-content-supply-chain.html",
+          "sourcePath": "infra/brief-delivery/source-pdfs/provenance-ready-content-supply-chain.html",
+          "protection": "Source-only artifact; deliver behind the same private access control if used as an alternative."
+        },
+        "automated": {
+          "htmlLanguage": "en-US",
+          "semanticHeadings": true,
+          "figureCaptions": true,
+          "taggedPdf": true,
+          "documentOutline": true,
+          "selectableText": true
+        },
+        "manualReview": {
+          "status": "pending",
+          "required": [
+            "PDF/UA screen-reader traversal",
+            "keyboard and zoom review of the HTML alternative",
+            "contrast and figure-description review"
+          ]
+        }
+      },
+      "storageObject": "provenance-ready-content-supply-chain.pdf",
+      "storageVersion": null,
+      "uploadTime": null,
+      "deliveryState": "not-uploaded",
+      "replacementProcedure": "Approve a new version, regenerate the manifest, upload the exact filename with Entra ID, record the immutable storage version and checksum, then run a delivery canary.",
+      "rollbackProcedure": "Stop delivery of the candidate object, restore the last approved object/version, verify its SHA-256 against the signed evidence, and rerun the exact-brief selection and expiry checks."
+    },
+    {
+      "briefId": "hybrid-ai-media-infrastructure",
+      "title": "Private, Hybrid, and Governed AI Media Infrastructure",
+      "version": "2026.08-draft",
+      "editionDate": "2026-08-20",
+      "sourceCutoff": "2026-08-12",
+      "author": "HardMagic editorial desk",
+      "reviewer": "Editorial review pending",
+      "confidentiality": "Private technical brief",
+      "distribution": "Individual recipient; time-limited delivery; no public file path",
+      "language": "en-US",
+      "contact": "hello@hardmagic.com",
+      "fileName": "hybrid-ai-media-infrastructure.pdf",
+      "bytes": 537336,
+      "pages": 31,
+      "sha256": "02e1fb42152bc415a8d4747dc7737685360d7f54505e7ae07af28b7f1a0515e1",
+      "checksumAlgorithm": "SHA-256",
+      "landing": {
+        "publicPath": "/briefs/hybrid-ai-media-infrastructure/",
+        "title": "Private, Hybrid, and Governed AI Media Infrastructure",
+        "thesis": "[2035 vantage — inference] Media compute became a programmable production resource, but power, cooling, locality, rights, and latency kept it physical. The durable architecture was neither cloud-first nor on-premises-first: it was policy-directed placement across devices, studios, private clusters, sovereign regions, and managed inference. [Recommendation] Route each workload by sensitivity, model fitness, energy and capacity envelope, latency, provenance obligations, portability, and accountable ownership. [Uncertainty] Hardware efficiency, model architecture, provider pricing, grid access, and regulation can change faster than capital plans.",
+        "promise": "A workload-placement method, hybrid reference architecture, and benchmark plan for governed media inference.",
+        "headline": "Cloud versus local is the wrong infrastructure question.",
+        "audience": [
+          "Chief information officers",
+          "Chief technology officers",
+          "AI platform owners",
+          "Security leaders",
+          "Studio technology executives",
+          "Finance owners"
+        ],
+        "decision": "Which AI media workloads belong on local infrastructure, private cloud, or managed inference, and how those placement decisions should be governed.",
+        "pageCount": 31,
+        "topics": [
+          "hybrid inference",
+          "workload placement",
+          "GPU capacity and routing",
+          "security and data residency",
+          "benchmarking and graceful degradation"
+        ]
+      },
+      "provenance": {
+        "sourceCount": 5,
+        "sources": [
+          {
+            "id": "hybrid-ai-media-infrastructure-source-01",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Energy and AI",
+            "publisher": "International Energy Agency, 10 April 2025. The IEA models electricity demand, supply, security, emissions, innovation",
+            "published": "and affordability around AI and states that AI deployment depends on data-centre electricity",
+            "citation": "[Evidence] Energy and AI — International Energy Agency, 10 April 2025. The IEA models electricity demand, supply, security, emissions, innovation, and affordability around AI and states that AI deployment depends on data-centre electricity. https://www.iea.org/reports/energy-and-ai/",
+            "url": "https://www.iea.org/reports/energy-and-ai/",
+            "supports": "The IEA models electricity demand, supply, security, emissions, innovation, and affordability around AI and states that AI deployment depends on data-centre electricity",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "hybrid-ai-media-infrastructure-source-02",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Data centre electricity use surged in 2025, even with tightening bottlenecks driving a scramble for solutions",
+            "publisher": "International Energy Agency, 16 April 2026. The IEA reports that capital expenditure by five large technology companies exceeded $400 billion in 2025 and was set to rise further in 2026; this is sector concentration evidence",
+            "published": "not a workload cost forecast",
+            "citation": "[Evidence] Data centre electricity use surged in 2025, even with tightening bottlenecks driving a scramble for solutions — International Energy Agency, 16 April 2026. The IEA reports that capital expenditure by five large technology companies exceeded $400 billion in 2025 and was set to rise further in 2026; this is sector concentration evidence, not a workload cost forecast. https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions",
+            "url": "https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions",
+            "supports": "The IEA reports that capital expenditure by five large technology companies exceeded $400 billion in 2025 and was set to rise further in 2026; this is sector concentration evidence, not a workload cost forecast",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "hybrid-ai-media-infrastructure-source-03",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "NVIDIA Blackwell Ultra AI Factory Platform Paves Way for Age of AI Reasoning",
+            "publisher": "NVIDIA, 18 March 2025. NVIDIA positions inference as a rack-scale systems problem spanning compute, networking",
+            "published": "and orchestration; vendor claims require independent workload testing",
+            "citation": "[Evidence] NVIDIA Blackwell Ultra AI Factory Platform Paves Way for Age of AI Reasoning — NVIDIA, 18 March 2025. NVIDIA positions inference as a rack-scale systems problem spanning compute, networking, and orchestration; vendor claims require independent workload testing. https://nvidianews.nvidia.com/news/nvidia-blackwell-ultra-ai-factory-platform-paves-way-for-age-of-ai-reasoning",
+            "url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-ultra-ai-factory-platform-paves-way-for-age-of-ai-reasoning",
+            "supports": "NVIDIA positions inference as a rack-scale systems problem spanning compute, networking, and orchestration; vendor claims require independent workload testing",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "hybrid-ai-media-infrastructure-source-04",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+            "publisher": "National Institute of Standards and Technology, 26 July 2024 (updated 8 April 2026). NIST recommends lifecycle risk management based on context, risk tolerance",
+            "published": "and resources",
+            "citation": "[Evidence] Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile — National Institute of Standards and Technology, 26 July 2024 (updated 8 April 2026). NIST recommends lifecycle risk management based on context, risk tolerance, and resources. https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+            "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+            "supports": "NIST recommends lifecycle risk management based on context, risk tolerance, and resources",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "hybrid-ai-media-infrastructure-source-05",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Sora System Card",
+            "publisher": "OpenAI, 9 December 2024. The disclosed video system uses asynchronous generation time for moderation and applies controls to inputs and outputs",
+            "published": "illustrating that production inference includes safety workloads beyond generation",
+            "citation": "[Evidence] Sora System Card — OpenAI, 9 December 2024. The disclosed video system uses asynchronous generation time for moderation and applies controls to inputs and outputs, illustrating that production inference includes safety workloads beyond generation. https://openai.com/index/sora-system-card/",
+            "url": "https://openai.com/index/sora-system-card/",
+            "supports": "The disclosed video system uses asynchronous generation time for moderation and applies controls to inputs and outputs, illustrating that production inference includes safety workloads beyond generation",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          }
+        ],
+        "sourceClaims": [
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Energy and AI — International Energy Agency, 10 April 2025. The IEA models electricity demand, supply, security, emissions, innovation, and affordability around AI and states that AI deployment depends on data-centre electricity. https://www.iea.org/reports/energy-and-ai/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Data centre electricity use surged in 2025, even with tightening bottlenecks driving a scramble for solutions — International Energy Agency, 16 April 2026. The IEA reports that capital expenditure by five large technology companies exceeded $400 billion in 2025 and was set to rise further in 2026; this is sector concentration evidence, not a workload cost forecast. https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] NVIDIA Blackwell Ultra AI Factory Platform Paves Way for Age of AI Reasoning — NVIDIA, 18 March 2025. NVIDIA positions inference as a rack-scale systems problem spanning compute, networking, and orchestration; vendor claims require independent workload testing. https://nvidianews.nvidia.com/news/nvidia-blackwell-ultra-ai-factory-platform-paves-way-for-age-of-ai-reasoning"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile — National Institute of Standards and Technology, 26 July 2024 (updated 8 April 2026). NIST recommends lifecycle risk management based on context, risk tolerance, and resources. https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Sora System Card — OpenAI, 9 December 2024. The disclosed video system uses asynchronous generation time for moderation and applies controls to inputs and outputs, illustrating that production inference includes safety workloads beyond generation. https://openai.com/index/sora-system-card/"
+          },
+          {
+            "claimClass": "inference",
+            "text": "[Inference] Media infrastructure will increasingly optimize a portfolio of generation, evaluation, moderation, provenance, storage, and delivery workloads rather than a single model endpoint."
+          },
+          {
+            "claimClass": "recommendation",
+            "text": "[Recommendation] Benchmark approved workloads with disclosed hardware, model, precision, settings, queue policy, energy boundary, failure behavior, and acceptance criteria; retain raw results."
+          },
+          {
+            "claimClass": "uncertainty",
+            "text": "[Uncertainty] Reprice and re-benchmark at every procurement gate because service limits, accelerators, models, energy markets, and contractual terms are volatile."
+          }
+        ],
+        "policy": "Evidence notes link directly to named primary sources; inference, recommendation, uncertainty, and boundary claims remain explicitly labeled."
+      },
+      "contentAudit": {
+        "pages": 31,
+        "uniquePageCount": 31,
+        "minimumPageWordCount": 89,
+        "overflowPages": [],
+        "links": 35,
+        "figures": 29,
+        "tables": 5,
+        "headings": 142
+      },
+      "accessibility": {
+        "semanticHtmlAlternative": true,
+        "taggedPdfRequested": true,
+        "outlineRequested": true,
+        "textSelectable": true,
+        "readingOrder": "linear",
+        "pdfUa": "not-certified",
+        "htmlAlternative": {
+          "fileName": "hybrid-ai-media-infrastructure.html",
+          "sourcePath": "infra/brief-delivery/source-pdfs/hybrid-ai-media-infrastructure.html",
+          "protection": "Source-only artifact; deliver behind the same private access control if used as an alternative."
+        },
+        "automated": {
+          "htmlLanguage": "en-US",
+          "semanticHeadings": true,
+          "figureCaptions": true,
+          "taggedPdf": true,
+          "documentOutline": true,
+          "selectableText": true
+        },
+        "manualReview": {
+          "status": "pending",
+          "required": [
+            "PDF/UA screen-reader traversal",
+            "keyboard and zoom review of the HTML alternative",
+            "contrast and figure-description review"
+          ]
+        }
+      },
+      "storageObject": "hybrid-ai-media-infrastructure.pdf",
+      "storageVersion": null,
+      "uploadTime": null,
+      "deliveryState": "not-uploaded",
+      "replacementProcedure": "Approve a new version, regenerate the manifest, upload the exact filename with Entra ID, record the immutable storage version and checksum, then run a delivery canary.",
+      "rollbackProcedure": "Stop delivery of the candidate object, restore the last approved object/version, verify its SHA-256 against the signed evidence, and rerun the exact-brief selection and expiry checks."
+    },
+    {
+      "briefId": "visual-product-development-field-guide",
+      "title": "The Visual Product Development Field Guide",
+      "version": "2026.08-draft",
+      "editionDate": "2026-08-20",
+      "sourceCutoff": "2026-08-12",
+      "author": "HardMagic editorial desk",
+      "reviewer": "Editorial review pending",
+      "confidentiality": "Private technical brief",
+      "distribution": "Individual recipient; time-limited delivery; no public file path",
+      "language": "en-US",
+      "contact": "hello@hardmagic.com",
+      "fileName": "visual-product-development-field-guide.pdf",
+      "bytes": 508975,
+      "pages": 29,
+      "sha256": "73ea99f152433d671c68d886659afe1ec395c9f894e9381236b21e0ddbb9fcf0",
+      "checksumAlgorithm": "SHA-256",
+      "landing": {
+        "publicPath": "/briefs/visual-product-development-field-guide/",
+        "title": "The Visual Product Development Field Guide",
+        "thesis": "[2035 vantage — inference] By 2035, product interfaces are continuously negotiated among people, agents, code, policy, and live evidence. The artifact that mattered was not the screenshot or ticket but the durable link from a human observation to rendered region, source context, authorized action, evaluation, and approval. [Recommendation] Make visual intent executable only inside bounded permissions and require agents to return proof a reviewer can inspect. [Uncertainty] AI-assisted coding evidence remains context-sensitive and does not show that autonomy improves delivery outcomes by itself.",
+        "promise": "A field guide for connecting visual intent, source intelligence, agents, and verification in one review loop.",
+        "headline": "Your product feedback loses meaning before engineering receives it.",
+        "audience": [
+          "Product leaders",
+          "Design executives",
+          "Engineering leaders",
+          "Digital-agency principals",
+          "AI development teams"
+        ],
+        "decision": "How visual product review should connect to source code, agent execution, human approval, and verification evidence.",
+        "pageCount": 29,
+        "topics": [
+          "visual product review",
+          "source-linked intent",
+          "agent authorization",
+          "proof-carrying changes",
+          "reversible product delivery"
+        ]
+      },
+      "provenance": {
+        "sourceCount": 5,
+        "sources": [
+          {
+            "id": "visual-product-development-field-guide-source-01",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Accelerate State of DevOps Report 2024",
+            "publisher": "DORA / Google Cloud, 2024 (site updated 13 April 2026). DORA found AI adoption associated with individual benefits but also with weaker delivery stability and throughput",
+            "published": "reinforcing the need for small batches and robust testing",
+            "citation": "[Evidence] Accelerate State of DevOps Report 2024 — DORA / Google Cloud, 2024 (site updated 13 April 2026). DORA found AI adoption associated with individual benefits but also with weaker delivery stability and throughput, reinforcing the need for small batches and robust testing. https://dora.dev/research/2024/dora-report/",
+            "url": "https://dora.dev/research/2024/dora-report/",
+            "supports": "DORA found AI adoption associated with individual benefits but also with weaker delivery stability and throughput, reinforcing the need for small batches and robust testing",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "visual-product-development-field-guide-source-02",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "State of AI-assisted Software Development 2025",
+            "publisher": "DORA / Google Cloud, 2025. DORA describes AI as an amplifier and locates returns in the surrounding organizational system",
+            "published": "not in tools alone",
+            "citation": "[Evidence] State of AI-assisted Software Development 2025 — DORA / Google Cloud, 2025. DORA describes AI as an amplifier and locates returns in the surrounding organizational system, not in tools alone. https://dora.dev/research/2025/dora-report/",
+            "url": "https://dora.dev/research/2025/dora-report/",
+            "supports": "DORA describes AI as an amplifier and locates returns in the surrounding organizational system, not in tools alone",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "visual-product-development-field-guide-source-03",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Anthropic Economic Index: AI’s impact on software development",
+            "publisher": "Anthropic, 28 April 2025. Analysis of 500,000 coding interactions found agent use skewed toward automation and web/UI tasks",
+            "published": "while also showing substantial review and iteration",
+            "citation": "[Evidence] Anthropic Economic Index: AI’s impact on software development — Anthropic, 28 April 2025. Analysis of 500,000 coding interactions found agent use skewed toward automation and web/UI tasks, while also showing substantial review and iteration. https://www.anthropic.com/research/impact-software-development",
+            "url": "https://www.anthropic.com/research/impact-software-development",
+            "supports": "Analysis of 500,000 coding interactions found agent use skewed toward automation and web/UI tasks, while also showing substantial review and iteration",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "visual-product-development-field-guide-source-04",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Agentic coding and persistent returns to expertise",
+            "publisher": "Anthropic, 16 June 2026. Analysis of approximately 400,000 Claude Code sessions reports that people made most planning decisions while the agent made most execution decisions",
+            "published": "and that domain expertise remained associated with success",
+            "citation": "[Evidence] Agentic coding and persistent returns to expertise — Anthropic, 16 June 2026. Analysis of approximately 400,000 Claude Code sessions reports that people made most planning decisions while the agent made most execution decisions, and that domain expertise remained associated with success. https://www.anthropic.com/research/claude-code-expertise",
+            "url": "https://www.anthropic.com/research/claude-code-expertise",
+            "supports": "Analysis of approximately 400,000 Claude Code sessions reports that people made most planning decisions while the agent made most execution decisions, and that domain expertise remained associated with success",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "visual-product-development-field-guide-source-05",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+            "publisher": "World Wide Web Consortium",
+            "published": "Recommendation republished 12 December 2024. W3C requires conformance across complete responsive page variations and combines automated and human evaluation",
+            "citation": "[Evidence] Web Content Accessibility Guidelines (WCAG) 2.2 — World Wide Web Consortium, Recommendation republished 12 December 2024. W3C requires conformance across complete responsive page variations and combines automated and human evaluation. https://www.w3.org/TR/2024/REC-WCAG22-20241212/",
+            "url": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/",
+            "supports": "W3C requires conformance across complete responsive page variations and combines automated and human evaluation",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          }
+        ],
+        "sourceClaims": [
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Accelerate State of DevOps Report 2024 — DORA / Google Cloud, 2024 (site updated 13 April 2026). DORA found AI adoption associated with individual benefits but also with weaker delivery stability and throughput, reinforcing the need for small batches and robust testing. https://dora.dev/research/2024/dora-report/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] State of AI-assisted Software Development 2025 — DORA / Google Cloud, 2025. DORA describes AI as an amplifier and locates returns in the surrounding organizational system, not in tools alone. https://dora.dev/research/2025/dora-report/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Anthropic Economic Index: AI’s impact on software development — Anthropic, 28 April 2025. Analysis of 500,000 coding interactions found agent use skewed toward automation and web/UI tasks, while also showing substantial review and iteration. https://www.anthropic.com/research/impact-software-development"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Agentic coding and persistent returns to expertise — Anthropic, 16 June 2026. Analysis of approximately 400,000 Claude Code sessions reports that people made most planning decisions while the agent made most execution decisions, and that domain expertise remained associated with success. https://www.anthropic.com/research/claude-code-expertise"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Web Content Accessibility Guidelines (WCAG) 2.2 — World Wide Web Consortium, Recommendation republished 12 December 2024. W3C requires conformance across complete responsive page variations and combines automated and human evaluation. https://www.w3.org/TR/2024/REC-WCAG22-20241212/"
+          },
+          {
+            "claimClass": "inference",
+            "text": "[Inference] As execution becomes cheaper, preserving intent, authorization, and review context is likely to become more important than maximizing generated code volume."
+          },
+          {
+            "claimClass": "recommendation",
+            "text": "[Recommendation] Baseline real review cycles, rework, defects, accessibility outcomes, and rollback frequency; evaluate a bounded workflow against the baseline before making an efficiency claim."
+          },
+          {
+            "claimClass": "uncertainty",
+            "text": "[Uncertainty] Provider telemetry studies may not generalize to other tools, repositories, organizations, skill levels, or consequential production systems."
+          }
+        ],
+        "policy": "Evidence notes link directly to named primary sources; inference, recommendation, uncertainty, and boundary claims remain explicitly labeled."
+      },
+      "contentAudit": {
+        "pages": 29,
+        "uniquePageCount": 29,
+        "minimumPageWordCount": 87,
+        "overflowPages": [],
+        "links": 33,
+        "figures": 27,
+        "tables": 5,
+        "headings": 132
+      },
+      "accessibility": {
+        "semanticHtmlAlternative": true,
+        "taggedPdfRequested": true,
+        "outlineRequested": true,
+        "textSelectable": true,
+        "readingOrder": "linear",
+        "pdfUa": "not-certified",
+        "htmlAlternative": {
+          "fileName": "visual-product-development-field-guide.html",
+          "sourcePath": "infra/brief-delivery/source-pdfs/visual-product-development-field-guide.html",
+          "protection": "Source-only artifact; deliver behind the same private access control if used as an alternative."
+        },
+        "automated": {
+          "htmlLanguage": "en-US",
+          "semanticHeadings": true,
+          "figureCaptions": true,
+          "taggedPdf": true,
+          "documentOutline": true,
+          "selectableText": true
+        },
+        "manualReview": {
+          "status": "pending",
+          "required": [
+            "PDF/UA screen-reader traversal",
+            "keyboard and zoom review of the HTML alternative",
+            "contrast and figure-description review"
+          ]
+        }
+      },
+      "storageObject": "visual-product-development-field-guide.pdf",
+      "storageVersion": null,
+      "uploadTime": null,
+      "deliveryState": "not-uploaded",
+      "replacementProcedure": "Approve a new version, regenerate the manifest, upload the exact filename with Entra ID, record the immutable storage version and checksum, then run a delivery canary.",
+      "rollbackProcedure": "Stop delivery of the candidate object, restore the last approved object/version, verify its SHA-256 against the signed evidence, and rerun the exact-brief selection and expiry checks."
+    },
+    {
+      "briefId": "autonomous-web-publishing-control-plane",
+      "title": "The Autonomous Web Publishing Control Plane",
+      "version": "2026.08-draft",
+      "editionDate": "2026-08-20",
+      "sourceCutoff": "2026-08-12",
+      "author": "HardMagic editorial desk",
+      "reviewer": "Editorial review pending",
+      "confidentiality": "Private technical brief",
+      "distribution": "Individual recipient; time-limited delivery; no public file path",
+      "language": "en-US",
+      "contact": "hello@hardmagic.com",
+      "fileName": "autonomous-web-publishing-control-plane.pdf",
+      "bytes": 519331,
+      "pages": 30,
+      "sha256": "a34359b8d20c0bbdc9f82d72e2493a71f6815cea84772ccff6dd10ca59eb6762",
+      "checksumAlgorithm": "SHA-256",
+      "landing": {
+        "publicPath": "/briefs/autonomous-web-publishing-control-plane/",
+        "title": "The Autonomous Web Publishing Control Plane",
+        "thesis": "[2035 vantage — inference] By 2035, websites are read and operated by people, search systems, personal agents, assistive technology, and publishing agents at once. Autonomy became safe only where a control plane connected each finding to a standard, source location, bounded change, preview, human authority, release record, and rollback. [Recommendation] Optimize for useful, accessible, non-commodity publishing—not page volume—and let agents propose or execute only within explicit risk tiers. [Uncertainty] Discovery interfaces, agent protocols, ranking systems, and browser behavior will continue to change.",
+        "promise": "A control architecture for turning audits into governed, evidence-backed remediation across a web portfolio.",
+        "headline": "Finding website defects is easy. Safely changing the source is the hard part.",
+        "audience": [
+          "Digital leaders",
+          "Web-platform owners",
+          "Marketing operations leaders",
+          "Accessibility leaders",
+          "Digital agencies"
+        ],
+        "decision": "How much website auditing and remediation can safely become agent-assisted, and what evidence and approval controls must govern it.",
+        "pageCount": 30,
+        "topics": [
+          "agent-assisted publishing",
+          "accessibility and quality audits",
+          "finding-to-source traceability",
+          "risk-tiered remediation",
+          "release and rollback governance"
+        ]
+      },
+      "provenance": {
+        "sourceCount": 5,
+        "sources": [
+          {
+            "id": "autonomous-web-publishing-control-plane-source-01",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+            "publisher": "World Wide Web Consortium",
+            "published": "Recommendation republished 12 December 2024. W3C defines testable accessibility requirements and states that responsive variations are part of full-page conformance",
+            "citation": "[Evidence] Web Content Accessibility Guidelines (WCAG) 2.2 — World Wide Web Consortium, Recommendation republished 12 December 2024. W3C defines testable accessibility requirements and states that responsive variations are part of full-page conformance. https://www.w3.org/TR/2024/REC-WCAG22-20241212/",
+            "url": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/",
+            "supports": "W3C defines testable accessibility requirements and states that responsive variations are part of full-page conformance",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "autonomous-web-publishing-control-plane-source-02",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "What web creators should know about our March 2024 core update and new spam policies",
+            "publisher": "Google Search Central, 5 March 2024. Google defines scaled content abuse by purpose and lack of user value",
+            "published": "regardless of whether content is made by humans or automation",
+            "citation": "[Evidence] What web creators should know about our March 2024 core update and new spam policies — Google Search Central, 5 March 2024. Google defines scaled content abuse by purpose and lack of user value, regardless of whether content is made by humans or automation. https://developers.google.com/search/blog/2024/03/core-update-spam-policies",
+            "url": "https://developers.google.com/search/blog/2024/03/core-update-spam-policies",
+            "supports": "Google defines scaled content abuse by purpose and lack of user value, regardless of whether content is made by humans or automation",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "autonomous-web-publishing-control-plane-source-03",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Google Search’s guidance on using generative AI content on your website",
+            "publisher": "Google Search Central, 2025. Google advises accuracy, quality, relevance, creation context, and metadata",
+            "published": "and warns against low-value scaled generation",
+            "citation": "[Evidence] Google Search’s guidance on using generative AI content on your website — Google Search Central, 2025. Google advises accuracy, quality, relevance, creation context, and metadata, and warns against low-value scaled generation. https://developers.google.com/search/docs/fundamentals/using-gen-ai-content",
+            "url": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content",
+            "supports": "Google advises accuracy, quality, relevance, creation context, and metadata, and warns against low-value scaled generation",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "autonomous-web-publishing-control-plane-source-04",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "A new resource for optimizing for generative AI in Google Search",
+            "publisher": "Google Search Central",
+            "published": "15 May 2026. Google emphasizes valuable non-commodity content and says established SEO foundations remain relevant to generative search features",
+            "citation": "[Evidence] A new resource for optimizing for generative AI in Google Search — Google Search Central, 15 May 2026. Google emphasizes valuable non-commodity content and says established SEO foundations remain relevant to generative search features. https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing",
+            "url": "https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing",
+            "supports": "Google emphasizes valuable non-commodity content and says established SEO foundations remain relevant to generative search features",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "autonomous-web-publishing-control-plane-source-05",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "State of AI-assisted Software Development 2025",
+            "publisher": "DORA / Google Cloud, 2025. DORA reports that AI amplifies the surrounding organizational system",
+            "published": "implying that publishing automation inherits weak testing and governance",
+            "citation": "[Evidence] State of AI-assisted Software Development 2025 — DORA / Google Cloud, 2025. DORA reports that AI amplifies the surrounding organizational system, implying that publishing automation inherits weak testing and governance. https://dora.dev/research/2025/dora-report/",
+            "url": "https://dora.dev/research/2025/dora-report/",
+            "supports": "DORA reports that AI amplifies the surrounding organizational system, implying that publishing automation inherits weak testing and governance",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          }
+        ],
+        "sourceClaims": [
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Web Content Accessibility Guidelines (WCAG) 2.2 — World Wide Web Consortium, Recommendation republished 12 December 2024. W3C defines testable accessibility requirements and states that responsive variations are part of full-page conformance. https://www.w3.org/TR/2024/REC-WCAG22-20241212/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] What web creators should know about our March 2024 core update and new spam policies — Google Search Central, 5 March 2024. Google defines scaled content abuse by purpose and lack of user value, regardless of whether content is made by humans or automation. https://developers.google.com/search/blog/2024/03/core-update-spam-policies"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Google Search’s guidance on using generative AI content on your website — Google Search Central, 2025. Google advises accuracy, quality, relevance, creation context, and metadata, and warns against low-value scaled generation. https://developers.google.com/search/docs/fundamentals/using-gen-ai-content"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] A new resource for optimizing for generative AI in Google Search — Google Search Central, 15 May 2026. Google emphasizes valuable non-commodity content and says established SEO foundations remain relevant to generative search features. https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] State of AI-assisted Software Development 2025 — DORA / Google Cloud, 2025. DORA reports that AI amplifies the surrounding organizational system, implying that publishing automation inherits weak testing and governance. https://dora.dev/research/2025/dora-report/"
+          },
+          {
+            "claimClass": "inference",
+            "text": "[Inference] The web of 2035 is likely to reward demonstrable usefulness, machine-legible structure, accessible interaction, and attributable expertise more than undifferentiated publishing volume."
+          },
+          {
+            "claimClass": "recommendation",
+            "text": "[Recommendation] Link every automated finding to exact route, release, standard, source diff, preview, regression evidence, approval, and rollback record; distinguish lab from field data."
+          },
+          {
+            "claimClass": "uncertainty",
+            "text": "[Uncertainty] Search ranking, AI answer interfaces, browser agents, and platform policies are not contractual guarantees and must be revalidated continuously."
+          }
+        ],
+        "policy": "Evidence notes link directly to named primary sources; inference, recommendation, uncertainty, and boundary claims remain explicitly labeled."
+      },
+      "contentAudit": {
+        "pages": 30,
+        "uniquePageCount": 30,
+        "minimumPageWordCount": 92,
+        "overflowPages": [],
+        "links": 35,
+        "figures": 28,
+        "tables": 4,
+        "headings": 137
+      },
+      "accessibility": {
+        "semanticHtmlAlternative": true,
+        "taggedPdfRequested": true,
+        "outlineRequested": true,
+        "textSelectable": true,
+        "readingOrder": "linear",
+        "pdfUa": "not-certified",
+        "htmlAlternative": {
+          "fileName": "autonomous-web-publishing-control-plane.html",
+          "sourcePath": "infra/brief-delivery/source-pdfs/autonomous-web-publishing-control-plane.html",
+          "protection": "Source-only artifact; deliver behind the same private access control if used as an alternative."
+        },
+        "automated": {
+          "htmlLanguage": "en-US",
+          "semanticHeadings": true,
+          "figureCaptions": true,
+          "taggedPdf": true,
+          "documentOutline": true,
+          "selectableText": true
+        },
+        "manualReview": {
+          "status": "pending",
+          "required": [
+            "PDF/UA screen-reader traversal",
+            "keyboard and zoom review of the HTML alternative",
+            "contrast and figure-description review"
+          ]
+        }
+      },
+      "storageObject": "autonomous-web-publishing-control-plane.pdf",
+      "storageVersion": null,
+      "uploadTime": null,
+      "deliveryState": "not-uploaded",
+      "replacementProcedure": "Approve a new version, regenerate the manifest, upload the exact filename with Entra ID, record the immutable storage version and checksum, then run a delivery canary.",
+      "rollbackProcedure": "Stop delivery of the candidate object, restore the last approved object/version, verify its SHA-256 against the signed evidence, and rerun the exact-brief selection and expiry checks."
+    },
+    {
+      "briefId": "intelligent-media-asset-estate",
+      "title": "Media Memory: Building an Intelligent Asset Estate",
+      "version": "2026.08-draft",
+      "editionDate": "2026-08-20",
+      "sourceCutoff": "2026-08-12",
+      "author": "HardMagic editorial desk",
+      "reviewer": "Editorial review pending",
+      "confidentiality": "Private technical brief",
+      "distribution": "Individual recipient; time-limited delivery; no public file path",
+      "language": "en-US",
+      "contact": "hello@hardmagic.com",
+      "fileName": "intelligent-media-asset-estate.pdf",
+      "bytes": 495809,
+      "pages": 28,
+      "sha256": "8255a2236e5ca5be669e38a044f157fc373a39804157719e401266dca0197f10",
+      "checksumAlgorithm": "SHA-256",
+      "landing": {
+        "publicPath": "/briefs/intelligent-media-asset-estate/",
+        "title": "Media Memory: Building an Intelligent Asset Estate",
+        "thesis": "[2035 vantage — inference] By 2035, the competitive media estate is not the largest media library but the strongest institutional memory: assets carry interpretable lineage, rights, consent, provenance, relationships, audience context, and the reasons humans selected or rejected them. [Recommendation] Preserve machine enrichment beside—not over—human judgment, and make both portable across tools. [Uncertainty] Semantic models can misdescribe people and cultures; metadata can be incomplete; similarity never establishes ownership or permission.",
+        "promise": "A practical model for joining curation, metadata, rights, similarity, and portable media operations.",
+        "headline": "Your media library remembers files. Does it remember why they mattered?",
+        "audience": [
+          "Media operations leaders",
+          "Publishers",
+          "Brand studios",
+          "Digital asset management owners",
+          "Collection stewards",
+          "Creative operations teams"
+        ],
+        "decision": "How to make a large media library discoverable, governed, rights-aware, portable, and reusable without discarding human curation.",
+        "pageCount": 28,
+        "topics": [
+          "media asset governance",
+          "metadata and taxonomy",
+          "human curation",
+          "rights-aware reuse",
+          "portable media operations"
+        ]
+      },
+      "provenance": {
+        "sourceCount": 5,
+        "sources": [
+          {
+            "id": "intelligent-media-asset-estate-source-01",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "IPTC Photo Metadata Standard 2025.1",
+            "publisher": "International Press Telecommunications Council, 26 November 2025. IPTC added fields for AI prompt information, prompt writer, AI system, and system version while retaining descriptive, administrative",
+            "published": "and rights metadata",
+            "citation": "[Evidence] IPTC Photo Metadata Standard 2025.1 — International Press Telecommunications Council, 26 November 2025. IPTC added fields for AI prompt information, prompt writer, AI system, and system version while retaining descriptive, administrative, and rights metadata. https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html",
+            "url": "https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html",
+            "supports": "IPTC added fields for AI prompt information, prompt writer, AI system, and system version while retaining descriptive, administrative, and rights metadata",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "intelligent-media-asset-estate-source-02",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "IPTC Photo Metadata User Guide",
+            "publisher": "International Press Telecommunications Council, 2025. The guide distinguishes trained algorithmic media, composite synthetic media",
+            "published": "and other digital source types and recommends recording AI-system details without treating a prompt writer as the image creator",
+            "citation": "[Evidence] IPTC Photo Metadata User Guide — International Press Telecommunications Council, 2025. The guide distinguishes trained algorithmic media, composite synthetic media, and other digital source types and recommends recording AI-system details without treating a prompt writer as the image creator. https://www.iptc.org/std/photometadata/documentation/userguide/",
+            "url": "https://www.iptc.org/std/photometadata/documentation/userguide/",
+            "supports": "The guide distinguishes trained algorithmic media, composite synthetic media, and other digital source types and recommends recording AI-system details without treating a prompt writer as the image creator",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "intelligent-media-asset-estate-source-03",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "IPTC Generative AI Opt-Out Best Practices",
+            "publisher": "International Press Telecommunications Council",
+            "published": "May 2025. IPTC documents ways content owners can express data-mining preferences in embedded metadata and related mechanisms",
+            "citation": "[Evidence] IPTC Generative AI Opt-Out Best Practices — International Press Telecommunications Council, May 2025. IPTC documents ways content owners can express data-mining preferences in embedded metadata and related mechanisms. https://iptc.org/wp-content/uploads/2025/05/IPTC-Generative-AI-Opt-Out-Best-Practices.pdf",
+            "url": "https://iptc.org/wp-content/uploads/2025/05/IPTC-Generative-AI-Opt-Out-Best-Practices.pdf",
+            "supports": "IPTC documents ways content owners can express data-mining preferences in embedded metadata and related mechanisms",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "intelligent-media-asset-estate-source-04",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Content Credentials: C2PA Technical Specification 2.1",
+            "publisher": "Coalition for Content Provenance and Authenticity",
+            "published": "September 2024. C2PA ingredients and assertions provide a model for recording asset relationships and transformations beyond flat descriptive metadata",
+            "citation": "[Evidence] Content Credentials: C2PA Technical Specification 2.1 — Coalition for Content Provenance and Authenticity, September 2024. C2PA ingredients and assertions provide a model for recording asset relationships and transformations beyond flat descriptive metadata. https://spec.c2pa.org/specifications/specifications/2.1/specs/C2PA_Specification.html",
+            "url": "https://spec.c2pa.org/specifications/specifications/2.1/specs/C2PA_Specification.html",
+            "supports": "C2PA ingredients and assertions provide a model for recording asset relationships and transformations beyond flat descriptive metadata",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "intelligent-media-asset-estate-source-05",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Copyright and Artificial Intelligence, Part 2: Copyrightability",
+            "publisher": "U.S. Copyright Office",
+            "published": "January 2025. The Office’s human-authorship analysis makes the creation record and human contribution operationally relevant to asset governance",
+            "citation": "[Evidence] Copyright and Artificial Intelligence, Part 2: Copyrightability — U.S. Copyright Office, January 2025. The Office’s human-authorship analysis makes the creation record and human contribution operationally relevant to asset governance. https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+            "url": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+            "supports": "Copyright Office, January 2025. The Office’s human-authorship analysis makes the creation record and human contribution operationally relevant to asset governance",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          }
+        ],
+        "sourceClaims": [
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] IPTC Photo Metadata Standard 2025.1 — International Press Telecommunications Council, 26 November 2025. IPTC added fields for AI prompt information, prompt writer, AI system, and system version while retaining descriptive, administrative, and rights metadata. https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] IPTC Photo Metadata User Guide — International Press Telecommunications Council, 2025. The guide distinguishes trained algorithmic media, composite synthetic media, and other digital source types and recommends recording AI-system details without treating a prompt writer as the image creator. https://www.iptc.org/std/photometadata/documentation/userguide/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] IPTC Generative AI Opt-Out Best Practices — International Press Telecommunications Council, May 2025. IPTC documents ways content owners can express data-mining preferences in embedded metadata and related mechanisms. https://iptc.org/wp-content/uploads/2025/05/IPTC-Generative-AI-Opt-Out-Best-Practices.pdf"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Content Credentials: C2PA Technical Specification 2.1 — Coalition for Content Provenance and Authenticity, September 2024. C2PA ingredients and assertions provide a model for recording asset relationships and transformations beyond flat descriptive metadata. https://spec.c2pa.org/specifications/specifications/2.1/specs/C2PA_Specification.html"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Copyright and Artificial Intelligence, Part 2: Copyrightability — U.S. Copyright Office, January 2025. The Office’s human-authorship analysis makes the creation record and human contribution operationally relevant to asset governance. https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf"
+          },
+          {
+            "claimClass": "inference",
+            "text": "[Inference] By 2035, asset value is likely to depend on portable relationships among rights, provenance, creative decisions, performance context, and machine-readable representations—not semantic search alone."
+          },
+          {
+            "claimClass": "recommendation",
+            "text": "[Recommendation] Evaluate retrieval and duplicate detection with authorized representative collections and human relevance judgments; separately audit rights, consent, retention, and cultural-description errors."
+          },
+          {
+            "claimClass": "uncertainty",
+            "text": "[Uncertainty] Metadata fields and provenance records can conflict, disappear during transformation, or encode biased description; designate stewards and preserve corrections as a record."
+          }
+        ],
+        "policy": "Evidence notes link directly to named primary sources; inference, recommendation, uncertainty, and boundary claims remain explicitly labeled."
+      },
+      "contentAudit": {
+        "pages": 28,
+        "uniquePageCount": 28,
+        "minimumPageWordCount": 85,
+        "overflowPages": [],
+        "links": 32,
+        "figures": 26,
+        "tables": 4,
+        "headings": 128
+      },
+      "accessibility": {
+        "semanticHtmlAlternative": true,
+        "taggedPdfRequested": true,
+        "outlineRequested": true,
+        "textSelectable": true,
+        "readingOrder": "linear",
+        "pdfUa": "not-certified",
+        "htmlAlternative": {
+          "fileName": "intelligent-media-asset-estate.html",
+          "sourcePath": "infra/brief-delivery/source-pdfs/intelligent-media-asset-estate.html",
+          "protection": "Source-only artifact; deliver behind the same private access control if used as an alternative."
+        },
+        "automated": {
+          "htmlLanguage": "en-US",
+          "semanticHeadings": true,
+          "figureCaptions": true,
+          "taggedPdf": true,
+          "documentOutline": true,
+          "selectableText": true
+        },
+        "manualReview": {
+          "status": "pending",
+          "required": [
+            "PDF/UA screen-reader traversal",
+            "keyboard and zoom review of the HTML alternative",
+            "contrast and figure-description review"
+          ]
+        }
+      },
+      "storageObject": "intelligent-media-asset-estate.pdf",
+      "storageVersion": null,
+      "uploadTime": null,
+      "deliveryState": "not-uploaded",
+      "replacementProcedure": "Approve a new version, regenerate the manifest, upload the exact filename with Entra ID, record the immutable storage version and checksum, then run a delivery canary.",
+      "rollbackProcedure": "Stop delivery of the candidate object, restore the last approved object/version, verify its SHA-256 against the signed evidence, and rerun the exact-brief selection and expiry checks."
+    },
+    {
+      "briefId": "modern-media-agency-transformation-playbook",
+      "title": "The Modern Media Agency Transformation Playbook",
+      "version": "2026.08-draft",
+      "editionDate": "2026-08-20",
+      "sourceCutoff": "2026-08-12",
+      "author": "HardMagic editorial desk",
+      "reviewer": "Editorial review pending",
+      "confidentiality": "Private technical brief",
+      "distribution": "Individual recipient; time-limited delivery; no public file path",
+      "language": "en-US",
+      "contact": "hello@hardmagic.com",
+      "fileName": "modern-media-agency-transformation-playbook.pdf",
+      "bytes": 593439,
+      "pages": 35,
+      "sha256": "661871b853000db54a23d62cd404be111b25d0ed17472f09940cec5fde74691a",
+      "checksumAlgorithm": "SHA-256",
+      "landing": {
+        "publicPath": "/briefs/modern-media-agency-transformation-playbook/",
+        "title": "The Modern Media Agency Transformation Playbook",
+        "thesis": "[2035 vantage — inference] The agency transformation of 2024–2035 did not end agencies; it dissolved the inherited boundary between client, studio, creator, platform, model, and audience. The enduring firms became capability systems that could compose executive intent, human creative authority, specialist craft, agentic production, creator communities, governed infrastructure, media memory, provenance, and market learning. [Recommendation] Own the decisions and institutional memory that differentiate the brand; procure modular execution where it creates advantage. [Uncertainty] The right ownership model remains contingent on category, geography, regulation, talent, scale, and leadership capacity.",
+        "promise": "A decision guide for choosing among embedded creative leadership, managed media operations, GenAI production, consulting, and internal capability building.",
+        "headline": "You do not need another agency roster. You need a coherent media capability.",
+        "audience": [
+          "Chief executive officers",
+          "Chief marketing officers",
+          "Agency leaders",
+          "Procurement executives",
+          "Private-company owners",
+          "Business-unit leaders"
+        ],
+        "decision": "Whether to hire an agency, assemble specialists, embed creative leadership, or build an internal GenAI and media capability.",
+        "pageCount": 35,
+        "topics": [
+          "media capability systems",
+          "agency and ownership models",
+          "executive intent",
+          "creative and technical operations",
+          "procurement and transformation"
+        ]
+      },
+      "provenance": {
+        "sourceCount": 6,
+        "sources": [
+          {
+            "id": "modern-media-agency-transformation-playbook-source-01",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "2025 Creator Economy Ad Spend & Strategy Report",
+            "publisher": "Interactive Advertising Bureau",
+            "published": "20 November 2025. IAB projected U.S. creator ad spend at $37 billion in 2025 and reported that 48% of surveyed creator buyers considered creators a must-buy; projections are not realized results",
+            "citation": "[Evidence] 2025 Creator Economy Ad Spend & Strategy Report — Interactive Advertising Bureau, 20 November 2025. IAB projected U.S. creator ad spend at $37 billion in 2025 and reported that 48% of surveyed creator buyers considered creators a must-buy; projections are not realized results. https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/",
+            "url": "https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/",
+            "supports": "IAB projected U.S. creator ad spend at $37 billion in 2025 and reported that 48% of surveyed creator buyers considered creators a must-buy; projections are not realized results",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "modern-media-agency-transformation-playbook-source-02",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "2025 Digital Video Ad Spend & Strategy Full Report",
+            "publisher": "Interactive Advertising Bureau, 15 July 2025. IAB reported $64 billion in U.S. digital-video ad spend for 2024 and projected $72 billion for 2025",
+            "published": "alongside broad planned use of GenAI creative",
+            "citation": "[Evidence] 2025 Digital Video Ad Spend & Strategy Full Report — Interactive Advertising Bureau, 15 July 2025. IAB reported $64 billion in U.S. digital-video ad spend for 2024 and projected $72 billion for 2025, alongside broad planned use of GenAI creative. https://www.iab.com/insights/video-ad-spend-report-2025/",
+            "url": "https://www.iab.com/insights/video-ad-spend-report-2025/",
+            "supports": "IAB reported $64 billion in U.S. digital-video ad spend for 2024 and projected $72 billion for 2025, alongside broad planned use of GenAI creative",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "modern-media-agency-transformation-playbook-source-03",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Streaming Cranks Up the Heat in July, Accounts For Nearly Half of All TV Viewing in Nielsen’s The Gauge",
+            "publisher": "Nielsen",
+            "published": "19 August 2025. Nielsen measured streaming at 47.3% of U.S. television viewing in July 2025; the measure covers viewing through a television screen and is not total media consumption",
+            "citation": "[Evidence] Streaming Cranks Up the Heat in July, Accounts For Nearly Half of All TV Viewing in Nielsen’s The Gauge — Nielsen, 19 August 2025. Nielsen measured streaming at 47.3% of U.S. television viewing in July 2025; the measure covers viewing through a television screen and is not total media consumption. https://www.nielsen.com/news-center/2025/streaming-cranks-up-the-heat-in-july-accounts-for-nearly-half-of-all-tv-viewing-in-nielsens-the-gauge/",
+            "url": "https://www.nielsen.com/news-center/2025/streaming-cranks-up-the-heat-in-july-accounts-for-nearly-half-of-all-tv-viewing-in-nielsens-the-gauge/",
+            "supports": "Nielsen measured streaming at 47.3% of U.S. television viewing in July 2025; the measure covers viewing through a television screen and is not total media consumption",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "modern-media-agency-transformation-playbook-source-04",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "An entertainment revolution 20 years in the making",
+            "publisher": "YouTube Culture & Trends, 20 June 2025. YouTube reports operation in more than 100 countries and 80 languages and more than one billion hours watched daily",
+            "published": "framing entertainment as creator-community collaboration; these are platform-reported figures",
+            "citation": "[Evidence] An entertainment revolution 20 years in the making — YouTube Culture & Trends, 20 June 2025. YouTube reports operation in more than 100 countries and 80 languages and more than one billion hours watched daily, framing entertainment as creator-community collaboration; these are platform-reported figures. https://blog.youtube/culture-and-trends/trends-report-20th/",
+            "url": "https://blog.youtube/culture-and-trends/trends-report-20th/",
+            "supports": "YouTube reports operation in more than 100 countries and 80 languages and more than one billion hours watched daily, framing entertainment as creator-community collaboration; these are platform-reported figures",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "modern-media-agency-transformation-playbook-source-05",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "Copyright and Artificial Intelligence, Part 2: Copyrightability",
+            "publisher": "U.S. Copyright Office",
+            "published": "January 2025. The Office’s emphasis on human-determined expression supports retaining accountable creative authorship inside AI-enabled operating models",
+            "citation": "[Evidence] Copyright and Artificial Intelligence, Part 2: Copyrightability — U.S. Copyright Office, January 2025. The Office’s emphasis on human-determined expression supports retaining accountable creative authorship inside AI-enabled operating models. https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+            "url": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+            "supports": "Copyright Office, January 2025. The Office’s emphasis on human-determined expression supports retaining accountable creative authorship inside AI-enabled operating models",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          },
+          {
+            "id": "modern-media-agency-transformation-playbook-source-06",
+            "claimClass": "evidence",
+            "sourceType": "primary",
+            "title": "State of AI-assisted Software Development 2025",
+            "publisher": "DORA / Google Cloud",
+            "published": "2025. DORA’s finding that AI amplifies organizational conditions cautions against treating tool procurement as transformation",
+            "citation": "[Evidence] State of AI-assisted Software Development 2025 — DORA / Google Cloud, 2025. DORA’s finding that AI amplifies organizational conditions cautions against treating tool procurement as transformation. https://dora.dev/research/2025/dora-report/",
+            "url": "https://dora.dev/research/2025/dora-report/",
+            "supports": "DORA’s finding that AI amplifies organizational conditions cautions against treating tool procurement as transformation",
+            "provenance": "Primary-source URL declared in the editorial data. The source supports the bounded observation in this note; it does not validate the brief’s inference, recommendation, or scenario."
+          }
+        ],
+        "sourceClaims": [
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] 2025 Creator Economy Ad Spend & Strategy Report — Interactive Advertising Bureau, 20 November 2025. IAB projected U.S. creator ad spend at $37 billion in 2025 and reported that 48% of surveyed creator buyers considered creators a must-buy; projections are not realized results. https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] 2025 Digital Video Ad Spend & Strategy Full Report — Interactive Advertising Bureau, 15 July 2025. IAB reported $64 billion in U.S. digital-video ad spend for 2024 and projected $72 billion for 2025, alongside broad planned use of GenAI creative. https://www.iab.com/insights/video-ad-spend-report-2025/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Streaming Cranks Up the Heat in July, Accounts For Nearly Half of All TV Viewing in Nielsen’s The Gauge — Nielsen, 19 August 2025. Nielsen measured streaming at 47.3% of U.S. television viewing in July 2025; the measure covers viewing through a television screen and is not total media consumption. https://www.nielsen.com/news-center/2025/streaming-cranks-up-the-heat-in-july-accounts-for-nearly-half-of-all-tv-viewing-in-nielsens-the-gauge/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] An entertainment revolution 20 years in the making — YouTube Culture & Trends, 20 June 2025. YouTube reports operation in more than 100 countries and 80 languages and more than one billion hours watched daily, framing entertainment as creator-community collaboration; these are platform-reported figures. https://blog.youtube/culture-and-trends/trends-report-20th/"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] Copyright and Artificial Intelligence, Part 2: Copyrightability — U.S. Copyright Office, January 2025. The Office’s emphasis on human-determined expression supports retaining accountable creative authorship inside AI-enabled operating models. https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf"
+          },
+          {
+            "claimClass": "evidence",
+            "text": "[Evidence] State of AI-assisted Software Development 2025 — DORA / Google Cloud, 2025. DORA’s finding that AI amplifies organizational conditions cautions against treating tool procurement as transformation. https://dora.dev/research/2025/dora-report/"
+          },
+          {
+            "claimClass": "inference",
+            "text": "[Inference] The 2035 media firm is likely to be judged less by headcount or network breadth than by its ability to compose trusted talent, systems, rights, learning, and distinctive creative authority around each decision."
+          },
+          {
+            "claimClass": "recommendation",
+            "text": "[Recommendation] Compare engagement models using approved contracts plus organization-specific spend, cycle, quality, reuse, rights, workforce, channel, and outcome baselines; disclose definitions and attribution limits."
+          },
+          {
+            "claimClass": "uncertainty",
+            "text": "[Uncertainty] Market projections, platform statistics, and U.S.-centric surveys may not transfer to a specific brand, geography, medium, or economic cycle."
+          }
+        ],
+        "policy": "Evidence notes link directly to named primary sources; inference, recommendation, uncertainty, and boundary claims remain explicitly labeled."
+      },
+      "contentAudit": {
+        "pages": 35,
+        "uniquePageCount": 35,
+        "minimumPageWordCount": 91,
+        "overflowPages": [],
+        "links": 40,
+        "figures": 33,
+        "tables": 6,
+        "headings": 162
+      },
+      "accessibility": {
+        "semanticHtmlAlternative": true,
+        "taggedPdfRequested": true,
+        "outlineRequested": true,
+        "textSelectable": true,
+        "readingOrder": "linear",
+        "pdfUa": "not-certified",
+        "htmlAlternative": {
+          "fileName": "modern-media-agency-transformation-playbook.html",
+          "sourcePath": "infra/brief-delivery/source-pdfs/modern-media-agency-transformation-playbook.html",
+          "protection": "Source-only artifact; deliver behind the same private access control if used as an alternative."
+        },
+        "automated": {
+          "htmlLanguage": "en-US",
+          "semanticHeadings": true,
+          "figureCaptions": true,
+          "taggedPdf": true,
+          "documentOutline": true,
+          "selectableText": true
+        },
+        "manualReview": {
+          "status": "pending",
+          "required": [
+            "PDF/UA screen-reader traversal",
+            "keyboard and zoom review of the HTML alternative",
+            "contrast and figure-description review"
+          ]
+        }
+      },
+      "storageObject": "modern-media-agency-transformation-playbook.pdf",
+      "storageVersion": null,
+      "uploadTime": null,
+      "deliveryState": "not-uploaded",
+      "replacementProcedure": "Approve a new version, regenerate the manifest, upload the exact filename with Entra ID, record the immutable storage version and checksum, then run a delivery canary.",
+      "rollbackProcedure": "Stop delivery of the candidate object, restore the last approved object/version, verify its SHA-256 against the signed evidence, and rerun the exact-brief selection and expiry checks."
+    }
+  ]
+}

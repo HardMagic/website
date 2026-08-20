@@ -2,11 +2,11 @@
 
 This repository is the internal source repository for HardMagic.
 
-- Internal source of truth: `git.developerdojo.org/HardMagic/hardmagic`
+- Internal source of truth: `git.developerdojo.org/HardMagic/website`
 - Internal-public preview: the `demo` branch is published to GitLab Pages
   behind the OpenZiti network boundary
 - Canonical release branch: GitLab `gh-pages`
-- Public deployment: GitHub `HardMagic/hardmagic`, `gh-pages` branch, kept in
+- Public deployment: GitHub `HardMagic/website`, `gh-pages` branch, kept in
   sync by `git-mirror-sync`
 - Official domain: [hardmagic.com](https://hardmagic.com)
 - Source application: [`src/`](src/)

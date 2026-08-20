@@ -16,6 +16,7 @@ import { loadConfig } from "./config.js";
 
 export interface LedgerRecord {
   id: string;
+  requestFingerprint: string;
   kind: "brief-request" | "consultation-request";
   createdAt: string;
   email: string;
@@ -30,6 +31,7 @@ export interface LedgerRecord {
     broaderMarketing: boolean;
     capturedAt: string;
   };
+  suppressionStatus: "active" | "opted-out";
   qualification: Record<string, string>;
   report?: { slug: string; title: string };
   delivery: { status: "pending" | "sent" | "failed"; sentAt?: string; providerMessageId?: string; failureCode?: string };
@@ -85,11 +87,31 @@ export function ledgerContainer(): ContainerClient {
 export async function writeLedger(path: string, record: LedgerRecord, ifMatch?: string): Promise<string> {
   const blob = ledgerContainer().getBlockBlobClient(path);
   const body = JSON.stringify(record);
-  const result = await blob.upload(body, Buffer.byteLength(body), {
-    blobHTTPHeaders: { blobContentType: "application/json; charset=utf-8", blobCacheControl: "no-store" },
-    ...(ifMatch ? { conditions: { ifMatch } } : {}),
-  });
+  const result = await blob.upload(body, Buffer.byteLength(body), ledgerUploadOptions(ifMatch));
   return result.etag ?? "";
+}
+
+export async function createLedger(path: string, record: LedgerRecord): Promise<string | null> {
+  const blob = ledgerContainer().getBlockBlobClient(path);
+  const body = JSON.stringify(record);
+  try {
+    const result = await blob.upload(body, Buffer.byteLength(body), ledgerUploadOptions(undefined, true));
+    return result.etag ?? "";
+  } catch (error) {
+    if (isPreconditionFailed(error)) return null;
+    throw error;
+  }
+}
+
+function ledgerUploadOptions(ifMatch?: string, ifNoneMatch = false) {
+  return {
+    blobHTTPHeaders: { blobContentType: "application/json; charset=utf-8", blobCacheControl: "no-store" },
+    ...(ifMatch || ifNoneMatch ? { conditions: { ...(ifMatch ? { ifMatch } : {}), ...(ifNoneMatch ? { ifNoneMatch: "*" } : {}) } } : {}),
+  };
+}
+
+function isPreconditionFailed(error: unknown): boolean {
+  return typeof error === "object" && error !== null && "statusCode" in error && error.statusCode === 412;
 }
 
 export async function readLedger(path: string): Promise<{ record: LedgerRecord; etag: string } | null> {
@@ -287,28 +309,7 @@ export async function syncDataverse(event: CrmEvent, context: InvocationContext)
     contactId = response.headers.get("odata-entityid")?.match(/\(([^)]+)\)/)?.[1];
     if (!contactId) throw new Error("dataverse_contact_id_missing");
   }
-  const engagement = {
-    hm_requestid: record.id,
-    hm_name: record.report?.title ?? `Consultation · ${record.intakeCategory}`,
-    hm_requesttype: record.kind,
-    hm_briefkey: record.report?.slug ?? "consultation",
-    hm_brieftitle: record.report?.title ?? "Consultation request",
-    hm_emailhash: piiHash(record.email),
-    hm_organization: record.organization,
-    hm_role: record.role,
-    hm_primarychallenge: record.qualification.primaryChallenge ?? record.qualification.mandate ?? "",
-    hm_decisionhorizon: record.qualification.decisionHorizon ?? "",
-    hm_preferrednextstep: record.qualification.preferredNextStep ?? "",
-    hm_interest: record.intakeCategory,
-    hm_sourcecampaign: record.sourceCampaign,
-    hm_sourceurl: record.sourceUrl,
-    hm_context: record.qualification.context ?? "",
-    hm_consentscope: record.consent.broaderMarketing ? "requested-resource; marketing" : "requested-resource",
-    hm_marketingconsent: record.consent.broaderMarketing,
-    hm_deliverystatus: record.delivery.status,
-    "hm_contact@odata.bind": `/contacts(${contactId})`,
-    "ownerid_team@odata.bind": `/teams(${ownerTeamId})`,
-  };
+  const engagement = buildDataverseEngagement(record, contactId, ownerTeamId);
   response = await fetch(engagementUrl, {
     method: "PATCH",
     headers,
@@ -319,6 +320,27 @@ export async function syncDataverse(event: CrmEvent, context: InvocationContext)
   record.crm = { status: "synced", attempts: record.crm.attempts + 1, lastAttemptAt: new Date().toISOString() };
   await writeLedger(event.ledgerPath, record, current.etag);
   context.info("Dataverse projection completed", { requestId: record.id, kind: record.kind });
+}
+
+export function buildDataverseEngagement(record: LedgerRecord, contactId: string, ownerTeamId: string): Record<string, string> {
+  return {
+    hm_requestid: record.id,
+    hm_name: record.report?.title ?? `Consultation · ${record.intakeCategory}`,
+    hm_reportkey: record.report?.slug ?? "consultation",
+    hm_emailhash: piiHash(record.email),
+    hm_organization: record.organization,
+    hm_role: record.role,
+    hm_primarychallenge: record.qualification.primaryChallenge ?? record.qualification.mandate ?? "",
+    hm_decisionhorizon: record.qualification.decisionHorizon ?? "",
+    hm_preferrednextstep: record.qualification.preferredNextStep ?? "",
+    hm_intakecategory: record.intakeCategory,
+    hm_sourcesummary: record.sourceCampaign,
+    hm_consentstatus: record.consent.broaderMarketing ? "requested-resource; marketing" : "requested-resource",
+    hm_deliverystatus: record.delivery.status,
+    hm_suppressionstatus: record.suppressionStatus ?? "active",
+    "hm_contact@odata.bind": `/contacts(${contactId})`,
+    "ownerid_team@odata.bind": `/teams(${ownerTeamId})`,
+  };
 }
 
 export function buildAccountScopedContactQuery(email: string, accountId: string): string {

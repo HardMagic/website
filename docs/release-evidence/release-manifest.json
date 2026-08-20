@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate",
+  "generatedAt": "2026-08-20T15:25:19.349Z",
+  "release": {
+    "commit": "51b50406a5912a725653b32a54d77e5f9d68ca86",
+    "branch": "demo",
+    "pipeline": null,
+    "packageLockSha256": "7a467b55b5f84c3b0a2a0e29aa8773737bfa8584ec0daacbee13700ceb144cb5",
+    "buildTime": "2026-08-20T15:25:19.349Z",
+    "environment": {
+      "target": "public",
+      "basePath": "/"
+    },
+    "target": "public",
+    "basePath": "/",
+    "site": "https://hardmagic.com",
+    "artifact": {
+      "root": "dist",
+      "sha256": "22f4d8b811ae3969912cca8a7b7f385dd8e42b512c21c140b1b1b3af8cbdfbc6",
+      "bytes": 10323090,
+      "files": 328
+    }
+  },
+  "infrastructureVersions": {
+    "node": "v25.9.0",
+    "npm": "11.19.0",
+    "astro": "7.2.1",
+    "adapter": "static"
+  },
+  "hosting": {
+    "sourceOfTruth": "GitLab",
+    "demo": {
+      "branch": "demo",
+      "basePath": "/hardmagic",
+      "noindex": true,
+      "accessControl": "Ziti access control is required; deployment access was not verified here."
+    },
+    "public": {
+      "branch": "gh-pages",
+      "basePath": "/",
+      "canonicalOrigin": "https://hardmagic.com"
+    },
+    "publicMirror": {
+      "provider": "GitHub Pages",
+      "sourceBranch": "gh-pages",
+      "verified": false,
+      "assumptions": [
+        "GitLab remains the source of truth for the release commit and artifact.",
+        "A protected external process mirrors the GitLab gh-pages artifact to GitHub Pages.",
+        "The hardmagic.com DNS, TLS, CDN freshness, and rollback state require release-owner verification."
+      ]
+    },
+    "responseHeaders": {
+      "policy": "docs/release-evidence/hosting/headers-policy.json",
+      "publicEdgeVerified": false
+    }
+  },
+  "verification": {
+    "renderedUrlTests": true,
+    "publicMirrorVerified": false,
+    "deployedHostVerified": false
+  }
+}

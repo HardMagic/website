@@ -65,24 +65,27 @@ const briefEvidence = brief.evidenceNeeds.map((item) => {
     </section>
 
     <section class="squeeze" id="request">
-      <form method="post" action="https://briefs.hardmagic.com/api/brief-request" class="shell squeeze-grid" data-corporate-email-only>
-        <div><p class="eyebrow">Private delivery</p><h2>{brief.squeeze.headline}</h2><p>{brief.squeeze.promise}</p><p class="privacy-note">We email a time-limited private link. The PDF is never published at a public site path. Company email required; Gmail, Yahoo, Hotmail, and Outlook.com accounts are not eligible. Do not submit secrets, regulated personal information, or confidential client material.</p></div>
+      <form method="post" action="https://briefs.hardmagic.com/api/brief-request" class="shell squeeze-grid" data-funnel-form="brief" data-corporate-email-only aria-describedby="brief-privacy brief-email-policy">
+        <div><p class="eyebrow">Private delivery</p><h2>{brief.squeeze.headline}</h2><p>{brief.squeeze.promise}</p><p class="privacy-note" id="brief-privacy">We email a time-limited private link. The PDF is never published at a public site path. Company email required; Gmail, Yahoo, Hotmail, and Outlook.com accounts are not eligible. Do not submit secrets, regulated personal information, or confidential client material.</p></div>
         <div class="form-grid">
-          <label>Name<input required name="name" autocomplete="name" /></label>
-          <label>Work email<input required type="email" name="email" autocomplete="email" /><small>Company email required. Gmail, Yahoo, Hotmail, and Outlook.com accounts are not eligible.</small></label>
-          <label>Organization<input required name="organization" autocomplete="organization" /></label>
-          <label>Role<input required name="role" autocomplete="organization-title" /></label>
-          <label>Industry<input required name="industry" /></label>
+          <label>Name<input required name="name" autocomplete="name" maxlength="160" /></label>
+          <label>Work email<input required type="email" name="email" autocomplete="email" maxlength="320" aria-describedby="brief-email-policy" /><small id="brief-email-policy">Company email required. Gmail, Yahoo, Hotmail, and Outlook.com accounts are not eligible.</small></label>
+          <label>Organization<input required name="organization" autocomplete="organization" maxlength="200" /></label>
+          <label>Role<input required name="role" autocomplete="organization-title" maxlength="120" /></label>
+          <label>Industry<input required name="industry" maxlength="120" /></label>
           <label>Organization size<select required name="organization_size"><option value="">Choose</option><option>1–49</option><option>50–249</option><option>250–999</option><option>1,000–9,999</option><option>10,000+</option></select></label>
           <label>Program stage<select required name="decision_stage"><option value="">Choose</option><option>Exploring</option><option>Piloting</option><option>In production</option><option>Scaling</option><option>Transforming</option></select></label>
           <label>Decision horizon<select required name="decision_horizon"><option value="">Choose</option><option>Now–30 days</option><option>31–90 days</option><option>3–6 months</option><option>6–12 months</option><option>Learning only</option></select></label>
           <label class="wide">Primary need<select required name="intake_category"><option value="">Choose</option><option value="creative-direction">Creative direction</option><option value="genai">GenAI strategy and production</option><option value="media-management">Media management</option><option value="marketing-consulting">Marketing consulting</option><option value="product-strategy">Product strategy</option><option value="creative-technology">Creative technology</option></select></label>
-          <label class="wide">The decision or challenge<textarea required name="primary_challenge" rows="5"></textarea></label>
-          <label class="wide">Additional context<textarea name="context" rows="3"></textarea></label>
-          <label class="wide">Preferred next step<select required name="preferred_next_step"><option>Send the brief only</option><option>Brief plus a working session</option><option>Discuss an advisory engagement</option><option>Discuss a product</option></select></label>
+          <label class="wide">The decision or challenge<textarea required name="primary_challenge" rows="5" maxlength="500"></textarea></label>
+          <label class="wide">Additional context<textarea name="context" rows="3" maxlength="2000"></textarea></label>
+          <label class="wide">Preferred next step<select required name="preferred_next_step"><option value="">Choose a next step</option><option>Send the brief only</option><option>Brief plus a working session</option><option>Discuss an advisory engagement</option><option>Discuss a product</option></select></label>
           <label class="consent wide"><input required type="checkbox" name="consent" value="yes" /> I agree that HardMagic may use this information to deliver the requested brief and administer this request.</label>
+          <input type="hidden" name="marketing_consent" value="no" />
           <label class="consent wide optional"><input type="checkbox" name="marketing_consent" value="yes" /> Separately, I would like occasional HardMagic research and product updates.</label>
-          <div class="cf-turnstile wide" data-sitekey="0x4AAAAAAEOV4a4wcfxluMkv" data-theme="dark" data-action="brief-request"></div>
+          <div class="cf-turnstile wide" data-sitekey="0x4AAAAAAEOV4a4wcfxluMkv" data-theme="dark" data-action="brief-request" data-response-field-name="cf-turnstile-response"></div>
+          <noscript><p class="privacy-note wide">JavaScript is required for the protected form check. Email <a href="mailto:hello@hardmagic.com">hello@hardmagic.com</a> with the brief title instead; please do not include confidential or regulated information.</p></noscript>
+          <input type="hidden" name="request_id" value="" autocomplete="off" />
           <input type="hidden" name="report" value={brief.slug} />
           <input type="hidden" name="source_url" value={`https://hardmagic.com/briefs/${brief.slug}/`} />
           <input type="hidden" name="source_campaign" value="technical-brief-library" />

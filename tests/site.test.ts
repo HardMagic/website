@@ -21,6 +21,10 @@ describe('site information architecture', () => {
   it('features the four primary products in the footer', () => {
     expect(productLinks.map(([name]) => name)).toEqual(['WireMark', 'HardMagic Studio', expect.stringMatching(/^HardMagic (?:CLI|Agent \(CLI\))$/), 'Web Magic']);
   });
+  it('uses the Pranashama work as the homepage portfolio showcase', () => {
+    expect(homeSource).toContain("study.slug === 'pranashama'");
+    expect(homeSource).not.toContain('caseStudies[1]');
+  });
 });
 
 describe('conversion and private-intake route contracts', () => {

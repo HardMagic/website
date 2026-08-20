@@ -32,7 +32,7 @@ const environmentSchema = z.object({
   DATAVERSE_ENTITY_LOGICAL_NAME: z.literal("hm_briefengagement"),
   DATAVERSE_REQUEST_ID_COLUMN: z.literal("hm_requestid"),
   TURNSTILE_REQUIRED: z.enum(["true", "false"]).transform((value) => value === "true"),
-  SAS_HOURS: z.coerce.number().int().min(1).max(72).default(48),
+  SAS_HOURS: z.coerce.number().int().min(48).max(48).default(48),
   RATE_LIMIT_PER_HOUR: z.coerce.number().int().min(1).max(50).default(5),
 });
 
