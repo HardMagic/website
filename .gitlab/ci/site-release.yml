@@ -223,17 +223,68 @@ mirror_public_release:
       export GIT_ASKPASS="$gitlab_askpass"
       export GIT_TERMINAL_PROMPT=0
       git -C "$gitlab_repo" fetch --quiet --depth=1 origin "refs/heads/$GITHUB_PAGES_BRANCH:refs/remotes/origin/$GITHUB_PAGES_BRANCH"
-      gitlab_base_commit="$(git -C "$gitlab_repo" rev-parse "refs/remotes/origin/$GITHUB_PAGES_BRANCH")"
+      gitlab_branch_commit="$(git -C "$gitlab_repo" rev-parse "refs/remotes/origin/$GITHUB_PAGES_BRANCH")"
       git -C "$gitlab_repo" fetch --quiet --depth=1 origin "$CI_COMMIT_SHA"
       test "$(git -C "$gitlab_repo" rev-parse FETCH_HEAD)" = "$CI_COMMIT_SHA"
       gitlab_artifact_tree="$(build_artifact_tree "$gitlab_repo")"
       git -C "$gitlab_repo" config user.name 'HardMagic release provenance'
       git -C "$gitlab_repo" config user.email 'release-provenance@hardmagic.com'
-      export GIT_AUTHOR_DATE="$CI_COMMIT_TIMESTAMP"
-      export GIT_COMMITTER_DATE="$CI_COMMIT_TIMESTAMP"
       release_commit_message="Publish HardMagic public artifact $CI_COMMIT_SHA ($artifact_sha256)"
-      gitlab_release_commit="$(git -C "$gitlab_repo" commit-tree "$gitlab_artifact_tree" -p "$gitlab_base_commit" -m "$release_commit_message")"
-      test "$(git -C "$gitlab_repo" show -s --format=%T "$gitlab_release_commit")" = "$gitlab_artifact_tree"
+      provenance_tag="public-release-${CI_COMMIT_SHA}"
+      resume_existing_release=false
+      if git -C "$gitlab_repo" ls-remote --exit-code origin "refs/tags/$provenance_tag" >/dev/null 2>&1; then
+        # A prior run may have published GitLab's branch and tag before the
+        # GitHub push failed. Treat the signed tag and its branch tip as the
+        # release record; do not derive a new child commit from that tip.
+        git -C "$gitlab_repo" fetch --quiet origin "refs/tags/$provenance_tag:refs/tags/$provenance_tag"
+        test "$(git -C "$gitlab_repo" cat-file -t "$provenance_tag")" = tag
+        git -C "$gitlab_repo" tag -v "$provenance_tag"
+        test "$(git -C "$gitlab_repo" rev-parse "$provenance_tag^{}")" = "$CI_COMMIT_SHA"
+        tag_contents="$(git -C "$gitlab_repo" cat-file tag "$provenance_tag")"
+        provenance_field() {
+          local field="$1"
+          local matches
+          matches="$(printf '%s\n' "$tag_contents" | sed -n "s/^${field}: //p")"
+          test "$(printf '%s\n' "$matches" | wc -l)" -eq 1
+          test -n "$matches"
+          printf '%s' "$matches"
+        }
+        tagged_source_commit="$(provenance_field 'Source commit')"
+        tagged_source_branch="$(provenance_field 'Source branch')"
+        tagged_pipeline_id="$(provenance_field 'GitLab pipeline')"
+        tagged_artifact_sha256="$(provenance_field 'Artifact SHA-256')"
+        existing_gitlab_release_commit="$(provenance_field 'GitLab release commit')"
+        tagged_github_repository="$(provenance_field 'GitHub repository')"
+        tagged_github_branch="$(provenance_field 'GitHub branch')"
+        existing_github_commit="$(provenance_field 'GitHub commit')"
+        test "$tagged_source_commit" = "$CI_COMMIT_SHA"
+        test "$tagged_source_branch" = "$CI_COMMIT_REF_NAME"
+        case "$tagged_pipeline_id" in
+          ''|*[!0-9]*) echo "Existing release provenance has an invalid GitLab pipeline." >&2; exit 1 ;;
+        esac
+        test "$tagged_artifact_sha256" = "$artifact_sha256"
+        test "$tagged_github_repository" = "$GITHUB_PAGES_REPOSITORY"
+        test "$tagged_github_branch" = "$GITHUB_PAGES_BRANCH"
+        printf '%s\n' "$existing_gitlab_release_commit" | grep -Eq '^[0-9a-f]{40}$'
+        printf '%s\n' "$existing_github_commit" | grep -Eq '^[0-9a-f]{40}$'
+        test "$gitlab_branch_commit" = "$existing_gitlab_release_commit"
+        git -C "$gitlab_repo" cat-file -e "$existing_gitlab_release_commit^{commit}"
+        test "$(git -C "$gitlab_repo" show -s --format=%s "$existing_gitlab_release_commit")" = "$release_commit_message"
+        test "$(git -C "$gitlab_repo" show -s --format=%T "$existing_gitlab_release_commit")" = "$gitlab_artifact_tree"
+        gitlab_release_commit="$existing_gitlab_release_commit"
+        artifact_commit="$existing_github_commit"
+        existing_release_author_date="$(git -C "$gitlab_repo" show -s --format=%aI "$gitlab_release_commit")"
+        existing_release_committer_date="$(git -C "$gitlab_repo" show -s --format=%cI "$gitlab_release_commit")"
+        export GIT_AUTHOR_DATE="$existing_release_author_date"
+        export GIT_COMMITTER_DATE="$existing_release_committer_date"
+        resume_existing_release=true
+        echo "Verified the existing signed GitLab release $provenance_tag at $gitlab_release_commit."
+      else
+        export GIT_AUTHOR_DATE="$CI_COMMIT_TIMESTAMP"
+        export GIT_COMMITTER_DATE="$CI_COMMIT_TIMESTAMP"
+        gitlab_release_commit="$(git -C "$gitlab_repo" commit-tree "$gitlab_artifact_tree" -p "$gitlab_branch_commit" -m "$release_commit_message")"
+        test "$(git -C "$gitlab_repo" show -s --format=%T "$gitlab_release_commit")" = "$gitlab_artifact_tree"
+      fi
 
       github_parent="$(mktemp -d)"
       github_worktree="$github_parent/repository"
@@ -256,11 +307,19 @@ mirror_public_release:
       test "$github_artifact_tree" = "$gitlab_artifact_tree"
       git -C "$github_worktree" config user.name 'HardMagic release mirror'
       git -C "$github_worktree" config user.email 'release-mirror@hardmagic.com'
-      artifact_commit="$(git -C "$github_worktree" commit-tree "$github_artifact_tree" -p "$github_base_commit" -m "$release_commit_message")"
+      if [ "$resume_existing_release" = true ]; then
+        if [ "$github_base_commit" != "$artifact_commit" ]; then
+          resumed_artifact_commit="$(git -C "$github_worktree" commit-tree "$github_artifact_tree" -p "$github_base_commit" -m "$release_commit_message")"
+          test "$resumed_artifact_commit" = "$artifact_commit"
+        fi
+      else
+        artifact_commit="$(git -C "$github_worktree" commit-tree "$github_artifact_tree" -p "$github_base_commit" -m "$release_commit_message")"
+      fi
       test "$(git -C "$github_worktree" show -s --format=%T "$artifact_commit")" = "$github_artifact_tree"
 
-      provenance_message="$(mktemp)"
-      cat > "$provenance_message" <<EOF
+      if [ "$resume_existing_release" = false ]; then
+        provenance_message="$(mktemp)"
+        cat > "$provenance_message" <<EOF
       HardMagic public release provenance
 
       Source commit: $CI_COMMIT_SHA
@@ -272,35 +331,29 @@ mirror_public_release:
       GitHub branch: $GITHUB_PAGES_BRANCH
       GitHub commit: $artifact_commit
       EOF
+      fi
 
       # The GitHub clone above changed GIT_ASKPASS. Restore the GitLab-only
-      # credential before reading or updating GitLab's canonical release refs.
+      # credential before updating GitLab's canonical release refs.
       export GIT_ASKPASS="$gitlab_askpass"
-      if git -C "$gitlab_repo" ls-remote --exit-code origin "refs/tags/$provenance_tag" >/dev/null 2>&1; then
-        git -C "$gitlab_repo" fetch --quiet origin "refs/tags/$provenance_tag:refs/tags/$provenance_tag"
-        git -C "$gitlab_repo" tag -v "$provenance_tag"
-        test "$(git -C "$gitlab_repo" rev-parse "$provenance_tag^{}")" = "$CI_COMMIT_SHA"
-        tag_contents="$(git -C "$gitlab_repo" cat-file tag "$provenance_tag")"
-        printf '%s\n' "$tag_contents" | grep -F "Artifact SHA-256: $artifact_sha256" >/dev/null
-        printf '%s\n' "$tag_contents" | grep -F "GitLab release commit: $gitlab_release_commit" >/dev/null
-        printf '%s\n' "$tag_contents" | grep -F "GitHub commit: $artifact_commit" >/dev/null
-        echo "Verified the existing signed GitLab provenance tag $provenance_tag."
+      if [ "$resume_existing_release" = true ]; then
+        echo "GitLab release $gitlab_release_commit is already canonical; resuming the missing GitHub push."
       else
         git -C "$gitlab_repo" config user.name 'HardMagic release provenance'
         git -C "$gitlab_repo" config user.email 'release-provenance@hardmagic.com'
         git -C "$gitlab_repo" config user.signingkey "$signing_key"
         git -C "$gitlab_repo" tag -s --local-user "$signing_key" "$provenance_tag" "$CI_COMMIT_SHA" -F "$provenance_message"
         git -C "$gitlab_repo" tag -v "$provenance_tag"
+        # Update GitLab's canonical branch and signed tag atomically. If this
+        # fails, GitHub is left unchanged and the job fails closed.
+        git -C "$gitlab_repo" push --atomic origin "$gitlab_release_commit:refs/heads/$GITHUB_PAGES_BRANCH" "$provenance_tag"
       fi
-
-      # Update GitLab's canonical branch and signed tag atomically. If this
-      # fails, GitHub is left unchanged and the job fails closed.
-      git -C "$gitlab_repo" push --atomic origin "$gitlab_release_commit:refs/heads/$GITHUB_PAGES_BRANCH" "$provenance_tag"
       export GIT_ASKPASS="$github_askpass"
       git -C "$github_worktree" push origin "$artifact_commit:refs/heads/$GITHUB_PAGES_BRANCH"
       git -C "$github_worktree" fetch --quiet origin "$GITHUB_PAGES_BRANCH"
       published_commit="$(git -C "$github_worktree" rev-parse FETCH_HEAD)"
       test "$published_commit" = "$artifact_commit"
+      test "$(git -C "$github_worktree" show -s --format=%T "$published_commit")" = "$gitlab_artifact_tree"
       echo "Published approved artifact $artifact_sha256 to GitHub $GITHUB_PAGES_REPOSITORY:$GITHUB_PAGES_BRANCH."
   allow_failure: false
   resource_group: hardmagic-public-pages
