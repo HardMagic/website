@@ -283,7 +283,10 @@ resource functionApp 'Microsoft.Web/sites@2024-11-01' = {
         }
       ]
       cors: {
-        allowedOrigins: serviceConfig.allowedOrigins
+        // CORS is emitted by the function so every preflight also receives
+        // the runtime security headers. An empty host-level allow-list keeps
+        // the Functions platform from short-circuiting OPTIONS responses.
+        allowedOrigins: []
         supportCredentials: false
       }
       appSettings: [
