@@ -105,9 +105,10 @@ mirror_public_release:
       : "${CI_COMMIT_TIMESTAMP:?CI_COMMIT_TIMESTAMP is required for a deterministic mirror commit}"
       : "${CI_COMMIT_REF_NAME:?CI_COMMIT_REF_NAME is required}"
       : "${CI_PIPELINE_ID:?CI_PIPELINE_ID is required}"
-      : "${CI_JOB_TOKEN:?CI_JOB_TOKEN is required for the GitLab provenance tag}"
       : "${CI_SERVER_HOST:?CI_SERVER_HOST is required for the GitLab provenance tag}"
       : "${CI_PROJECT_PATH:?CI_PROJECT_PATH is required for the GitLab provenance tag}"
+      : "${GITLAB_MIRROR_USERNAME:?GITLAB_MIRROR_USERNAME must be configured as a protected project variable}"
+      : "${GITLAB_MIRROR_TOKEN:?GITLAB_MIRROR_TOKEN must be configured as a protected masked project variable}"
       : "${GITHUB_APP_ID:?GITHUB_APP_ID must be configured as a protected project variable}"
       : "${GITHUB_APP_INSTALLATION_ID:?GITHUB_APP_INSTALLATION_ID must be configured as a protected project variable}"
       : "${GITHUB_APP_PRIVATE_KEY_B64:?GITHUB_APP_PRIVATE_KEY_B64 must be configured as a protected masked project variable}"
@@ -213,8 +214,8 @@ mirror_public_release:
       cat > "$gitlab_askpass" <<'EOF'
       #!/bin/sh
       case "$1" in
-        *Username*) printf '%s\n' 'gitlab-ci-token' ;;
-        *Password*) printf '%s\n' "$CI_JOB_TOKEN" ;;
+        *Username*) printf '%s\n' "$GITLAB_MIRROR_USERNAME" ;;
+        *Password*) printf '%s\n' "$GITLAB_MIRROR_TOKEN" ;;
         *) exit 1 ;;
       esac
       EOF

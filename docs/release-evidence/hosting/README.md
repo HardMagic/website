@@ -21,9 +21,14 @@ The intended release sequence is:
    artifact tree and pushes it. The job mints a short-lived GitHub App
    installation token from protected `GITHUB_APP_ID`,
    `GITHUB_APP_INSTALLATION_ID`, and masked `GITHUB_APP_PRIVATE_KEY_B64`; the
-   protected masked `GITLAB_PROVENANCE_PRIVATE_KEY_B64` is required for the
-   signed tag. Missing credentials fail the job; none is optional. The job
-   never force-pushes, resets, or publishes the source tree.
+   protected masked `GITLAB_MIRROR_TOKEN` (with its protected
+   `GITLAB_MIRROR_USERNAME`) is used only for the canonical GitLab branch/tag
+   push, while protected masked `GITLAB_PROVENANCE_PRIVATE_KEY_B64` signs the
+   tag. The GitLab mirror token is an expiring organization bot credential
+   sourced from Key Vault; it is used because this self-managed GitLab's CI job
+   token cannot push the protected release branch. Missing credentials fail the
+   job; none is optional. The job never force-pushes, resets, or publishes the
+   source tree.
 4. The release owner verifies DNS, TLS, redirects, CDN freshness, response
    headers, and the canonical host at the actual public edge.
 5. Rollback republishes a previously recorded artifact whose manifest matches
