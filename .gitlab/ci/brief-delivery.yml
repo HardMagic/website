@@ -85,7 +85,8 @@ brief_lock_what_if:
   rules:
     - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true"'
       <<: *brief_delivery_changes
-      when: manual
+      when: on_success
+      allow_failure: false
     - when: never
   environment:
     name: brief-lock/production
@@ -95,8 +96,7 @@ brief_lock_what_if:
     - test -n "$BRIEF_FRONT_DOOR_ID"
     - test -n "$BRIEF_DEPLOYMENT_PRINCIPAL_OBJECT_ID"
     - test -n "$BRIEF_ALERT_ACTION_GROUP_RESOURCE_ID"
-    - test -n "$BRIEF_WAF_POLICY_ID"
-    - az deployment sub what-if --name "hm-brief-lock-$CI_PIPELINE_IID" --location eastus --template-file infra/brief-delivery/main.bicep --parameters infra/brief-delivery/parameters.example.json frontDoorId="$BRIEF_FRONT_DOOR_ID" deploymentPrincipalObjectId="$BRIEF_DEPLOYMENT_PRINCIPAL_OBJECT_ID" alertActionGroupResourceId="$BRIEF_ALERT_ACTION_GROUP_RESOURCE_ID" --result-format ResourceIdOnly
+    - az deployment sub what-if --name "hm-brief-lock-$CI_PIPELINE_IID" --location eastus --template-file infra/brief-delivery/main.bicep --parameters infra/brief-delivery/parameters.example.json frontDoorId="$BRIEF_FRONT_DOOR_ID" deploymentPrincipalObjectId="$BRIEF_DEPLOYMENT_PRINCIPAL_OBJECT_ID" alertActionGroupResourceId="$BRIEF_ALERT_ACTION_GROUP_RESOURCE_ID" --no-prompt true --result-format ResourceIdOnly
 
 brief_lock_deploy:
   extends: .azure_oidc
@@ -111,7 +111,9 @@ brief_lock_deploy:
     - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true"'
       <<: *brief_delivery_changes
       when: manual
+      allow_failure: false
     - when: never
+  manual_confirmation: 'Deploy HardMagic BriefLock to production?'
   allow_failure: false
   resource_group: hardmagic-brief-lock-production
   environment:
@@ -122,8 +124,7 @@ brief_lock_deploy:
     - test -n "$BRIEF_FRONT_DOOR_ID"
     - test -n "$BRIEF_DEPLOYMENT_PRINCIPAL_OBJECT_ID"
     - test -n "$BRIEF_ALERT_ACTION_GROUP_RESOURCE_ID"
-    - test -n "$BRIEF_WAF_POLICY_ID"
-    - DEPLOYMENT_OUTPUT="$(az deployment sub create --name "hm-brief-lock-$CI_PIPELINE_IID" --location eastus --template-file infra/brief-delivery/main.bicep --parameters infra/brief-delivery/parameters.example.json frontDoorId="$BRIEF_FRONT_DOOR_ID" deploymentPrincipalObjectId="$BRIEF_DEPLOYMENT_PRINCIPAL_OBJECT_ID" alertActionGroupResourceId="$BRIEF_ALERT_ACTION_GROUP_RESOURCE_ID" --query properties.outputs -o json)"
+    - DEPLOYMENT_OUTPUT="$(az deployment sub create --name "hm-brief-lock-$CI_PIPELINE_IID" --location eastus --template-file infra/brief-delivery/main.bicep --parameters infra/brief-delivery/parameters.example.json frontDoorId="$BRIEF_FRONT_DOOR_ID" deploymentPrincipalObjectId="$BRIEF_DEPLOYMENT_PRINCIPAL_OBJECT_ID" alertActionGroupResourceId="$BRIEF_ALERT_ACTION_GROUP_RESOURCE_ID" --no-prompt true --query properties.outputs -o json)"
     - FUNCTION_APP_NAME="$(printf '%s' "$DEPLOYMENT_OUTPUT" | jq -r '.functionAppName.value')"
     - FUNCTION_ORIGIN_HOSTNAME="$(printf '%s' "$DEPLOYMENT_OUTPUT" | jq -r '.functionOriginHostname.value')"
     - STORAGE_ACCOUNT_NAME="$(printf '%s' "$DEPLOYMENT_OUTPUT" | jq -r '.storageAccountName.value')"
@@ -133,7 +134,7 @@ brief_lock_deploy:
     - az storage blob upload-batch --account-name "$STORAGE_ACCOUNT_NAME" --destination briefs --source infra/brief-delivery/source-pdfs --pattern '*.pdf' --auth-mode login --overwrite true --content-type application/pdf --output none
     - az functionapp deployment source config-zip --resource-group rg-hardmagic-briefs --name "$FUNCTION_APP_NAME" --src hardmagic-brief-lock.zip --build-remote false --output none
     - az functionapp show --resource-group rg-hardmagic-briefs --name "$FUNCTION_APP_NAME" --query '{name:name,state:state,httpsOnly:httpsOnly,defaultHostName:defaultHostName}' -o json
-    - az deployment group create --resource-group tli_interest --name "hm-brief-edge-$CI_PIPELINE_IID" --template-file infra/brief-delivery/edge.bicep --parameters functionOriginHostname="$FUNCTION_ORIGIN_HOSTNAME" wafPolicyId="$BRIEF_WAF_POLICY_ID" --output none
+    - az deployment group create --resource-group tli_interest --name "hm-brief-edge-$CI_PIPELINE_IID" --mode Incremental --template-file infra/brief-delivery/edge.bicep --parameters functionOriginHostname="$FUNCTION_ORIGIN_HOSTNAME" --output none
     - |
       set -eu
       smoke_root="${BRIEF_SMOKE_URL:-https://briefs.hardmagic.com}"

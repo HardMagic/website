@@ -48,6 +48,12 @@ GitLab in the `hardmagic` organization is authoritative. Include `.gitlab/ci/bri
 - authenticated with a GitLab OIDC ID token;
 - gated by `BRIEF_CONFIRM=PROVISION-HARDMAGIC-BRIEFLOCK`.
 
+The Azure what-if runs automatically for an in-scope protected `demo` pipeline and
+must pass before the production apply becomes available. The apply remains a
+blocking manual job with a second confirmation. The shared Front Door profile-level
+WAF binding is owned by Terraform; this repository's edge template does not declare
+or replace that binding.
+
 Required protected and masked CI/CD variables:
 
 ```text
@@ -77,7 +83,7 @@ Compile Bicep without contacting Azure:
 az bicep build --file infra/brief-delivery/main.bicep --stdout > /dev/null
 ```
 
-Use the GitLab manual `what-if` job before the protected apply. `parameters.example.json` contains names and placeholders only. Sender address, challenge secret, unsubscribe HMAC key, and Dataverse IDs must be written to the dedicated Key Vault by an authorized secret-management process; they never cross the deployment command line.
+The automatic GitLab `what-if` job must pass before the protected apply. `parameters.example.json` contains names and placeholders only. Sender address, challenge secret, unsubscribe HMAC key, and Dataverse IDs must be written to the dedicated Key Vault by an authorized secret-management process; they never cross the deployment command line.
 
 ## Brief artifact evidence
 
@@ -98,7 +104,7 @@ this infrastructure source directory or a public site directory.
 
 This package intentionally does not pretend to own the shared edge or Dataverse control planes. Before deployment is usable:
 
-1. The shared Front Door Terraform authority must create `briefs.hardmagic.com`, route only `/api/brief-request`, `/api/contact-request`, `/api/unsubscribe`, and `/api/health`, preserve the host, and attach the WAF controls in [EDGE-INTEGRATION.md](EDGE-INTEGRATION.md).
+1. The shared Front Door Terraform authority must create `briefs.hardmagic.com`, route only `/api/brief-request`, `/api/contact-request`, `/api/unsubscribe`, and `/api/health`, preserve the host, and attach the WAF controls in [EDGE-INTEGRATION.md](EDGE-INTEGRATION.md). The existing profile-level WAF binding must remain under that Terraform authority; the incremental `edge.bicep` deployment deliberately leaves it untouched.
 2. The HardMagic Dataverse solution, application user, role, BU, Account, team, and custom table must match [DATAVERSE-CONTRACT.md](DATAVERSE-CONTRACT.md).
 3. A custom ACS sender domain must be verified and its sender address added to Key Vault.
 4. Turnstile must be configured on both forms before production; the production default fails closed when it is absent.

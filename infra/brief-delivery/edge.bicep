@@ -1,18 +1,12 @@
 targetScope = 'resourceGroup'
 
-@description('Existing shared Front Door profile. This file owns only HardMagic-named children.')
+@description('Existing shared Front Door profile. This file owns only HardMagic-named children; the shared WAF binding remains Terraform-owned.')
 param profileName string = 'taodoor-standard'
 param endpointName string = 'taodoor'
 param functionOriginHostname string
-param wafPolicyId string
 
 resource profile 'Microsoft.Cdn/profiles@2024-09-01' existing = { name: profileName }
 resource endpoint 'Microsoft.Cdn/profiles/afdEndpoints@2024-09-01' existing = { parent: profile, name: endpointName }
-resource globalEnterpriseDomain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' existing = { parent: profile, name: 'briefs-globalenterprise-com' }
-resource taoLearningDomain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' existing = { parent: profile, name: 'door-taolearning' }
-resource careersApiDomain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' existing = { parent: profile, name: 'careers-api-trustora-net' }
-resource pTaoLearningDomain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' existing = { parent: profile, name: 'p-taolearning-org' }
-resource stayMtCottagesDomain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' existing = { parent: profile, name: 'stay-mtcottages-com' }
 
 resource originGroup 'Microsoft.Cdn/profiles/originGroups@2024-09-01' = {
   parent: profile
@@ -167,34 +161,10 @@ resource route 'Microsoft.Cdn/profiles/afdEndpoints/routes@2024-09-01' = {
   dependsOn: [ origin, securityHeadersRule ]
 }
 
-// Azure Front Door permits one WAF policy attachment per profile. Preserve every
-// existing association while adding the HardMagic custom domain to that binding.
-resource securityPolicy 'Microsoft.Cdn/profiles/securityPolicies@2024-09-01' = {
-  parent: profile
-  name: 'tliwafstandard-binding'
-  properties: {
-    parameters: {
-      type: 'WebApplicationFirewall'
-      wafPolicy: { id: wafPolicyId }
-      associations: [
-        {
-          domains: [
-            { id: endpoint.id }
-            { id: globalEnterpriseDomain.id }
-            { id: careersApiDomain.id }
-            { id: taoLearningDomain.id }
-            { id: pTaoLearningDomain.id }
-            { id: stayMtCottagesDomain.id }
-            { id: domain.id }
-          ]
-          patternsToMatch: [ '/*' ]
-        }
-      ]
-    }
-  }
-}
+// The shared profile-level WAF binding is owned by the authoritative Terraform
+// stack. Keep it out of this incremental deployment so the existing association
+// remains live and cannot be replaced by a partial domain list.
 
 output customDomainId string = domain.id
 output originGroupId string = originGroup.id
 output routeId string = route.id
-output securityPolicyId string = securityPolicy.id

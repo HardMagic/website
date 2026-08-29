@@ -1,6 +1,6 @@
 # The public job produces the root-path candidate from the protected source
-# branch. The artifact is promoted to gh-pages only after this gate passes, and
-# the separate mirror process then carries that exact release to GitHub.
+# branch. The blocking mirror job below is the only path from that approved
+# artifact to GitHub Pages.
 public_release:
   stage: deploy
   needs: []
@@ -18,10 +18,15 @@ public_release:
     paths:
       - .npm/
   script:
+    - test "${CI_COMMIT_BRANCH:-}" = demo
+    - test "${CI_COMMIT_REF_PROTECTED:-}" = true
+    - test "${HARDMAGIC_DEPLOY_TARGET:-}" = public
+    - test "${HARDMAGIC_DEPLOYMENT_TEST_TARGET:-}" = public
     - npm ci --cache .npm --prefer-offline --no-audit --fund=false
     - npm run check
     - npm run typecheck:ts7
     - npm run test
+    - npm exec -- vitest run tests/release/site-release.test.ts
     - NODE_OPTIONS="--require=$CI_PROJECT_DIR/.gitlab/ci/limit-image-build-concurrency.cjs" npm run build
     - npm run audit:security
     - npm exec -- vitest run tests/deployment/deployment-config.test.ts
@@ -33,12 +38,14 @@ public_release:
     - npm run audit:rendered
     - node .gitlab/ci/generate-release-manifest.mjs --target public --artifact-root dist --output docs/release-evidence/release-manifest.json
     - mv dist .pages
-    - rm -rf public
+    - test ! -e .source-public
+    - mv public .source-public
     - mv .pages public
   artifacts:
     name: hardmagic-public-$CI_COMMIT_SHA
     expire_in: 7 days
     paths:
+      - .gitlab/ci/generate-release-manifest.mjs
       - public
       - docs/release-evidence/
       - docs/route-ledger.json
@@ -55,4 +62,235 @@ public_release:
   rules:
     - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true"'
       when: manual
+    - when: never
+
+# This job intentionally consumes the public_release artifact through needs.
+# It never checks out or publishes the source tree, and every external mutation
+# is a normal push that fails on a changed remote rather than force-updating it.
+mirror_public_release:
+  stage: deploy
+  needs:
+    - job: public_release
+      artifacts: true
+  image: harbor.focuscell.org/dockerhub-proxy/library/node:22.12.0-bookworm-slim
+  variables:
+    GITHUB_PAGES_REPOSITORY: HardMagic/website
+    GITHUB_PAGES_BRANCH: gh-pages
+    # Artifacts must be extracted into an empty worktree so source files cannot
+    # survive beside or inside the approved public artifact.
+    GIT_STRATEGY: empty
+    GIT_DEPTH: '0'
+  before_script:
+    - apt-get update
+    - apt-get install -y --no-install-recommends ca-certificates curl git gnupg jq openssl
+  script:
+    - |
+      set -eu
+      set -o pipefail
+
+      if [ "${CI_COMMIT_BRANCH:-}" != "demo" ] || [ "${CI_COMMIT_REF_PROTECTED:-}" != "true" ]; then
+        echo "Refusing public promotion outside the protected demo branch."
+        exit 1
+      fi
+      if [ "${CI_COMMIT_REF_NAME:-}" != "demo" ]; then
+        echo "Refusing public promotion with a non-demo ref name."
+        exit 1
+      fi
+      : "${CI_COMMIT_SHA:?CI_COMMIT_SHA is required}"
+      : "${CI_COMMIT_TIMESTAMP:?CI_COMMIT_TIMESTAMP is required for a deterministic mirror commit}"
+      : "${CI_COMMIT_REF_NAME:?CI_COMMIT_REF_NAME is required}"
+      : "${CI_PIPELINE_ID:?CI_PIPELINE_ID is required}"
+      : "${CI_JOB_TOKEN:?CI_JOB_TOKEN is required for the GitLab provenance tag}"
+      : "${CI_SERVER_HOST:?CI_SERVER_HOST is required for the GitLab provenance tag}"
+      : "${CI_PROJECT_PATH:?CI_PROJECT_PATH is required for the GitLab provenance tag}"
+      : "${GITHUB_APP_ID:?GITHUB_APP_ID must be configured as a protected project variable}"
+      : "${GITHUB_APP_INSTALLATION_ID:?GITHUB_APP_INSTALLATION_ID must be configured as a protected project variable}"
+      : "${GITHUB_APP_PRIVATE_KEY_B64:?GITHUB_APP_PRIVATE_KEY_B64 must be configured as a protected masked project variable}"
+      : "${GITLAB_PROVENANCE_PRIVATE_KEY_B64:?GITLAB_PROVENANCE_PRIVATE_KEY_B64 must be configured as a protected project variable}"
+      : "${GITHUB_PAGES_REPOSITORY:?GITHUB_PAGES_REPOSITORY is required}"
+      : "${GITHUB_PAGES_BRANCH:?GITHUB_PAGES_BRANCH is required}"
+      test "$GITHUB_PAGES_REPOSITORY" = 'HardMagic/website'
+      test "$GITHUB_PAGES_BRANCH" = 'gh-pages'
+
+      case "$GITHUB_APP_ID" in
+        ''|*[!0-9]*) echo "GITHUB_APP_ID must be numeric." >&2; exit 1 ;;
+      esac
+      case "$GITHUB_APP_INSTALLATION_ID" in
+        ''|*[!0-9]*) echo "GITHUB_APP_INSTALLATION_ID must be numeric." >&2; exit 1 ;;
+      esac
+      github_app_key="$(mktemp)"
+      chmod 600 "$github_app_key"
+      printf '%s' "$GITHUB_APP_PRIVATE_KEY_B64" | base64 --decode > "$github_app_key"
+      test -s "$github_app_key"
+      base64url() {
+        printf '%s' "$1" | openssl base64 -A | tr '+/' '-_' | tr -d '='
+      }
+      issued_at="$(date +%s)"
+      jwt_header="$(base64url '{"alg":"RS256","typ":"JWT"}')"
+      jwt_payload="$(base64url "{\"iat\":$((issued_at - 60)),\"exp\":$((issued_at + 540)),\"iss\":$GITHUB_APP_ID}")"
+      jwt_unsigned="$jwt_header.$jwt_payload"
+      jwt_signature="$(printf '%s' "$jwt_unsigned" | openssl dgst -sha256 -sign "$github_app_key" | openssl base64 -A | tr '+/' '-_' | tr -d '=')"
+      github_app_jwt="$jwt_unsigned.$jwt_signature"
+      GITHUB_TOKEN="$(curl --fail --silent --show-error --request POST \
+        --url "https://api.github.com/app/installations/$GITHUB_APP_INSTALLATION_ID/access_tokens" \
+        --header 'Accept: application/vnd.github+json' \
+        --header "Authorization: Bearer $github_app_jwt" \
+        --header 'X-GitHub-Api-Version: 2022-11-28' | jq -er '.token')"
+      export GITHUB_TOKEN
+      test -n "$GITHUB_TOKEN"
+
+      artifact_root="$CI_PROJECT_DIR/public"
+      release_manifest="$CI_PROJECT_DIR/docs/release-evidence/release-manifest.json"
+      test -d "$artifact_root"
+      test -f "$release_manifest"
+      node .gitlab/ci/generate-release-manifest.mjs \
+        --verify \
+        --target public \
+        --artifact-root "$artifact_root" \
+        --manifest "$release_manifest"
+      artifact_sha256="$(node --input-type=module -e 'import { readFileSync } from "node:fs"; const manifest = JSON.parse(readFileSync(process.argv[1], "utf8")); process.stdout.write(manifest.release.artifact.sha256);' "$release_manifest")"
+      test -n "$artifact_sha256"
+
+      if find "$artifact_root" -type l -print -quit | grep -q .; then
+        echo "Refusing an artifact containing symlinks."
+        exit 1
+      fi
+
+      provenance_tag="public-release-${CI_COMMIT_SHA}"
+      gpg_home="$(mktemp -d)"
+      chmod 700 "$gpg_home"
+      export GNUPGHOME="$gpg_home"
+      provenance_key="$(mktemp)"
+      chmod 600 "$provenance_key"
+      printf '%s' "$GITLAB_PROVENANCE_PRIVATE_KEY_B64" | base64 --decode > "$provenance_key"
+      test -s "$provenance_key"
+      gpg --batch --import "$provenance_key" >/dev/null
+      signing_key="$(gpg --batch --list-secret-keys --with-colons | awk -F: '$1 == "sec" { print $5; exit }')"
+      test -n "$signing_key"
+
+      build_artifact_tree() {
+        local repository="$1"
+        local artifact_index="$repository/.git/approved-artifact-index"
+        local artifact_file artifact_path artifact_blob artifact_mode
+        export GIT_INDEX_FILE="$artifact_index"
+        git -C "$repository" read-tree --empty
+        find "$artifact_root" -type f -print0 | sort -z | while IFS= read -r -d '' artifact_file; do
+          artifact_path="${artifact_file#"$artifact_root"/}"
+          artifact_blob="$(git -C "$repository" hash-object -w "$artifact_file")"
+          if [ -x "$artifact_file" ]; then
+            artifact_mode=100755
+          else
+            artifact_mode=100644
+          fi
+          git -C "$repository" update-index --add --cacheinfo "$artifact_mode,$artifact_blob,$artifact_path"
+        done
+        test "$(git -C "$repository" ls-files | wc -l)" -gt 0
+        git -C "$repository" write-tree
+        unset GIT_INDEX_FILE
+      }
+
+      # GitLab owns the canonical public branch. The temporary repository holds
+      # only the fetched source commit and the artifact tree; it never publishes
+      # the source tree to either host.
+      gitlab_repo="$(mktemp -d)"
+      git -C "$gitlab_repo" init --quiet
+      git -C "$gitlab_repo" remote add origin "https://${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"
+      gitlab_askpass="$(mktemp)"
+      cat > "$gitlab_askpass" <<'EOF'
+      #!/bin/sh
+      case "$1" in
+        *Username*) printf '%s\n' 'gitlab-ci-token' ;;
+        *Password*) printf '%s\n' "$CI_JOB_TOKEN" ;;
+        *) exit 1 ;;
+      esac
+      EOF
+      chmod 700 "$gitlab_askpass"
+      export GIT_ASKPASS="$gitlab_askpass"
+      export GIT_TERMINAL_PROMPT=0
+      git -C "$gitlab_repo" fetch --quiet --depth=1 origin "refs/heads/$GITHUB_PAGES_BRANCH:refs/remotes/origin/$GITHUB_PAGES_BRANCH"
+      gitlab_base_commit="$(git -C "$gitlab_repo" rev-parse "refs/remotes/origin/$GITHUB_PAGES_BRANCH")"
+      git -C "$gitlab_repo" fetch --quiet --depth=1 origin "$CI_COMMIT_SHA"
+      test "$(git -C "$gitlab_repo" rev-parse FETCH_HEAD)" = "$CI_COMMIT_SHA"
+      gitlab_artifact_tree="$(build_artifact_tree "$gitlab_repo")"
+      git -C "$gitlab_repo" config user.name 'HardMagic release provenance'
+      git -C "$gitlab_repo" config user.email 'release-provenance@hardmagic.com'
+      export GIT_AUTHOR_DATE="$CI_COMMIT_TIMESTAMP"
+      export GIT_COMMITTER_DATE="$CI_COMMIT_TIMESTAMP"
+      release_commit_message="Publish HardMagic public artifact $CI_COMMIT_SHA ($artifact_sha256)"
+      gitlab_release_commit="$(git -C "$gitlab_repo" commit-tree "$gitlab_artifact_tree" -p "$gitlab_base_commit" -m "$release_commit_message")"
+      test "$(git -C "$gitlab_repo" show -s --format=%T "$gitlab_release_commit")" = "$gitlab_artifact_tree"
+
+      github_parent="$(mktemp -d)"
+      github_worktree="$github_parent/repository"
+      github_askpass="$(mktemp)"
+      cat > "$github_askpass" <<'EOF'
+      #!/bin/sh
+      case "$1" in
+        *Username*) printf '%s\n' 'x-access-token' ;;
+        *Password*) printf '%s\n' "$GITHUB_TOKEN" ;;
+        *) exit 1 ;;
+      esac
+      EOF
+      chmod 700 "$github_askpass"
+      export GIT_ASKPASS="$github_askpass"
+      github_url="https://github.com/${GITHUB_PAGES_REPOSITORY}.git"
+      git clone --branch "$GITHUB_PAGES_BRANCH" --single-branch --depth=1 "$github_url" "$github_worktree"
+      test "$(git -C "$github_worktree" symbolic-ref --short HEAD)" = "$GITHUB_PAGES_BRANCH"
+      github_base_commit="$(git -C "$github_worktree" rev-parse HEAD)"
+      github_artifact_tree="$(build_artifact_tree "$github_worktree")"
+      test "$github_artifact_tree" = "$gitlab_artifact_tree"
+      git -C "$github_worktree" config user.name 'HardMagic release mirror'
+      git -C "$github_worktree" config user.email 'release-mirror@hardmagic.com'
+      artifact_commit="$(git -C "$github_worktree" commit-tree "$github_artifact_tree" -p "$github_base_commit" -m "$release_commit_message")"
+      test "$(git -C "$github_worktree" show -s --format=%T "$artifact_commit")" = "$github_artifact_tree"
+
+      provenance_message="$(mktemp)"
+      cat > "$provenance_message" <<EOF
+      HardMagic public release provenance
+
+      Source commit: $CI_COMMIT_SHA
+      Source branch: $CI_COMMIT_REF_NAME
+      GitLab pipeline: $CI_PIPELINE_ID
+      Artifact SHA-256: $artifact_sha256
+      GitLab release commit: $gitlab_release_commit
+      GitHub repository: $GITHUB_PAGES_REPOSITORY
+      GitHub branch: $GITHUB_PAGES_BRANCH
+      GitHub commit: $artifact_commit
+      EOF
+
+      if git -C "$gitlab_repo" ls-remote --exit-code origin "refs/tags/$provenance_tag" >/dev/null 2>&1; then
+        git -C "$gitlab_repo" fetch --quiet origin "refs/tags/$provenance_tag:refs/tags/$provenance_tag"
+        git -C "$gitlab_repo" tag -v "$provenance_tag"
+        test "$(git -C "$gitlab_repo" rev-parse "$provenance_tag^{}")" = "$CI_COMMIT_SHA"
+        tag_contents="$(git -C "$gitlab_repo" cat-file tag "$provenance_tag")"
+        printf '%s\n' "$tag_contents" | grep -F "Artifact SHA-256: $artifact_sha256" >/dev/null
+        printf '%s\n' "$tag_contents" | grep -F "GitLab release commit: $gitlab_release_commit" >/dev/null
+        printf '%s\n' "$tag_contents" | grep -F "GitHub commit: $artifact_commit" >/dev/null
+        echo "Verified the existing signed GitLab provenance tag $provenance_tag."
+      else
+        git -C "$gitlab_repo" config user.name 'HardMagic release provenance'
+        git -C "$gitlab_repo" config user.email 'release-provenance@hardmagic.com'
+        git -C "$gitlab_repo" config user.signingkey "$signing_key"
+        git -C "$gitlab_repo" tag -s --local-user "$signing_key" "$provenance_tag" "$CI_COMMIT_SHA" -F "$provenance_message"
+        git -C "$gitlab_repo" tag -v "$provenance_tag"
+      fi
+
+      # Update GitLab's canonical branch and signed tag atomically. If this
+      # fails, GitHub is left unchanged and the job fails closed.
+      git -C "$gitlab_repo" push --atomic origin "$gitlab_release_commit:refs/heads/$GITHUB_PAGES_BRANCH" "$provenance_tag"
+      export GIT_ASKPASS="$github_askpass"
+      git -C "$github_worktree" push origin "$artifact_commit:refs/heads/$GITHUB_PAGES_BRANCH"
+      git -C "$github_worktree" fetch --quiet origin "$GITHUB_PAGES_BRANCH"
+      published_commit="$(git -C "$github_worktree" rev-parse FETCH_HEAD)"
+      test "$published_commit" = "$artifact_commit"
+      echo "Published approved artifact $artifact_sha256 to GitHub $GITHUB_PAGES_REPOSITORY:$GITHUB_PAGES_BRANCH."
+  allow_failure: false
+  resource_group: hardmagic-public-pages
+  environment:
+    name: production-pages
+    action: start
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true"'
+      when: manual
+      allow_failure: false
     - when: never
