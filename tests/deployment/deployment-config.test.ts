@@ -1,6 +1,9 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
+
+const repositoryRoot = resolve(import.meta.dirname, '../..');
+const readRepositoryFile = (path: string) => readFileSync(join(repositoryRoot, path), 'utf8');
 
 process.env.HARDMAGIC_DEPLOY_TARGET ??= 'local';
 const {
@@ -11,6 +14,28 @@ const {
   PUBLIC_SITE_ORIGIN,
   resolveDeploymentTarget,
 } = await import('../../astro.config');
+
+describe('BriefLock deployment contracts', () => {
+  it('sets the documented public host as the Front Door origin host header', () => {
+    const source = readRepositoryFile('infra/brief-delivery/edge.bicep');
+    expect(source).toContain("originHostHeader: 'briefs.hardmagic.com'");
+    expect(source).not.toContain('originHostHeader: functionOriginHostname');
+  });
+
+  it('suppresses only the known benign lifecycle messages in the failure alert', () => {
+    const source = readRepositoryFile('infra/brief-delivery/modules/brief-lock.bicep');
+    expect(source).toContain('node exited with code 143');
+    expect(source).toContain('Language Worker Process exited');
+    expect(source).toContain('AlertMessage in (benignSigtermMessages)');
+    expect(source).toContain('AlertMessage == "Language Worker Process exited"');
+    expect(source).toContain('benignSigtermPresent');
+    expect(source).toContain('benignWorkerExitPresent');
+    expect(source).toContain('not (benignSigtermPresent and benignWorkerExitPresent and AlertMessage in (benignLifecycleMessages))');
+    expect(source).toContain('AppExceptions');
+    expect(source).toContain('AppTraces | where SeverityLevel >= 3');
+    expect(source).not.toContain('AlertMessage has_any');
+  });
+});
 
 describe('deployment target contract', () => {
   it('keeps local and public builds at the origin root', () => {

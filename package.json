@@ -21,8 +21,9 @@
     "audit:links": "node scripts/audit-link-graph.mjs",
     "audit:ctas": "node scripts/audit-ctas.mjs",
     "audit:rendered": "node scripts/audit-rendered-routes.mjs",
+    "audit:security": "node scripts/audit-security.mjs",
     "briefs:pdf": "node scripts/generate-brief-pdfs.mjs",
-    "verify": "npm run check && npm run typecheck:ts7 && npm run test && npm run build && npm run audit:routes && npm run audit:sitemap && npm run audit:media && npm run audit:links && npm run audit:ctas && npm run audit:rendered && npm run test:browser"
+    "verify": "npm run check && npm run typecheck:ts7 && npm run test && npm run build && npm run audit:security && npm run audit:routes && npm run audit:sitemap && npm run audit:media && npm run audit:links && npm run audit:ctas && npm run audit:rendered && npm run test:browser"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",

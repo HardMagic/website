@@ -24,6 +24,10 @@ var keyVaultSuffix = environment().suffixes.keyvaultDns
 var blobDataContributorRoleId = 'ba92f5b4-2d11-453d-a403-e96b0029c9fe'
 var queueDataContributorRoleId = '974c5e8b-45b9-4653-ba55-5f855dd0fb88'
 var keyVaultSecretsUserRoleId = '4633458b-17de-408a-b874-0445c86b69e6'
+// Keep the lifecycle-recycle exception exact: suppress the known pair only
+// when both messages are present in the same alert window. Delivery failures
+// and other worker exits remain alertable.
+var functionFailureQuery = 'let benignSigtermMessages = dynamic(["node exited with code 143", "node exited with code 143 (SIGTERM)"]); let benignLifecycleMessages = dynamic(["node exited with code 143", "node exited with code 143 (SIGTERM)", "Language Worker Process exited"]); let recentFailures = union isfuzzy=true AppExceptions, (AppTraces | where SeverityLevel >= 3) | extend AlertMessage = tostring(coalesce(Message, ExceptionMessage, OuterMessage, InnermostMessage, ProblemId)) | where TimeGenerated > ago(10m); let benignSigtermPresent = toscalar(recentFailures | where AlertMessage in (benignSigtermMessages) | summarize Present = count() > 0 | project Present); let benignWorkerExitPresent = toscalar(recentFailures | where AlertMessage == "Language Worker Process exited" | summarize Present = count() > 0 | project Present); recentFailures | where not (benignSigtermPresent and benignWorkerExitPresent and AlertMessage in (benignLifecycleMessages)) | summarize FailureCount=count()'
 
 resource runtimeIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
   name: runtimeIdentityName
@@ -461,7 +465,7 @@ resource functionFailureAlert 'Microsoft.Insights/scheduledQueryRules@2025-01-01
     criteria: {
       allOf: [
         {
-          query: 'union isfuzzy=true AppExceptions, (AppTraces | where SeverityLevel >= 3) | where TimeGenerated > ago(10m) | summarize FailureCount=count()'
+          query: functionFailureQuery
           timeAggregation: 'Total'
           metricMeasureColumn: 'FailureCount'
           operator: 'GreaterThan'

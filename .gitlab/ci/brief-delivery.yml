@@ -90,7 +90,7 @@ brief_lock_what_if:
   environment:
     name: brief-lock/production
     action: prepare
-  allow_failure: true
+  allow_failure: false
   script:
     - test -n "$BRIEF_FRONT_DOOR_ID"
     - test -n "$BRIEF_DEPLOYMENT_PRINCIPAL_OBJECT_ID"
@@ -111,7 +111,7 @@ brief_lock_deploy:
       <<: *brief_delivery_changes
       when: manual
     - when: never
-  allow_failure: true
+  allow_failure: false
   resource_group: hardmagic-brief-lock-production
   environment:
     name: brief-lock/production
@@ -133,3 +133,23 @@ brief_lock_deploy:
     - az functionapp deployment source config-zip --resource-group rg-hardmagic-briefs --name "$FUNCTION_APP_NAME" --src hardmagic-brief-lock.zip --build-remote false --output none
     - az functionapp show --resource-group rg-hardmagic-briefs --name "$FUNCTION_APP_NAME" --query '{name:name,state:state,httpsOnly:httpsOnly,defaultHostName:defaultHostName}' -o json
     - az deployment group create --resource-group tli_interest --name "hm-brief-edge-$CI_PIPELINE_IID" --template-file infra/brief-delivery/edge.bicep --parameters functionOriginHostname="$FUNCTION_ORIGIN_HOSTNAME" wafPolicyId="$BRIEF_WAF_POLICY_ID" --output none
+    - |
+      set -eu
+      smoke_root="${BRIEF_SMOKE_URL:-https://briefs.hardmagic.com}"
+      smoke_root="${smoke_root%/}"
+      smoke_headers="$(mktemp)"
+      trap 'rm -f "$smoke_headers"' EXIT
+      check_security_headers() {
+        for header in strict-transport-security content-security-policy permissions-policy x-frame-options cross-origin-opener-policy cross-origin-resource-policy x-content-type-options referrer-policy x-permitted-cross-domain-policies; do
+          grep -Eiq "^${header}:" "$smoke_headers"
+        done
+      }
+      health_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' "$smoke_root/api/health")"
+      test "$health_status" = "200"
+      check_security_headers
+      options_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X OPTIONS -H 'Origin: https://hardmagic.com' "$smoke_root/api/brief-request")"
+      test "$options_status" = "204"
+      check_security_headers
+      invalid_body_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X POST -H 'Origin: https://hardmagic.com' -H 'Content-Type: application/json' --data-binary '{}' "$smoke_root/api/brief-request")"
+      test "$invalid_body_status" = "400"
+      check_security_headers

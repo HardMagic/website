@@ -30,12 +30,25 @@ Object.assign(process.env, {
   RATE_LIMIT_PER_HOUR: "5",
 });
 
-const { validateEdgeRequest } = await import("../src/index.js");
+const { briefRequest, health, SECURITY_HEADERS, validateEdgeRequest } = await import("../src/index.js");
 const { buildAccountScopedContactQuery, renderBriefEmail } = await import("../src/platform.js");
 const { briefs } = await import("../src/catalog.js");
 
 function request(headers: Record<string, string>, url = "https://briefs.hardmagic.com/api/health") {
-  return { headers: new Headers(headers), url };
+  return { method: "GET", headers: new Headers(headers), url };
+}
+
+function requestWithBody(method: string, headers: Record<string, string>, body = "") {
+  return { method, headers: new Headers(headers), url: "https://briefs.hardmagic.com/api/brief-request", text: async () => body };
+}
+
+function assertSecurityHeaders(response: { headers?: HeadersInit }) {
+  const headers = new Headers(response.headers);
+  for (const name of Object.keys(SECURITY_HEADERS)) assert.ok(headers.has(name), `missing ${name}`);
+  assert.equal(headers.get("strict-transport-security"), SECURITY_HEADERS["strict-transport-security"]);
+  assert.equal(headers.get("x-frame-options"), "DENY");
+  assert.equal(headers.get("x-content-type-options"), "nosniff");
+  assert.match(headers.get("content-security-policy") ?? "", /script-src 'none'/);
 }
 
 test("edge identity and exact HardMagic host are both required", () => {
@@ -53,6 +66,43 @@ test("foreign browser origins fail before body processing", () => {
     origin: "https://evil.example",
   }));
   assert.equal(result?.status, 403);
+});
+
+test("health, CORS preflight, invalid bodies, and edge failures carry complete security headers", async () => {
+  resetConfigForTests();
+  const edgeHeaders = {
+    "x-azure-fdid": "22222222-2222-4222-8222-222222222222",
+    "x-forwarded-host": "briefs.hardmagic.com",
+  };
+  const healthResponse = await health(request(edgeHeaders) as never);
+  assert.equal(healthResponse.status, 200);
+  assertSecurityHeaders(healthResponse);
+
+  const optionsResponse = await briefRequest(requestWithBody("OPTIONS", { ...edgeHeaders, origin: "https://hardmagic.com" }) as never, {} as never);
+  assert.equal(optionsResponse.status, 204);
+  assert.equal(new Headers(optionsResponse.headers).get("access-control-allow-origin"), "https://hardmagic.com");
+  assertSecurityHeaders(optionsResponse);
+
+  const invalidBodyResponse = await briefRequest(requestWithBody("POST", { ...edgeHeaders, origin: "https://hardmagic.com", "content-type": "application/json" }, "{}") as never, {} as never);
+  assert.equal(invalidBodyResponse.status, 400);
+  assertSecurityHeaders(invalidBodyResponse);
+
+  const edgeFailure = await health(request({ ...edgeHeaders, "x-forwarded-host": "evil.example" }) as never);
+  assert.equal(edgeFailure.status, 404);
+  assertSecurityHeaders(edgeFailure);
+
+  const originalBriefHost = process.env.BRIEF_HOST;
+  delete process.env.BRIEF_HOST;
+  resetConfigForTests();
+  try {
+    const configurationFailure = await health(request(edgeHeaders) as never);
+    assert.equal(configurationFailure.status, 503);
+    assertSecurityHeaders(configurationFailure);
+  } finally {
+    if (originalBriefHost === undefined) delete process.env.BRIEF_HOST;
+    else process.env.BRIEF_HOST = originalBriefHost;
+    resetConfigForTests();
+  }
 });
 
 test("field-guide email is branded, escaped, responsive, and has both private actions", () => {

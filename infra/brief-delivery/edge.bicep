@@ -27,7 +27,7 @@ resource origin 'Microsoft.Cdn/profiles/originGroups/origins@2024-09-01' = {
   name: 'hardmagic-brief-function'
   properties: {
     hostName: functionOriginHostname
-    originHostHeader: functionOriginHostname
+    originHostHeader: 'briefs.hardmagic.com'
     httpPort: 80
     httpsPort: 443
     priority: 1

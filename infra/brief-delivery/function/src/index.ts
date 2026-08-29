@@ -25,6 +25,18 @@ import {
 const MAX_BODY_BYTES = 24_000;
 const CONTACT_THANK_YOU_PATH = "/contact/thanks/";
 
+export const SECURITY_HEADERS: Readonly<Record<string, string>> = Object.freeze({
+  "strict-transport-security": "max-age=31536000; includeSubDomains",
+  "content-security-policy": "default-src 'none'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'none'; style-src 'unsafe-inline'; img-src 'none'",
+  "permissions-policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), usb=(), xr-spatial-tracking=(), autoplay=(self \"https://www.youtube-nocookie.com\"), fullscreen=(self \"https://www.youtube-nocookie.com\"), picture-in-picture=(self \"https://www.youtube-nocookie.com\")",
+  "x-frame-options": "DENY",
+  "cross-origin-opener-policy": "same-origin",
+  "cross-origin-resource-policy": "same-origin",
+  "x-content-type-options": "nosniff",
+  "referrer-policy": "no-referrer",
+  "x-permitted-cross-domain-policies": "none",
+});
+
 type FunnelInput = Record<string, string | undefined>;
 
 export type ExistingRequestDecision = "conflict" | "complete" | "in-flight" | "failed";
@@ -419,9 +431,6 @@ function corsHeaders(request: Pick<HttpRequest, "headers">): Record<string, stri
   const origin = request.headers.get("origin");
   return {
     "cache-control": "no-store",
-    "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
-    "referrer-policy": "no-referrer",
-    "x-content-type-options": "nosniff",
     ...(origin && config.ALLOWED_ORIGINS.includes(origin) ? { "access-control-allow-origin": origin, vary: "Origin", "access-control-allow-methods": "POST, OPTIONS", "access-control-allow-headers": "content-type" } : {}),
   };
 }
@@ -431,6 +440,7 @@ function response(status: number, body: string, headers: Record<string, string> 
     status,
     body,
     headers: {
+      ...SECURITY_HEADERS,
       "cache-control": "no-store",
       "content-type": "text/plain; charset=utf-8",
       ...headers,

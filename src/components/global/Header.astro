@@ -26,11 +26,4 @@ const isHome = path === import.meta.env.BASE_URL;
     </nav>
   </div>
 </header>
-<script>
-  const items = [...document.querySelectorAll<HTMLDetailsElement>('.mega-item')];
-  items.forEach((item) => item.addEventListener('toggle', () => {
-    if (item.open) items.forEach((other) => { if (other !== item) other.open = false; });
-  }));
-  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') items.forEach((item) => item.open = false); });
-  document.addEventListener('pointerdown', (event) => { if (!(event.target as Element).closest('.mega-item')) items.forEach((item) => item.open = false); });
-</script>
+<script is:inline src="scripts/header-navigation.js"></script>
