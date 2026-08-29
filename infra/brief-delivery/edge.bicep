@@ -52,6 +52,104 @@ resource domain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' = {
   }
 }
 
+resource securityHeadersRuleSet 'Microsoft.Cdn/profiles/ruleSets@2024-09-01' = {
+  parent: profile
+  name: 'HardMagicSecurityHeaders'
+}
+
+resource securityHeadersRule 'Microsoft.Cdn/profiles/ruleSets/rules@2024-09-01' = {
+  parent: securityHeadersRuleSet
+  name: 'AddSecurityHeaders'
+  properties: {
+    order: 1
+    matchProcessingBehavior: 'Continue'
+    conditions: []
+    actions: [
+      {
+        name: 'ModifyResponseHeader'
+        parameters: {
+          typeName: 'DeliveryRuleHeaderActionParameters'
+          headerAction: 'Overwrite'
+          headerName: 'Strict-Transport-Security'
+          value: 'max-age=31536000; includeSubDomains'
+        }
+      }
+      {
+        name: 'ModifyResponseHeader'
+        parameters: {
+          typeName: 'DeliveryRuleHeaderActionParameters'
+          headerAction: 'Overwrite'
+          headerName: 'Content-Security-Policy'
+          value: base64ToString('ZGVmYXVsdC1zcmMgJ25vbmUnOyBiYXNlLXVyaSAnbm9uZSc7IG9iamVjdC1zcmMgJ25vbmUnOyBmcmFtZS1hbmNlc3RvcnMgJ25vbmUnOyBmb3JtLWFjdGlvbiAnc2VsZic7IHNjcmlwdC1zcmMgJ25vbmUnOyBzdHlsZS1zcmMgJ3Vuc2FmZS1pbmxpbmUnOyBpbWctc3JjICdub25lJw==')
+        }
+      }
+      {
+        name: 'ModifyResponseHeader'
+        parameters: {
+          typeName: 'DeliveryRuleHeaderActionParameters'
+          headerAction: 'Overwrite'
+          headerName: 'Permissions-Policy'
+          value: 'accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), usb=(), xr-spatial-tracking=(), autoplay=(self "https://www.youtube-nocookie.com"), fullscreen=(self "https://www.youtube-nocookie.com"), picture-in-picture=(self "https://www.youtube-nocookie.com")'
+        }
+      }
+      {
+        name: 'ModifyResponseHeader'
+        parameters: {
+          typeName: 'DeliveryRuleHeaderActionParameters'
+          headerAction: 'Overwrite'
+          headerName: 'X-Frame-Options'
+          value: 'DENY'
+        }
+      }
+      {
+        name: 'ModifyResponseHeader'
+        parameters: {
+          typeName: 'DeliveryRuleHeaderActionParameters'
+          headerAction: 'Overwrite'
+          headerName: 'Cross-Origin-Opener-Policy'
+          value: 'same-origin'
+        }
+      }
+      {
+        name: 'ModifyResponseHeader'
+        parameters: {
+          typeName: 'DeliveryRuleHeaderActionParameters'
+          headerAction: 'Overwrite'
+          headerName: 'Cross-Origin-Resource-Policy'
+          value: 'same-origin'
+        }
+      }
+      {
+        name: 'ModifyResponseHeader'
+        parameters: {
+          typeName: 'DeliveryRuleHeaderActionParameters'
+          headerAction: 'Overwrite'
+          headerName: 'X-Content-Type-Options'
+          value: 'nosniff'
+        }
+      }
+      {
+        name: 'ModifyResponseHeader'
+        parameters: {
+          typeName: 'DeliveryRuleHeaderActionParameters'
+          headerAction: 'Overwrite'
+          headerName: 'Referrer-Policy'
+          value: 'no-referrer'
+        }
+      }
+      {
+        name: 'ModifyResponseHeader'
+        parameters: {
+          typeName: 'DeliveryRuleHeaderActionParameters'
+          headerAction: 'Overwrite'
+          headerName: 'X-Permitted-Cross-Domain-Policies'
+          value: 'none'
+        }
+      }
+    ]
+  }
+}
+
 resource route 'Microsoft.Cdn/profiles/afdEndpoints/routes@2024-09-01' = {
   parent: endpoint
   name: 'hardmagic-briefs-route'
@@ -64,8 +162,9 @@ resource route 'Microsoft.Cdn/profiles/afdEndpoints/routes@2024-09-01' = {
     linkToDefaultDomain: 'Disabled'
     httpsRedirect: 'Enabled'
     enabledState: 'Enabled'
+    ruleSets: [ { id: securityHeadersRuleSet.id } ]
   }
-  dependsOn: [ origin ]
+  dependsOn: [ origin, securityHeadersRule ]
 }
 
 // Azure Front Door permits one WAF policy attachment per profile. Preserve every

@@ -283,10 +283,10 @@ resource functionApp 'Microsoft.Web/sites@2024-11-01' = {
         }
       ]
       cors: {
-        // CORS is emitted by the function so every preflight also receives
-        // the runtime security headers. An empty host-level allow-list keeps
-        // the Functions platform from short-circuiting OPTIONS responses.
-        allowedOrigins: []
+        // The Functions host owns the browser preflight response. The shared
+        // Front Door rule set adds the security headers that the host omits
+        // from its optimized preflight path.
+        allowedOrigins: serviceConfig.allowedOrigins
         supportCredentials: false
       }
       appSettings: [
