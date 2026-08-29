@@ -82,7 +82,7 @@ mirror_public_release:
     GIT_DEPTH: '0'
   before_script:
     - apt-get update
-    - apt-get install -y --no-install-recommends ca-certificates git gnupg
+    - apt-get install -y --no-install-recommends ca-certificates curl git gnupg jq openssl
   script:
     - |
       set -eu
@@ -103,12 +103,41 @@ mirror_public_release:
       : "${CI_JOB_TOKEN:?CI_JOB_TOKEN is required for the GitLab provenance tag}"
       : "${CI_SERVER_HOST:?CI_SERVER_HOST is required for the GitLab provenance tag}"
       : "${CI_PROJECT_PATH:?CI_PROJECT_PATH is required for the GitLab provenance tag}"
-      : "${GITHUB_TOKEN:?GITHUB_TOKEN must be configured as a protected project variable}"
+      : "${GITHUB_APP_ID:?GITHUB_APP_ID must be configured as a protected project variable}"
+      : "${GITHUB_APP_INSTALLATION_ID:?GITHUB_APP_INSTALLATION_ID must be configured as a protected project variable}"
+      : "${GITHUB_APP_PRIVATE_KEY_B64:?GITHUB_APP_PRIVATE_KEY_B64 must be configured as a protected masked project variable}"
       : "${GITLAB_PROVENANCE_PRIVATE_KEY_B64:?GITLAB_PROVENANCE_PRIVATE_KEY_B64 must be configured as a protected project variable}"
       : "${GITHUB_PAGES_REPOSITORY:?GITHUB_PAGES_REPOSITORY is required}"
       : "${GITHUB_PAGES_BRANCH:?GITHUB_PAGES_BRANCH is required}"
       test "$GITHUB_PAGES_REPOSITORY" = 'HardMagic/website'
       test "$GITHUB_PAGES_BRANCH" = 'gh-pages'
+
+      case "$GITHUB_APP_ID" in
+        ''|*[!0-9]*) echo "GITHUB_APP_ID must be numeric." >&2; exit 1 ;;
+      esac
+      case "$GITHUB_APP_INSTALLATION_ID" in
+        ''|*[!0-9]*) echo "GITHUB_APP_INSTALLATION_ID must be numeric." >&2; exit 1 ;;
+      esac
+      github_app_key="$(mktemp)"
+      chmod 600 "$github_app_key"
+      printf '%s' "$GITHUB_APP_PRIVATE_KEY_B64" | base64 --decode > "$github_app_key"
+      test -s "$github_app_key"
+      base64url() {
+        printf '%s' "$1" | openssl base64 -A | tr '+/' '-_' | tr -d '='
+      }
+      issued_at="$(date +%s)"
+      jwt_header="$(base64url '{"alg":"RS256","typ":"JWT"}')"
+      jwt_payload="$(base64url "{\"iat\":$((issued_at - 60)),\"exp\":$((issued_at + 540)),\"iss\":$GITHUB_APP_ID}")"
+      jwt_unsigned="$jwt_header.$jwt_payload"
+      jwt_signature="$(printf '%s' "$jwt_unsigned" | openssl dgst -sha256 -sign "$github_app_key" | openssl base64 -A | tr '+/' '-_' | tr -d '=')"
+      github_app_jwt="$jwt_unsigned.$jwt_signature"
+      GITHUB_TOKEN="$(curl --fail --silent --show-error --request POST \
+        --url "https://api.github.com/app/installations/$GITHUB_APP_INSTALLATION_ID/access_tokens" \
+        --header 'Accept: application/vnd.github+json' \
+        --header "Authorization: Bearer $github_app_jwt" \
+        --header 'X-GitHub-Api-Version: 2022-11-28' | jq -er '.token')"
+      export GITHUB_TOKEN
+      test -n "$GITHUB_TOKEN"
 
       artifact_root="$CI_PROJECT_DIR/public"
       release_manifest="$CI_PROJECT_DIR/docs/release-evidence/release-manifest.json"

@@ -56,7 +56,11 @@ describe('public release promotion contract', () => {
     expect(releaseConfig).toContain('- .gitlab/ci/generate-release-manifest.mjs');
     expect(mirror).toContain('set -o pipefail');
     expect(mirror).toContain('GIT_AUTHOR_DATE="$CI_COMMIT_TIMESTAMP"');
-    expect(mirror).toContain('${GITHUB_TOKEN:?');
+    expect(mirror).toContain('${GITHUB_APP_ID:?');
+    expect(mirror).toContain('${GITHUB_APP_INSTALLATION_ID:?');
+    expect(mirror).toContain('${GITHUB_APP_PRIVATE_KEY_B64:?');
+    expect(mirror).toContain('/app/installations/$GITHUB_APP_INSTALLATION_ID/access_tokens');
+    expect(mirror).toContain('export GITHUB_TOKEN');
     expect(mirror).toContain('${GITLAB_PROVENANCE_PRIVATE_KEY_B64:?');
     expect(mirror).toContain('--verify');
     expect(mirror).toContain('public-release-${CI_COMMIT_SHA}');

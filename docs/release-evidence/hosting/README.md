@@ -18,9 +18,12 @@ The intended release sequence is:
    only the approved artifact and atomically publishes that branch update with
    the signed GitLab tag `public-release-$CI_COMMIT_SHA`. It then creates the
    corresponding normal fast-forward GitHub `gh-pages` commit from the same
-   artifact tree and pushes it. Missing `GITHUB_TOKEN` or
-   `GITLAB_PROVENANCE_PRIVATE_KEY_B64` fails the job; neither credential is
-   optional. The job never force-pushes, resets, or publishes the source tree.
+   artifact tree and pushes it. The job mints a short-lived GitHub App
+   installation token from protected `GITHUB_APP_ID`,
+   `GITHUB_APP_INSTALLATION_ID`, and masked `GITHUB_APP_PRIVATE_KEY_B64`; the
+   protected masked `GITLAB_PROVENANCE_PRIVATE_KEY_B64` is required for the
+   signed tag. Missing credentials fail the job; none is optional. The job
+   never force-pushes, resets, or publishes the source tree.
 4. The release owner verifies DNS, TLS, redirects, CDN freshness, response
    headers, and the canonical host at the actual public edge.
 5. Rollback republishes a previously recorded artifact whose manifest matches
