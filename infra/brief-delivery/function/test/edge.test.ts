@@ -79,7 +79,7 @@ test("health, CORS preflight, invalid bodies, and edge failures carry complete s
   assertSecurityHeaders(healthResponse);
 
   const optionsResponse = await briefRequest(requestWithBody("OPTIONS", { ...edgeHeaders, origin: "https://hardmagic.com" }) as never, {} as never);
-  assert.equal(optionsResponse.status, 204);
+  assert.equal(optionsResponse.status, 200);
   assert.equal(new Headers(optionsResponse.headers).get("access-control-allow-origin"), "https://hardmagic.com");
   assertSecurityHeaders(optionsResponse);
 

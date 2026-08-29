@@ -112,7 +112,10 @@ async function claimLedger(
 export async function briefRequest(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
   const edge = validateEdgeRequest(request);
   if (edge) return edge;
-  if (request.method === "OPTIONS") return response(204, "", corsHeaders(request));
+  // Azure Functions drops custom response headers from empty 204 responses at
+  // the Front Door boundary. Keep the body empty but use 200 so preflights
+  // retain the complete security-header contract.
+  if (request.method === "OPTIONS") return response(200, "", corsHeaders(request));
   if (request.method !== "POST") return response(405, "Method not allowed", corsHeaders(request));
   const body = await parseRequest(request);
   if (!body) return response(400, "Please submit a valid request.", corsHeaders(request));
@@ -195,7 +198,7 @@ export async function briefRequest(request: HttpRequest, context: InvocationCont
 export async function contactRequest(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
   const edge = validateEdgeRequest(request);
   if (edge) return edge;
-  if (request.method === "OPTIONS") return response(204, "", corsHeaders(request));
+  if (request.method === "OPTIONS") return response(200, "", corsHeaders(request));
   if (request.method !== "POST") return response(405, "Method not allowed", corsHeaders(request));
   const body = await parseRequest(request);
   if (!body) return response(400, "Please submit a valid request.", corsHeaders(request));
@@ -266,7 +269,7 @@ export async function contactRequest(request: HttpRequest, context: InvocationCo
 export async function unsubscribe(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
   const edge = validateEdgeRequest(request);
   if (edge) return edge;
-  if (request.method === "OPTIONS") return response(204, "", corsHeaders(request));
+  if (request.method === "OPTIONS") return response(200, "", corsHeaders(request));
   let token = new URL(request.url).searchParams.get("token") ?? "";
   if (request.method === "POST" && !token) {
     const body = await parseRequest(request);
