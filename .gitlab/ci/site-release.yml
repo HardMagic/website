@@ -72,7 +72,10 @@ mirror_public_release:
   needs:
     - job: public_release
       artifacts: true
-  image: harbor.focuscell.org/dockerhub-proxy/library/node:22.12.0-bookworm-slim
+  # The GitLab Kubernetes runner is non-root. Use the full Debian image, which
+  # already contains the release tools, rather than trying to apt-install into
+  # a slim image at runtime.
+  image: harbor.focuscell.org/dockerhub-proxy/library/node:22.12.0-bookworm
   variables:
     GITHUB_PAGES_REPOSITORY: HardMagic/website
     GITHUB_PAGES_BRANCH: gh-pages
@@ -81,8 +84,10 @@ mirror_public_release:
     GIT_STRATEGY: empty
     GIT_DEPTH: '0'
   before_script:
-    - apt-get update
-    - apt-get install -y --no-install-recommends ca-certificates curl git gnupg jq openssl
+    - command -v git
+    - command -v gpg
+    - command -v curl
+    - command -v openssl
   script:
     - |
       set -eu
@@ -135,7 +140,16 @@ mirror_public_release:
         --url "https://api.github.com/app/installations/$GITHUB_APP_INSTALLATION_ID/access_tokens" \
         --header 'Accept: application/vnd.github+json' \
         --header "Authorization: Bearer $github_app_jwt" \
-        --header 'X-GitHub-Api-Version: 2022-11-28' | jq -er '.token')"
+        --header 'X-GitHub-Api-Version: 2022-11-28' | node --input-type=module -e '
+          let input = "";
+          process.stdin.setEncoding("utf8");
+          process.stdin.on("data", (chunk) => { input += chunk; });
+          process.stdin.on("end", () => {
+            const token = JSON.parse(input).token;
+            if (!token) process.exit(1);
+            process.stdout.write(token);
+          });
+        ')"
       export GITHUB_TOKEN
       test -n "$GITHUB_TOKEN"
 
