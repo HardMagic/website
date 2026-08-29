@@ -24,7 +24,7 @@ calling BriefLock production-ready.
 - HardMagic origin group: `hardmagic-briefs-origins`
 - HardMagic route: `hardmagic-briefs-route`
 - Custom domain: `briefs.hardmagic.com`
-- Shared WAF: `tliwafstandard`, Prevention mode; association maintained by `edge.bicep`
+- Shared WAF: `tliwafstandard`, Prevention mode; association remains owned by the shared Terraform edge authority. `edge.bicep` does not manage or replace this binding.
 
 ## Dataverse
 

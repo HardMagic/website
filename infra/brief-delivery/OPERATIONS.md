@@ -6,7 +6,7 @@ Before the first production apply:
 
 1. Review the GitLab `what-if` output.
 2. Confirm the protected environment has two-person approval.
-3. Confirm Front Door and WAF ownership is represented in its authoritative Terraform repository.
+3. Confirm Front Door and the existing profile-level WAF binding are represented in the authoritative Terraform repository; do not pass or restore a WAF binding parameter in this site's edge deployment.
 4. Confirm the default Function origin is unreachable directly.
 5. Confirm all six Key Vault secrets exist without printing values.
 6. Confirm the custom ACS sender is authenticated and monitored replies reach a human.

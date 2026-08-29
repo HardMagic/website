@@ -22,19 +22,43 @@ describe('BriefLock deployment contracts', () => {
     expect(source).not.toContain("originHostHeader: 'briefs.hardmagic.com'");
   });
 
-  it('suppresses only the known benign lifecycle messages in the failure alert', () => {
+  it('leaves the shared Front Door WAF binding under Terraform ownership', () => {
+    const source = readRepositoryFile('infra/brief-delivery/edge.bicep');
+    expect(source).not.toContain('Microsoft.Cdn/profiles/securityPolicies');
+    expect(source).not.toContain('wafPolicyId');
+    expect(source).not.toContain('securityPolicyId');
+    expect(source).toContain('shared profile-level WAF binding is owned by the authoritative Terraform');
+  });
+
+  it('counts sampled failures and suppresses only an exact lifecycle pair', () => {
     const source = readRepositoryFile('infra/brief-delivery/modules/brief-lock.bicep');
     expect(source).toContain('node exited with code 143');
     expect(source).toContain('Language Worker Process exited');
-    expect(source).toContain('AlertMessage in (benignSigtermMessages)');
-    expect(source).toContain('AlertMessage == "Language Worker Process exited"');
-    expect(source).toContain('benignSigtermPresent');
-    expect(source).toContain('benignWorkerExitPresent');
-    expect(source).toContain('column_ifexists("ExceptionMessage", "")');
-    expect(source).toContain('not (benignSigtermPresent and benignWorkerExitPresent and AlertMessage in (benignLifecycleMessages))');
+    expect(source).toContain('countif(AlertMessage in (benignSigtermMessages))');
+    expect(source).toContain('countif(AlertMessage == "Language Worker Process exited")');
+    expect(source).toContain('nonLifecycleCount=countif(not (AlertMessage in (benignLifecycleMessages)))');
+    expect(source).toContain('CorrelationKey');
+    expect(source).toContain('AppRoleInstance');
+    expect(source).toContain('OperationId');
+    expect(source).toContain('FailureCount=sum(FailureCount)');
+    expect(source).not.toContain('toscalar');
     expect(source).toContain('AppExceptions');
     expect(source).toContain('AppTraces | where SeverityLevel >= 3');
     expect(source).not.toContain('AlertMessage has_any');
+  });
+
+  it('runs what-if automatically and keeps production deployment blocking and manual', () => {
+    const source = readRepositoryFile('.gitlab/ci/brief-delivery.yml');
+    const whatIf = source.slice(source.indexOf('brief_lock_what_if:'), source.indexOf('brief_lock_deploy:'));
+    const deploy = source.slice(source.indexOf('brief_lock_deploy:'));
+    expect(whatIf).toContain('when: on_success');
+    expect(whatIf).toContain('allow_failure: false');
+    expect(whatIf).toContain('--no-prompt true');
+    expect(deploy).toContain('brief_lock_what_if');
+    expect(deploy).toContain('when: manual');
+    expect(deploy).toContain('manual_confirmation:');
+    expect(deploy).toContain('allow_failure: false');
+    expect(deploy).not.toContain('BRIEF_WAF_POLICY_ID');
   });
 });
 

@@ -1,6 +1,6 @@
 # External edge contract
 
-Front Door remains an externally managed dependency. Its definitions belong in the authoritative shared edge repository, not duplicated here.
+Front Door remains an externally managed dependency. Its definitions belong in the authoritative shared edge repository, not duplicated here. In particular, the profile-level WAF security policy and its existing associations remain Terraform-owned; `edge.bicep` must not declare `Microsoft.Cdn/profiles/securityPolicies`.
 
 The edge owner must provide:
 
