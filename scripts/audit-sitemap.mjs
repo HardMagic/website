@@ -5,6 +5,8 @@ import process from 'node:process';
 const argv = process.argv.slice(2);
 const root = path.resolve(process.cwd(), argv.find((arg) => !arg.startsWith('--')) || 'dist');
 const origin = (process.env.AUDIT_ORIGIN || 'https://hardmagic.com').replace(/\/$/, '');
+const deploymentTarget = (process.env.HARDMAGIC_DEPLOYMENT_TEST_TARGET || process.env.HARDMAGIC_DEPLOY_TARGET || 'local').trim();
+const isDemoBuild = deploymentTarget === 'demo';
 const ledgerFile = path.resolve(process.cwd(), process.env.AUDIT_ROUTE_LEDGER || 'docs/route-ledger.json');
 const failures = new Set();
 const failure = (value) => failures.add(value);
@@ -67,40 +69,44 @@ for (const [route, file] of routeFiles) {
 
 const locs = (xml) => [...xml.matchAll(/<loc>([\s\S]*?)<\/loc>/gi)].map((match) => decode(match[1].trim()));
 const indexFile = path.join(root, 'sitemap-index.xml');
-if (!fs.existsSync(indexFile)) failure('missing sitemap-index.xml');
 const reachable = new Set();
 const sitemapRows = [];
-const queue = fs.existsSync(indexFile) ? [indexFile] : xmlFiles;
-while (queue.length) {
-  const file = queue.shift();
-  if (reachable.has(file) || !fs.existsSync(file)) continue;
-  reachable.add(file);
-  const xml = read(file);
-  if (/<sitemapindex\b/i.test(xml)) {
-    for (const loc of locs(xml)) {
-      try {
-        const url = new URL(loc, origin + basePath);
-        if (url.origin !== origin) { failure('sitemap index child leaves site: ' + loc); continue; }
-        const stripped = stripBase(url.pathname);
-        if (stripped === null) { failure('sitemap index child bypasses base: ' + loc); continue; }
-        const child = path.resolve(root, stripped.replace(/^\/+/, ''));
-        if (!child.startsWith(root + path.sep) || !fs.existsSync(child)) failure('missing sitemap child: ' + loc);
-        else queue.push(child);
-      } catch { failure('invalid sitemap child: ' + loc); }
-    }
-  } else if (/<urlset\b/i.test(xml)) {
-    for (const loc of locs(xml)) {
-      try {
-        const url = new URL(loc, origin + basePath);
-        if (url.origin !== origin) { failure('sitemap URL leaves site: ' + loc); continue; }
-        const stripped = stripBase(url.pathname);
-        if (stripped === null) { failure('sitemap URL bypasses base: ' + loc); continue; }
-        sitemapRows.push({ file: path.relative(root, file).replaceAll(path.sep, '/'), url: url.href, route: normalizeRoute(stripped) });
-      } catch { failure('invalid sitemap URL: ' + loc); }
-    }
-  } else failure(path.relative(root, file) + ' is not sitemap XML');
+if (isDemoBuild) {
+  if (xmlFiles.length) failure('demo build must not publish sitemap XML');
+} else {
+  if (!fs.existsSync(indexFile)) failure('missing sitemap-index.xml');
+  const queue = fs.existsSync(indexFile) ? [indexFile] : xmlFiles;
+  while (queue.length) {
+    const file = queue.shift();
+    if (reachable.has(file) || !fs.existsSync(file)) continue;
+    reachable.add(file);
+    const xml = read(file);
+    if (/<sitemapindex\b/i.test(xml)) {
+      for (const loc of locs(xml)) {
+        try {
+          const url = new URL(loc, origin + basePath);
+          if (url.origin !== origin) { failure('sitemap index child leaves site: ' + loc); continue; }
+          const stripped = stripBase(url.pathname);
+          if (stripped === null) { failure('sitemap index child bypasses base: ' + loc); continue; }
+          const child = path.resolve(root, stripped.replace(/^\/+/, ''));
+          if (!child.startsWith(root + path.sep) || !fs.existsSync(child)) failure('missing sitemap child: ' + loc);
+          else queue.push(child);
+        } catch { failure('invalid sitemap child: ' + loc); }
+      }
+    } else if (/<urlset\b/i.test(xml)) {
+      for (const loc of locs(xml)) {
+        try {
+          const url = new URL(loc, origin + basePath);
+          if (url.origin !== origin) { failure('sitemap URL leaves site: ' + loc); continue; }
+          const stripped = stripBase(url.pathname);
+          if (stripped === null) { failure('sitemap URL bypasses base: ' + loc); continue; }
+          sitemapRows.push({ file: path.relative(root, file).replaceAll(path.sep, '/'), url: url.href, route: normalizeRoute(stripped) });
+        } catch { failure('invalid sitemap URL: ' + loc); }
+      }
+    } else failure(path.relative(root, file) + ' is not sitemap XML');
+  }
+  for (const file of xmlFiles) if (!reachable.has(file)) failure('unreferenced sitemap file: ' + path.relative(root, file));
 }
-for (const file of xmlFiles) if (!reachable.has(file)) failure('unreferenced sitemap file: ' + path.relative(root, file));
 sitemapRows.sort((left, right) => (left.route + '\0' + left.url).localeCompare(right.route + '\0' + right.url));
 const counts = new Map();
 for (const row of sitemapRows) counts.set(row.route, (counts.get(row.route) || 0) + 1);
@@ -117,7 +123,10 @@ if (!fs.existsSync(robotsFile)) failure('missing dist/robots.txt');
 else {
   const robots = read(robotsFile);
   const sitemapLines = [...robots.matchAll(/^\s*Sitemap:\s*(\S+)\s*$/gim)].map((match) => match[1]);
-  if (sitemapLines.length !== 1) failure('robots.txt must have exactly one Sitemap directive');
+  if (isDemoBuild) {
+    if (sitemapLines.length) failure('demo robots.txt must not advertise a sitemap');
+    if (!/^\s*Disallow:\s*\/\s*$/im.test(robots)) failure('demo robots.txt must disallow /');
+  } else if (sitemapLines.length !== 1) failure('robots.txt must have exactly one Sitemap directive');
   else {
     try {
       const declared = new URL(sitemapLines[0], origin + '/');
@@ -137,7 +146,7 @@ if (fs.existsSync(ledgerFile)) {
     const ledgerRoutes = new Map((ledger.routes || []).map((row) => [row.route, row]));
     for (const route of [...states.keys()].sort()) {
       if (!ledgerRoutes.has(route)) failure('route ledger missing route: ' + route);
-      else if (Boolean(ledgerRoutes.get(route).sitemap) !== counts.has(route)) failure('route ledger sitemap membership differs: ' + route);
+      else if (!isDemoBuild && Boolean(ledgerRoutes.get(route).sitemap) !== counts.has(route)) failure('route ledger sitemap membership differs: ' + route);
     }
     for (const route of [...ledgerRoutes.keys()].sort()) if (!states.has(route)) failure('route ledger contains unbuilt route: ' + route);
   } catch (error) { failure('route ledger JSON is invalid: ' + error.message); }

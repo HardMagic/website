@@ -16,10 +16,10 @@ const {
 } = await import('../../astro.config');
 
 describe('BriefLock deployment contracts', () => {
-  it('sets the documented public host as the Front Door origin host header', () => {
+  it('keeps the Front Door origin host header bound to the Function hostname', () => {
     const source = readRepositoryFile('infra/brief-delivery/edge.bicep');
-    expect(source).toContain("originHostHeader: 'briefs.hardmagic.com'");
-    expect(source).not.toContain('originHostHeader: functionOriginHostname');
+    expect(source).toContain('originHostHeader: functionOriginHostname');
+    expect(source).not.toContain("originHostHeader: 'briefs.hardmagic.com'");
   });
 
   it('suppresses only the known benign lifecycle messages in the failure alert', () => {
@@ -91,7 +91,7 @@ describe.skipIf(!artifactReady)('rendered deployment URL contract', () => {
   const nested = artifactReady
     ? readFileSync(join(artifactRoot, 'briefs', 'generative-media-operating-system', 'index.html'), 'utf8')
     : '';
-  const sitemap = artifactReady ? readFileSync(join(artifactRoot, 'sitemap-0.xml'), 'utf8') : '';
+  const sitemap = artifactReady && target !== 'demo' ? readFileSync(join(artifactRoot, 'sitemap-0.xml'), 'utf8') : '';
 
   it('keeps canonical and Open Graph URLs on the public origin', () => {
     for (const html of [index, nested]) {
@@ -105,7 +105,7 @@ describe.skipIf(!artifactReady)('rendered deployment URL contract', () => {
       .filter((url): url is string => Boolean(url));
     expect(sitemapUrls.every((url) => url.startsWith(PUBLIC_SITE_ORIGIN))).toBe(true);
     if (target === 'demo') {
-      expect(sitemapUrls.every((url) => url.startsWith(`${PUBLIC_SITE_ORIGIN}${DEMO_BASE_PATH}/`))).toBe(true);
+      expect(sitemapUrls).toHaveLength(0);
     } else {
       expect(sitemapUrls.every((url) => !url.startsWith(`${PUBLIC_SITE_ORIGIN}${DEMO_BASE_PATH}/`))).toBe(true);
     }

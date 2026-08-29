@@ -10,6 +10,9 @@ resource profile 'Microsoft.Cdn/profiles@2024-09-01' existing = { name: profileN
 resource endpoint 'Microsoft.Cdn/profiles/afdEndpoints@2024-09-01' existing = { parent: profile, name: endpointName }
 resource globalEnterpriseDomain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' existing = { parent: profile, name: 'briefs-globalenterprise-com' }
 resource taoLearningDomain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' existing = { parent: profile, name: 'door-taolearning' }
+resource careersApiDomain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' existing = { parent: profile, name: 'careers-api-trustora-net' }
+resource pTaoLearningDomain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' existing = { parent: profile, name: 'p-taolearning-org' }
+resource stayMtCottagesDomain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' existing = { parent: profile, name: 'stay-mtcottages-com' }
 
 resource originGroup 'Microsoft.Cdn/profiles/originGroups@2024-09-01' = {
   parent: profile
@@ -27,7 +30,10 @@ resource origin 'Microsoft.Cdn/profiles/originGroups/origins@2024-09-01' = {
   name: 'hardmagic-brief-function'
   properties: {
     hostName: functionOriginHostname
-    originHostHeader: 'briefs.hardmagic.com'
+    // The Function only owns its azurewebsites.net hostname. Do not send a
+    // custom host header until that hostname is explicitly bound to the App
+    // Service; Front Door would otherwise receive a host mismatch/404.
+    originHostHeader: functionOriginHostname
     httpPort: 80
     httpsPort: 443
     priority: 1
@@ -76,7 +82,10 @@ resource securityPolicy 'Microsoft.Cdn/profiles/securityPolicies@2024-09-01' = {
           domains: [
             { id: endpoint.id }
             { id: globalEnterpriseDomain.id }
+            { id: careersApiDomain.id }
             { id: taoLearningDomain.id }
+            { id: pTaoLearningDomain.id }
+            { id: stayMtCottagesDomain.id }
             { id: domain.id }
           ]
           patternsToMatch: [ '/*' ]

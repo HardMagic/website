@@ -9,6 +9,8 @@ const checkOnly = argv.includes('--check-only');
 const offline = argv.includes('--offline') || argv.includes('--no-external');
 const strictExternal = argv.includes('--strict-external');
 const origin = (process.env.AUDIT_ORIGIN || 'https://hardmagic.com').replace(/\/$/, '');
+const deploymentTarget = (process.env.HARDMAGIC_DEPLOYMENT_TEST_TARGET || process.env.HARDMAGIC_DEPLOY_TARGET || 'local').trim();
+const isDemoBuild = deploymentTarget === 'demo';
 const timeoutMs = Number.parseInt(process.env.AUDIT_EXTERNAL_TIMEOUT_MS || '5000', 10);
 const retries = Number.parseInt(process.env.AUDIT_EXTERNAL_RETRIES || '2', 10);
 
@@ -331,34 +333,38 @@ const xmlFiles = files.filter((file) => /^sitemap(?:-\d+)?\.xml$/.test(path.base
 const indexFile = path.join(root, 'sitemap-index.xml');
 const sitemapFiles = new Set();
 const sitemapRows = [];
-const queue = fs.existsSync(indexFile) ? [indexFile] : xmlFiles;
 const locs = (xml) => [...xml.matchAll(/<loc>([\s\S]*?)<\/loc>/gi)].map((match) => decode(match[1].trim()));
-while (queue.length) {
-  const file = queue.shift();
-  if (sitemapFiles.has(file) || !fs.existsSync(file)) continue;
-  sitemapFiles.add(file);
-  const xml = read(file);
-  if (/<sitemapindex\b/i.test(xml)) {
-    for (const loc of locs(xml)) {
-      try {
-        const parsed = new URL(loc, origin + (buildBase || '/'));
-        const candidate = assetPath(parsed, buildBase || '/');
-        if (!candidate || !fs.existsSync(candidate)) failure('sitemap index references missing file ' + loc);
-        else queue.push(candidate);
-      } catch { failure('invalid sitemap child ' + loc); }
-    }
-  } else if (/<urlset\b/i.test(xml)) {
-    for (const loc of locs(xml)) {
-      try {
-        const parsed = new URL(loc, origin + (buildBase || '/'));
-        const resolved = routeResolution(parsed, buildBase || '/');
-        if (parsed.origin !== origin || resolved.outside) failure('sitemap URL outside build base ' + loc);
-        sitemapRows.push({ file: path.relative(root, file).replaceAll(path.sep, '/'), url: parsed.href, route: resolved.route });
-      } catch { failure('invalid sitemap URL ' + loc); }
-    }
-  } else failure(path.relative(root, file) + ' is not sitemap XML');
+if (isDemoBuild) {
+  if (xmlFiles.length) failure('demo build must not publish sitemap XML');
+} else {
+  const queue = fs.existsSync(indexFile) ? [indexFile] : xmlFiles;
+  while (queue.length) {
+    const file = queue.shift();
+    if (sitemapFiles.has(file) || !fs.existsSync(file)) continue;
+    sitemapFiles.add(file);
+    const xml = read(file);
+    if (/<sitemapindex\b/i.test(xml)) {
+      for (const loc of locs(xml)) {
+        try {
+          const parsed = new URL(loc, origin + (buildBase || '/'));
+          const candidate = assetPath(parsed, buildBase || '/');
+          if (!candidate || !fs.existsSync(candidate)) failure('sitemap index references missing file ' + loc);
+          else queue.push(candidate);
+        } catch { failure('invalid sitemap child ' + loc); }
+      }
+    } else if (/<urlset\b/i.test(xml)) {
+      for (const loc of locs(xml)) {
+        try {
+          const parsed = new URL(loc, origin + (buildBase || '/'));
+          const resolved = routeResolution(parsed, buildBase || '/');
+          if (parsed.origin !== origin || resolved.outside) failure('sitemap URL outside build base ' + loc);
+          sitemapRows.push({ file: path.relative(root, file).replaceAll(path.sep, '/'), url: parsed.href, route: resolved.route });
+        } catch { failure('invalid sitemap URL ' + loc); }
+      }
+    } else failure(path.relative(root, file) + ' is not sitemap XML');
+  }
+  for (const file of xmlFiles) if (!sitemapFiles.has(file)) failure('unreferenced sitemap file ' + path.relative(root, file));
 }
-for (const file of xmlFiles) if (!sitemapFiles.has(file)) failure('unreferenced sitemap file ' + path.relative(root, file));
 sitemapRows.sort((a, b) => (a.route + '\0' + a.url).localeCompare(b.route + '\0' + b.url));
 const sitemapCount = new Map();
 for (const row of sitemapRows) sitemapCount.set(row.route, (sitemapCount.get(row.route) || 0) + 1);
@@ -368,8 +374,8 @@ for (const route of routes) {
   route.sitemap = inSitemap;
   route.links = links.filter((link) => link.source === route.route).length;
   route.forms = links.filter((link) => link.source === route.route && link.type === 'form').length;
-  if (route.kind === 'canonical' && !inSitemap) failure(route.route + ': canonical route missing from sitemap');
-  if (route.kind !== 'canonical' && inSitemap) failure(route.route + ': ' + route.kind + ' route is present in sitemap');
+  if (!isDemoBuild && route.kind === 'canonical' && !inSitemap) failure(route.route + ': canonical route missing from sitemap');
+  if ((!isDemoBuild && route.kind !== 'canonical' && inSitemap) || (isDemoBuild && inSitemap)) failure(route.route + ': ' + route.kind + ' route is present in sitemap');
 }
 routes.sort((a, b) => a.route.localeCompare(b.route));
 

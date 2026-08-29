@@ -1,5 +1,6 @@
-# The public job produces the root-path candidate only on a protected gh-pages
-# branch. It does not mirror to GitHub or assert that hardmagic.com is serving it.
+# The public job produces the root-path candidate from the protected source
+# branch. The artifact is promoted to gh-pages only after this gate passes, and
+# the separate mirror process then carries that exact release to GitHub.
 public_release:
   stage: deploy
   needs: []
@@ -52,6 +53,6 @@ public_release:
     name: production-pages-candidate
     action: prepare
   rules:
-    - if: '$CI_COMMIT_BRANCH == "gh-pages" && $CI_COMMIT_REF_PROTECTED == "true"'
+    - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true"'
       when: manual
     - when: never

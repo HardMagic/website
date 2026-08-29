@@ -78,9 +78,9 @@ const demoPolicyIntegration: AstroIntegration = {
 const deploymentTarget = resolveDeploymentTarget(process.env[DEPLOYMENT_TARGET_ENV]);
 const deployment = deploymentSettingsFor(deploymentTarget);
 const integrations = [
-  sitemap({
+  ...(!deployment.noindex ? [sitemap({
     filter: (page) => !page.includes('/thanks/') && !page.includes('/portfolio-item/'),
-  }),
+  })] : []),
   ...(deployment.noindex ? [demoPolicyIntegration] : []),
 ];
 

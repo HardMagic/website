@@ -106,6 +106,7 @@ brief_lock_deploy:
     - brief_lock_package
     - brief_lock_pdf_package
     - brief_lock_bicep_validate
+    - brief_lock_what_if
   rules:
     - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true"'
       <<: *brief_delivery_changes
