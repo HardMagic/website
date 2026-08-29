@@ -30,6 +30,7 @@ describe('BriefLock deployment contracts', () => {
     expect(source).toContain('AlertMessage == "Language Worker Process exited"');
     expect(source).toContain('benignSigtermPresent');
     expect(source).toContain('benignWorkerExitPresent');
+    expect(source).toContain('column_ifexists("ExceptionMessage", "")');
     expect(source).toContain('not (benignSigtermPresent and benignWorkerExitPresent and AlertMessage in (benignLifecycleMessages))');
     expect(source).toContain('AppExceptions');
     expect(source).toContain('AppTraces | where SeverityLevel >= 3');
