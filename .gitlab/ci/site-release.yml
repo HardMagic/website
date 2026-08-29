@@ -273,6 +273,9 @@ mirror_public_release:
       GitHub commit: $artifact_commit
       EOF
 
+      # The GitHub clone above changed GIT_ASKPASS. Restore the GitLab-only
+      # credential before reading or updating GitLab's canonical release refs.
+      export GIT_ASKPASS="$gitlab_askpass"
       if git -C "$gitlab_repo" ls-remote --exit-code origin "refs/tags/$provenance_tag" >/dev/null 2>&1; then
         git -C "$gitlab_repo" fetch --quiet origin "refs/tags/$provenance_tag:refs/tags/$provenance_tag"
         git -C "$gitlab_repo" tag -v "$provenance_tag"
