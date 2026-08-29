@@ -54,7 +54,7 @@ blocking manual job with a second confirmation. The shared Front Door profile-le
 WAF binding is owned by Terraform; this repository's edge template does not declare
 or replace that binding.
 
-Required protected and masked CI/CD variables:
+Required protected CI/CD variables:
 
 ```text
 AZURE_CLIENT_ID
@@ -65,7 +65,16 @@ BRIEF_DEPLOYMENT_PRINCIPAL_OBJECT_ID
 BRIEF_ALERT_ACTION_GROUP_RESOURCE_ID
 ```
 
-The OIDC service principal and its federated credential are bootstrapped outside this deployment. Give it only the control-plane scope required for `rg-hardmagic-briefs`; the template separately limits its data-plane Blob role to the `deployments` container. Never store a client secret in GitLab.
+The deployment prefers the GitLab OIDC token (`AZURE_FEDERATED_TOKEN`) and its
+federated credential, bootstrapped outside this deployment. This self-managed
+GitLab issuer is not reachable from Microsoft's external OIDC validator, so this
+installation also supports the protected, masked `AZURE_CLIENT_SECRET` fallback.
+The fallback is a dedicated, expiring service-principal secret held in the
+organization Key Vault and GitLab protected variables; rotate it before expiry.
+Give the identity only the control-plane scope required for `rg-hardmagic-briefs`
+and the shared Front Door resource group; the template separately limits its
+data-plane Blob role to the `deployments` container. Never use a shared or
+long-lived application secret for this lane.
 
 ## Validation
 
