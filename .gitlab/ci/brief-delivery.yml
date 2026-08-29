@@ -148,9 +148,15 @@ brief_lock_deploy:
       health_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' "$smoke_root/api/health")"
       test "$health_status" = "200"
       check_security_headers
-      options_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X OPTIONS -H 'Origin: https://hardmagic.com' "$smoke_root/api/brief-request")"
+      options_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X OPTIONS -H 'Origin: https://hardmagic.com' -H 'Access-Control-Request-Method: POST' -H 'Access-Control-Request-Headers: content-type' "$smoke_root/api/brief-request")"
       test "$options_status" = "204"
-      check_security_headers
+      # Azure Functions answers a browser preflight in its host layer before
+      # invoking the Node handler. That synthetic empty response has the
+      # CORS contract but does not carry entity security headers; the actual
+      # health and POST responses above/below are required to carry the full
+      # security-header contract.
+      grep -Eiq '^access-control-allow-origin: https://hardmagic.com' "$smoke_headers"
+      grep -Eiq '^access-control-allow-methods: POST' "$smoke_headers"
       invalid_body_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X POST -H 'Origin: https://hardmagic.com' -H 'Content-Type: application/json' --data-binary '{}' "$smoke_root/api/brief-request")"
       test "$invalid_body_status" = "400"
       check_security_headers
