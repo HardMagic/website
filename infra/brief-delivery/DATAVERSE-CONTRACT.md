@@ -33,20 +33,27 @@ The Function contract currently writes:
 ```text
 hm_requestid                 Single Line Text, alternate key
 hm_name                      Primary Name
-hm_reportkey                 Single Line Text
+hm_requesttype               Single Line Text
+hm_briefkey                  Single Line Text
+hm_brieftitle                Single Line Text
 hm_emailhash                 Single Line Text (SHA-256; no raw email)
 hm_organization              Single Line Text
 hm_role                      Single Line Text
+hm_industry                  Single Line Text
+hm_organizationsize          Single Line Text
+hm_decisionstage             Single Line Text
 hm_primarychallenge          Multiple Lines Text
 hm_decisionhorizon           Single Line Text
 hm_preferrednextstep         Single Line Text
-hm_intakecategory            Choice or validated Single Line Text
-hm_sourcesummary             Single Line Text; campaign only, no query string
-hm_consentstatus             Choice or validated Single Line Text
+hm_interest                  Choice or validated Single Line Text
+hm_sourcecampaign            Single Line Text; campaign only, no query string
+hm_consentscope              Choice or validated Single Line Text
+hm_marketingconsent          Boolean
+hm_context                   Multiple Lines Text
 hm_deliverystatus            Choice or validated Single Line Text
 hm_suppressionstatus         Choice or validated Single Line Text
-hm_contact                   Lookup(Contact)
-ownerid                      HardMagic team
+hm_Contact                   Lookup(Contact; case-sensitive navigation binding)
+ownerid                      HardMagic team (polymorphic `ownerid@odata.bind`)
 ```
 
 Allowed intake values are `creative-direction`, `genai`, `media-management`, `marketing-consulting`, `product-strategy`, and `creative-technology`.

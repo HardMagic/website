@@ -67,7 +67,7 @@ The private ledger is the delivery system of record. A successful brief request 
 4. persist `delivery=sent`, a safe `delivery=failed` code, or `delivery=unknown` with deterministic ACS operation handle(s); conditional-write recovery merges only the changed delivery/CRM/suppression field into the latest ledger snapshot;
 5. enqueue the asynchronous Dataverse projection keyed by `hm_requestid`.
 
-The consultation path claims the same ledger shape, sends the requester receipt and internal routing email, then queues the same CRM projection. Both ACS operation handles are recorded before either send begins, and a partial or unresolved leg remains non-replayable until reconciled. The Dataverse payload is limited to the documented `hm_*` columns: `hm_requestid`, `hm_name`, `hm_reportkey`, `hm_emailhash`, organization/role/challenge/horizon/next-step, `hm_intakecategory`, campaign-only `hm_sourcesummary`, separate consent/delivery/suppression statuses, Account-bound Contact lookup, and HardMagic team ownership.
+The consultation path claims the same ledger shape, sends the requester receipt and internal routing email, then queues the same CRM projection. Both ACS operation handles are recorded before either send begins, and a partial or unresolved leg remains non-replayable until reconciled. The Dataverse payload is limited to the live `hm_*` columns: request type/brief key/title, `hm_requestid`, `hm_name`, `hm_emailhash`, organization/role/industry/size/stage/challenge/horizon/next-step, `hm_interest`, campaign-only `hm_sourcecampaign`, consent scope/marketing consent, delivery/suppression statuses, context, Account-bound Contact lookup, and `ownerid` HardMagic team ownership.
 
 ## Evidence still required outside this repository
 

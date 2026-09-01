@@ -217,7 +217,7 @@ test("source URLs are reduced to approved origin paths", () => {
   assert.equal(sanitizeSourceUrl("http://hardmagic.com/contact/"), "");
 });
 
-test("Dataverse projection uses the documented hm_* contract and no raw email/source URL", () => {
+test("Dataverse projection uses the live hm_* contract and no raw email/source URL", () => {
   const record = {
     ...{
       id: requestId,
@@ -240,12 +240,23 @@ test("Dataverse projection uses the documented hm_* contract and no raw email/so
     },
   };
   const projection = buildDataverseEngagement(record, "dddddddd-dddd-4ddd-8ddd-dddddddddddd", "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa");
-  assert.equal(projection.hm_reportkey, baseBrief.report);
-  assert.equal(projection.hm_intakecategory, "genai");
-  assert.equal(projection.hm_sourcesummary, "technical-brief-library");
+  assert.equal(projection.hm_requesttype, "brief-request");
+  assert.equal(projection.hm_briefkey, baseBrief.report);
+  assert.equal(projection.hm_brieftitle, briefs[baseBrief.report].title);
+  assert.equal(projection.hm_interest, "genai");
+  assert.equal(projection.hm_sourcecampaign, "technical-brief-library");
+  assert.equal(projection.hm_consentscope, "requested-resource");
+  assert.equal(projection.hm_marketingconsent, false);
   assert.equal(projection.hm_suppressionstatus, "active");
   assert.match(projection.hm_emailhash, /^[a-f0-9]{64}$/);
-  assert.equal(projection["hm_contact@odata.bind"], "/contacts(dddddddd-dddd-4ddd-8ddd-dddddddddddd)");
+  assert.equal(projection["hm_Contact@odata.bind"], "/contacts(dddddddd-dddd-4ddd-8ddd-dddddddddddd)");
+  assert.equal(projection["ownerid@odata.bind"], "/teams(aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa)");
+  assert.equal("hm_reportkey" in projection, false);
+  assert.equal("hm_intakecategory" in projection, false);
+  assert.equal("hm_sourcesummary" in projection, false);
+  assert.equal("hm_consentstatus" in projection, false);
+  assert.equal("hm_contact@odata.bind" in projection, false);
+  assert.equal("ownerid_team@odata.bind" in projection, false);
   assert.equal("hm_sourceurl" in projection, false);
   assert.equal(JSON.stringify(projection).includes("ada@example.com"), false);
 });

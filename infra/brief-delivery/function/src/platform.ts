@@ -1074,7 +1074,9 @@ export async function syncDataverse(event: CrmEvent, context: InvocationContext)
           emailaddress1: record.email,
           company: record.organization,
           "parentcustomerid_account@odata.bind": `/accounts(${accountId})`,
-          "ownerid_team@odata.bind": `/teams(${ownerTeamId})`,
+          // Dataverse exposes the polymorphic owner navigation as `ownerid`.
+          // `ownerid_team` is not a valid navigation property on this table.
+          "ownerid@odata.bind": `/teams(${ownerTeamId})`,
         }),
         signal: AbortSignal.timeout(10_000),
       });
@@ -1106,26 +1108,34 @@ export async function syncDataverse(event: CrmEvent, context: InvocationContext)
   context.info("Dataverse projection completed", { requestId: record.id, kind: record.kind });
 }
 
-export function buildDataverseEngagement(record: LedgerRecord, contactId: string, ownerTeamId: string): Record<string, string> {
+export function buildDataverseEngagement(record: LedgerRecord, contactId: string, ownerTeamId: string): Record<string, string | boolean> {
   const safeContactId = requireCanonicalGuid(contactId, "contact");
   const safeOwnerTeamId = requireCanonicalGuid(ownerTeamId, "owner_team");
   return {
     hm_requestid: record.id,
     hm_name: record.report?.title ?? `Consultation · ${record.intakeCategory}`,
-    hm_reportkey: record.report?.slug ?? "consultation",
+    hm_requesttype: record.kind,
+    hm_briefkey: record.report?.slug ?? "consultation",
+    hm_brieftitle: record.report?.title ?? "",
     hm_emailhash: piiHash(record.email),
     hm_organization: record.organization,
     hm_role: record.role,
+    hm_industry: record.qualification.industry ?? "",
+    hm_organizationsize: record.qualification.organizationSize ?? "",
+    hm_decisionstage: record.qualification.decisionStage ?? "",
     hm_primarychallenge: record.qualification.primaryChallenge ?? record.qualification.mandate ?? "",
     hm_decisionhorizon: record.qualification.decisionHorizon ?? "",
     hm_preferrednextstep: record.qualification.preferredNextStep ?? "",
-    hm_intakecategory: record.intakeCategory,
-    hm_sourcesummary: record.sourceCampaign,
-    hm_consentstatus: record.consent.broaderMarketing ? "requested-resource; marketing" : "requested-resource",
+    hm_interest: record.intakeCategory,
+    hm_sourcecampaign: record.sourceCampaign,
+    hm_consentscope: record.consent.broaderMarketing ? "requested-resource; marketing" : "requested-resource",
+    hm_marketingconsent: record.consent.broaderMarketing,
+    hm_context: record.qualification.context ?? "",
     hm_deliverystatus: record.delivery.status,
     hm_suppressionstatus: record.suppressionStatus ?? "active",
-    "hm_contact@odata.bind": `/contacts(${safeContactId})`,
-    "ownerid_team@odata.bind": `/teams(${safeOwnerTeamId})`,
+    // These navigation names are case-sensitive in the live Dataverse CSDL.
+    "hm_Contact@odata.bind": `/contacts(${safeContactId})`,
+    "ownerid@odata.bind": `/teams(${safeOwnerTeamId})`,
   };
 }
 
