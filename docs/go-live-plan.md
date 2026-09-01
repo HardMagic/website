@@ -51,8 +51,12 @@ Three distinct Azure alert activations (01:03, 10:08, and 19:38 UTC on 2026-08-3
 
 Protected pipeline `56132` passed the Function tests/package, PDF package, Bicep
 validation, and what-if. Deployment job `1018319` completed the corrected Function
-package and the edge deployment. The public Pages artifact was published through the
-protected mirror path; the live site returns 200 and serves the Generative Media brief.
+package and the edge deployment. Its mirror runner failed before execution because
+the private Harbor image returned HTTP 401, so no partial publication was accepted.
+Pipeline `56139` then validated the public-release image and completed public-release
+job `1018419` plus mirror job `1018420`; the verified artifact is now published
+through the protected Pages/mirror path. The live site returns 200 and serves the
+Generative Media brief.
 
 The controlled brief canary in
 [`docs/release-evidence/funnels/canary-2026-09-01.md`](release-evidence/funnels/canary-2026-09-01.md)

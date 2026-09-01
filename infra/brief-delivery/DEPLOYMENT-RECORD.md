@@ -6,8 +6,12 @@ Current release evidence: 2026-09-01, FocusHive tenant. Source commit `a39c454`
 passed protected pipeline `56132` (Function tests/package, PDF package, Bicep
 validation, and what-if). Protected deployment job `1018319` completed with
 Azure deployment `hm-brief-lock-51` and Function zip deployment
-`a0703c32-9c61-4536-8743-106b47a0b721`. The public artifact was published by
-the protected Pages/mirror path; direct GitHub branch mutation was not used.
+`a0703c32-9c61-4536-8743-106b47a0b721`. Pipeline `56132`'s mirror runner failed
+before its script because the private Harbor image returned HTTP 401; no
+partial mirror was accepted. The corrected public-release image was then
+validated by pipeline `56139` (`01d09ad`): public release job `1018419` and
+mirror job `1018420` both passed, publishing the verified artifact through the
+protected Pages/mirror path. Direct GitHub branch mutation was not used.
 The exact Function zip uploaded by package job `1018315` has SHA-256
 `4eaf83b5e81631f631203b690d5be8e88587516f4297ff57be2ade667348415f`.
 
