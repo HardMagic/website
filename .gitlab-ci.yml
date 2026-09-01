@@ -28,7 +28,10 @@ pages:
     - npm ci --cache .npm --prefer-offline --no-audit --fund=false
     - npm run check
     - npm run typecheck:ts7
-    - npm run test:all
+    # The PDF manifest is validated by the dedicated brief_lock_pdf_package
+    # job. The internal Pages preview does not need generated private PDFs and
+    # must remain able to build from a clean checkout.
+    - npm run test
     - NODE_OPTIONS="--require=$CI_PROJECT_DIR/.gitlab/ci/limit-image-build-concurrency.cjs" npm run build
     - npm run audit:security
     - npm exec -- vitest run tests/deployment/deployment-config.test.ts

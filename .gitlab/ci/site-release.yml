@@ -4,7 +4,10 @@
 public_release:
   stage: deploy
   needs: []
-  image: harbor.focuscell.org/dockerhub-proxy/library/node:22.12.0-bookworm-slim
+  # Public release validates the private brief manifest too; use the same
+  # browser-capable image as brief_lock_pdf_package to generate PDFs in a
+  # clean checkout before running that manifest test.
+  image: mcr.microsoft.com/playwright:v1.62.1-noble
   variables:
     HARDMAGIC_DEPLOY_TARGET: public
     HARDMAGIC_DEPLOYMENT_TEST_TARGET: public
@@ -26,6 +29,7 @@ public_release:
     - npm run check
     - npm run typecheck:ts7
     - npm run test
+    - npm run briefs:pdf
     - npm run test:release
     - NODE_OPTIONS="--require=$CI_PROJECT_DIR/.gitlab/ci/limit-image-build-concurrency.cjs" npm run build
     - npm run audit:security
