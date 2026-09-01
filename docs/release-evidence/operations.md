@@ -30,5 +30,6 @@ records them.
 - [ ] Keep the previous static artifact and Function package available for rollback.
 - [ ] Review conversion, error, and support signals at 24 hours and 7 days.
 
-Current status: **not rehearsed**. No external mutation or production canary is
-authorized by this repository-only work.
+Current status: **partially rehearsed**. The controlled brief canary and cleanup are
+recorded in `funnels/canary-2026-09-01.md`; full launch-window staffing, rollback,
+failure-path, and 24-hour/7-day review rehearsals remain open.

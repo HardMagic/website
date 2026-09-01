@@ -60,13 +60,22 @@ Allowed intake values are `creative-direction`, `genai`, `media-management`, `ma
 
 ## Least-privilege application role
 
-Create `HardMagic Brief Delivery` with Local depth only:
+Create `HardMagic Brief Delivery` with Local depth only and assign it to both
+the runtime application user and the owner team. Dataverse evaluates access to
+team-owned rows through the team's roles; assigning the role only to the
+application user is insufficient for the team-owned engagement projection.
+Both principals also retain the platform `Basic User` role; that baseline is
+separate from this custom role and is not a substitute for the local privileges
+listed below.
 
-- Account: Read;
+- Account: Read, Append To (required when binding a new Contact to the HardMagic Account);
 - Contact: Create, Read, Write, Append, Append To;
 - `hm_briefengagement`: Create, Read, Write, Append, Append To;
-- basic User/Team/Business Unit reads required for ownership binding.
+- Team: Read, Append To;
+- Contact and `hm_briefengagement`: Assign (Local) for the explicit HardMagic
+  team owner binding;
+- basic User/Business Unit reads required for ownership binding.
 
-Do not grant Delete, Assign beyond the HardMagic team, Organization depth, solution customization, export, bulk delete, or System Administrator. Export the solution and role into source control after provisioning.
+Do not grant Delete, Assign beyond the HardMagic team, Organization depth, solution customization, export, bulk delete, or System Administrator. The current live role/solution snapshot is [role-hardmagic-brief-delivery.json](dataverse/role-hardmagic-brief-delivery.json); refresh it after any deliberate control-plane change.
 
 The private Blob ledger is the delivery system of record. Dataverse is an asynchronous relationship projection. `requestId` provides idempotency and CRM-owned fields must not be reset by a replay.

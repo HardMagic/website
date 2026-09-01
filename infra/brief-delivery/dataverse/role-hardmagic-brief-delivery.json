@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hardmagic.com/schemas/brief-lock/dataverse/role-hardmagic-brief-delivery.json",
+  "title": "HardMagic Brief Delivery Dataverse role snapshot",
+  "description": "Redacted, source-controlled contract for the unmanaged HardMagic Brief Delivery role. IDs are non-secret Dataverse metadata; refresh this snapshot after a deliberate role change.",
+  "snapshot": {
+    "environment": "https://dream.crm.dynamics.com",
+    "solution": {
+      "uniqueName": "hardmagic_briefs",
+      "friendlyName": "HardMagic Brief Delivery",
+      "version": "1.0.0.0",
+      "solutionId": "1b9cede1-8096-f111-8075-7ced8d6f5115",
+      "isManaged": false,
+      "components": [
+        {
+          "componentType": 1,
+          "metadataId": "b83f1a04-8196-f111-8075-00224803c40c",
+          "logicalName": "hm_briefengagement",
+          "schemaName": "hm_BriefEngagement",
+          "entitySetName": "hm_briefengagements"
+        },
+        {
+          "componentType": 1,
+          "metadataId": "608861bc-50a4-4c5f-a02c-21fe1943e2cf",
+          "logicalName": "contact",
+          "schemaName": "Contact",
+          "entitySetName": "contacts"
+        }
+      ]
+    },
+    "role": {
+      "name": "HardMagic Brief Delivery",
+      "roleId": "bdbb5abf-8496-f111-8075-6045bd09a331",
+      "businessUnitId": "289b301c-7f96-f111-8075-6045bd09a0b8",
+      "solutionId": "fd140aae-4df4-11dd-bd17-0019b9312238",
+      "isManaged": false,
+      "privilegeDepth": "Local",
+      "globalPrivilegeCount": 0,
+      "forbiddenPrivilegeNames": [
+        "prvCreateSharePointData",
+        "prvReadSharePointData",
+        "prvWriteSharePointData",
+        "prvReadSharePointDocument",
+        "prvReadSdkMessage",
+        "prvReadSdkMessageProcessingStep",
+        "prvReadSdkMessageProcessingStepImage",
+        "prvReadPluginAssembly",
+        "prvReadPluginType"
+      ],
+      "privileges": [
+        {
+          "name": "prvReadAccount",
+          "id": "886b280c-6396-4d56-a0a3-2c1b0a50ceb0",
+          "depth": "Local"
+        },
+        {
+          "name": "prvAppendToAccount",
+          "id": "3d6e93a2-b58e-4a4a-b642-374e4a25a6bd",
+          "depth": "Local"
+        },
+        {
+          "name": "prvCreateContact",
+          "id": "a8bff87f-0df0-41d4-babd-f093faf1e32c",
+          "depth": "Local"
+        },
+        {
+          "name": "prvReadContact",
+          "id": "ba09ec92-12c4-4312-ba16-5715c2cbd6da",
+          "depth": "Local"
+        },
+        {
+          "name": "prvWriteContact",
+          "id": "65c22075-4e09-4f39-baec-e4bc3a950686",
+          "depth": "Local"
+        },
+        {
+          "name": "prvAppendContact",
+          "id": "2b16ba12-6ab4-4ad2-b7c0-8641d2d6dff2",
+          "depth": "Local"
+        },
+        {
+          "name": "prvAppendToContact",
+          "id": "158327b5-f4c1-448e-93d1-5f135126665b",
+          "depth": "Local"
+        },
+        {
+          "name": "prvCreatehm_BriefEngagement",
+          "id": "a5a48a2d-ae2d-4772-aafb-93d37d1d0d3a",
+          "depth": "Local"
+        },
+        {
+          "name": "prvReadhm_BriefEngagement",
+          "id": "ea2ff916-0254-47cd-899a-0acd90c5ae9e",
+          "depth": "Local"
+        },
+        {
+          "name": "prvWritehm_BriefEngagement",
+          "id": "deace12c-5c8c-4996-a608-e4faf776df88",
+          "depth": "Local"
+        },
+        {
+          "name": "prvAppendhm_BriefEngagement",
+          "id": "b596787d-fbc9-4489-bad0-86fe4d465751",
+          "depth": "Local"
+        },
+        {
+          "name": "prvAppendTohm_BriefEngagement",
+          "id": "c4e900f0-9280-484d-9bd8-cba919a5097a",
+          "depth": "Local"
+        },
+        {
+          "name": "prvAssignContact",
+          "id": "43c63782-c7c6-471c-bd9c-24f79bf8c2a1",
+          "depth": "Local"
+        },
+        {
+          "name": "prvAssignhm_BriefEngagement",
+          "id": "dac22609-8c2c-446e-b3e5-c18eeda4297e",
+          "depth": "Local"
+        },
+        {
+          "name": "prvReadTeam",
+          "id": "663d1920-56e1-4166-89f0-47f3330923a8",
+          "depth": "Local"
+        },
+        {
+          "name": "prvAppendToTeam",
+          "id": "3ce923f7-8f8e-4288-a4bf-b96fd6a67436",
+          "depth": "Local"
+        }
+      ]
+    },
+    "assignments": [
+      {
+        "type": "applicationUser",
+        "name": "HardMagic uai-hm-briefs-runtime-ucrhklk2glcq6",
+        "systemUserId": "8bd431e3-8496-f111-8075-00224803c40c",
+        "applicationId": "4456e76a-24fb-4d3d-89b6-b6bdc2ed7e9d"
+      },
+      {
+        "type": "ownerTeam",
+        "name": "HardMagic",
+        "teamId": "359b301c-7f96-f111-8075-6045bd09a0b8",
+        "businessUnitId": "289b301c-7f96-f111-8075-6045bd09a0b8"
+      }
+    ],
+    "baselineRoles": ["Basic User"]
+  },
+  "reconciliation": {
+    "lastVerifiedUtc": "2026-09-01T03:02:44Z",
+    "method": "Dataverse Web API roleprivilegescollection and roleprivileges_association readback",
+    "notes": "The role is deliberately maintained outside the Azure Bicep deployment. A future role change must update this snapshot and the Dataverse contract in the same change."
+  }
+}

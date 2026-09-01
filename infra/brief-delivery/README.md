@@ -2,10 +2,9 @@
 
 This directory is the source-controlled infrastructure and runtime for HardMagic Corporation's gated technical briefs and qualified consulting intake. It is a HardMagic-specific port of the BriefLock pattern—not a copy of another company's live IDs, secrets, PDFs, or deployment workflow.
 
-This package is source configuration. Adding these files does not prove that any Azure,
-Front Door, Cloudflare, email, storage, or Dataverse resource is deployed or healthy.
-`DEPLOYMENT-RECORD.md` is a historical inventory that requires current owner verification
-before it can be used as release evidence.
+This package is source configuration. Adding these files does not prove that an arbitrary
+environment is deployed or healthy; the dated FocusHive deployment and canary evidence is
+recorded in `DEPLOYMENT-RECORD.md` and `docs/release-evidence/funnels/`.
 
 ## Boundary
 
@@ -116,10 +115,10 @@ this infrastructure source directory or a public site directory.
 This package intentionally does not pretend to own the shared edge or Dataverse control planes. Before deployment is usable:
 
 1. The shared Front Door Terraform authority must create `briefs.hardmagic.com`, route only `/api/brief-request`, `/api/contact-request`, `/api/unsubscribe`, and `/api/health`, preserve the host, and attach the WAF controls in [EDGE-INTEGRATION.md](EDGE-INTEGRATION.md). The existing profile-level WAF binding must remain under that Terraform authority; the incremental `edge.bicep` deployment deliberately leaves it untouched.
-2. The HardMagic Dataverse solution, application user, role, BU, Account, team, and custom table must match [DATAVERSE-CONTRACT.md](DATAVERSE-CONTRACT.md).
+2. The HardMagic Dataverse solution, application user, role, BU, Account, team, and custom table must match [DATAVERSE-CONTRACT.md](DATAVERSE-CONTRACT.md) and the source-controlled [role/solution snapshot](dataverse/role-hardmagic-brief-delivery.json); the FocusHive records and team-role assignment were verified by the 2026-09-01 canary.
 3. A custom ACS sender domain must be verified and its sender address added to Key Vault.
 4. Turnstile must be configured on both forms before production; the production default fails closed when it is absent.
-5. Reviewed PDFs must be uploaded to `briefs` using Entra ID and the exact catalog filenames. Do not add PDFs to this infrastructure directory or a public site directory.
+5. Reviewed PDFs must be uploaded to `briefs` using Entra ID and the exact catalog filenames. The protected deployment job performs this upload; do not add PDFs to this infrastructure directory or a public site directory.
 
 The separately owned Function catalog currently uses shorter titles for three source-data
 entries. Reconcile those titles against the landing data before upload; P0-05 evidence does

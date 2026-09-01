@@ -18,6 +18,8 @@ Turnstile/edge/WAF rejection, idempotent replay, exact-brief delivery, expiry/re
 CRM outage/retry, and suppression. Never store submitted names, email addresses,
 mandates, tokens, PDF URLs, or raw request bodies here.
 
-Current status: **not run**. The public health endpoint is a reachability/configuration
-signal only; it does not establish submission, email, private storage, CRM, retry, or
-suppression behavior.
+Current status: **controlled brief canary run**. The redacted
+[`canary-2026-09-01.md`](canary-2026-09-01.md) proves the valid brief path through
+Front Door, ACS, Blob ledger, the corrected Dataverse projection, bounded CRM retry,
+and cleanup. The complete contact-lane, failure-path, expiry/revocation, suppression,
+and rollback case groups remain open.

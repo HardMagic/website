@@ -100,6 +100,23 @@ describe('BriefLock deployment contracts', () => {
     expect(infrastructure).toContain("runtime: { name: 'node', version: '24' }");
   });
 
+  it('keeps the Dataverse bridge role local-only and source-checkpointed', () => {
+    const snapshot = JSON.parse(readRepositoryFile('infra/brief-delivery/dataverse/role-hardmagic-brief-delivery.json')) as {
+      snapshot: {
+        role: {
+          globalPrivilegeCount: number;
+          privileges: Array<{ name: string; depth: string }>;
+          forbiddenPrivilegeNames: string[];
+        };
+      };
+    };
+    expect(snapshot.snapshot.role.globalPrivilegeCount).toBe(0);
+    expect(snapshot.snapshot.role.privileges).toHaveLength(16);
+    expect(snapshot.snapshot.role.privileges.every((privilege) => privilege.depth === 'Local')).toBe(true);
+    expect(snapshot.snapshot.role.privileges.map((privilege) => privilege.name)).toContain('prvAppendToAccount');
+    expect(snapshot.snapshot.role.forbiddenPrivilegeNames).toContain('prvWriteSharePointData');
+  });
+
   it('runs what-if automatically and keeps production deployment blocking and manual', () => {
     const source = readRepositoryFile('.gitlab/ci/brief-delivery.yml');
     const whatIf = source.slice(source.indexOf('brief_lock_what_if:'), source.indexOf('brief_lock_deploy:'));

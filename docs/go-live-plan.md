@@ -8,7 +8,11 @@ This is the execution contract for the Luna fanout. It is intentionally determin
 
 ## Execution status — 2026-08-31
 
-The current website source/artifact candidate is source-ready for the protected site-release pipeline. No production writes or funnel submissions were made, and this candidate status is not a production-release approval: protected deployment and public-host verification remain open.
+The 2026-08-31 candidate snapshot below was source-ready for the protected
+site-release pipeline. Its “no production writes or funnel submissions” statement
+is historical; the dated controlled canary evidence below supersedes it for the
+valid brief path. This plan still is not a blanket production-release approval:
+editorial, legal, accessibility, rollback, and failure-path gates remain open.
 
 Integrated and verified against the isolated public candidate:
 
@@ -27,13 +31,36 @@ Website source checks are green: `npm run check` reports 0 errors, 0 warnings, a
 
 Full browser validation against the exact public artifact is recorded in `docs/release-evidence/visual/browser-run.md`: `npm run test:browser` produced 758 passed, 20 expected skips, and 29 host-environment failures; the two transient Chromium route failures passed targeted reruns, and the 27 WebKit launch failures were due to missing host ICU 74/XML2 libraries. Containerized WebKit validation passed 26 cases with 1 expected skip, and targeted Chromium route smoke passed 2 cases. Browser evidence validates the candidate artifact only; it does not prove production deployment or live funnel delivery.
 
-Protected deployment is still unverified: the release manifest remains a candidate with `publicMirrorVerified`, `renderedUrlTests`, and `deployedHostVerified` all false. Protected `/hardmagic/` demo access-control/UAT, public mirror/DNS/TLS/headers/redirect/CDN freshness, controlled production funnel canaries, Azure/Dataverse/ACS/Blob delivery and failure-path evidence, brief editorial/accessibility/legal/rights approvals, operations rehearsal, and named release-owner approvals remain open. The plan remains not release-ready until those gates have dated evidence.
+Protected deployment and the public mirror now have dated evidence in the 2026-09-01
+verification delta below. The candidate release manifest intentionally keeps
+`publicMirrorVerified`, `renderedUrlTests`, and `deployedHostVerified` false until
+the release-owner evidence package is signed; those flags are not a live-site
+health signal. Protected `/hardmagic/` demo access-control/UAT, public DNS/TLS/
+headers/redirect/CDN freshness, the remaining funnel case groups, brief editorial/
+accessibility/legal/rights approvals, operations rehearsal, and named release-owner
+approvals remain open. The plan remains not release-ready until those gates have
+dated evidence.
 
-Azure posture was read back against subscription `6e60a8fd-9992-4ff7-8a3e-db96b4dfed4f` and resource group `rg-hardmagic-briefs`: the Function is healthy through Front Door (`/api/health` 200) and denied at its direct origin (403), the scheduled failure rule is enabled at severity 1 with a 5-minute evaluation/10-minute window, and its source/live KQL hashes now match (`e7232520a518c10a5569e74f3ac9a2eb52bf05da47f5e15013ffdbc95fd181ac`). The corrected query returns `FailureCount=0` over the current and historical 36-hour windows. Function diagnostics export only `FunctionAppLogs` with metrics disabled. The tested Function package was deployed to the existing app (package SHA-256 `50d274fbdf69627d8ef5b45ef9df86d4c87bfda027e2b86332a5e6f34b63e77d`), the Flex runtime is now Node 24, and non-side-effecting smoke checks return JSON `400`, unsupported `text/plain` `415`, health `200`, and a valid-origin preflight `204`; no valid funnel submission was made. The protected GitLab what-if/manual promotion remains a separate release-evidence gate. No Logic App resource exists in this resource group; the delivery path is Function plus Storage queues.
+Azure posture was read back against subscription `6e60a8fd-9992-4ff7-8a3e-db96b4dfed4f` and resource group `rg-hardmagic-briefs`: the Function is healthy through Front Door (`/api/health` 200) and denied at its direct origin (403), the scheduled failure rule is enabled at severity 1 with a 5-minute evaluation/10-minute window, and its source/live KQL hashes now match (`395037ab30236291d7bf842a64b912e0f0644002792c7e408aaaca2752fd8307`). The corrected query returns `FailureCount=0` over the current and historical 36-hour windows. Function diagnostics export only `FunctionAppLogs` with metrics disabled. The tested Function package from protected package job `1018315` was deployed to the existing app (package SHA-256 `4eaf83b5e81631f631203b690d5be8e88587516f4297ff57be2ade667348415f`), and non-side-effecting smoke checks return JSON `400`, unsupported `text/plain` `415`, health `200`, and a valid-origin preflight `204`. The protected GitLab what-if/manual promotion remains a separate release-evidence gate. No Logic App resource exists in this resource group; the delivery path is Function plus Storage queues.
 
 ### Incident remediation — 2026-09-01
 
 Three distinct Azure alert activations (01:03, 10:08, and 19:38 UTC on 2026-08-31) were false positives from normal Flex worker scale-in telemetry, not HardMagic intake failures. The old query treated the exact `Exception encountered while listening to EventStream` companion as an error and correlated events in arbitrary one-second bins. The live rule was updated at 01:04 UTC to the source-controlled query: it scopes to the HardMagic Function role/resource, selects messages without empty-string coalescing, requires a non-empty worker instance, and suppresses only the two observed complete lifecycle patterns. Any unpaired or additional exception remains alertable. The action group still targets `admin@focushive.com`; M365 Graph reads confirmed the connection is healthy and no re-authentication was required.
+
+### Current verification delta — 2026-09-01
+
+Protected pipeline `56132` passed the Function tests/package, PDF package, Bicep
+validation, and what-if. Deployment job `1018319` completed the corrected Function
+package and the edge deployment. The public Pages artifact was published through the
+protected mirror path; the live site returns 200 and serves the Generative Media brief.
+
+The controlled brief canary in
+[`docs/release-evidence/funnels/canary-2026-09-01.md`](release-evidence/funnels/canary-2026-09-01.md)
+returned the expected 303, delivered one ACS message, projected the full live
+Dataverse schema with HardMagic Account/BU/team ownership, survived the bounded CRM
+retry after the owner-team role was corrected, and was fully cleaned up. `TURNSTILE_REQUIRED`
+was restored to `true`. This closes the valid-brief-path evidence gap; the remaining
+case groups and named approvals are intentionally still open.
 
 ## 1. Current-state finding
 

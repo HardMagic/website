@@ -11,7 +11,7 @@ one immutable release manifest before publishing.
 | PDF/UA and accessible HTML alternative | TBD | pending | — | Manual screen-reader review required |
 | Privacy, consent, retention, suppression | TBD | pending | — | Funnel canaries required |
 | Security, WAF, headers, secrets | TBD | pending | — | Public-edge smoke required |
-| Azure/Dataverse/CRM projection | TBD | pending | — | Infrastructure canary required |
+| Azure/Dataverse/CRM projection | TBD | evidence captured; approval pending | 2026-09-01 | `funnels/canary-2026-09-01.md` |
 | Browser, visual, performance QA | TBD | pending | — | `docs/release-evidence/visual/` |
 | Release owner and rollback | TBD | pending | — | Timed rehearsal required |
 

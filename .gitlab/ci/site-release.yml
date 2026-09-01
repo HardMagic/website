@@ -76,10 +76,11 @@ mirror_public_release:
   needs:
     - job: public_release
       artifacts: true
-  # The GitLab Kubernetes runner is non-root. Use the full Debian image, which
-  # already contains the release tools, rather than trying to apt-install into
-  # a slim image at runtime.
-  image: harbor.focuscell.org/dockerhub-proxy/library/node:22.12.0-bookworm
+  # Use the same public, browser-capable Debian image proven by the release
+  # job. It already contains git, GPG, curl, and OpenSSL; relying on the
+  # private Harbor mirror here made a fresh runner fail before the script ran
+  # when that registry returned 401.
+  image: mcr.microsoft.com/playwright:v1.62.1-noble
   variables:
     GITHUB_PAGES_REPOSITORY: HardMagic/website
     GITHUB_PAGES_BRANCH: gh-pages
