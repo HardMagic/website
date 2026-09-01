@@ -147,7 +147,7 @@
     "baselineRoles": ["Basic User"]
   },
   "reconciliation": {
-    "lastVerifiedUtc": "2026-09-01T03:02:44Z",
+    "lastVerifiedUtc": "2026-09-01T03:28:28Z",
     "method": "Dataverse Web API roleprivilegescollection and roleprivileges_association readback",
     "notes": "The role is deliberately maintained outside the Azure Bicep deployment. A future role change must update this snapshot and the Dataverse contract in the same change."
   }
