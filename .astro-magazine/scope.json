@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "full_publication",
+  "included": [
+    "Astro v7 source, content, metadata, accessibility, performance, and release audits",
+    "Azure brief-delivery Function, Bicep, diagnostics, alerting, and protected CI configuration",
+    "Local release evidence and the .astro-magazine control plane"
+  ],
+  "excluded": [
+    "Submitting real personal data or sending external messages",
+    "Replacing the existing visual identity, route authority, or approved public content",
+    "Direct production deployment outside the protected canonical pipeline"
+  ],
+  "approved_changes": [
+    "Harden failure handling and idempotency at the brief-delivery boundaries",
+    "Reduce avoidable Azure telemetry and health-probe noise without hiding actionable failures",
+    "Upgrade supported Node/Astro dependencies after local and source-level validation",
+    "Add durable route, release, accessibility, SEO, and provenance evidence"
+  ],
+  "protected_paths": [
+    "src/data/**",
+    "src/assets/**",
+    "public/**",
+    "docs/release-evidence/**",
+    ".gitlab/ci/**",
+    "infra/brief-delivery/**"
+  ],
+  "constraints": [
+    "Keep Flex Consumption and Standard_LRS defaults unless evidence requires a change",
+    "Do not add Always Ready instances, private endpoints, or a new Logic App for this workload",
+    "All cloud mutations require explicit subscription and resource-group targeting",
+    "Preserve pre-existing user work and record unresolved evidence as warn or unknown"
+  ],
+  "accepted_exceptions": [],
+  "updated_at": "2026-08-31T01:12:00.000Z"
+}

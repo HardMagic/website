@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0.0",
+  "checkpoint_id": "checkpoint-brief-delivery-posture-20260831T110342Z",
+  "run_id": "hardmagic-posture-20260831T110342Z",
+  "phase": "handoff",
+  "status": "warn",
+  "last_event": {
+    "seq": 2,
+    "hash": "909424813a3fead47e4c81edbd1ed9642c81b7d0ec52f5214ce3284ecc77077c"
+  },
+  "counts": {
+    "routes": 153,
+    "articles": 0,
+    "briefs": 0,
+    "media": 155,
+    "claims": 0,
+    "sources": 0
+  },
+  "artifact_hashes": {
+    ".astro-magazine/commission.json": "db3d1118932b798eeac3210f8e462dd49bbe8f43d706893f72ce689f0a3f252d",
+    ".astro-magazine/scope.json": "49f56c000d0d8594e3dc296a1645b2b7484da1933273d3770fdd4fdbdac3dfcc",
+    "package.json": "0ca6471f57871f3b7451bd4e28c9be1593e73dc1ebea8796310b98ce2e2fc382",
+    "package-lock.json": "6075e316a40a73a4126afadf7190db439bac5ac642af99624fc5ac930b5f1319",
+    "infra/brief-delivery/function/package.json": "33cce1eb172d6277dbba6360e6c729d32803c2f671ca6fb8df860ac5f186ce5c",
+    "infra/brief-delivery/function/package-lock.json": "3862e2bd846a46233605177bd5c85e51ac751801bef95b8589e2555562a41190",
+    "infra/brief-delivery/function/src/config.ts": "7d547d17612553cf0dbf3064366d5abffa248f044016cfd855754329c647016d",
+    "infra/brief-delivery/function/src/index.ts": "33811866038cfe4f7bebab2eec09491a6d0e5a1516fcfaa4513cf59d1565a49f",
+    "infra/brief-delivery/function/src/platform.ts": "ba1e93f58a8fceff94aa139bcc1e51894b8aeea13ef7c128eacd0c1cec0ae0ec",
+    "infra/brief-delivery/function/host.json": "65f6cc68f49ce6fa45473326c2168debb3c4a193e41d1e04398ce06c91869f22",
+    "infra/brief-delivery/modules/brief-lock.bicep": "952ce48f5d700d002ad1283f8301c08ec59c098522368b45c22b3700275fe0c6",
+    "infra/brief-delivery/edge.bicep": "e211d46e3cd6647aa8c8b65b51217d76b4d5293ded5bd2cfe7c376050bbdc3e9",
+    ".gitlab-ci.yml": "5ee08387feec00937f48a41bba01e7cd40208bb9e0098f81527fc616ed47d35e",
+    ".gitlab/ci/brief-delivery.yml": "d19c08b7bd6148940094ce62e65ac07fd611ea6da475aee4e4118a7f6a6785ab",
+    ".gitlab/ci/site-release.yml": "5ae58a7882b6afea3ce3fe33a57331c89a9f0aac8d82a7fa69c5925d8a979afe",
+    "src/layouts/BaseLayout.astro": "592f662ba80d8538299fad473fc63ee17238b7194ca5ceb154a24d37dcc221ea",
+    "src/components/home/WireMarkProof.astro": "4e9d9e57918919164b7d71216183ab853ce03d7f10394423d26da167a42df0ad",
+    "src/styles/home-current.css": "b662a4f4c81f18d17ccfe9c21b974838b15b2e318de0c6b216da3766366b3f3a",
+    "tests/deployment/deployment-config.test.ts": "91277c55b6cb653c0ea30c730bff1c65f78a6e6ba7544d72a94294d43a18722c",
+    "tests/release/site-release.test.ts": "37f4de7a37c32f0d68731a6d4a3051a4fa79be690fd48e471e047e6c23c61bd0",
+    "tests/qa/global-teardown.ts": "e33745aa6ccf7b7084ce9583f5dfda64cfc41c0a901ed6e5eee7ad544de1657b",
+    "docs/release-evidence/visual/browser-run.md": "5ca3d787d12db7d9c3d30b81bebd44530a6f1cdfa4e214609917d94e53ca0970",
+    "docs/release-evidence/visual/visual-capture-manifest.json": "b4e3bd75e60023e332ef29aa8ec6538b692aee96075e20c8e75acc0c34d9fcc0",
+    "docs/release-evidence/visual/contact-sheet.html": "2f2e05ef16a5a04d5b172d170de1c6ca0c16b65e59e3b6b87adda128c6e1855c",
+    "docs/release-evidence/release-manifest.json": "859c1ee3150e924492966f33af9776dc0c7350bb75b16ff0eca62831bbbbfbb1",
+    "docs/conversion-ledger.md": "7d2bdccc02a3aa610e29f7a1367fdc70495772e4e5793757748d7d8382962561",
+    "docs/implementation-note.md": "b449588d054f1a8235ac9725e5e380e1f31b799876fb5f4fee2df51c5e38122c",
+    "infra/brief-delivery/README.md": "356018689ca3cc966f35d188bfc69534a881167388abb99da2e0d30410853fb2",
+    "infra/brief-delivery/OPERATIONS.md": "1b54d02fc1b68614425604faea792c8539d17ae66408b245aa3e9a28add7b9aa",
+    "docs/go-live-plan.md": "e6f77c294e7af4a8aa31c5720f59895ba6ba00ceb830d5c8b5dba03fbe43286e"
+  },
+  "active_leases": [],
+  "active_handoffs": [],
+  "active_assignments": [],
+  "completed_artifacts": [
+    "Astro public candidate build and release manifest",
+    "route, sitemap, media, CTA, rendered, link, security, and content audits",
+    "browser matrix evidence with containerized WebKit fallback",
+    "BriefLock Node 24 source hardening and unit tests",
+    "Bicep diagnostics, alert KQL, probe, and protected deployment guardrails",
+    "Azure alert and diagnostic-setting read-back",
+    "immutable posture checkpoint and event-chain record"
+  ],
+  "gate_results": [
+    {
+      "gate": "source_validation",
+      "status": "pass",
+      "evidence": "BriefLock npm check, 38/38 Node 24 tests, and build pass; Astro check 79 files with zero diagnostics; TypeScript 7 and aggregate release tests pass."
+    },
+    {
+      "gate": "rendered_audits",
+      "status": "pass",
+      "evidence": "153 HTML outputs, 135 sitemap URLs, 155 built media assets, 20,399 references, zero link/rendered-route failures, and zero CTA mapping failures."
+    },
+    {
+      "gate": "browser_validation",
+      "status": "warn",
+      "evidence": "Host matrix recorded 758 passed, 20 expected skips, and 29 environment/transient failures; targeted Chromium reruns passed and containerized WebKit passed 26 with 1 expected skip."
+    },
+    {
+      "gate": "azure_alert",
+      "status": "pass",
+      "evidence": "Live scheduled rule is enabled Sev1/PT5M/PT10M; source/live KQL SHA-256 is 001683b3b65eb6d13c9056617536175c105f476188dd579ac6ed3f5ba8071c1b and the live candidate query returns FailureCount=0."
+    },
+    {
+      "gate": "azure_diagnostics_cost",
+      "status": "pass",
+      "evidence": "Function diagnostic setting exports FunctionAppLogs only; App Service audit categories and AllMetrics are disabled; Flex is 512 MB with no Always Ready and probes are 255 seconds."
+    },
+    {
+      "gate": "production_deploy",
+      "status": "warn",
+      "evidence": "Protected what-if/manual canary remains pending; live Function is still Node 22 and the text/plain canary remains 400, while the source candidate returns 415."
+    },
+    {
+      "gate": "editorial_and_delivery_approval",
+      "status": "warn",
+      "evidence": "PDF/editorial, legal/rights, accessibility, and controlled ACS/Dataverse/Blob delivery canaries require named owners and approved test identities."
+    }
+  ],
+  "accepted_exceptions": [
+    "Protected Function source deployment and manual canary are pending; no direct production bypass was used.",
+    "Fourteen link-review warnings remain for meta-refresh live redirect verification, form canaries, and external anti-bot sources.",
+    "Manual brief PDF, editorial, legal/rights, accessibility, and release-owner approvals remain open.",
+    "ACS, Dataverse, and Blob lease contention canaries were not run against live personal-data systems.",
+    "Visual captures are workspace/CI object artifacts: the manifest contains 306 SHA/byte records, but PNGs are not source-controlled.",
+    "No fixture-backed synthetic KQL evaluator was added; exact source fragments and the live zero-result query are the current evidence.",
+    "Storage network default Allow and private endpoints were left unchanged to preserve the frugal cost boundary; review as a separate security-funded change."
+  ],
+  "blockers": [],
+  "last_verified": {
+    "timestamp": "2026-08-31T11:03:42.000Z",
+    "repository_identity": {
+      "branch": "demo",
+      "commit": "66ff0f8c34d9f00c98eb31ec5656ab9a0b24df81",
+      "working_tree": "uncommitted candidate; pre-existing and user changes preserved"
+    },
+    "build_identity": {
+      "site_fingerprint": "9164f81e7cbf8d3edfbc4e9fd6d67981f98d9c3bb12ed0ad5654c825ec34e1a7",
+      "release_artifact_sha256": "9a5fc9b83d1622b558b69cf5cc682eafcca049e0c5d6454ebdcffbcf2fe9df27"
+    },
+    "commands": [
+      "npm run check && npm test && npm run build (infra/brief-delivery/function)",
+      "npm run check && npm run typecheck:ts7 && npm run test:all",
+      "ms az-run focushive -- bicep build (main.bicep and edge.bicep)",
+      "ms az-run focushive -- resource/monitor read-back (alert, diagnostics, runtime)",
+      "ms az-run focushive -- monitor log-analytics query (PT10M)",
+      "curl public and direct-origin health plus text/plain canary"
+    ],
+    "evidence": [
+      "public health 200 configured=true; direct origin 403",
+      "live text/plain POST 400 before protected deployment",
+      "Function runtime 22; HTTPS-only true; public network enabled",
+      "Outlook Inbox 2026-08-30 through verification time contains no HardMagic BriefLock alert mail"
+    ]
+  },
+  "next_action": {
+    "owner": "release owner",
+    "scope": "protected demo pipeline and controlled production canary",
+    "action": "Run brief_lock_what_if, inspect machine-readable no-delete output, then manually approve brief_lock_deploy with BRIEF_CONFIRM=PROVISION-HARDMAGIC-BRIEFLOCK; execute the Node 24 canary and verify health, alert, ACS, Dataverse, Blob lease, and live 415 boundary.",
+    "prerequisites": [
+      "protected GitLab OIDC variables",
+      "two-person deployment approval",
+      "reviewed PDFs, Key Vault, Dataverse, and ACS readiness",
+      "approved non-PII canary identity and cleanup plan"
+    ]
+  },
+  "updated_at": "2026-08-31T11:03:42.000Z"
+}

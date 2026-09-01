@@ -30,21 +30,74 @@ describe('BriefLock deployment contracts', () => {
     expect(source).toContain('shared profile-level WAF binding is owned by the authoritative Terraform');
   });
 
-  it('counts sampled failures and suppresses only an exact lifecycle pair', () => {
+  it('counts sampled failures and suppresses one decorated Flex lifecycle sequence', () => {
     const source = readRepositoryFile('infra/brief-delivery/modules/brief-lock.bicep');
-    expect(source).toContain('node exited with code 143');
-    expect(source).toContain('Language Worker Process exited');
-    expect(source).toContain('countif(AlertMessage in (benignSigtermMessages))');
-    expect(source).toContain('countif(AlertMessage == "Language Worker Process exited")');
-    expect(source).toContain('nonLifecycleCount=countif(not (AlertMessage in (benignLifecycleMessages)))');
-    expect(source).toContain('CorrelationKey');
+    expect(source).toContain('"node exited with code 143 (0x8F)"');
+    expect(source).toContain('AlertMessage in (benignSigtermMessages)');
+    expect(source).toContain('let workerExitPrefix="Language Worker Process exited. Pid="');
+    expect(source).toContain('AlertMessage startswith workerExitPrefix');
+    expect(source).toContain('isnotnull(toint(substring(AlertMessage');
+    expect(source).toContain('let connectionAbortedProblemId="Microsoft.AspNetCore.Connections.ConnectionAbortedException at Grpc.AspNetCore.Server.Internal.PipeExtensions+<ReadStreamMessageAsync>d__15`1.MoveNext"');
+    expect(source).toContain('ExceptionOuterMessage == "The request stream was aborted."');
+    expect(source).toContain('ExceptionInnermostMessage == "The HTTP/2 connection faulted."');
+    expect(source).toContain('ExceptionProblemId == connectionAbortedProblemId');
+    expect(source).toContain('IsBenignConnectionAbort=IsException');
+    expect(source).toContain('countif(IsBenignSigterm)');
+    expect(source).toContain('countif(IsBenignWorkerExit)');
+    expect(source).toContain('countif(IsBenignConnectionAbort)');
+    expect(source).toContain('benignConnectionAbortCount <= 1');
+    expect(source).toContain('nonLifecycleCount=countif(not(IsBenignLifecycle))');
+    expect(source).toContain('and IsBenignLifecycle');
+    expect(source).toContain('let eventStreamMessage="Exception encountered while listening to EventStream"');
+    expect(source).toContain('IsBenignEventStream=IsLifecycleTrace and AlertMessage == eventStreamMessage');
+    expect(source).toContain('AppRoleName=tostring(column_ifexists("AppRoleName", ""))');
+    expect(source).toContain('_ResourceId=tostring(column_ifexists("_ResourceId", ""))');
+    expect(source).toContain('let expectedAppRoleName="${functionAppName}"');
+    expect(source).toContain('let expectedResourceId="${functionResourceId}"');
+    expect(source).toContain('AppRoleName == expectedAppRoleName');
+    expect(source).toContain('tolower(_ResourceId) == tolower(expectedResourceId)');
+    expect(source).toContain('where isnotempty(AppRoleInstance)');
+    expect(source).toContain('by _ResourceId, AppRoleName, AppRoleInstance');
+    expect(source).toContain('benignEventStreamCount <= 1');
+    expect(source).toContain('benignSigtermCount == 0');
+    expect(source).toContain('benignWorkerExitCount == 0');
+    expect(source).toContain('benignConnectionAbortCount == 1');
+    expect(source).toContain('benignEventStreamCount == 1');
+    expect(source).toContain('join kind=leftouter benignLifecycleKeys on _ResourceId, AppRoleName, AppRoleInstance');
     expect(source).toContain('AppRoleInstance');
-    expect(source).toContain('OperationId');
+    expect(source).not.toContain('bin(TimeGenerated, 1s)');
+    expect(source).not.toContain('AlertMessage == "Language Worker Process exited"');
+    expect(source).not.toContain('OperationId=tostring');
+    expect(source).not.toContain('ParentId=tostring');
     expect(source).toContain('FailureCount=sum(FailureCount)');
     expect(source).not.toContain('toscalar');
     expect(source).toContain('AppExceptions');
     expect(source).toContain('AppTraces | where SeverityLevel >= 3');
     expect(source).not.toContain('AlertMessage has_any');
+  });
+
+  it('keeps Azure telemetry frugal without dropping failure signals', () => {
+    const infrastructure = readRepositoryFile('infra/brief-delivery/modules/brief-lock.bicep');
+    const host = JSON.parse(readRepositoryFile('infra/brief-delivery/function/host.json')) as {
+      logging: { applicationInsights: { samplingSettings: { excludedTypes: string } }; logLevel: Record<string, string> };
+    };
+    const edge = readRepositoryFile('infra/brief-delivery/edge.bicep');
+
+    expect(host.logging.applicationInsights.samplingSettings.excludedTypes).toBe('Exception');
+    expect(host.logging.logLevel.default).toBe('Warning');
+    expect(host.logging.logLevel.Function).toBe('Warning');
+    expect(infrastructure).toContain("{ category: 'StorageRead', enabled: false }");
+    expect(infrastructure).toContain("{ category: 'StorageWrite', enabled: true }");
+    expect(infrastructure).toContain("{ category: 'StorageDelete', enabled: true }");
+    expect(infrastructure).toContain("logs: [ { category: 'FunctionAppLogs', enabled: true } ]");
+    expect(infrastructure).not.toContain("categoryGroup: 'allLogs'");
+    expect(infrastructure).toContain("{ category: 'AllMetrics', enabled: false }");
+    expect(infrastructure).toContain("prefixMatch: [ 'ledger/rate/' ]");
+    expect(infrastructure).toContain("policyConfig.rateLimitRetentionDays");
+    expect(infrastructure).toContain("prefixMatch: [ 'ledger/locks/contact/' ]");
+    expect(infrastructure).toContain("policyConfig.contactLockRetentionDays");
+    expect(edge).toContain('probeIntervalInSeconds: 255');
+    expect(infrastructure).toContain("runtime: { name: 'node', version: '24' }");
   });
 
   it('runs what-if automatically and keeps production deployment blocking and manual', () => {
@@ -54,6 +107,9 @@ describe('BriefLock deployment contracts', () => {
     expect(whatIf).toContain('when: on_success');
     expect(whatIf).toContain('allow_failure: false');
     expect(whatIf).toContain('--no-prompt true');
+    expect(whatIf).toContain('(.properties.changes // .changes)');
+    expect(whatIf).toContain('.changeType == "Delete"');
+    expect(whatIf).toContain('refusing to deploy');
     expect(deploy).toContain('brief_lock_what_if');
     expect(deploy).toContain('when: manual');
     expect(deploy).toContain('manual_confirmation:');

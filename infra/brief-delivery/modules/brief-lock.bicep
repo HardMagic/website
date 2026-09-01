@@ -21,13 +21,16 @@ var logWorkspaceName = 'log-hm-briefs-${suffix}'
 var appInsightsName = 'appi-hm-briefs-${suffix}'
 var storageSuffix = environment().suffixes.storage
 var keyVaultSuffix = environment().suffixes.keyvaultDns
+var functionResourceId = resourceId('Microsoft.Web/sites', functionAppName)
 var blobDataContributorRoleId = 'ba92f5b4-2d11-453d-a403-e96b0029c9fe'
 var queueDataContributorRoleId = '974c5e8b-45b9-4653-ba55-5f855dd0fb88'
 var keyVaultSecretsUserRoleId = '4633458b-17de-408a-b874-0445c86b69e6'
-// Count sampled failures, but suppress only an exact, correlated lifecycle pair.
-// A second worker exit, exception, or other trace in that correlation window
-// keeps the alert firing instead of being hidden by a window-wide exception.
-var functionFailureQuery = 'let benignSigtermMessages = dynamic(["node exited with code 143", "node exited with code 143 (SIGTERM)"]); let benignLifecycleMessages = dynamic(["node exited with code 143", "node exited with code 143 (SIGTERM)", "Language Worker Process exited"]); let recentFailures = union isfuzzy=true (AppExceptions | project TimeGenerated, AppRoleInstance=tostring(column_ifexists("AppRoleInstance", "")), OperationId=tostring(column_ifexists("OperationId", "")), ParentId=tostring(column_ifexists("ParentId", "")), AlertMessage=tostring(coalesce(column_ifexists("Message", ""), column_ifexists("ExceptionMessage", ""), column_ifexists("OuterMessage", ""), column_ifexists("InnermostMessage", ""), column_ifexists("ProblemId", ""))), FailureCount=tolong(coalesce(column_ifexists("ItemCount", 1), 1)), IsLifecycleTrace=false), (AppTraces | where SeverityLevel >= 3 | project TimeGenerated, AppRoleInstance=tostring(column_ifexists("AppRoleInstance", "")), OperationId=tostring(column_ifexists("OperationId", "")), ParentId=tostring(column_ifexists("ParentId", "")), AlertMessage=tostring(column_ifexists("Message", "")), FailureCount=tolong(coalesce(column_ifexists("ItemCount", 1), 1)), IsLifecycleTrace=true) | where TimeGenerated > ago(10m) | extend CorrelationKey=strcat(AppRoleInstance, "|", OperationId, "|", ParentId, "|", bin(TimeGenerated, 1m)); let benignLifecycleKeys = recentFailures | where IsLifecycleTrace and AlertMessage in (benignLifecycleMessages) | summarize benignSigtermCount=countif(AlertMessage in (benignSigtermMessages)), benignWorkerExitCount=countif(AlertMessage == "Language Worker Process exited"), nonLifecycleCount=countif(not (AlertMessage in (benignLifecycleMessages))) by CorrelationKey | where benignSigtermCount == 1 and benignWorkerExitCount == 1 and nonLifecycleCount == 0 | project CorrelationKey, HasBenignLifecyclePair=true; recentFailures | join kind=leftouter benignLifecycleKeys on CorrelationKey | where not (coalesce(HasBenignLifecyclePair, false) and IsLifecycleTrace and AlertMessage in (benignLifecycleMessages)) | summarize FailureCount=sum(FailureCount)'
+// Flex Consumption emits a small, exact lifecycle sequence during normal
+// scale-in. Keep suppression conservative: require the Function role and
+// resource, a non-empty worker instance, and one of the two known patterns
+// across this alert's ten-minute window. Any other exception/trace remains
+// alertable, including the same lifecycle messages without an instance.
+var functionFailureQuery = 'let benignSigtermMessages=dynamic(["node exited with code 143", "node exited with code 143 (SIGTERM)", "node exited with code 143 (0x8F)"]); let workerExitPrefix="Language Worker Process exited. Pid="; let eventStreamMessage="Exception encountered while listening to EventStream"; let connectionAbortedProblemId="Microsoft.AspNetCore.Connections.ConnectionAbortedException at Grpc.AspNetCore.Server.Internal.PipeExtensions+<ReadStreamMessageAsync>d__15`1.MoveNext"; let expectedAppRoleName="${functionAppName}"; let expectedResourceId="${functionResourceId}"; let recentFailures = union isfuzzy=true (AppExceptions | project TimeGenerated, AppRoleInstance=tostring(column_ifexists("AppRoleInstance", "")), AppRoleName=tostring(column_ifexists("AppRoleName", "")), _ResourceId=tostring(column_ifexists("_ResourceId", "")), RawMessage=tostring(column_ifexists("Message", "")), ExceptionMessageValue=tostring(column_ifexists("ExceptionMessage", "")), ExceptionOuterMessage=tostring(column_ifexists("OuterMessage", "")), ExceptionInnermostMessage=tostring(column_ifexists("InnermostMessage", "")), ExceptionProblemId=tostring(column_ifexists("ProblemId", "")), FailureCount=tolong(coalesce(column_ifexists("ItemCount", 1), 1)), IsLifecycleTrace=false, IsException=true), (AppTraces | where SeverityLevel >= 3 | project TimeGenerated, AppRoleInstance=tostring(column_ifexists("AppRoleInstance", "")), AppRoleName=tostring(column_ifexists("AppRoleName", "")), _ResourceId=tostring(column_ifexists("_ResourceId", "")), RawMessage=tostring(column_ifexists("Message", "")), ExceptionMessageValue="", ExceptionOuterMessage="", ExceptionInnermostMessage="", ExceptionProblemId="", FailureCount=tolong(coalesce(column_ifexists("ItemCount", 1), 1)), IsLifecycleTrace=true, IsException=false) | extend AlertMessage=tostring(case(isnotempty(RawMessage), RawMessage, isnotempty(ExceptionMessageValue), ExceptionMessageValue, isnotempty(ExceptionOuterMessage), ExceptionOuterMessage, isnotempty(ExceptionInnermostMessage), ExceptionInnermostMessage, isnotempty(ExceptionProblemId), ExceptionProblemId, "")) | where TimeGenerated > ago(10m) and AppRoleName == expectedAppRoleName and tolower(_ResourceId) == tolower(expectedResourceId) | extend IsBenignSigterm=IsException and AlertMessage in (benignSigtermMessages), IsBenignWorkerExit=IsLifecycleTrace and AlertMessage startswith workerExitPrefix and AlertMessage endswith "." and strlen(AlertMessage) > strlen(workerExitPrefix) + 1 and isnotnull(toint(substring(AlertMessage, strlen(workerExitPrefix), strlen(AlertMessage) - strlen(workerExitPrefix) - 1))), IsBenignEventStream=IsLifecycleTrace and AlertMessage == eventStreamMessage, IsBenignConnectionAbort=IsException and ExceptionOuterMessage == "The request stream was aborted." and ExceptionInnermostMessage == "The HTTP/2 connection faulted." and ExceptionProblemId == connectionAbortedProblemId | extend IsBenignLifecycle=IsBenignSigterm or IsBenignWorkerExit or IsBenignEventStream or IsBenignConnectionAbort; let benignLifecycleKeys = recentFailures | where isnotempty(AppRoleInstance) | summarize benignSigtermCount=countif(IsBenignSigterm), benignWorkerExitCount=countif(IsBenignWorkerExit), benignEventStreamCount=countif(IsBenignEventStream), benignConnectionAbortCount=countif(IsBenignConnectionAbort), nonLifecycleCount=countif(not(IsBenignLifecycle)) by _ResourceId, AppRoleName, AppRoleInstance | where (benignSigtermCount == 1 and benignWorkerExitCount == 1 and benignConnectionAbortCount <= 1 and benignEventStreamCount <= 1 and nonLifecycleCount == 0) or (benignSigtermCount == 0 and benignWorkerExitCount == 0 and benignConnectionAbortCount == 1 and benignEventStreamCount == 1 and nonLifecycleCount == 0) | project _ResourceId, AppRoleName, AppRoleInstance, HasBenignLifecyclePair=true; recentFailures | join kind=leftouter benignLifecycleKeys on _ResourceId, AppRoleName, AppRoleInstance | where not (coalesce(HasBenignLifecyclePair, false) and IsBenignLifecycle) | summarize FailureCount=sum(FailureCount)'
 
 resource runtimeIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
   name: runtimeIdentityName
@@ -116,6 +119,24 @@ resource lifecycle 'Microsoft.Storage/storageAccounts/managementPolicies@2025-06
   properties: {
     policy: {
       rules: [
+        {
+          name: 'expire-rate-limit-counters'
+          enabled: true
+          type: 'Lifecycle'
+          definition: {
+            filters: { blobTypes: [ 'blockBlob' ], prefixMatch: [ 'ledger/rate/' ] }
+            actions: { baseBlob: { delete: { daysAfterModificationGreaterThan: policyConfig.rateLimitRetentionDays } } }
+          }
+        }
+        {
+          name: 'expire-contact-locks'
+          enabled: true
+          type: 'Lifecycle'
+          definition: {
+            filters: { blobTypes: [ 'blockBlob' ], prefixMatch: [ 'ledger/locks/contact/' ] }
+            actions: { baseBlob: { delete: { daysAfterModificationGreaterThan: policyConfig.contactLockRetentionDays } } }
+          }
+        }
         {
           name: 'expire-ledger'
           enabled: true
@@ -257,7 +278,7 @@ resource functionApp 'Microsoft.Web/sites@2024-11-01' = {
           }
         }
       }
-      runtime: { name: 'node', version: '22' }
+      runtime: { name: 'node', version: '24' }
       scaleAndConcurrency: { maximumInstanceCount: 20, instanceMemoryMB: 512 }
     }
     siteConfig: {
@@ -291,6 +312,8 @@ resource functionApp 'Microsoft.Web/sites@2024-11-01' = {
       }
       appSettings: [
         { name: 'APPLICATIONINSIGHTS_CONNECTION_STRING', value: appInsights.properties.ConnectionString }
+        { name: 'AzureFunctionsJobHost__logging__logLevel__default', value: 'Warning' }
+        { name: 'AzureFunctionsJobHost__logging__logLevel__Function', value: 'Warning' }
         { name: 'AzureWebJobsStorage__accountName', value: storage.name }
         { name: 'AzureWebJobsStorage__credential', value: 'managedidentity' }
         { name: 'AzureWebJobsStorage__clientId', value: runtimeIdentity.properties.clientId }
@@ -402,6 +425,9 @@ resource storageDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-pr
   scope: storage
   properties: {
     workspaceId: logWorkspace.id
+    // This resource exposes metrics only; keep one signal enabled because an
+    // all-disabled diagnostic setting is rejected by Azure. Service-level
+    // duplicate metrics are disabled below.
     metrics: [ { category: 'Transaction', enabled: true } ]
   }
 }
@@ -412,11 +438,11 @@ resource blobDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-previ
   properties: {
     workspaceId: logWorkspace.id
     logs: [
-      { category: 'StorageRead', enabled: true }
+      { category: 'StorageRead', enabled: false }
       { category: 'StorageWrite', enabled: true }
       { category: 'StorageDelete', enabled: true }
     ]
-    metrics: [ { category: 'Transaction', enabled: true } ]
+    metrics: [ { category: 'Transaction', enabled: false } ]
   }
 }
 
@@ -426,11 +452,11 @@ resource queueDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-prev
   properties: {
     workspaceId: logWorkspace.id
     logs: [
-      { category: 'StorageRead', enabled: true }
+      { category: 'StorageRead', enabled: false }
       { category: 'StorageWrite', enabled: true }
       { category: 'StorageDelete', enabled: true }
     ]
-    metrics: [ { category: 'Transaction', enabled: true } ]
+    metrics: [ { category: 'Transaction', enabled: false } ]
   }
 }
 
@@ -440,7 +466,7 @@ resource keyVaultDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-p
   properties: {
     workspaceId: logWorkspace.id
     logs: [ { category: 'AuditEvent', enabled: true } ]
-    metrics: [ { category: 'AllMetrics', enabled: true } ]
+    metrics: [ { category: 'AllMetrics', enabled: false } ]
   }
 }
 
@@ -449,8 +475,10 @@ resource functionDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-p
   scope: functionApp
   properties: {
     workspaceId: logWorkspace.id
-    logs: [ { categoryGroup: 'allLogs', enabled: true } ]
-    metrics: [ { category: 'AllMetrics', enabled: true } ]
+    // Host logging is Warning-or-higher. Keep function application logs while
+    // eliminating duplicated metrics ingestion.
+    logs: [ { category: 'FunctionAppLogs', enabled: true } ]
+    metrics: [ { category: 'AllMetrics', enabled: false } ]
   }
 }
 

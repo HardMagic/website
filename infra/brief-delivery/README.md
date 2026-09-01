@@ -13,7 +13,7 @@ The target boundary is:
 
 - resource group: `rg-hardmagic-briefs`;
 - public edge host: `briefs.hardmagic.com`;
-- runtime: Node 22 Azure Functions Flex Consumption;
+- runtime: Node 24 Azure Functions Flex Consumption;
 - private storage: anonymous Blob access disabled, shared keys disabled, OAuth by default;
 - private containers: `briefs`, `ledger`, `deadletter`, and `deployments`;
 - dedicated user-assigned runtime identity and dedicated Key Vault;
@@ -73,13 +73,15 @@ The fallback is a dedicated, expiring service-principal secret held in the
 organization Key Vault and GitLab protected variables; rotate it before expiry.
 Give the identity only the control-plane scope required for `rg-hardmagic-briefs`
 and the shared Front Door resource group; the template separately limits its
-data-plane Blob role to the `deployments` container. Never use a shared or
-long-lived application secret for this lane.
+data-plane Blob role to the `deployments` container for release evidence and the
+`briefs` container for reviewed PDF upload. Never use a shared or long-lived
+application secret for this lane; rotate the dedicated fallback before expiry.
 
 ## Validation
 
 ```bash
 cd infra/brief-delivery/function
+# The deployed Flex runtime and CI image are Node 24.
 npm ci
 npm run check
 npm test

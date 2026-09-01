@@ -26,7 +26,7 @@ public_release:
     - npm run check
     - npm run typecheck:ts7
     - npm run test
-    - npm exec -- vitest run tests/release/site-release.test.ts
+    - npm run test:release
     - NODE_OPTIONS="--require=$CI_PROJECT_DIR/.gitlab/ci/limit-image-build-concurrency.cjs" npm run build
     - npm run audit:security
     - npm exec -- vitest run tests/deployment/deployment-config.test.ts

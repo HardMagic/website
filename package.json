@@ -14,8 +14,10 @@
     "check": "astro check",
     "typecheck:ts7": "tsc --noEmit --project tsconfig.native.json",
     "test": "vitest run tests/site.test.ts tests/future2035-atmosphere.test.ts tests/briefs/data-integrity.test.ts tests/funnel/forms.test.ts tests/deployment/deployment-config.test.ts tests/cta/cta-ledger.test.ts",
+    "test:release": "vitest run tests/release/site-release.test.ts tests/briefs/pdf-manifest.test.ts",
+    "test:all": "npm run test && npm run test:release",
     "test:browser": "playwright test",
-    "audit:routes": "node --experimental-strip-types scripts/audit-routes.mjs",
+    "audit:routes": "tsx scripts/audit-routes.mjs",
     "audit:sitemap": "node scripts/audit-sitemap.mjs",
     "audit:media": "node scripts/audit-media.mjs",
     "audit:links": "node scripts/audit-link-graph.mjs",
@@ -23,20 +25,21 @@
     "audit:rendered": "node scripts/audit-rendered-routes.mjs",
     "audit:security": "node scripts/audit-security.mjs",
     "briefs:pdf": "node scripts/generate-brief-pdfs.mjs",
-    "verify": "npm run check && npm run typecheck:ts7 && npm run test && npm run build && npm run audit:security && npm run audit:routes && npm run audit:sitemap && npm run audit:media && npm run audit:links && npm run audit:ctas && npm run audit:rendered && npm run test:browser"
+    "verify": "npm run check && npm run typecheck:ts7 && npm run test:all && npm run build && npm run audit:security && npm run audit:routes && npm run audit:sitemap && npm run audit:media && npm run audit:links && npm run audit:ctas && npm run audit:rendered && npm run test:browser"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
-    "astro": "7.2.1",
-    "sharp": "0.35.3"
+    "astro": "7.2.9",
+    "sharp": "0.35.4"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "@astrojs/markdown-remark": "7.2.2",
+    "@astrojs/markdown-remark": "7.2.4",
     "@axe-core/playwright": "4.13.0",
     "@playwright/test": "1.62.1",
     "@typescript/native": "npm:typescript@7.0.2",
     "typescript": "npm:@typescript/typescript6@6.0.2",
-    "vitest": "4.1.10"
+    "tsx": "4.23.12",
+    "vitest": "4.1.11"
   }
 }

@@ -28,7 +28,7 @@ pages:
     - npm ci --cache .npm --prefer-offline --no-audit --fund=false
     - npm run check
     - npm run typecheck:ts7
-    - npm run test
+    - npm run test:all
     - NODE_OPTIONS="--require=$CI_PROJECT_DIR/.gitlab/ci/limit-image-build-concurrency.cjs" npm run build
     - npm run audit:security
     - npm exec -- vitest run tests/deployment/deployment-config.test.ts

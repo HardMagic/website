@@ -33,7 +33,7 @@ Required fields: `report`, `name` (160), corporate `email` (320), `organization`
 
 Optional fields: `context` (2,000) and separate `marketing_consent=yes`. The server rejects selected public mailbox domains, unknown report IDs, unknown service lanes, invalid option values, oversized text, unexpected fields, missing resource consent, and malformed request IDs. Custom domains hosted by Google or Microsoft remain eligible.
 
-The exact report slug is submitted as `report`; the server selects the matching catalog object and creates a read-only HTTPS user-delegation SAS for that exact PDF. The browser never receives PDF bytes from the public site.
+The exact report slug is submitted as `report`; the server selects the matching catalog object and creates a read-only HTTPS user-delegation SAS for that exact PDF. Text fields reject C0/C1 control characters before any ledger, email, or CRM side effect. The browser never receives PDF bytes from the public site.
 
 ## No-JavaScript and error semantics
 
@@ -46,11 +46,12 @@ Turnstile is intentionally required in the production Function, so a browser wit
 | Same ID with changed fields | `409` | Rejects request-ID reuse without revealing the original record |
 | Same ID while first request is pending | `202` | Do not resubmit; the original worker owns the delivery attempt |
 | Same ID after delivery failure | `503` with `Retry-After` | Browser resubmission cannot create a duplicate; operator replay/runbook is required |
+| Delivery accepted but provider state or ledger write is ambiguous | `503` without a resend instruction | The ledger retains deterministic ACS operation handle(s); reconcile them before any operator replay, and never overwrite a newer suppression/CRM update |
 | Invalid schema, enum, consent, hidden field, or corporate-email policy | `400` | Plain, non-PII validation message; no ledger, email, or CRM side effect |
 | Foreign origin | `403`; missing/mismatched Front Door identity or host | `404` before body parsing; no side effect |
 | Missing/invalid Turnstile or rate limit | `429` with `Retry-After` | Fail closed; no delivery side effect |
 | Storage/email delivery failure after claim | `503` with correlation header | Ledger retains a safe failure code; no false success redirect |
-| CRM outage after successful delivery | `303` | Delivery is not blocked; queue retry/dead-letter and alerting own the projection |
+| CRM outage after successful delivery | `303` | Delivery is not blocked; bounded transient queue retries (408/429/5xx/transport) and the queue's five-dequeue dead-letter path own the projection |
 
 All responses are `no-store`, use safe content-type/security headers, and expose only a correlation ID header. Error bodies never include addresses, form values, SAS URLs, provider payloads, or stack traces.
 
@@ -63,10 +64,10 @@ The private ledger is the delivery system of record. A successful brief request 
 1. validate edge identity, origin, body size, schema, corporate-email policy, Turnstile, and rate limits;
 2. atomically claim `requests/<requestId>.json` with the normalized request fingerprint;
 3. create a 48-hour HTTPS read-only SAS for the catalog filename and send ACS HTML/plain-text email with monitored Reply-To;
-4. persist `delivery=sent` or a safe `delivery=failed` code;
+4. persist `delivery=sent`, a safe `delivery=failed` code, or `delivery=unknown` with deterministic ACS operation handle(s); conditional-write recovery merges only the changed delivery/CRM/suppression field into the latest ledger snapshot;
 5. enqueue the asynchronous Dataverse projection keyed by `hm_requestid`.
 
-The consultation path claims the same ledger shape, sends the requester receipt and internal routing email, then queues the same CRM projection. The Dataverse payload is limited to the documented `hm_*` columns: `hm_requestid`, `hm_name`, `hm_reportkey`, `hm_emailhash`, organization/role/challenge/horizon/next-step, `hm_intakecategory`, campaign-only `hm_sourcesummary`, separate consent/delivery/suppression statuses, Account-bound Contact lookup, and HardMagic team ownership.
+The consultation path claims the same ledger shape, sends the requester receipt and internal routing email, then queues the same CRM projection. Both ACS operation handles are recorded before either send begins, and a partial or unresolved leg remains non-replayable until reconciled. The Dataverse payload is limited to the documented `hm_*` columns: `hm_requestid`, `hm_name`, `hm_reportkey`, `hm_emailhash`, organization/role/challenge/horizon/next-step, `hm_intakecategory`, campaign-only `hm_sourcesummary`, separate consent/delivery/suppression statuses, Account-bound Contact lookup, and HardMagic team ownership.
 
 ## Evidence still required outside this repository
 
@@ -75,7 +76,7 @@ The following cannot be established by local tests and must be dated against one
 - Front Door custom domain/TLS, exact profile GUID, forwarded host preservation, route allowlist, WAF Prevention rules, 20/minute POST limits, 24 KB body limit, no API caching, and unsubscribe query scrubbing;
 - direct `azurewebsites.net` origin denial with and without forged host headers, plus edge health `200` and configured `true`;
 - production Turnstile site/secret pairing and hostname validation for both form actions;
-- deployed Function package hash, Node 22 runtime, Key Vault secret presence/rotation, storage private containers, anonymous Blob denial, lifecycle/retention policy, and 48-hour SAS expiry/revocation;
+- deployed Function package hash, Node 24 runtime, Key Vault secret presence/rotation, storage private containers, anonymous Blob denial, lifecycle/retention policy, and 48-hour SAS expiry/revocation;
 - controlled non-production or approved production canaries for valid/no-JS fallback, all six lanes, all eight report IDs, Unicode/length/enum validation, honeypot, foreign origin, oversized body, invalid redirect, replay/idempotency, duplicate-email prevention, timeout, provider failure, and safe correlation evidence;
 - ACS sender authentication, HTML/plain-text accessibility, monitored Reply-To, delivery/complaint behavior, and suppression durability;
 - Dataverse solution/table/alternate-key/application-user/Business Unit/owner-team boundary, Account-scoped Contact lookup, least-privilege role, idempotent replay, CRM outage retry five times, private dead letter, alert, and operator replay;

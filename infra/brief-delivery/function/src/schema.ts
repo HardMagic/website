@@ -1,15 +1,17 @@
 import { z } from "zod";
 import { briefs, intakeCategories } from "./catalog.js";
 
-const cleanText = (max: number) => z.string().trim().min(1).max(max);
-const optionalText = (max: number) => z.string().trim().max(max).optional().default("");
+const hasNoControlCharacters = (value: string): boolean => !/[\p{Cc}]/u.test(value);
+const cleanText = (max: number) => z.string().refine(hasNoControlCharacters, { message: "control_characters_not_allowed" }).trim().min(1).max(max);
+const optionalText = (max: number) => z.string().refine(hasNoControlCharacters, { message: "control_characters_not_allowed" }).trim().max(max).optional().default("");
+const uuidV4 = z.string().uuid({ version: "v4" });
 const optionalUuid = z.preprocess(
-  (value) => typeof value === "string" && value.trim() === "" ? undefined : value,
-  z.string().uuid().optional(),
+  (value) => typeof value === "string" && value.trim() === "" && hasNoControlCharacters(value) ? undefined : value,
+  uuidV4.optional(),
 );
 const campaign = z.preprocess(
-  (value) => typeof value === "string" && value.trim() === "" ? undefined : value,
-  z.string().trim().max(160).regex(/^[a-z0-9][a-z0-9._-]*$/i).optional(),
+  (value) => typeof value === "string" && value.trim() === "" && hasNoControlCharacters(value) ? undefined : value,
+  z.string().refine(hasNoControlCharacters, { message: "control_characters_not_allowed" }).trim().max(160).regex(/^[a-z0-9][a-z0-9._-]*$/i).optional(),
 ).default("");
 const consent = z.literal("yes");
 const consumerEmailRoots = new Set(["gmail.com", "googlemail.com", "hotmail.com", "outlook.com", "yahoo.com"]);
@@ -31,7 +33,7 @@ export function isCorporateEmail(value: string): boolean {
   return !isConsumerEmailDomain(email.slice(at + 1));
 }
 
-const corporateEmail = z.string().trim().toLowerCase().email().max(320).refine(isCorporateEmail, { message: "corporate_email_required" });
+const corporateEmail = z.string().refine(hasNoControlCharacters, { message: "control_characters_not_allowed" }).trim().toLowerCase().email().max(320).refine(isCorporateEmail, { message: "corporate_email_required" });
 
 export const briefRequestSchema = z.object({
   request_id: optionalUuid,
@@ -65,7 +67,7 @@ export const briefRequestSchema = z.object({
 export const contactRequestSchema = z.object({
   request_id: optionalUuid,
   name: cleanText(160),
-  email: z.string().trim().toLowerCase().email().max(320),
+  email: z.string().refine(hasNoControlCharacters, { message: "control_characters_not_allowed" }).trim().toLowerCase().email().max(320),
   organization: cleanText(200),
   role: cleanText(120),
   intake_category: z.enum(intakeCategories),

@@ -1,9 +1,25 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { readRenderedRouteManifest, routeId, type RenderedRouteManifest } from './rendered-route-manifest';
 
 function escapeHtml(value: string): string {
   return value.replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character] ?? character);
+}
+
+async function readCaptureMetadata(capturePath: string): Promise<{ sha256: string | null; bytes: number | null }> {
+  try {
+    const contents = await readFile(capturePath);
+    return {
+      sha256: createHash('sha256').update(contents).digest('hex'),
+      bytes: contents.byteLength,
+    };
+  } catch (error) {
+    if (typeof error === 'object' && error !== null && 'code' in error && error.code === 'ENOENT') {
+      return { sha256: null, bytes: null };
+    }
+    throw error;
+  }
 }
 
 export default async function globalTeardown(): Promise<void> {
@@ -19,19 +35,42 @@ export default async function globalTeardown(): Promise<void> {
     { name: 'chromium-390', viewport: { width: 390, height: 844 } },
     { name: 'chromium-1440', viewport: { width: 1440, height: 900 } },
   ];
-  const captures = manifest.routes.flatMap((route) => projects.map((project) => ({
-    project: project.name,
-    viewport: project.viewport,
-    route: route.path,
-    state: route.state,
-    routeId: routeId(route),
-    path: `captures/${project.name}/${routeId(route)}.png`,
-  })));
+  const captures: Array<{
+    project: string;
+    viewport: { width: number; height: number };
+    route: string;
+    state: string;
+    routeId: string;
+    path: string;
+    sha256: string | null;
+    bytes: number | null;
+  }> = [];
+  for (const route of manifest.routes) {
+    for (const project of projects) {
+      const path = `captures/${project.name}/${routeId(route)}.png`;
+      const metadata = await readCaptureMetadata(resolve(evidenceDirectory, path));
+      captures.push({
+        project: project.name,
+        viewport: project.viewport,
+        route: route.path,
+        state: route.state,
+        routeId: routeId(route),
+        path,
+        ...metadata,
+      });
+    }
+  }
   await writeFile(resolve(evidenceDirectory, 'visual-capture-manifest.json'), `${JSON.stringify({
     schemaVersion: 1,
     buildFingerprint: manifest.buildFingerprint,
     routeCount: manifest.routeCount,
     projects,
+    captureRoot: 'captures',
+    captureContract: {
+      sourceOfTruth: 'CI/object artifact evidence',
+      retention: 'Retain according to the CI/object-artifact retention policy.',
+      local: 'Untracked local captures are disposable and are not source truth.',
+    },
     captures,
   }, null, 2)}\n`);
   const figures = captures.map((capture) => {

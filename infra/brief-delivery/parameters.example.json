@@ -37,6 +37,8 @@
     "policyConfig": {
       "value": {
         "ledgerRetentionDays": 395,
+        "rateLimitRetentionDays": 2,
+        "contactLockRetentionDays": 30,
         "deadLetterRetentionDays": 90,
         "deploymentRetentionDays": 30,
         "signedUrlHours": 48,

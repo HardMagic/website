@@ -106,12 +106,26 @@ test("server validation rejects missing resource consent, invalid enums, oversiz
   assert.equal(briefRequestSchema.safeParse({ ...baseBrief, decision_stage: "Guessing" }).success, false);
   assert.equal(briefRequestSchema.safeParse({ ...baseBrief, primary_challenge: "x".repeat(501) }).success, false);
   assert.equal(briefRequestSchema.safeParse({ ...baseBrief, request_id: "not-a-uuid" }).success, false);
+  const nonV4RequestId = "bbbbbbbb-bbbb-1bbb-8bbb-bbbbbbbbbbbb";
+  assert.equal(briefRequestSchema.safeParse({ ...baseBrief, request_id: nonV4RequestId }).success, false);
+  assert.equal(contactRequestSchema.safeParse({ ...baseContact, request_id: nonV4RequestId }).success, false);
+  assert.equal(contactRequestSchema.safeParse({ ...baseContact, request_id: requestId }).success, true);
   assert.equal(briefRequestSchema.safeParse({ ...baseBrief, _honey: "filled-by-bot" }).success, false);
   assert.equal(briefRequestSchema.safeParse({ ...baseBrief, secret_notes: "never collect this" }).success, false);
   assert.equal(contactRequestSchema.safeParse({ ...baseContact, marketing_consent: "maybe" }).success, false);
   assert.equal(contactRequestSchema.safeParse({ ...baseContact, _honey: "filled-by-bot" }).success, false);
   assert.equal(contactRequestSchema.safeParse({ ...baseContact, mandate: "x".repeat(4001) }).success, false);
   assert.equal(contactRequestSchema.safeParse({ ...baseContact, source_campaign: "campaign?email=ada@example.com" }).success, false);
+});
+
+test("intake text rejects control characters while preserving ordinary Unicode", () => {
+  assert.equal(briefRequestSchema.safeParse({ ...baseBrief, name: "Ada\nLovelace" }).success, false);
+  assert.equal(briefRequestSchema.safeParse({ ...baseBrief, name: "\rAda Lovelace" }).success, false);
+  assert.equal(briefRequestSchema.safeParse({ ...baseBrief, organization: "Analytical\u0000Engines" }).success, false);
+  assert.equal(contactRequestSchema.safeParse({ ...baseContact, role: "VP\u0085Media" }).success, false);
+  assert.equal(contactRequestSchema.safeParse({ ...baseContact, request_id: "\n" }).success, false);
+  assert.equal(contactRequestSchema.safeParse({ ...baseContact, source_campaign: "\t" }).success, false);
+  assert.equal(contactRequestSchema.safeParse({ ...baseContact, mandate: "Unify 東京 media — rights and controls." }).success, true);
 });
 
 test("brief corporate-email policy rejects public mailboxes while custom domains remain eligible", () => {
@@ -225,13 +239,13 @@ test("Dataverse projection uses the documented hm_* contract and no raw email/so
       crm: { status: "queued" as const, attempts: 0 },
     },
   };
-  const projection = buildDataverseEngagement(record, "contact-id", "team-id");
+  const projection = buildDataverseEngagement(record, "dddddddd-dddd-4ddd-8ddd-dddddddddddd", "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa");
   assert.equal(projection.hm_reportkey, baseBrief.report);
   assert.equal(projection.hm_intakecategory, "genai");
   assert.equal(projection.hm_sourcesummary, "technical-brief-library");
   assert.equal(projection.hm_suppressionstatus, "active");
   assert.match(projection.hm_emailhash, /^[a-f0-9]{64}$/);
-  assert.equal(projection["hm_contact@odata.bind"], "/contacts(contact-id)");
+  assert.equal(projection["hm_contact@odata.bind"], "/contacts(dddddddd-dddd-4ddd-8ddd-dddddddddddd)");
   assert.equal("hm_sourceurl" in projection, false);
   assert.equal(JSON.stringify(projection).includes("ada@example.com"), false);
 });

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "full_publication",
+  "publication": {
+    "title": "HardMagic",
+    "audience": [
+      "Global brand, media, and entertainment leaders",
+      "Chief marketing, digital, and transformation officers",
+      "Creative and studio directors",
+      "Teams building accountable generative-media capability"
+    ],
+    "thesis": "Creative direction, media systems, and generative execution become one accountable operating model.",
+    "editorial_promise": "Make consequential creative and technology decisions legible, evidence-aware, and ready to move from premise to public experience.",
+    "jurisdiction": "Global, English-language publication; each brief declares its evidence cutoff and distribution boundary.",
+    "risk_profile": "general",
+    "canonical_origin": "https://hardmagic.com/"
+  },
+  "targets": {
+    "minimum_articles": 150,
+    "briefs": 8,
+    "minimum_designed_pages_per_brief": 30,
+    "target_physical_pages_per_brief": 36,
+    "minimum_substantive_pages_per_brief": 33,
+    "minimum_active_production_hours": 8
+  },
+  "creative_direction": {
+    "selected_thesis": "Dream in reality: pair a strong premise with the systems, proof, and human authority that let it survive production.",
+    "motion_metaphor": "A signal travels from a decision room through an accountable production system into a coherent public world.",
+    "recurring_motifs": ["signal and thread", "editorial field notes", "evidence rails", "human authority at the edge"],
+    "deliberate_refusal": "No tool-first hype, fabricated client proof, or synthetic certainty where evidence and uncertainty should remain visible.",
+    "reference_teardowns": []
+  },
+  "desks": [],
+  "owners": {
+    "publisher": "HardMagic leadership",
+    "editor_in_chief": "HardMagic editorial desk",
+    "senior_editor": "HardMagic editorial desk",
+    "creative_director": "HardMagic creative direction",
+    "managing_editor": "HardMagic production owner",
+    "engineering_lead": "HardMagic engineering",
+    "seo_lead": "HardMagic engineering",
+    "research_lead": "HardMagic editorial desk",
+    "accessibility_lead": "HardMagic engineering"
+  },
+  "authority": {
+    "may_edit_local_repository": true,
+    "may_research_public_sources": true,
+    "may_deploy": false,
+    "may_publish": false,
+    "may_purchase": false,
+    "may_submit_personal_data": false,
+    "may_contact_external_parties": false
+  },
+  "created_at": "2026-08-31T00:28:10.355Z",
+  "updated_at": "2026-08-31T01:12:00.000Z"
+}

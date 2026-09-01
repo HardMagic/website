@@ -19,6 +19,30 @@ const canonicalPath = base !== '/' && Astro.url.pathname.startsWith(base)
   : Astro.url.pathname;
 const canonical = new URL(canonicalPath, Astro.site);
 const fullTitle = title === 'HardMagic' ? title : `${title} — HardMagic`;
+const socialImage = new URL(image, Astro.site);
+// This graph is assembled only from trusted route metadata and escaped before
+// raw insertion so a future title cannot terminate the JSON-LD script.
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': new URL('/#organization', Astro.site).href,
+      name: 'HardMagic Corporation',
+      url: new URL('/', Astro.site).href,
+      logo: new URL('/og-hardmagic.svg', Astro.site).href,
+      email: 'hello@hardmagic.com',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': new URL('/#website', Astro.site).href,
+      url: new URL('/', Astro.site).href,
+      name: 'HardMagic',
+      publisher: { '@id': new URL('/#organization', Astro.site).href },
+      inLanguage: 'en',
+    },
+  ],
+}).replaceAll('<', '\\u003c');
 ---
 <!doctype html>
 <html lang="en">
@@ -36,8 +60,12 @@ const fullTitle = title === 'HardMagic' ? title : `${title} — HardMagic`;
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:image" content={socialImage} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <script is:inline type="application/ld+json" set:html={structuredData}></script>
     {turnstile && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
     <title>{fullTitle}</title>
   </head>

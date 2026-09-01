@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "kind": "current_adoption_pointer",
+  "updated_at": "2026-08-31T00:28:11.877Z",
+  "adoption_id": "adoption-20260831T002811877Z-455106-f089de611e40",
+  "mode": "upgrade_existing_site",
+  "record_path": ".astro-magazine/adoption/adoption-20260831T002811877Z-455106-f089de611e40.json",
+  "record_sha256": "8b2314646aaa2bf524fec909a9dd0e3a9d0f5baae594ce797b1684659a1a4978",
+  "immutable_record": true
+}

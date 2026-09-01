@@ -6,10 +6,14 @@ import { briefRequestSchema, contactRequestSchema } from "./schema.js";
 import {
   archiveDeadLetter,
   createLedger,
+  crmEventMatchesLedger,
+  EmailDeliveryAmbiguousError,
+  emailOperationId,
   enforceRateLimit,
   enqueueCrm,
   getSecret,
   piiHash,
+  persistCrmFailureState,
   readLedger,
   safeFailureCode,
   sendBriefEmail,
@@ -38,8 +42,185 @@ export const SECURITY_HEADERS: Readonly<Record<string, string>> = Object.freeze(
 });
 
 type FunnelInput = Record<string, string | undefined>;
+type LedgerSnapshot = { record: LedgerRecord; etag: string };
+type LedgerReader = (path: string) => Promise<LedgerSnapshot | null>;
+type LedgerWriter = (path: string, record: LedgerRecord, ifMatch?: string) => Promise<string>;
 
-export type ExistingRequestDecision = "conflict" | "complete" | "in-flight" | "failed";
+function mergeOperationIds(existing: readonly string[] | undefined, additional: readonly string[] | undefined): string[] | undefined {
+  const merged = [...new Set([...(existing ?? []), ...(additional ?? [])])];
+  return merged.length > 0 ? merged : undefined;
+}
+
+export function mergeDeliveryFailureRecord(
+  latest: LedgerRecord,
+  failureDelivery: LedgerRecord["delivery"],
+): LedgerRecord {
+  const operationIds = mergeOperationIds(latest.delivery.operationIds, failureDelivery.operationIds);
+  return {
+    ...latest,
+    delivery: {
+      ...latest.delivery,
+      ...failureDelivery,
+      ...(operationIds ? { operationIds } : {}),
+    },
+  };
+}
+
+export function mergeDeliverySuccessRecord(
+  latest: LedgerRecord,
+  sentDelivery: LedgerRecord["delivery"],
+): LedgerRecord {
+  const { failureCode: _failureCode, ...latestDelivery } = latest.delivery;
+  const operationIds = mergeOperationIds(latest.delivery.operationIds, sentDelivery.operationIds);
+  return {
+    ...latest,
+    delivery: {
+      ...latestDelivery,
+      status: "sent",
+      ...(sentDelivery.sentAt !== undefined ? { sentAt: sentDelivery.sentAt } : {}),
+      ...(sentDelivery.providerMessageId !== undefined ? { providerMessageId: sentDelivery.providerMessageId } : {}),
+      ...(operationIds ? { operationIds } : {}),
+    },
+  };
+}
+
+export function applyUnsubscribeState(record: LedgerRecord): LedgerRecord {
+  return {
+    ...record,
+    consent: { ...record.consent, broaderMarketing: false },
+    suppressionStatus: "opted-out",
+  };
+}
+
+export function buildDeliveryFailureState(
+  current: LedgerRecord["delivery"],
+  error: unknown,
+  confirmedProviderMessageId?: string,
+): LedgerRecord["delivery"] {
+  const ambiguousError = error instanceof EmailDeliveryAmbiguousError ? error : undefined;
+  const operationIds = mergeOperationIds(current.operationIds, ambiguousError?.operationIds);
+  const providerMessageId = confirmedProviderMessageId ?? ambiguousError?.operationId;
+  if (ambiguousError || confirmedProviderMessageId !== undefined) {
+    return {
+      status: "unknown",
+      failureCode: "delivery-status-unknown",
+      ...(providerMessageId !== undefined ? { providerMessageId } : {}),
+      ...(operationIds ? { operationIds } : {}),
+    };
+  }
+  return {
+    status: "failed",
+    failureCode: safeFailureCode(error),
+    ...(operationIds ? { operationIds } : {}),
+  };
+}
+
+export async function persistDeliveryFailureState(
+  ledgerPath: string,
+  record: LedgerRecord,
+  ledgerEtag: string,
+  context: InvocationContext,
+  requestId: string,
+  failureCode: string,
+  read: LedgerReader = readLedger,
+  write: LedgerWriter = writeLedger,
+): Promise<boolean> {
+  try {
+    await write(ledgerPath, record, ledgerEtag);
+    return true;
+  } catch (writeError) {
+    // A lost response can mean the first conditional write committed. Read
+    // once before a bounded retry so we never overwrite a newer sent/unknown
+    // state with stale data and never submit ACS again. Only the delivery
+    // failure is merged; consent, suppression, CRM, and all other fields come
+    // from the readback snapshot.
+    try {
+      const readback = await read(ledgerPath);
+      if (!readback || readback.record.id !== record.id) return false;
+      if (readback.record.delivery.status === "sent" || readback.record.delivery.status === "unknown") return true;
+      const mergedRecord = mergeDeliveryFailureRecord(readback.record, record.delivery);
+      await write(ledgerPath, mergedRecord, readback.etag);
+      return true;
+    } catch (retryError) {
+      context.error("Delivery failure state could not be persisted", {
+        requestId,
+        failureCode,
+        writeFailureCode: safeFailureCode(writeError),
+        retryFailureCode: safeFailureCode(retryError),
+      });
+      return false;
+    }
+  }
+}
+
+export async function persistDeliverySuccessState(
+  ledgerPath: string,
+  record: LedgerRecord,
+  ledgerEtag: string,
+  context: InvocationContext,
+  requestId: string,
+  read: LedgerReader = readLedger,
+  write: LedgerWriter = writeLedger,
+): Promise<boolean> {
+  try {
+    await write(ledgerPath, record, ledgerEtag);
+    return true;
+  } catch (writeError) {
+    // The send is confirmed, but the first conditional write may have raced
+    // with CRM, suppression, or another worker. Re-read once and merge only
+    // the delivery fields owned by this successful send.
+    try {
+      const readback = await read(ledgerPath);
+      if (!readback || readback.record.id !== record.id) return false;
+      if (readback.record.delivery.status === "sent") return true;
+      const mergedRecord = mergeDeliverySuccessRecord(readback.record, record.delivery);
+      await write(ledgerPath, mergedRecord, readback.etag);
+      return true;
+    } catch (retryError) {
+      context.error("Delivery success state could not be persisted", {
+        requestId,
+        writeFailureCode: safeFailureCode(writeError),
+        retryFailureCode: safeFailureCode(retryError),
+      });
+      return false;
+    }
+  }
+}
+
+export async function persistUnsubscribeState(
+  ledgerPath: string,
+  record: LedgerRecord,
+  ledgerEtag: string,
+  context: InvocationContext,
+  requestId: string,
+  read: LedgerReader = readLedger,
+  write: LedgerWriter = writeLedger,
+): Promise<boolean> {
+  const suppressedRecord = applyUnsubscribeState(record);
+  try {
+    await write(ledgerPath, suppressedRecord, ledgerEtag);
+    return true;
+  } catch (writeError) {
+    // A CRM worker or another unsubscribe can legitimately advance the blob
+    // ETag between read and write. Re-read once and apply only suppression to
+    // that current record so newer delivery/CRM/consent fields survive.
+    try {
+      const readback = await read(ledgerPath);
+      if (!readback || readback.record.id !== record.id) return false;
+      await write(ledgerPath, applyUnsubscribeState(readback.record), readback.etag);
+      return true;
+    } catch (retryError) {
+      context.error("Unsubscribe state could not be persisted", {
+        requestId,
+        writeFailureCode: safeFailureCode(writeError),
+        retryFailureCode: safeFailureCode(retryError),
+      });
+      return false;
+    }
+  }
+}
+
+export type ExistingRequestDecision = "conflict" | "complete" | "in-flight" | "failed" | "ambiguous";
 
 export function ledgerPathForRequest(requestId: string): string {
   return `requests/${requestId}.json`;
@@ -60,6 +241,8 @@ export function classifyExistingRequest(record: Pick<LedgerRecord, "requestFinge
   if (record.requestFingerprint !== fingerprint) return "conflict";
   if (record.delivery.status === "sent") return "complete";
   if (record.delivery.status === "failed") return "failed";
+  if (record.delivery.status === "unknown") return "ambiguous";
+  if (record.delivery.operationIds && record.delivery.operationIds.length > 0) return "ambiguous";
   return "in-flight";
 }
 
@@ -90,6 +273,8 @@ export function replayResponse(
     }
     case "failed":
       return response(503, "We saved this request but could not complete delivery yet.", headers);
+    case "ambiguous":
+      return response(503, "Delivery status is being reconciled. Please do not resubmit this request.", headers);
     case "in-flight":
       return response(202, "Your request is already being processed. Please wait before trying again.", headers);
   }
@@ -117,6 +302,7 @@ export async function briefRequest(request: HttpRequest, context: InvocationCont
   // retain the complete security-header contract.
   if (request.method === "OPTIONS") return response(200, "", corsHeaders(request));
   if (request.method !== "POST") return response(405, "Method not allowed", corsHeaders(request));
+  if (!supportedRequestContentType(request)) return response(415, "Unsupported media type.", corsHeaders(request));
   const body = await parseRequest(request);
   if (!body) return response(400, "Please submit a valid request.", corsHeaders(request));
   const parsed = briefRequestSchema.safeParse(body);
@@ -163,28 +349,39 @@ export async function briefRequest(request: HttpRequest, context: InvocationCont
       context: input.context,
     },
     report: { slug: brief.slug, title: brief.title },
-    delivery: { status: "pending" },
+    delivery: { status: "pending", operationIds: [emailOperationId(id, "brief")] },
     crm: { status: "queued", attempts: 0 },
   };
   const claimed = await claimLedger(request, record, fingerprint, brief.thankYouPath, ledgerPath);
   if (!("etag" in claimed)) return claimed;
   let ledgerEtag = claimed.etag;
+  let confirmedMessageId: string | undefined;
   try {
     const [link, unsubscribeToken] = await Promise.all([signedBriefUrl(brief), createUnsubscribeToken(id, ledgerPath)]);
     const config = loadConfig();
-    const messageId = await sendBriefEmail(input.email, input.name, brief, link, `https://${config.BRIEF_HOST}/api/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}`);
-    record.delivery = { status: "sent", sentAt: new Date().toISOString(), providerMessageId: messageId };
-    ledgerEtag = await writeLedger(ledgerPath, record, ledgerEtag);
-  } catch (error) {
-    const failureCode = safeFailureCode(error);
-    record.delivery = { status: "failed", failureCode };
-    try {
-      await writeLedger(ledgerPath, record, ledgerEtag);
-    } catch (writeError) {
-      context.error("Brief failure state could not be persisted", { requestId: id, failureCode: safeFailureCode(writeError) });
+    const messageId = await sendBriefEmail(input.email, input.name, brief, link, `https://${config.BRIEF_HOST}/api/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}`, id);
+    confirmedMessageId = messageId;
+    record.delivery = {
+      status: "sent",
+      sentAt: new Date().toISOString(),
+      providerMessageId: messageId,
+      ...(record.delivery.operationIds ? { operationIds: [...record.delivery.operationIds] } : {}),
+    };
+    if (!(await persistDeliverySuccessState(ledgerPath, record, ledgerEtag, context, id))) {
+      throw new Error("delivery_success_state_persist_failed");
     }
-    context.error("Brief delivery failed", { requestId: id, failureCode });
-    return response(503, "We saved the request but could not send the field guide yet.", { ...corsHeaders(request), "x-correlation-id": id, "retry-after": "300" });
+  } catch (error) {
+    const deliveryFailure = buildDeliveryFailureState(record.delivery, error, confirmedMessageId);
+    const deliveryAmbiguous = deliveryFailure.status === "unknown";
+    const failureCode = deliveryFailure.failureCode ?? safeFailureCode(error);
+    record.delivery = deliveryFailure;
+    await persistDeliveryFailureState(ledgerPath, record, ledgerEtag, context, id, failureCode);
+    context.error(deliveryAmbiguous ? "Brief delivery status is unknown" : "Brief delivery failed", { requestId: id, failureCode });
+    return response(
+      503,
+      deliveryAmbiguous ? "We accepted this request, but delivery status could not be confirmed. Please do not resubmit." : "We saved the request but could not send the field guide yet.",
+      { ...corsHeaders(request), "x-correlation-id": id, ...(deliveryAmbiguous ? {} : { "retry-after": "300" }) },
+    );
   }
   const crmEvent: CrmEvent = { schemaVersion: "1.0", eventType: "hardmagic.brief.requested", requestId: id, ledgerPath, occurredAt: createdAt };
   try {
@@ -200,6 +397,7 @@ export async function contactRequest(request: HttpRequest, context: InvocationCo
   if (edge) return edge;
   if (request.method === "OPTIONS") return response(200, "", corsHeaders(request));
   if (request.method !== "POST") return response(405, "Method not allowed", corsHeaders(request));
+  if (!supportedRequestContentType(request)) return response(415, "Unsupported media type.", corsHeaders(request));
   const body = await parseRequest(request);
   if (!body) return response(400, "Please submit a valid request.", corsHeaders(request));
   const parsed = contactRequestSchema.safeParse(body);
@@ -236,26 +434,43 @@ export async function contactRequest(request: HttpRequest, context: InvocationCo
       decisionHorizon: input.decision_horizon,
       preferredNextStep: input.preferred_next_step,
     },
-    delivery: { status: "pending" },
+    delivery: {
+      status: "pending",
+      operationIds: [
+        emailOperationId(id, "consultation-receipt"),
+        emailOperationId(id, "consultation-route"),
+      ],
+    },
     crm: { status: "queued", attempts: 0 },
   };
   const claimed = await claimLedger(request, record, fingerprint, CONTACT_THANK_YOU_PATH, ledgerPath);
   if (!("etag" in claimed)) return claimed;
   let ledgerEtag = claimed.etag;
+  let confirmedMessageId: string | undefined;
   try {
     const messageId = await sendConsultationEmails(record);
-    record.delivery = { status: "sent", sentAt: new Date().toISOString(), providerMessageId: messageId };
-    ledgerEtag = await writeLedger(ledgerPath, record, ledgerEtag);
-  } catch (error) {
-    const failureCode = safeFailureCode(error);
-    record.delivery = { status: "failed", failureCode };
-    try {
-      await writeLedger(ledgerPath, record, ledgerEtag);
-    } catch (writeError) {
-      context.error("Consultation failure state could not be persisted", { requestId: id, failureCode: safeFailureCode(writeError) });
+    confirmedMessageId = messageId;
+    record.delivery = {
+      status: "sent",
+      sentAt: new Date().toISOString(),
+      providerMessageId: messageId,
+      ...(record.delivery.operationIds ? { operationIds: [...record.delivery.operationIds] } : {}),
+    };
+    if (!(await persistDeliverySuccessState(ledgerPath, record, ledgerEtag, context, id))) {
+      throw new Error("delivery_success_state_persist_failed");
     }
-    context.error("Consultation delivery failed", { requestId: id, failureCode });
-    return response(503, "We saved the request but could not route it yet.", { ...corsHeaders(request), "x-correlation-id": id, "retry-after": "300" });
+  } catch (error) {
+    const deliveryFailure = buildDeliveryFailureState(record.delivery, error, confirmedMessageId);
+    const deliveryAmbiguous = deliveryFailure.status === "unknown";
+    const failureCode = deliveryFailure.failureCode ?? safeFailureCode(error);
+    record.delivery = deliveryFailure;
+    await persistDeliveryFailureState(ledgerPath, record, ledgerEtag, context, id, failureCode);
+    context.error(deliveryAmbiguous ? "Consultation delivery status is unknown" : "Consultation delivery failed", { requestId: id, failureCode });
+    return response(
+      503,
+      deliveryAmbiguous ? "We accepted this request, but delivery status could not be confirmed. Please do not resubmit." : "We saved the request but could not route it yet.",
+      { ...corsHeaders(request), "x-correlation-id": id, ...(deliveryAmbiguous ? {} : { "retry-after": "300" }) },
+    );
   }
   const crmEvent: CrmEvent = { schemaVersion: "1.0", eventType: "hardmagic.consultation.requested", requestId: id, ledgerPath, occurredAt: createdAt };
   try {
@@ -270,6 +485,7 @@ export async function unsubscribe(request: HttpRequest, context: InvocationConte
   const edge = validateEdgeRequest(request);
   if (edge) return edge;
   if (request.method === "OPTIONS") return response(200, "", corsHeaders(request));
+  if (request.method === "POST" && !supportedRequestContentType(request)) return response(415, "Unsupported media type.", corsHeaders(request));
   let token = new URL(request.url).searchParams.get("token") ?? "";
   if (request.method === "POST" && !token) {
     const body = await parseRequest(request);
@@ -286,9 +502,9 @@ export async function unsubscribe(request: HttpRequest, context: InvocationConte
   if (!current || current.record.id !== tokenData.id) return response(404, "This link is invalid or expired.", corsHeaders(request));
   // Suppression revokes broader follow-up consent without rewriting the
   // original, purpose-limited resource-consent record.
-  current.record.consent.broaderMarketing = false;
-  current.record.suppressionStatus = "opted-out";
-  await writeLedger(tokenData.ledgerPath, current.record, current.etag);
+  if (!(await persistUnsubscribeState(tokenData.ledgerPath, current.record, current.etag, context, current.record.id))) {
+    return response(503, "We could not update your preferences safely. Please try again.", { ...corsHeaders(request), "x-correlation-id": current.record.id, "retry-after": "60" });
+  }
   try {
     await enqueueCrm({ schemaVersion: "1.0", eventType: "hardmagic.engagement.suppressed", requestId: current.record.id, ledgerPath: tokenData.ledgerPath, occurredAt: new Date().toISOString() });
   } catch (error) {
@@ -322,8 +538,20 @@ export async function crmDeadLetter(message: unknown, context: InvocationContext
   }
   const current = await readLedger(event.ledgerPath);
   if (current) {
-    current.record.crm = { status: "failed", attempts: current.record.crm.attempts + 1, lastAttemptAt: new Date().toISOString(), failureCode: "retry-exhausted" };
-    await writeLedger(event.ledgerPath, current.record, current.etag);
+    if (!crmEventMatchesLedger(event, current.record)) {
+      context.error("CRM poison message does not match its ledger record", { requestId: event.requestId });
+      await archiveDeadLetter(event, "request-id-mismatch");
+      return;
+    }
+    await persistCrmFailureState(
+      event.ledgerPath,
+      current.record,
+      current.etag,
+      current.record.crm.attempts + 1,
+      "retry-exhausted",
+      context,
+      event.requestId,
+    );
   }
   await archiveDeadLetter(event, "retry-exhausted");
   context.error("CRM projection exhausted retries", { requestId: event.requestId });
@@ -376,15 +604,21 @@ async function antiAbuse(turnstileToken: string, remoteIp: string, email: string
   }
 }
 
+export function supportedRequestContentType(request: Pick<HttpRequest, "headers">): "application/json" | "application/x-www-form-urlencoded" | null {
+  const mediaType = request.headers.get("content-type")?.split(";", 1)[0]?.trim().toLowerCase();
+  return mediaType === "application/json" || mediaType === "application/x-www-form-urlencoded" ? mediaType : null;
+}
+
 export async function parseRequest(request: Pick<HttpRequest, "headers" | "text">): Promise<Record<string, unknown> | null> {
   const contentLengthHeader = request.headers.get("content-length");
   const contentLength = contentLengthHeader === null ? 0 : Number(contentLengthHeader);
   if (!Number.isFinite(contentLength) || contentLength < 0 || contentLength > MAX_BODY_BYTES) return null;
   try {
-    const contentType = request.headers.get("content-type") ?? "";
+    const contentType = supportedRequestContentType(request);
+    if (!contentType) return null;
     const text = await request.text();
     if (Buffer.byteLength(text) > MAX_BODY_BYTES) return null;
-    if (contentType.includes("application/json")) {
+    if (contentType === "application/json") {
       const parsed: unknown = JSON.parse(text);
       if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
       return parsed as Record<string, unknown>;

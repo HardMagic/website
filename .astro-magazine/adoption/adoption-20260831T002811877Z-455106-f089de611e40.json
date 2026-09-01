@@ -1,0 +1,2354 @@
+{
+  "schema_version": "1.0.0",
+  "kind": "existing_site_adoption",
+  "adoption_id": "adoption-20260831T002811877Z-455106-f089de611e40",
+  "recorded_at": "2026-08-31T00:28:11.877Z",
+  "mode": "upgrade_existing_site",
+  "status": "unknown",
+  "site_root": "/home/mrh/repos/hardmagic/website",
+  "state_before": {
+    "path": ".astro-magazine",
+    "exists": false,
+    "meaningful": false,
+    "entries": []
+  },
+  "state_after_initialization": {
+    "path": ".astro-magazine",
+    "exists": true,
+    "meaningful": true,
+    "entries": [
+      {
+        "name": "adoption",
+        "kind": "directory"
+      },
+      {
+        "name": "authority-policy.md",
+        "kind": "file"
+      },
+      {
+        "name": "briefs",
+        "kind": "directory"
+      },
+      {
+        "name": "checkpoint.json",
+        "kind": "file"
+      },
+      {
+        "name": "checkpoints",
+        "kind": "directory"
+      },
+      {
+        "name": "claims",
+        "kind": "directory"
+      },
+      {
+        "name": "commission.json",
+        "kind": "file"
+      },
+      {
+        "name": "content-records",
+        "kind": "directory"
+      },
+      {
+        "name": "conversions",
+        "kind": "directory"
+      },
+      {
+        "name": "decisions.md",
+        "kind": "file"
+      },
+      {
+        "name": "events.ndjson",
+        "kind": "file"
+      },
+      {
+        "name": "interactions",
+        "kind": "directory"
+      },
+      {
+        "name": "links",
+        "kind": "directory"
+      },
+      {
+        "name": "locks",
+        "kind": "directory"
+      },
+      {
+        "name": "media",
+        "kind": "directory"
+      },
+      {
+        "name": "ownership.json",
+        "kind": "file"
+      },
+      {
+        "name": "priorities",
+        "kind": "directory"
+      },
+      {
+        "name": "README.md",
+        "kind": "file"
+      },
+      {
+        "name": "reviews",
+        "kind": "directory"
+      },
+      {
+        "name": "schemas",
+        "kind": "directory"
+      },
+      {
+        "name": "scope.json",
+        "kind": "file"
+      },
+      {
+        "name": "sources",
+        "kind": "directory"
+      },
+      {
+        "name": "templates",
+        "kind": "directory"
+      }
+    ],
+    "meaningful_entries": [
+      "adoption",
+      "authority-policy.md",
+      "briefs",
+      "checkpoint.json",
+      "checkpoints",
+      "claims",
+      "commission.json",
+      "content-records",
+      "conversions",
+      "decisions.md",
+      "events.ndjson",
+      "interactions",
+      "links",
+      "media",
+      "ownership.json",
+      "priorities",
+      "README.md",
+      "reviews",
+      "schemas",
+      "scope.json",
+      "sources",
+      "templates"
+    ]
+  },
+  "initialization": {
+    "invoked": true,
+    "script": "init-editorial-studio.mjs",
+    "result": "reconciled_missing_state",
+    "report": {
+      "schema_version": "1.0.0",
+      "studio_directory": "/home/mrh/repos/hardmagic/website/.astro-magazine",
+      "created": [
+        "commission.json",
+        "scope.json",
+        "ownership.json",
+        "authority-policy.md",
+        "checkpoint.json",
+        "README.md",
+        "templates/content-record.example.json",
+        "templates/brief-storyboard.example.json",
+        "templates/route-record.example.json",
+        "templates/source-record.example.json",
+        "templates/claim-record.example.json",
+        "templates/media-record.example.json",
+        "templates/interaction-record.example.json",
+        "templates/conversion-record.example.json",
+        "templates/adoption-record.example.json",
+        "templates/rice-backlog.example.json",
+        "templates/baseline-build-evidence.example.json",
+        "templates/visual-evidence-manifest.example.json",
+        "templates/route-lifecycle.example.json",
+        "templates/seo-resolution.example.json",
+        "schemas/commission.schema.json",
+        "schemas/content-record.schema.json",
+        "schemas/brief-storyboard.schema.json",
+        "schemas/checkpoint.schema.json",
+        "schemas/route-lifecycle.schema.json",
+        "events.ndjson",
+        "decisions.md"
+      ],
+      "preserved": [],
+      "destructive_reset": false
+    }
+  },
+  "inventory": {
+    "captured_at": "2026-08-31T00:28:10.532Z",
+    "package": {
+      "path": "package.json",
+      "present": true,
+      "file": {
+        "path": "package.json",
+        "kind": "package_manifest",
+        "bytes": 1778,
+        "sha256": "f84a3da1930fad1e63f9fd04a955c17a52aeb1e45aba558f1ad348c85fd295d6"
+      },
+      "parse": "parsed",
+      "parse_error": null,
+      "name": "hardmagic-corporate-site",
+      "version": "1.0.0",
+      "scripts": [
+        "audit:ctas",
+        "audit:links",
+        "audit:media",
+        "audit:rendered",
+        "audit:routes",
+        "audit:security",
+        "audit:sitemap",
+        "briefs:pdf",
+        "build",
+        "check",
+        "dev",
+        "preview",
+        "test",
+        "test:browser",
+        "typecheck:ts7",
+        "verify"
+      ],
+      "dependency_signals": [
+        {
+          "name": "@astrojs/sitemap",
+          "section": "dependencies",
+          "declared_version": "3.7.3"
+        },
+        {
+          "name": "astro",
+          "section": "dependencies",
+          "declared_version": "7.2.1"
+        },
+        {
+          "name": "@astrojs/check",
+          "section": "devDependencies",
+          "declared_version": "0.9.10"
+        },
+        {
+          "name": "@astrojs/markdown-remark",
+          "section": "devDependencies",
+          "declared_version": "7.2.2"
+        }
+      ],
+      "package_manager_files": [
+        {
+          "path": "package-lock.json",
+          "kind": "package_manager",
+          "bytes": 260686,
+          "sha256": "7a467b55b5f84c3b0a2a0e29aa8773737bfa8584ec0daacbee13700ceb144cb5"
+        }
+      ]
+    },
+    "astro": {
+      "detected": true,
+      "dependency_signals": [
+        {
+          "name": "@astrojs/sitemap",
+          "section": "dependencies",
+          "declared_version": "3.7.3"
+        },
+        {
+          "name": "astro",
+          "section": "dependencies",
+          "declared_version": "7.2.1"
+        },
+        {
+          "name": "@astrojs/check",
+          "section": "devDependencies",
+          "declared_version": "0.9.10"
+        },
+        {
+          "name": "@astrojs/markdown-remark",
+          "section": "devDependencies",
+          "declared_version": "7.2.2"
+        }
+      ],
+      "config_files": [
+        {
+          "path": "astro.config.ts",
+          "kind": "astro_config",
+          "bytes": 3833,
+          "sha256": "38e38889dec4b86c497502e83a9622efca91d2f7737f1a4e45fb62dd918a4055"
+        }
+      ],
+      "source_signals": [
+        {
+          "path": "src/pages",
+          "kind": "source_directory"
+        },
+        {
+          "path": "src/content",
+          "kind": "source_directory"
+        },
+        {
+          "path": "src/assets",
+          "kind": "source_directory"
+        }
+      ],
+      "script_signals": [
+        {
+          "name": "dev",
+          "command": "astro dev"
+        },
+        {
+          "name": "build",
+          "command": "astro build"
+        },
+        {
+          "name": "preview",
+          "command": "astro preview"
+        },
+        {
+          "name": "check",
+          "command": "astro check"
+        }
+      ],
+      "signals": [
+        {
+          "kind": "package_dependency",
+          "name": "@astrojs/sitemap",
+          "section": "dependencies",
+          "declared_version": "3.7.3"
+        },
+        {
+          "kind": "package_dependency",
+          "name": "astro",
+          "section": "dependencies",
+          "declared_version": "7.2.1"
+        },
+        {
+          "kind": "package_dependency",
+          "name": "@astrojs/check",
+          "section": "devDependencies",
+          "declared_version": "0.9.10"
+        },
+        {
+          "kind": "package_dependency",
+          "name": "@astrojs/markdown-remark",
+          "section": "devDependencies",
+          "declared_version": "7.2.2"
+        },
+        {
+          "kind": "astro_config",
+          "path": "astro.config.ts"
+        },
+        {
+          "path": "src/pages",
+          "kind": "source_directory"
+        },
+        {
+          "path": "src/content",
+          "kind": "source_directory"
+        },
+        {
+          "path": "src/assets",
+          "kind": "source_directory"
+        },
+        {
+          "kind": "package_script",
+          "name": "dev",
+          "command": "astro dev"
+        },
+        {
+          "kind": "package_script",
+          "name": "build",
+          "command": "astro build"
+        },
+        {
+          "kind": "package_script",
+          "name": "preview",
+          "command": "astro preview"
+        },
+        {
+          "kind": "package_script",
+          "name": "check",
+          "command": "astro check"
+        }
+      ]
+    },
+    "routes": {
+      "root": "src/pages",
+      "present": true,
+      "count": 16,
+      "file_count": 16,
+      "files": [
+        {
+          "path": "src/pages/[...slug].astro",
+          "kind": "route_source",
+          "bytes": 801,
+          "sha256": "ea171632c1898b0b24047a81cdd874d4d9ebcf479c7da7e68c3552a03b5bafa1",
+          "extension": ".astro",
+          "route": "/*slug",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/404.astro",
+          "kind": "route_source",
+          "bytes": 375,
+          "sha256": "012493ae345c2c9204bfb70c38534dbf36164dbce7cd1834967a10d6633ea882",
+          "extension": ".astro",
+          "route": "/404",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/briefs/[slug]/thanks.astro",
+          "kind": "route_source",
+          "bytes": 11607,
+          "sha256": "d0a0fbebc86fa86a384d93c675677a393c794e7e08bf88d5b3629dcc5c3202ce",
+          "extension": ".astro",
+          "route": "/briefs/:slug/thanks",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/briefs/[slug].astro",
+          "kind": "route_source",
+          "bytes": 8875,
+          "sha256": "6fe993fa30b0cca9da4c6e6bddb45ed2978bac1baf0a269958242fbf069cd9a4",
+          "extension": ".astro",
+          "route": "/briefs/:slug",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/briefs/index.astro",
+          "kind": "route_source",
+          "bytes": 19392,
+          "sha256": "223fbf35fe94c23b91fd38a5165bcda08419e699bc3cbb05856bc322258fd325",
+          "extension": ".astro",
+          "route": "/briefs",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/company.astro",
+          "kind": "route_source",
+          "bytes": 13304,
+          "sha256": "cddb1dff97a6af13d75e74e0f23887d7c06dc2e7baa37b3e6c66411ccd9d2857",
+          "extension": ".astro",
+          "route": "/company",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/contact.astro",
+          "kind": "route_source",
+          "bytes": 23493,
+          "sha256": "56b7ed24a2c37159b1543b3e614f6d810608c2902bd865d306965d4b4aa5e1ee",
+          "extension": ".astro",
+          "route": "/contact",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/horizon/[slug].astro",
+          "kind": "route_source",
+          "bytes": 4375,
+          "sha256": "743b9e011c13965e72368a1f4c830dba9637dab4ddb7cdf4cd4576533ad37acc",
+          "extension": ".astro",
+          "route": "/horizon/:slug",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/horizon/index.astro",
+          "kind": "route_source",
+          "bytes": 2173,
+          "sha256": "2c69a2f1b69382bbaa1b6a0ec81fd55bd6848d1015481250f1ea38a068af8044",
+          "extension": ".astro",
+          "route": "/horizon",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/index.astro",
+          "kind": "route_source",
+          "bytes": 12192,
+          "sha256": "b9a174291b56eaaeb71d9a9a451131c01c4a1cfbc5635d6f7a3ca0f24c92ace0",
+          "extension": ".astro",
+          "route": "/",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/portfolio/[slug].astro",
+          "kind": "route_source",
+          "bytes": 4720,
+          "sha256": "7f7c93bb692838c93e2b4d47efbfa0ae7109840b16ef1317524b80ec8b77dd13",
+          "extension": ".astro",
+          "route": "/portfolio/:slug",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/portfolio/index.astro",
+          "kind": "route_source",
+          "bytes": 2047,
+          "sha256": "1eb40da4e8aa749df701fb289e5dbff51c38d675641736af7eedc5830eb507b2",
+          "extension": ".astro",
+          "route": "/portfolio",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/portfolio-item/[slug].astro",
+          "kind": "route_source",
+          "bytes": 240,
+          "sha256": "1ce208489c7295ba0890b364c012e21b4b4d144adb072a553862d655ec8a73bf",
+          "extension": ".astro",
+          "route": "/portfolio-item/:slug",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/privacy.astro",
+          "kind": "route_source",
+          "bytes": 5405,
+          "sha256": "7d612afd6139349f47babe05250914a354ed52925d5b24edc7c7a9746465f907",
+          "extension": ".astro",
+          "route": "/privacy",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/products/[id].astro",
+          "kind": "route_source",
+          "bytes": 2441,
+          "sha256": "06604b01bff217f6224c17259d8711987abd09e895037f6fdda408b20e7bd1d1",
+          "extension": ".astro",
+          "route": "/products/:id",
+          "route_source": true
+        },
+        {
+          "path": "src/pages/products/index.astro",
+          "kind": "route_source",
+          "bytes": 1173,
+          "sha256": "844a4317c02d36b5fc82e79ea8d0a3c3f9ee34da7bbca350ad05d0c565097dd4",
+          "extension": ".astro",
+          "route": "/products",
+          "route_source": true
+        }
+      ],
+      "symlinks": [],
+      "errors": []
+    },
+    "content": {
+      "root": "src/content",
+      "present": true,
+      "count": 6,
+      "editorial_file_count": 6,
+      "file_count": 6,
+      "files": [
+        {
+          "path": "src/content/products/cli.json",
+          "kind": "editorial_source",
+          "bytes": 1064,
+          "sha256": "31f4e2a2d5a80d2643c2cc66e22b18deaf53cdd1134776a9097fe286b04412b2",
+          "extension": ".json"
+        },
+        {
+          "path": "src/content/products/gpu-router.json",
+          "kind": "editorial_source",
+          "bytes": 1008,
+          "sha256": "94b07dbe4deec3a1ac2b824b3529559b79658c52bfbd34317afd178560ccfc22",
+          "extension": ".json"
+        },
+        {
+          "path": "src/content/products/photo-curator.json",
+          "kind": "editorial_source",
+          "bytes": 946,
+          "sha256": "9c1283ad2e6eaece199b057e2c54ec79f6cf328de674df2574ff9b0190cdddde",
+          "extension": ".json"
+        },
+        {
+          "path": "src/content/products/studio.json",
+          "kind": "editorial_source",
+          "bytes": 1048,
+          "sha256": "2aa81ddcfead8301df7e9c17b17267a7edba29ef2291cb08402ffc7100caa896",
+          "extension": ".json"
+        },
+        {
+          "path": "src/content/products/web-magic.json",
+          "kind": "editorial_source",
+          "bytes": 1042,
+          "sha256": "69b6b4f2eaeecaa6d8291a59cdc791c8539fcbfa3b3687dc19c20860d43de50c",
+          "extension": ".json"
+        },
+        {
+          "path": "src/content/products/wiremark.json",
+          "kind": "editorial_source",
+          "bytes": 1090,
+          "sha256": "40f9c7151c0c46c1128f4361c5a8c125666f547dbd19eb344d519958092853d7",
+          "extension": ".json"
+        }
+      ],
+      "other_files": [],
+      "symlinks": [],
+      "errors": []
+    },
+    "media": {
+      "public": {
+        "root": "public",
+        "present": true,
+        "count": 11,
+        "file_count": 11,
+        "by_type": {
+          "image": 9,
+          "audio": 2
+        },
+        "files": [
+          {
+            "path": "public/favicon.svg",
+            "kind": "public_media",
+            "bytes": 479,
+            "sha256": "c81ef2e8db82d9ec3f9cc10c6b8481ac04e3b4400f3700bab145f8b3e4f047f6",
+            "extension": ".svg",
+            "media_type": "image"
+          },
+          {
+            "path": "public/media/audio/hardmagic-signal.ogg",
+            "kind": "public_media",
+            "bytes": 216322,
+            "sha256": "9b199155772d569ea21f168c5d548438ac88a5f98998a155751b8875dc80187d",
+            "extension": ".ogg",
+            "media_type": "audio"
+          },
+          {
+            "path": "public/media/audio/hardmagic-working-signal.ogg",
+            "kind": "public_media",
+            "bytes": 307849,
+            "sha256": "0e5ff311e6696ce352f4245e092ca556c41f81e46a00d69b10d243bcbe9e5897",
+            "extension": ".ogg",
+            "media_type": "audio"
+          },
+          {
+            "path": "public/media/wiremark/wiremark-studio-current.png",
+            "kind": "public_media",
+            "bytes": 240241,
+            "sha256": "e52cf3ebb3587bcae7639dd26cd1fdfa370360a83f3ae5b9df80e5e316f0632a",
+            "extension": ".png",
+            "media_type": "image"
+          },
+          {
+            "path": "public/media/youtube/bF9iUzzoBEU.avif",
+            "kind": "public_media",
+            "bytes": 24485,
+            "sha256": "1b809824169c41f08c8c4dc9cca1a4a6babe026ab3f0dcd319865a21fea30587",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "public/media/youtube/eTvOF9BH0qA.avif",
+            "kind": "public_media",
+            "bytes": 34717,
+            "sha256": "2c83ae28f89873e50ee087ec5ef22ffa7e267a69664b27ea167c67b4c84c2ca3",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "public/media/youtube/J2Tr3fXQChY.avif",
+            "kind": "public_media",
+            "bytes": 28923,
+            "sha256": "c6c7b05e3071bdfa9406f95cea10edda3e7523261bebfe01db0a47dea1d5e85a",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "public/media/youtube/n6oohS3MoQY.avif",
+            "kind": "public_media",
+            "bytes": 57032,
+            "sha256": "f1342eefdb6eabb674ee562fb21b22b69ff7d476b7186068bbe29cfb141c26fa",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "public/media/youtube/n9cxDp-bnr4.avif",
+            "kind": "public_media",
+            "bytes": 15102,
+            "sha256": "b690df6135fadbb40fde6868c5d55bff73d8e89c19e2a0b9fb0ea00b1a13b9d5",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "public/media/youtube/SP98IC6vHWM.avif",
+            "kind": "public_media",
+            "bytes": 32341,
+            "sha256": "123d285d43b1bb1f652413505748e32bfda972ee75fba5c66054b03014bf0308",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "public/og-hardmagic.svg",
+            "kind": "public_media",
+            "bytes": 4163,
+            "sha256": "f738ab5114ebb0593537b7642a01df4f95216a254c9815ecb2db1fd2426a0d36",
+            "extension": ".svg",
+            "media_type": "image"
+          }
+        ],
+        "symlinks": [],
+        "errors": []
+      },
+      "src_assets": {
+        "root": "src/assets",
+        "present": true,
+        "count": 51,
+        "file_count": 51,
+        "by_type": {
+          "image": 51
+        },
+        "files": [
+          {
+            "path": "src/assets/brand/abc.svg",
+            "kind": "asset_media",
+            "bytes": 1543,
+            "sha256": "5157c848cb5f1f8a935e02d8775d87af0553445e9525ea20e5765ff7872996e1",
+            "extension": ".svg",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/brand/disney.svg",
+            "kind": "asset_media",
+            "bytes": 25537,
+            "sha256": "85f10379577de4722f2a5854e99e5dcd50e013f5d773d81d38eac2f6692a7341",
+            "extension": ".svg",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/brand/hardmagic-wordmark.svg",
+            "kind": "asset_media",
+            "bytes": 3468,
+            "sha256": "5d9731198b74565310064ed84e81167f4838bbc38a84c36b055c15005f468efe",
+            "extension": ".svg",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/brand/jamba.svg",
+            "kind": "asset_media",
+            "bytes": 12659,
+            "sha256": "3c93eb65504a91fab36afc1b316bc35ca5619c9e7f0e8ff6599c62a9c808fd20",
+            "extension": ".svg",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/brand/zico.svg",
+            "kind": "asset_media",
+            "bytes": 4321,
+            "sha256": "597d6932c5ee6cd4283bdb6f61baff8cee77a2120166e19362c3e73a4bcd843e",
+            "extension": ".svg",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/archive-cathedral-2035.avif",
+            "kind": "asset_media",
+            "bytes": 241954,
+            "sha256": "8a1ee9a73ddd82e6d3770a75ef71de3d89c181261b15f547ea8026930939b7ee",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/audience-dreamfield-2035-4k.avif",
+            "kind": "asset_media",
+            "bytes": 144166,
+            "sha256": "b2fa958fcd14e4629bf233ce4bdd54e81a5affb2dde6a31118fd4657c75cce95",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/audience-dreamfield-2035.avif",
+            "kind": "asset_media",
+            "bytes": 57148,
+            "sha256": "53457ad13f2771867dfe508c9a00198a73ae3a06675dcb09cd383e1e7028116c",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/creative-direction.png",
+            "kind": "asset_media",
+            "bytes": 1819831,
+            "sha256": "fe89fe4e065a6e3620be33ffd60aebd9c0a8d6dfd9e0973ac29241dae55647cf",
+            "extension": ".png",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/dream-media-specimen-4k.avif",
+            "kind": "asset_media",
+            "bytes": 251477,
+            "sha256": "e6ecbf82ff45398ed1ef4814414a6e9e6a3120eb81c42c643e638f7e1a0555a0",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/dream-media-specimen.png",
+            "kind": "asset_media",
+            "bytes": 1402923,
+            "sha256": "8a2ba40f04a365ceae46382a788e7d7506eacfe555670444c801031b11747ed2",
+            "extension": ".png",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/generative-operations-4k.avif",
+            "kind": "asset_media",
+            "bytes": 172666,
+            "sha256": "13a96717faf97b7c5b690392ac75b1a94cc02eb289a0eb1705695f8af4edacb7",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/generative-operations.png",
+            "kind": "asset_media",
+            "bytes": 2073612,
+            "sha256": "13fb97946505fd7cabe44278daf70a5e72c2b696ded35cac03df21bdcd169caf",
+            "extension": ".png",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/hardmagic-future-command-desktop.avif",
+            "kind": "asset_media",
+            "bytes": 252789,
+            "sha256": "0e27079b63babd5576d7e7d5158e0b18d3ee941e456862d6c98a360616bf49fa",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/hardmagic-future-command-mobile.avif",
+            "kind": "asset_media",
+            "bytes": 118294,
+            "sha256": "2d9540a323549db3215c80ef9d8192701ce98ce8b311b5005ae28176d27e9b09",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/hardmagic-future-command-tablet.avif",
+            "kind": "asset_media",
+            "bytes": 143884,
+            "sha256": "6845ea13e7e91e168a4b53e2636e56c4db5b2b5aed29811c784a71d948d51e8f",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/hardmagic-home-hero-desktop.avif",
+            "kind": "asset_media",
+            "bytes": 97695,
+            "sha256": "a913e5acb27458402ea6a8fc4f39a8e6b504a206839677b5f788cc745131cb6c",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/hardmagic-home-hero-mobile.avif",
+            "kind": "asset_media",
+            "bytes": 57728,
+            "sha256": "137cca40bd8a644f5a26f8ff199c6c35f61811b2bf6cdcf37acffd9dc5ad6ad6",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/hardmagic-home-hero-tablet.avif",
+            "kind": "asset_media",
+            "bytes": 50661,
+            "sha256": "e81b6ee10e166b59dd1e753d053e52458748f4091758e27abaf755130efb67c6",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/hybrid-infrastructure.png",
+            "kind": "asset_media",
+            "bytes": 1879823,
+            "sha256": "23192063473a355aae8e8eb68b85999ae135ad7a1965db2854b9bf7e70411285",
+            "extension": ".png",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/media-alchemy-ritual-4k.avif",
+            "kind": "asset_media",
+            "bytes": 256045,
+            "sha256": "58f1ddc9cfd44070342bda1507884eb42c71dc3f56396cdb474f02b72fe227e0",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/editorial/media-alchemy-ritual.avif",
+            "kind": "asset_media",
+            "bytes": 123735,
+            "sha256": "f44154f28e598e03824c71ca6ed37fa201330fabad2b3463e96cb0ae967fca7f",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/legacy/disney.png",
+            "kind": "asset_media",
+            "bytes": 10933,
+            "sha256": "b669925092ee3b9342505d954e5fa53827a3b2eae777d7ad402935f679bb6ab8",
+            "extension": ".png",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/legacy/hardmagic-logo.png",
+            "kind": "asset_media",
+            "bytes": 10825,
+            "sha256": "9bd120e0bd97cdcff1bd1edf1a453fbac54ecdaf0668e6665174620dcaf91f8e",
+            "extension": ".png",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/legacy/jamba-juice.png",
+            "kind": "asset_media",
+            "bytes": 11430,
+            "sha256": "5ec46891dfe01cdf227cef21a38b0c040c101bca1690c244fd93d30034676b3d",
+            "extension": ".png",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/legacy/raptor.jpg",
+            "kind": "asset_media",
+            "bytes": 278721,
+            "sha256": "c4302089440d5f06b5eb9eaba4da054fb8adbc7b1a67ccb65fdbe0b1d82b626d",
+            "extension": ".jpg",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/legacy/zico.png",
+            "kind": "asset_media",
+            "bytes": 12020,
+            "sha256": "04fc0720be150260238af766d18f442fef72240683d69d5a7237a4fc8bbe6923",
+            "extension": ".png",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/airikai-editorial.avif",
+            "kind": "asset_media",
+            "bytes": 49910,
+            "sha256": "3f4cab83ed3f01d5537c736f15c1625a100920776bf0e53dd3f805a03732ea93",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/airikai-motion.avif",
+            "kind": "asset_media",
+            "bytes": 1058716,
+            "sha256": "9848e7ff46512578b3dba577a05a600827e7be79b27358ff6197a5648ad227da",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/airikai-portrait.avif",
+            "kind": "asset_media",
+            "bytes": 159242,
+            "sha256": "14c27e523ab074600386e9a3d34547e1e010a338bb2f31e733af4c547d7ceae0",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/fashionx-editorial.avif",
+            "kind": "asset_media",
+            "bytes": 53996,
+            "sha256": "7cf49074bb7d27467aeafe0f52a5395caff622c611ac3909eb8ac1b0dd424676",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/fashionx-process.avif",
+            "kind": "asset_media",
+            "bytes": 108375,
+            "sha256": "3e227660cb29682dc00d370f0ba644fdae3a24bb26b676941c17c812bf386485",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/fashionx-swim.avif",
+            "kind": "asset_media",
+            "bytes": 223250,
+            "sha256": "9b65fcc871048aab42e8dc640bc0b5919f002a04d2d55a6560b8d756ef99c365",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/focuspass-product.avif",
+            "kind": "asset_media",
+            "bytes": 31413,
+            "sha256": "15d821a250dd8019cdd35eb7cf688a5905564462361634d16af1f1e326d929b2",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/focuspass-screen.avif",
+            "kind": "asset_media",
+            "bytes": 53058,
+            "sha256": "9dfe281455016fc5f2f0389294c0fa326ac54705d124d302f660c1debab7f64f",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/focuspass-workflow.avif",
+            "kind": "asset_media",
+            "bytes": 52830,
+            "sha256": "3fad2cc0de5d0d7b58f664bd9b1762576b50a27b3848dff02f7dac64202ea72e",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/pedadida-platform.avif",
+            "kind": "asset_media",
+            "bytes": 18710,
+            "sha256": "9becab1ff239456ca8b0b4e81c367ba9e712656d82709d49122765a86733f1db",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/pedadida-system.avif",
+            "kind": "asset_media",
+            "bytes": 83197,
+            "sha256": "ca9b313ec3a7825ca6f765582083d862e4bcaebbcb60f52b9a70877241d2da92",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/pranashama-brand.avif",
+            "kind": "asset_media",
+            "bytes": 120275,
+            "sha256": "be1f5fc8854d3343e0e5ccc9d69b11fe99691423e4c1c231616499585a646546",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/pranashama-events.avif",
+            "kind": "asset_media",
+            "bytes": 61171,
+            "sha256": "3ee5c4bda2aff90c979eafa6cf302c653d38b6a5613c7ca7845053f87692b967",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/pranashama-system.avif",
+            "kind": "asset_media",
+            "bytes": 24269,
+            "sha256": "f45c53b887f29f0b1d763ec0a10004bc5ac2dc404dae11eb1b57ba3b59012c46",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/restored/airikai-editorial-8k-restored.avif",
+            "kind": "asset_media",
+            "bytes": 650415,
+            "sha256": "ca4e17ce6faf10bd44612ad7d3b62927444751c958c0bc8f386cab4eed2264cc",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/state-parks-landscape.avif",
+            "kind": "asset_media",
+            "bytes": 1110652,
+            "sha256": "7a95d49cc5970c73d0fd48c61c5f6f0d455bf28ada129fb756a2b4bbdcb72576",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/state-parks-sunset.avif",
+            "kind": "asset_media",
+            "bytes": 119676,
+            "sha256": "68f45af5491112a441ee434d1957756267d14b4e14f67066cdd9c8eb9a8f9334",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/state-parks-wildlife.avif",
+            "kind": "asset_media",
+            "bytes": 2523265,
+            "sha256": "301993d2eb626d07397659d831181726751322466f1211457ecedfca4a4b51f3",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/tao-cottage-autumn.avif",
+            "kind": "asset_media",
+            "bytes": 2157312,
+            "sha256": "3c2e908a6981867d2a117599382a9b7f101bcb0d667e3ab903ca1c95bb2562d3",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/tao-cottage-night.avif",
+            "kind": "asset_media",
+            "bytes": 483423,
+            "sha256": "cdc9615bff129c98a8ad839b86a5404383ab915cb3cccd849d75300d50230daf",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/tao-cottage-room.avif",
+            "kind": "asset_media",
+            "bytes": 784882,
+            "sha256": "11ccab604658c37afe7a50ca9011d49312e797ceda0e13aa5e23d37d0a57f620",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/taolo-building.avif",
+            "kind": "asset_media",
+            "bytes": 625537,
+            "sha256": "d58b6e2b73a2baa69276f09a118f33a174b4732554569610cd10eb156c49c31a",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/taolo-kombucha.avif",
+            "kind": "asset_media",
+            "bytes": 83742,
+            "sha256": "ed90f7c71f60e4b7706e6e95d0a816b489ec7b35fdec2cd8985a3db8a8fdf22b",
+            "extension": ".avif",
+            "media_type": "image"
+          },
+          {
+            "path": "src/assets/portfolio/taolo-object.avif",
+            "kind": "asset_media",
+            "bytes": 144332,
+            "sha256": "bf5bd3ccbfb4b0c82463d26c2df1b9f38aa3dbf6f1f44595d7e75ce5d9606a8c",
+            "extension": ".avif",
+            "media_type": "image"
+          }
+        ],
+        "symlinks": [],
+        "errors": []
+      },
+      "count": 62,
+      "file_count": 62
+    },
+    "rendered_html": {
+      "root": "dist",
+      "present": true,
+      "count": 153,
+      "html_file_count": 153,
+      "files": [
+        {
+          "path": "dist/404.html",
+          "kind": "rendered_html",
+          "bytes": 13709,
+          "sha256": "8ef2d6927ef752798efbef3c58e202030b51c729f720798773f393c5b10a3974",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/accessibility/index.html",
+          "kind": "rendered_html",
+          "bytes": 21937,
+          "sha256": "af5791c5889bdd53c36e9a9ee9a6496e95c696ee91537895caa2ff0448885586",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/autonomous-web-publishing-control-plane/index.html",
+          "kind": "rendered_html",
+          "bytes": 29152,
+          "sha256": "894843aa928130d55fd12eb3829673d086ed7b4fa756f6944cfa866e27e92a16",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/autonomous-web-publishing-control-plane/thanks/index.html",
+          "kind": "rendered_html",
+          "bytes": 18796,
+          "sha256": "7412b4d781399e25ee7c331935e802f7555237bc42a14589976a66ad054bc28d",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/creative-direction-after-the-prompt/index.html",
+          "kind": "rendered_html",
+          "bytes": 29376,
+          "sha256": "63452beb0abd84a4cc63d5f5ba306ff43d8825fe25769fd46331ee3544644345",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/creative-direction-after-the-prompt/thanks/index.html",
+          "kind": "rendered_html",
+          "bytes": 18746,
+          "sha256": "dfdb1238cbdf887a71bbfa8c7fbddda2e49c3d77321c7524b0ac11f04cd7917e",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/generative-media-operating-system/index.html",
+          "kind": "rendered_html",
+          "bytes": 29899,
+          "sha256": "c6ac8865618817c43fa01a19043a05deeb8a506d1a6ff342790fc632469d6862",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/generative-media-operating-system/thanks/index.html",
+          "kind": "rendered_html",
+          "bytes": 18713,
+          "sha256": "4d51de3c9d3997d7c711a5f53b988d9e2ea86972827a45ee9eb6ca46b0e218ab",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/hybrid-ai-media-infrastructure/index.html",
+          "kind": "rendered_html",
+          "bytes": 29619,
+          "sha256": "7520d4ac8f6fd56901d8f64666430fbecd2bea7e5066def324650be3ac8b94ba",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/hybrid-ai-media-infrastructure/thanks/index.html",
+          "kind": "rendered_html",
+          "bytes": 18812,
+          "sha256": "bdb5f74cbe5a2e1e31ce106d78f077ae84b6d87bfdac068e36e3cd9dc9ca4efe",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/index.html",
+          "kind": "rendered_html",
+          "bytes": 32969,
+          "sha256": "32a760f5f0febbfbcc3d7929fa1a5ebff85a977c7cce506c6a3933394b942ae4",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/intelligent-media-asset-estate/index.html",
+          "kind": "rendered_html",
+          "bytes": 29390,
+          "sha256": "b4f83f86b2580f0838466d99ed58b7c04629bc47856a18f72341cdd71fbeadf3",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/intelligent-media-asset-estate/thanks/index.html",
+          "kind": "rendered_html",
+          "bytes": 18817,
+          "sha256": "fc853b8fab011a02352ca309b70603ec620ba2059ebb120b0f238c66b02d0e71",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/modern-media-agency-transformation-playbook/index.html",
+          "kind": "rendered_html",
+          "bytes": 30495,
+          "sha256": "8f9a1ddd1f631905a9a56d205023755d1ca29e2284c2fbe3f73da6302b1e365f",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/modern-media-agency-transformation-playbook/thanks/index.html",
+          "kind": "rendered_html",
+          "bytes": 18853,
+          "sha256": "93ac42952c3cabe9aa1592c2bab7633cc2710ab8e09c2c2ad161b5a72cadd198",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/provenance-ready-content-supply-chain/index.html",
+          "kind": "rendered_html",
+          "bytes": 29586,
+          "sha256": "8f251f47e97f3c898d9b5adb305e2aa7e411942cac3b118643d8377d04b3da7c",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/provenance-ready-content-supply-chain/thanks/index.html",
+          "kind": "rendered_html",
+          "bytes": 18839,
+          "sha256": "19d731a23b59e69ddc24387658020c9ac9650e6d0eede4c54b15bed437aaa867",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/visual-product-development-field-guide/index.html",
+          "kind": "rendered_html",
+          "bytes": 28989,
+          "sha256": "33bfe90505baf3fabf8363573aa75329e9ba6b7b8205730b00a88b7a51bc917b",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/briefs/visual-product-development-field-guide/thanks/index.html",
+          "kind": "rendered_html",
+          "bytes": 18717,
+          "sha256": "0f90cf85e4b45f0e8278e1bb0309bb331196d3c8db58231b1fb911b30fa9dc59",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/company/careers/index.html",
+          "kind": "rendered_html",
+          "bytes": 23448,
+          "sha256": "f4db14dc5811673564d015a8cb5cb488fcfe5e88034e88f2c7d95fa5e0c5f366",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/company/founder/index.html",
+          "kind": "rendered_html",
+          "bytes": 23599,
+          "sha256": "f96c0d025f95e52e40376ab1086493a1d91b425177d9602de5915354d6507596",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/company/history/index.html",
+          "kind": "rendered_html",
+          "bytes": 24697,
+          "sha256": "e8017699f4198a70d6c7a5ad51188a5123b505934db4477c93687e68df28f28e",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/company/index.html",
+          "kind": "rendered_html",
+          "bytes": 26475,
+          "sha256": "ce08eb8f1518f9c33fe8b6080b9048865668c357d3fc919680b44a40bac51a9d",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/company/operating-model/index.html",
+          "kind": "rendered_html",
+          "bytes": 23532,
+          "sha256": "40675b3f41908c080a97fd1842799817de540d726bee5a8872a04511820e3c78",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/company/partners/index.html",
+          "kind": "rendered_html",
+          "bytes": 23494,
+          "sha256": "4f4a283134881d8f568769904fddc03b120343903c38c891bbae38a2061e24e3",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/company/principles/index.html",
+          "kind": "rendered_html",
+          "bytes": 24635,
+          "sha256": "62c95dda85a677240e3bedb5ba7a9ebd9db6eb6d233db312d1d1daf01b2bd8dc",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/company/selected-experience/index.html",
+          "kind": "rendered_html",
+          "bytes": 23585,
+          "sha256": "14c1608bab531adc81d5b525dba7067a2ef8423513f297998129d085b2932ec0",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/contact/creative-direction/index.html",
+          "kind": "rendered_html",
+          "bytes": 27048,
+          "sha256": "2b0375fc60cdaee546f488fa2f376c4e9fe36c8898fc12d1c96ba5f43a0e2e00",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/contact/genai/index.html",
+          "kind": "rendered_html",
+          "bytes": 26804,
+          "sha256": "a49930845da854c52b32001cbdd8e10bc4f53965780b4390695691c17728b8e7",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/contact/index.html",
+          "kind": "rendered_html",
+          "bytes": 25095,
+          "sha256": "a0067554622cf4de35787c7a1f296b8b9e45ebc1703fa38ca06125e3b65cf356",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/contact/marketing-consulting/index.html",
+          "kind": "rendered_html",
+          "bytes": 27174,
+          "sha256": "077c4985de35986704cb30df4fab2102c7ea72709ffb01a716b5472accbad937",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/contact/media-management/index.html",
+          "kind": "rendered_html",
+          "bytes": 26754,
+          "sha256": "6d6d52bc61eebec29a9553046633a9dfa7398d8413f5a84317b2cecc4c671691",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/contact/partnerships/index.html",
+          "kind": "rendered_html",
+          "bytes": 26817,
+          "sha256": "f4bd1d97be542ff41f8a4f41675fe37d8b43f1a7692cb6f3d1bc072e075dc4f5",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/contact/thanks/index.html",
+          "kind": "rendered_html",
+          "bytes": 22024,
+          "sha256": "72aa1f23f5da241758e5724fb36c805005f7dbd37bd5edc9976932ffdff5ca3c",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/editorial-policy/index.html",
+          "kind": "rendered_html",
+          "bytes": 21890,
+          "sha256": "6fd9d06bb5dba9b6679198afac5f6a7526414a583104b9a72bb8dc3f8f7d3d0d",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/engagements/fractional-creative-office/index.html",
+          "kind": "rendered_html",
+          "bytes": 23868,
+          "sha256": "124c40395fe28304c5fa47a4c6eaa5b6fc7089362a6e01acc55ccba9b6987c82",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/engagements/genai-lab/index.html",
+          "kind": "rendered_html",
+          "bytes": 23474,
+          "sha256": "5eab96a49d6fc0a7c42529a643b3f2fcb31e1e2935b601d09a94a0a8829eab30",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/engagements/index.html",
+          "kind": "rendered_html",
+          "bytes": 23325,
+          "sha256": "125976cf8817c0fd8eccf0522669b0017740153177dd432785e0e4fe6f1cfc7c",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/engagements/managed-media-desk/index.html",
+          "kind": "rendered_html",
+          "bytes": 23629,
+          "sha256": "c2b6057cc1f27422a2f2ec54138d3ceb98f85a2e62056360c8bcab78b2156c45",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/engagements/product-launch-room/index.html",
+          "kind": "rendered_html",
+          "bytes": 23507,
+          "sha256": "a5c1a9f5837c5beaaa6600c914fdb05a3c1ca0522ced33509b740f9e02b7a1ae",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/engagements/transformation-sprint/index.html",
+          "kind": "rendered_html",
+          "bytes": 23616,
+          "sha256": "aee33eb0197753d11c863b12fed22c36104a3cf247e56b3ab60ea3154e245016",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/accessibility-becomes-generative-art-direction/index.html",
+          "kind": "rendered_html",
+          "bytes": 24002,
+          "sha256": "c30f77bdcaca3c910075f6f6e66b0ffd17fe74d000679a19991e3f8d536c6504",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/agentic-media-needs-a-control-room/index.html",
+          "kind": "rendered_html",
+          "bytes": 24201,
+          "sha256": "1ddc98545febcf59420133d789b99bd4cad1753ec89f93bbd92b5cbb18662a79",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/brand-memory-becomes-an-operating-system/index.html",
+          "kind": "rendered_html",
+          "bytes": 24442,
+          "sha256": "8740a3b4286296b83e57173a914c6df8ba6935409a6c820a12a19fd3209d83df",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/compute-becomes-a-creative-material/index.html",
+          "kind": "rendered_html",
+          "bytes": 23493,
+          "sha256": "fb5500940e16a87c9b025c8a6308278a7b0cb2477916bda0ccd0c68069bd7688",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/direction-after-infinite-production/index.html",
+          "kind": "rendered_html",
+          "bytes": 24372,
+          "sha256": "a8cb805c28c5c224d987aea452aedffe116771ed0255e028cfb2e1bb0e4c4d55",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/identity-rights-become-production-infrastructure/index.html",
+          "kind": "rendered_html",
+          "bytes": 24273,
+          "sha256": "6f11cd7bc895306cd5f17d878652ef257b71c5e5f43a7f431ea1fdf625f87fc6",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/index.html",
+          "kind": "rendered_html",
+          "bytes": 36542,
+          "sha256": "f42ae4064ce82e539b2c4747eaecf10ed7c134f4f8c899124e89b47a92d8cef6",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/marketing-after-surveillance/index.html",
+          "kind": "rendered_html",
+          "bytes": 24243,
+          "sha256": "2177e693504fb67ad41630ade0133b8f951611221af286ce9df8820812479481",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/media-escapes-the-frame/index.html",
+          "kind": "rendered_html",
+          "bytes": 23228,
+          "sha256": "c784677eef77f09d44799eb8d2d41fca240d0aafe2863f95b1bf7f703313f948",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/provenance-is-the-new-publishing-layer/index.html",
+          "kind": "rendered_html",
+          "bytes": 24123,
+          "sha256": "99e23e78c436a409b47c8e2574bfb36817ca6bafad2205e16d3d775cd18c998f",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/the-media-library-starts-making-decisions/index.html",
+          "kind": "rendered_html",
+          "bytes": 24405,
+          "sha256": "2a6d5a2fd203b88369ba13e562f422f5002cb03ff66ac1fb5133d3a15e4766e9",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/the-sovereign-microstudio/index.html",
+          "kind": "rendered_html",
+          "bytes": 24273,
+          "sha256": "f64c84c6377a86e29211aad97866ef8a49785d2624ea4913663ca110935d6030",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/horizon/the-story-is-assembled-at-the-edge/index.html",
+          "kind": "rendered_html",
+          "bytes": 24093,
+          "sha256": "58cf38a9e0545b78d1a2f03d6351b2c7361811287284d1b633f480d7f20c9c76",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/index.html",
+          "kind": "rendered_html",
+          "bytes": 28489,
+          "sha256": "cb9e0d728d9fe4678309be5a9b4edf79fefa0e93b5336f58d506c1e5c03291af",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/industries/agencies/index.html",
+          "kind": "rendered_html",
+          "bytes": 23545,
+          "sha256": "cb40428eb16ef99840f457a1fee27f9161d30c17e0edc14f92b6446964452dfd",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/industries/consumer-brands/index.html",
+          "kind": "rendered_html",
+          "bytes": 23691,
+          "sha256": "99ae72addbc1df4937c56775a2c146a6d57ed6ced2d84b6daed742584f50adc4",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/industries/education-culture/index.html",
+          "kind": "rendered_html",
+          "bytes": 23784,
+          "sha256": "6a401abf95120c5e46c3b43a94c9d65ea534c8ecbddfde5262ebe70331d662c1",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/industries/founder-led-companies/index.html",
+          "kind": "rendered_html",
+          "bytes": 23854,
+          "sha256": "20c5ed1285441273e02c6e6a9c3e9027bad9e39d43d2af132005d5e82a949203",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/industries/index.html",
+          "kind": "rendered_html",
+          "bytes": 23519,
+          "sha256": "70fdd160f16f95d855091cebf74483c27637b7de1b1df36faacd59265bb176bd",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/industries/media-entertainment/index.html",
+          "kind": "rendered_html",
+          "bytes": 23681,
+          "sha256": "17f426fa5642f61cdda10a5002dce5b5600fc4979d56e283780d95e2a80a80ea",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/industries/retail-commerce/index.html",
+          "kind": "rendered_html",
+          "bytes": 23686,
+          "sha256": "62e433a89a2db911f2e7a61613f72771c3c34b4f75b111c1deafdd347a49cd40",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/industries/software-platforms/index.html",
+          "kind": "rendered_html",
+          "bytes": 23686,
+          "sha256": "5c29e9687c2ba7db7452c582a256639d78d9ee859a2ff1d2526ea1b7bcf59c36",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/industries/sports-wellness/index.html",
+          "kind": "rendered_html",
+          "bytes": 23750,
+          "sha256": "85fed59a834aa1990173690c43f9265a44a7f84335c138c1a8a0260a3e9fd9a2",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/25-years-from-brand-studio-to-ai-company/index.html",
+          "kind": "rendered_html",
+          "bytes": 24704,
+          "sha256": "145032b8719651a6f3570b7d6e404fd280c297eb49ab748c30fe6f031eae20fb",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/accessibility-is-art-direction/index.html",
+          "kind": "rendered_html",
+          "bytes": 23667,
+          "sha256": "16bce992fe33c59a5ce8e85f4df5e3e24de93154c4d39fe085494a7c482c96e3",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/brand-memory-in-generative-systems/index.html",
+          "kind": "rendered_html",
+          "bytes": 23682,
+          "sha256": "94e80dc554fa23a550dcc723a82ff55b7a28b235e58fec79c598f4b168eb2e63",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/creative-direction-after-model-abundance/index.html",
+          "kind": "rendered_html",
+          "bytes": 24068,
+          "sha256": "c2a305ec363bcad162459e3178d9c9d84b30972ee9d2aa00d9a1bf06da2aa15e",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/from-prompting-to-production-systems/index.html",
+          "kind": "rendered_html",
+          "bytes": 23858,
+          "sha256": "0a91e03f0e8ec5147c88e2e3202cd277c4ac96a4cbce30529c8889b08e96e21b",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/how-to-evaluate-a-genai-pilot/index.html",
+          "kind": "rendered_html",
+          "bytes": 23662,
+          "sha256": "29cec351c749b571e5dc9abb84f42d3eba09e8f0030a3d9644b73ca897bcda73",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/hybrid-inference-is-a-governance-decision/index.html",
+          "kind": "rendered_html",
+          "bytes": 23727,
+          "sha256": "5d17c868c549d05130cb9fdcdcacf3da3632c58836366e11cbd928a95e7010d5",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/index.html",
+          "kind": "rendered_html",
+          "bytes": 23147,
+          "sha256": "bb340502b053400a8a83a02c51220312e1c06279da972095617a331d684e41a7",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/marketing-operations-for-small-expert-teams/index.html",
+          "kind": "rendered_html",
+          "bytes": 23976,
+          "sha256": "69b8fe6108b2f129340f3a7d244c1a47de0edd7a00a2c65220f28bc6ec48f529",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/provenance-without-killing-creative-flow/index.html",
+          "kind": "rendered_html",
+          "bytes": 23748,
+          "sha256": "8cad52de24126766bd2cab0de5ee3b50c102c5fe53b205a1e7161ab9073931a3",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/static-websites-as-durable-media/index.html",
+          "kind": "rendered_html",
+          "bytes": 23680,
+          "sha256": "cf74a2e738fe2c503a2d29bbaac409c992d64e510ea3b716b71379005e3fdd4b",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/the-case-for-agent-readable-creative-operations/index.html",
+          "kind": "rendered_html",
+          "bytes": 23978,
+          "sha256": "d2ba72c066ffd811a85e7c178b493f03672c8ec9a3e712b62963113285603054",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/the-cost-of-model-first-product-design/index.html",
+          "kind": "rendered_html",
+          "bytes": 23775,
+          "sha256": "e8825269d74354639be532d836fc2d8665bf99e5f2366359690faa5e05952458",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/the-running-product-is-the-brief/index.html",
+          "kind": "rendered_html",
+          "bytes": 23785,
+          "sha256": "a66566a80ffa02d1897b737f461918c2e4fbaef77e04cf8042ede0930b30c809",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/what-a-modern-media-control-room-needs/index.html",
+          "kind": "rendered_html",
+          "bytes": 23803,
+          "sha256": "9ad5174e619a02e04f24b43d6ce2d6b3c4b46469d00dffc18f2421b70fcf2cad",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/insights/why-media-collections-lose-their-value/index.html",
+          "kind": "rendered_html",
+          "bytes": 23772,
+          "sha256": "ce6766a7e7e56572a3e6fa508375f3fbac6a141f454919d8d17807be1dd1c91a",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/methods/30-60-90-activation/index.html",
+          "kind": "rendered_html",
+          "bytes": 23802,
+          "sha256": "f591b3473cf9ada783e319292db2d6bc94c319e293365b41a0d44ddb1cdbf84e",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/methods/accessibility-as-editorial/index.html",
+          "kind": "rendered_html",
+          "bytes": 23755,
+          "sha256": "26826dca501cf9daa714f886bfa6097a9d8dbe4602bfb2517cd39485a07d04ca",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/methods/brand-memory/index.html",
+          "kind": "rendered_html",
+          "bytes": 23666,
+          "sha256": "124a9e2b2ecb8ed540efc87ca328d107eaf622952b947cf550b90f69063e9057",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/methods/collection-to-intelligence/index.html",
+          "kind": "rendered_html",
+          "bytes": 23851,
+          "sha256": "dd5ae8b18fc6e379605f243da0581ca0192c3292c61f2ad74cc3224b9de3da17",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/methods/evidence-loop/index.html",
+          "kind": "rendered_html",
+          "bytes": 23382,
+          "sha256": "03a06f188b1aa721d2f9a05afa2d5ff8393ba63ee15c039ed2bde101143d06f9",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/methods/human-agent-creative-loop/index.html",
+          "kind": "rendered_html",
+          "bytes": 23704,
+          "sha256": "504eda00676c49fa8d6e04d1a3034b9cfa57a39c04109f9aa5fd1ba90493b9b8",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/methods/hybrid-inference/index.html",
+          "kind": "rendered_html",
+          "bytes": 23684,
+          "sha256": "c46090c0a556513745d1840eead9d98a3a78b0f3cf16f723ef2cf164e56a2921",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/methods/index.html",
+          "kind": "rendered_html",
+          "bytes": 23339,
+          "sha256": "4ef45fa459a09dd8525009a935acdb641a20816aee1f9bf4a48be5387218a210",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/methods/intent-to-system/index.html",
+          "kind": "rendered_html",
+          "bytes": 23551,
+          "sha256": "14ea152a2389b28052fb20daeb616b596cebe2cd37119e4dd935acd2b7583089",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio/airikai/index.html",
+          "kind": "rendered_html",
+          "bytes": 19897,
+          "sha256": "a6d42f4bc8ccc4100e2b941c68161d93bbb93d4f14a498b670cbe2615fa37e57",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio/fashionx/index.html",
+          "kind": "rendered_html",
+          "bytes": 19820,
+          "sha256": "cba252b1d6b8e2bd8ee1537c6bac46ce6608176ba38024cfd15cc5d6fd20e245",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio/focuspass/index.html",
+          "kind": "rendered_html",
+          "bytes": 19619,
+          "sha256": "5cb8ff394066fa584cfe71dcba3bfa4d658f31eec6fd2a74417e0182fe624e20",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio/index.html",
+          "kind": "rendered_html",
+          "bytes": 28852,
+          "sha256": "7a7abae776b75bbf6f4065fe8c0707709f84ff66070e3267fc4805fc90340c6e",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio/pedadida/index.html",
+          "kind": "rendered_html",
+          "bytes": 19275,
+          "sha256": "a8a4a0009a7c4bef15ab211b18b2e1243a67718503f7f38a4e6c25868a2c2c0f",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio/pranashama/index.html",
+          "kind": "rendered_html",
+          "bytes": 19789,
+          "sha256": "fe54906180410e51915eb5653adb3e357ad233138d9ab1a8d8bb5ddeb57c5dd3",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio/state-parks/index.html",
+          "kind": "rendered_html",
+          "bytes": 19768,
+          "sha256": "6d9ff7336a505e239de259f54f2a3d4a38e3e9a8a26243a80e43eb958c82cb15",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio/tao-cottage/index.html",
+          "kind": "rendered_html",
+          "bytes": 19596,
+          "sha256": "6f005cf0b5fd0da8212a080ffabd1cb7ed0d128e0733196206b87265df504187",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio/taolo/index.html",
+          "kind": "rendered_html",
+          "bytes": 19564,
+          "sha256": "72c324be10b35342366c3b1b769ebcd7688885fbe87cd7145f23fec5b4e6371c",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio-item/airikai/index.html",
+          "kind": "rendered_html",
+          "bytes": 374,
+          "sha256": "1374df97dd5fa845963d9fa5d871ac7255753cb6aa2098d4a3410be8d3fcd9a9",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio-item/fashionx/index.html",
+          "kind": "rendered_html",
+          "bytes": 380,
+          "sha256": "1782b8a0832d50ea7d0487023237fe3690363aacfbe21a4d58fe1cc192908aa3",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio-item/focuspass/index.html",
+          "kind": "rendered_html",
+          "bytes": 386,
+          "sha256": "c395e521297df91593a67ef2d552c9f471ce33d424042dfce3263983bdc27f36",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio-item/pedadida/index.html",
+          "kind": "rendered_html",
+          "bytes": 380,
+          "sha256": "4a82efd7f9bf41cf55c6ac29e38e1f44567167c175b34aaa08aa7c712d89ad3d",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio-item/pranashama/index.html",
+          "kind": "rendered_html",
+          "bytes": 392,
+          "sha256": "cde8dfed62a1f71f0b8503cf287e3b0901df98ba38ff6e60694c43ef0875d82f",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio-item/state-parks/index.html",
+          "kind": "rendered_html",
+          "bytes": 398,
+          "sha256": "7533982c8ab7c5694244aa936f9a6305454b4becb3a8900b441a8d43c9a94349",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio-item/tao-cottage/index.html",
+          "kind": "rendered_html",
+          "bytes": 398,
+          "sha256": "6b4c9afbc3faf9ea29bc991006a9e7a9ce2adf43bbe97b0e40268d7f442e4ba3",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/portfolio-item/taolo/index.html",
+          "kind": "rendered_html",
+          "bytes": 362,
+          "sha256": "705e4e06c8b1e8231ff39475a4331e81fc02233072e12cd5e245a01361c3d16b",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/privacy/index.html",
+          "kind": "rendered_html",
+          "bytes": 18662,
+          "sha256": "7fc70988ec283aa1804054f826dee8cef42c582774c16b24495b09be94c1ee17",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/cli/agent-skills/index.html",
+          "kind": "rendered_html",
+          "bytes": 23519,
+          "sha256": "b9e0ce6c63756c1d2920caf0fb4e163ffe3206bd7632273ed2b5e77fb377c9e4",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/cli/automation/index.html",
+          "kind": "rendered_html",
+          "bytes": 23417,
+          "sha256": "90f9de07ab00d554e95e97399ecff4ef8b95b4a38b638d3486121ca555703391",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/cli/index.html",
+          "kind": "rendered_html",
+          "bytes": 18120,
+          "sha256": "3cdd9efea01f76e22d332ccd1c6fb8ec82bb2c367c3155a7de4f3b3e3f23d50a",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/cli/quickstart/index.html",
+          "kind": "rendered_html",
+          "bytes": 23684,
+          "sha256": "f371272a00dba06c00cb3b53c66802ab05ce5c3f58389287f8a41d1097281ae9",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/cli/security/index.html",
+          "kind": "rendered_html",
+          "bytes": 23609,
+          "sha256": "7488831d47c9708ba7008bb0b6b8dc7eb4bb5dcdab0629dbf4319f1e2d6b250a",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/gpu-router/architecture/index.html",
+          "kind": "rendered_html",
+          "bytes": 23661,
+          "sha256": "280548c05c6408a76a4c8df0bded491925782f1f747e65d6d2374528a8993f1e",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/gpu-router/benchmarks/index.html",
+          "kind": "rendered_html",
+          "bytes": 23678,
+          "sha256": "52870ddff22aa7d1945bcc08987d81af80e56b5db1a0f3d3c2e3e8a111023415",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/gpu-router/index.html",
+          "kind": "rendered_html",
+          "bytes": 18081,
+          "sha256": "004dde3f4e1cad1721a6a65679a85905680c3eb68a0a03f1753dc14f791e626a",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/gpu-router/observability/index.html",
+          "kind": "rendered_html",
+          "bytes": 23676,
+          "sha256": "f4c1469d052ba53903e814dcd16d73e5726bab8b63e610a251cd841a804f935e",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/gpu-router/routing/index.html",
+          "kind": "rendered_html",
+          "bytes": 23585,
+          "sha256": "72edabca666a6800109c8c99933cbde01fcb51cacc8c8633c5a0f5cac758ed7e",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/index.html",
+          "kind": "rendered_html",
+          "bytes": 19103,
+          "sha256": "b4c6250b2e6e410468426f85e73a616d2fb3c5c879e76fcd6e4312b10a35d7f3",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/photo-curator/connectors/index.html",
+          "kind": "rendered_html",
+          "bytes": 23628,
+          "sha256": "3e13622498cb2829e54752dfeb69e8c43382a2f0b2c749cee1b77374be3b3be8",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/photo-curator/duplicates/index.html",
+          "kind": "rendered_html",
+          "bytes": 23705,
+          "sha256": "90542609fb8f1051ae707545594982a2dfc5139f19bb1444c3ab6676b0cca3dd",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/photo-curator/index.html",
+          "kind": "rendered_html",
+          "bytes": 18097,
+          "sha256": "3e55d26f4d88ea607a140814bd0a3682bd91a8852c2e8293b955a624ee715be6",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/photo-curator/metadata/index.html",
+          "kind": "rendered_html",
+          "bytes": 23633,
+          "sha256": "dd76bba4b3033ee63a6c6e8b4183bacbe61be712a53bc8495d7a559e78f2cb82",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/photo-curator/review/index.html",
+          "kind": "rendered_html",
+          "bytes": 23576,
+          "sha256": "e0f3d1efa5db527b1647a06cf5c93271802001f52c1730e2bda9057fa7cd2b64",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/studio/audio/index.html",
+          "kind": "rendered_html",
+          "bytes": 23580,
+          "sha256": "472c9c638e7bec66955989d8e1a336dbd254390aed20005492945c90c99aa0b7",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/studio/hybrid-inference/index.html",
+          "kind": "rendered_html",
+          "bytes": 23741,
+          "sha256": "5275dc6815afac2797928bc56ae69e10f7e797c1a81bd4eaaa8554b5895b9d66",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/studio/image/index.html",
+          "kind": "rendered_html",
+          "bytes": 23596,
+          "sha256": "82d9be36d4e55e159424d81717913d22e7c2005c11dbf92e25c1425e820d29b2",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/studio/index.html",
+          "kind": "rendered_html",
+          "bytes": 22160,
+          "sha256": "82b0b3f131841e6840c678eea8ff5f80d53ac381cef916b2330b7c06be3179b5",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/studio/video/index.html",
+          "kind": "rendered_html",
+          "bytes": 23582,
+          "sha256": "188bb65848033760ed3b6795e4e1fed5532f0eec03dfc6c6cbc9574cb97258ab",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/web-magic/accessibility/index.html",
+          "kind": "rendered_html",
+          "bytes": 23752,
+          "sha256": "7e3fed76e11b0beef72cb0e8fbab6c582aec1552caa9d8557e4945d921ec68f1",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/web-magic/delivery/index.html",
+          "kind": "rendered_html",
+          "bytes": 23572,
+          "sha256": "4b83ce1dca2f1997fd11e5a61b83a80a2cffce15cd5b0a1c494c141ef815e9b1",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/web-magic/index.html",
+          "kind": "rendered_html",
+          "bytes": 18095,
+          "sha256": "ca92a396555d30a1e71a26c819e184827955115e8cd3a0a0cacc6cd43c6216d3",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/web-magic/performance/index.html",
+          "kind": "rendered_html",
+          "bytes": 23630,
+          "sha256": "e0c8c3c47c210c27939a30685aead83e32dd5fe76f6ab3039ce49ef437b24916",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/web-magic/seo/index.html",
+          "kind": "rendered_html",
+          "bytes": 23720,
+          "sha256": "28c62afe0a371bc488c78a9306d60699e9a0160412d28b079cf45a50cdd2e596",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/wiremark/agent-handoff/index.html",
+          "kind": "rendered_html",
+          "bytes": 23629,
+          "sha256": "9733953b40650a17d2ff0492550b9f3865fc3ac86891d602f053d9641bf9533a",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/wiremark/canvas/index.html",
+          "kind": "rendered_html",
+          "bytes": 23645,
+          "sha256": "a83d3cbbbf8dd358e32c75997d38a748546c0e1f8b859478e53820c61b1f9171",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/wiremark/index.html",
+          "kind": "rendered_html",
+          "bytes": 21391,
+          "sha256": "c0d750bde74d314c3a612b09f1e0cf2f4b76f0bb4dd5719a1ee1ad5361d1636d",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/wiremark/privacy-provenance/index.html",
+          "kind": "rendered_html",
+          "bytes": 23673,
+          "sha256": "988499ee3e8a9bd3e4f8d01a6e6e3834d0c9d10e6b2479c085e4162f89c650bc",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/products/wiremark/source-intelligence/index.html",
+          "kind": "rendered_html",
+          "bytes": 23697,
+          "sha256": "26d25cdd780994c35d632b56ddf0a50ea97f61be66df32da692646b7557f08ee",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/responsible-ai/index.html",
+          "kind": "rendered_html",
+          "bytes": 22041,
+          "sha256": "94569d9295a1ca72ec6c7e33e321d8028eb32c03ffbef25ed707a7681e495b69",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/security/index.html",
+          "kind": "rendered_html",
+          "bytes": 21853,
+          "sha256": "77233ee093c56c146cd4f6ed632489d1880ffc3c815e55b20170c2cd325c9b1d",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/services/brand-systems/index.html",
+          "kind": "rendered_html",
+          "bytes": 24897,
+          "sha256": "5c7e24f2b1da6e6d889d101faf6785d68ec46ab96762888cb9b16d87449daa01",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/services/campaign-production/index.html",
+          "kind": "rendered_html",
+          "bytes": 24847,
+          "sha256": "cc8d1d5274fffd9935edff20ecfad08a1ef6fa20906fc22d4288dcc0db1bfbf1",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/services/content-operations/index.html",
+          "kind": "rendered_html",
+          "bytes": 23672,
+          "sha256": "73665188d65c69293d1c7cbe68120bcd392a818b5ba7eb6e4e9ad0858f2a83c4",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/services/creative-direction/index.html",
+          "kind": "rendered_html",
+          "bytes": 25001,
+          "sha256": "7f4cce024f51949fe0f64099df28c8e47908a77f31fc8f17271180cc019699ee",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/services/creative-technology/index.html",
+          "kind": "rendered_html",
+          "bytes": 23544,
+          "sha256": "81f1380c02bcd46f00be3a7515ae509cc28d18cb8143226d1a79c0e6a1017470",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/services/executive-advisory/index.html",
+          "kind": "rendered_html",
+          "bytes": 23668,
+          "sha256": "fc1d92e1214ee9a8c3de22dae46d032137d535127ca9a6dc25104ad2ea0c77e5",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/services/genai-strategy/index.html",
+          "kind": "rendered_html",
+          "bytes": 23560,
+          "sha256": "e5321044f8cf80bc0040645d5c7daab5710b651fc31b3a8c5a044acc1724ec48",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/services/index.html",
+          "kind": "rendered_html",
+          "bytes": 23178,
+          "sha256": "0d65a888c4fd7f77cd62456820e7ec8b7b25c8712030d3b4d96b024fa16e989b",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/services/marketing-consulting/index.html",
+          "kind": "rendered_html",
+          "bytes": 25012,
+          "sha256": "ed84490169ca30f83289a32628fb67796871b814721ca045342c6ed6c7d3c4d3",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/services/media-management/index.html",
+          "kind": "rendered_html",
+          "bytes": 23560,
+          "sha256": "b148712a21ca7f184fd13d49b652a5aeb9ec9adce3f9a303724e1dbb9269f2f0",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/services/web-experience/index.html",
+          "kind": "rendered_html",
+          "bytes": 23620,
+          "sha256": "17002229399cc06923e283ef4bdf2422606878a468a5724a1cba34bb8e150f20",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/sitemap/index.html",
+          "kind": "rendered_html",
+          "bytes": 21760,
+          "sha256": "be687e3e80da8b8241ece365235f6a841d59d7ca59f887e87ac6a5b1ab869a54",
+          "extension": ".html"
+        },
+        {
+          "path": "dist/terms/index.html",
+          "kind": "rendered_html",
+          "bytes": 21616,
+          "sha256": "31f9ca9b934812f27cded16e8841480823445de88723dfba054143652c06da20",
+          "extension": ".html"
+        }
+      ],
+      "symlinks": [],
+      "errors": []
+    },
+    "counts": {
+      "routes": 16,
+      "editorial_files": 6,
+      "content_files_total": 6,
+      "media_public": 11,
+      "media_src_assets": 51,
+      "media_total": 62,
+      "rendered_html": 153
+    },
+    "gaps": [
+      {
+        "id": "editorial-workflow-state",
+        "category": "editorial",
+        "status": "unknown",
+        "reason": "Source files do not prove assignment, review, approval, or current workflow state.",
+        "paths": [
+          "src/content/",
+          "src/pages/"
+        ]
+      },
+      {
+        "id": "provenance-rights-and-alt-text",
+        "category": "media",
+        "status": "unknown",
+        "reason": "Inventory hashes media but cannot verify provenance, rights, focal-point decisions, captions, or accessibility treatment.",
+        "paths": [
+          "public/",
+          "src/assets/"
+        ]
+      },
+      {
+        "id": "content-schemas-and-claims",
+        "category": "evidence",
+        "status": "unknown",
+        "reason": "Inventory cannot establish content schemas, claim registers, source records, or fact-check evidence.",
+        "paths": [
+          "src/content/",
+          ".astro-magazine/"
+        ]
+      },
+      {
+        "id": "current-astro-contract-audit",
+        "category": "modernization",
+        "status": "unknown",
+        "reason": "Signals identify the implementation surface but do not prove current Astro contracts or identify every deprecated pattern.",
+        "paths": [
+          "package.json",
+          "astro.config.*",
+          "src/"
+        ]
+      },
+      {
+        "id": "url-authority-review",
+        "category": "routing",
+        "status": "unknown",
+        "reason": "Route files are inventoried, but canonical, redirect, locale, and URL ownership decisions require editorial review.",
+        "paths": [
+          "src/pages/",
+          "dist/"
+        ]
+      }
+    ],
+    "unknown_gap_count": 5
+  },
+  "imported_work": {
+    "status": "unknown",
+    "workflow_state": "unknown",
+    "publication_state": "unknown",
+    "records_created": 0,
+    "note": "The command records evidence and boundaries only; existing work is not promoted into an editorial or release state."
+  },
+  "gaps": [
+    {
+      "id": "editorial-workflow-state",
+      "category": "editorial",
+      "status": "unknown",
+      "reason": "Source files do not prove assignment, review, approval, or current workflow state.",
+      "paths": [
+        "src/content/",
+        "src/pages/"
+      ]
+    },
+    {
+      "id": "provenance-rights-and-alt-text",
+      "category": "media",
+      "status": "unknown",
+      "reason": "Inventory hashes media but cannot verify provenance, rights, focal-point decisions, captions, or accessibility treatment.",
+      "paths": [
+        "public/",
+        "src/assets/"
+      ]
+    },
+    {
+      "id": "content-schemas-and-claims",
+      "category": "evidence",
+      "status": "unknown",
+      "reason": "Inventory cannot establish content schemas, claim registers, source records, or fact-check evidence.",
+      "paths": [
+        "src/content/",
+        ".astro-magazine/"
+      ]
+    },
+    {
+      "id": "current-astro-contract-audit",
+      "category": "modernization",
+      "status": "unknown",
+      "reason": "Signals identify the implementation surface but do not prove current Astro contracts or identify every deprecated pattern.",
+      "paths": [
+        "package.json",
+        "astro.config.*",
+        "src/"
+      ]
+    },
+    {
+      "id": "url-authority-review",
+      "category": "routing",
+      "status": "unknown",
+      "reason": "Route files are inventoried, but canonical, redirect, locale, and URL ownership decisions require editorial review.",
+      "paths": [
+        "src/pages/",
+        "dist/"
+      ]
+    }
+  ],
+  "preservation_constraints": [
+    {
+      "id": "approved-repository-material",
+      "paths": [
+        "package.json",
+        "astro.config.*",
+        "src/pages/**",
+        "src/content/**",
+        "public/**",
+        "src/assets/**",
+        "dist/**"
+      ],
+      "constraint": "Read and hash existing content, brand, media, routes, and rendered evidence only; do not overwrite, delete, or rewrite these paths."
+    },
+    {
+      "id": "studio-history",
+      "paths": [
+        ".astro-magazine/**"
+      ],
+      "constraint": "Preserve existing studio files and event history; only missing initializer artifacts, a new immutable adoption record, the current pointer, and one appended event may be written."
+    },
+    {
+      "id": "evidence-honesty",
+      "paths": [
+        ".astro-magazine/adoption/**"
+      ],
+      "constraint": "Imported work remains unknown until current editorial, evidence, accessibility, rights, and release gates establish its state."
+    },
+    {
+      "id": "forward-modernization",
+      "paths": [
+        "src/**",
+        "astro.config.*",
+        "package.json"
+      ],
+      "constraint": "Use the inventory as an upgrade baseline for current contracts; do not add compatibility shims or retain deprecated patterns without an explicit requirement."
+    }
+  ],
+  "evidence": {
+    "source_files_hashed": 237,
+    "source_inventory_read_only": true,
+    "existing_studio_history_preserved": false,
+    "no_source_paths_written": true,
+    "record_path": ".astro-magazine/adoption/adoption-20260831T002811877Z-455106-f089de611e40.json"
+  }
+}

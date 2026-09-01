@@ -2,6 +2,23 @@ import { z } from "zod";
 
 const uuid = z.string().uuid();
 const url = z.string().url();
+const canonicalGuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+/**
+ * Dataverse identifiers are inserted into OData paths and binds. Keep the
+ * secret-backed values to the canonical, lower-case GUID representation so a
+ * malformed secret can never become part of an OData expression. Dataverse
+ * accepts GUIDs case-insensitively, so existing upper-case Key Vault values
+ * are normalized rather than rejected.
+ */
+export function isCanonicalGuid(value: unknown): value is string {
+  return typeof value === "string" && canonicalGuidPattern.test(value);
+}
+
+export function requireCanonicalGuid(value: unknown, field: string): string {
+  if (!isCanonicalGuid(value)) throw new Error(`dataverse_${field}_guid_invalid`);
+  return value.toLowerCase();
+}
 
 const environmentSchema = z.object({
   AZURE_CLIENT_ID: uuid,

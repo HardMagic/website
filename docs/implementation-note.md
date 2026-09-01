@@ -1,7 +1,7 @@
 # HardMagic corporate site implementation note
 
 - Baseline: recovered WordPress static export; no package manager or framework.
-- Target: Astro 7.2.1, static output, no deployment adapter.
+- Target: Astro 7.2.9, static output, no deployment adapter.
 - TypeScript: 7.0.2 native CLI for project TypeScript; TypeScript 6.0.2 compatibility API for Astro language tooling until Astro/Volar supports the TypeScript 7 API.
 - Content: local, schema-validated Astro content collections.
 - Styling: authored modern CSS with semantic tokens and scoped component styles; no UI framework.

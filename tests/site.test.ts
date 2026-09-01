@@ -8,6 +8,8 @@ const homeSource = readFileSync(new URL('../src/pages/index.astro', import.meta.
 const privacySource = readFileSync(new URL('../src/pages/privacy.astro', import.meta.url), 'utf8');
 const consultationRouteSource = readFileSync(new URL('../src/components/editorial/EditorialPage.astro', import.meta.url), 'utf8');
 const briefRouteSource = readFileSync(new URL('../src/pages/briefs/[slug].astro', import.meta.url), 'utf8');
+const baseLayoutSource = readFileSync(new URL('../src/layouts/BaseLayout.astro', import.meta.url), 'utf8');
+const wireMarkProofSource = readFileSync(new URL('../src/components/home/WireMarkProof.astro', import.meta.url), 'utf8');
 
 describe('site information architecture', () => {
   it('ships the GitHub Pages asset passthrough marker', () => {
@@ -24,6 +26,17 @@ describe('site information architecture', () => {
   it('uses the Pranashama work as the homepage portfolio showcase', () => {
     expect(homeSource).toContain("study.slug === 'pranashama'");
     expect(homeSource).not.toContain('caseStudies[1]');
+  });
+
+  it('publishes complete social metadata and a truthful site identity graph', () => {
+    for (const marker of ['twitter:title', 'twitter:description', 'twitter:image', 'application/ld+json', "'@type': 'Organization'", "'@type': 'WebSite'"]) {
+      expect(baseLayoutSource).toContain(marker);
+    }
+  });
+
+  it('keeps decorative proof actions out of the keyboard order', () => {
+    expect(wireMarkProofSource).not.toContain('<button>Enter the field</button>');
+    expect(wireMarkProofSource).toContain('class="demo-action" aria-hidden="true"');
   });
 });
 

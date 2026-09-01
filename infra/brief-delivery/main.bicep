@@ -18,7 +18,7 @@ param environmentName string = 'production'
 @maxLength(36)
 param frontDoorId string
 
-@description('Object ID of the GitLab OIDC deployment service principal. It receives deployment-container access only; control-plane Contributor is bootstrapped separately.')
+@description('Object ID of the GitLab OIDC deployment service principal. It receives data-plane access only to the deployments and briefs containers; control-plane Contributor is bootstrapped separately.')
 param deploymentPrincipalObjectId string
 
 @description('Existing Azure Monitor action-group resource ID for production alerts.')
@@ -57,6 +57,8 @@ param secretNames object = {
 @description('Retention and delivery controls.')
 param policyConfig object = {
   ledgerRetentionDays: 395
+  rateLimitRetentionDays: 2
+  contactLockRetentionDays: 30
   deadLetterRetentionDays: 90
   deploymentRetentionDays: 30
   signedUrlHours: 48

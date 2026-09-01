@@ -4,7 +4,7 @@
     "root": "dist",
     "origin": "https://hardmagic.com",
     "basePath": "/",
-    "sha256": "d149f38ce2e29cd608b8c37c7a532194935e06b0596b3eeaabbf32a71a304977"
+    "sha256": "63ada88db3b31ded808e216a90c71e89f2b071f57c9b56dd96983fcadd111336"
   },
   "policy": {
     "indexableKind": "canonical",
@@ -19,10 +19,10 @@
     "success": 9,
     "redirects": 8,
     "errors": 1,
-    "links": 20107,
+    "links": 20399,
     "internal": 18189,
     "fragments": 244,
-    "assets": 1334,
+    "assets": 1481,
     "forms": 14,
     "external": 127,
     "externalUnique": 54,
@@ -46,7 +46,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 179,
+      "links": 181,
       "forms": 0
     },
     {
@@ -66,7 +66,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": false,
-      "links": 127,
+      "links": 129,
       "forms": 0
     },
     {
@@ -86,7 +86,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 135,
+      "links": 137,
       "forms": 0
     },
     {
@@ -106,7 +106,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 148,
+      "links": 150,
       "forms": 0
     },
     {
@@ -126,7 +126,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 140,
+      "links": 142,
       "forms": 1
     },
     {
@@ -146,7 +146,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": false,
-      "links": 134,
+      "links": 136,
       "forms": 0
     },
     {
@@ -166,7 +166,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 140,
+      "links": 142,
       "forms": 1
     },
     {
@@ -186,7 +186,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": false,
-      "links": 134,
+      "links": 136,
       "forms": 0
     },
     {
@@ -206,7 +206,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 140,
+      "links": 142,
       "forms": 1
     },
     {
@@ -226,7 +226,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": false,
-      "links": 134,
+      "links": 136,
       "forms": 0
     },
     {
@@ -246,7 +246,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 140,
+      "links": 142,
       "forms": 1
     },
     {
@@ -266,7 +266,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": false,
-      "links": 134,
+      "links": 136,
       "forms": 0
     },
     {
@@ -286,7 +286,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 140,
+      "links": 142,
       "forms": 1
     },
     {
@@ -306,7 +306,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": false,
-      "links": 134,
+      "links": 136,
       "forms": 0
     },
     {
@@ -326,7 +326,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 141,
+      "links": 143,
       "forms": 1
     },
     {
@@ -346,7 +346,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": false,
-      "links": 134,
+      "links": 136,
       "forms": 0
     },
     {
@@ -366,7 +366,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 140,
+      "links": 142,
       "forms": 1
     },
     {
@@ -386,7 +386,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": false,
-      "links": 134,
+      "links": 136,
       "forms": 0
     },
     {
@@ -406,7 +406,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 140,
+      "links": 142,
       "forms": 1
     },
     {
@@ -426,7 +426,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": false,
-      "links": 134,
+      "links": 136,
       "forms": 0
     },
     {
@@ -446,7 +446,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 151,
+      "links": 153,
       "forms": 0
     },
     {
@@ -466,7 +466,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -486,7 +486,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -506,7 +506,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 0
     },
     {
@@ -526,7 +526,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -546,7 +546,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -566,7 +566,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 0
     },
     {
@@ -586,7 +586,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -606,7 +606,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 134,
+      "links": 136,
       "forms": 1
     },
     {
@@ -626,7 +626,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 1
     },
     {
@@ -646,7 +646,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 1
     },
     {
@@ -666,7 +666,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 1
     },
     {
@@ -686,7 +686,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 1
     },
     {
@@ -706,7 +706,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 1
     },
     {
@@ -726,7 +726,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": false,
-      "links": 135,
+      "links": 137,
       "forms": 0
     },
     {
@@ -746,7 +746,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 135,
+      "links": 137,
       "forms": 0
     },
     {
@@ -766,7 +766,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -786,7 +786,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -806,7 +806,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -826,7 +826,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -846,7 +846,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -866,7 +866,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -886,7 +886,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 151,
+      "links": 153,
       "forms": 0
     },
     {
@@ -906,7 +906,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 142,
+      "links": 144,
       "forms": 0
     },
     {
@@ -926,7 +926,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 142,
+      "links": 144,
       "forms": 0
     },
     {
@@ -946,7 +946,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 142,
+      "links": 144,
       "forms": 0
     },
     {
@@ -966,7 +966,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 141,
+      "links": 143,
       "forms": 0
     },
     {
@@ -986,7 +986,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 141,
+      "links": 143,
       "forms": 0
     },
     {
@@ -1006,7 +1006,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 142,
+      "links": 144,
       "forms": 0
     },
     {
@@ -1026,7 +1026,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 142,
+      "links": 144,
       "forms": 0
     },
     {
@@ -1046,7 +1046,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 141,
+      "links": 143,
       "forms": 0
     },
     {
@@ -1066,7 +1066,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 142,
+      "links": 144,
       "forms": 0
     },
     {
@@ -1086,7 +1086,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 142,
+      "links": 144,
       "forms": 0
     },
     {
@@ -1106,7 +1106,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 142,
+      "links": 144,
       "forms": 0
     },
     {
@@ -1126,7 +1126,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 142,
+      "links": 144,
       "forms": 0
     },
     {
@@ -1146,7 +1146,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1166,7 +1166,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1186,7 +1186,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1206,7 +1206,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1226,7 +1226,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1246,7 +1246,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1266,7 +1266,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1286,7 +1286,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1306,7 +1306,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1326,7 +1326,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 137,
+      "links": 139,
       "forms": 0
     },
     {
@@ -1346,7 +1346,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 0
     },
     {
@@ -1366,7 +1366,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1386,7 +1386,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1406,7 +1406,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1426,7 +1426,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1446,7 +1446,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1466,7 +1466,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1486,7 +1486,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1506,7 +1506,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1526,7 +1526,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1546,7 +1546,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1566,7 +1566,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1586,7 +1586,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1606,7 +1606,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1626,7 +1626,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1646,7 +1646,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1666,7 +1666,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1686,7 +1686,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1706,7 +1706,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1726,7 +1726,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1746,7 +1746,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1766,7 +1766,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1786,7 +1786,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1806,7 +1806,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -1970,7 +1970,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 174,
+      "links": 177,
       "forms": 0
     },
     {
@@ -1990,7 +1990,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 141,
+      "links": 143,
       "forms": 0
     },
     {
@@ -2010,7 +2010,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 141,
+      "links": 143,
       "forms": 0
     },
     {
@@ -2030,7 +2030,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 0
     },
     {
@@ -2050,7 +2050,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 135,
+      "links": 137,
       "forms": 0
     },
     {
@@ -2070,7 +2070,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 0
     },
     {
@@ -2090,7 +2090,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 141,
+      "links": 143,
       "forms": 0
     },
     {
@@ -2110,7 +2110,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 141,
+      "links": 143,
       "forms": 0
     },
     {
@@ -2130,7 +2130,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 141,
+      "links": 143,
       "forms": 0
     },
     {
@@ -2150,7 +2150,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 131,
+      "links": 133,
       "forms": 0
     },
     {
@@ -2170,7 +2170,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 133,
+      "links": 135,
       "forms": 0
     },
     {
@@ -2190,7 +2190,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 130,
+      "links": 132,
       "forms": 0
     },
     {
@@ -2210,7 +2210,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2230,7 +2230,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2250,7 +2250,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2270,7 +2270,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2290,7 +2290,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 130,
+      "links": 132,
       "forms": 0
     },
     {
@@ -2310,7 +2310,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2330,7 +2330,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2350,7 +2350,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2370,7 +2370,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2390,7 +2390,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 130,
+      "links": 132,
       "forms": 0
     },
     {
@@ -2410,7 +2410,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2430,7 +2430,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2450,7 +2450,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2470,7 +2470,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2490,7 +2490,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2510,7 +2510,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2530,7 +2530,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2550,7 +2550,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2570,7 +2570,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2590,7 +2590,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 130,
+      "links": 132,
       "forms": 0
     },
     {
@@ -2610,7 +2610,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2630,7 +2630,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2650,7 +2650,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2670,7 +2670,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2690,7 +2690,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 132,
+      "links": 135,
       "forms": 0
     },
     {
@@ -2710,7 +2710,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2730,7 +2730,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2750,7 +2750,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2770,7 +2770,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2790,7 +2790,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 135,
+      "links": 137,
       "forms": 0
     },
     {
@@ -2810,7 +2810,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 135,
+      "links": 137,
       "forms": 0
     },
     {
@@ -2830,7 +2830,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 137,
+      "links": 139,
       "forms": 0
     },
     {
@@ -2850,7 +2850,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 0
     },
     {
@@ -2870,7 +2870,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 0
     },
     {
@@ -2890,7 +2890,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2910,7 +2910,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 0
     },
     {
@@ -2930,7 +2930,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2950,7 +2950,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2970,7 +2970,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -2990,7 +2990,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 139,
+      "links": 141,
       "forms": 0
     },
     {
@@ -3010,7 +3010,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -3030,7 +3030,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 138,
+      "links": 140,
       "forms": 0
     },
     {
@@ -3050,7 +3050,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 135,
+      "links": 137,
       "forms": 0
     },
     {
@@ -3070,7 +3070,7 @@
       "redirect": "",
       "redirectTarget": "",
       "sitemap": true,
-      "links": 135,
+      "links": 137,
       "forms": 0
     }
   ],
@@ -3819,28 +3819,28 @@
       "url": "https://challenges.cloudflare.com/turnstile/v0/api.js",
       "status": "external-ok",
       "httpStatus": 200,
-      "finalUrl": "https://challenges.cloudflare.com/turnstile/v0/g/aae2b9a1c261/api.js",
+      "finalUrl": "https://challenges.cloudflare.com/turnstile/v0/b/e694063b5082/api.js",
       "attempts": 1
     },
     {
       "url": "https://developers.google.com/search/blog/2024/03/core-update-spam-policies",
       "status": "external-ok",
       "httpStatus": 200,
-      "finalUrl": "https://developers.google.com/search/blog/2024/03/core-update-spam-policies",
+      "finalUrl": "https://developers.google.com/search/blog/2024/03/core-update-spam-policies?hl=th",
       "attempts": 1
     },
     {
       "url": "https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing",
       "status": "external-ok",
       "httpStatus": 200,
-      "finalUrl": "https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing",
+      "finalUrl": "https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing?hl=zh-tw",
       "attempts": 1
     },
     {
       "url": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content",
       "status": "external-ok",
       "httpStatus": 200,
-      "finalUrl": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content",
+      "finalUrl": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content?hl=th",
       "attempts": 1
     },
     {
@@ -3929,11 +3929,10 @@
     },
     {
       "url": "https://unctad.org/publication/creative-economy-outlook-2024",
-      "status": "external-unreachable",
-      "httpStatus": null,
+      "status": "external-ok",
+      "httpStatus": 206,
       "finalUrl": "https://unctad.org/publication/creative-economy-outlook-2024",
-      "attempts": 3,
-      "error": "timeout"
+      "attempts": 1
     },
     {
       "url": "https://www.anthropic.com/research/claude-code-expertise",
@@ -4059,7 +4058,7 @@
       "status": "external-ok",
       "httpStatus": 200,
       "finalUrl": "https://www.nationaltrust.org.uk/discover/nature/trees-plants/five-things-you-never-knew-about-holly",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "url": "https://www.nielsen.com/news-center/2025/streaming-cranks-up-the-heat-in-july-accounts-for-nearly-half-of-all-tv-viewing-in-nielsens-the-gauge/",
@@ -4126,11 +4125,10 @@
     },
     {
       "url": "https://www.who.int/health-topics/disability/implementing-the-un-disability-inclusion-strategy",
-      "status": "external-unreachable",
-      "httpStatus": null,
+      "status": "external-ok",
+      "httpStatus": 200,
       "finalUrl": "https://www.who.int/health-topics/disability/implementing-the-un-disability-inclusion-strategy",
-      "attempts": 3,
-      "error": "timeout"
+      "attempts": 1
     },
     {
       "url": "https://www.youtube.com/@hardmagicproductions",
@@ -4142,9 +4140,6 @@
   ],
   "failures": [],
   "warnings": [
-    "/horizon/accessibility-becomes-generative-art-direction/: https://www.who.int/health-topics/disability/implementing-the-un-disability-inclusion-strategy external-unreachable; source owner must recheck",
-    "/horizon/marketing-after-surveillance/: https://unctad.org/publication/creative-economy-outlook-2024 external-unreachable; source owner must recheck",
-    "/horizon/the-sovereign-microstudio/: https://unctad.org/publication/creative-economy-outlook-2024 external-unreachable; source owner must recheck",
     "/portfolio-item/airikai/: static meta-refresh needs deployed HTTP 301/308 edge verification",
     "/portfolio-item/fashionx/: static meta-refresh needs deployed HTTP 301/308 edge verification",
     "/portfolio-item/focuspass/: static meta-refresh needs deployed HTTP 301/308 edge verification",

@@ -1,0 +1,192 @@
+{
+  "schema_version": "1.0.0",
+  "checkpoint_id": "checkpoint-brief-delivery-alert-resource-scoped-20260901T013429Z",
+  "run_id": "hardmagic-posture-20260901T013429Z",
+  "phase": "handoff",
+  "status": "warn",
+  "last_event": {
+    "seq": 5,
+    "hash": "89595af1d5a3f28324bd161a3097d4a67f3c7a24af661caddb2b6f54d22a232b"
+  },
+  "counts": {
+    "routes": 153,
+    "articles": 0,
+    "briefs": 0,
+    "media": 155,
+    "claims": 0,
+    "sources": 0
+  },
+  "artifact_hashes": {
+    ".astro-magazine/commission.json": "db3d1118932b798eeac3210f8e462dd49bbe8f43d706893f72ce689f0a3f252d",
+    ".astro-magazine/scope.json": "49f56c000d0d8594e3dc296a1645b2b7484da1933273d3770fdd4fdbdac3dfcc",
+    ".gitlab-ci.yml": "5ee08387feec00937f48a41bba01e7cd40208bb9e0098f81527fc616ed47d35e",
+    ".gitlab/ci/brief-delivery.yml": "d19c08b7bd6148940094ce62e65ac07fd611ea6da475aee4e4118a7f6a6785ab",
+    ".gitlab/ci/site-release.yml": "5ae58a7882b6afea3ce3fe33a57331c89a9f0aac8d82a7fa69c5925d8a979afe",
+    "docs/conversion-ledger.md": "f9e39df0bc745c7b49c428e793127b6844ce3a22e522cbd842158fd1cd60b05d",
+    "docs/go-live-plan.md": "2f72b0bc51f049011b5e9cbc25cf69f181d28cb352246feb3d637d74050676ca",
+    "docs/implementation-note.md": "b449588d054f1a8235ac9725e5e380e1f31b799876fb5f4fee2df51c5e38122c",
+    "docs/link-ledger.csv": "03399916cc6e6fbc4fe27556b736e2914b5e5eab10494a58366a9207826f97aa",
+    "docs/media-ledger.json": "185c5e85df83b45f2e7894889076aefe08830f94c73ff1a2e83bff728d68aa41",
+    "docs/media-ledger.md": "ddd985ada0e6c2149217098cde2a28818fad43eeeb77784554f08dab281879ad",
+    "docs/release-evidence/release-manifest.json": "859c1ee3150e924492966f33af9776dc0c7350bb75b16ff0eca62831bbbbfbb1",
+    "docs/release-evidence/visual/browser-run.md": "5ca3d787d12db7d9c3d30b81bebd44530a6f1cdfa4e214609917d94e53ca0970",
+    "docs/release-evidence/visual/contact-sheet.html": "2f2e05ef16a5a04d5b172d170de1c6ca0c16b65e59e3b6b87adda128c6e1855c",
+    "docs/release-evidence/visual/rendered-route-audit.json": "80384b87a08bad4eef5fccdee39826d1271f4b0974a40164d1cd8d3e2ed1b3fd",
+    "docs/release-evidence/visual/rendered-route-manifest.json": "656beff794300f0d209a940aa9fe187277b19de0c1b46f20d4208972b860d593",
+    "docs/release-evidence/visual/visual-capture-manifest.json": "b4e3bd75e60023e332ef29aa8ec6538b692aee96075e20c8e75acc0c34d9fcc0",
+    "docs/route-ledger.json": "1f9ccdf1d62d776fd036c0b416372f144d4fe93e54f94ddb0288d2b9b3416e47",
+    "docs/route-ledger.md": "36f45b487b36fea2b09ccbf9ab236880626c6d00fbb3456397714985f21e8e27",
+    "docs/visual-sitemap.md": "5da4a5affc847228800eea7bcd9d7627fe167c591caa6ca53237efb8babb5a89",
+    "infra/brief-delivery/OPERATIONS.md": "1279ce3b0e856af5a54311cfb5821836d15eefda6f0dbda27203bf022f68b99d",
+    "infra/brief-delivery/README.md": "d487f5a9e449509d683f037796fc1ed673d5172206355c777ac91d085d9e1721",
+    "infra/brief-delivery/edge.bicep": "e211d46e3cd6647aa8c8b65b51217d76b4d5293ded5bd2cfe7c376050bbdc3e9",
+    "infra/brief-delivery/function/host.json": "65f6cc68f49ce6fa45473326c2168debb3c4a193e41d1e04398ce06c91869f22",
+    "infra/brief-delivery/function/package-lock.json": "3862e2bd846a46233605177bd5c85e51ac751801bef95b8589e2555562a41190",
+    "infra/brief-delivery/function/package.json": "33cce1eb172d6277dbba6360e6c729d32803c2f671ca6fb8df860ac5f186ce5c",
+    "infra/brief-delivery/function/src/config.ts": "7d547d17612553cf0dbf3064366d5abffa248f044016cfd855754329c647016d",
+    "infra/brief-delivery/function/src/index.ts": "066a5a42713054c437fda2fd8d302509c454a6d603a8d934e8bfc19fab1ceae6",
+    "infra/brief-delivery/function/src/platform.ts": "9a0cee81be5b996448190b75974afdce0fcb3f18abc67f99732d4f1957e85896",
+    "infra/brief-delivery/function/src/schema.ts": "2894f86795ac720c2e412e50774b4f42e8ffff8de42dfbdbe8f9c853d274aca7",
+    "infra/brief-delivery/function/test/edge.test.ts": "212bfb97a968252dc8bc430e490fef5869be542fd266e38b5679d99a35c38fbc",
+    "infra/brief-delivery/function/test/funnel-contract.test.ts": "34fca5ca4183c53e3a6e6d193dea6559b40ac425e72b700ebf42240014d1db52",
+    "infra/brief-delivery/function/test/hardening.test.ts": "c45d569fc52232a328f0531aa817c3ef8648e7006d667470ff7db867999f94b1",
+    "infra/brief-delivery/function/test/host.test.ts": "3316c455a79a508eda6b53d68341d7676e2193b88f29561b02ad4aa7334071d4",
+    "infra/brief-delivery/function/test/rate-limit.test.ts": "0ca4360d1964a56ea47eed4cccf7545dfa451b2831d1a0965cd05d31c04fc235",
+    "infra/brief-delivery/function/test/schema.test.ts": "4d62e46f26d69a0dc0ea11bc009cf8fef3cb5b01433e8aa399c5a7ab830add1b",
+    "infra/brief-delivery/function/test/security.test.ts": "429421a0d29b3660f3a98f44369bf34c3c4850095c2ba2651cd97dd8d7c525c7",
+    "infra/brief-delivery/main.bicep": "ce241ec08871a4e6fea18b98b0c18ee1648abd58cc062e8fda58278efaf672fc",
+    "infra/brief-delivery/modules/brief-lock.bicep": "23742851cd0d880bfd1d80bebb33f9821b9a644ccd10f1732f972d820db43970",
+    "infra/brief-delivery/parameters.example.json": "2fd65b76191545f430358d321e5f8bf79acec955ed103fbd77ffa5232341722b",
+    "package-lock.json": "6075e316a40a73a4126afadf7190db439bac5ac642af99624fc5ac930b5f1319",
+    "package.json": "0ca6471f57871f3b7451bd4e28c9be1593e73dc1ebea8796310b98ce2e2fc382",
+    "src/components/home/WireMarkProof.astro": "4e9d9e57918919164b7d71216183ab853ce03d7f10394423d26da167a42df0ad",
+    "src/layouts/BaseLayout.astro": "592f662ba80d8538299fad473fc63ee17238b7194ca5ceb154a24d37dcc221ea",
+    "src/styles/home-current.css": "b662a4f4c81f18d17ccfe9c21b974838b15b2e318de0c6b216da3766366b3f3a",
+    "tests/deployment/deployment-config.test.ts": "29133ada2328ceed63ece918458d4f5af6080f3abaeb4d614740a6743024e62a",
+    "tests/qa/global-teardown.ts": "e33745aa6ccf7b7084ce9583f5dfda64cfc41c0a901ed6e5eee7ad544de1657b",
+    "tests/release/site-release.test.ts": "37f4de7a37c32f0d68731a6d4a3051a4fa79be690fd48e471e047e6c23c61bd0",
+    "tests/site.test.ts": "4796fbe5e53cacdb15ab693ae02642298bb196686c511ae1ab888c11eb6af38d"
+  },
+  "active_leases": [],
+  "active_handoffs": [],
+  "active_assignments": [],
+  "completed_artifacts": [
+    "Astro public candidate build and release manifest",
+    "route, sitemap, media, CTA, rendered, link, security, and content audits",
+    "browser matrix evidence with containerized WebKit fallback",
+    "BriefLock Node 24 source hardening and 50 passing unit tests",
+    "Bicep diagnostics, alert KQL, probe, retention, and protected deployment guardrails",
+    "Azure alert and diagnostic-setting read-back",
+    "merge-safe delivery recovery, Dataverse identity validation, and bounded CRM retry posture",
+    "immutable posture checkpoint and event-chain record",
+    "incident alert remediation and live Node 24 hotfix",
+    "alert resource-id boundary hardening and live query verification"
+  ],
+  "gate_results": [
+    {
+      "gate": "source_validation",
+      "status": "pass",
+      "evidence": "BriefLock Node 24 check, build, and 50/50 tests pass; Astro check covers 79 files with zero diagnostics; TypeScript 7, aggregate tests, deployment tests, and public build pass."
+    },
+    {
+      "gate": "rendered_audits",
+      "status": "pass",
+      "evidence": "153 HTML outputs, 135 sitemap URLs, 155 built media assets, 20,399 references, zero link/rendered-route failures, and zero CTA mapping failures."
+    },
+    {
+      "gate": "browser_validation",
+      "status": "warn",
+      "evidence": "Host matrix recorded 758 passed, 20 expected skips, and 29 environment/transient failures; targeted Chromium reruns passed and containerized WebKit passed 26 with 1 expected skip."
+    },
+    {
+      "gate": "azure_alert",
+      "status": "pass",
+      "evidence": "Live scheduled rule is enabled Sev1/PT5M/PT10M; source/live KQL SHA-256 is 395037ab30236291d7bf842a64b912e0f0644002792c7e408aaaca2752fd8307, explicitly matching the Function _ResourceId and AppRoleName; the live query returns FailureCount=0 over PT10M and PT36H."
+    },
+    {
+      "gate": "azure_diagnostics_cost",
+      "status": "pass",
+      "evidence": "Function diagnostic setting exports FunctionAppLogs only; App Service audit categories and AllMetrics are disabled; Flex is Node 24/512 MB with no Always Ready, probes are 255 seconds, and lifecycle retention is live at 2 days for rate counters and 30 days for contact locks."
+    },
+    {
+      "gate": "delivery_state_safety",
+      "status": "pass",
+      "evidence": "Deterministic ACS operation handles, bounded reconciliation, consultation two-leg settlement, crash-window ambiguity, conditional ledger merges, Dataverse contact/BU validation, and CRM transient retry classification are covered by the Function tests."
+    },
+    {
+      "gate": "infrastructure_validation",
+      "status": "pass",
+      "evidence": "main.bicep and edge.bicep compile; deployment configuration tests pass 8 with 3 intentional skips; git diff --check is clean."
+    },
+    {
+      "gate": "production_deploy",
+      "status": "warn",
+      "evidence": "Tested package SHA-256 50d274fbdf69627d8ef5b45ef9df86d4c87bfda027e2b86332a5e6f34b63e77d was deployed directly to the existing Function app under the incident response; Node 24 runtime and 200/400/415/204/403 smoke boundaries pass. Protected GitLab what-if/manual promotion and controlled funnel canaries remain separate release gates."
+    },
+    {
+      "gate": "editorial_and_delivery_approval",
+      "status": "warn",
+      "evidence": "PDF/editorial, legal/rights, accessibility, and controlled ACS/Dataverse/Blob delivery canaries require named owners and approved test identities."
+    }
+  ],
+  "accepted_exceptions": [
+    "Incident hotfix was applied directly to the existing Function app to stop a live false-positive alert loop; the protected GitLab promotion remains required to make the repository commit the canonical deployment record.",
+    "Fourteen link-review warnings remain for meta-refresh live redirect verification, form canaries, and external anti-bot sources.",
+    "Manual brief PDF, editorial, legal/rights, accessibility, and release-owner approvals remain open.",
+    "ACS, Dataverse, and Blob lease contention canaries were not run against live personal-data systems.",
+    "Visual captures are workspace/CI object artifacts: the manifest contains 306 SHA/byte records, but PNGs are not source-controlled.",
+    "No fixture-backed synthetic KQL evaluator was added; exact source fragments and the live zero-result query are the current evidence.",
+    "Storage network default Allow and private endpoints were left unchanged to preserve the frugal cost boundary; review as a separate security-funded change."
+  ],
+  "blockers": [],
+  "last_verified": {
+    "timestamp": "2026-09-01T01:34:29.800Z",
+    "repository_identity": {
+      "branch": "demo",
+      "commit": "66ff0f8c34d9f00c98eb31ec5656ab9a0b24df81",
+      "working_tree": "uncommitted candidate; pre-existing and user changes preserved"
+    },
+    "build_identity": {
+      "site_fingerprint": "9164f81e7cbf8d3edfbc4e9fd6d67981f98d9c3bb12ed0ad5654c825ec34e1a7",
+      "release_artifact_sha256": "9a5fc9b83d1622b558b69cf5cc682eafcca049e0c5d6454ebdcffbcf2fe9df27",
+      "function_package_sha256": "50d274fbdf69627d8ef5b45ef9df86d4c87bfda027e2b86332a5e6f34b63e77d",
+      "alert_query_sha256": "395037ab30236291d7bf842a64b912e0f0644002792c7e408aaaca2752fd8307"
+    },
+    "commands": [
+      "npm run check && npm run build && npm test (infra/brief-delivery/function, Node 24)",
+      "npm run check && npm run typecheck:ts7 && npm run test:all && HARDMAGIC_DEPLOY_TARGET=public npm run build",
+      "npm exec -- vitest run tests/deployment/deployment-config.test.ts --reporter=dot",
+      "ms az-run focushive -- bicep build (main.bicep and edge.bicep)",
+      "ms az-run focushive -- resource/monitor read-back (alert, diagnostics, runtime)",
+      "ms az-run focushive -- monitor log-analytics query (PT10M)",
+      "curl public and direct-origin health plus text/plain canary",
+      "ms run focushive -- outlook message list (Inbox HardMagic BriefLock query)",
+      "ms az-run focushive -- monitor scheduled-query update/show and Log Analytics PT10M/PT36H verification",
+      "ms az-run focushive -- functionapp config-zip tested Node 24 package and resource runtime read-back",
+      "ms az-run focushive -- storage account management-policy read-back after short-lived lifecycle rules",
+      "ms az-run focushive -- scheduled-query resource-id scoped query patch/show and Log Analytics PT10M verification"
+    ],
+    "evidence": [
+      "public health 200 configured=true; direct origin 403; preflight 204 with security headers",
+      "live JSON validation 400 and unsupported text/plain 415 after Node 24 package deployment",
+      "Function runtime node 24; HTTPS-only true; public network enabled; 512 MB/20-instance burst ceiling",
+      "Function diagnostics: FunctionAppLogs only, metrics and App Service audit categories disabled",
+      "storage lifecycle: rate counters 2 days, contact locks 30 days, ledger 395 days, deadletters 90 days, deployments 30 days",
+      "M365 Graph /me and target-mailbox read succeeded; no HardMagic alert mail arrived after the 01:04 UTC query fix",
+      "live scheduled alert query returns FailureCount=0 over PT10M and PT36H and no Fired alert instance is present",
+      "alert KQL now explicitly matches the Function _ResourceId (case-insensitive), role, and non-empty worker instance"
+    ]
+  },
+  "next_action": {
+    "owner": "release owner",
+    "scope": "protected demo pipeline and controlled production canary",
+    "action": "Commit and promote this tested candidate through the protected GitLab what-if/manual brief_lock_deploy path, then run an approved non-PII end-to-end funnel canary and reconcile the direct incident hotfix.",
+    "prerequisites": [
+      "protected GitLab OIDC variables",
+      "two-person deployment approval",
+      "reviewed PDFs, Key Vault, Dataverse, and ACS readiness",
+      "approved non-PII canary identity and cleanup plan"
+    ]
+  },
+  "updated_at": "2026-09-01T01:34:29.800Z"
+}

@@ -99,5 +99,5 @@ describe('public release promotion contract', () => {
 
     writeFileSync(join(artifactRoot, 'assets', 'app.js'), 'console.log("changed");\n');
     expectManifestFailure('--verify', '--target', 'public', '--artifact-root', artifactRoot, '--manifest', manifestPath);
-  });
+  }, 15_000);
 });

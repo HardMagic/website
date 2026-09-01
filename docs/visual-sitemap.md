@@ -1,6 +1,6 @@
 # Visual sitemap
 
-Build fingerprint: d149f38ce2e29cd6 | base: / | canonical routes: 135.
+Build fingerprint: 63ada88db3b31ded | base: / | canonical routes: 135.
 
 Redirect, success/noindex, and error states remain in the route ledger but are omitted from the canonical navigation graph.
 

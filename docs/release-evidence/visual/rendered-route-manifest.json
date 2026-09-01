@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "buildFingerprint": "db3e82c4568844a64b210a3b705548e647901d5bc06875e02471ac2a5803bb75",
+  "buildFingerprint": "9164f81e7cbf8d3edfbc4e9fd6d67981f98d9c3bb12ed0ad5654c825ec34e1a7",
   "routeCount": 153,
   "stateCounts": {
     "canonical": 135,
@@ -21,7 +21,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/",
       "h1Count": 1,
-      "referenceCount": 174,
+      "referenceCount": 175,
       "issues": []
     },
     {
@@ -36,7 +36,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/404/",
       "h1Count": 1,
-      "referenceCount": 124,
+      "referenceCount": 125,
       "issues": []
     },
     {
@@ -51,7 +51,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/accessibility/",
       "h1Count": 1,
-      "referenceCount": 132,
+      "referenceCount": 133,
       "issues": []
     },
     {
@@ -66,7 +66,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/briefs/",
       "h1Count": 1,
-      "referenceCount": 145,
+      "referenceCount": 146,
       "issues": []
     },
     {
@@ -81,7 +81,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/briefs/autonomous-web-publishing-control-plane/",
       "h1Count": 1,
-      "referenceCount": 129,
+      "referenceCount": 130,
       "issues": []
     },
     {
@@ -96,7 +96,7 @@
       "robots": "noindex, nofollow",
       "canonical": "https://hardmagic.com/briefs/autonomous-web-publishing-control-plane/thanks/",
       "h1Count": 1,
-      "referenceCount": 131,
+      "referenceCount": 132,
       "issues": []
     },
     {
@@ -111,7 +111,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/briefs/creative-direction-after-the-prompt/",
       "h1Count": 1,
-      "referenceCount": 129,
+      "referenceCount": 130,
       "issues": []
     },
     {
@@ -126,7 +126,7 @@
       "robots": "noindex, nofollow",
       "canonical": "https://hardmagic.com/briefs/creative-direction-after-the-prompt/thanks/",
       "h1Count": 1,
-      "referenceCount": 131,
+      "referenceCount": 132,
       "issues": []
     },
     {
@@ -141,7 +141,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/briefs/generative-media-operating-system/",
       "h1Count": 1,
-      "referenceCount": 129,
+      "referenceCount": 130,
       "issues": []
     },
     {
@@ -156,7 +156,7 @@
       "robots": "noindex, nofollow",
       "canonical": "https://hardmagic.com/briefs/generative-media-operating-system/thanks/",
       "h1Count": 1,
-      "referenceCount": 131,
+      "referenceCount": 132,
       "issues": []
     },
     {
@@ -171,7 +171,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/briefs/hybrid-ai-media-infrastructure/",
       "h1Count": 1,
-      "referenceCount": 129,
+      "referenceCount": 130,
       "issues": []
     },
     {
@@ -186,7 +186,7 @@
       "robots": "noindex, nofollow",
       "canonical": "https://hardmagic.com/briefs/hybrid-ai-media-infrastructure/thanks/",
       "h1Count": 1,
-      "referenceCount": 131,
+      "referenceCount": 132,
       "issues": []
     },
     {
@@ -201,7 +201,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/briefs/intelligent-media-asset-estate/",
       "h1Count": 1,
-      "referenceCount": 129,
+      "referenceCount": 130,
       "issues": []
     },
     {
@@ -216,7 +216,7 @@
       "robots": "noindex, nofollow",
       "canonical": "https://hardmagic.com/briefs/intelligent-media-asset-estate/thanks/",
       "h1Count": 1,
-      "referenceCount": 131,
+      "referenceCount": 132,
       "issues": []
     },
     {
@@ -231,7 +231,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/briefs/modern-media-agency-transformation-playbook/",
       "h1Count": 1,
-      "referenceCount": 129,
+      "referenceCount": 130,
       "issues": []
     },
     {
@@ -246,7 +246,7 @@
       "robots": "noindex, nofollow",
       "canonical": "https://hardmagic.com/briefs/modern-media-agency-transformation-playbook/thanks/",
       "h1Count": 1,
-      "referenceCount": 131,
+      "referenceCount": 132,
       "issues": []
     },
     {
@@ -261,7 +261,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/briefs/provenance-ready-content-supply-chain/",
       "h1Count": 1,
-      "referenceCount": 129,
+      "referenceCount": 130,
       "issues": []
     },
     {
@@ -276,7 +276,7 @@
       "robots": "noindex, nofollow",
       "canonical": "https://hardmagic.com/briefs/provenance-ready-content-supply-chain/thanks/",
       "h1Count": 1,
-      "referenceCount": 131,
+      "referenceCount": 132,
       "issues": []
     },
     {
@@ -291,7 +291,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/briefs/visual-product-development-field-guide/",
       "h1Count": 1,
-      "referenceCount": 129,
+      "referenceCount": 130,
       "issues": []
     },
     {
@@ -306,7 +306,7 @@
       "robots": "noindex, nofollow",
       "canonical": "https://hardmagic.com/briefs/visual-product-development-field-guide/thanks/",
       "h1Count": 1,
-      "referenceCount": 131,
+      "referenceCount": 132,
       "issues": []
     },
     {
@@ -321,7 +321,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/company/",
       "h1Count": 1,
-      "referenceCount": 146,
+      "referenceCount": 147,
       "issues": []
     },
     {
@@ -336,7 +336,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/company/careers/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -351,7 +351,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/company/founder/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -366,7 +366,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/company/history/",
       "h1Count": 1,
-      "referenceCount": 136,
+      "referenceCount": 137,
       "issues": []
     },
     {
@@ -381,7 +381,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/company/operating-model/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -396,7 +396,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/company/partners/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -411,7 +411,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/company/principles/",
       "h1Count": 1,
-      "referenceCount": 136,
+      "referenceCount": 137,
       "issues": []
     },
     {
@@ -426,7 +426,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/company/selected-experience/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -441,7 +441,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/contact/",
       "h1Count": 1,
-      "referenceCount": 126,
+      "referenceCount": 127,
       "issues": []
     },
     {
@@ -456,7 +456,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/contact/creative-direction/",
       "h1Count": 1,
-      "referenceCount": 133,
+      "referenceCount": 134,
       "issues": []
     },
     {
@@ -471,7 +471,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/contact/genai/",
       "h1Count": 1,
-      "referenceCount": 133,
+      "referenceCount": 134,
       "issues": []
     },
     {
@@ -486,7 +486,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/contact/marketing-consulting/",
       "h1Count": 1,
-      "referenceCount": 133,
+      "referenceCount": 134,
       "issues": []
     },
     {
@@ -501,7 +501,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/contact/media-management/",
       "h1Count": 1,
-      "referenceCount": 133,
+      "referenceCount": 134,
       "issues": []
     },
     {
@@ -516,7 +516,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/contact/partnerships/",
       "h1Count": 1,
-      "referenceCount": 133,
+      "referenceCount": 134,
       "issues": []
     },
     {
@@ -531,7 +531,7 @@
       "robots": "noindex, nofollow",
       "canonical": "https://hardmagic.com/contact/thanks/",
       "h1Count": 1,
-      "referenceCount": 132,
+      "referenceCount": 133,
       "issues": []
     },
     {
@@ -546,7 +546,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/editorial-policy/",
       "h1Count": 1,
-      "referenceCount": 132,
+      "referenceCount": 133,
       "issues": []
     },
     {
@@ -561,7 +561,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/engagements/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -576,7 +576,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/engagements/fractional-creative-office/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -591,7 +591,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/engagements/genai-lab/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -606,7 +606,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/engagements/managed-media-desk/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -621,7 +621,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/engagements/product-launch-room/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -636,7 +636,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/engagements/transformation-sprint/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -651,7 +651,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/",
       "h1Count": 1,
-      "referenceCount": 143,
+      "referenceCount": 144,
       "issues": []
     },
     {
@@ -666,7 +666,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/accessibility-becomes-generative-art-direction/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -681,7 +681,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/agentic-media-needs-a-control-room/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -696,7 +696,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/brand-memory-becomes-an-operating-system/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -711,7 +711,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/compute-becomes-a-creative-material/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -726,7 +726,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/direction-after-infinite-production/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -741,7 +741,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/identity-rights-become-production-infrastructure/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -756,7 +756,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/marketing-after-surveillance/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -771,7 +771,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/media-escapes-the-frame/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -786,7 +786,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/provenance-is-the-new-publishing-layer/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -801,7 +801,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/the-media-library-starts-making-decisions/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -816,7 +816,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/the-sovereign-microstudio/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -831,7 +831,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/horizon/the-story-is-assembled-at-the-edge/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -846,7 +846,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/industries/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -861,7 +861,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/industries/agencies/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -876,7 +876,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/industries/consumer-brands/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -891,7 +891,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/industries/education-culture/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -906,7 +906,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/industries/founder-led-companies/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -921,7 +921,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/industries/media-entertainment/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -936,7 +936,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/industries/retail-commerce/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -951,7 +951,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/industries/software-platforms/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -966,7 +966,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/industries/sports-wellness/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -981,7 +981,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/",
       "h1Count": 1,
-      "referenceCount": 134,
+      "referenceCount": 135,
       "issues": []
     },
     {
@@ -996,7 +996,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/25-years-from-brand-studio-to-ai-company/",
       "h1Count": 1,
-      "referenceCount": 136,
+      "referenceCount": 137,
       "issues": []
     },
     {
@@ -1011,7 +1011,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/accessibility-is-art-direction/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1026,7 +1026,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/brand-memory-in-generative-systems/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1041,7 +1041,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/creative-direction-after-model-abundance/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1056,7 +1056,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/from-prompting-to-production-systems/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1071,7 +1071,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/how-to-evaluate-a-genai-pilot/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1086,7 +1086,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/hybrid-inference-is-a-governance-decision/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1101,7 +1101,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/marketing-operations-for-small-expert-teams/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1116,7 +1116,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/provenance-without-killing-creative-flow/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1131,7 +1131,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/static-websites-as-durable-media/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1146,7 +1146,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/the-case-for-agent-readable-creative-operations/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1161,7 +1161,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/the-cost-of-model-first-product-design/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1176,7 +1176,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/the-running-product-is-the-brief/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1191,7 +1191,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/what-a-modern-media-control-room-needs/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1206,7 +1206,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/insights/why-media-collections-lose-their-value/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1221,7 +1221,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/methods/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1236,7 +1236,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/methods/30-60-90-activation/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1251,7 +1251,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/methods/accessibility-as-editorial/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1266,7 +1266,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/methods/brand-memory/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1281,7 +1281,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/methods/collection-to-intelligence/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1296,7 +1296,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/methods/evidence-loop/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1311,7 +1311,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/methods/human-agent-creative-loop/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1326,7 +1326,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/methods/hybrid-inference/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1341,7 +1341,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/methods/intent-to-system/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1476,7 +1476,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/portfolio/",
       "h1Count": 1,
-      "referenceCount": 170,
+      "referenceCount": 172,
       "issues": []
     },
     {
@@ -1491,7 +1491,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/portfolio/airikai/",
       "h1Count": 1,
-      "referenceCount": 138,
+      "referenceCount": 139,
       "issues": []
     },
     {
@@ -1506,7 +1506,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/portfolio/fashionx/",
       "h1Count": 1,
-      "referenceCount": 138,
+      "referenceCount": 139,
       "issues": []
     },
     {
@@ -1521,7 +1521,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/portfolio/focuspass/",
       "h1Count": 1,
-      "referenceCount": 136,
+      "referenceCount": 137,
       "issues": []
     },
     {
@@ -1536,7 +1536,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/portfolio/pedadida/",
       "h1Count": 1,
-      "referenceCount": 132,
+      "referenceCount": 133,
       "issues": []
     },
     {
@@ -1551,7 +1551,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/portfolio/pranashama/",
       "h1Count": 1,
-      "referenceCount": 136,
+      "referenceCount": 137,
       "issues": []
     },
     {
@@ -1566,7 +1566,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/portfolio/state-parks/",
       "h1Count": 1,
-      "referenceCount": 138,
+      "referenceCount": 139,
       "issues": []
     },
     {
@@ -1581,7 +1581,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/portfolio/tao-cottage/",
       "h1Count": 1,
-      "referenceCount": 138,
+      "referenceCount": 139,
       "issues": []
     },
     {
@@ -1596,7 +1596,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/portfolio/taolo/",
       "h1Count": 1,
-      "referenceCount": 138,
+      "referenceCount": 139,
       "issues": []
     },
     {
@@ -1611,7 +1611,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/privacy/",
       "h1Count": 1,
-      "referenceCount": 125,
+      "referenceCount": 126,
       "issues": []
     },
     {
@@ -1626,7 +1626,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/",
       "h1Count": 1,
-      "referenceCount": 130,
+      "referenceCount": 131,
       "issues": []
     },
     {
@@ -1641,7 +1641,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/cli/",
       "h1Count": 1,
-      "referenceCount": 127,
+      "referenceCount": 128,
       "issues": []
     },
     {
@@ -1656,7 +1656,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/cli/agent-skills/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1671,7 +1671,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/cli/automation/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1686,7 +1686,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/cli/quickstart/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1701,7 +1701,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/cli/security/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1716,7 +1716,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/gpu-router/",
       "h1Count": 1,
-      "referenceCount": 127,
+      "referenceCount": 128,
       "issues": []
     },
     {
@@ -1731,7 +1731,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/gpu-router/architecture/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1746,7 +1746,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/gpu-router/benchmarks/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1761,7 +1761,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/gpu-router/observability/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1776,7 +1776,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/gpu-router/routing/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1791,7 +1791,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/photo-curator/",
       "h1Count": 1,
-      "referenceCount": 127,
+      "referenceCount": 128,
       "issues": []
     },
     {
@@ -1806,7 +1806,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/photo-curator/connectors/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1821,7 +1821,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/photo-curator/duplicates/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1836,7 +1836,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/photo-curator/metadata/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1851,7 +1851,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/photo-curator/review/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1866,7 +1866,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/studio/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1881,7 +1881,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/studio/audio/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1896,7 +1896,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/studio/hybrid-inference/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1911,7 +1911,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/studio/image/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1926,7 +1926,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/studio/video/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1941,7 +1941,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/web-magic/",
       "h1Count": 1,
-      "referenceCount": 127,
+      "referenceCount": 128,
       "issues": []
     },
     {
@@ -1956,7 +1956,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/web-magic/accessibility/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1971,7 +1971,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/web-magic/delivery/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -1986,7 +1986,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/web-magic/performance/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2001,7 +2001,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/web-magic/seo/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2016,7 +2016,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/wiremark/",
       "h1Count": 1,
-      "referenceCount": 129,
+      "referenceCount": 131,
       "issues": []
     },
     {
@@ -2031,7 +2031,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/wiremark/agent-handoff/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2046,7 +2046,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/wiremark/canvas/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2061,7 +2061,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/wiremark/privacy-provenance/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2076,7 +2076,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/products/wiremark/source-intelligence/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2091,7 +2091,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/responsible-ai/",
       "h1Count": 1,
-      "referenceCount": 132,
+      "referenceCount": 133,
       "issues": []
     },
     {
@@ -2106,7 +2106,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/security/",
       "h1Count": 1,
-      "referenceCount": 132,
+      "referenceCount": 133,
       "issues": []
     },
     {
@@ -2121,7 +2121,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/services/",
       "h1Count": 1,
-      "referenceCount": 134,
+      "referenceCount": 135,
       "issues": []
     },
     {
@@ -2136,7 +2136,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/services/brand-systems/",
       "h1Count": 1,
-      "referenceCount": 136,
+      "referenceCount": 137,
       "issues": []
     },
     {
@@ -2151,7 +2151,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/services/campaign-production/",
       "h1Count": 1,
-      "referenceCount": 136,
+      "referenceCount": 137,
       "issues": []
     },
     {
@@ -2166,7 +2166,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/services/content-operations/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2181,7 +2181,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/services/creative-direction/",
       "h1Count": 1,
-      "referenceCount": 136,
+      "referenceCount": 137,
       "issues": []
     },
     {
@@ -2196,7 +2196,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/services/creative-technology/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2211,7 +2211,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/services/executive-advisory/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2226,7 +2226,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/services/genai-strategy/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2241,7 +2241,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/services/marketing-consulting/",
       "h1Count": 1,
-      "referenceCount": 136,
+      "referenceCount": 137,
       "issues": []
     },
     {
@@ -2256,7 +2256,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/services/media-management/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2271,7 +2271,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/services/web-experience/",
       "h1Count": 1,
-      "referenceCount": 135,
+      "referenceCount": 136,
       "issues": []
     },
     {
@@ -2286,7 +2286,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/sitemap/",
       "h1Count": 1,
-      "referenceCount": 132,
+      "referenceCount": 133,
       "issues": []
     },
     {
@@ -2301,7 +2301,7 @@
       "robots": "",
       "canonical": "https://hardmagic.com/terms/",
       "h1Count": 1,
-      "referenceCount": 132,
+      "referenceCount": 133,
       "issues": []
     }
   ]

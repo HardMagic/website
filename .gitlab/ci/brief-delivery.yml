@@ -33,7 +33,7 @@ stages:
 
 brief_lock_function_test:
   stage: validate
-  image: node:22-bookworm-slim
+  image: node:24-bookworm-slim
   rules:
     - <<: *brief_delivery_changes
   script:
@@ -45,7 +45,7 @@ brief_lock_function_test:
 
 brief_lock_package:
   stage: validate
-  image: node:22-bookworm-slim
+  image: node:24-bookworm-slim
   rules:
     - <<: *brief_delivery_changes
   script:
@@ -68,6 +68,7 @@ brief_lock_pdf_package:
   script:
     - npm ci --ignore-scripts
     - npm run briefs:pdf
+    - npm exec -- vitest run tests/briefs/pdf-manifest.test.ts
   artifacts:
     name: hardmagic-private-briefs-$CI_COMMIT_SHA
     expire_in: 1 day
@@ -102,7 +103,33 @@ brief_lock_what_if:
     - test -n "$BRIEF_FRONT_DOOR_ID"
     - test -n "$BRIEF_DEPLOYMENT_PRINCIPAL_OBJECT_ID"
     - test -n "$BRIEF_ALERT_ACTION_GROUP_RESOURCE_ID"
-    - az deployment sub what-if --name "hm-brief-lock-$CI_PIPELINE_IID" --location eastus --template-file infra/brief-delivery/main.bicep --parameters infra/brief-delivery/parameters.example.json frontDoorId="$BRIEF_FRONT_DOOR_ID" deploymentPrincipalObjectId="$BRIEF_DEPLOYMENT_PRINCIPAL_OBJECT_ID" alertActionGroupResourceId="$BRIEF_ALERT_ACTION_GROUP_RESOURCE_ID" --no-prompt true --result-format ResourceIdOnly
+    - |
+      set -eu
+      what_if_file="$(mktemp)"
+      trap 'rm -f "$what_if_file"' EXIT
+      az deployment sub what-if \
+        --name "hm-brief-lock-$CI_PIPELINE_IID" \
+        --location eastus \
+        --template-file infra/brief-delivery/main.bicep \
+        --parameters infra/brief-delivery/parameters.example.json \
+          frontDoorId="$BRIEF_FRONT_DOOR_ID" \
+          deploymentPrincipalObjectId="$BRIEF_DEPLOYMENT_PRINCIPAL_OBJECT_ID" \
+          alertActionGroupResourceId="$BRIEF_ALERT_ACTION_GROUP_RESOURCE_ID" \
+        --no-prompt true \
+        --no-pretty-print \
+        --only-show-errors \
+        --result-format ResourceIdOnly \
+        --output json > "$what_if_file"
+      if ! jq -e '((.properties.changes // .changes) | type) == "array"' "$what_if_file" >/dev/null; then
+        echo "Azure what-if did not return a changes array; refusing to deploy." >&2
+        exit 1
+      fi
+      jq -r '(.properties.changes // .changes)[] | [.changeType, .resourceId] | @tsv' "$what_if_file"
+      if jq -e 'any((.properties.changes // .changes)[]; .changeType == "Delete")' "$what_if_file" >/dev/null; then
+        echo "Azure what-if includes resource deletion; refusing to deploy." >&2
+        jq -r '(.properties.changes // .changes)[] | select(.changeType == "Delete") | .resourceId' "$what_if_file" >&2
+        exit 1
+      fi
 
 brief_lock_deploy:
   extends: .azure_oidc
@@ -166,4 +193,7 @@ brief_lock_deploy:
       grep -Eiq '^access-control-allow-methods: POST' "$smoke_headers"
       invalid_body_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X POST -H 'Origin: https://hardmagic.com' -H 'Content-Type: application/json' --data-binary '{}' "$smoke_root/api/brief-request")"
       test "$invalid_body_status" = "400"
+      check_security_headers
+      unsupported_content_type_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X POST -H 'Origin: https://hardmagic.com' -H 'Content-Type: text/plain' --data-binary '{}' "$smoke_root/api/brief-request")"
+      test "$unsupported_content_type_status" = "415"
       check_security_headers

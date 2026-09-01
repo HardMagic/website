@@ -1,6 +1,6 @@
 # Rendered media ledger
 
-Generated from `dist/` at 2026-08-20T15:12:49.813Z. This is a build artifact, not an approval: `review-required` and rights notes remain launch blockers until an owner signs them.
+Generated from `dist/` at 2026-08-31T10:40:40.917Z. This is a build artifact, not an approval: `review-required` and rights notes remain launch blockers until an owner signs them.
 
 Rendered image references: **66** across **145** HTML routes.
 

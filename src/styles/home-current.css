@@ -7,8 +7,8 @@
 .studio-frame-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,6,.78),rgba(3,3,6,0) 58%)}
 .studio-frame-copy{z-index:2}
 .future-field-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,2,4,.95),rgba(2,2,4,.36) 58%,rgba(2,2,4,.12)),linear-gradient(0deg,rgba(2,2,4,.7),transparent 45%)}
-.demo-copy button{background:#b72836}
-.demo-after .demo-copy button{background:#5e3bd0}
+.demo-copy .demo-action{display:inline-block;padding:.9rem 1.2rem;border:0;background:#b72836;color:white;text-transform:uppercase;letter-spacing:.11em;font-weight:800}
+.demo-after .demo-copy .demo-action{background:#5e3bd0}
 .creative-continuity .eyebrow.dark{color:#7e1031}
 
 /* 2026 studio stage: edge-to-edge composition with constrained reading measures */

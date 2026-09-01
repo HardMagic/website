@@ -8,14 +8,14 @@
     "applicationInsights": {
       "samplingSettings": {
         "isEnabled": true,
-        "excludedTypes": "Request"
+        "excludedTypes": "Exception"
       },
       "enableLiveMetricsFilters": true
     },
     "logLevel": {
-      "default": "Information",
+      "default": "Warning",
       "Host.Results": "Warning",
-      "Function": "Information"
+      "Function": "Warning"
     }
   },
   "extensions": {

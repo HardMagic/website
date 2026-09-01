@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "buildFingerprint": "0a18540f92e55cad26ecc98e256d7ec4e64345f925f0a515fe50ab2464334ff4",
+  "buildFingerprint": "9164f81e7cbf8d3edfbc4e9fd6d67981f98d9c3bb12ed0ad5654c825ec34e1a7",
   "routeCount": 153,
   "projects": [
     {
@@ -18,6 +18,12 @@
       }
     }
   ],
+  "captureRoot": "captures",
+  "captureContract": {
+    "sourceOfTruth": "CI/object artifact evidence",
+    "retention": "Retain according to the CI/object-artifact retention policy.",
+    "local": "Untracked local captures are disposable and are not source truth."
+  },
   "captures": [
     {
       "project": "chromium-390",
@@ -28,7 +34,9 @@
       "route": "/",
       "state": "canonical",
       "routeId": "home--canonical",
-      "path": "captures/chromium-390/home--canonical.png"
+      "path": "captures/chromium-390/home--canonical.png",
+      "sha256": "8d7b28f08656acb152f468337ccf16c9dbcc765faf725200d11daed6f12a520e",
+      "bytes": 1615126
     },
     {
       "project": "chromium-1440",
@@ -39,7 +47,9 @@
       "route": "/",
       "state": "canonical",
       "routeId": "home--canonical",
-      "path": "captures/chromium-1440/home--canonical.png"
+      "path": "captures/chromium-1440/home--canonical.png",
+      "sha256": "1a6c171995bf46b07ab942db356a94067541898773a968a040503970ddb39b7d",
+      "bytes": 844895
     },
     {
       "project": "chromium-390",
@@ -50,7 +60,9 @@
       "route": "/404/",
       "state": "not-found",
       "routeId": "404--not-found",
-      "path": "captures/chromium-390/404--not-found.png"
+      "path": "captures/chromium-390/404--not-found.png",
+      "sha256": "017e8853a23bcca35de4348093f4466d6afa81638dbb4a38acb9fc6d479b8a85",
+      "bytes": 2146583
     },
     {
       "project": "chromium-1440",
@@ -61,7 +73,9 @@
       "route": "/404/",
       "state": "not-found",
       "routeId": "404--not-found",
-      "path": "captures/chromium-1440/404--not-found.png"
+      "path": "captures/chromium-1440/404--not-found.png",
+      "sha256": "fe8d09f06e49b3d372cb49443e573a3296ca237d15f9be0c27a4f815f42f524d",
+      "bytes": 847424
     },
     {
       "project": "chromium-390",
@@ -72,7 +86,9 @@
       "route": "/accessibility/",
       "state": "canonical",
       "routeId": "accessibility--canonical",
-      "path": "captures/chromium-390/accessibility--canonical.png"
+      "path": "captures/chromium-390/accessibility--canonical.png",
+      "sha256": "ace9ff5a5c7eb9cf85f4bc61e04cfb9c79c6abc004fe445974583bae838f001a",
+      "bytes": 1997810
     },
     {
       "project": "chromium-1440",
@@ -83,7 +99,9 @@
       "route": "/accessibility/",
       "state": "canonical",
       "routeId": "accessibility--canonical",
-      "path": "captures/chromium-1440/accessibility--canonical.png"
+      "path": "captures/chromium-1440/accessibility--canonical.png",
+      "sha256": "d2cfa09b38106d65b9d7a8a87ccb02553fd7e4416df1c91194f0dd635d578ee4",
+      "bytes": 885400
     },
     {
       "project": "chromium-390",
@@ -94,7 +112,9 @@
       "route": "/briefs/",
       "state": "canonical",
       "routeId": "briefs--canonical",
-      "path": "captures/chromium-390/briefs--canonical.png"
+      "path": "captures/chromium-390/briefs--canonical.png",
+      "sha256": "035b5344d7a528d5d82387a0b6006bca53ac8a63a2ea9c881143407247e2c3df",
+      "bytes": 963817
     },
     {
       "project": "chromium-1440",
@@ -105,7 +125,9 @@
       "route": "/briefs/",
       "state": "canonical",
       "routeId": "briefs--canonical",
-      "path": "captures/chromium-1440/briefs--canonical.png"
+      "path": "captures/chromium-1440/briefs--canonical.png",
+      "sha256": "075d61b8da0aa306e77d38594a3dd59b80f2ccba76511edd7bd99969cc91e743",
+      "bytes": 394730
     },
     {
       "project": "chromium-390",
@@ -116,7 +138,9 @@
       "route": "/briefs/autonomous-web-publishing-control-plane/",
       "state": "canonical",
       "routeId": "briefs-autonomous-web-publishing-control-plane--canonical",
-      "path": "captures/chromium-390/briefs-autonomous-web-publishing-control-plane--canonical.png"
+      "path": "captures/chromium-390/briefs-autonomous-web-publishing-control-plane--canonical.png",
+      "sha256": "1e32d552b8d7ef4fe78a30c3377e925920bcccb28b9fc00fd1f2f0ba9907c6d7",
+      "bytes": 1559660
     },
     {
       "project": "chromium-1440",
@@ -127,7 +151,9 @@
       "route": "/briefs/autonomous-web-publishing-control-plane/",
       "state": "canonical",
       "routeId": "briefs-autonomous-web-publishing-control-plane--canonical",
-      "path": "captures/chromium-1440/briefs-autonomous-web-publishing-control-plane--canonical.png"
+      "path": "captures/chromium-1440/briefs-autonomous-web-publishing-control-plane--canonical.png",
+      "sha256": "1fbd2cb674087cbec99bc89a4cc39276ce476f5a5b1a4ae2912f53a0d4143ba6",
+      "bytes": 769191
     },
     {
       "project": "chromium-390",
@@ -138,7 +164,9 @@
       "route": "/briefs/autonomous-web-publishing-control-plane/thanks/",
       "state": "thanks",
       "routeId": "briefs-autonomous-web-publishing-control-plane-thanks--thanks",
-      "path": "captures/chromium-390/briefs-autonomous-web-publishing-control-plane-thanks--thanks.png"
+      "path": "captures/chromium-390/briefs-autonomous-web-publishing-control-plane-thanks--thanks.png",
+      "sha256": "e802dee2cbdef6072b04bb5004f6daa0d27946accd6659ff5ee325187d93064b",
+      "bytes": 1356332
     },
     {
       "project": "chromium-1440",
@@ -149,7 +177,9 @@
       "route": "/briefs/autonomous-web-publishing-control-plane/thanks/",
       "state": "thanks",
       "routeId": "briefs-autonomous-web-publishing-control-plane-thanks--thanks",
-      "path": "captures/chromium-1440/briefs-autonomous-web-publishing-control-plane-thanks--thanks.png"
+      "path": "captures/chromium-1440/briefs-autonomous-web-publishing-control-plane-thanks--thanks.png",
+      "sha256": "3419b149fce574ad91b9290d86c613f14531e84af40b80267d147428dbf5b1ec",
+      "bytes": 443190
     },
     {
       "project": "chromium-390",
@@ -160,7 +190,9 @@
       "route": "/briefs/creative-direction-after-the-prompt/",
       "state": "canonical",
       "routeId": "briefs-creative-direction-after-the-prompt--canonical",
-      "path": "captures/chromium-390/briefs-creative-direction-after-the-prompt--canonical.png"
+      "path": "captures/chromium-390/briefs-creative-direction-after-the-prompt--canonical.png",
+      "sha256": "0232abf75baa54cfa208405cea9725ec1220e9cbabbc83ba009f1d0c207892b0",
+      "bytes": 1779070
     },
     {
       "project": "chromium-1440",
@@ -171,7 +203,9 @@
       "route": "/briefs/creative-direction-after-the-prompt/",
       "state": "canonical",
       "routeId": "briefs-creative-direction-after-the-prompt--canonical",
-      "path": "captures/chromium-1440/briefs-creative-direction-after-the-prompt--canonical.png"
+      "path": "captures/chromium-1440/briefs-creative-direction-after-the-prompt--canonical.png",
+      "sha256": "ae4351a870a40998a1ffb820172c019607f7f41055b332b3f134c504327132b9",
+      "bytes": 787124
     },
     {
       "project": "chromium-390",
@@ -182,7 +216,9 @@
       "route": "/briefs/creative-direction-after-the-prompt/thanks/",
       "state": "thanks",
       "routeId": "briefs-creative-direction-after-the-prompt-thanks--thanks",
-      "path": "captures/chromium-390/briefs-creative-direction-after-the-prompt-thanks--thanks.png"
+      "path": "captures/chromium-390/briefs-creative-direction-after-the-prompt-thanks--thanks.png",
+      "sha256": "b16b6095aee549e0dbc49121e05d74d85790790241667b2e577e3980e1d1052c",
+      "bytes": 1351338
     },
     {
       "project": "chromium-1440",
@@ -193,7 +229,9 @@
       "route": "/briefs/creative-direction-after-the-prompt/thanks/",
       "state": "thanks",
       "routeId": "briefs-creative-direction-after-the-prompt-thanks--thanks",
-      "path": "captures/chromium-1440/briefs-creative-direction-after-the-prompt-thanks--thanks.png"
+      "path": "captures/chromium-1440/briefs-creative-direction-after-the-prompt-thanks--thanks.png",
+      "sha256": "35ac12758be141fb9288e694bca45f6b9bb093ea931a8e45e19004c134e0a6e1",
+      "bytes": 441551
     },
     {
       "project": "chromium-390",
@@ -204,7 +242,9 @@
       "route": "/briefs/generative-media-operating-system/",
       "state": "canonical",
       "routeId": "briefs-generative-media-operating-system--canonical",
-      "path": "captures/chromium-390/briefs-generative-media-operating-system--canonical.png"
+      "path": "captures/chromium-390/briefs-generative-media-operating-system--canonical.png",
+      "sha256": "d4990b3fe1149b8982acbc939301ac878f0ce8a72f92a6504a96e7ef718f003d",
+      "bytes": 1585290
     },
     {
       "project": "chromium-1440",
@@ -215,7 +255,9 @@
       "route": "/briefs/generative-media-operating-system/",
       "state": "canonical",
       "routeId": "briefs-generative-media-operating-system--canonical",
-      "path": "captures/chromium-1440/briefs-generative-media-operating-system--canonical.png"
+      "path": "captures/chromium-1440/briefs-generative-media-operating-system--canonical.png",
+      "sha256": "10c1b5b7c626dd0c15d4eb3f26de4277bc3439b2047d050cdf5f672114a78e97",
+      "bytes": 777261
     },
     {
       "project": "chromium-390",
@@ -226,7 +268,9 @@
       "route": "/briefs/generative-media-operating-system/thanks/",
       "state": "thanks",
       "routeId": "briefs-generative-media-operating-system-thanks--thanks",
-      "path": "captures/chromium-390/briefs-generative-media-operating-system-thanks--thanks.png"
+      "path": "captures/chromium-390/briefs-generative-media-operating-system-thanks--thanks.png",
+      "sha256": "7d10225a06d26e6c4f85c1d6f861a68b2d5620ae9d87943eefef35f0594fca2a",
+      "bytes": 1340257
     },
     {
       "project": "chromium-1440",
@@ -237,7 +281,9 @@
       "route": "/briefs/generative-media-operating-system/thanks/",
       "state": "thanks",
       "routeId": "briefs-generative-media-operating-system-thanks--thanks",
-      "path": "captures/chromium-1440/briefs-generative-media-operating-system-thanks--thanks.png"
+      "path": "captures/chromium-1440/briefs-generative-media-operating-system-thanks--thanks.png",
+      "sha256": "eabd25506d27010e0cefc6134762382d90fa2438f839a22ee3d63995c149fc9b",
+      "bytes": 442918
     },
     {
       "project": "chromium-390",
@@ -248,7 +294,9 @@
       "route": "/briefs/hybrid-ai-media-infrastructure/",
       "state": "canonical",
       "routeId": "briefs-hybrid-ai-media-infrastructure--canonical",
-      "path": "captures/chromium-390/briefs-hybrid-ai-media-infrastructure--canonical.png"
+      "path": "captures/chromium-390/briefs-hybrid-ai-media-infrastructure--canonical.png",
+      "sha256": "45bdd1f49db0e725e20ec50638d20a3089f5ac59f5c6b683761c7bd6f3fff353",
+      "bytes": 1592418
     },
     {
       "project": "chromium-1440",
@@ -259,7 +307,9 @@
       "route": "/briefs/hybrid-ai-media-infrastructure/",
       "state": "canonical",
       "routeId": "briefs-hybrid-ai-media-infrastructure--canonical",
-      "path": "captures/chromium-1440/briefs-hybrid-ai-media-infrastructure--canonical.png"
+      "path": "captures/chromium-1440/briefs-hybrid-ai-media-infrastructure--canonical.png",
+      "sha256": "dc05afd3683a00efd63ddc814a6c0df2b78ad4c48926897fa23f45469f8dfba5",
+      "bytes": 775782
     },
     {
       "project": "chromium-390",
@@ -270,7 +320,9 @@
       "route": "/briefs/hybrid-ai-media-infrastructure/thanks/",
       "state": "thanks",
       "routeId": "briefs-hybrid-ai-media-infrastructure-thanks--thanks",
-      "path": "captures/chromium-390/briefs-hybrid-ai-media-infrastructure-thanks--thanks.png"
+      "path": "captures/chromium-390/briefs-hybrid-ai-media-infrastructure-thanks--thanks.png",
+      "sha256": "f8b115be454e88dc692412c17b1f7f0d99ff7800233b1458571147924b22278d",
+      "bytes": 1076431
     },
     {
       "project": "chromium-1440",
@@ -281,7 +333,9 @@
       "route": "/briefs/hybrid-ai-media-infrastructure/thanks/",
       "state": "thanks",
       "routeId": "briefs-hybrid-ai-media-infrastructure-thanks--thanks",
-      "path": "captures/chromium-1440/briefs-hybrid-ai-media-infrastructure-thanks--thanks.png"
+      "path": "captures/chromium-1440/briefs-hybrid-ai-media-infrastructure-thanks--thanks.png",
+      "sha256": "00f0e8663862fc5b57a8906a38ef74d951cc59adb371b800bcc970aaef51ea3e",
+      "bytes": 443440
     },
     {
       "project": "chromium-390",
@@ -292,7 +346,9 @@
       "route": "/briefs/intelligent-media-asset-estate/",
       "state": "canonical",
       "routeId": "briefs-intelligent-media-asset-estate--canonical",
-      "path": "captures/chromium-390/briefs-intelligent-media-asset-estate--canonical.png"
+      "path": "captures/chromium-390/briefs-intelligent-media-asset-estate--canonical.png",
+      "sha256": "9900b07a4bbc283760bb51be543015bc370bc8c807c7264295ae75c16cd75cfc",
+      "bytes": 1809818
     },
     {
       "project": "chromium-1440",
@@ -303,7 +359,9 @@
       "route": "/briefs/intelligent-media-asset-estate/",
       "state": "canonical",
       "routeId": "briefs-intelligent-media-asset-estate--canonical",
-      "path": "captures/chromium-1440/briefs-intelligent-media-asset-estate--canonical.png"
+      "path": "captures/chromium-1440/briefs-intelligent-media-asset-estate--canonical.png",
+      "sha256": "ff823b1547e47acabe5d2d0c43550dae2b00bc9fe1d9c7ba2fa198c8320867b3",
+      "bytes": 773103
     },
     {
       "project": "chromium-390",
@@ -314,7 +372,9 @@
       "route": "/briefs/intelligent-media-asset-estate/thanks/",
       "state": "thanks",
       "routeId": "briefs-intelligent-media-asset-estate-thanks--thanks",
-      "path": "captures/chromium-390/briefs-intelligent-media-asset-estate-thanks--thanks.png"
+      "path": "captures/chromium-390/briefs-intelligent-media-asset-estate-thanks--thanks.png",
+      "sha256": "8fecdac5d6b6e7da82fda3c9b0e47baecb8a0c3b1089a4dc151108312c85f7ae",
+      "bytes": 1073384
     },
     {
       "project": "chromium-1440",
@@ -325,7 +385,9 @@
       "route": "/briefs/intelligent-media-asset-estate/thanks/",
       "state": "thanks",
       "routeId": "briefs-intelligent-media-asset-estate-thanks--thanks",
-      "path": "captures/chromium-1440/briefs-intelligent-media-asset-estate-thanks--thanks.png"
+      "path": "captures/chromium-1440/briefs-intelligent-media-asset-estate-thanks--thanks.png",
+      "sha256": "f203b424454ab4b4ebc7405626779864e09e8b18d80f2f1ec2d232ee4bcc01dd",
+      "bytes": 442561
     },
     {
       "project": "chromium-390",
@@ -336,7 +398,9 @@
       "route": "/briefs/modern-media-agency-transformation-playbook/",
       "state": "canonical",
       "routeId": "briefs-modern-media-agency-transformation-playbook--canonical",
-      "path": "captures/chromium-390/briefs-modern-media-agency-transformation-playbook--canonical.png"
+      "path": "captures/chromium-390/briefs-modern-media-agency-transformation-playbook--canonical.png",
+      "sha256": "9eca14766ac4a35f9b597405e75fb6f5691f9dd4e87a2b6c91ce1fd537f3d211",
+      "bytes": 1605706
     },
     {
       "project": "chromium-1440",
@@ -347,7 +411,9 @@
       "route": "/briefs/modern-media-agency-transformation-playbook/",
       "state": "canonical",
       "routeId": "briefs-modern-media-agency-transformation-playbook--canonical",
-      "path": "captures/chromium-1440/briefs-modern-media-agency-transformation-playbook--canonical.png"
+      "path": "captures/chromium-1440/briefs-modern-media-agency-transformation-playbook--canonical.png",
+      "sha256": "ab30655e04b278c1040dd6d91a14d07c4c2cf6cc59c800ee522e61aa791046c3",
+      "bytes": 825557
     },
     {
       "project": "chromium-390",
@@ -358,7 +424,9 @@
       "route": "/briefs/modern-media-agency-transformation-playbook/thanks/",
       "state": "thanks",
       "routeId": "briefs-modern-media-agency-transformation-playbook-thanks--thanks",
-      "path": "captures/chromium-390/briefs-modern-media-agency-transformation-playbook-thanks--thanks.png"
+      "path": "captures/chromium-390/briefs-modern-media-agency-transformation-playbook-thanks--thanks.png",
+      "sha256": "f6090c497d8ec491bd00d14768050684fa97306c7c5968fc2e498484d3588629",
+      "bytes": 1354597
     },
     {
       "project": "chromium-1440",
@@ -369,7 +437,9 @@
       "route": "/briefs/modern-media-agency-transformation-playbook/thanks/",
       "state": "thanks",
       "routeId": "briefs-modern-media-agency-transformation-playbook-thanks--thanks",
-      "path": "captures/chromium-1440/briefs-modern-media-agency-transformation-playbook-thanks--thanks.png"
+      "path": "captures/chromium-1440/briefs-modern-media-agency-transformation-playbook-thanks--thanks.png",
+      "sha256": "cc30efd996fe5ad8cd4b7cc8e974b7409cb1f96e3c55afe875e59e447c5132a5",
+      "bytes": 444030
     },
     {
       "project": "chromium-390",
@@ -380,7 +450,9 @@
       "route": "/briefs/provenance-ready-content-supply-chain/",
       "state": "canonical",
       "routeId": "briefs-provenance-ready-content-supply-chain--canonical",
-      "path": "captures/chromium-390/briefs-provenance-ready-content-supply-chain--canonical.png"
+      "path": "captures/chromium-390/briefs-provenance-ready-content-supply-chain--canonical.png",
+      "sha256": "4bfc18df69df333e6386da341fa33d69a27e481823fb0db00243509a58ab5353",
+      "bytes": 1559775
     },
     {
       "project": "chromium-1440",
@@ -391,7 +463,9 @@
       "route": "/briefs/provenance-ready-content-supply-chain/",
       "state": "canonical",
       "routeId": "briefs-provenance-ready-content-supply-chain--canonical",
-      "path": "captures/chromium-1440/briefs-provenance-ready-content-supply-chain--canonical.png"
+      "path": "captures/chromium-1440/briefs-provenance-ready-content-supply-chain--canonical.png",
+      "sha256": "616b3f931f892b416960c53dcb23783f66e1b86bfe8a09d4cdc56ab183406747",
+      "bytes": 772755
     },
     {
       "project": "chromium-390",
@@ -402,7 +476,9 @@
       "route": "/briefs/provenance-ready-content-supply-chain/thanks/",
       "state": "thanks",
       "routeId": "briefs-provenance-ready-content-supply-chain-thanks--thanks",
-      "path": "captures/chromium-390/briefs-provenance-ready-content-supply-chain-thanks--thanks.png"
+      "path": "captures/chromium-390/briefs-provenance-ready-content-supply-chain-thanks--thanks.png",
+      "sha256": "90580387e8ab18c25cd0693c86ccff3c8a04a2bfaac8597fb65517617bc272b0",
+      "bytes": 1355241
     },
     {
       "project": "chromium-1440",
@@ -413,7 +489,9 @@
       "route": "/briefs/provenance-ready-content-supply-chain/thanks/",
       "state": "thanks",
       "routeId": "briefs-provenance-ready-content-supply-chain-thanks--thanks",
-      "path": "captures/chromium-1440/briefs-provenance-ready-content-supply-chain-thanks--thanks.png"
+      "path": "captures/chromium-1440/briefs-provenance-ready-content-supply-chain-thanks--thanks.png",
+      "sha256": "ba9d311b7171362fdfdf0f329705cc1541f564660069c0be0d97acda3d80e2bf",
+      "bytes": 443293
     },
     {
       "project": "chromium-390",
@@ -424,7 +502,9 @@
       "route": "/briefs/visual-product-development-field-guide/",
       "state": "canonical",
       "routeId": "briefs-visual-product-development-field-guide--canonical",
-      "path": "captures/chromium-390/briefs-visual-product-development-field-guide--canonical.png"
+      "path": "captures/chromium-390/briefs-visual-product-development-field-guide--canonical.png",
+      "sha256": "d16cb7b6da1a42bc136171d7f9cd6413cca855c70613916ef3f2241cf5e1f1ce",
+      "bytes": 1593470
     },
     {
       "project": "chromium-1440",
@@ -435,7 +515,9 @@
       "route": "/briefs/visual-product-development-field-guide/",
       "state": "canonical",
       "routeId": "briefs-visual-product-development-field-guide--canonical",
-      "path": "captures/chromium-1440/briefs-visual-product-development-field-guide--canonical.png"
+      "path": "captures/chromium-1440/briefs-visual-product-development-field-guide--canonical.png",
+      "sha256": "0980de9cc6b2c9f93bd03740bc0372e74ca150e6787eaa2645fbb6f0dac517be",
+      "bytes": 764665
     },
     {
       "project": "chromium-390",
@@ -446,7 +528,9 @@
       "route": "/briefs/visual-product-development-field-guide/thanks/",
       "state": "thanks",
       "routeId": "briefs-visual-product-development-field-guide-thanks--thanks",
-      "path": "captures/chromium-390/briefs-visual-product-development-field-guide-thanks--thanks.png"
+      "path": "captures/chromium-390/briefs-visual-product-development-field-guide-thanks--thanks.png",
+      "sha256": "f2a10127ce97dd1073f1c7c9a8d8333c8babe806a3cf65ff3f8df2c0dfe92cb7",
+      "bytes": 1072068
     },
     {
       "project": "chromium-1440",
@@ -457,7 +541,9 @@
       "route": "/briefs/visual-product-development-field-guide/thanks/",
       "state": "thanks",
       "routeId": "briefs-visual-product-development-field-guide-thanks--thanks",
-      "path": "captures/chromium-1440/briefs-visual-product-development-field-guide-thanks--thanks.png"
+      "path": "captures/chromium-1440/briefs-visual-product-development-field-guide-thanks--thanks.png",
+      "sha256": "d825b2dabadd5eb878f4d67b2e9e4ba93eea03479424982e435b86d2db63b073",
+      "bytes": 442200
     },
     {
       "project": "chromium-390",
@@ -468,7 +554,9 @@
       "route": "/company/",
       "state": "canonical",
       "routeId": "company--canonical",
-      "path": "captures/chromium-390/company--canonical.png"
+      "path": "captures/chromium-390/company--canonical.png",
+      "sha256": "4221ccb198d869d6165e8f6dc0d5c8a505a5ba07aedf3408d2f9c44185e9e66c",
+      "bytes": 1699799
     },
     {
       "project": "chromium-1440",
@@ -479,7 +567,9 @@
       "route": "/company/",
       "state": "canonical",
       "routeId": "company--canonical",
-      "path": "captures/chromium-1440/company--canonical.png"
+      "path": "captures/chromium-1440/company--canonical.png",
+      "sha256": "024b0c4152aa1bfb00037c2877f37b42dfb6eb6332b1a0da6abe7a280aaa1212",
+      "bytes": 748132
     },
     {
       "project": "chromium-390",
@@ -490,7 +580,9 @@
       "route": "/company/careers/",
       "state": "canonical",
       "routeId": "company-careers--canonical",
-      "path": "captures/chromium-390/company-careers--canonical.png"
+      "path": "captures/chromium-390/company-careers--canonical.png",
+      "sha256": "a4c7d933517af27364e97f85564e81536d06f24b86924a42929ef00c1290cb7a",
+      "bytes": 1438805
     },
     {
       "project": "chromium-1440",
@@ -501,7 +593,9 @@
       "route": "/company/careers/",
       "state": "canonical",
       "routeId": "company-careers--canonical",
-      "path": "captures/chromium-1440/company-careers--canonical.png"
+      "path": "captures/chromium-1440/company-careers--canonical.png",
+      "sha256": "88dd2ad82bf250d936292979dca0c776594a9585b3b659185145f7aa60dd0c8e",
+      "bytes": 749306
     },
     {
       "project": "chromium-390",
@@ -512,7 +606,9 @@
       "route": "/company/founder/",
       "state": "canonical",
       "routeId": "company-founder--canonical",
-      "path": "captures/chromium-390/company-founder--canonical.png"
+      "path": "captures/chromium-390/company-founder--canonical.png",
+      "sha256": "09d126b356eea71f0ff6f66a391ca4d18086358f00521302cb7d770e1b510f9a",
+      "bytes": 1656094
     },
     {
       "project": "chromium-1440",
@@ -523,7 +619,9 @@
       "route": "/company/founder/",
       "state": "canonical",
       "routeId": "company-founder--canonical",
-      "path": "captures/chromium-1440/company-founder--canonical.png"
+      "path": "captures/chromium-1440/company-founder--canonical.png",
+      "sha256": "2a110c6d1d0c3fda3bd8c921bab9935201703db72d4eedbcd7068b940ea3fa1b",
+      "bytes": 746824
     },
     {
       "project": "chromium-390",
@@ -534,7 +632,9 @@
       "route": "/company/history/",
       "state": "canonical",
       "routeId": "company-history--canonical",
-      "path": "captures/chromium-390/company-history--canonical.png"
+      "path": "captures/chromium-390/company-history--canonical.png",
+      "sha256": "5148dd391591df25b9174abb7180ff00b4fa58ca5dde646fd5d380e57531574b",
+      "bytes": 1659509
     },
     {
       "project": "chromium-1440",
@@ -545,7 +645,9 @@
       "route": "/company/history/",
       "state": "canonical",
       "routeId": "company-history--canonical",
-      "path": "captures/chromium-1440/company-history--canonical.png"
+      "path": "captures/chromium-1440/company-history--canonical.png",
+      "sha256": "9c55be1ce3ff510f81d5ed9be74284ed3a38a614a9a6bbb088873919ec9ba21b",
+      "bytes": 756939
     },
     {
       "project": "chromium-390",
@@ -556,7 +658,9 @@
       "route": "/company/operating-model/",
       "state": "canonical",
       "routeId": "company-operating-model--canonical",
-      "path": "captures/chromium-390/company-operating-model--canonical.png"
+      "path": "captures/chromium-390/company-operating-model--canonical.png",
+      "sha256": "21f71617070e19f6deb8e3bc8266b9ac738e0ddd4fbbb1c2c680bf38413cc64f",
+      "bytes": 1667042
     },
     {
       "project": "chromium-1440",
@@ -567,7 +671,9 @@
       "route": "/company/operating-model/",
       "state": "canonical",
       "routeId": "company-operating-model--canonical",
-      "path": "captures/chromium-1440/company-operating-model--canonical.png"
+      "path": "captures/chromium-1440/company-operating-model--canonical.png",
+      "sha256": "ef06adf7ec685591c4a838fac7d97d85469d1fced4adffbbc89a367c1d3a5aec",
+      "bytes": 755477
     },
     {
       "project": "chromium-390",
@@ -578,7 +684,9 @@
       "route": "/company/partners/",
       "state": "canonical",
       "routeId": "company-partners--canonical",
-      "path": "captures/chromium-390/company-partners--canonical.png"
+      "path": "captures/chromium-390/company-partners--canonical.png",
+      "sha256": "61ffcdd95a793baa96f22ed9e571d519d56a539d790daf04f88254fd81bb78cc",
+      "bytes": 1655640
     },
     {
       "project": "chromium-1440",
@@ -589,7 +697,9 @@
       "route": "/company/partners/",
       "state": "canonical",
       "routeId": "company-partners--canonical",
-      "path": "captures/chromium-1440/company-partners--canonical.png"
+      "path": "captures/chromium-1440/company-partners--canonical.png",
+      "sha256": "71a61804c48140b69a4399a3a363758a8832c3521c6df8597d845d9c2d4ab3ce",
+      "bytes": 748461
     },
     {
       "project": "chromium-390",
@@ -600,7 +710,9 @@
       "route": "/company/principles/",
       "state": "canonical",
       "routeId": "company-principles--canonical",
-      "path": "captures/chromium-390/company-principles--canonical.png"
+      "path": "captures/chromium-390/company-principles--canonical.png",
+      "sha256": "67bee3416f8a6ef4d8184d3653833efd7ca79a53ec298cebc389b8b885897872",
+      "bytes": 1432203
     },
     {
       "project": "chromium-1440",
@@ -611,7 +723,9 @@
       "route": "/company/principles/",
       "state": "canonical",
       "routeId": "company-principles--canonical",
-      "path": "captures/chromium-1440/company-principles--canonical.png"
+      "path": "captures/chromium-1440/company-principles--canonical.png",
+      "sha256": "0ad7f2b8875287669c471d21256a6caa9bd883aa63f165335938425bf838fdda",
+      "bytes": 757986
     },
     {
       "project": "chromium-390",
@@ -622,7 +736,9 @@
       "route": "/company/selected-experience/",
       "state": "canonical",
       "routeId": "company-selected-experience--canonical",
-      "path": "captures/chromium-390/company-selected-experience--canonical.png"
+      "path": "captures/chromium-390/company-selected-experience--canonical.png",
+      "sha256": "0c9b014c9fda7d21432c5108e782537522511736f1619560b48e06c683ef3610",
+      "bytes": 1526770
     },
     {
       "project": "chromium-1440",
@@ -633,7 +749,9 @@
       "route": "/company/selected-experience/",
       "state": "canonical",
       "routeId": "company-selected-experience--canonical",
-      "path": "captures/chromium-1440/company-selected-experience--canonical.png"
+      "path": "captures/chromium-1440/company-selected-experience--canonical.png",
+      "sha256": "874a57b0437a2cbbf1cd5b8708f4da33c817a75b9e5c2432bf4ff453bc755bd8",
+      "bytes": 756367
     },
     {
       "project": "chromium-390",
@@ -644,7 +762,9 @@
       "route": "/contact/",
       "state": "canonical",
       "routeId": "contact--canonical",
-      "path": "captures/chromium-390/contact--canonical.png"
+      "path": "captures/chromium-390/contact--canonical.png",
+      "sha256": "5add0a0ee14d2d46c6886d6d0bdf0e2e7a477ac6d58b54fb9796ab59f2bc60a4",
+      "bytes": 2110485
     },
     {
       "project": "chromium-1440",
@@ -655,7 +775,9 @@
       "route": "/contact/",
       "state": "canonical",
       "routeId": "contact--canonical",
-      "path": "captures/chromium-1440/contact--canonical.png"
+      "path": "captures/chromium-1440/contact--canonical.png",
+      "sha256": "64f3403dd8496d9271b47a28cf52cecadba1014afe53eab515a31afff6488206",
+      "bytes": 791987
     },
     {
       "project": "chromium-390",
@@ -666,7 +788,9 @@
       "route": "/contact/creative-direction/",
       "state": "canonical",
       "routeId": "contact-creative-direction--canonical",
-      "path": "captures/chromium-390/contact-creative-direction--canonical.png"
+      "path": "captures/chromium-390/contact-creative-direction--canonical.png",
+      "sha256": "87b8cd44d8d84d3a11c4186cec101f449f2ceb655148b26c080550d01a0a5e1c",
+      "bytes": 1633526
     },
     {
       "project": "chromium-1440",
@@ -677,7 +801,9 @@
       "route": "/contact/creative-direction/",
       "state": "canonical",
       "routeId": "contact-creative-direction--canonical",
-      "path": "captures/chromium-1440/contact-creative-direction--canonical.png"
+      "path": "captures/chromium-1440/contact-creative-direction--canonical.png",
+      "sha256": "bf1967e3e8f2aab974b041f1e1b4e394d3127f3880ca76f8c7dd299d3fed5c22",
+      "bytes": 846793
     },
     {
       "project": "chromium-390",
@@ -688,7 +814,9 @@
       "route": "/contact/genai/",
       "state": "canonical",
       "routeId": "contact-genai--canonical",
-      "path": "captures/chromium-390/contact-genai--canonical.png"
+      "path": "captures/chromium-390/contact-genai--canonical.png",
+      "sha256": "1ad9e46d6a0c9135dd7f166d4cb7e7f728da9e2b44c90420786cfe8a70412a97",
+      "bytes": 1576797
     },
     {
       "project": "chromium-1440",
@@ -699,7 +827,9 @@
       "route": "/contact/genai/",
       "state": "canonical",
       "routeId": "contact-genai--canonical",
-      "path": "captures/chromium-1440/contact-genai--canonical.png"
+      "path": "captures/chromium-1440/contact-genai--canonical.png",
+      "sha256": "6fefa8e77e6e34176d11984e921d1408ec6564885280430348fe4bc599978ae3",
+      "bytes": 840250
     },
     {
       "project": "chromium-390",
@@ -710,7 +840,9 @@
       "route": "/contact/marketing-consulting/",
       "state": "canonical",
       "routeId": "contact-marketing-consulting--canonical",
-      "path": "captures/chromium-390/contact-marketing-consulting--canonical.png"
+      "path": "captures/chromium-390/contact-marketing-consulting--canonical.png",
+      "sha256": "398931acb38b0cfd5118d775b1bd9616738622006b51e2e91ea6d385caf59017",
+      "bytes": 1916728
     },
     {
       "project": "chromium-1440",
@@ -721,7 +853,9 @@
       "route": "/contact/marketing-consulting/",
       "state": "canonical",
       "routeId": "contact-marketing-consulting--canonical",
-      "path": "captures/chromium-1440/contact-marketing-consulting--canonical.png"
+      "path": "captures/chromium-1440/contact-marketing-consulting--canonical.png",
+      "sha256": "4fd55dcca470c49ff7c39edfb7df35810f3dbb7ec59f825a6a44b79440c8db94",
+      "bytes": 852481
     },
     {
       "project": "chromium-390",
@@ -732,7 +866,9 @@
       "route": "/contact/media-management/",
       "state": "canonical",
       "routeId": "contact-media-management--canonical",
-      "path": "captures/chromium-390/contact-media-management--canonical.png"
+      "path": "captures/chromium-390/contact-media-management--canonical.png",
+      "sha256": "9f9b29c28bd9b05087e4f71a6e333c93b3b37c7aa36c2c03de33d37a86cbce61",
+      "bytes": 1623391
     },
     {
       "project": "chromium-1440",
@@ -743,7 +879,9 @@
       "route": "/contact/media-management/",
       "state": "canonical",
       "routeId": "contact-media-management--canonical",
-      "path": "captures/chromium-1440/contact-media-management--canonical.png"
+      "path": "captures/chromium-1440/contact-media-management--canonical.png",
+      "sha256": "fef7e519d0817081de63d2977679ac64f632cb5ad13d1a4ff2399644cb646775",
+      "bytes": 860404
     },
     {
       "project": "chromium-390",
@@ -754,7 +892,9 @@
       "route": "/contact/partnerships/",
       "state": "canonical",
       "routeId": "contact-partnerships--canonical",
-      "path": "captures/chromium-390/contact-partnerships--canonical.png"
+      "path": "captures/chromium-390/contact-partnerships--canonical.png",
+      "sha256": "3baf02aac66f39e00512949bd5e15c49baef20730a69f0e511e4435bf6c49f42",
+      "bytes": 1863594
     },
     {
       "project": "chromium-1440",
@@ -765,7 +905,9 @@
       "route": "/contact/partnerships/",
       "state": "canonical",
       "routeId": "contact-partnerships--canonical",
-      "path": "captures/chromium-1440/contact-partnerships--canonical.png"
+      "path": "captures/chromium-1440/contact-partnerships--canonical.png",
+      "sha256": "378db20f8e1ce318f11f4922eff4358f3d25ead7f6cd25be497314ff0246e8c2",
+      "bytes": 852996
     },
     {
       "project": "chromium-390",
@@ -776,7 +918,9 @@
       "route": "/contact/thanks/",
       "state": "thanks",
       "routeId": "contact-thanks--thanks",
-      "path": "captures/chromium-390/contact-thanks--thanks.png"
+      "path": "captures/chromium-390/contact-thanks--thanks.png",
+      "sha256": "f9639db87405305bf072bb6fadafc8a6ae4f24f321cd32dce9fc9918c8184821",
+      "bytes": 1585205
     },
     {
       "project": "chromium-1440",
@@ -787,7 +931,9 @@
       "route": "/contact/thanks/",
       "state": "thanks",
       "routeId": "contact-thanks--thanks",
-      "path": "captures/chromium-1440/contact-thanks--thanks.png"
+      "path": "captures/chromium-1440/contact-thanks--thanks.png",
+      "sha256": "54fdd0b615b91dba5bb2c721fdbeb5c7e2fa4155acff6dd3e68dbc2e46cc8db5",
+      "bytes": 848690
     },
     {
       "project": "chromium-390",
@@ -798,7 +944,9 @@
       "route": "/editorial-policy/",
       "state": "canonical",
       "routeId": "editorial-policy--canonical",
-      "path": "captures/chromium-390/editorial-policy--canonical.png"
+      "path": "captures/chromium-390/editorial-policy--canonical.png",
+      "sha256": "d439f9b4665ed176d920fc508730f135f763e43d262eb68bfba5a6419830c9f7",
+      "bytes": 1783497
     },
     {
       "project": "chromium-1440",
@@ -809,7 +957,9 @@
       "route": "/editorial-policy/",
       "state": "canonical",
       "routeId": "editorial-policy--canonical",
-      "path": "captures/chromium-1440/editorial-policy--canonical.png"
+      "path": "captures/chromium-1440/editorial-policy--canonical.png",
+      "sha256": "56f42d14b07e7a755264063b2edf8ca06c4e25c88c8e6ec673f78030606f5d35",
+      "bytes": 892728
     },
     {
       "project": "chromium-390",
@@ -820,7 +970,9 @@
       "route": "/engagements/",
       "state": "canonical",
       "routeId": "engagements--canonical",
-      "path": "captures/chromium-390/engagements--canonical.png"
+      "path": "captures/chromium-390/engagements--canonical.png",
+      "sha256": "b47cf5a0f48dc29ddde3ab6446191131c22b6a6e9bd94917498b53ba4454f540",
+      "bytes": 1801221
     },
     {
       "project": "chromium-1440",
@@ -831,7 +983,9 @@
       "route": "/engagements/",
       "state": "canonical",
       "routeId": "engagements--canonical",
-      "path": "captures/chromium-1440/engagements--canonical.png"
+      "path": "captures/chromium-1440/engagements--canonical.png",
+      "sha256": "54b5360387646b5eac7a97cc569e7bee02f23167a14860361d31474f114c1db2",
+      "bytes": 854197
     },
     {
       "project": "chromium-390",
@@ -842,7 +996,9 @@
       "route": "/engagements/fractional-creative-office/",
       "state": "canonical",
       "routeId": "engagements-fractional-creative-office--canonical",
-      "path": "captures/chromium-390/engagements-fractional-creative-office--canonical.png"
+      "path": "captures/chromium-390/engagements-fractional-creative-office--canonical.png",
+      "sha256": "c3ab2ad1f66bd0ad6bc83a5ae95b6c21600706a8707d5e5a2ad3cfdbb86ba67a",
+      "bytes": 1892306
     },
     {
       "project": "chromium-1440",
@@ -853,7 +1009,9 @@
       "route": "/engagements/fractional-creative-office/",
       "state": "canonical",
       "routeId": "engagements-fractional-creative-office--canonical",
-      "path": "captures/chromium-1440/engagements-fractional-creative-office--canonical.png"
+      "path": "captures/chromium-1440/engagements-fractional-creative-office--canonical.png",
+      "sha256": "b816bf14728652919bf526238cccb4196ada8e751a3bf786c4e3a0f1848f0bb1",
+      "bytes": 860121
     },
     {
       "project": "chromium-390",
@@ -864,7 +1022,9 @@
       "route": "/engagements/genai-lab/",
       "state": "canonical",
       "routeId": "engagements-genai-lab--canonical",
-      "path": "captures/chromium-390/engagements-genai-lab--canonical.png"
+      "path": "captures/chromium-390/engagements-genai-lab--canonical.png",
+      "sha256": "fda68b3d750b086ffe55d4aa0893bbad3a4e7d19b97a40084df2891c37573484",
+      "bytes": 1795194
     },
     {
       "project": "chromium-1440",
@@ -875,7 +1035,9 @@
       "route": "/engagements/genai-lab/",
       "state": "canonical",
       "routeId": "engagements-genai-lab--canonical",
-      "path": "captures/chromium-1440/engagements-genai-lab--canonical.png"
+      "path": "captures/chromium-1440/engagements-genai-lab--canonical.png",
+      "sha256": "91a243a9b4bfdf6cbf60780c6e0855ae33053bda358f2f8da3cc24c5a3232d63",
+      "bytes": 852340
     },
     {
       "project": "chromium-390",
@@ -886,7 +1048,9 @@
       "route": "/engagements/managed-media-desk/",
       "state": "canonical",
       "routeId": "engagements-managed-media-desk--canonical",
-      "path": "captures/chromium-390/engagements-managed-media-desk--canonical.png"
+      "path": "captures/chromium-390/engagements-managed-media-desk--canonical.png",
+      "sha256": "a336187ffa0e040ac927502766bcc8a4dd99f13691e4aafaa0c81cc32699f196",
+      "bytes": 1628666
     },
     {
       "project": "chromium-1440",
@@ -897,7 +1061,9 @@
       "route": "/engagements/managed-media-desk/",
       "state": "canonical",
       "routeId": "engagements-managed-media-desk--canonical",
-      "path": "captures/chromium-1440/engagements-managed-media-desk--canonical.png"
+      "path": "captures/chromium-1440/engagements-managed-media-desk--canonical.png",
+      "sha256": "a599097156a6c3670927cb3049709473e8cea778e742ebd79e9ce1b459cad0d7",
+      "bytes": 859897
     },
     {
       "project": "chromium-390",
@@ -908,7 +1074,9 @@
       "route": "/engagements/product-launch-room/",
       "state": "canonical",
       "routeId": "engagements-product-launch-room--canonical",
-      "path": "captures/chromium-390/engagements-product-launch-room--canonical.png"
+      "path": "captures/chromium-390/engagements-product-launch-room--canonical.png",
+      "sha256": "8e8173ede2f31035cba4b97333212e2e4d8b27ae448ca5af1e4768bdfb45054f",
+      "bytes": 1863396
     },
     {
       "project": "chromium-1440",
@@ -919,7 +1087,9 @@
       "route": "/engagements/product-launch-room/",
       "state": "canonical",
       "routeId": "engagements-product-launch-room--canonical",
-      "path": "captures/chromium-1440/engagements-product-launch-room--canonical.png"
+      "path": "captures/chromium-1440/engagements-product-launch-room--canonical.png",
+      "sha256": "f0aaa32976886ba1c69fe8f9a4c75290968640af25d28dccf46debd5ccd85660",
+      "bytes": 856054
     },
     {
       "project": "chromium-390",
@@ -930,7 +1100,9 @@
       "route": "/engagements/transformation-sprint/",
       "state": "canonical",
       "routeId": "engagements-transformation-sprint--canonical",
-      "path": "captures/chromium-390/engagements-transformation-sprint--canonical.png"
+      "path": "captures/chromium-390/engagements-transformation-sprint--canonical.png",
+      "sha256": "77460a550ac2ba9337eb7e3fd7660069ac982ee2a68f6031bd0d46411ca7de27",
+      "bytes": 1886764
     },
     {
       "project": "chromium-1440",
@@ -941,7 +1113,9 @@
       "route": "/engagements/transformation-sprint/",
       "state": "canonical",
       "routeId": "engagements-transformation-sprint--canonical",
-      "path": "captures/chromium-1440/engagements-transformation-sprint--canonical.png"
+      "path": "captures/chromium-1440/engagements-transformation-sprint--canonical.png",
+      "sha256": "d3a51098c792efe2f7ff709b26b7644a6f3ab8a8736152243489bc44510da31e",
+      "bytes": 858384
     },
     {
       "project": "chromium-390",
@@ -952,7 +1126,9 @@
       "route": "/horizon/",
       "state": "canonical",
       "routeId": "horizon--canonical",
-      "path": "captures/chromium-390/horizon--canonical.png"
+      "path": "captures/chromium-390/horizon--canonical.png",
+      "sha256": "e14dfab86ee1e06ae77e1d3ed4447fd1bc1452db00f2f3048b8517aa202c0835",
+      "bytes": 1629651
     },
     {
       "project": "chromium-1440",
@@ -963,7 +1139,9 @@
       "route": "/horizon/",
       "state": "canonical",
       "routeId": "horizon--canonical",
-      "path": "captures/chromium-1440/horizon--canonical.png"
+      "path": "captures/chromium-1440/horizon--canonical.png",
+      "sha256": "ae2e32a1b7536106085b7d2b56956019752bdfe7afaa29c5049063e0287040b5",
+      "bytes": 154142
     },
     {
       "project": "chromium-390",
@@ -974,7 +1152,9 @@
       "route": "/horizon/accessibility-becomes-generative-art-direction/",
       "state": "canonical",
       "routeId": "horizon-accessibility-becomes-generative-art-direction--canonical",
-      "path": "captures/chromium-390/horizon-accessibility-becomes-generative-art-direction--canonical.png"
+      "path": "captures/chromium-390/horizon-accessibility-becomes-generative-art-direction--canonical.png",
+      "sha256": "cf1a86d842ff1f81dbd7e403d437bc1e9131565f3e5bb1299c8d2dce20b45543",
+      "bytes": 1075051
     },
     {
       "project": "chromium-1440",
@@ -985,7 +1165,9 @@
       "route": "/horizon/accessibility-becomes-generative-art-direction/",
       "state": "canonical",
       "routeId": "horizon-accessibility-becomes-generative-art-direction--canonical",
-      "path": "captures/chromium-1440/horizon-accessibility-becomes-generative-art-direction--canonical.png"
+      "path": "captures/chromium-1440/horizon-accessibility-becomes-generative-art-direction--canonical.png",
+      "sha256": "6cc1dc750428e8652ac50d9f7169823102eaeba8a92f91628acb47c8db55b292",
+      "bytes": 250724
     },
     {
       "project": "chromium-390",
@@ -996,7 +1178,9 @@
       "route": "/horizon/agentic-media-needs-a-control-room/",
       "state": "canonical",
       "routeId": "horizon-agentic-media-needs-a-control-room--canonical",
-      "path": "captures/chromium-390/horizon-agentic-media-needs-a-control-room--canonical.png"
+      "path": "captures/chromium-390/horizon-agentic-media-needs-a-control-room--canonical.png",
+      "sha256": "14422456bf1c1e06e42babdf6b4f6a7a4f1fe03b3da71b82e8f973250f3fb339",
+      "bytes": 1037444
     },
     {
       "project": "chromium-1440",
@@ -1007,7 +1191,9 @@
       "route": "/horizon/agentic-media-needs-a-control-room/",
       "state": "canonical",
       "routeId": "horizon-agentic-media-needs-a-control-room--canonical",
-      "path": "captures/chromium-1440/horizon-agentic-media-needs-a-control-room--canonical.png"
+      "path": "captures/chromium-1440/horizon-agentic-media-needs-a-control-room--canonical.png",
+      "sha256": "b250ea88ebe24a34133b35c5ea55cb9aa28a6125ea8b0f7b395292997bdef1f6",
+      "bytes": 719358
     },
     {
       "project": "chromium-390",
@@ -1018,7 +1204,9 @@
       "route": "/horizon/brand-memory-becomes-an-operating-system/",
       "state": "canonical",
       "routeId": "horizon-brand-memory-becomes-an-operating-system--canonical",
-      "path": "captures/chromium-390/horizon-brand-memory-becomes-an-operating-system--canonical.png"
+      "path": "captures/chromium-390/horizon-brand-memory-becomes-an-operating-system--canonical.png",
+      "sha256": "9ecd990fb180aca5f2c33e219eda275176cb0ceb7c4b5b9b451e2a40ca18ade5",
+      "bytes": 1659118
     },
     {
       "project": "chromium-1440",
@@ -1029,7 +1217,9 @@
       "route": "/horizon/brand-memory-becomes-an-operating-system/",
       "state": "canonical",
       "routeId": "horizon-brand-memory-becomes-an-operating-system--canonical",
-      "path": "captures/chromium-1440/horizon-brand-memory-becomes-an-operating-system--canonical.png"
+      "path": "captures/chromium-1440/horizon-brand-memory-becomes-an-operating-system--canonical.png",
+      "sha256": "a5b8335faf5f09ea51ae579c6cfe59f56a4e3d7d755d05d37a744e9a6e25d254",
+      "bytes": 943668
     },
     {
       "project": "chromium-390",
@@ -1040,7 +1230,9 @@
       "route": "/horizon/compute-becomes-a-creative-material/",
       "state": "canonical",
       "routeId": "horizon-compute-becomes-a-creative-material--canonical",
-      "path": "captures/chromium-390/horizon-compute-becomes-a-creative-material--canonical.png"
+      "path": "captures/chromium-390/horizon-compute-becomes-a-creative-material--canonical.png",
+      "sha256": "03a49f59ff943255514f0a0240db0a0121642652830ea326166540ca4a2805e9",
+      "bytes": 1654167
     },
     {
       "project": "chromium-1440",
@@ -1051,7 +1243,9 @@
       "route": "/horizon/compute-becomes-a-creative-material/",
       "state": "canonical",
       "routeId": "horizon-compute-becomes-a-creative-material--canonical",
-      "path": "captures/chromium-1440/horizon-compute-becomes-a-creative-material--canonical.png"
+      "path": "captures/chromium-1440/horizon-compute-becomes-a-creative-material--canonical.png",
+      "sha256": "c01a65fe16a998702f5d5faff1a97f868a05a005125052e7e2f7c233165bcdf5",
+      "bytes": 945718
     },
     {
       "project": "chromium-390",
@@ -1062,7 +1256,9 @@
       "route": "/horizon/direction-after-infinite-production/",
       "state": "canonical",
       "routeId": "horizon-direction-after-infinite-production--canonical",
-      "path": "captures/chromium-390/horizon-direction-after-infinite-production--canonical.png"
+      "path": "captures/chromium-390/horizon-direction-after-infinite-production--canonical.png",
+      "sha256": "a1f894bedc1a87d3e3cbb182106dbf3f510a0628ef68be2dbf115dd8bb85b9b2",
+      "bytes": 1043878
     },
     {
       "project": "chromium-1440",
@@ -1073,7 +1269,9 @@
       "route": "/horizon/direction-after-infinite-production/",
       "state": "canonical",
       "routeId": "horizon-direction-after-infinite-production--canonical",
-      "path": "captures/chromium-1440/horizon-direction-after-infinite-production--canonical.png"
+      "path": "captures/chromium-1440/horizon-direction-after-infinite-production--canonical.png",
+      "sha256": "0d54bcb6e0824a089aab14d7aa7235fd2339c82e9ab3677d3a3502ea8e58d994",
+      "bytes": 223603
     },
     {
       "project": "chromium-390",
@@ -1084,7 +1282,9 @@
       "route": "/horizon/identity-rights-become-production-infrastructure/",
       "state": "canonical",
       "routeId": "horizon-identity-rights-become-production-infrastructure--canonical",
-      "path": "captures/chromium-390/horizon-identity-rights-become-production-infrastructure--canonical.png"
+      "path": "captures/chromium-390/horizon-identity-rights-become-production-infrastructure--canonical.png",
+      "sha256": "c184c564e9f6433810c1a2899e6ed0ef72b8b7953f253a2fd00139e763456579",
+      "bytes": 1077155
     },
     {
       "project": "chromium-1440",
@@ -1095,7 +1295,9 @@
       "route": "/horizon/identity-rights-become-production-infrastructure/",
       "state": "canonical",
       "routeId": "horizon-identity-rights-become-production-infrastructure--canonical",
-      "path": "captures/chromium-1440/horizon-identity-rights-become-production-infrastructure--canonical.png"
+      "path": "captures/chromium-1440/horizon-identity-rights-become-production-infrastructure--canonical.png",
+      "sha256": "9ea1e35a41c16d787ff2a727bd9fcdddbc24577b95c68a39647d055bcdd999e8",
+      "bytes": 839689
     },
     {
       "project": "chromium-390",
@@ -1106,7 +1308,9 @@
       "route": "/horizon/marketing-after-surveillance/",
       "state": "canonical",
       "routeId": "horizon-marketing-after-surveillance--canonical",
-      "path": "captures/chromium-390/horizon-marketing-after-surveillance--canonical.png"
+      "path": "captures/chromium-390/horizon-marketing-after-surveillance--canonical.png",
+      "sha256": "33c6a08dc2c78eda2d777a24fd06723ec05731c2c232ad58bd02a4e177c9f1b9",
+      "bytes": 1004647
     },
     {
       "project": "chromium-1440",
@@ -1117,7 +1321,9 @@
       "route": "/horizon/marketing-after-surveillance/",
       "state": "canonical",
       "routeId": "horizon-marketing-after-surveillance--canonical",
-      "path": "captures/chromium-1440/horizon-marketing-after-surveillance--canonical.png"
+      "path": "captures/chromium-1440/horizon-marketing-after-surveillance--canonical.png",
+      "sha256": "25df3b4e07cb36f7ced98a83624673dd763cf32d7578e77f98ed861557cbd8d2",
+      "bytes": 723712
     },
     {
       "project": "chromium-390",
@@ -1128,7 +1334,9 @@
       "route": "/horizon/media-escapes-the-frame/",
       "state": "canonical",
       "routeId": "horizon-media-escapes-the-frame--canonical",
-      "path": "captures/chromium-390/horizon-media-escapes-the-frame--canonical.png"
+      "path": "captures/chromium-390/horizon-media-escapes-the-frame--canonical.png",
+      "sha256": "66198713502e799e64b99c97c23e7379a9399b27671b984fdb907f14b28af9b6",
+      "bytes": 999715
     },
     {
       "project": "chromium-1440",
@@ -1139,7 +1347,9 @@
       "route": "/horizon/media-escapes-the-frame/",
       "state": "canonical",
       "routeId": "horizon-media-escapes-the-frame--canonical",
-      "path": "captures/chromium-1440/horizon-media-escapes-the-frame--canonical.png"
+      "path": "captures/chromium-1440/horizon-media-escapes-the-frame--canonical.png",
+      "sha256": "18883cdabb586d03dca6f77749a7715330f4a11d171670245137cd5215e081cf",
+      "bytes": 719400
     },
     {
       "project": "chromium-390",
@@ -1150,7 +1360,9 @@
       "route": "/horizon/provenance-is-the-new-publishing-layer/",
       "state": "canonical",
       "routeId": "horizon-provenance-is-the-new-publishing-layer--canonical",
-      "path": "captures/chromium-390/horizon-provenance-is-the-new-publishing-layer--canonical.png"
+      "path": "captures/chromium-390/horizon-provenance-is-the-new-publishing-layer--canonical.png",
+      "sha256": "f5421d23d0ce5d5bdabd08772c438184509b6742f7b10a5235f33efb7c7d3960",
+      "bytes": 1040826
     },
     {
       "project": "chromium-1440",
@@ -1161,7 +1373,9 @@
       "route": "/horizon/provenance-is-the-new-publishing-layer/",
       "state": "canonical",
       "routeId": "horizon-provenance-is-the-new-publishing-layer--canonical",
-      "path": "captures/chromium-1440/horizon-provenance-is-the-new-publishing-layer--canonical.png"
+      "path": "captures/chromium-1440/horizon-provenance-is-the-new-publishing-layer--canonical.png",
+      "sha256": "e9f07d536b654412f21647b7f95e5ee97f42f7f253d967453aa7badd3ff28d9f",
+      "bytes": 241261
     },
     {
       "project": "chromium-390",
@@ -1172,7 +1386,9 @@
       "route": "/horizon/the-media-library-starts-making-decisions/",
       "state": "canonical",
       "routeId": "horizon-the-media-library-starts-making-decisions--canonical",
-      "path": "captures/chromium-390/horizon-the-media-library-starts-making-decisions--canonical.png"
+      "path": "captures/chromium-390/horizon-the-media-library-starts-making-decisions--canonical.png",
+      "sha256": "a98bf4655d04ce6b99abb58b42e2d851c876206138d90ad4bf184209cb90ea1a",
+      "bytes": 1683247
     },
     {
       "project": "chromium-1440",
@@ -1183,7 +1399,9 @@
       "route": "/horizon/the-media-library-starts-making-decisions/",
       "state": "canonical",
       "routeId": "horizon-the-media-library-starts-making-decisions--canonical",
-      "path": "captures/chromium-1440/horizon-the-media-library-starts-making-decisions--canonical.png"
+      "path": "captures/chromium-1440/horizon-the-media-library-starts-making-decisions--canonical.png",
+      "sha256": "130ac2251de89f83549ac9fee20481bbaaa84cb62e7d44348996c1922d1d02e1",
+      "bytes": 254394
     },
     {
       "project": "chromium-390",
@@ -1194,7 +1412,9 @@
       "route": "/horizon/the-sovereign-microstudio/",
       "state": "canonical",
       "routeId": "horizon-the-sovereign-microstudio--canonical",
-      "path": "captures/chromium-390/horizon-the-sovereign-microstudio--canonical.png"
+      "path": "captures/chromium-390/horizon-the-sovereign-microstudio--canonical.png",
+      "sha256": "5967e4c82b9aad0085c4f91d9da3551a4d8b1fa5de0bc0b6857e46cb0bc5671d",
+      "bytes": 1659374
     },
     {
       "project": "chromium-1440",
@@ -1205,7 +1425,9 @@
       "route": "/horizon/the-sovereign-microstudio/",
       "state": "canonical",
       "routeId": "horizon-the-sovereign-microstudio--canonical",
-      "path": "captures/chromium-1440/horizon-the-sovereign-microstudio--canonical.png"
+      "path": "captures/chromium-1440/horizon-the-sovereign-microstudio--canonical.png",
+      "sha256": "6b8074d48b187f90a4d102b35d807c764de8d99f2ea47c3a79c4a5099d2be39f",
+      "bytes": 958009
     },
     {
       "project": "chromium-390",
@@ -1216,7 +1438,9 @@
       "route": "/horizon/the-story-is-assembled-at-the-edge/",
       "state": "canonical",
       "routeId": "horizon-the-story-is-assembled-at-the-edge--canonical",
-      "path": "captures/chromium-390/horizon-the-story-is-assembled-at-the-edge--canonical.png"
+      "path": "captures/chromium-390/horizon-the-story-is-assembled-at-the-edge--canonical.png",
+      "sha256": "258909b0ac2d7472307873d894749bf78dbe0515f9fe2cd192afe8be4843c02e",
+      "bytes": 1083229
     },
     {
       "project": "chromium-1440",
@@ -1227,7 +1451,9 @@
       "route": "/horizon/the-story-is-assembled-at-the-edge/",
       "state": "canonical",
       "routeId": "horizon-the-story-is-assembled-at-the-edge--canonical",
-      "path": "captures/chromium-1440/horizon-the-story-is-assembled-at-the-edge--canonical.png"
+      "path": "captures/chromium-1440/horizon-the-story-is-assembled-at-the-edge--canonical.png",
+      "sha256": "e250a8c50f49fe60ed0f95caedbeeb0af980bff3ccd235e659746a3340ed3e80",
+      "bytes": 816400
     },
     {
       "project": "chromium-390",
@@ -1238,7 +1464,9 @@
       "route": "/industries/",
       "state": "canonical",
       "routeId": "industries--canonical",
-      "path": "captures/chromium-390/industries--canonical.png"
+      "path": "captures/chromium-390/industries--canonical.png",
+      "sha256": "bd3eb79bf9981ab8d3d93568820d7ea214e04c085c4990db9f7899111e0fb5f5",
+      "bytes": 1661542
     },
     {
       "project": "chromium-1440",
@@ -1249,7 +1477,9 @@
       "route": "/industries/",
       "state": "canonical",
       "routeId": "industries--canonical",
-      "path": "captures/chromium-1440/industries--canonical.png"
+      "path": "captures/chromium-1440/industries--canonical.png",
+      "sha256": "54d6ccbd106c4c98994efe23523fd0f1f923a4619bea72da2f8f32d916cd3623",
+      "bytes": 856716
     },
     {
       "project": "chromium-390",
@@ -1260,7 +1490,9 @@
       "route": "/industries/agencies/",
       "state": "canonical",
       "routeId": "industries-agencies--canonical",
-      "path": "captures/chromium-390/industries-agencies--canonical.png"
+      "path": "captures/chromium-390/industries-agencies--canonical.png",
+      "sha256": "3108590039e01e6e202cb1da1da03c5dd6d71da98043c07a6c7817cfb317dacf",
+      "bytes": 1078571
     },
     {
       "project": "chromium-1440",
@@ -1271,7 +1503,9 @@
       "route": "/industries/agencies/",
       "state": "canonical",
       "routeId": "industries-agencies--canonical",
-      "path": "captures/chromium-1440/industries-agencies--canonical.png"
+      "path": "captures/chromium-1440/industries-agencies--canonical.png",
+      "sha256": "9dc71a3a93d4ae92c2894399d824fb69b308a674d445bbc5aff73a8ff209f875",
+      "bytes": 728958
     },
     {
       "project": "chromium-390",
@@ -1282,7 +1516,9 @@
       "route": "/industries/consumer-brands/",
       "state": "canonical",
       "routeId": "industries-consumer-brands--canonical",
-      "path": "captures/chromium-390/industries-consumer-brands--canonical.png"
+      "path": "captures/chromium-390/industries-consumer-brands--canonical.png",
+      "sha256": "7015ae4be41519f9a81610fa9d6655b4d701fe66b180676d90a4d110874487f0",
+      "bytes": 1675036
     },
     {
       "project": "chromium-1440",
@@ -1293,7 +1529,9 @@
       "route": "/industries/consumer-brands/",
       "state": "canonical",
       "routeId": "industries-consumer-brands--canonical",
-      "path": "captures/chromium-1440/industries-consumer-brands--canonical.png"
+      "path": "captures/chromium-1440/industries-consumer-brands--canonical.png",
+      "sha256": "fb600ad490d92fb8e4f6f10f9bf83024adf404eb0ed23135c6bc653b79cd9d0b",
+      "bytes": 866733
     },
     {
       "project": "chromium-390",
@@ -1304,7 +1542,9 @@
       "route": "/industries/education-culture/",
       "state": "canonical",
       "routeId": "industries-education-culture--canonical",
-      "path": "captures/chromium-390/industries-education-culture--canonical.png"
+      "path": "captures/chromium-390/industries-education-culture--canonical.png",
+      "sha256": "5eba936242aead8961dca1e91b2ad04b4c7a783c1f90bdc3ab58b255c4f20ee9",
+      "bytes": 1092972
     },
     {
       "project": "chromium-1440",
@@ -1315,7 +1555,9 @@
       "route": "/industries/education-culture/",
       "state": "canonical",
       "routeId": "industries-education-culture--canonical",
-      "path": "captures/chromium-1440/industries-education-culture--canonical.png"
+      "path": "captures/chromium-1440/industries-education-culture--canonical.png",
+      "sha256": "d00968d6d6cebac923da4d86a622cd71f889c5ccc8608bc9b283caa0e0a2e754",
+      "bytes": 748876
     },
     {
       "project": "chromium-390",
@@ -1326,7 +1568,9 @@
       "route": "/industries/founder-led-companies/",
       "state": "canonical",
       "routeId": "industries-founder-led-companies--canonical",
-      "path": "captures/chromium-390/industries-founder-led-companies--canonical.png"
+      "path": "captures/chromium-390/industries-founder-led-companies--canonical.png",
+      "sha256": "09bc74f269fe43ec513b545e858b9c3824f7c0e0b37fe67286bc65b733828c04",
+      "bytes": 1694493
     },
     {
       "project": "chromium-1440",
@@ -1337,7 +1581,9 @@
       "route": "/industries/founder-led-companies/",
       "state": "canonical",
       "routeId": "industries-founder-led-companies--canonical",
-      "path": "captures/chromium-1440/industries-founder-led-companies--canonical.png"
+      "path": "captures/chromium-1440/industries-founder-led-companies--canonical.png",
+      "sha256": "e092de0007fbe8eabc4537aff0b744a64c5f802900ab0382ebc1cc95c0f29a5e",
+      "bytes": 868247
     },
     {
       "project": "chromium-390",
@@ -1348,7 +1594,9 @@
       "route": "/industries/media-entertainment/",
       "state": "canonical",
       "routeId": "industries-media-entertainment--canonical",
-      "path": "captures/chromium-390/industries-media-entertainment--canonical.png"
+      "path": "captures/chromium-390/industries-media-entertainment--canonical.png",
+      "sha256": "c2b52f8fcf5909ce47dc25e72bfb64a852fc0f358b1a82b86da1b36b6d48b1cc",
+      "bytes": 1673819
     },
     {
       "project": "chromium-1440",
@@ -1359,7 +1607,9 @@
       "route": "/industries/media-entertainment/",
       "state": "canonical",
       "routeId": "industries-media-entertainment--canonical",
-      "path": "captures/chromium-1440/industries-media-entertainment--canonical.png"
+      "path": "captures/chromium-1440/industries-media-entertainment--canonical.png",
+      "sha256": "afa370d9ecbe6ff73c96d0341889428cef599aee5e3801bc935ef3f01c9068e7",
+      "bytes": 863238
     },
     {
       "project": "chromium-390",
@@ -1370,7 +1620,9 @@
       "route": "/industries/retail-commerce/",
       "state": "canonical",
       "routeId": "industries-retail-commerce--canonical",
-      "path": "captures/chromium-390/industries-retail-commerce--canonical.png"
+      "path": "captures/chromium-390/industries-retail-commerce--canonical.png",
+      "sha256": "621da306d5e3dcc5ff8cdb6fa5a97f30fe4e19dd32ed8fc4cf0e87e34b660203",
+      "bytes": 1034715
     },
     {
       "project": "chromium-1440",
@@ -1381,7 +1633,9 @@
       "route": "/industries/retail-commerce/",
       "state": "canonical",
       "routeId": "industries-retail-commerce--canonical",
-      "path": "captures/chromium-1440/industries-retail-commerce--canonical.png"
+      "path": "captures/chromium-1440/industries-retail-commerce--canonical.png",
+      "sha256": "ad18b9fd6550d5f9c38d8bc27332f43b99bf34ab92dd91867b02027a827c0abe",
+      "bytes": 722029
     },
     {
       "project": "chromium-390",
@@ -1392,7 +1646,9 @@
       "route": "/industries/software-platforms/",
       "state": "canonical",
       "routeId": "industries-software-platforms--canonical",
-      "path": "captures/chromium-390/industries-software-platforms--canonical.png"
+      "path": "captures/chromium-390/industries-software-platforms--canonical.png",
+      "sha256": "67d5201774bb8c697394e7cdea3b4e78fff5d7af89b0fc0a0e1976e4bcb449f3",
+      "bytes": 1773560
     },
     {
       "project": "chromium-1440",
@@ -1403,7 +1659,9 @@
       "route": "/industries/software-platforms/",
       "state": "canonical",
       "routeId": "industries-software-platforms--canonical",
-      "path": "captures/chromium-1440/industries-software-platforms--canonical.png"
+      "path": "captures/chromium-1440/industries-software-platforms--canonical.png",
+      "sha256": "2ee6c29a6c5c8ea79483acbd34a0b5940ddcc24811df5ad4a91a716e956c3655",
+      "bytes": 756247
     },
     {
       "project": "chromium-390",
@@ -1414,7 +1672,9 @@
       "route": "/industries/sports-wellness/",
       "state": "canonical",
       "routeId": "industries-sports-wellness--canonical",
-      "path": "captures/chromium-390/industries-sports-wellness--canonical.png"
+      "path": "captures/chromium-390/industries-sports-wellness--canonical.png",
+      "sha256": "7ae253d34950e956db49b4d3a0ea12ea7ef37ce7659a393f8f009f3e12a7d84c",
+      "bytes": 1099749
     },
     {
       "project": "chromium-1440",
@@ -1425,7 +1685,9 @@
       "route": "/industries/sports-wellness/",
       "state": "canonical",
       "routeId": "industries-sports-wellness--canonical",
-      "path": "captures/chromium-1440/industries-sports-wellness--canonical.png"
+      "path": "captures/chromium-1440/industries-sports-wellness--canonical.png",
+      "sha256": "12251fbe01a76379b40a01462398b0f83906789a379ae419b6523e455976427b",
+      "bytes": 753630
     },
     {
       "project": "chromium-390",
@@ -1436,7 +1698,9 @@
       "route": "/insights/",
       "state": "canonical",
       "routeId": "insights--canonical",
-      "path": "captures/chromium-390/insights--canonical.png"
+      "path": "captures/chromium-390/insights--canonical.png",
+      "sha256": "35d33e79a86e642f092ccfea521e4e8d5e4508dd3d32bcbb861fed9f28b7928f",
+      "bytes": 1659208
     },
     {
       "project": "chromium-1440",
@@ -1447,7 +1711,9 @@
       "route": "/insights/",
       "state": "canonical",
       "routeId": "insights--canonical",
-      "path": "captures/chromium-1440/insights--canonical.png"
+      "path": "captures/chromium-1440/insights--canonical.png",
+      "sha256": "6ae3ccd45d884219c970ac02ca02d2af6258a11b9c948e45c228a9e0b6da7428",
+      "bytes": 738169
     },
     {
       "project": "chromium-390",
@@ -1458,7 +1724,9 @@
       "route": "/insights/25-years-from-brand-studio-to-ai-company/",
       "state": "canonical",
       "routeId": "insights-25-years-from-brand-studio-to-ai-company--canonical",
-      "path": "captures/chromium-390/insights-25-years-from-brand-studio-to-ai-company--canonical.png"
+      "path": "captures/chromium-390/insights-25-years-from-brand-studio-to-ai-company--canonical.png",
+      "sha256": "7800e46a349f76fc9010cb052f92d5232c2f8030c0d38b7df3a7ad13d0577b59",
+      "bytes": 1410683
     },
     {
       "project": "chromium-1440",
@@ -1469,7 +1737,9 @@
       "route": "/insights/25-years-from-brand-studio-to-ai-company/",
       "state": "canonical",
       "routeId": "insights-25-years-from-brand-studio-to-ai-company--canonical",
-      "path": "captures/chromium-1440/insights-25-years-from-brand-studio-to-ai-company--canonical.png"
+      "path": "captures/chromium-1440/insights-25-years-from-brand-studio-to-ai-company--canonical.png",
+      "sha256": "dd72324790d480c4670f93c3a8d8cc3db8cbe4b8a63acfc702723ee3b48f0a4f",
+      "bytes": 733514
     },
     {
       "project": "chromium-390",
@@ -1480,7 +1750,9 @@
       "route": "/insights/accessibility-is-art-direction/",
       "state": "canonical",
       "routeId": "insights-accessibility-is-art-direction--canonical",
-      "path": "captures/chromium-390/insights-accessibility-is-art-direction--canonical.png"
+      "path": "captures/chromium-390/insights-accessibility-is-art-direction--canonical.png",
+      "sha256": "7391e887993d8bb9a1fb85a507f3d852599a8267d9344ee1a7bfb313df8780ea",
+      "bytes": 1364615
     },
     {
       "project": "chromium-1440",
@@ -1491,7 +1763,9 @@
       "route": "/insights/accessibility-is-art-direction/",
       "state": "canonical",
       "routeId": "insights-accessibility-is-art-direction--canonical",
-      "path": "captures/chromium-1440/insights-accessibility-is-art-direction--canonical.png"
+      "path": "captures/chromium-1440/insights-accessibility-is-art-direction--canonical.png",
+      "sha256": "b345668e8aa6b8976c7e472fa2fc8879c97af962a9c6e5b9153509de06c11cde",
+      "bytes": 734978
     },
     {
       "project": "chromium-390",
@@ -1502,7 +1776,9 @@
       "route": "/insights/brand-memory-in-generative-systems/",
       "state": "canonical",
       "routeId": "insights-brand-memory-in-generative-systems--canonical",
-      "path": "captures/chromium-390/insights-brand-memory-in-generative-systems--canonical.png"
+      "path": "captures/chromium-390/insights-brand-memory-in-generative-systems--canonical.png",
+      "sha256": "fdb0f04ed2f558e6010e9afa110b1ddc79bc799ed62b0d51263c6764a38868f9",
+      "bytes": 1687203
     },
     {
       "project": "chromium-1440",
@@ -1513,7 +1789,9 @@
       "route": "/insights/brand-memory-in-generative-systems/",
       "state": "canonical",
       "routeId": "insights-brand-memory-in-generative-systems--canonical",
-      "path": "captures/chromium-1440/insights-brand-memory-in-generative-systems--canonical.png"
+      "path": "captures/chromium-1440/insights-brand-memory-in-generative-systems--canonical.png",
+      "sha256": "f1fcf8d4c053bdb71824e9aec844e264f19ae073b9424813fb042011a211206e",
+      "bytes": 745890
     },
     {
       "project": "chromium-390",
@@ -1524,7 +1802,9 @@
       "route": "/insights/creative-direction-after-model-abundance/",
       "state": "canonical",
       "routeId": "insights-creative-direction-after-model-abundance--canonical",
-      "path": "captures/chromium-390/insights-creative-direction-after-model-abundance--canonical.png"
+      "path": "captures/chromium-390/insights-creative-direction-after-model-abundance--canonical.png",
+      "sha256": "0c4f2ee00c83bac5d6afefe86695fcc82324c58a41adbde1a86ec9d91cf47b2f",
+      "bytes": 1109237
     },
     {
       "project": "chromium-1440",
@@ -1535,7 +1815,9 @@
       "route": "/insights/creative-direction-after-model-abundance/",
       "state": "canonical",
       "routeId": "insights-creative-direction-after-model-abundance--canonical",
-      "path": "captures/chromium-1440/insights-creative-direction-after-model-abundance--canonical.png"
+      "path": "captures/chromium-1440/insights-creative-direction-after-model-abundance--canonical.png",
+      "sha256": "c2b8c8572aa0cb26c8d20daf89cf29232f9c78a507bbd54dc5110d355168cd10",
+      "bytes": 844514
     },
     {
       "project": "chromium-390",
@@ -1546,7 +1828,9 @@
       "route": "/insights/from-prompting-to-production-systems/",
       "state": "canonical",
       "routeId": "insights-from-prompting-to-production-systems--canonical",
-      "path": "captures/chromium-390/insights-from-prompting-to-production-systems--canonical.png"
+      "path": "captures/chromium-390/insights-from-prompting-to-production-systems--canonical.png",
+      "sha256": "f15a548d8765332ebda08ee8df24353e9e504f390a3b44fd0f0239463dc336e7",
+      "bytes": 1092839
     },
     {
       "project": "chromium-1440",
@@ -1557,7 +1841,9 @@
       "route": "/insights/from-prompting-to-production-systems/",
       "state": "canonical",
       "routeId": "insights-from-prompting-to-production-systems--canonical",
-      "path": "captures/chromium-1440/insights-from-prompting-to-production-systems--canonical.png"
+      "path": "captures/chromium-1440/insights-from-prompting-to-production-systems--canonical.png",
+      "sha256": "7f5ccb06d24656c5618f704701cd6450e18098191124880dda25d8eac25af5c7",
+      "bytes": 837052
     },
     {
       "project": "chromium-390",
@@ -1568,7 +1854,9 @@
       "route": "/insights/how-to-evaluate-a-genai-pilot/",
       "state": "canonical",
       "routeId": "insights-how-to-evaluate-a-genai-pilot--canonical",
-      "path": "captures/chromium-390/insights-how-to-evaluate-a-genai-pilot--canonical.png"
+      "path": "captures/chromium-390/insights-how-to-evaluate-a-genai-pilot--canonical.png",
+      "sha256": "9794744d32f89e7d7ced33657b01030208848bc0013494b96eb90ec91f0b4f2e",
+      "bytes": 1676323
     },
     {
       "project": "chromium-1440",
@@ -1579,7 +1867,9 @@
       "route": "/insights/how-to-evaluate-a-genai-pilot/",
       "state": "canonical",
       "routeId": "insights-how-to-evaluate-a-genai-pilot--canonical",
-      "path": "captures/chromium-1440/insights-how-to-evaluate-a-genai-pilot--canonical.png"
+      "path": "captures/chromium-1440/insights-how-to-evaluate-a-genai-pilot--canonical.png",
+      "sha256": "d658100dda2e603c63617b8cd9a1155de3ed2546d7c633bb3a4895202121752c",
+      "bytes": 940032
     },
     {
       "project": "chromium-390",
@@ -1590,7 +1880,9 @@
       "route": "/insights/hybrid-inference-is-a-governance-decision/",
       "state": "canonical",
       "routeId": "insights-hybrid-inference-is-a-governance-decision--canonical",
-      "path": "captures/chromium-390/insights-hybrid-inference-is-a-governance-decision--canonical.png"
+      "path": "captures/chromium-390/insights-hybrid-inference-is-a-governance-decision--canonical.png",
+      "sha256": "a990536fb33d6ef20c714592ae6e12a51285496cb0c8453b0206f4845d49c415",
+      "bytes": 1683890
     },
     {
       "project": "chromium-1440",
@@ -1601,7 +1893,9 @@
       "route": "/insights/hybrid-inference-is-a-governance-decision/",
       "state": "canonical",
       "routeId": "insights-hybrid-inference-is-a-governance-decision--canonical",
-      "path": "captures/chromium-1440/insights-hybrid-inference-is-a-governance-decision--canonical.png"
+      "path": "captures/chromium-1440/insights-hybrid-inference-is-a-governance-decision--canonical.png",
+      "sha256": "0b8bf1520d0464ee058bffa451b33c02d153f124019880f95e09d3b34e431a1c",
+      "bytes": 748309
     },
     {
       "project": "chromium-390",
@@ -1612,7 +1906,9 @@
       "route": "/insights/marketing-operations-for-small-expert-teams/",
       "state": "canonical",
       "routeId": "insights-marketing-operations-for-small-expert-teams--canonical",
-      "path": "captures/chromium-390/insights-marketing-operations-for-small-expert-teams--canonical.png"
+      "path": "captures/chromium-390/insights-marketing-operations-for-small-expert-teams--canonical.png",
+      "sha256": "f81def163f9f99df223e12bdb4250939ae068a1a907d603e5fbfed035983a01c",
+      "bytes": 1833801
     },
     {
       "project": "chromium-1440",
@@ -1623,7 +1919,9 @@
       "route": "/insights/marketing-operations-for-small-expert-teams/",
       "state": "canonical",
       "routeId": "insights-marketing-operations-for-small-expert-teams--canonical",
-      "path": "captures/chromium-1440/insights-marketing-operations-for-small-expert-teams--canonical.png"
+      "path": "captures/chromium-1440/insights-marketing-operations-for-small-expert-teams--canonical.png",
+      "sha256": "607c11424dd1dc5aeec22e043636ca5647e432418de272348112edba52997bed",
+      "bytes": 747976
     },
     {
       "project": "chromium-390",
@@ -1634,7 +1932,9 @@
       "route": "/insights/provenance-without-killing-creative-flow/",
       "state": "canonical",
       "routeId": "insights-provenance-without-killing-creative-flow--canonical",
-      "path": "captures/chromium-390/insights-provenance-without-killing-creative-flow--canonical.png"
+      "path": "captures/chromium-390/insights-provenance-without-killing-creative-flow--canonical.png",
+      "sha256": "5613dad37e995a7e0d71c7a1b30286a019e28caf17986bdbebc900b132a529f0",
+      "bytes": 1698258
     },
     {
       "project": "chromium-1440",
@@ -1645,7 +1945,9 @@
       "route": "/insights/provenance-without-killing-creative-flow/",
       "state": "canonical",
       "routeId": "insights-provenance-without-killing-creative-flow--canonical",
-      "path": "captures/chromium-1440/insights-provenance-without-killing-creative-flow--canonical.png"
+      "path": "captures/chromium-1440/insights-provenance-without-killing-creative-flow--canonical.png",
+      "sha256": "9a00a8697877a2a70f549e5bac1229b8bd5a0cd49d69077234ddf6fdb6037014",
+      "bytes": 967287
     },
     {
       "project": "chromium-390",
@@ -1656,7 +1958,9 @@
       "route": "/insights/static-websites-as-durable-media/",
       "state": "canonical",
       "routeId": "insights-static-websites-as-durable-media--canonical",
-      "path": "captures/chromium-390/insights-static-websites-as-durable-media--canonical.png"
+      "path": "captures/chromium-390/insights-static-websites-as-durable-media--canonical.png",
+      "sha256": "b40852ae4943cf43ed174bb220ccaeeda4622e72470dc79097d62271e80c15fc",
+      "bytes": 1358279
     },
     {
       "project": "chromium-1440",
@@ -1667,7 +1971,9 @@
       "route": "/insights/static-websites-as-durable-media/",
       "state": "canonical",
       "routeId": "insights-static-websites-as-durable-media--canonical",
-      "path": "captures/chromium-1440/insights-static-websites-as-durable-media--canonical.png"
+      "path": "captures/chromium-1440/insights-static-websites-as-durable-media--canonical.png",
+      "sha256": "6664f60e3ada130d80c636800b3fac9c85b07d50e9b1725c7425873eee56eed0",
+      "bytes": 740874
     },
     {
       "project": "chromium-390",
@@ -1678,7 +1984,9 @@
       "route": "/insights/the-case-for-agent-readable-creative-operations/",
       "state": "canonical",
       "routeId": "insights-the-case-for-agent-readable-creative-operations--canonical",
-      "path": "captures/chromium-390/insights-the-case-for-agent-readable-creative-operations--canonical.png"
+      "path": "captures/chromium-390/insights-the-case-for-agent-readable-creative-operations--canonical.png",
+      "sha256": "37ac9ef250304e2843e2f343c8468f6bf2b738280f784cad546631d75eb95336",
+      "bytes": 1126344
     },
     {
       "project": "chromium-1440",
@@ -1689,7 +1997,9 @@
       "route": "/insights/the-case-for-agent-readable-creative-operations/",
       "state": "canonical",
       "routeId": "insights-the-case-for-agent-readable-creative-operations--canonical",
-      "path": "captures/chromium-1440/insights-the-case-for-agent-readable-creative-operations--canonical.png"
+      "path": "captures/chromium-1440/insights-the-case-for-agent-readable-creative-operations--canonical.png",
+      "sha256": "7a1daa951efadddcc6cf2b12e4b6a8cef0e9b8b95e4fa6654f841a5cf58a0df2",
+      "bytes": 824705
     },
     {
       "project": "chromium-390",
@@ -1700,7 +2010,9 @@
       "route": "/insights/the-cost-of-model-first-product-design/",
       "state": "canonical",
       "routeId": "insights-the-cost-of-model-first-product-design--canonical",
-      "path": "captures/chromium-390/insights-the-cost-of-model-first-product-design--canonical.png"
+      "path": "captures/chromium-390/insights-the-cost-of-model-first-product-design--canonical.png",
+      "sha256": "f4856a069ee4e6620e626b277834fbe3d24fb2c29fdc483dcef0360a2225ffcb",
+      "bytes": 1412797
     },
     {
       "project": "chromium-1440",
@@ -1711,7 +2023,9 @@
       "route": "/insights/the-cost-of-model-first-product-design/",
       "state": "canonical",
       "routeId": "insights-the-cost-of-model-first-product-design--canonical",
-      "path": "captures/chromium-1440/insights-the-cost-of-model-first-product-design--canonical.png"
+      "path": "captures/chromium-1440/insights-the-cost-of-model-first-product-design--canonical.png",
+      "sha256": "9a4cf9e37b00e17b820fda9625ef0537ecf7e83ffe0ac3faa003d34190e6f7d7",
+      "bytes": 741209
     },
     {
       "project": "chromium-390",
@@ -1722,7 +2036,9 @@
       "route": "/insights/the-running-product-is-the-brief/",
       "state": "canonical",
       "routeId": "insights-the-running-product-is-the-brief--canonical",
-      "path": "captures/chromium-390/insights-the-running-product-is-the-brief--canonical.png"
+      "path": "captures/chromium-390/insights-the-running-product-is-the-brief--canonical.png",
+      "sha256": "f3e390eb01831f836bfab43e190fadd2d2ac0b1dd77e6833d65925eca5380ace",
+      "bytes": 1684053
     },
     {
       "project": "chromium-1440",
@@ -1733,7 +2049,9 @@
       "route": "/insights/the-running-product-is-the-brief/",
       "state": "canonical",
       "routeId": "insights-the-running-product-is-the-brief--canonical",
-      "path": "captures/chromium-1440/insights-the-running-product-is-the-brief--canonical.png"
+      "path": "captures/chromium-1440/insights-the-running-product-is-the-brief--canonical.png",
+      "sha256": "b92391fdb5738ecd65ba0794de334998f08988b5220d87c5faceff2aba4b121c",
+      "bytes": 740146
     },
     {
       "project": "chromium-390",
@@ -1744,7 +2062,9 @@
       "route": "/insights/what-a-modern-media-control-room-needs/",
       "state": "canonical",
       "routeId": "insights-what-a-modern-media-control-room-needs--canonical",
-      "path": "captures/chromium-390/insights-what-a-modern-media-control-room-needs--canonical.png"
+      "path": "captures/chromium-390/insights-what-a-modern-media-control-room-needs--canonical.png",
+      "sha256": "37225ba68ff9b974c7081d1ec17a17443f3ae776561e546e5678c3223c298197",
+      "bytes": 1420931
     },
     {
       "project": "chromium-1440",
@@ -1755,7 +2075,9 @@
       "route": "/insights/what-a-modern-media-control-room-needs/",
       "state": "canonical",
       "routeId": "insights-what-a-modern-media-control-room-needs--canonical",
-      "path": "captures/chromium-1440/insights-what-a-modern-media-control-room-needs--canonical.png"
+      "path": "captures/chromium-1440/insights-what-a-modern-media-control-room-needs--canonical.png",
+      "sha256": "369268af55acabc0487f117536d4b9abf2cb2a7a6fbad3bb5d03b62b2c63cb87",
+      "bytes": 738266
     },
     {
       "project": "chromium-390",
@@ -1766,7 +2088,9 @@
       "route": "/insights/why-media-collections-lose-their-value/",
       "state": "canonical",
       "routeId": "insights-why-media-collections-lose-their-value--canonical",
-      "path": "captures/chromium-390/insights-why-media-collections-lose-their-value--canonical.png"
+      "path": "captures/chromium-390/insights-why-media-collections-lose-their-value--canonical.png",
+      "sha256": "0e8743ed003ae0a1d2175705c2691babce2d024b9fdf5a2d00e54e90640d7728",
+      "bytes": 1116094
     },
     {
       "project": "chromium-1440",
@@ -1777,7 +2101,9 @@
       "route": "/insights/why-media-collections-lose-their-value/",
       "state": "canonical",
       "routeId": "insights-why-media-collections-lose-their-value--canonical",
-      "path": "captures/chromium-1440/insights-why-media-collections-lose-their-value--canonical.png"
+      "path": "captures/chromium-1440/insights-why-media-collections-lose-their-value--canonical.png",
+      "sha256": "c8e18abeb7afcd6aa5d23453777b5b561e87468c4450dd50a13b9acf440d2b7b",
+      "bytes": 883120
     },
     {
       "project": "chromium-390",
@@ -1788,7 +2114,9 @@
       "route": "/methods/",
       "state": "canonical",
       "routeId": "methods--canonical",
-      "path": "captures/chromium-390/methods--canonical.png"
+      "path": "captures/chromium-390/methods--canonical.png",
+      "sha256": "9f3b98973243c9c92e40ac67d08405d9422d0df27a0b77e21d3d2edcf7058770",
+      "bytes": 1662595
     },
     {
       "project": "chromium-1440",
@@ -1799,7 +2127,9 @@
       "route": "/methods/",
       "state": "canonical",
       "routeId": "methods--canonical",
-      "path": "captures/chromium-1440/methods--canonical.png"
+      "path": "captures/chromium-1440/methods--canonical.png",
+      "sha256": "d6dd68a5d4b51abd56a85c2289755ad7071473c37f280f148a4a43a49e868cd5",
+      "bytes": 856493
     },
     {
       "project": "chromium-390",
@@ -1810,7 +2140,9 @@
       "route": "/methods/30-60-90-activation/",
       "state": "canonical",
       "routeId": "methods-30-60-90-activation--canonical",
-      "path": "captures/chromium-390/methods-30-60-90-activation--canonical.png"
+      "path": "captures/chromium-390/methods-30-60-90-activation--canonical.png",
+      "sha256": "8429222b89f38f10aed279ce6320051bd330c30b2f52714417f8a8ebe3358e7f",
+      "bytes": 1106366
     },
     {
       "project": "chromium-1440",
@@ -1821,7 +2153,9 @@
       "route": "/methods/30-60-90-activation/",
       "state": "canonical",
       "routeId": "methods-30-60-90-activation--canonical",
-      "path": "captures/chromium-1440/methods-30-60-90-activation--canonical.png"
+      "path": "captures/chromium-1440/methods-30-60-90-activation--canonical.png",
+      "sha256": "78511d4fd3ca10103d199936f1728871fdbf3f42992f8cd4f69337a278939651",
+      "bytes": 764528
     },
     {
       "project": "chromium-390",
@@ -1832,7 +2166,9 @@
       "route": "/methods/accessibility-as-editorial/",
       "state": "canonical",
       "routeId": "methods-accessibility-as-editorial--canonical",
-      "path": "captures/chromium-390/methods-accessibility-as-editorial--canonical.png"
+      "path": "captures/chromium-390/methods-accessibility-as-editorial--canonical.png",
+      "sha256": "f58faaeb14b5c9c7d0e440c7c83614ebaec432c1c7dd8108c00c04ddf28c5f0e",
+      "bytes": 1101854
     },
     {
       "project": "chromium-1440",
@@ -1843,7 +2179,9 @@
       "route": "/methods/accessibility-as-editorial/",
       "state": "canonical",
       "routeId": "methods-accessibility-as-editorial--canonical",
-      "path": "captures/chromium-1440/methods-accessibility-as-editorial--canonical.png"
+      "path": "captures/chromium-1440/methods-accessibility-as-editorial--canonical.png",
+      "sha256": "1b42a6467e3106a64a56ee9da1d3698e4cf250cd174a05771268306f1376c6ca",
+      "bytes": 832501
     },
     {
       "project": "chromium-390",
@@ -1854,7 +2192,9 @@
       "route": "/methods/brand-memory/",
       "state": "canonical",
       "routeId": "methods-brand-memory--canonical",
-      "path": "captures/chromium-390/methods-brand-memory--canonical.png"
+      "path": "captures/chromium-390/methods-brand-memory--canonical.png",
+      "sha256": "be42bf4b4830ac49636076af475d7e86e3c637688b182b93b9a17288631c31c3",
+      "bytes": 1023054
     },
     {
       "project": "chromium-1440",
@@ -1865,7 +2205,9 @@
       "route": "/methods/brand-memory/",
       "state": "canonical",
       "routeId": "methods-brand-memory--canonical",
-      "path": "captures/chromium-1440/methods-brand-memory--canonical.png"
+      "path": "captures/chromium-1440/methods-brand-memory--canonical.png",
+      "sha256": "669ad81fd743987ebaf9941fbddaa83c5027280ccefc92eaabfc64dcd9342af3",
+      "bytes": 715433
     },
     {
       "project": "chromium-390",
@@ -1876,7 +2218,9 @@
       "route": "/methods/collection-to-intelligence/",
       "state": "canonical",
       "routeId": "methods-collection-to-intelligence--canonical",
-      "path": "captures/chromium-390/methods-collection-to-intelligence--canonical.png"
+      "path": "captures/chromium-390/methods-collection-to-intelligence--canonical.png",
+      "sha256": "5e577484550209a5b78098b06b36b616a43054eeeea5ceaeae930d161f2b57e0",
+      "bytes": 1605830
     },
     {
       "project": "chromium-1440",
@@ -1887,7 +2231,9 @@
       "route": "/methods/collection-to-intelligence/",
       "state": "canonical",
       "routeId": "methods-collection-to-intelligence--canonical",
-      "path": "captures/chromium-1440/methods-collection-to-intelligence--canonical.png"
+      "path": "captures/chromium-1440/methods-collection-to-intelligence--canonical.png",
+      "sha256": "c3860e16b34d62c7e1fab388c2ae1c310b3537edd1070a09f8ec10a5c173d963",
+      "bytes": 738288
     },
     {
       "project": "chromium-390",
@@ -1898,7 +2244,9 @@
       "route": "/methods/evidence-loop/",
       "state": "canonical",
       "routeId": "methods-evidence-loop--canonical",
-      "path": "captures/chromium-390/methods-evidence-loop--canonical.png"
+      "path": "captures/chromium-390/methods-evidence-loop--canonical.png",
+      "sha256": "a89bf7f59071fd16b104765ad2f81a285cf47ce9cc544f16e01ccc9dbc8c5bc1",
+      "bytes": 1591737
     },
     {
       "project": "chromium-1440",
@@ -1909,7 +2257,9 @@
       "route": "/methods/evidence-loop/",
       "state": "canonical",
       "routeId": "methods-evidence-loop--canonical",
-      "path": "captures/chromium-1440/methods-evidence-loop--canonical.png"
+      "path": "captures/chromium-1440/methods-evidence-loop--canonical.png",
+      "sha256": "3a26068d3c0ae7d963d8c5f07e83c13eb8edc6cdd7e9a1ee75daecd17a4d49de",
+      "bytes": 729575
     },
     {
       "project": "chromium-390",
@@ -1920,7 +2270,9 @@
       "route": "/methods/human-agent-creative-loop/",
       "state": "canonical",
       "routeId": "methods-human-agent-creative-loop--canonical",
-      "path": "captures/chromium-390/methods-human-agent-creative-loop--canonical.png"
+      "path": "captures/chromium-390/methods-human-agent-creative-loop--canonical.png",
+      "sha256": "079224fab7943b368e46bdd874c782ad3fffdb2f88a9dbaea43d7afa0ad1f25a",
+      "bytes": 1610662
     },
     {
       "project": "chromium-1440",
@@ -1931,7 +2283,9 @@
       "route": "/methods/human-agent-creative-loop/",
       "state": "canonical",
       "routeId": "methods-human-agent-creative-loop--canonical",
-      "path": "captures/chromium-1440/methods-human-agent-creative-loop--canonical.png"
+      "path": "captures/chromium-1440/methods-human-agent-creative-loop--canonical.png",
+      "sha256": "b8483872b1a37253e3f58040abd11d189305ebffba0fdc952101d582d7e225a4",
+      "bytes": 738367
     },
     {
       "project": "chromium-390",
@@ -1942,7 +2296,9 @@
       "route": "/methods/hybrid-inference/",
       "state": "canonical",
       "routeId": "methods-hybrid-inference--canonical",
-      "path": "captures/chromium-390/methods-hybrid-inference--canonical.png"
+      "path": "captures/chromium-390/methods-hybrid-inference--canonical.png",
+      "sha256": "6bd5be63fb044020ca9a356db6522fcf96011e3a5be02cf706b9e2c6ddae9f56",
+      "bytes": 1359930
     },
     {
       "project": "chromium-1440",
@@ -1953,7 +2309,9 @@
       "route": "/methods/hybrid-inference/",
       "state": "canonical",
       "routeId": "methods-hybrid-inference--canonical",
-      "path": "captures/chromium-1440/methods-hybrid-inference--canonical.png"
+      "path": "captures/chromium-1440/methods-hybrid-inference--canonical.png",
+      "sha256": "ebc9ffc1b8a8cdceb0e5bf186bd827e005a3f8cf5fa8d993af6af9fadc05610d",
+      "bytes": 734162
     },
     {
       "project": "chromium-390",
@@ -1964,7 +2322,9 @@
       "route": "/methods/intent-to-system/",
       "state": "canonical",
       "routeId": "methods-intent-to-system--canonical",
-      "path": "captures/chromium-390/methods-intent-to-system--canonical.png"
+      "path": "captures/chromium-390/methods-intent-to-system--canonical.png",
+      "sha256": "9ea954a201b45d3fe66f2bf25f819744bc7a8799bf5899d1706a39c903bae947",
+      "bytes": 1654073
     },
     {
       "project": "chromium-1440",
@@ -1975,7 +2335,9 @@
       "route": "/methods/intent-to-system/",
       "state": "canonical",
       "routeId": "methods-intent-to-system--canonical",
-      "path": "captures/chromium-1440/methods-intent-to-system--canonical.png"
+      "path": "captures/chromium-1440/methods-intent-to-system--canonical.png",
+      "sha256": "2907c92f79df81eaeb5d23ffed329743e29975f578a0e30929c9d22bde672a39",
+      "bytes": 726463
     },
     {
       "project": "chromium-390",
@@ -1986,7 +2348,9 @@
       "route": "/portfolio-item/airikai/",
       "state": "redirect",
       "routeId": "portfolio-item-airikai--redirect",
-      "path": "captures/chromium-390/portfolio-item-airikai--redirect.png"
+      "path": "captures/chromium-390/portfolio-item-airikai--redirect.png",
+      "sha256": "425bfe2babc5769e9d3ce730f9418c8e1ae042843dfb3162135ee833833bf9db",
+      "bytes": 1385483
     },
     {
       "project": "chromium-1440",
@@ -1997,7 +2361,9 @@
       "route": "/portfolio-item/airikai/",
       "state": "redirect",
       "routeId": "portfolio-item-airikai--redirect",
-      "path": "captures/chromium-1440/portfolio-item-airikai--redirect.png"
+      "path": "captures/chromium-1440/portfolio-item-airikai--redirect.png",
+      "sha256": "e4657bfc1c6a2525c391135287be54ca888cfa9d7f70d5154527ed07028deae7",
+      "bytes": 707515
     },
     {
       "project": "chromium-390",
@@ -2008,7 +2374,9 @@
       "route": "/portfolio-item/fashionx/",
       "state": "redirect",
       "routeId": "portfolio-item-fashionx--redirect",
-      "path": "captures/chromium-390/portfolio-item-fashionx--redirect.png"
+      "path": "captures/chromium-390/portfolio-item-fashionx--redirect.png",
+      "sha256": "a8974823b6fe57c563b3fc1bd4efbce509ca0033f2c6b0be410d6c3e21d70dc8",
+      "bytes": 809638
     },
     {
       "project": "chromium-1440",
@@ -2019,7 +2387,9 @@
       "route": "/portfolio-item/fashionx/",
       "state": "redirect",
       "routeId": "portfolio-item-fashionx--redirect",
-      "path": "captures/chromium-1440/portfolio-item-fashionx--redirect.png"
+      "path": "captures/chromium-1440/portfolio-item-fashionx--redirect.png",
+      "sha256": "544c4284cc12bae41ead2ad521f1df337f7f0f38b88fedddf4aa965c7ab74fe8",
+      "bytes": 413176
     },
     {
       "project": "chromium-390",
@@ -2030,7 +2400,9 @@
       "route": "/portfolio-item/focuspass/",
       "state": "redirect",
       "routeId": "portfolio-item-focuspass--redirect",
-      "path": "captures/chromium-390/portfolio-item-focuspass--redirect.png"
+      "path": "captures/chromium-390/portfolio-item-focuspass--redirect.png",
+      "sha256": "7ec9fde9d55472182051a16ec90645848020eead449c32c4de29b8b65196cd80",
+      "bytes": 1666293
     },
     {
       "project": "chromium-1440",
@@ -2041,7 +2413,9 @@
       "route": "/portfolio-item/focuspass/",
       "state": "redirect",
       "routeId": "portfolio-item-focuspass--redirect",
-      "path": "captures/chromium-1440/portfolio-item-focuspass--redirect.png"
+      "path": "captures/chromium-1440/portfolio-item-focuspass--redirect.png",
+      "sha256": "b4286a55a70007458aeb60a4e04afc5837e052e281a11953e1c2b4076a250cd2",
+      "bytes": 737683
     },
     {
       "project": "chromium-390",
@@ -2052,7 +2426,9 @@
       "route": "/portfolio-item/pedadida/",
       "state": "redirect",
       "routeId": "portfolio-item-pedadida--redirect",
-      "path": "captures/chromium-390/portfolio-item-pedadida--redirect.png"
+      "path": "captures/chromium-390/portfolio-item-pedadida--redirect.png",
+      "sha256": "77e9ebdac9f63662f9916b28d7b386ec6b07ae95bb1d03ac2eae14ffcf3fb48b",
+      "bytes": 1415949
     },
     {
       "project": "chromium-1440",
@@ -2063,7 +2439,9 @@
       "route": "/portfolio-item/pedadida/",
       "state": "redirect",
       "routeId": "portfolio-item-pedadida--redirect",
-      "path": "captures/chromium-1440/portfolio-item-pedadida--redirect.png"
+      "path": "captures/chromium-1440/portfolio-item-pedadida--redirect.png",
+      "sha256": "cfe2587e1a26be5a12c08e48d0e6f996cc787cea5a3f6ae9859f4a0f1b865aba",
+      "bytes": 697141
     },
     {
       "project": "chromium-390",
@@ -2074,7 +2452,9 @@
       "route": "/portfolio-item/pranashama/",
       "state": "redirect",
       "routeId": "portfolio-item-pranashama--redirect",
-      "path": "captures/chromium-390/portfolio-item-pranashama--redirect.png"
+      "path": "captures/chromium-390/portfolio-item-pranashama--redirect.png",
+      "sha256": "e55145df86b52ca1e9cca171629ecfe175a8fd4a7b0a35846ef47bb9bb25ed78",
+      "bytes": 1101396
     },
     {
       "project": "chromium-1440",
@@ -2085,7 +2465,9 @@
       "route": "/portfolio-item/pranashama/",
       "state": "redirect",
       "routeId": "portfolio-item-pranashama--redirect",
-      "path": "captures/chromium-1440/portfolio-item-pranashama--redirect.png"
+      "path": "captures/chromium-1440/portfolio-item-pranashama--redirect.png",
+      "sha256": "3cd8ab7efb90a4043cf90e0c606f3dbc96d7b1db5af2757af899642367c7174c",
+      "bytes": 792322
     },
     {
       "project": "chromium-390",
@@ -2096,7 +2478,9 @@
       "route": "/portfolio-item/state-parks/",
       "state": "redirect",
       "routeId": "portfolio-item-state-parks--redirect",
-      "path": "captures/chromium-390/portfolio-item-state-parks--redirect.png"
+      "path": "captures/chromium-390/portfolio-item-state-parks--redirect.png",
+      "sha256": "db67aeabe44394c560a43e0ddfe0580c86132876cf8838c2fcee92c99f6defde",
+      "bytes": 1269308
     },
     {
       "project": "chromium-1440",
@@ -2107,7 +2491,9 @@
       "route": "/portfolio-item/state-parks/",
       "state": "redirect",
       "routeId": "portfolio-item-state-parks--redirect",
-      "path": "captures/chromium-1440/portfolio-item-state-parks--redirect.png"
+      "path": "captures/chromium-1440/portfolio-item-state-parks--redirect.png",
+      "sha256": "94d099f708a4df6685436feb4505742bf612d3b294a070e14ba7faa4e9e99616",
+      "bytes": 678156
     },
     {
       "project": "chromium-390",
@@ -2118,7 +2504,9 @@
       "route": "/portfolio-item/tao-cottage/",
       "state": "redirect",
       "routeId": "portfolio-item-tao-cottage--redirect",
-      "path": "captures/chromium-390/portfolio-item-tao-cottage--redirect.png"
+      "path": "captures/chromium-390/portfolio-item-tao-cottage--redirect.png",
+      "sha256": "0b6b6dd2cac3010150063794f23f03e017060145abd1e31aa6c11a4daa1775ae",
+      "bytes": 2725996
     },
     {
       "project": "chromium-1440",
@@ -2129,7 +2517,9 @@
       "route": "/portfolio-item/tao-cottage/",
       "state": "redirect",
       "routeId": "portfolio-item-tao-cottage--redirect",
-      "path": "captures/chromium-1440/portfolio-item-tao-cottage--redirect.png"
+      "path": "captures/chromium-1440/portfolio-item-tao-cottage--redirect.png",
+      "sha256": "4df03b79e6428031bf1ca9e3322f2c086af8e08c767bd04aa701dc162af2a59d",
+      "bytes": 1419510
     },
     {
       "project": "chromium-390",
@@ -2140,7 +2530,9 @@
       "route": "/portfolio-item/taolo/",
       "state": "redirect",
       "routeId": "portfolio-item-taolo--redirect",
-      "path": "captures/chromium-390/portfolio-item-taolo--redirect.png"
+      "path": "captures/chromium-390/portfolio-item-taolo--redirect.png",
+      "sha256": "d556340d7594a4d84a88d99ee799c049e642a6f00cf778be706ea13b4a23d210",
+      "bytes": 1792961
     },
     {
       "project": "chromium-1440",
@@ -2151,7 +2543,9 @@
       "route": "/portfolio-item/taolo/",
       "state": "redirect",
       "routeId": "portfolio-item-taolo--redirect",
-      "path": "captures/chromium-1440/portfolio-item-taolo--redirect.png"
+      "path": "captures/chromium-1440/portfolio-item-taolo--redirect.png",
+      "sha256": "61319745850704ce204251dfcdbfdda15cbc848205a8cbb870842c8b96b3d8c2",
+      "bytes": 918583
     },
     {
       "project": "chromium-390",
@@ -2162,7 +2556,9 @@
       "route": "/portfolio/",
       "state": "canonical",
       "routeId": "portfolio--canonical",
-      "path": "captures/chromium-390/portfolio--canonical.png"
+      "path": "captures/chromium-390/portfolio--canonical.png",
+      "sha256": "0e075008b2423faec26edc9d2796df8377a7685b1af86fd7366866a6f7473f6f",
+      "bytes": 1332632
     },
     {
       "project": "chromium-1440",
@@ -2173,7 +2569,9 @@
       "route": "/portfolio/",
       "state": "canonical",
       "routeId": "portfolio--canonical",
-      "path": "captures/chromium-1440/portfolio--canonical.png"
+      "path": "captures/chromium-1440/portfolio--canonical.png",
+      "sha256": "9fd076232e62f29bb5732da65828b8f3372aa97eaf095697acf6b97221de409e",
+      "bytes": 626039
     },
     {
       "project": "chromium-390",
@@ -2184,7 +2582,9 @@
       "route": "/portfolio/airikai/",
       "state": "canonical",
       "routeId": "portfolio-airikai--canonical",
-      "path": "captures/chromium-390/portfolio-airikai--canonical.png"
+      "path": "captures/chromium-390/portfolio-airikai--canonical.png",
+      "sha256": "425bfe2babc5769e9d3ce730f9418c8e1ae042843dfb3162135ee833833bf9db",
+      "bytes": 1385483
     },
     {
       "project": "chromium-1440",
@@ -2195,7 +2595,9 @@
       "route": "/portfolio/airikai/",
       "state": "canonical",
       "routeId": "portfolio-airikai--canonical",
-      "path": "captures/chromium-1440/portfolio-airikai--canonical.png"
+      "path": "captures/chromium-1440/portfolio-airikai--canonical.png",
+      "sha256": "e4657bfc1c6a2525c391135287be54ca888cfa9d7f70d5154527ed07028deae7",
+      "bytes": 707515
     },
     {
       "project": "chromium-390",
@@ -2206,7 +2608,9 @@
       "route": "/portfolio/fashionx/",
       "state": "canonical",
       "routeId": "portfolio-fashionx--canonical",
-      "path": "captures/chromium-390/portfolio-fashionx--canonical.png"
+      "path": "captures/chromium-390/portfolio-fashionx--canonical.png",
+      "sha256": "a8974823b6fe57c563b3fc1bd4efbce509ca0033f2c6b0be410d6c3e21d70dc8",
+      "bytes": 809638
     },
     {
       "project": "chromium-1440",
@@ -2217,7 +2621,9 @@
       "route": "/portfolio/fashionx/",
       "state": "canonical",
       "routeId": "portfolio-fashionx--canonical",
-      "path": "captures/chromium-1440/portfolio-fashionx--canonical.png"
+      "path": "captures/chromium-1440/portfolio-fashionx--canonical.png",
+      "sha256": "544c4284cc12bae41ead2ad521f1df337f7f0f38b88fedddf4aa965c7ab74fe8",
+      "bytes": 413176
     },
     {
       "project": "chromium-390",
@@ -2228,7 +2634,9 @@
       "route": "/portfolio/focuspass/",
       "state": "canonical",
       "routeId": "portfolio-focuspass--canonical",
-      "path": "captures/chromium-390/portfolio-focuspass--canonical.png"
+      "path": "captures/chromium-390/portfolio-focuspass--canonical.png",
+      "sha256": "7ec9fde9d55472182051a16ec90645848020eead449c32c4de29b8b65196cd80",
+      "bytes": 1666293
     },
     {
       "project": "chromium-1440",
@@ -2239,7 +2647,9 @@
       "route": "/portfolio/focuspass/",
       "state": "canonical",
       "routeId": "portfolio-focuspass--canonical",
-      "path": "captures/chromium-1440/portfolio-focuspass--canonical.png"
+      "path": "captures/chromium-1440/portfolio-focuspass--canonical.png",
+      "sha256": "b4286a55a70007458aeb60a4e04afc5837e052e281a11953e1c2b4076a250cd2",
+      "bytes": 737683
     },
     {
       "project": "chromium-390",
@@ -2250,7 +2660,9 @@
       "route": "/portfolio/pedadida/",
       "state": "canonical",
       "routeId": "portfolio-pedadida--canonical",
-      "path": "captures/chromium-390/portfolio-pedadida--canonical.png"
+      "path": "captures/chromium-390/portfolio-pedadida--canonical.png",
+      "sha256": "77e9ebdac9f63662f9916b28d7b386ec6b07ae95bb1d03ac2eae14ffcf3fb48b",
+      "bytes": 1415949
     },
     {
       "project": "chromium-1440",
@@ -2261,7 +2673,9 @@
       "route": "/portfolio/pedadida/",
       "state": "canonical",
       "routeId": "portfolio-pedadida--canonical",
-      "path": "captures/chromium-1440/portfolio-pedadida--canonical.png"
+      "path": "captures/chromium-1440/portfolio-pedadida--canonical.png",
+      "sha256": "cfe2587e1a26be5a12c08e48d0e6f996cc787cea5a3f6ae9859f4a0f1b865aba",
+      "bytes": 697141
     },
     {
       "project": "chromium-390",
@@ -2272,7 +2686,9 @@
       "route": "/portfolio/pranashama/",
       "state": "canonical",
       "routeId": "portfolio-pranashama--canonical",
-      "path": "captures/chromium-390/portfolio-pranashama--canonical.png"
+      "path": "captures/chromium-390/portfolio-pranashama--canonical.png",
+      "sha256": "e55145df86b52ca1e9cca171629ecfe175a8fd4a7b0a35846ef47bb9bb25ed78",
+      "bytes": 1101396
     },
     {
       "project": "chromium-1440",
@@ -2283,7 +2699,9 @@
       "route": "/portfolio/pranashama/",
       "state": "canonical",
       "routeId": "portfolio-pranashama--canonical",
-      "path": "captures/chromium-1440/portfolio-pranashama--canonical.png"
+      "path": "captures/chromium-1440/portfolio-pranashama--canonical.png",
+      "sha256": "3cd8ab7efb90a4043cf90e0c606f3dbc96d7b1db5af2757af899642367c7174c",
+      "bytes": 792322
     },
     {
       "project": "chromium-390",
@@ -2294,7 +2712,9 @@
       "route": "/portfolio/state-parks/",
       "state": "canonical",
       "routeId": "portfolio-state-parks--canonical",
-      "path": "captures/chromium-390/portfolio-state-parks--canonical.png"
+      "path": "captures/chromium-390/portfolio-state-parks--canonical.png",
+      "sha256": "db67aeabe44394c560a43e0ddfe0580c86132876cf8838c2fcee92c99f6defde",
+      "bytes": 1269308
     },
     {
       "project": "chromium-1440",
@@ -2305,7 +2725,9 @@
       "route": "/portfolio/state-parks/",
       "state": "canonical",
       "routeId": "portfolio-state-parks--canonical",
-      "path": "captures/chromium-1440/portfolio-state-parks--canonical.png"
+      "path": "captures/chromium-1440/portfolio-state-parks--canonical.png",
+      "sha256": "94d099f708a4df6685436feb4505742bf612d3b294a070e14ba7faa4e9e99616",
+      "bytes": 678156
     },
     {
       "project": "chromium-390",
@@ -2316,7 +2738,9 @@
       "route": "/portfolio/tao-cottage/",
       "state": "canonical",
       "routeId": "portfolio-tao-cottage--canonical",
-      "path": "captures/chromium-390/portfolio-tao-cottage--canonical.png"
+      "path": "captures/chromium-390/portfolio-tao-cottage--canonical.png",
+      "sha256": "0b6b6dd2cac3010150063794f23f03e017060145abd1e31aa6c11a4daa1775ae",
+      "bytes": 2725996
     },
     {
       "project": "chromium-1440",
@@ -2327,7 +2751,9 @@
       "route": "/portfolio/tao-cottage/",
       "state": "canonical",
       "routeId": "portfolio-tao-cottage--canonical",
-      "path": "captures/chromium-1440/portfolio-tao-cottage--canonical.png"
+      "path": "captures/chromium-1440/portfolio-tao-cottage--canonical.png",
+      "sha256": "4df03b79e6428031bf1ca9e3322f2c086af8e08c767bd04aa701dc162af2a59d",
+      "bytes": 1419510
     },
     {
       "project": "chromium-390",
@@ -2338,7 +2764,9 @@
       "route": "/portfolio/taolo/",
       "state": "canonical",
       "routeId": "portfolio-taolo--canonical",
-      "path": "captures/chromium-390/portfolio-taolo--canonical.png"
+      "path": "captures/chromium-390/portfolio-taolo--canonical.png",
+      "sha256": "d556340d7594a4d84a88d99ee799c049e642a6f00cf778be706ea13b4a23d210",
+      "bytes": 1792961
     },
     {
       "project": "chromium-1440",
@@ -2349,7 +2777,9 @@
       "route": "/portfolio/taolo/",
       "state": "canonical",
       "routeId": "portfolio-taolo--canonical",
-      "path": "captures/chromium-1440/portfolio-taolo--canonical.png"
+      "path": "captures/chromium-1440/portfolio-taolo--canonical.png",
+      "sha256": "61319745850704ce204251dfcdbfdda15cbc848205a8cbb870842c8b96b3d8c2",
+      "bytes": 918583
     },
     {
       "project": "chromium-390",
@@ -2360,7 +2790,9 @@
       "route": "/privacy/",
       "state": "canonical",
       "routeId": "privacy--canonical",
-      "path": "captures/chromium-390/privacy--canonical.png"
+      "path": "captures/chromium-390/privacy--canonical.png",
+      "sha256": "0d6eb9ad9d98fb579b9da49167dd216a5a9714f534dd6c7808609f50260f56b7",
+      "bytes": 1860239
     },
     {
       "project": "chromium-1440",
@@ -2371,7 +2803,9 @@
       "route": "/privacy/",
       "state": "canonical",
       "routeId": "privacy--canonical",
-      "path": "captures/chromium-1440/privacy--canonical.png"
+      "path": "captures/chromium-1440/privacy--canonical.png",
+      "sha256": "0b8dea5960e457914e1fc0f1c7d7f9d25aceb497a7fd1abf1d504a10b8a48eb6",
+      "bytes": 928861
     },
     {
       "project": "chromium-390",
@@ -2382,7 +2816,9 @@
       "route": "/products/",
       "state": "canonical",
       "routeId": "products--canonical",
-      "path": "captures/chromium-390/products--canonical.png"
+      "path": "captures/chromium-390/products--canonical.png",
+      "sha256": "26e1bd6db298aacbe9d494bf6146fea38d802b55c535775b135100c7d3c9da40",
+      "bytes": 1606487
     },
     {
       "project": "chromium-1440",
@@ -2393,7 +2829,9 @@
       "route": "/products/",
       "state": "canonical",
       "routeId": "products--canonical",
-      "path": "captures/chromium-1440/products--canonical.png"
+      "path": "captures/chromium-1440/products--canonical.png",
+      "sha256": "3bf7bc23ff918e6a3fc2b32050dec32faa96c0e832abafedb4f6a251a541d8cd",
+      "bytes": 635695
     },
     {
       "project": "chromium-390",
@@ -2404,7 +2842,9 @@
       "route": "/products/cli/",
       "state": "canonical",
       "routeId": "products-cli--canonical",
-      "path": "captures/chromium-390/products-cli--canonical.png"
+      "path": "captures/chromium-390/products-cli--canonical.png",
+      "sha256": "dffc60185122f3a27f952f73b34f0b87fb5e3bdbad945ebd520bd3b8ca16ca59",
+      "bytes": 1672639
     },
     {
       "project": "chromium-1440",
@@ -2415,7 +2855,9 @@
       "route": "/products/cli/",
       "state": "canonical",
       "routeId": "products-cli--canonical",
-      "path": "captures/chromium-1440/products-cli--canonical.png"
+      "path": "captures/chromium-1440/products-cli--canonical.png",
+      "sha256": "1cdd3e1994cbb69a30c81308e229c37f3207a48cbb89e4b29676e5a51fe58504",
+      "bytes": 564170
     },
     {
       "project": "chromium-390",
@@ -2426,7 +2868,9 @@
       "route": "/products/cli/agent-skills/",
       "state": "canonical",
       "routeId": "products-cli-agent-skills--canonical",
-      "path": "captures/chromium-390/products-cli-agent-skills--canonical.png"
+      "path": "captures/chromium-390/products-cli-agent-skills--canonical.png",
+      "sha256": "9ebfea3bdc1cbe48d0545615b7c8b9525aaa6e12bc02dae1abd6f737e17f136f",
+      "bytes": 1782740
     },
     {
       "project": "chromium-1440",
@@ -2437,7 +2881,9 @@
       "route": "/products/cli/agent-skills/",
       "state": "canonical",
       "routeId": "products-cli-agent-skills--canonical",
-      "path": "captures/chromium-1440/products-cli-agent-skills--canonical.png"
+      "path": "captures/chromium-1440/products-cli-agent-skills--canonical.png",
+      "sha256": "adc42e429b39f6d25880d56cf3f062df41d04aa5fc91e8089d16655b87f86d5b",
+      "bytes": 894750
     },
     {
       "project": "chromium-390",
@@ -2448,7 +2894,9 @@
       "route": "/products/cli/automation/",
       "state": "canonical",
       "routeId": "products-cli-automation--canonical",
-      "path": "captures/chromium-390/products-cli-automation--canonical.png"
+      "path": "captures/chromium-390/products-cli-automation--canonical.png",
+      "sha256": "bd4c4a254e24ce1ffc70e69a67327c17cb7cdc743937f273193ef8a14b6e9c95",
+      "bytes": 1774582
     },
     {
       "project": "chromium-1440",
@@ -2459,7 +2907,9 @@
       "route": "/products/cli/automation/",
       "state": "canonical",
       "routeId": "products-cli-automation--canonical",
-      "path": "captures/chromium-1440/products-cli-automation--canonical.png"
+      "path": "captures/chromium-1440/products-cli-automation--canonical.png",
+      "sha256": "8bd67dd424d50a02863f9cda2efa99eb3a8cc230d06b048d61aa52a6ca749765",
+      "bytes": 892617
     },
     {
       "project": "chromium-390",
@@ -2470,7 +2920,9 @@
       "route": "/products/cli/quickstart/",
       "state": "canonical",
       "routeId": "products-cli-quickstart--canonical",
-      "path": "captures/chromium-390/products-cli-quickstart--canonical.png"
+      "path": "captures/chromium-390/products-cli-quickstart--canonical.png",
+      "sha256": "a9c826cbb7e43a65a12852931aae7d967a618d9fac8445e12df4d06b8c2e5be7",
+      "bytes": 2010565
     },
     {
       "project": "chromium-1440",
@@ -2481,7 +2933,9 @@
       "route": "/products/cli/quickstart/",
       "state": "canonical",
       "routeId": "products-cli-quickstart--canonical",
-      "path": "captures/chromium-1440/products-cli-quickstart--canonical.png"
+      "path": "captures/chromium-1440/products-cli-quickstart--canonical.png",
+      "sha256": "7a785630c2aa95804e56d2c83b4149cc57688374dc6fdee6ae6d7a4575b622dc",
+      "bytes": 895212
     },
     {
       "project": "chromium-390",
@@ -2492,7 +2946,9 @@
       "route": "/products/cli/security/",
       "state": "canonical",
       "routeId": "products-cli-security--canonical",
-      "path": "captures/chromium-390/products-cli-security--canonical.png"
+      "path": "captures/chromium-390/products-cli-security--canonical.png",
+      "sha256": "1eeae3e9cefee382f2a115d84518d050e6d0508d73ec3a9b039b6bba3434e7f7",
+      "bytes": 2010789
     },
     {
       "project": "chromium-1440",
@@ -2503,7 +2959,9 @@
       "route": "/products/cli/security/",
       "state": "canonical",
       "routeId": "products-cli-security--canonical",
-      "path": "captures/chromium-1440/products-cli-security--canonical.png"
+      "path": "captures/chromium-1440/products-cli-security--canonical.png",
+      "sha256": "2c2215c3437f7d8f67d0c01973a59705d07271f4d8d9e58cea8a105f6be0f56b",
+      "bytes": 893561
     },
     {
       "project": "chromium-390",
@@ -2514,7 +2972,9 @@
       "route": "/products/gpu-router/",
       "state": "canonical",
       "routeId": "products-gpu-router--canonical",
-      "path": "captures/chromium-390/products-gpu-router--canonical.png"
+      "path": "captures/chromium-390/products-gpu-router--canonical.png",
+      "sha256": "e43169952da828cbe89a4d219cca833a9203fa90e1963199de94b509fa10455b",
+      "bytes": 1448610
     },
     {
       "project": "chromium-1440",
@@ -2525,7 +2985,9 @@
       "route": "/products/gpu-router/",
       "state": "canonical",
       "routeId": "products-gpu-router--canonical",
-      "path": "captures/chromium-1440/products-gpu-router--canonical.png"
+      "path": "captures/chromium-1440/products-gpu-router--canonical.png",
+      "sha256": "c169998cda0edfa773aee1598f0dec88732fb500fa9cd7127de2007c943b9c91",
+      "bytes": 630944
     },
     {
       "project": "chromium-390",
@@ -2536,7 +2998,9 @@
       "route": "/products/gpu-router/architecture/",
       "state": "canonical",
       "routeId": "products-gpu-router-architecture--canonical",
-      "path": "captures/chromium-390/products-gpu-router-architecture--canonical.png"
+      "path": "captures/chromium-390/products-gpu-router-architecture--canonical.png",
+      "sha256": "390875c40920ca67ed004dc49323b1c3496e1081115ef7bbd8b3f0044ead08f3",
+      "bytes": 1775904
     },
     {
       "project": "chromium-1440",
@@ -2547,7 +3011,9 @@
       "route": "/products/gpu-router/architecture/",
       "state": "canonical",
       "routeId": "products-gpu-router-architecture--canonical",
-      "path": "captures/chromium-1440/products-gpu-router-architecture--canonical.png"
+      "path": "captures/chromium-1440/products-gpu-router-architecture--canonical.png",
+      "sha256": "1b927cc128653938b1d0425a3b7cc7e97d6f1dd1e391da9f6ae288f06fe73e6c",
+      "bytes": 901128
     },
     {
       "project": "chromium-390",
@@ -2558,7 +3024,9 @@
       "route": "/products/gpu-router/benchmarks/",
       "state": "canonical",
       "routeId": "products-gpu-router-benchmarks--canonical",
-      "path": "captures/chromium-390/products-gpu-router-benchmarks--canonical.png"
+      "path": "captures/chromium-390/products-gpu-router-benchmarks--canonical.png",
+      "sha256": "73398c8fd0d0cba76a22290c945b438b5977abeabdc8d434a5ef68780dc93ea7",
+      "bytes": 2014863
     },
     {
       "project": "chromium-1440",
@@ -2569,7 +3037,9 @@
       "route": "/products/gpu-router/benchmarks/",
       "state": "canonical",
       "routeId": "products-gpu-router-benchmarks--canonical",
-      "path": "captures/chromium-1440/products-gpu-router-benchmarks--canonical.png"
+      "path": "captures/chromium-1440/products-gpu-router-benchmarks--canonical.png",
+      "sha256": "145a2b81346a323e6dcc4b49a07aa1a368a22c72765f9aed2501c729c5651117",
+      "bytes": 900801
     },
     {
       "project": "chromium-390",
@@ -2580,7 +3050,9 @@
       "route": "/products/gpu-router/observability/",
       "state": "canonical",
       "routeId": "products-gpu-router-observability--canonical",
-      "path": "captures/chromium-390/products-gpu-router-observability--canonical.png"
+      "path": "captures/chromium-390/products-gpu-router-observability--canonical.png",
+      "sha256": "156bd289e6028b9967523137586c478dcdff04816c06353a603da1446b020ac8",
+      "bytes": 1777777
     },
     {
       "project": "chromium-1440",
@@ -2591,7 +3063,9 @@
       "route": "/products/gpu-router/observability/",
       "state": "canonical",
       "routeId": "products-gpu-router-observability--canonical",
-      "path": "captures/chromium-1440/products-gpu-router-observability--canonical.png"
+      "path": "captures/chromium-1440/products-gpu-router-observability--canonical.png",
+      "sha256": "0325418df024d1478b4619467dc9ca3c93e086478f1249ec784e8f4d1caeb0e0",
+      "bytes": 900927
     },
     {
       "project": "chromium-390",
@@ -2602,7 +3076,9 @@
       "route": "/products/gpu-router/routing/",
       "state": "canonical",
       "routeId": "products-gpu-router-routing--canonical",
-      "path": "captures/chromium-390/products-gpu-router-routing--canonical.png"
+      "path": "captures/chromium-390/products-gpu-router-routing--canonical.png",
+      "sha256": "5c9b6f16e9c425c569a315f48d5272d64833d3177eb3781f08605e5c68fb019f",
+      "bytes": 1781484
     },
     {
       "project": "chromium-1440",
@@ -2613,7 +3089,9 @@
       "route": "/products/gpu-router/routing/",
       "state": "canonical",
       "routeId": "products-gpu-router-routing--canonical",
-      "path": "captures/chromium-1440/products-gpu-router-routing--canonical.png"
+      "path": "captures/chromium-1440/products-gpu-router-routing--canonical.png",
+      "sha256": "63b7ce3671b8fe620db2513607aeea0f534820a360e1e52707fc11749b8634b6",
+      "bytes": 906092
     },
     {
       "project": "chromium-390",
@@ -2624,7 +3102,9 @@
       "route": "/products/photo-curator/",
       "state": "canonical",
       "routeId": "products-photo-curator--canonical",
-      "path": "captures/chromium-390/products-photo-curator--canonical.png"
+      "path": "captures/chromium-390/products-photo-curator--canonical.png",
+      "sha256": "0ab6e4f85459775434cb9b2f957f09f087524d316e2d466db9d8e949dbc4cabe",
+      "bytes": 1512032
     },
     {
       "project": "chromium-1440",
@@ -2635,7 +3115,9 @@
       "route": "/products/photo-curator/",
       "state": "canonical",
       "routeId": "products-photo-curator--canonical",
-      "path": "captures/chromium-1440/products-photo-curator--canonical.png"
+      "path": "captures/chromium-1440/products-photo-curator--canonical.png",
+      "sha256": "24492b42b0ad6c45f2c9d81764256037263fec8c120f2238b1856f16eb845efd",
+      "bytes": 685611
     },
     {
       "project": "chromium-390",
@@ -2646,7 +3128,9 @@
       "route": "/products/photo-curator/connectors/",
       "state": "canonical",
       "routeId": "products-photo-curator-connectors--canonical",
-      "path": "captures/chromium-390/products-photo-curator-connectors--canonical.png"
+      "path": "captures/chromium-390/products-photo-curator-connectors--canonical.png",
+      "sha256": "9554d6b40fbe9dfd08713e530a006e9ad8c78f000a1f93407657d03368f46a9a",
+      "bytes": 2022207
     },
     {
       "project": "chromium-1440",
@@ -2657,7 +3141,9 @@
       "route": "/products/photo-curator/connectors/",
       "state": "canonical",
       "routeId": "products-photo-curator-connectors--canonical",
-      "path": "captures/chromium-1440/products-photo-curator-connectors--canonical.png"
+      "path": "captures/chromium-1440/products-photo-curator-connectors--canonical.png",
+      "sha256": "304edb81852e707b7101f0bb280ce61a9fee3487ad4375cfc64daf20d62d81c5",
+      "bytes": 898979
     },
     {
       "project": "chromium-390",
@@ -2668,7 +3154,9 @@
       "route": "/products/photo-curator/duplicates/",
       "state": "canonical",
       "routeId": "products-photo-curator-duplicates--canonical",
-      "path": "captures/chromium-390/products-photo-curator-duplicates--canonical.png"
+      "path": "captures/chromium-390/products-photo-curator-duplicates--canonical.png",
+      "sha256": "16e9bf884686e223e90ef95bd18395bc0caf5d7255a258e0ea955529a7b05d8f",
+      "bytes": 1776606
     },
     {
       "project": "chromium-1440",
@@ -2679,7 +3167,9 @@
       "route": "/products/photo-curator/duplicates/",
       "state": "canonical",
       "routeId": "products-photo-curator-duplicates--canonical",
-      "path": "captures/chromium-1440/products-photo-curator-duplicates--canonical.png"
+      "path": "captures/chromium-1440/products-photo-curator-duplicates--canonical.png",
+      "sha256": "87389f17fc8085b3679d0f031aacf651227c244531f9412669bf49310942d9b9",
+      "bytes": 901762
     },
     {
       "project": "chromium-390",
@@ -2690,7 +3180,9 @@
       "route": "/products/photo-curator/metadata/",
       "state": "canonical",
       "routeId": "products-photo-curator-metadata--canonical",
-      "path": "captures/chromium-390/products-photo-curator-metadata--canonical.png"
+      "path": "captures/chromium-390/products-photo-curator-metadata--canonical.png",
+      "sha256": "0629e8adcd973fb8d28c8bbefb385c2551eb1dcb43dcc26137edb653ab0ac9b0",
+      "bytes": 2015541
     },
     {
       "project": "chromium-1440",
@@ -2701,7 +3193,9 @@
       "route": "/products/photo-curator/metadata/",
       "state": "canonical",
       "routeId": "products-photo-curator-metadata--canonical",
-      "path": "captures/chromium-1440/products-photo-curator-metadata--canonical.png"
+      "path": "captures/chromium-1440/products-photo-curator-metadata--canonical.png",
+      "sha256": "fbf8add8d9c110851ac65c3fb5a28cfb757ea84384fe2a74359faf07cf143ddd",
+      "bytes": 894836
     },
     {
       "project": "chromium-390",
@@ -2712,7 +3206,9 @@
       "route": "/products/photo-curator/review/",
       "state": "canonical",
       "routeId": "products-photo-curator-review--canonical",
-      "path": "captures/chromium-390/products-photo-curator-review--canonical.png"
+      "path": "captures/chromium-390/products-photo-curator-review--canonical.png",
+      "sha256": "45e1739acac7afafb76172af7a97447845564af52e463b147c51156b4a8f85e7",
+      "bytes": 1784675
     },
     {
       "project": "chromium-1440",
@@ -2723,7 +3219,9 @@
       "route": "/products/photo-curator/review/",
       "state": "canonical",
       "routeId": "products-photo-curator-review--canonical",
-      "path": "captures/chromium-1440/products-photo-curator-review--canonical.png"
+      "path": "captures/chromium-1440/products-photo-curator-review--canonical.png",
+      "sha256": "30bbd5f137d96c416b90ce9921fb384ecb72107e0ff854568c2e5edb0d2fac0e",
+      "bytes": 896951
     },
     {
       "project": "chromium-390",
@@ -2734,7 +3232,9 @@
       "route": "/products/studio/",
       "state": "canonical",
       "routeId": "products-studio--canonical",
-      "path": "captures/chromium-390/products-studio--canonical.png"
+      "path": "captures/chromium-390/products-studio--canonical.png",
+      "sha256": "a6ad8862d883bdbd890d96f9e0b6628277834ddb053abb8556a214e051108215",
+      "bytes": 1797328
     },
     {
       "project": "chromium-1440",
@@ -2745,7 +3245,9 @@
       "route": "/products/studio/",
       "state": "canonical",
       "routeId": "products-studio--canonical",
-      "path": "captures/chromium-1440/products-studio--canonical.png"
+      "path": "captures/chromium-1440/products-studio--canonical.png",
+      "sha256": "b6c2b1787958526fb227aa94e1c57ca5e59968f82ff84ed0852290b8bd05ff2c",
+      "bytes": 604237
     },
     {
       "project": "chromium-390",
@@ -2756,7 +3258,9 @@
       "route": "/products/studio/audio/",
       "state": "canonical",
       "routeId": "products-studio-audio--canonical",
-      "path": "captures/chromium-390/products-studio-audio--canonical.png"
+      "path": "captures/chromium-390/products-studio-audio--canonical.png",
+      "sha256": "5d95ed5a69dfc5918acfdf37d3caf5e8c2c8ac6efa3ae05a4ef468e475e9a525",
+      "bytes": 1783292
     },
     {
       "project": "chromium-1440",
@@ -2767,7 +3271,9 @@
       "route": "/products/studio/audio/",
       "state": "canonical",
       "routeId": "products-studio-audio--canonical",
-      "path": "captures/chromium-1440/products-studio-audio--canonical.png"
+      "path": "captures/chromium-1440/products-studio-audio--canonical.png",
+      "sha256": "4db03d1fb7033cd7fe9ec03e685dc6ac673be645a11832150aaa7e54c3f40728",
+      "bytes": 895548
     },
     {
       "project": "chromium-390",
@@ -2778,7 +3284,9 @@
       "route": "/products/studio/hybrid-inference/",
       "state": "canonical",
       "routeId": "products-studio-hybrid-inference--canonical",
-      "path": "captures/chromium-390/products-studio-hybrid-inference--canonical.png"
+      "path": "captures/chromium-390/products-studio-hybrid-inference--canonical.png",
+      "sha256": "62e7e39b2e467ff15e7c1df8cb9a3ab2e6b6f9d13d732da68ec19340fb0e3a0e",
+      "bytes": 2018469
     },
     {
       "project": "chromium-1440",
@@ -2789,7 +3297,9 @@
       "route": "/products/studio/hybrid-inference/",
       "state": "canonical",
       "routeId": "products-studio-hybrid-inference--canonical",
-      "path": "captures/chromium-1440/products-studio-hybrid-inference--canonical.png"
+      "path": "captures/chromium-1440/products-studio-hybrid-inference--canonical.png",
+      "sha256": "0829d503e9185be7cf99c14f7f073990ed04311542a127720011a08a791b6e52",
+      "bytes": 888472
     },
     {
       "project": "chromium-390",
@@ -2800,7 +3310,9 @@
       "route": "/products/studio/image/",
       "state": "canonical",
       "routeId": "products-studio-image--canonical",
-      "path": "captures/chromium-390/products-studio-image--canonical.png"
+      "path": "captures/chromium-390/products-studio-image--canonical.png",
+      "sha256": "be8b83611844d88c666734e4d21ebc9a9f797bb6479636fe6798a1ad52bb7c88",
+      "bytes": 1783363
     },
     {
       "project": "chromium-1440",
@@ -2811,7 +3323,9 @@
       "route": "/products/studio/image/",
       "state": "canonical",
       "routeId": "products-studio-image--canonical",
-      "path": "captures/chromium-1440/products-studio-image--canonical.png"
+      "path": "captures/chromium-1440/products-studio-image--canonical.png",
+      "sha256": "e94e7f94ae88a0056aa66b835ce787638f4bbcd6aa4cbc3ff9a5e7ac4dba8dbc",
+      "bytes": 896424
     },
     {
       "project": "chromium-390",
@@ -2822,7 +3336,9 @@
       "route": "/products/studio/video/",
       "state": "canonical",
       "routeId": "products-studio-video--canonical",
-      "path": "captures/chromium-390/products-studio-video--canonical.png"
+      "path": "captures/chromium-390/products-studio-video--canonical.png",
+      "sha256": "4a5ad98f4b5991e52ec6ec08faa315a36a95cb633464dbf08892940d13f0b0aa",
+      "bytes": 1786558
     },
     {
       "project": "chromium-1440",
@@ -2833,7 +3349,9 @@
       "route": "/products/studio/video/",
       "state": "canonical",
       "routeId": "products-studio-video--canonical",
-      "path": "captures/chromium-1440/products-studio-video--canonical.png"
+      "path": "captures/chromium-1440/products-studio-video--canonical.png",
+      "sha256": "f0e2c63f8d07f3961701a7347ac89acf598a493d10c178c50fd618ad1c01ac0c",
+      "bytes": 896742
     },
     {
       "project": "chromium-390",
@@ -2844,7 +3362,9 @@
       "route": "/products/web-magic/",
       "state": "canonical",
       "routeId": "products-web-magic--canonical",
-      "path": "captures/chromium-390/products-web-magic--canonical.png"
+      "path": "captures/chromium-390/products-web-magic--canonical.png",
+      "sha256": "6e9befd68892c200dd7a44c84097799be26d4e62b563b51d5f1de833c2622e76",
+      "bytes": 1221733
     },
     {
       "project": "chromium-1440",
@@ -2855,7 +3375,9 @@
       "route": "/products/web-magic/",
       "state": "canonical",
       "routeId": "products-web-magic--canonical",
-      "path": "captures/chromium-1440/products-web-magic--canonical.png"
+      "path": "captures/chromium-1440/products-web-magic--canonical.png",
+      "sha256": "d7e0ae8edb0df5137b170463fa36bcdb653e3fa87b4e423d3410cd1deaf54dbb",
+      "bytes": 535713
     },
     {
       "project": "chromium-390",
@@ -2866,7 +3388,9 @@
       "route": "/products/web-magic/accessibility/",
       "state": "canonical",
       "routeId": "products-web-magic-accessibility--canonical",
-      "path": "captures/chromium-390/products-web-magic-accessibility--canonical.png"
+      "path": "captures/chromium-390/products-web-magic-accessibility--canonical.png",
+      "sha256": "f0bc5903d865dd3e68c964cb93df4ec91cd4a2a061ae9786c9003dcb82c3a52b",
+      "bytes": 2009564
     },
     {
       "project": "chromium-1440",
@@ -2877,7 +3401,9 @@
       "route": "/products/web-magic/accessibility/",
       "state": "canonical",
       "routeId": "products-web-magic-accessibility--canonical",
-      "path": "captures/chromium-1440/products-web-magic-accessibility--canonical.png"
+      "path": "captures/chromium-1440/products-web-magic-accessibility--canonical.png",
+      "sha256": "23d52f688e942164079badce39b3f778517eb13feff06835e9144a4ab31750c0",
+      "bytes": 884885
     },
     {
       "project": "chromium-390",
@@ -2888,7 +3414,9 @@
       "route": "/products/web-magic/delivery/",
       "state": "canonical",
       "routeId": "products-web-magic-delivery--canonical",
-      "path": "captures/chromium-390/products-web-magic-delivery--canonical.png"
+      "path": "captures/chromium-390/products-web-magic-delivery--canonical.png",
+      "sha256": "612db0b273159352b1b6bbbc5638ae6ad570e78d20be90db6d2157a33762cca1",
+      "bytes": 2029675
     },
     {
       "project": "chromium-1440",
@@ -2899,7 +3427,9 @@
       "route": "/products/web-magic/delivery/",
       "state": "canonical",
       "routeId": "products-web-magic-delivery--canonical",
-      "path": "captures/chromium-1440/products-web-magic-delivery--canonical.png"
+      "path": "captures/chromium-1440/products-web-magic-delivery--canonical.png",
+      "sha256": "b79d765d5d5806190cf20a599780c038ff860104285497cae205a6a118c4c40d",
+      "bytes": 903392
     },
     {
       "project": "chromium-390",
@@ -2910,7 +3440,9 @@
       "route": "/products/web-magic/performance/",
       "state": "canonical",
       "routeId": "products-web-magic-performance--canonical",
-      "path": "captures/chromium-390/products-web-magic-performance--canonical.png"
+      "path": "captures/chromium-390/products-web-magic-performance--canonical.png",
+      "sha256": "bbd9a9ee68e651f4a8ec840bb136ba24c6af3988e999467986d2b13fc389def1",
+      "bytes": 1783090
     },
     {
       "project": "chromium-1440",
@@ -2921,7 +3453,9 @@
       "route": "/products/web-magic/performance/",
       "state": "canonical",
       "routeId": "products-web-magic-performance--canonical",
-      "path": "captures/chromium-1440/products-web-magic-performance--canonical.png"
+      "path": "captures/chromium-1440/products-web-magic-performance--canonical.png",
+      "sha256": "cdaf74b6c1874faeacb94266378a5127209be0743a7e023c7566aeb32955395e",
+      "bytes": 893261
     },
     {
       "project": "chromium-390",
@@ -2932,7 +3466,9 @@
       "route": "/products/web-magic/seo/",
       "state": "canonical",
       "routeId": "products-web-magic-seo--canonical",
-      "path": "captures/chromium-390/products-web-magic-seo--canonical.png"
+      "path": "captures/chromium-390/products-web-magic-seo--canonical.png",
+      "sha256": "cfcf6d0ac18686c2b45beceb00e82f0ddb69c97d5fff503e7e1220bf6ab4e75b",
+      "bytes": 1763227
     },
     {
       "project": "chromium-1440",
@@ -2943,7 +3479,9 @@
       "route": "/products/web-magic/seo/",
       "state": "canonical",
       "routeId": "products-web-magic-seo--canonical",
-      "path": "captures/chromium-1440/products-web-magic-seo--canonical.png"
+      "path": "captures/chromium-1440/products-web-magic-seo--canonical.png",
+      "sha256": "d8b8ed0888b0daf1ccb3739e3d74632cb1b736db6616527b101674c454262714",
+      "bytes": 900970
     },
     {
       "project": "chromium-390",
@@ -2954,7 +3492,9 @@
       "route": "/products/wiremark/",
       "state": "canonical",
       "routeId": "products-wiremark--canonical",
-      "path": "captures/chromium-390/products-wiremark--canonical.png"
+      "path": "captures/chromium-390/products-wiremark--canonical.png",
+      "sha256": "bb9c03344209effe62df3e2979c6a849c8e4196b835ee1e606aab6de66d994e6",
+      "bytes": 1310379
     },
     {
       "project": "chromium-1440",
@@ -2965,7 +3505,9 @@
       "route": "/products/wiremark/",
       "state": "canonical",
       "routeId": "products-wiremark--canonical",
-      "path": "captures/chromium-1440/products-wiremark--canonical.png"
+      "path": "captures/chromium-1440/products-wiremark--canonical.png",
+      "sha256": "5aea6b38ab0ac54508fc5d198d1b6af607d24a861146079ba91527f4b5ccf3b5",
+      "bytes": 517116
     },
     {
       "project": "chromium-390",
@@ -2976,7 +3518,9 @@
       "route": "/products/wiremark/agent-handoff/",
       "state": "canonical",
       "routeId": "products-wiremark-agent-handoff--canonical",
-      "path": "captures/chromium-390/products-wiremark-agent-handoff--canonical.png"
+      "path": "captures/chromium-390/products-wiremark-agent-handoff--canonical.png",
+      "sha256": "a7ba182fd589af102f486bbc61cfe9ca906fb96dc9ba8350961b6540d79ea764",
+      "bytes": 1784370
     },
     {
       "project": "chromium-1440",
@@ -2987,7 +3531,9 @@
       "route": "/products/wiremark/agent-handoff/",
       "state": "canonical",
       "routeId": "products-wiremark-agent-handoff--canonical",
-      "path": "captures/chromium-1440/products-wiremark-agent-handoff--canonical.png"
+      "path": "captures/chromium-1440/products-wiremark-agent-handoff--canonical.png",
+      "sha256": "6587e31079314749ba6cae594e1df8557f4c3707c17cf8dbe274966a5f3a8615",
+      "bytes": 894966
     },
     {
       "project": "chromium-390",
@@ -2998,7 +3544,9 @@
       "route": "/products/wiremark/canvas/",
       "state": "canonical",
       "routeId": "products-wiremark-canvas--canonical",
-      "path": "captures/chromium-390/products-wiremark-canvas--canonical.png"
+      "path": "captures/chromium-390/products-wiremark-canvas--canonical.png",
+      "sha256": "cedbcbc258076af9e44d98ac327798c34d853de240e7112b0fe0f701774f526c",
+      "bytes": 2026584
     },
     {
       "project": "chromium-1440",
@@ -3009,7 +3557,9 @@
       "route": "/products/wiremark/canvas/",
       "state": "canonical",
       "routeId": "products-wiremark-canvas--canonical",
-      "path": "captures/chromium-1440/products-wiremark-canvas--canonical.png"
+      "path": "captures/chromium-1440/products-wiremark-canvas--canonical.png",
+      "sha256": "467aa1f1814af403b1f081e6a2e900042000017cd49d6616e750cca3563f5950",
+      "bytes": 898220
     },
     {
       "project": "chromium-390",
@@ -3020,7 +3570,9 @@
       "route": "/products/wiremark/privacy-provenance/",
       "state": "canonical",
       "routeId": "products-wiremark-privacy-provenance--canonical",
-      "path": "captures/chromium-390/products-wiremark-privacy-provenance--canonical.png"
+      "path": "captures/chromium-390/products-wiremark-privacy-provenance--canonical.png",
+      "sha256": "e80b018be12a4f56c5fac0b1377f727a47969e5702192d0a87ed9a664f591982",
+      "bytes": 2026424
     },
     {
       "project": "chromium-1440",
@@ -3031,7 +3583,9 @@
       "route": "/products/wiremark/privacy-provenance/",
       "state": "canonical",
       "routeId": "products-wiremark-privacy-provenance--canonical",
-      "path": "captures/chromium-1440/products-wiremark-privacy-provenance--canonical.png"
+      "path": "captures/chromium-1440/products-wiremark-privacy-provenance--canonical.png",
+      "sha256": "ce0950eb3815f8edde99624e68087a58ea142f6845ed1e3b974d2684f96d682e",
+      "bytes": 902866
     },
     {
       "project": "chromium-390",
@@ -3042,7 +3596,9 @@
       "route": "/products/wiremark/source-intelligence/",
       "state": "canonical",
       "routeId": "products-wiremark-source-intelligence--canonical",
-      "path": "captures/chromium-390/products-wiremark-source-intelligence--canonical.png"
+      "path": "captures/chromium-390/products-wiremark-source-intelligence--canonical.png",
+      "sha256": "eddb9179257492ebf3185ff504da6e2c4ba2bb372cccaf00cc0c8bcc897b9ff5",
+      "bytes": 1781399
     },
     {
       "project": "chromium-1440",
@@ -3053,7 +3609,9 @@
       "route": "/products/wiremark/source-intelligence/",
       "state": "canonical",
       "routeId": "products-wiremark-source-intelligence--canonical",
-      "path": "captures/chromium-1440/products-wiremark-source-intelligence--canonical.png"
+      "path": "captures/chromium-1440/products-wiremark-source-intelligence--canonical.png",
+      "sha256": "a30559149069cb4e61425009ef13439de1ed908d373311c23d16f37c6ce07600",
+      "bytes": 886417
     },
     {
       "project": "chromium-390",
@@ -3064,7 +3622,9 @@
       "route": "/responsible-ai/",
       "state": "canonical",
       "routeId": "responsible-ai--canonical",
-      "path": "captures/chromium-390/responsible-ai--canonical.png"
+      "path": "captures/chromium-390/responsible-ai--canonical.png",
+      "sha256": "9a740e79f78b0c1ace5e709b7cc84c8016717bdc40fc24eaf17b277b439718c9",
+      "bytes": 2001705
     },
     {
       "project": "chromium-1440",
@@ -3075,7 +3635,9 @@
       "route": "/responsible-ai/",
       "state": "canonical",
       "routeId": "responsible-ai--canonical",
-      "path": "captures/chromium-1440/responsible-ai--canonical.png"
+      "path": "captures/chromium-1440/responsible-ai--canonical.png",
+      "sha256": "2d3d136d9e2a9137a9c41aed2b5641f5fd5dd29650d2e45cc0700b7a6b3bd4fb",
+      "bytes": 886537
     },
     {
       "project": "chromium-390",
@@ -3086,7 +3648,9 @@
       "route": "/security/",
       "state": "canonical",
       "routeId": "security--canonical",
-      "path": "captures/chromium-390/security--canonical.png"
+      "path": "captures/chromium-390/security--canonical.png",
+      "sha256": "bbe182609e9df58452fdb60e96bb87122035f5ecc91c6e2ed8a762f790f168ce",
+      "bytes": 1788996
     },
     {
       "project": "chromium-1440",
@@ -3097,7 +3661,9 @@
       "route": "/security/",
       "state": "canonical",
       "routeId": "security--canonical",
-      "path": "captures/chromium-1440/security--canonical.png"
+      "path": "captures/chromium-1440/security--canonical.png",
+      "sha256": "3ad87de5fdef2aacc952318365ead10595e2c863f279d0e5b526507757a76935",
+      "bytes": 891534
     },
     {
       "project": "chromium-390",
@@ -3108,7 +3674,9 @@
       "route": "/services/",
       "state": "canonical",
       "routeId": "services--canonical",
-      "path": "captures/chromium-390/services--canonical.png"
+      "path": "captures/chromium-390/services--canonical.png",
+      "sha256": "ed6fb479d80ea651b545f809de7577c0c4df1456e6a5bc5ba8107bbbdb50fb0d",
+      "bytes": 1448567
     },
     {
       "project": "chromium-1440",
@@ -3119,7 +3687,9 @@
       "route": "/services/",
       "state": "canonical",
       "routeId": "services--canonical",
-      "path": "captures/chromium-1440/services--canonical.png"
+      "path": "captures/chromium-1440/services--canonical.png",
+      "sha256": "c6b8f1792107590159a7905510581739179c1ca0ac95e4147d63220e76d35767",
+      "bytes": 739374
     },
     {
       "project": "chromium-390",
@@ -3130,7 +3700,9 @@
       "route": "/services/brand-systems/",
       "state": "canonical",
       "routeId": "services-brand-systems--canonical",
-      "path": "captures/chromium-390/services-brand-systems--canonical.png"
+      "path": "captures/chromium-390/services-brand-systems--canonical.png",
+      "sha256": "80a41b2d3a252f6178d0fef30224abaac60cad7433a7a7b0238fb5c48bbd047f",
+      "bytes": 1609921
     },
     {
       "project": "chromium-1440",
@@ -3141,7 +3713,9 @@
       "route": "/services/brand-systems/",
       "state": "canonical",
       "routeId": "services-brand-systems--canonical",
-      "path": "captures/chromium-1440/services-brand-systems--canonical.png"
+      "path": "captures/chromium-1440/services-brand-systems--canonical.png",
+      "sha256": "54c354ce81b51da2b5cba1795fd3572c2aaae313c1e002d2ababbcb6c4aeaa9a",
+      "bytes": 850102
     },
     {
       "project": "chromium-390",
@@ -3152,7 +3726,9 @@
       "route": "/services/campaign-production/",
       "state": "canonical",
       "routeId": "services-campaign-production--canonical",
-      "path": "captures/chromium-390/services-campaign-production--canonical.png"
+      "path": "captures/chromium-390/services-campaign-production--canonical.png",
+      "sha256": "3b1f4f397fedd68023e145eb20672de2584784d7291753963ec84c5f51dda3d0",
+      "bytes": 1632858
     },
     {
       "project": "chromium-1440",
@@ -3163,7 +3739,9 @@
       "route": "/services/campaign-production/",
       "state": "canonical",
       "routeId": "services-campaign-production--canonical",
-      "path": "captures/chromium-1440/services-campaign-production--canonical.png"
+      "path": "captures/chromium-1440/services-campaign-production--canonical.png",
+      "sha256": "9ff192992fe00bb60d6884863757de8dbf37d32bd828dc4d0176917ec9d02c13",
+      "bytes": 870454
     },
     {
       "project": "chromium-390",
@@ -3174,7 +3752,9 @@
       "route": "/services/content-operations/",
       "state": "canonical",
       "routeId": "services-content-operations--canonical",
-      "path": "captures/chromium-390/services-content-operations--canonical.png"
+      "path": "captures/chromium-390/services-content-operations--canonical.png",
+      "sha256": "db69e566e4fbd661ac138c096c152072782c51f39d65181bc1fbe0daa1927720",
+      "bytes": 1630076
     },
     {
       "project": "chromium-1440",
@@ -3185,7 +3765,9 @@
       "route": "/services/content-operations/",
       "state": "canonical",
       "routeId": "services-content-operations--canonical",
-      "path": "captures/chromium-1440/services-content-operations--canonical.png"
+      "path": "captures/chromium-1440/services-content-operations--canonical.png",
+      "sha256": "12cae88b888d61ec4b5731e441bfb8ddfb5d13037d5f70480b383a8e1b256652",
+      "bytes": 857288
     },
     {
       "project": "chromium-390",
@@ -3196,7 +3778,9 @@
       "route": "/services/creative-direction/",
       "state": "canonical",
       "routeId": "services-creative-direction--canonical",
-      "path": "captures/chromium-390/services-creative-direction--canonical.png"
+      "path": "captures/chromium-390/services-creative-direction--canonical.png",
+      "sha256": "ce3c39b4762479962d93c51921ca3e55eadf457869cd8ae35954f5ad94d4e9d2",
+      "bytes": 1867846
     },
     {
       "project": "chromium-1440",
@@ -3207,7 +3791,9 @@
       "route": "/services/creative-direction/",
       "state": "canonical",
       "routeId": "services-creative-direction--canonical",
-      "path": "captures/chromium-1440/services-creative-direction--canonical.png"
+      "path": "captures/chromium-1440/services-creative-direction--canonical.png",
+      "sha256": "5a11a0e5f39bef5f8887e112056e075c6f8b50c5e4dabe3e425db700e9e79298",
+      "bytes": 845856
     },
     {
       "project": "chromium-390",
@@ -3218,7 +3804,9 @@
       "route": "/services/creative-technology/",
       "state": "canonical",
       "routeId": "services-creative-technology--canonical",
-      "path": "captures/chromium-390/services-creative-technology--canonical.png"
+      "path": "captures/chromium-390/services-creative-technology--canonical.png",
+      "sha256": "b594141e39de8b69cf61cd92534ee5901f79409bb3a4ec728713eb9e9a179848",
+      "bytes": 1889581
     },
     {
       "project": "chromium-1440",
@@ -3229,7 +3817,9 @@
       "route": "/services/creative-technology/",
       "state": "canonical",
       "routeId": "services-creative-technology--canonical",
-      "path": "captures/chromium-1440/services-creative-technology--canonical.png"
+      "path": "captures/chromium-1440/services-creative-technology--canonical.png",
+      "sha256": "6e90de586669e4ef138068f2526a9ba6f9926de542c78c84438169215d268980",
+      "bytes": 860254
     },
     {
       "project": "chromium-390",
@@ -3240,7 +3830,9 @@
       "route": "/services/executive-advisory/",
       "state": "canonical",
       "routeId": "services-executive-advisory--canonical",
-      "path": "captures/chromium-390/services-executive-advisory--canonical.png"
+      "path": "captures/chromium-390/services-executive-advisory--canonical.png",
+      "sha256": "de9defb2e8dce89b21227e195a159f3a1303a526b427743c19a892d3d41bb724",
+      "bytes": 1639391
     },
     {
       "project": "chromium-1440",
@@ -3251,7 +3843,9 @@
       "route": "/services/executive-advisory/",
       "state": "canonical",
       "routeId": "services-executive-advisory--canonical",
-      "path": "captures/chromium-1440/services-executive-advisory--canonical.png"
+      "path": "captures/chromium-1440/services-executive-advisory--canonical.png",
+      "sha256": "2ba6bcb43e417e04252fe29273bd084d866cf02ae2b7e36e0faa0da8d8f40ecd",
+      "bytes": 859751
     },
     {
       "project": "chromium-390",
@@ -3262,7 +3856,9 @@
       "route": "/services/genai-strategy/",
       "state": "canonical",
       "routeId": "services-genai-strategy--canonical",
-      "path": "captures/chromium-390/services-genai-strategy--canonical.png"
+      "path": "captures/chromium-390/services-genai-strategy--canonical.png",
+      "sha256": "4f0105e141cd5a0fd52e8216b0f4669f53e9baec8e94c03e574c9b09b0cb8b11",
+      "bytes": 1592711
     },
     {
       "project": "chromium-1440",
@@ -3273,7 +3869,9 @@
       "route": "/services/genai-strategy/",
       "state": "canonical",
       "routeId": "services-genai-strategy--canonical",
-      "path": "captures/chromium-1440/services-genai-strategy--canonical.png"
+      "path": "captures/chromium-1440/services-genai-strategy--canonical.png",
+      "sha256": "0de3ba6d375909afd0ebe0911ee460591efe095cbce1c95a177b841d20751e61",
+      "bytes": 856539
     },
     {
       "project": "chromium-390",
@@ -3284,7 +3882,9 @@
       "route": "/services/marketing-consulting/",
       "state": "canonical",
       "routeId": "services-marketing-consulting--canonical",
-      "path": "captures/chromium-390/services-marketing-consulting--canonical.png"
+      "path": "captures/chromium-390/services-marketing-consulting--canonical.png",
+      "sha256": "3a0042ef16dd4067003c345c2cb26a6bb42c31a2a2b5e5b52247cd48e80c3c20",
+      "bytes": 1635319
     },
     {
       "project": "chromium-1440",
@@ -3295,7 +3895,9 @@
       "route": "/services/marketing-consulting/",
       "state": "canonical",
       "routeId": "services-marketing-consulting--canonical",
-      "path": "captures/chromium-1440/services-marketing-consulting--canonical.png"
+      "path": "captures/chromium-1440/services-marketing-consulting--canonical.png",
+      "sha256": "e82c076d2416ee4c5dc06eb79fa6dcdf509c5c968e24a71b8989542b531014dc",
+      "bytes": 852726
     },
     {
       "project": "chromium-390",
@@ -3306,7 +3908,9 @@
       "route": "/services/media-management/",
       "state": "canonical",
       "routeId": "services-media-management--canonical",
-      "path": "captures/chromium-390/services-media-management--canonical.png"
+      "path": "captures/chromium-390/services-media-management--canonical.png",
+      "sha256": "4c35dec53a1f69bb388916fb1147248e240f7c0bb50d00e91e69a6c61201c442",
+      "bytes": 1621028
     },
     {
       "project": "chromium-1440",
@@ -3317,7 +3921,9 @@
       "route": "/services/media-management/",
       "state": "canonical",
       "routeId": "services-media-management--canonical",
-      "path": "captures/chromium-1440/services-media-management--canonical.png"
+      "path": "captures/chromium-1440/services-media-management--canonical.png",
+      "sha256": "486db7ecfc5fe941bd0e26a1e6094565e7955689ee213df30695e47b06108d1b",
+      "bytes": 856646
     },
     {
       "project": "chromium-390",
@@ -3328,7 +3934,9 @@
       "route": "/services/web-experience/",
       "state": "canonical",
       "routeId": "services-web-experience--canonical",
-      "path": "captures/chromium-390/services-web-experience--canonical.png"
+      "path": "captures/chromium-390/services-web-experience--canonical.png",
+      "sha256": "ce62d8453b94a6ef676bb2a550068cf7eacb0dcff456fb18717f2cb9cb7a193f",
+      "bytes": 1809901
     },
     {
       "project": "chromium-1440",
@@ -3339,7 +3947,9 @@
       "route": "/services/web-experience/",
       "state": "canonical",
       "routeId": "services-web-experience--canonical",
-      "path": "captures/chromium-1440/services-web-experience--canonical.png"
+      "path": "captures/chromium-1440/services-web-experience--canonical.png",
+      "sha256": "1741361854977ae6240a5950c9d5464b8a64cf43ab1a7725b0214ac17c284d2b",
+      "bytes": 856697
     },
     {
       "project": "chromium-390",
@@ -3350,7 +3960,9 @@
       "route": "/sitemap/",
       "state": "canonical",
       "routeId": "sitemap--canonical",
-      "path": "captures/chromium-390/sitemap--canonical.png"
+      "path": "captures/chromium-390/sitemap--canonical.png",
+      "sha256": "2d66fa448a55ea96692901d3d1b884eb0f81fe53d3240b9251005e6e7102e2dd",
+      "bytes": 1991253
     },
     {
       "project": "chromium-1440",
@@ -3361,7 +3973,9 @@
       "route": "/sitemap/",
       "state": "canonical",
       "routeId": "sitemap--canonical",
-      "path": "captures/chromium-1440/sitemap--canonical.png"
+      "path": "captures/chromium-1440/sitemap--canonical.png",
+      "sha256": "191b35832cfde1b9b0c603b88831da99c60951afe7d3b3c3b255318a663fe5ed",
+      "bytes": 892292
     },
     {
       "project": "chromium-390",
@@ -3372,7 +3986,9 @@
       "route": "/terms/",
       "state": "canonical",
       "routeId": "terms--canonical",
-      "path": "captures/chromium-390/terms--canonical.png"
+      "path": "captures/chromium-390/terms--canonical.png",
+      "sha256": "373ba62a6ca5c3f6acfe49822663bef29e27a7bb0a9098a8c84805f0afcfe81d",
+      "bytes": 1981567
     },
     {
       "project": "chromium-1440",
@@ -3383,7 +3999,9 @@
       "route": "/terms/",
       "state": "canonical",
       "routeId": "terms--canonical",
-      "path": "captures/chromium-1440/terms--canonical.png"
+      "path": "captures/chromium-1440/terms--canonical.png",
+      "sha256": "dbbc5cc62c48907fe7e8ffaa3977bf7fb322f856ed7725709235fc08afabee3f",
+      "bytes": 876731
     }
   ]
 }

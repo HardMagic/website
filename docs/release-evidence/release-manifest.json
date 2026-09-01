@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "status": "candidate",
-  "generatedAt": "2026-08-20T15:25:19.349Z",
+  "generatedAt": "2026-08-31T10:40:33.000Z",
   "release": {
-    "commit": "51b50406a5912a725653b32a54d77e5f9d68ca86",
+    "commit": "66ff0f8c34d9f00c98eb31ec5656ab9a0b24df81",
     "branch": "demo",
     "pipeline": null,
-    "packageLockSha256": "7a467b55b5f84c3b0a2a0e29aa8773737bfa8584ec0daacbee13700ceb144cb5",
-    "buildTime": "2026-08-20T15:25:19.349Z",
+    "packageLockSha256": "6075e316a40a73a4126afadf7190db439bac5ac642af99624fc5ac930b5f1319",
+    "buildTime": "2026-08-31T10:40:33.000Z",
     "environment": {
       "target": "public",
       "basePath": "/"
@@ -17,15 +17,15 @@
     "site": "https://hardmagic.com",
     "artifact": {
       "root": "dist",
-      "sha256": "22f4d8b811ae3969912cca8a7b7f385dd8e42b512c21c140b1b1b3af8cbdfbc6",
-      "bytes": 10323090,
-      "files": 328
+      "sha256": "9a5fc9b83d1622b558b69cf5cc682eafcca049e0c5d6454ebdcffbcf2fe9df27",
+      "bytes": 10396236,
+      "files": 333
     }
   },
   "infrastructureVersions": {
-    "node": "v25.9.0",
-    "npm": "11.19.0",
-    "astro": "7.2.1",
+    "node": "v22.22.1",
+    "npm": "11.19.1",
+    "astro": "7.2.9",
     "adapter": "static"
   },
   "hosting": {
@@ -44,10 +44,14 @@
     "publicMirror": {
       "provider": "GitHub Pages",
       "sourceBranch": "gh-pages",
+      "workflow": "mirror_public_release",
+      "artifactSource": "GitLab public_release CI artifact",
+      "provenanceTag": "public-release-66ff0f8c34d9f00c98eb31ec5656ab9a0b24df81",
       "verified": false,
       "assumptions": [
         "GitLab remains the source of truth for the release commit and artifact.",
-        "A protected external process mirrors the GitLab gh-pages artifact to GitHub Pages.",
+        "The protected mirror_public_release job promotes only the verified GitLab public artifact to GitLab gh-pages and then GitHub Pages.",
+        "The signed GitLab provenance tag is published atomically with the GitLab branch update before the GitHub branch push.",
         "The hardmagic.com DNS, TLS, CDN freshness, and rollback state require release-owner verification."
       ]
     },
@@ -57,7 +61,7 @@
     }
   },
   "verification": {
-    "renderedUrlTests": true,
+    "renderedUrlTests": false,
     "publicMirrorVerified": false,
     "deployedHostVerified": false
   }

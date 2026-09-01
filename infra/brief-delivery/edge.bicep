@@ -12,7 +12,10 @@ resource originGroup 'Microsoft.Cdn/profiles/originGroups@2024-09-01' = {
   parent: profile
   name: 'hardmagic-briefs-origins'
   properties: {
-    healthProbeSettings: { probePath: '/api/health', probeRequestType: 'GET', probeProtocol: 'Https', probeIntervalInSeconds: 30 }
+    // Front Door probes from many edge locations. The maximum supported
+    // interval preserves origin-health detection while avoiding tens of
+    // thousands of low-value Function invocations per day.
+    healthProbeSettings: { probePath: '/api/health', probeRequestType: 'GET', probeProtocol: 'Https', probeIntervalInSeconds: 255 }
     loadBalancingSettings: { sampleSize: 4, successfulSamplesRequired: 2, additionalLatencyInMilliseconds: 0 }
     sessionAffinityState: 'Enabled'
     trafficRestorationTimeToHealedOrNewEndpointsInMinutes: 10
