@@ -16,6 +16,23 @@ const {
 } = await import('../../astro.config');
 
 describe('BriefLock deployment contracts', () => {
+  it('never expires the Flex deployments container, which holds the live Function package', () => {
+    const infrastructure = readRepositoryFile('infra/brief-delivery/modules/brief-lock.bicep');
+    const lifecycle = infrastructure.slice(infrastructure.indexOf("'Microsoft.Storage/storageAccounts/managementPolicies"), infrastructure.indexOf("resource keyVault"));
+    expect(lifecycle).not.toMatch(/prefixMatch:\s*\[[^\]]*deployments/);
+    expect(lifecycle).not.toContain('expire-deployments');
+    expect(readRepositoryFile('infra/brief-delivery/main.bicep')).not.toContain('deploymentRetentionDays');
+    expect(readRepositoryFile('infra/brief-delivery/parameters.example.json')).not.toContain('deploymentRetentionDays');
+  });
+
+  it('sends every deploy smoke request with an honest named User-Agent the edge WAF accepts', () => {
+    const pipeline = readRepositoryFile('.gitlab/ci/brief-delivery.yml');
+    expect(pipeline).toContain('smoke_ua="hm-briefs-deploy-smoke/1.0');
+    const curls = pipeline.split('\n').filter((line) => line.includes('curl --silent'));
+    expect(curls.length).toBeGreaterThanOrEqual(4);
+    for (const line of curls) expect(line).toContain('-A "$smoke_ua"');
+  });
+
   it('keeps the Front Door origin host header bound to the Function hostname', () => {
     const source = readRepositoryFile('infra/brief-delivery/edge.bicep');
     expect(source).toContain('originHostHeader: functionOriginHostname');
