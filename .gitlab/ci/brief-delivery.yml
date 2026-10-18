@@ -172,6 +172,8 @@ brief_lock_deploy:
       set -eu
       smoke_root="${BRIEF_SMOKE_URL:-https://briefs.hardmagic.com}"
       smoke_root="${smoke_root%/}"
+      # The edge WAF rejects curl/wget/bot/empty User-Agents on /api/*; identify honestly.
+      smoke_ua="hm-briefs-deploy-smoke/1.0 (+https://git.developerdojo.org/HardMagic/website)"
       smoke_headers="$(mktemp)"
       trap 'rm -f "$smoke_headers"' EXIT
       check_security_headers() {
@@ -179,10 +181,10 @@ brief_lock_deploy:
           grep -Eiq "^${header}:" "$smoke_headers"
         done
       }
-      health_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' "$smoke_root/api/health")"
+      health_status="$(curl --silent --show-error -A "$smoke_ua" --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' "$smoke_root/api/health")"
       test "$health_status" = "200"
       check_security_headers
-      options_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X OPTIONS -H 'Origin: https://hardmagic.com' -H 'Access-Control-Request-Method: POST' -H 'Access-Control-Request-Headers: content-type' "$smoke_root/api/brief-request")"
+      options_status="$(curl --silent --show-error -A "$smoke_ua" --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X OPTIONS -H 'Origin: https://hardmagic.com' -H 'Access-Control-Request-Method: POST' -H 'Access-Control-Request-Headers: content-type' "$smoke_root/api/brief-request")"
       test "$options_status" = "204"
       # Azure Functions answers a browser preflight in its host layer before
       # invoking the Node handler. That synthetic empty response has the
@@ -191,9 +193,9 @@ brief_lock_deploy:
       # security-header contract.
       grep -Eiq '^access-control-allow-origin: https://hardmagic.com' "$smoke_headers"
       grep -Eiq '^access-control-allow-methods: POST' "$smoke_headers"
-      invalid_body_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X POST -H 'Origin: https://hardmagic.com' -H 'Content-Type: application/json' --data-binary '{}' "$smoke_root/api/brief-request")"
+      invalid_body_status="$(curl --silent --show-error -A "$smoke_ua" --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X POST -H 'Origin: https://hardmagic.com' -H 'Content-Type: application/json' --data-binary '{}' "$smoke_root/api/brief-request")"
       test "$invalid_body_status" = "400"
       check_security_headers
-      unsupported_content_type_status="$(curl --silent --show-error --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X POST -H 'Origin: https://hardmagic.com' -H 'Content-Type: text/plain' --data-binary '{}' "$smoke_root/api/brief-request")"
+      unsupported_content_type_status="$(curl --silent --show-error -A "$smoke_ua" --retry 3 --retry-delay 2 --max-time 20 --dump-header "$smoke_headers" --output /dev/null --write-out '%{http_code}' -X POST -H 'Origin: https://hardmagic.com' -H 'Content-Type: text/plain' --data-binary '{}' "$smoke_root/api/brief-request")"
       test "$unsupported_content_type_status" = "415"
       check_security_headers
