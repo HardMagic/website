@@ -282,8 +282,10 @@ resource functionApp 'Microsoft.Web/sites@2024-11-01' = {
       ftpsState: 'Disabled'
       http20Enabled: true
       minTlsVersion: '1.2'
-      // SCM remains an authenticated control-plane deployment surface. It cannot
-      // inherit the Front Door-only runtime rule or GitLab OIDC zip deployment is blocked.
+      // SCM remains an Entra-authenticated control-plane deployment surface (basic
+      // auth is off, see the policies below). It cannot inherit the Front Door-only
+      // runtime rule or GitLab OIDC zip deployment is blocked, and CI egress is a
+      // residential IP that changes, so it is not IP-restricted.
       scmIpSecurityRestrictionsUseMain: false
       scmIpSecurityRestrictionsDefaultAction: 'Allow'
       ipSecurityRestrictionsDefaultAction: 'Deny'
@@ -354,6 +356,23 @@ resource functionApp 'Microsoft.Web/sites@2024-11-01' = {
     runtimeVaultRole
     runtimeEmailRole
   ]
+}
+
+// SCM (Kudu) and FTP accept no basic-auth credentials; the SCM site takes only
+// Microsoft Entra bearer tokens. GitLab OIDC `az functionapp deployment source
+// config-zip` (brief_lock_deploy) switches to the Entra token by itself when
+// basic auth is off. FocusApiary/infrastructure#509.
+resource scmBasicAuthPolicy 'Microsoft.Web/sites/basicPublishingCredentialsPolicies@2024-11-01' = {
+  parent: functionApp
+  name: 'scm'
+  properties: { allow: false }
+}
+
+resource ftpBasicAuthPolicy 'Microsoft.Web/sites/basicPublishingCredentialsPolicies@2024-11-01' = {
+  parent: functionApp
+  name: 'ftp'
+  properties: { allow: false }
+  dependsOn: [ scmBasicAuthPolicy ]
 }
 
 resource runtimeBlobRole 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
