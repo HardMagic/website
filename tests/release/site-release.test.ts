@@ -72,11 +72,13 @@ describe('public release promotion contract', () => {
     expect(mirror).toContain('existing_gitlab_release_commit');
     expect(mirror).toContain('existing_github_commit');
     expect(mirror).toContain('test "$gitlab_branch_commit" = "$existing_gitlab_release_commit"');
-    expect(mirror).toContain('resumed_artifact_commit');
+    expect(mirror).not.toContain('resumed_artifact_commit');
+    expect(mirror).toContain('artifact_commit="$gitlab_release_commit"');
+    expect(mirror).not.toMatch(/commit-tree[^\n]*github_worktree/);
     expect(mirror).toContain('missing GitHub push');
     expect(mirror).toContain('push --atomic origin');
     expect(mirror).toContain('refs/heads/$GITHUB_PAGES_BRANCH');
-    expect(mirror).toContain('push origin "$artifact_commit:refs/heads/$GITHUB_PAGES_BRANCH"');
+    expect(mirror).toContain('push "$github_url" "$artifact_commit:refs/heads/$GITHUB_PAGES_BRANCH"');
     const existingReleaseCheck = mirror.indexOf('if git -C "$gitlab_repo" ls-remote --exit-code origin "refs/tags/$provenance_tag"');
     const firstReleaseCommitDerivation = mirror.indexOf('gitlab_release_commit="$(git -C "$gitlab_repo" commit-tree');
     expect(existingReleaseCheck).toBeGreaterThanOrEqual(0);
