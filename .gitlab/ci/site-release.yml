@@ -277,7 +277,10 @@ mirror_public_release:
         test "$(git -C "$gitlab_repo" show -s --format=%s "$existing_gitlab_release_commit")" = "$release_commit_message"
         test "$(git -C "$gitlab_repo" show -s --format=%T "$existing_gitlab_release_commit")" = "$gitlab_artifact_tree"
         gitlab_release_commit="$existing_gitlab_release_commit"
-        artifact_commit="$existing_github_commit"
+        # GitLab and GitHub carry the very same release commit (#533), so the
+        # tag must record identical SHAs for both.
+        test "$existing_github_commit" = "$existing_gitlab_release_commit"
+        artifact_commit="$gitlab_release_commit"
         existing_release_author_date="$(git -C "$gitlab_repo" show -s --format=%aI "$gitlab_release_commit")"
         existing_release_committer_date="$(git -C "$gitlab_repo" show -s --format=%cI "$gitlab_release_commit")"
         export GIT_AUTHOR_DATE="$existing_release_author_date"
@@ -308,19 +311,18 @@ mirror_public_release:
       git clone --branch "$GITHUB_PAGES_BRANCH" --single-branch --depth=1 "$github_url" "$github_worktree"
       test "$(git -C "$github_worktree" symbolic-ref --short HEAD)" = "$GITHUB_PAGES_BRANCH"
       github_base_commit="$(git -C "$github_worktree" rev-parse HEAD)"
-      github_artifact_tree="$(build_artifact_tree "$github_worktree")"
-      test "$github_artifact_tree" = "$gitlab_artifact_tree"
-      git -C "$github_worktree" config user.name 'HardMagic release mirror'
-      git -C "$github_worktree" config user.email 'release-mirror@hardmagic.com'
-      if [ "$resume_existing_release" = true ]; then
-        if [ "$github_base_commit" != "$artifact_commit" ]; then
-          resumed_artifact_commit="$(git -C "$github_worktree" commit-tree "$github_artifact_tree" -p "$github_base_commit" -m "$release_commit_message")"
-          test "$resumed_artifact_commit" = "$artifact_commit"
-        fi
-      else
-        artifact_commit="$(git -C "$github_worktree" commit-tree "$github_artifact_tree" -p "$github_base_commit" -m "$release_commit_message")"
+      # GitHub receives the exact GitLab release commit, never a second commit
+      # with the same tree: independent commits (different author, different
+      # parent) have different SHAs, which made gh-pages diverge on every
+      # release and blocked the fast-forward-only mirror (infrastructure#533).
+      # GitHub's tip must therefore be the GitLab release commit's parent (or
+      # the commit itself when resuming) so the push below is a fast-forward.
+      artifact_commit="$gitlab_release_commit"
+      gitlab_release_parent="$(git -C "$gitlab_repo" rev-parse "$gitlab_release_commit^")"
+      if [ "$github_base_commit" != "$gitlab_release_commit" ] && [ "$github_base_commit" != "$gitlab_release_parent" ]; then
+        echo "GitHub $GITHUB_PAGES_BRANCH ($github_base_commit) is neither the GitLab release commit nor its parent ($gitlab_release_parent); refusing a non-fast-forward publish." >&2
+        exit 1
       fi
-      test "$(git -C "$github_worktree" show -s --format=%T "$artifact_commit")" = "$github_artifact_tree"
 
       if [ "$resume_existing_release" = false ]; then
         provenance_message="$(mktemp)"
@@ -354,11 +356,12 @@ mirror_public_release:
         git -C "$gitlab_repo" push --atomic origin "$gitlab_release_commit:refs/heads/$GITHUB_PAGES_BRANCH" "$provenance_tag"
       fi
       export GIT_ASKPASS="$github_askpass"
-      git -C "$github_worktree" push origin "$artifact_commit:refs/heads/$GITHUB_PAGES_BRANCH"
+      git -C "$gitlab_repo" push "$github_url" "$artifact_commit:refs/heads/$GITHUB_PAGES_BRANCH"
       git -C "$github_worktree" fetch --quiet origin "$GITHUB_PAGES_BRANCH"
       published_commit="$(git -C "$github_worktree" rev-parse FETCH_HEAD)"
       test "$published_commit" = "$artifact_commit"
       test "$(git -C "$github_worktree" show -s --format=%T "$published_commit")" = "$gitlab_artifact_tree"
+      test "$published_commit" = "$gitlab_release_commit"
       echo "Published approved artifact $artifact_sha256 to GitHub $GITHUB_PAGES_REPOSITORY:$GITHUB_PAGES_BRANCH."
   allow_failure: false
   resource_group: hardmagic-public-pages
