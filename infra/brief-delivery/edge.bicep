@@ -12,10 +12,13 @@ resource originGroup 'Microsoft.Cdn/profiles/originGroups@2024-09-01' = {
   parent: profile
   name: 'hardmagic-briefs-origins'
   properties: {
+    // The probe uses /api/healthz (FDID check only), not /api/health: the probe sends
+    // no X-Forwarded-Host, which /api/health requires (infrastructure#510). /api/healthz
+    // is not in the route patterns below, so it is not reachable at the edge.
     // Front Door probes from many edge locations. The maximum supported
     // interval preserves origin-health detection while avoiding tens of
     // thousands of low-value Function invocations per day.
-    healthProbeSettings: { probePath: '/api/health', probeRequestType: 'GET', probeProtocol: 'Https', probeIntervalInSeconds: 255 }
+    healthProbeSettings: { probePath: '/api/healthz', probeRequestType: 'GET', probeProtocol: 'Https', probeIntervalInSeconds: 255 }
     loadBalancingSettings: { sampleSize: 4, successfulSamplesRequired: 2, additionalLatencyInMilliseconds: 0 }
     sessionAffinityState: 'Enabled'
     trafficRestorationTimeToHealedOrNewEndpointsInMinutes: 10
@@ -40,13 +43,12 @@ resource origin 'Microsoft.Cdn/profiles/originGroups/origins@2024-09-01' = {
   }
 }
 
-resource domain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' = {
+// Owned by Terraform (FocusApiary/infrastructure terraform/environments/focushive, module
+// frontdoor_taodoor): the shared WAF binding references this domain, so it lives with the
+// WAF. Referenced as existing here so two IaC systems never declare one resource.
+resource domain 'Microsoft.Cdn/profiles/customDomains@2024-09-01' existing = {
   parent: profile
   name: 'briefs-hardmagic-com'
-  properties: {
-    hostName: 'briefs.hardmagic.com'
-    tlsSettings: { certificateType: 'ManagedCertificate', minimumTlsVersion: 'TLS12' }
-  }
 }
 
 resource securityHeadersRuleSet 'Microsoft.Cdn/profiles/ruleSets@2024-09-01' = {
