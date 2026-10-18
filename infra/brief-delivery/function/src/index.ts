@@ -524,6 +524,23 @@ export async function health(request: HttpRequest): Promise<HttpResponseInit> {
   }
 }
 
+/**
+ * Origin probe for the Front Door health probe (FocusApiary/infrastructure#510).
+ * Front Door calls the origin by its azurewebsites.net host and sends no
+ * X-Forwarded-Host, so `health` (which also checks the forwarded host) always
+ * answered 404 to it and the origin showed 0% health. This answers 200 only when
+ * x-azure-fdid is the expected profile id; the body is constant. It is NOT in the
+ * edge route patterns, so it is unreachable at https://briefs.hardmagic.com and
+ * the origin access restriction already requires the same header.
+ */
+export async function originProbe(request: Pick<HttpRequest, "headers">): Promise<HttpResponseInit> {
+  let expected: string;
+  try { expected = loadConfig().EXPECTED_FRONT_DOOR_ID.toLowerCase(); } catch { return response(503, "Service is not configured", { "cache-control": "no-store" }); }
+  const frontDoorId = request.headers.get("x-azure-fdid")?.trim().toLowerCase();
+  if (frontDoorId !== expected) return response(404, "Not found", { "cache-control": "no-store" });
+  return response(200, JSON.stringify({ ok: true }), { "content-type": "application/json", "cache-control": "no-store" });
+}
+
 export async function crmRetry(message: unknown, context: InvocationContext): Promise<void> {
   const event = parseCrmEvent(message);
   if (!event) throw new Error("crm_event_invalid");
@@ -693,5 +710,6 @@ app.http("briefRequest", { methods: ["POST", "OPTIONS"], authLevel: "anonymous",
 app.http("contactRequest", { methods: ["POST", "OPTIONS"], authLevel: "anonymous", route: "contact-request", handler: contactRequest });
 app.http("unsubscribe", { methods: ["GET", "POST", "OPTIONS"], authLevel: "anonymous", route: "unsubscribe", handler: unsubscribe });
 app.http("health", { methods: ["GET"], authLevel: "anonymous", route: "health", handler: health });
+app.http("healthz", { methods: ["GET"], authLevel: "anonymous", route: "healthz", handler: originProbe });
 app.storageQueue("crmRetry", { queueName: "crm-retry", connection: "AzureWebJobsStorage", handler: crmRetry });
 app.storageQueue("crmDeadLetter", { queueName: "crm-retry-poison", connection: "AzureWebJobsStorage", handler: crmDeadLetter });

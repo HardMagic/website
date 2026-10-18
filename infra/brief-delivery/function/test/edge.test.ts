@@ -30,7 +30,7 @@ Object.assign(process.env, {
   RATE_LIMIT_PER_HOUR: "5",
 });
 
-const { briefRequest, health, SECURITY_HEADERS, validateEdgeRequest } = await import("../src/index.js");
+const { briefRequest, health, originProbe, SECURITY_HEADERS, validateEdgeRequest } = await import("../src/index.js");
 const { buildAccountScopedContactQuery, renderBriefEmail } = await import("../src/platform.js");
 const { briefs } = await import("../src/catalog.js");
 
@@ -122,4 +122,16 @@ test("Dataverse contact lookup is constrained to the HardMagic Account", () => {
   const url = new URL(`https://dream.crm.dynamics.com${query}`);
   assert.equal(url.searchParams.get("$filter"), "emailaddress1 eq 'ada+media@example.com' and _parentcustomerid_value eq aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa");
   assert.match(url.searchParams.get("$select") ?? "", /_owningbusinessunit_value/);
+});
+
+test("origin probe answers 200 to the Front Door id without a forwarded host, and nothing else", async () => {
+  resetConfigForTests();
+  const fdid = "22222222-2222-4222-8222-222222222222";
+  const probe = await originProbe(request({ "x-azure-fdid": fdid }, "https://fn-hm-briefs.azurewebsites.net/api/healthz") as never);
+  assert.equal(probe.status, 200);
+  assertSecurityHeaders(probe);
+  assert.equal(probe.body, JSON.stringify({ ok: true }));
+  assert.equal((await originProbe(request({ "x-azure-fdid": fdid.toUpperCase() }) as never)).status, 200);
+  assert.equal((await originProbe(request({}) as never)).status, 404);
+  assert.equal((await originProbe(request({ "x-azure-fdid": "33333333-3333-4333-8333-333333333333" }) as never)).status, 404);
 });

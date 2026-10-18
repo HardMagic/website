@@ -114,6 +114,9 @@ describe('BriefLock deployment contracts', () => {
     expect(infrastructure).toContain("prefixMatch: [ 'ledger/locks/contact/' ]");
     expect(infrastructure).toContain("policyConfig.contactLockRetentionDays");
     expect(edge).toContain('probeIntervalInSeconds: 255');
+    expect(edge).toContain("probePath: '/api/healthz'");
+    // The custom domain is Terraform-owned (shared WAF binding); the Bicep may only reference it.
+    expect(edge).toMatch(/resource domain 'Microsoft.Cdn\/profiles\/customDomains@[0-9-]+' existing = /);
     expect(infrastructure).toContain("runtime: { name: 'node', version: '24' }");
   });
 
