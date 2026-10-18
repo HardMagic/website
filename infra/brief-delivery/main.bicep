@@ -60,7 +60,6 @@ param policyConfig object = {
   rateLimitRetentionDays: 2
   contactLockRetentionDays: 30
   deadLetterRetentionDays: 90
-  deploymentRetentionDays: 30
   signedUrlHours: 48
   rateLimitPerHour: 5
   turnstileRequired: true

@@ -16,6 +16,15 @@ const {
 } = await import('../../astro.config');
 
 describe('BriefLock deployment contracts', () => {
+  it('never expires the Flex deployments container, which holds the live Function package', () => {
+    const infrastructure = readRepositoryFile('infra/brief-delivery/modules/brief-lock.bicep');
+    const lifecycle = infrastructure.slice(infrastructure.indexOf("'Microsoft.Storage/storageAccounts/managementPolicies"), infrastructure.indexOf("resource keyVault"));
+    expect(lifecycle).not.toMatch(/prefixMatch:\s*\[[^\]]*deployments/);
+    expect(lifecycle).not.toContain('expire-deployments');
+    expect(readRepositoryFile('infra/brief-delivery/main.bicep')).not.toContain('deploymentRetentionDays');
+    expect(readRepositoryFile('infra/brief-delivery/parameters.example.json')).not.toContain('deploymentRetentionDays');
+  });
+
   it('keeps the Front Door origin host header bound to the Function hostname', () => {
     const source = readRepositoryFile('infra/brief-delivery/edge.bicep');
     expect(source).toContain('originHostHeader: functionOriginHostname');

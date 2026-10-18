@@ -155,15 +155,11 @@ resource lifecycle 'Microsoft.Storage/storageAccounts/managementPolicies@2025-06
             actions: { baseBlob: { delete: { daysAfterModificationGreaterThan: policyConfig.deadLetterRetentionDays } } }
           }
         }
-        {
-          name: 'expire-deployments'
-          enabled: true
-          type: 'Lifecycle'
-          definition: {
-            filters: { blobTypes: [ 'blockBlob' ], prefixMatch: [ 'deployments/' ] }
-            actions: { baseBlob: { delete: { daysAfterModificationGreaterThan: policyConfig.deploymentRetentionDays } } }
-          }
-        }
+        // Intentionally NO rule for the Flex `deployments` container. Flex
+        // Consumption keeps the running code package (released-package.zip) and
+        // kudu-state.json there and re-reads them on every host start. A
+        // modification-age expiry deleted the live package 30 days after the last
+        // deploy and took the intake API down (issue FocusApiary/infrastructure#519).
       ]
     }
   }

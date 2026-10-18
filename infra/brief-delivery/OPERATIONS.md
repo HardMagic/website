@@ -42,7 +42,7 @@ Never print an address, token, SAS URL, request body, Key Vault value, or full D
 - rate-limit counters: 2 days;
 - account+email contact locks: 30 days;
 - dead letters: 90 days;
-- deployment packages: 30 days;
+- deployment packages: never expired by lifecycle policy (the Flex `deployments` container holds the live code package; expiring it takes the API offline);
 - PDF masters: retained until superseded under the content release policy;
 - Key Vault soft delete/purge protection: 90 days;
 - Log Analytics: 90 days;
