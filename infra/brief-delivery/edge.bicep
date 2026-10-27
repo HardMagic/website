@@ -12,13 +12,10 @@ resource originGroup 'Microsoft.Cdn/profiles/originGroups@2024-09-01' = {
   parent: profile
   name: 'hardmagic-briefs-origins'
   properties: {
-    // The probe uses /api/healthz (FDID check only), not /api/health: the probe sends
-    // no X-Forwarded-Host, which /api/health requires (infrastructure#510). /api/healthz
-    // is not in the route patterns below, so it is not reachable at the edge.
-    // Front Door probes from many edge locations. The maximum supported
-    // interval preserves origin-health detection while avoiding tens of
-    // thousands of low-value Function invocations per day.
-    healthProbeSettings: { probePath: '/api/healthz', probeRequestType: 'GET', probeProtocol: 'Https', probeIntervalInSeconds: 255 }
+    // No health probe on purpose: this origin group has a single origin, so probing adds no
+    // failover. Each probe is a Function invocation from every edge location, 24/7, which keeps the
+    // scale-to-zero Function warm (FocusApiary/infrastructure#635, FinOps pass 2). Omitting
+    // healthProbeSettings disables probing. Health is checked hourly from the cluster instead.
     loadBalancingSettings: { sampleSize: 4, successfulSamplesRequired: 2, additionalLatencyInMilliseconds: 0 }
     sessionAffinityState: 'Enabled'
     trafficRestorationTimeToHealedOrNewEndpointsInMinutes: 10
