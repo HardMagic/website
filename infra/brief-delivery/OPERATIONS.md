@@ -15,7 +15,7 @@ Before the first production apply:
 
 ## Acceptance
 
-- Edge health returns configured `true`; direct Function origin is denied. Front Door probes `GET /api/healthz` (answers 200 only for the Front Door id; it sends no `X-Forwarded-Host`, which `/api/health` requires, and `/api/healthz` is not routed at the edge) at the maximum 255-second interval because every edge location probes independently; keep this frugal interval unless a measured failover objective requires more traffic.
+- Edge health returns configured `true`; direct Function origin is denied. The Front Door origin group has no health probe (single origin, so no failover to gain, and probes kept the scale-to-zero Function warm 24/7; FocusApiary/infrastructure#635). `/api/healthz` remains for manual or in-cluster checks.
 - Both API POST routes reject a foreign Origin, missing Front Door identity, honeypot input, oversized body, missing challenge, invalid service lane, and incomplete consent.
 - A controlled brief request returns `303`; no response contains PDF bytes or a Blob URL.
 - Received email has HardMagic branding, HTML and plain text, monitored Reply-To, a 48-hour exact-blob link, and an unsubscribe link.
@@ -31,7 +31,7 @@ Never print an address, token, SAS URL, request body, Key Vault value, or full D
 ## Cost posture
 
 - Keep Flex Consumption at 512 MB with no Always Ready instances; the current maximum of 20 instances is a burst ceiling, not a baseline allocation.
-- Keep Front Door health probes at the maximum 255-second interval. Every edge location probes independently, so a shorter interval creates origin invocations without improving the delivery contract.
+- Do not re-enable Front Door health probes on this single-origin group. Use the hourly in-cluster check instead.
 - Keep host and Function logging at `Warning`, exclude only `Exception` from Application Insights sampling, and retain write/delete storage audit logs while disabling duplicate read and metric streams.
 - Log Analytics remains on the 90-day PerGB2018 plan without a hard daily cap. A cap can stop ingestion of the failure signals this alert depends on; review the post-change ingestion trend before adding a cap and pair any cap with an independent metric alert.
 - Rate-limit counters expire after two days and account+email contact-lock blobs after 30 days. These paths are short-lived coordination state, not request records; the 30-day Blob soft-delete window still applies for recovery without allowing unbounded growth.
