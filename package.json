@@ -13,7 +13,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "typecheck:ts7": "tsc --noEmit --project tsconfig.native.json",
-    "test": "vitest run tests/site.test.ts tests/future2035-atmosphere.test.ts tests/briefs/data-integrity.test.ts tests/funnel/forms.test.ts tests/deployment/deployment-config.test.ts tests/cta/cta-ledger.test.ts",
+    "test": "vitest run tests/site.test.ts tests/future2035-atmosphere.test.ts tests/briefs/data-integrity.test.ts tests/funnel/forms.test.ts tests/deployment/deployment-config.test.ts tests/deployment/ci-config.test.ts tests/cta/cta-ledger.test.ts",
     "test:release": "vitest run tests/release/site-release.test.ts tests/briefs/pdf-manifest.test.ts",
     "test:all": "npm run test && npm run test:release",
     "test:browser": "playwright test",
