@@ -64,9 +64,9 @@ public_release:
     name: production-pages-candidate
     action: prepare
   # On-demand only: a web/API pipeline on demo with RUN_PUBLIC_RELEASE=candidate (build the
-  # candidate) or =publish (build and publish). Never `when: manual` with
-  # `allow_failure: false`: that is a blocking manual action and leaves every demo pipeline in
-  # status `manual`, never `success` (tests/deployment/ci-config.test.ts enforces this).
+  # candidate) or =publish (build and publish). A blocking manual action (manual rule plus
+  # allow_failure false) leaves every demo pipeline in status `manual`, never `success`, so it
+  # is not used here (tests/deployment/ci-config.test.ts enforces this).
   rules:
     - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true" && ($RUN_PUBLIC_RELEASE == "candidate" || $RUN_PUBLIC_RELEASE == "publish")'
       when: on_success
