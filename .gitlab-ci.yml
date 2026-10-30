@@ -23,6 +23,7 @@ site_tests:
     - npm run check
     - npm run typecheck:ts7
     - npm run test
+    - npm exec -- vitest run tests/release/site-release.test.ts
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
 
