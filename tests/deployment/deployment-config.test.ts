@@ -139,7 +139,7 @@ describe('BriefLock deployment contracts', () => {
     expect(snapshot.snapshot.role.forbiddenPrivilegeNames).toContain('prvWriteSharePointData');
   });
 
-  it('runs what-if automatically and keeps production deployment blocking and manual', () => {
+  it('runs what-if automatically and keeps production deployment on explicit demand', () => {
     const source = readRepositoryFile('.gitlab/ci/brief-delivery.yml');
     const whatIf = source.slice(source.indexOf('brief_lock_what_if:'), source.indexOf('brief_lock_deploy:'));
     const deploy = source.slice(source.indexOf('brief_lock_deploy:'));
@@ -150,8 +150,10 @@ describe('BriefLock deployment contracts', () => {
     expect(whatIf).toContain('.changeType == "Delete"');
     expect(whatIf).toContain('refusing to deploy');
     expect(deploy).toContain('brief_lock_what_if');
-    expect(deploy).toContain('when: manual');
-    expect(deploy).toContain('manual_confirmation:');
+    // Deployment is a web/API pipeline with RUN_BRIEF_LOCK_DEPLOY=1, never a blocking manual action
+    // that strands every demo pipeline at status manual (see ci-config.test.ts).
+    expect(deploy).toContain('$RUN_BRIEF_LOCK_DEPLOY == "1"');
+    expect(deploy).not.toContain('when: manual');
     expect(deploy).toContain('allow_failure: false');
     expect(deploy).not.toContain('BRIEF_WAF_POLICY_ID');
   });

@@ -41,8 +41,9 @@ describe('public release promotion contract', () => {
 
     const publicRelease = releaseConfig.slice(0, releaseConfig.indexOf('mirror_public_release:'));
     expect(publicRelease).toContain('HARDMAGIC_DEPLOY_TARGET: public');
-    expect(publicRelease).toContain('when: manual');
-    expect(publicRelease).toContain('allow_failure: false');
+    // On demand through RUN_PUBLIC_RELEASE; never a blocking manual action (see ci-config.test.ts).
+    expect(publicRelease).toContain('$RUN_PUBLIC_RELEASE == "candidate" || $RUN_PUBLIC_RELEASE == "publish"');
+    expect(publicRelease).not.toContain('when: manual');
     expect(publicRelease).toContain('$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true"');
     expect(publicRelease).toContain('- when: never');
 
@@ -50,8 +51,8 @@ describe('public release promotion contract', () => {
     expect(releaseConfig).toContain('public_release:');
     expect(mirror).toContain('job: public_release');
     expect(mirror).toContain('artifacts: true');
-    expect(mirror).toContain('when: manual');
-    expect(mirror).toContain('allow_failure: false');
+    expect(mirror).toContain('$RUN_PUBLIC_RELEASE == "publish"');
+    expect(mirror).not.toContain('when: manual');
     expect(mirror).toContain('GIT_STRATEGY: empty');
     expect(releaseConfig).toContain('- .gitlab/ci/generate-release-manifest.mjs');
     expect(mirror).toContain('set -o pipefail');
