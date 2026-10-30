@@ -63,9 +63,13 @@ public_release:
   environment:
     name: production-pages-candidate
     action: prepare
+  # On-demand only: a web/API pipeline on demo with RUN_PUBLIC_RELEASE=candidate (build the
+  # candidate) or =publish (build and publish). A blocking manual action (manual rule plus
+  # allow_failure false) leaves every demo pipeline in status `manual`, never `success`, so it
+  # is not used here (tests/deployment/ci-config.test.ts enforces this).
   rules:
-    - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true"'
-      when: manual
+    - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true" && ($RUN_PUBLIC_RELEASE == "candidate" || $RUN_PUBLIC_RELEASE == "publish")'
+      when: on_success
     - when: never
 
 # This job intentionally consumes the public_release artifact through needs.
@@ -368,8 +372,9 @@ mirror_public_release:
   environment:
     name: production-pages
     action: start
+  # Publishing to GitHub Pages is a second, explicit decision: only RUN_PUBLIC_RELEASE=publish
+  # runs it (after public_release built the candidate in the same pipeline).
   rules:
-    - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true"'
-      when: manual
-      allow_failure: false
+    - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true" && $RUN_PUBLIC_RELEASE == "publish"'
+      when: on_success
     - when: never
