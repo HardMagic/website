@@ -140,13 +140,15 @@ brief_lock_deploy:
     - brief_lock_pdf_package
     - brief_lock_bicep_validate
     - brief_lock_what_if
+  # On-demand only: a web/API pipeline on demo with RUN_BRIEF_LOCK_DEPLOY=1 (the pipeline
+  # creator is the approver). Never `when: manual` with `allow_failure: false`: that is a
+  # blocking manual action and leaves every demo pipeline in status `manual`, never `success`
+  # (tests/deployment/ci-config.test.ts enforces this).
   rules:
-    - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true"'
+    - if: '$CI_COMMIT_BRANCH == "demo" && $CI_COMMIT_REF_PROTECTED == "true" && $RUN_BRIEF_LOCK_DEPLOY == "1"'
       <<: *brief_delivery_changes
-      when: manual
-      allow_failure: false
+      when: on_success
     - when: never
-  manual_confirmation: 'Deploy HardMagic BriefLock to production?'
   allow_failure: false
   resource_group: hardmagic-brief-lock-production
   environment:

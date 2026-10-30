@@ -113,8 +113,10 @@ describe('BriefLock deployment contracts', () => {
     expect(infrastructure).toContain("policyConfig.rateLimitRetentionDays");
     expect(infrastructure).toContain("prefixMatch: [ 'ledger/locks/contact/' ]");
     expect(infrastructure).toContain("policyConfig.contactLockRetentionDays");
-    expect(edge).toContain('probeIntervalInSeconds: 255');
-    expect(edge).toContain("probePath: '/api/healthz'");
+    // The origin group is single-origin, so Front Door health probing is disabled on purpose
+    // (FocusApiary/infrastructure#635): probes add no failover and keep the Function warm 24/7.
+    expect(edge).not.toMatch(/^\s*healthProbeSettings:/m);
+    expect(edge).not.toContain('probeIntervalInSeconds');
     // The custom domain is Terraform-owned (shared WAF binding); the Bicep may only reference it.
     expect(edge).toMatch(/resource domain 'Microsoft.Cdn\/profiles\/customDomains@[0-9-]+' existing = /);
     expect(infrastructure).toContain("runtime: { name: 'node', version: '24' }");
