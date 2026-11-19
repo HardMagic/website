@@ -2,5 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>FocusApiary/dot-github:renovate-default"
+  ],
+  "packageRules": [
+    {
+      "description": "The Playwright CI image must match @playwright/test, or the browser binaries are missing (!25). Bump them in one MR.",
+      "matchPackageNames": ["@playwright/test", "mcr.microsoft.com/playwright"],
+      "groupName": "playwright"
+    }
   ]
 }
