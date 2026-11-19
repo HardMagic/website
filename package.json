@@ -42,5 +42,9 @@
     "typescript": "npm:@typescript/typescript6@6.0.2",
     "vitest": "4.1.12",
     "yaml": "2.9.1"
+  },
+  "overrides": {
+    "@emnapi/core": "1.11.3",
+    "@emnapi/runtime": "1.11.3"
   }
 }
