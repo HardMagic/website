@@ -11,7 +11,7 @@ site_tests:
   variables:
     HARDMAGIC_DEPLOY_TARGET: demo
     HARDMAGIC_DEPLOYMENT_TEST_TARGET: demo
-  image: harbor.focuscell.org/dockerhub-proxy/library/node:24.18.1-bookworm-slim
+  image: harbor.focuscell.org/dockerhub-proxy/library/node:24.22.3-bookworm-slim
   cache:
     key:
       files:
@@ -38,7 +38,7 @@ pages:
     HARDMAGIC_IMAGE_BUILD_CONCURRENCY: '1'
     SHARP_CONCURRENCY: '1'
     UV_THREADPOOL_SIZE: '1'
-  image: harbor.focuscell.org/dockerhub-proxy/library/node:24.18.1-bookworm-slim
+  image: harbor.focuscell.org/dockerhub-proxy/library/node:24.22.3-bookworm-slim
   cache:
     key:
       files:
