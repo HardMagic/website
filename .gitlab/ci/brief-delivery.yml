@@ -13,7 +13,7 @@ stages:
     - package-lock.json
 
 .azure_oidc:
-  image: mcr.microsoft.com/azure-cli:2.89.0
+  image: mcr.microsoft.com/azure-cli:2.93.0
   id_tokens:
     AZURE_FEDERATED_TOKEN:
       aud: api://AzureADTokenExchange
@@ -78,7 +78,7 @@ brief_lock_pdf_package:
 
 brief_lock_bicep_validate:
   stage: validate
-  image: mcr.microsoft.com/azure-cli:2.89.0
+  image: mcr.microsoft.com/azure-cli:2.93.0
   rules:
     - <<: *brief_delivery_changes
   script:
