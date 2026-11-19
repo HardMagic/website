@@ -62,7 +62,7 @@ brief_lock_package:
 
 brief_lock_pdf_package:
   stage: validate
-  image: mcr.microsoft.com/playwright:v1.62.1-noble
+  image: mcr.microsoft.com/playwright:v1.65.1-noble
   rules:
     - <<: *brief_delivery_changes
   script:

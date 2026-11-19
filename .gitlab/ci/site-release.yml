@@ -7,7 +7,7 @@ public_release:
   # Public release validates the private brief manifest too; use the same
   # browser-capable image as brief_lock_pdf_package to generate PDFs in a
   # clean checkout before running that manifest test.
-  image: mcr.microsoft.com/playwright:v1.62.1-noble
+  image: mcr.microsoft.com/playwright:v1.65.1-noble
   variables:
     HARDMAGIC_DEPLOY_TARGET: public
     HARDMAGIC_DEPLOYMENT_TEST_TARGET: public
@@ -84,7 +84,7 @@ mirror_public_release:
   # job. It already contains git, GPG, curl, and OpenSSL; relying on the
   # private Harbor mirror here made a fresh runner fail before the script ran
   # when that registry returned 401.
-  image: mcr.microsoft.com/playwright:v1.62.1-noble
+  image: mcr.microsoft.com/playwright:v1.65.1-noble
   variables:
     GITHUB_PAGES_REPOSITORY: HardMagic/website
     GITHUB_PAGES_BRANCH: gh-pages
