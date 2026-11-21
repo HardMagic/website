@@ -33,7 +33,7 @@ stages:
 
 brief_lock_function_test:
   stage: validate
-  image: node:24-bookworm-slim
+  image: node:26-bookworm-slim
   rules:
     - <<: *brief_delivery_changes
   script:
@@ -45,7 +45,7 @@ brief_lock_function_test:
 
 brief_lock_package:
   stage: validate
-  image: node:24-bookworm-slim
+  image: node:26-bookworm-slim
   rules:
     - <<: *brief_delivery_changes
   script:
