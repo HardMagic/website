@@ -216,7 +216,7 @@ resource communicationService 'Microsoft.Communication/communicationServices@202
   }
 }
 
-resource logWorkspace 'Microsoft.OperationalInsights/workspaces@2025-02-01' = {
+resource logWorkspace 'Microsoft.OperationalInsights/workspaces@2025-07-01' = {
   name: logWorkspaceName
   location: location
   tags: tags
