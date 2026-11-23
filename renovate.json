@@ -8,6 +8,12 @@
       "description": "The Playwright CI image must match @playwright/test, or the browser binaries are missing (!25). Bump them in one MR.",
       "matchPackageNames": ["@playwright/test", "mcr.microsoft.com/playwright"],
       "groupName": "playwright"
+    },
+    {
+      "description": "The brief-delivery Function runs on Azure Functions Flex Consumption with runtime node 24 (infra/brief-delivery/modules/brief-lock.bicep, functionAppConfig.runtime.version). Its CI image, @types/node and engines stay on that major, so tests run on the Node the Function runs on (!32). Raise the cap together with the bicep runtime version once Azure supports the next LTS.",
+      "matchFileNames": ["infra/brief-delivery/function/package.json", ".gitlab/ci/brief-delivery.yml"],
+      "matchPackageNames": ["node", "@types/node"],
+      "allowedVersions": "<25"
     }
   ]
 }
