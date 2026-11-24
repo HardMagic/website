@@ -38,7 +38,7 @@ resource runtimeIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-
   tags: tags
 }
 
-resource storage 'Microsoft.Storage/storageAccounts@2025-06-01' = {
+resource storage 'Microsoft.Storage/storageAccounts@2025-08-01' = {
   name: storageAccountName
   location: location
   kind: 'StorageV2'
