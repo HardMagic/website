@@ -68,7 +68,7 @@ resource storage 'Microsoft.Storage/storageAccounts@2025-06-01' = {
   }
 }
 
-resource blobService 'Microsoft.Storage/storageAccounts/blobServices@2025-06-01' = {
+resource blobService 'Microsoft.Storage/storageAccounts/blobServices@2025-08-01' = {
   parent: storage
   name: 'default'
   properties: {
