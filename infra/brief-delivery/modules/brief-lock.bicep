@@ -89,25 +89,25 @@ resource queueService 'Microsoft.Storage/storageAccounts/queueServices@2025-06-0
   properties: {}
 }
 
-resource briefsContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2025-06-01' = {
+resource briefsContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2025-08-01' = {
   parent: blobService
   name: 'briefs'
   properties: { publicAccess: 'None' }
 }
 
-resource ledgerContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2025-06-01' = {
+resource ledgerContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2025-08-01' = {
   parent: blobService
   name: 'ledger'
   properties: { publicAccess: 'None' }
 }
 
-resource deadLetterContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2025-06-01' = {
+resource deadLetterContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2025-08-01' = {
   parent: blobService
   name: 'deadletter'
   properties: { publicAccess: 'None' }
 }
 
-resource deploymentContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2025-06-01' = {
+resource deploymentContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2025-08-01' = {
   parent: blobService
   name: 'deployments'
   properties: { publicAccess: 'None' }
