@@ -113,7 +113,7 @@ resource deploymentContainer 'Microsoft.Storage/storageAccounts/blobServices/con
   properties: { publicAccess: 'None' }
 }
 
-resource lifecycle 'Microsoft.Storage/storageAccounts/managementPolicies@2025-06-01' = {
+resource lifecycle 'Microsoft.Storage/storageAccounts/managementPolicies@2025-08-01' = {
   parent: storage
   name: 'default'
   properties: {
